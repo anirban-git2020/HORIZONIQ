@@ -1,0 +1,26 @@
+Always read PROJECT_MEMORY.md before making changes.
+
+Never redesign the product vision.
+
+Never introduce cyberpunk aesthetics.
+
+Optimize for clarity over visual complexity.
+
+Every component must help users:
+
+Observe
+Understand
+Act
+
+Before generating code:
+
+Self critique:
+- UX
+- Information hierarchy
+- Trust
+- Accessibility
+- Mobile responsiveness
+
+Fix issues automatically.
+
+Maintain consistency with HorizonIQ vision.

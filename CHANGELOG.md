@@ -18,7 +18,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
-- JSON datasets: `data/signals.json`, `data/skills.json`, `data/jobs.json`, `data/recommendations.json`, `data/regions.json`, `data/meta.json`
+- **MVP retention feature:** "What Changed Since Your Last Visit" with localStorage snapshot comparison
+- Signal buckets: **New Signals**, **Rising Signals**, **Falling Signals**
+- First visit baseline snapshot (uses `previousMomentum` from mock data) so return visits show movement
+- Snapshot cleared on dashboard reset
 - Data access layer: `lib/data/access.ts`, `lib/data/schemas.ts`
 - Visit snapshot: `lib/visit-snapshot.ts` (localStorage, no login)
 - Dashboard hero: `components/dashboard/what-changed-hero.tsx`

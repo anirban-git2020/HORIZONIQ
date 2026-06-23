@@ -7,12 +7,86 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { ChangeBadge, DeltaIndicator } from "@/components/dashboard/change-badge";
+import {
+  ChangeBadge,
+  DeltaIndicator,
+} from "@/components/dashboard/change-badge";
 import { cn } from "@/lib/utils";
-import type { WhatChangedBriefing } from "@/lib/types";
+import type { ChangeItem, SignalChangeGroup, WhatChangedBriefing } from "@/lib/types";
+
+function SignalChangeRow({ item }: { item: ChangeItem }) {
+  return (
+    <div className="px-5 py-4 md:px-6">
+      <div className="flex flex-wrap items-center gap-2">
+        <ChangeBadge type={item.signal.change.type} />
+        <Badge variant="muted">{item.signal.category}</Badge>
+        {item.visitChange && item.visitChange.momentumDelta !== 0 && (
+          <DeltaIndicator
+            delta={item.visitChange.momentumDelta}
+            label="momentum"
+          />
+        )}
+      </div>
+
+      <div className="mt-3 flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
+        <div className="min-w-0 flex-1">
+          <Link
+            href={`/signals/${item.signal.id}`}
+            className="group inline-flex items-center gap-2"
+          >
+            <h4 className="text-base font-semibold leading-snug transition-colors group-hover:text-primary">
+              {item.signal.name}
+            </h4>
+            <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+          </Link>
+          <p className="mt-1.5 text-sm text-foreground">
+            {item.signal.change.summary}
+          </p>
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+            {item.whyItMatters}
+          </p>
+        </div>
+        <div className="lg:w-64 shrink-0">
+          <p className="label-caps mb-1.5 text-xs">Action</p>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {item.action}
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function ChangeGroupSection({ group }: { group: SignalChangeGroup }) {
+  return (
+    <div>
+      <div className="border-b border-border/60 bg-secondary/30 px-5 py-3 md:px-6">
+        <h3 className="text-sm font-semibold tracking-tight">{group.label}</h3>
+        <p className="mt-0.5 text-xs text-muted-foreground">
+          {group.items.length}{" "}
+          {group.items.length === 1 ? "signal" : "signals"}
+        </p>
+      </div>
+      <div className="divide-y divide-border/60">
+        {group.items.map((item) => (
+          <SignalChangeRow key={item.signal.id} item={item} />
+        ))}
+      </div>
+    </div>
+  );
+}
 
 export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing }) {
-  const { title, subtitle, changes, primaryAction, isReturnVisit } = briefing;
+  const {
+    title,
+    subtitle,
+    groups,
+    changes,
+    primaryAction,
+    isReturnVisit,
+  } = briefing;
+
+  const hasGroups = groups.length > 0;
 
   return (
     <section aria-labelledby="what-changed-heading">
@@ -48,57 +122,19 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
             </div>
           </div>
 
-          <div className="divide-y divide-border/60">
-            {changes.map((item) => (
-              <div
-                key={item.signal.id}
-                className="px-6 py-5 md:px-8 md:py-6"
-              >
-                <div className="flex flex-wrap items-center gap-2">
-                  <ChangeBadge type={item.signal.change.type} />
-                  <Badge variant="muted">{item.signal.category}</Badge>
-                  {item.visitChange && (
-                    <DeltaIndicator
-                      delta={item.visitChange.momentumDelta}
-                      label="momentum"
-                    />
-                  )}
-                </div>
-
-                <div className="mt-3 flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
-                  <div className="flex-1 min-w-0">
-                    <Link
-                      href={`/signals/${item.signal.id}`}
-                      className="group inline-flex items-center gap-2"
-                    >
-                      <h3 className="text-lg font-semibold leading-snug transition-colors group-hover:text-primary">
-                        {item.signal.name}
-                      </h3>
-                      <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                    </Link>
-
-                    <p className="mt-2 text-sm font-medium text-foreground">
-                      {item.signal.change.summary}
-                    </p>
-
-                    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                      <span className="font-medium text-foreground/90">
-                        Why it matters for you:{" "}
-                      </span>
-                      {item.whyItMatters}
-                    </p>
-                  </div>
-
-                  <div className="lg:w-72 shrink-0">
-                    <p className="label-caps mb-2">Recommended action</p>
-                    <p className="text-sm leading-relaxed text-muted-foreground">
-                      {item.action}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          {hasGroups ? (
+            <div className="divide-y divide-border/60">
+              {groups.map((group) => (
+                <ChangeGroupSection key={group.bucket} group={group} />
+              ))}
+            </div>
+          ) : (
+            <div className="divide-y divide-border/60">
+              {changes.map((item) => (
+                <SignalChangeRow key={item.signal.id} item={item} />
+              ))}
+            </div>
+          )}
 
           {changes.length > 0 && (
             <div className="border-t border-border/60 px-6 py-4 md:px-8">

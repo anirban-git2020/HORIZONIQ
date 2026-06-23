@@ -28,7 +28,8 @@ import { usePreferences } from "@/lib/preferences";
 import type { DashboardSection, RoleId } from "@/lib/types";
 import {
   buildSignalSnapshot,
-  diffAgainstSnapshot,
+  clearVisitSnapshot,
+  hasVisitSnapshot,
   loadVisitSnapshot,
   saveVisitSnapshot,
 } from "@/lib/visit-snapshot";
@@ -69,22 +70,22 @@ export default function DashboardPage() {
 
   const whatChanged = useMemo(() => {
     const snapshot = loadVisitSnapshot();
-    const meta = getMeta();
-    const isReturnVisit =
-      snapshot !== null && snapshot.briefingPeriod === meta.briefingPeriod;
-    const visitChanges = isReturnVisit
-      ? diffAgainstSnapshot(signals, snapshot.signals)
-      : null;
-    return getWhatChangedForYou(preferences, visitChanges, isReturnVisit);
-  }, [preferences, signals]);
+    const isReturnVisit = hasVisitSnapshot();
+    return getWhatChangedForYou(preferences, {
+      isReturnVisit,
+      previousSignals: snapshot?.signals ?? null,
+      lastVisitAt: snapshot?.lastVisitAt ?? null,
+    });
+  }, [preferences]);
 
   useEffect(() => {
     if (!hydrated || !isComplete || signals.length === 0) return;
     const meta = getMeta();
+    const existing = loadVisitSnapshot();
     saveVisitSnapshot({
       lastVisitAt: new Date().toISOString(),
       briefingPeriod: meta.briefingPeriod,
-      signals: buildSignalSnapshot(signals),
+      signals: buildSignalSnapshot(signals, existing),
     });
   }, [hydrated, isComplete, signals]);
 
@@ -103,6 +104,7 @@ export default function DashboardPage() {
   }
 
   const handleReset = () => {
+    clearVisitSnapshot();
     reset();
     router.push("/");
   };

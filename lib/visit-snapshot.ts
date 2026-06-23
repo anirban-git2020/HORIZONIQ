@@ -1,5 +1,7 @@
 const STORAGE_KEY = "horizoniq-visit-snapshot";
 
+export type SignalBucket = "new" | "rising" | "falling";
+
 export interface SignalSnapshot {
   momentum: number;
   confidence: number;
@@ -28,44 +30,94 @@ export function saveVisitSnapshot(snapshot: VisitSnapshot): void {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(snapshot));
 }
 
+export function hasVisitSnapshot(): boolean {
+  const snapshot = loadVisitSnapshot();
+  return snapshot !== null && Object.keys(snapshot.signals).length > 0;
+}
+
+/**
+ * First visit stores baseline (previousMomentum) so return visits can show movement.
+ * Subsequent saves store current values for the next comparison.
+ */
 export function buildSignalSnapshot(
-  signals: { id: string; momentum: number; confidence: number; change: { type: string } }[]
+  signals: {
+    id: string;
+    momentum: number;
+    confidence: number;
+    previousMomentum: number;
+    previousConfidence: number;
+    change: { type: string };
+  }[],
+  previousSnapshot: VisitSnapshot | null
 ): Record<string, SignalSnapshot> {
-  return Object.fromEntries(
-    signals.map((s) => [
-      s.id,
-      {
-        momentum: s.momentum,
-        confidence: s.confidence,
-        changeType: s.change.type,
-      },
-    ])
-  );
+  const isFirstVisit = !previousSnapshot;
+  const result: Record<string, SignalSnapshot> = {
+    ...(previousSnapshot?.signals ?? {}),
+  };
+
+  for (const signal of signals) {
+    const existing = previousSnapshot?.signals[signal.id];
+
+    if (isFirstVisit) {
+      result[signal.id] = {
+        momentum: signal.previousMomentum,
+        confidence: signal.previousConfidence,
+        changeType: "stable",
+      };
+      continue;
+    }
+
+    if (!existing) {
+      result[signal.id] = {
+        momentum: signal.momentum,
+        confidence: signal.confidence,
+        changeType: signal.change.type,
+      };
+      continue;
+    }
+
+    result[signal.id] = {
+      momentum: signal.momentum,
+      confidence: signal.confidence,
+      changeType: signal.change.type,
+    };
+  }
+
+  return result;
 }
 
 export interface SignalVisitChange {
   signalId: string;
-  type: "new_to_user" | "momentum_shift" | "confidence_shift" | "change_type_shift";
+  bucket: SignalBucket;
   momentumDelta: number;
   confidenceDelta: number;
   previousMomentum?: number;
   previousConfidence?: number;
 }
 
-export function diffAgainstSnapshot(
-  current: { id: string; momentum: number; confidence: number; change: { type: string } }[],
-  previous: Record<string, SignalSnapshot> | null
+const MOMENTUM_THRESHOLD = 3;
+
+export function classifyVisitChanges(
+  signals: {
+    id: string;
+    momentum: number;
+    confidence: number;
+    change: { type: string };
+  }[],
+  previous: Record<string, SignalSnapshot> | null,
+  isReturnVisit: boolean
 ): SignalVisitChange[] {
-  if (!previous) return [];
+  if (!isReturnVisit || !previous) return [];
 
   const changes: SignalVisitChange[] = [];
 
-  for (const signal of current) {
+  for (const signal of signals) {
     const prev = previous[signal.id];
+
     if (!prev) {
       changes.push({
         signalId: signal.id,
-        type: "new_to_user",
+        bucket: "new",
         momentumDelta: signal.momentum,
         confidenceDelta: signal.confidence,
       });
@@ -75,19 +127,22 @@ export function diffAgainstSnapshot(
     const momentumDelta = signal.momentum - prev.momentum;
     const confidenceDelta = signal.confidence - prev.confidence;
 
-    if (
-      Math.abs(momentumDelta) >= 3 ||
-      Math.abs(confidenceDelta) >= 3 ||
-      prev.changeType !== signal.change.type
-    ) {
+    let bucket: SignalBucket | null = null;
+
+    if (momentumDelta >= MOMENTUM_THRESHOLD) {
+      bucket = "rising";
+    } else if (momentumDelta <= -MOMENTUM_THRESHOLD) {
+      bucket = "falling";
+    } else if (prev.changeType !== signal.change.type) {
+      if (signal.change.type === "new") bucket = "new";
+      else if (signal.change.type === "rising") bucket = "rising";
+      else if (signal.change.type === "falling") bucket = "falling";
+    }
+
+    if (bucket) {
       changes.push({
         signalId: signal.id,
-        type:
-          prev.changeType !== signal.change.type
-            ? "change_type_shift"
-            : Math.abs(momentumDelta) >= Math.abs(confidenceDelta)
-              ? "momentum_shift"
-              : "confidence_shift",
+        bucket,
         momentumDelta,
         confidenceDelta,
         previousMomentum: prev.momentum,
@@ -97,4 +152,36 @@ export function diffAgainstSnapshot(
   }
 
   return changes;
+}
+
+export function classifyBriefingPeriodChanges(
+  signals: {
+    id: string;
+    change: { type: string };
+    momentum: number;
+    confidence: number;
+    previousMomentum: number;
+    previousConfidence: number;
+  }[]
+): SignalVisitChange[] {
+  return signals
+    .filter((s) => s.change.type !== "stable")
+    .map((signal) => ({
+      signalId: signal.id,
+      bucket:
+        signal.change.type === "new"
+          ? "new"
+          : signal.change.type === "rising"
+            ? "rising"
+            : "falling",
+      momentumDelta: signal.momentum - signal.previousMomentum,
+      confidenceDelta: signal.confidence - signal.previousConfidence,
+      previousMomentum: signal.previousMomentum,
+      previousConfidence: signal.previousConfidence,
+    }));
+}
+
+export function clearVisitSnapshot(): void {
+  if (typeof window === "undefined") return;
+  window.localStorage.removeItem(STORAGE_KEY);
 }

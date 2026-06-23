@@ -182,11 +182,19 @@ export interface ChangeItem {
   };
 }
 
+export interface SignalChangeGroup {
+  bucket: "new" | "rising" | "falling";
+  label: string;
+  items: ChangeItem[];
+}
+
 export interface WhatChangedBriefing {
   title: string;
   subtitle: string;
   isReturnVisit: boolean;
+  lastVisitAt: string | null;
   primaryAction: ActionView | null;
+  groups: SignalChangeGroup[];
   changes: ChangeItem[];
   briefingLabel: string;
 }

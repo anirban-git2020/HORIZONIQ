@@ -22,11 +22,16 @@ import type {
   OpportunityView,
   Preferences,
   RoleId,
+  SignalChangeGroup,
   SignalView,
   SkillView,
   WhatChangedBriefing,
 } from "@/lib/types";
-import type { SignalVisitChange } from "@/lib/visit-snapshot";
+import type { SignalSnapshot } from "@/lib/visit-snapshot";
+import {
+  classifyBriefingPeriodChanges,
+  classifyVisitChanges,
+} from "@/lib/visit-snapshot";
 
 const FALLBACK_ROLE: RoleId = "professional";
 const FALLBACK_REGION = "north-america" as const;
@@ -223,67 +228,104 @@ export function getBriefing(prefs: Preferences): Briefing {
 
 export function getWhatChangedForYou(
   prefs: Preferences,
-  visitChanges: SignalVisitChange[] | null,
-  isReturnVisit: boolean
+  options: {
+    isReturnVisit: boolean;
+    previousSignals: Record<string, SignalSnapshot> | null;
+    lastVisitAt: string | null;
+  }
 ): WhatChangedBriefing {
   const meta = getMeta();
   const signals = getTopSignals(prefs, 12);
   const primaryAction = getPrimaryAction(prefs);
+  const signalById = new Map(signals.map((s) => [s.id, s]));
 
-  let changes: ChangeItem[];
+  let visitChanges = options.isReturnVisit
+    ? classifyVisitChanges(signals, options.previousSignals, true)
+    : classifyBriefingPeriodChanges(signals);
 
-  if (isReturnVisit && visitChanges && visitChanges.length > 0) {
-    const changeMap = new Map(visitChanges.map((c) => [c.signalId, c]));
-    changes = signals
-      .filter((s) => changeMap.has(s.id) || s.change.type === "new" || s.change.type === "rising")
-      .slice(0, 5)
-      .map((signal) => {
-        const vc = changeMap.get(signal.id);
-        return {
-          signal,
-          whyItMatters: signal.soWhatForYou,
-          action: signal.recommendedAction,
-          visitChange: vc
-            ? {
-                momentumDelta: vc.momentumDelta,
-                confidenceDelta: vc.confidenceDelta,
-                previousMomentum: vc.previousMomentum,
-                previousConfidence: vc.previousConfidence,
-              }
-            : undefined,
-        };
-      });
-  } else {
-    changes = signals
-      .filter((s) => s.change.type === "new" || s.change.type === "rising")
-      .slice(0, 5)
-      .map((signal) => ({
+  if (options.isReturnVisit && visitChanges.length === 0) {
+    visitChanges = classifyBriefingPeriodChanges(signals);
+  }
+
+  const changes: ChangeItem[] = visitChanges.flatMap((vc) => {
+    const signal = signalById.get(vc.signalId);
+    if (!signal) return [];
+    return [
+      {
         signal,
         whyItMatters: signal.soWhatForYou,
         action: signal.recommendedAction,
-      }));
-  }
+        visitChange: {
+          momentumDelta: vc.momentumDelta,
+          confidenceDelta: vc.confidenceDelta,
+          previousMomentum: vc.previousMomentum,
+          previousConfidence: vc.previousConfidence,
+        },
+      },
+    ];
+  });
 
-  if (changes.length === 0) {
-    changes = signals.slice(0, 3).map((signal) => ({
-      signal,
-      whyItMatters: signal.soWhatForYou,
-      action: signal.recommendedAction,
-    }));
-  }
+  const bucketLabels: Record<"new" | "rising" | "falling", string> = {
+    new: "New Signals",
+    rising: "Rising Signals",
+    falling: "Falling Signals",
+  };
+
+  const bucketOrder: Array<"new" | "rising" | "falling"> = [
+    "new",
+    "rising",
+    "falling",
+  ];
+
+  const groups: SignalChangeGroup[] = bucketOrder
+    .map((bucket) => ({
+      bucket,
+      label: bucketLabels[bucket],
+      items: changes.filter((item) => {
+        const vc = visitChanges.find((c) => c.signalId === item.signal.id);
+        return vc?.bucket === bucket;
+      }),
+    }))
+    .filter((group) => group.items.length > 0);
+
+  const flatChanges =
+    changes.length > 0
+      ? changes.slice(0, 5)
+      : signals.slice(0, 3).map((signal) => ({
+          signal,
+          whyItMatters: signal.soWhatForYou,
+          action: signal.recommendedAction,
+        }));
 
   return {
-    title: isReturnVisit
+    title: options.isReturnVisit
       ? "What Changed Since Your Last Visit"
       : "What Changed This Week",
-    subtitle: isReturnVisit
-      ? "Here's what's different based on your last briefing."
+    subtitle: options.isReturnVisit
+      ? options.lastVisitAt
+        ? `Compared to your last visit on ${formatVisitDate(options.lastVisitAt)}.`
+        : "Compared to your last visit."
       : meta.briefingLabel,
-    isReturnVisit,
+    isReturnVisit: options.isReturnVisit,
+    lastVisitAt: options.lastVisitAt,
     primaryAction,
-    changes,
+    groups,
+    changes: flatChanges,
     briefingLabel: meta.briefingLabel,
   };
+}
+
+function formatVisitDate(iso: string): string {
+  try {
+    return new Intl.DateTimeFormat(undefined, {
+      month: "short",
+      day: "numeric",
+      hour: "numeric",
+      minute: "2-digit",
+    }).format(new Date(iso));
+  } catch {
+    return "your last session";
+  }
 }
 
 function article(role: RoleId): string {

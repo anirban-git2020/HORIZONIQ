@@ -1,6 +1,7 @@
 import metaJson from "@/data/meta.json";
+import catalogSignalsJson from "@/data/catalog/signals.json";
+import briefing2026W26Json from "@/data/briefings/2026-W26.json";
 import regionsJson from "@/data/regions.json";
-import signalsJson from "@/data/signals.json";
 import skillsJson from "@/data/skills.json";
 import jobsJson from "@/data/jobs.json";
 import recommendationsJson from "@/data/recommendations.json";
@@ -12,26 +13,56 @@ import type {
   RoleId,
 } from "@/lib/types";
 import type {
+  BriefingRecord,
   JobRecord,
   MetaRecord,
   RecommendationRecord,
   RegionRecord,
+  SignalCatalogRecord,
   SignalRecord,
   SkillRecord,
 } from "@/lib/data/schemas";
+import { resolveSignalsFromBriefing } from "@/lib/data/resolve-signals";
 import { INTEREST_LABEL, REGION_LABEL } from "@/lib/options";
 
 const meta = metaJson as MetaRecord;
 const regions = regionsJson as Record<RegionId, RegionRecord>;
-const signals = (signalsJson as { signals: SignalRecord[] }).signals;
+const catalogSignals = (
+  catalogSignalsJson as { signals: SignalCatalogRecord[] }
+).signals;
 const skills = (skillsJson as { skills: SkillRecord[] }).skills;
 const jobs = (jobsJson as { jobs: JobRecord[] }).jobs;
 const recommendations = (
   recommendationsJson as { recommendations: RecommendationRecord[] }
 ).recommendations;
 
+/** Register weekly briefing files by `briefingPeriod`. */
+const BRIEFINGS: Record<string, BriefingRecord> = {
+  "2026-W26": briefing2026W26Json as BriefingRecord,
+};
+
+function getActiveBriefing(): BriefingRecord {
+  const briefing = BRIEFINGS[meta.briefingPeriod];
+  if (!briefing) {
+    throw new Error(
+      `No briefing registered for period "${meta.briefingPeriod}" (${meta.activeBriefingFile}).`
+    );
+  }
+  return briefing;
+}
+
+const signals = resolveSignalsFromBriefing(catalogSignals, getActiveBriefing());
+
 export function getMeta(): MetaRecord {
   return meta;
+}
+
+export function getActiveBriefingRecord(): BriefingRecord {
+  return getActiveBriefing();
+}
+
+export function getCatalogSignals(): SignalCatalogRecord[] {
+  return catalogSignals;
 }
 
 export function getAllSignals(): SignalRecord[] {

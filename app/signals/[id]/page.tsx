@@ -227,6 +227,14 @@ export default function SignalDetailPage() {
             </Link>
           </PremiumCard>
         </Section>
+
+        <FadeIn>
+          <div className="rounded-xl border border-border/70 bg-secondary/30 px-6 py-5 text-center md:px-8">
+            <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
+              We&apos;re tracking this signal for your next briefing.
+            </p>
+          </div>
+        </FadeIn>
       </main>
     </div>
   );

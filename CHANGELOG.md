@@ -18,6 +18,11 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ### Added
 
+- **Weekly Intelligence Refresh foundation:** catalog + active briefing data architecture
+- `data/catalog/signals.json` — evergreen signal definitions
+- `data/briefings/2026-W26.json` — weekly signal states and change buckets
+- `lib/data/resolve-signals.ts` — merges catalog + briefing into unified `SignalRecord`
+- `meta.json` `activeBriefingFile` pointer for active weekly briefing
 - **MVP retention feature:** "What Changed Since Your Last Visit" with localStorage snapshot comparison
 - Signal buckets: **New Signals**, **Rising Signals**, **Falling Signals**
 - First visit baseline snapshot (uses `previousMomentum` from mock data) so return visits show movement
@@ -37,9 +42,19 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - "Why HorizonIQ?" section below onboarding steps (Signals, Skills, Opportunities)
 - Student interest fields: biotechnology, biochemistry, life sciences, arts, commerce
 - Role-aware curated interest lists per persona
+- **Briefing freshness in change hero:** `briefingLabel` and "Updated [date]" shown prominently
+- **`formatBriefingUpdatedAt`** utility for consistent date display
+- **`isReturnVisitForPeriod`** — return-visit diff only within the same `briefingPeriod`
+- **`data/README.md`** — weekly mock data refresh checklist
+- **First-visit return framing:** Week 1 Briefing label, baseline banner, today's date, Next Briefing Preview, signal tracking footer
 
 ### Changed
 
+- Signal data access reads **catalog + active briefing** instead of flat `signals.json`
+- First-visit hero title → **Week 1 Briefing** (return visits unchanged)
+- First-visit subtitle explains baseline date and next-visit delta
+- `MetaRecord` extended with `activeBriefingFile`
+- New schema types: `SignalCatalogRecord`, `SignalBriefingState`, `BriefingRecord`
 - Data layer: TypeScript modules → JSON files with change metadata
 - Regions: 6 combined regions → 8 fixed regions
 - Interests: 8 flat topics → 14 categorized interests with role-specific onboarding lists
@@ -52,9 +67,17 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Opportunities section → "New This Week" / "Heating Up" with growth change
 - Actions section → primary action + secondary suggestions
 - Dashboard header title → "What changed for you"
+- **`meta.json`** refreshed to briefing period `2026-W26` (Week of June 23, 2026)
+- Sample signal change fields updated (`ai-agents`, `humanoid-robotics`) for weekly refresh demo
+- Dashboard uses briefing-period-aware return visit detection
+- **What Changed hero is first on dashboard** — immediately after top bar, before preferences header
+- Signal rows use explicit **"Why this matters to you"** and **"Recommended action"** labels
+- Briefing-level primary action label aligned to **"Recommended action"**
+- Fallback grouping keeps **New / Rising / Falling Signals** buckets when weekly change data is available
 
 ### Removed
 
+- Flat `data/signals.json` (migrated to catalog + briefing split)
 - Signal relationship map and flow UI
 - Legacy TypeScript data modules (`intelligence.ts`, `signal-intelligence.ts`, etc.)
 - `map` section from dashboard section order

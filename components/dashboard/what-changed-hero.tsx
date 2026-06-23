@@ -42,12 +42,13 @@ function SignalChangeRow({ item }: { item: ChangeItem }) {
           <p className="mt-1.5 text-sm text-foreground">
             {item.signal.change.summary}
           </p>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          <p className="label-caps mb-1.5 mt-3 text-xs">Why this matters to you</p>
+          <p className="text-sm leading-relaxed text-muted-foreground">
             {item.whyItMatters}
           </p>
         </div>
         <div className="lg:w-64 shrink-0">
-          <p className="label-caps mb-1.5 text-xs">Action</p>
+          <p className="label-caps mb-1.5 text-xs">Recommended action</p>
           <p className="text-sm leading-relaxed text-muted-foreground">
             {item.action}
           </p>
@@ -84,6 +85,8 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
     changes,
     primaryAction,
     isReturnVisit,
+    briefingLabel,
+    updatedLabel,
   } = briefing;
 
   const hasGroups = groups.length > 0;
@@ -95,9 +98,23 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
           <div className="border-b border-border/60 bg-primary/[0.03] px-6 py-5 md:px-8 md:py-6">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <div>
-                <p className="label-caps mb-2 text-primary">
-                  {isReturnVisit ? "Since your last visit" : "This week"}
-                </p>
+                <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1">
+                  <p className="label-caps text-primary">
+                    {isReturnVisit ? "Since your last visit" : "Week 1 Briefing"}
+                  </p>
+                  <span className="hidden text-muted-foreground/60 sm:inline" aria-hidden>
+                    ·
+                  </span>
+                  <p className="text-xs font-medium text-foreground/80">
+                    {briefingLabel}
+                  </p>
+                  <span className="hidden text-muted-foreground/60 sm:inline" aria-hidden>
+                    ·
+                  </span>
+                  <p className="text-xs text-muted-foreground">
+                    Updated {updatedLabel}
+                  </p>
+                </div>
                 <h2
                   id="what-changed-heading"
                   className="section-title text-2xl md:text-3xl"
@@ -110,7 +127,7 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
               </div>
               {primaryAction && (
                 <div className="w-full sm:w-auto sm:max-w-xs">
-                  <p className="label-caps mb-2">What to do</p>
+                  <p className="label-caps mb-2">Recommended action</p>
                   <div className="rounded-xl border border-primary/20 bg-primary/[0.05] p-4">
                     <p className="text-sm font-semibold">{primaryAction.title}</p>
                     <p className="mt-1 text-xs leading-relaxed text-muted-foreground">

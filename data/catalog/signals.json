@@ -5,15 +5,7 @@
       "name": "Autonomous AI Agents",
       "category": "Artificial Intelligence",
       "interest": "artificial-intelligence",
-      "currentState": "AI systems that plan and execute multi-step tasks are moving from demos into production workflows across enterprise software.",
-      "momentum": 96,
-      "confidence": 88,
-      "previousMomentum": 84,
-      "previousConfidence": 82,
-      "change": {
-        "type": "rising",
-        "summary": "Enterprise adoption accelerated — production deployments up sharply this week."
-      },
+      "defaultCurrentState": "AI systems that plan and execute multi-step tasks are moving from demos into production workflows across enterprise software.",
       "explanation": {
         "base": "Agent frameworks are crossing from experiment to production, reshaping how knowledge work gets done.",
         "byRole": {
@@ -37,39 +29,33 @@
           "investor": "Map the agent stack — models, orchestration, tooling — and identify one underpriced layer."
         }
       },
-      "sources": [
-        { "label": "Curated enterprise adoption survey (mock)", "type": "mock" },
-        { "label": "Job posting trend analysis (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Software",
+        "Financial Services",
+        "Customer Operations"
       ],
-      "affectedIndustries": ["Software", "Financial Services", "Customer Operations"],
-      "affectedRoles": ["Engineers", "Product Managers", "Operations Leads"],
-      "momentumDrivers": [
-        { "label": "Job growth", "value": 38, "unit": "%" },
-        { "label": "Funding growth", "value": 42, "unit": "%" },
-        { "label": "Research activity", "value": 35, "unit": "%" }
+      "affectedRoles": [
+        "Engineers",
+        "Product Managers",
+        "Operations Leads"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 91, "unit": "score" },
-        { "label": "Data consistency", "value": 86, "unit": "score" },
-        { "label": "Regional adoption", "value": 88, "unit": "score" }
+      "relatedSkills": [
+        "agent-orchestration",
+        "llm-engineering"
       ],
-      "relatedSkills": ["agent-orchestration", "llm-engineering"],
-      "relatedOpportunities": ["ai-implementation-services", "vertical-ai-copilots"]
+      "relatedOpportunities": [
+        "ai-implementation-services",
+        "vertical-ai-copilots"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "humanoid-robotics",
       "name": "Humanoid Robotics",
       "category": "Robotics",
       "interest": "robotics",
-      "currentState": "Humanoid robots are entering pilot deployments in warehouses and factories with falling actuator costs.",
-      "momentum": 88,
-      "confidence": 79,
-      "previousMomentum": 76,
-      "previousConfidence": 74,
-      "change": {
-        "type": "rising",
-        "summary": "Pilot deployments doubled — labor shortage pressure is accelerating adoption timelines."
-      },
+      "defaultCurrentState": "Humanoid robots are entering pilot deployments in warehouses and factories with falling actuator costs.",
       "explanation": {
         "base": "Humanoids are shifting from research demos to paid pilots in logistics and manufacturing.",
         "byRole": {
@@ -92,39 +78,32 @@
           "investor": "Track capex signals from logistics and manufacturing leaders investing in automation."
         }
       },
-      "sources": [
-        { "label": "Pilot deployment tracker (mock)", "type": "mock" },
-        { "label": "Manufacturing labor index (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Logistics",
+        "Manufacturing",
+        "Retail Operations"
       ],
-      "affectedIndustries": ["Logistics", "Manufacturing", "Retail Operations"],
-      "affectedRoles": ["Automation Engineers", "Operations Managers", "Supply Chain Leads"],
-      "momentumDrivers": [
-        { "label": "Pilot growth", "value": 52, "unit": "%" },
-        { "label": "Patent growth", "value": 28, "unit": "%" },
-        { "label": "Funding growth", "value": 34, "unit": "%" }
+      "affectedRoles": [
+        "Automation Engineers",
+        "Operations Managers",
+        "Supply Chain Leads"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 78, "unit": "score" },
-        { "label": "Data consistency", "value": 76, "unit": "score" },
-        { "label": "Regional adoption", "value": 72, "unit": "score" }
+      "relatedSkills": [
+        "robotics-perception",
+        "industrial-automation"
       ],
-      "relatedSkills": ["robotics-perception", "industrial-automation"],
-      "relatedOpportunities": ["robotics-integration-services"]
+      "relatedOpportunities": [
+        "robotics-integration-services"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "quantum-error-correction",
       "name": "Quantum Error Correction Breakthroughs",
       "category": "Quantum Computing",
       "interest": "quantum-computing",
-      "currentState": "New error correction techniques are pushing practical quantum timelines forward by reducing qubit overhead requirements.",
-      "momentum": 72,
-      "confidence": 68,
-      "previousMomentum": 58,
-      "previousConfidence": 62,
-      "change": {
-        "type": "new",
-        "summary": "First commercial error correction milestone reported — signal entered tracking this week."
-      },
+      "defaultCurrentState": "New error correction techniques are pushing practical quantum timelines forward by reducing qubit overhead requirements.",
       "explanation": {
         "base": "Error correction progress means quantum advantage timelines may compress faster than consensus forecasts.",
         "byRole": {
@@ -147,39 +126,31 @@
           "investor": "Review your portfolio for quantum-sensitive sectors — finance, pharma, logistics."
         }
       },
-      "sources": [
-        { "label": "Research preprint digest (mock)", "type": "mock" },
-        { "label": "Government quantum initiative report (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Pharmaceuticals",
+        "Finance",
+        "Materials Science"
       ],
-      "affectedIndustries": ["Pharmaceuticals", "Finance", "Materials Science"],
-      "affectedRoles": ["Research Scientists", "Security Architects", "Quant Analysts"],
-      "momentumDrivers": [
-        { "label": "Research activity", "value": 45, "unit": "%" },
-        { "label": "Patent growth", "value": 22, "unit": "%" },
-        { "label": "Funding growth", "value": 18, "unit": "%" }
+      "affectedRoles": [
+        "Research Scientists",
+        "Security Architects",
+        "Quant Analysts"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 68, "unit": "score" },
-        { "label": "Data consistency", "value": 65, "unit": "score" },
-        { "label": "Regional adoption", "value": 60, "unit": "score" }
+      "relatedSkills": [
+        "quantum-literacy"
       ],
-      "relatedSkills": ["quantum-literacy"],
-      "relatedOpportunities": ["quantum-consulting"]
+      "relatedOpportunities": [
+        "quantum-consulting"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "ai-cyber-threats",
       "name": "AI-Powered Cyber Threats",
       "category": "Cybersecurity",
       "interest": "cybersecurity",
-      "currentState": "Attackers are using AI to scale phishing, vulnerability discovery, and social engineering at unprecedented speed.",
-      "momentum": 91,
-      "confidence": 85,
-      "previousMomentum": 86,
-      "previousConfidence": 83,
-      "change": {
-        "type": "rising",
-        "summary": "AI-generated phishing success rates climbed — defensive AI adoption is now urgent."
-      },
+      "defaultCurrentState": "Attackers are using AI to scale phishing, vulnerability discovery, and social engineering at unprecedented speed.",
       "explanation": {
         "base": "Offense is automating faster than defense — organizations without AI security tooling face rising breach risk.",
         "byRole": {
@@ -202,39 +173,32 @@
           "investor": "Compare AI security vendors on detection accuracy and enterprise adoption velocity."
         }
       },
-      "sources": [
-        { "label": "Threat intelligence brief (mock)", "type": "mock" },
-        { "label": "Breach cost index (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Financial Services",
+        "Healthcare",
+        "Government"
       ],
-      "affectedIndustries": ["Financial Services", "Healthcare", "Government"],
-      "affectedRoles": ["Security Engineers", "CISOs", "IT Administrators"],
-      "momentumDrivers": [
-        { "label": "Incident growth", "value": 41, "unit": "%" },
-        { "label": "Job growth", "value": 33, "unit": "%" },
-        { "label": "Funding growth", "value": 29, "unit": "%" }
+      "affectedRoles": [
+        "Security Engineers",
+        "CISOs",
+        "IT Administrators"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 87, "unit": "score" },
-        { "label": "Data consistency", "value": 84, "unit": "score" },
-        { "label": "Regional adoption", "value": 80, "unit": "score" }
+      "relatedSkills": [
+        "ai-security",
+        "zero-trust-architecture"
       ],
-      "relatedSkills": ["ai-security", "zero-trust-architecture"],
-      "relatedOpportunities": ["ai-security-platforms"]
+      "relatedOpportunities": [
+        "ai-security-platforms"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "cloud-cost-reckoning",
       "name": "Cloud Cost Optimization",
       "category": "Cloud Computing",
       "interest": "cloud-computing",
-      "currentState": "Enterprises are renegotiating cloud contracts and adopting FinOps practices as AI workloads inflate infrastructure spend.",
-      "momentum": 78,
-      "confidence": 86,
-      "previousMomentum": 75,
-      "previousConfidence": 85,
-      "change": {
-        "type": "stable",
-        "summary": "Momentum holding steady — cost pressure remains constant but no sharp shift this week."
-      },
+      "defaultCurrentState": "Enterprises are renegotiating cloud contracts and adopting FinOps practices as AI workloads inflate infrastructure spend.",
       "explanation": {
         "base": "Cloud spend governance is becoming a board-level priority as AI training and inference costs scale.",
         "byRole": {
@@ -257,39 +221,32 @@
           "investor": "Evaluate FinOps startups on net retention and enterprise logo velocity."
         }
       },
-      "sources": [
-        { "label": "Cloud spend benchmark report (mock)", "type": "mock" },
-        { "label": "FinOps adoption survey (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Technology",
+        "E-commerce",
+        "Media"
       ],
-      "affectedIndustries": ["Technology", "E-commerce", "Media"],
-      "affectedRoles": ["Cloud Architects", "Engineering Managers", "Finance Ops"],
-      "momentumDrivers": [
-        { "label": "Job growth", "value": 19, "unit": "%" },
-        { "label": "Enterprise adoption", "value": 24, "unit": "%" },
-        { "label": "Tool market growth", "value": 21, "unit": "%" }
+      "affectedRoles": [
+        "Cloud Architects",
+        "Engineering Managers",
+        "Finance Ops"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 90, "unit": "score" },
-        { "label": "Data consistency", "value": 88, "unit": "score" },
-        { "label": "Regional adoption", "value": 85, "unit": "score" }
+      "relatedSkills": [
+        "cloud-architecture",
+        "finops"
       ],
-      "relatedSkills": ["cloud-architecture", "finops"],
-      "relatedOpportunities": ["finops-platforms"]
+      "relatedOpportunities": [
+        "finops-platforms"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "smart-manufacturing",
       "name": "AI-Driven Smart Manufacturing",
       "category": "Manufacturing",
       "interest": "manufacturing",
-      "currentState": "Factories are deploying AI for predictive maintenance, quality control, and production optimization at scale.",
-      "momentum": 85,
-      "confidence": 82,
-      "previousMomentum": 78,
-      "previousConfidence": 80,
-      "change": {
-        "type": "rising",
-        "summary": "Factory AI adoption jumped — predictive maintenance ROI cases are driving executive buy-in."
-      },
+      "defaultCurrentState": "Factories are deploying AI for predictive maintenance, quality control, and production optimization at scale.",
       "explanation": {
         "base": "Manufacturing AI is moving from pilot to standard practice as ROI data becomes undeniable.",
         "byRole": {
@@ -312,39 +269,32 @@
           "investor": "Track industrial AI companies with proven deployment metrics and recurring revenue."
         }
       },
-      "sources": [
-        { "label": "Manufacturing AI adoption index (mock)", "type": "mock" },
-        { "label": "Industry ROI case study (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Automotive",
+        "Electronics",
+        "Industrial Equipment"
       ],
-      "affectedIndustries": ["Automotive", "Electronics", "Industrial Equipment"],
-      "affectedRoles": ["Plant Managers", "Industrial Engineers", "Data Analysts"],
-      "momentumDrivers": [
-        { "label": "Deployment growth", "value": 31, "unit": "%" },
-        { "label": "Job growth", "value": 26, "unit": "%" },
-        { "label": "Funding growth", "value": 22, "unit": "%" }
+      "affectedRoles": [
+        "Plant Managers",
+        "Industrial Engineers",
+        "Data Analysts"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 84, "unit": "score" },
-        { "label": "Data consistency", "value": 82, "unit": "score" },
-        { "label": "Regional adoption", "value": 79, "unit": "score" }
+      "relatedSkills": [
+        "industrial-ai",
+        "predictive-maintenance"
       ],
-      "relatedSkills": ["industrial-ai", "predictive-maintenance"],
-      "relatedOpportunities": ["manufacturing-ai-platforms"]
+      "relatedOpportunities": [
+        "manufacturing-ai-platforms"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "supply-chain-resilience",
       "name": "Supply Chain Resilience Tech",
       "category": "Supply Chain",
       "interest": "supply-chain",
-      "currentState": "Geopolitical tension and nearshoring are driving investment in supply chain visibility and diversification tools.",
-      "momentum": 68,
-      "confidence": 80,
-      "previousMomentum": 74,
-      "previousConfidence": 81,
-      "change": {
-        "type": "falling",
-        "summary": "Momentum cooling — near-term urgency easing as inventory levels normalize."
-      },
+      "defaultCurrentState": "Geopolitical tension and nearshoring are driving investment in supply chain visibility and diversification tools.",
       "explanation": {
         "base": "Supply chain tech hype is moderating, but structural nearshoring trends remain intact long-term.",
         "byRole": {
@@ -367,39 +317,31 @@
           "investor": "Look for supply chain companies with multi-year contracts, not one-time crisis sales."
         }
       },
-      "sources": [
-        { "label": "Global trade flow index (mock)", "type": "mock" },
-        { "label": "Inventory normalization report (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Retail",
+        "Electronics",
+        "Automotive"
       ],
-      "affectedIndustries": ["Retail", "Electronics", "Automotive"],
-      "affectedRoles": ["Supply Chain Managers", "Procurement Leads", "Logistics Directors"],
-      "momentumDrivers": [
-        { "label": "Trade flow shift", "value": -8, "unit": "%" },
-        { "label": "Funding growth", "value": -5, "unit": "%" },
-        { "label": "Job growth", "value": 4, "unit": "%" }
+      "affectedRoles": [
+        "Supply Chain Managers",
+        "Procurement Leads",
+        "Logistics Directors"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 82, "unit": "score" },
-        { "label": "Data consistency", "value": 80, "unit": "score" },
-        { "label": "Regional adoption", "value": 77, "unit": "score" }
+      "relatedSkills": [
+        "supply-chain-analytics"
       ],
-      "relatedSkills": ["supply-chain-analytics"],
-      "relatedOpportunities": ["nearshoring-services"]
+      "relatedOpportunities": [
+        "nearshoring-services"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "ai-diagnostics",
       "name": "AI Clinical Diagnostics",
       "category": "Healthcare",
       "interest": "healthcare",
-      "currentState": "AI diagnostic tools are receiving regulatory approvals and entering clinical workflows for radiology, pathology, and early detection.",
-      "momentum": 89,
-      "confidence": 84,
-      "previousMomentum": 82,
-      "previousConfidence": 81,
-      "change": {
-        "type": "rising",
-        "summary": "Two new regulatory approvals this week — clinical adoption timeline compressing."
-      },
+      "defaultCurrentState": "AI diagnostic tools are receiving regulatory approvals and entering clinical workflows for radiology, pathology, and early detection.",
       "explanation": {
         "base": "Healthcare AI is crossing the regulatory threshold from experimental to standard-of-care candidate.",
         "byRole": {
@@ -422,39 +364,32 @@
           "investor": "Track post-approval clinical AI companies on deployment velocity and payer adoption."
         }
       },
-      "sources": [
-        { "label": "Regulatory approval tracker (mock)", "type": "mock" },
-        { "label": "Clinical adoption survey (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Hospitals",
+        "Diagnostics",
+        "Health Insurance"
       ],
-      "affectedIndustries": ["Hospitals", "Diagnostics", "Health Insurance"],
-      "affectedRoles": ["Radiologists", "Clinical Researchers", "Health IT Directors"],
-      "momentumDrivers": [
-        { "label": "Approval growth", "value": 36, "unit": "%" },
-        { "label": "Funding growth", "value": 28, "unit": "%" },
-        { "label": "Job growth", "value": 22, "unit": "%" }
+      "affectedRoles": [
+        "Radiologists",
+        "Clinical Researchers",
+        "Health IT Directors"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 86, "unit": "score" },
-        { "label": "Data consistency", "value": 83, "unit": "score" },
-        { "label": "Regional adoption", "value": 78, "unit": "score" }
+      "relatedSkills": [
+        "health-informatics",
+        "clinical-ai"
       ],
-      "relatedSkills": ["health-informatics", "clinical-ai"],
-      "relatedOpportunities": ["clinical-ai-platforms"]
+      "relatedOpportunities": [
+        "clinical-ai-platforms"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "embedded-finance",
       "name": "Embedded Finance Expansion",
       "category": "Finance",
       "interest": "finance",
-      "currentState": "Non-financial platforms are integrating payments, lending, and insurance directly into their products.",
-      "momentum": 83,
-      "confidence": 87,
-      "previousMomentum": 79,
-      "previousConfidence": 86,
-      "change": {
-        "type": "rising",
-        "summary": "Platform embed rates climbed — fintech infrastructure is becoming a standard build vs. buy decision."
-      },
+      "defaultCurrentState": "Non-financial platforms are integrating payments, lending, and insurance directly into their products.",
       "explanation": {
         "base": "Every platform is becoming a fintech — financial services distribution is shifting to software embeds.",
         "byRole": {
@@ -477,39 +412,32 @@
           "investor": "Compare embedded finance platforms on attach rate growth and gross margin trends."
         }
       },
-      "sources": [
-        { "label": "Embedded finance market report (mock)", "type": "mock" },
-        { "label": "Platform integration survey (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "E-commerce",
+        "SaaS",
+        "Marketplaces"
       ],
-      "affectedIndustries": ["E-commerce", "SaaS", "Marketplaces"],
-      "affectedRoles": ["Product Managers", "Fintech Engineers", "Compliance Officers"],
-      "momentumDrivers": [
-        { "label": "Integration growth", "value": 27, "unit": "%" },
-        { "label": "Job growth", "value": 23, "unit": "%" },
-        { "label": "Funding growth", "value": 19, "unit": "%" }
+      "affectedRoles": [
+        "Product Managers",
+        "Fintech Engineers",
+        "Compliance Officers"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 89, "unit": "score" },
-        { "label": "Data consistency", "value": 87, "unit": "score" },
-        { "label": "Regional adoption", "value": 84, "unit": "score" }
+      "relatedSkills": [
+        "fintech-engineering",
+        "payments-systems"
       ],
-      "relatedSkills": ["fintech-engineering", "payments-systems"],
-      "relatedOpportunities": ["embedded-finance-apis"]
+      "relatedOpportunities": [
+        "embedded-finance-apis"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "grid-storage",
       "name": "Grid-Scale Energy Storage",
       "category": "Energy",
       "interest": "energy",
-      "currentState": "Battery storage deployments are accelerating as renewables penetration requires grid stabilization at scale.",
-      "momentum": 86,
-      "confidence": 83,
-      "previousMomentum": 80,
-      "previousConfidence": 81,
-      "change": {
-        "type": "rising",
-        "summary": "Utility-scale storage contracts signed at record pace — deployment timeline moved up."
-      },
+      "defaultCurrentState": "Battery storage deployments are accelerating as renewables penetration requires grid stabilization at scale.",
       "explanation": {
         "base": "Energy storage is the bottleneck being solved — grid modernization is creating multi-decade investment cycles.",
         "byRole": {
@@ -532,39 +460,32 @@
           "investor": "Map storage value chain and identify companies with signed utility contracts."
         }
       },
-      "sources": [
-        { "label": "Energy storage deployment index (mock)", "type": "mock" },
-        { "label": "Utility contract tracker (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Utilities",
+        "Renewable Energy",
+        "Manufacturing"
       ],
-      "affectedIndustries": ["Utilities", "Renewable Energy", "Manufacturing"],
-      "affectedRoles": ["Energy Engineers", "Project Managers", "Policy Analysts"],
-      "momentumDrivers": [
-        { "label": "Deployment growth", "value": 33, "unit": "%" },
-        { "label": "Funding growth", "value": 25, "unit": "%" },
-        { "label": "Policy momentum", "value": 20, "unit": "%" }
+      "affectedRoles": [
+        "Energy Engineers",
+        "Project Managers",
+        "Policy Analysts"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 85, "unit": "score" },
-        { "label": "Data consistency", "value": 83, "unit": "score" },
-        { "label": "Regional adoption", "value": 80, "unit": "score" }
+      "relatedSkills": [
+        "energy-systems",
+        "battery-technology"
       ],
-      "relatedSkills": ["energy-systems", "battery-technology"],
-      "relatedOpportunities": ["storage-installation-services"]
+      "relatedOpportunities": [
+        "storage-installation-services"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "ai-native-startups",
       "name": "AI-Native Startup Formation",
       "category": "Startups",
       "interest": "startups",
-      "currentState": "Founding teams are building AI-native companies from day one — not bolting AI onto existing business models.",
-      "momentum": 92,
-      "confidence": 80,
-      "previousMomentum": 70,
-      "previousConfidence": 72,
-      "change": {
-        "type": "new",
-        "summary": "AI-native founding velocity hit a new high — signal entered tracking this week."
-      },
+      "defaultCurrentState": "Founding teams are building AI-native companies from day one — not bolting AI onto existing business models.",
       "explanation": {
         "base": "The default startup playbook is shifting — AI-native architecture is becoming the baseline, not the differentiator.",
         "byRole": {
@@ -587,39 +508,32 @@
           "investor": "Track AI-native seed rounds and note which categories are attracting repeat founders."
         }
       },
-      "sources": [
-        { "label": "Startup formation index (mock)", "type": "mock" },
-        { "label": "Seed funding tracker (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "SaaS",
+        "Developer Tools",
+        "Professional Services"
       ],
-      "affectedIndustries": ["SaaS", "Developer Tools", "Professional Services"],
-      "affectedRoles": ["Founders", "Early Employees", "Angel Investors"],
-      "momentumDrivers": [
-        { "label": "Founding velocity", "value": 48, "unit": "%" },
-        { "label": "Seed funding", "value": 39, "unit": "%" },
-        { "label": "Talent migration", "value": 31, "unit": "%" }
+      "affectedRoles": [
+        "Founders",
+        "Early Employees",
+        "Angel Investors"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 80, "unit": "score" },
-        { "label": "Data consistency", "value": 76, "unit": "score" },
-        { "label": "Regional adoption", "value": 78, "unit": "score" }
+      "relatedSkills": [
+        "ai-product-building",
+        "startup-validation"
       ],
-      "relatedSkills": ["ai-product-building", "startup-validation"],
-      "relatedOpportunities": ["ai-native-saas"]
+      "relatedOpportunities": [
+        "ai-native-saas"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "vc-ai-concentration",
       "name": "VC Capital Concentration in AI",
       "category": "Venture Capital",
       "interest": "venture-capital",
-      "currentState": "Venture capital is concentrating in AI infrastructure and applications — non-AI sectors are seeing reduced early-stage funding.",
-      "momentum": 87,
-      "confidence": 89,
-      "previousMomentum": 84,
-      "previousConfidence": 88,
-      "change": {
-        "type": "rising",
-        "summary": "AI share of total VC funding reached a new high — capital flight from other sectors accelerating."
-      },
+      "defaultCurrentState": "Venture capital is concentrating in AI infrastructure and applications — non-AI sectors are seeing reduced early-stage funding.",
       "explanation": {
         "base": "Capital allocation is reshaping the startup landscape — AI categories are absorbing disproportionate funding.",
         "byRole": {
@@ -642,39 +556,32 @@
           "investor": "Rebalance portfolio exposure — avoid over-concentration in a single AI sub-category."
         }
       },
-      "sources": [
-        { "label": "VC funding report (mock)", "type": "mock" },
-        { "label": "Sector allocation analysis (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Technology",
+        "Financial Services",
+        "Healthcare"
       ],
-      "affectedIndustries": ["Technology", "Financial Services", "Healthcare"],
-      "affectedRoles": ["VC Partners", "Founders", "Corporate Strategists"],
-      "momentumDrivers": [
-        { "label": "AI funding share", "value": 35, "unit": "%" },
-        { "label": "Deal count growth", "value": 22, "unit": "%" },
-        { "label": "Average round size", "value": 18, "unit": "%" }
+      "affectedRoles": [
+        "VC Partners",
+        "Founders",
+        "Corporate Strategists"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 92, "unit": "score" },
-        { "label": "Data consistency", "value": 90, "unit": "score" },
-        { "label": "Regional adoption", "value": 86, "unit": "score" }
+      "relatedSkills": [
+        "venture-analysis",
+        "market-mapping"
       ],
-      "relatedSkills": ["venture-analysis", "market-mapping"],
-      "relatedOpportunities": ["ai-infrastructure-investing"]
+      "relatedOpportunities": [
+        "ai-infrastructure-investing"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "synthetic-biology",
       "name": "Synthetic Biology Breakthroughs",
       "category": "Biotechnology",
       "interest": "biotechnology",
-      "currentState": "Gene editing and synthetic biology tools are moving from research labs into commercial biomanufacturing and therapeutics pipelines.",
-      "momentum": 84,
-      "confidence": 81,
-      "previousMomentum": 76,
-      "previousConfidence": 78,
-      "change": {
-        "type": "rising",
-        "summary": "Biotech hiring and grad program demand rose — synthetic biology skills gaining traction."
-      },
+      "defaultCurrentState": "Gene editing and synthetic biology tools are moving from research labs into commercial biomanufacturing and therapeutics pipelines.",
       "explanation": {
         "base": "Biotechnology is expanding beyond pharma into materials, food, and climate applications.",
         "byRole": {
@@ -697,39 +604,32 @@
           "investor": "Map the biotech value chain and identify one underinvested layer."
         }
       },
-      "sources": [
-        { "label": "Biotech hiring index (mock)", "type": "mock" },
-        { "label": "Research funding tracker (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Pharmaceuticals",
+        "Agriculture",
+        "Materials"
       ],
-      "affectedIndustries": ["Pharmaceuticals", "Agriculture", "Materials"],
-      "affectedRoles": ["Research Scientists", "Lab Technicians", "Bioengineers"],
-      "momentumDrivers": [
-        { "label": "Grad program demand", "value": 28, "unit": "%" },
-        { "label": "Job growth", "value": 22, "unit": "%" },
-        { "label": "Funding growth", "value": 19, "unit": "%" }
+      "affectedRoles": [
+        "Research Scientists",
+        "Lab Technicians",
+        "Bioengineers"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 82, "unit": "score" },
-        { "label": "Data consistency", "value": 79, "unit": "score" },
-        { "label": "Regional adoption", "value": 76, "unit": "score" }
+      "relatedSkills": [
+        "molecular-biology",
+        "bioinformatics"
       ],
-      "relatedSkills": ["molecular-biology", "bioinformatics"],
-      "relatedOpportunities": ["biotech-research-roles"]
+      "relatedOpportunities": [
+        "biotech-research-roles"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "lab-automation-biochem",
       "name": "Lab Automation in Biochemistry",
       "category": "Biochemistry",
       "interest": "biochemistry",
-      "currentState": "Automated lab workflows and AI-assisted analysis are transforming biochemistry research and pharmaceutical R&D.",
-      "momentum": 79,
-      "confidence": 80,
-      "previousMomentum": 72,
-      "previousConfidence": 77,
-      "change": {
-        "type": "rising",
-        "summary": "Automated lab skill demand rising — biochemistry roles increasingly require computational literacy."
-      },
+      "defaultCurrentState": "Automated lab workflows and AI-assisted analysis are transforming biochemistry research and pharmaceutical R&D.",
       "explanation": {
         "base": "Modern biochemistry careers require both bench science and data analysis skills.",
         "byRole": {
@@ -748,39 +648,32 @@
           "investor": "Track lab automation companies by pharma customer adoption."
         }
       },
-      "sources": [
-        { "label": "Pharma R&D trends (mock)", "type": "mock" },
-        { "label": "Grad employment survey (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Pharmaceuticals",
+        "Academic Research",
+        "Diagnostics"
       ],
-      "affectedIndustries": ["Pharmaceuticals", "Academic Research", "Diagnostics"],
-      "affectedRoles": ["Biochemists", "Lab Analysts", "Research Associates"],
-      "momentumDrivers": [
-        { "label": "Job growth", "value": 21, "unit": "%" },
-        { "label": "Tool adoption", "value": 26, "unit": "%" },
-        { "label": "Grad placements", "value": 18, "unit": "%" }
+      "affectedRoles": [
+        "Biochemists",
+        "Lab Analysts",
+        "Research Associates"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 80, "unit": "score" },
-        { "label": "Data consistency", "value": 78, "unit": "score" },
-        { "label": "Regional adoption", "value": 75, "unit": "score" }
+      "relatedSkills": [
+        "lab-data-analysis",
+        "molecular-biology"
       ],
-      "relatedSkills": ["lab-data-analysis", "molecular-biology"],
-      "relatedOpportunities": ["pharma-research-pathways"]
+      "relatedOpportunities": [
+        "pharma-research-pathways"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "life-sciences-ai-research",
       "name": "AI in Life Sciences Research",
       "category": "Life Sciences",
       "interest": "life-sciences",
-      "currentState": "AI is accelerating discovery in biology, chemistry, and physics — from protein folding to materials simulation.",
-      "momentum": 86,
-      "confidence": 83,
-      "previousMomentum": 78,
-      "previousConfidence": 80,
-      "change": {
-        "type": "rising",
-        "summary": "Cross-disciplinary science + AI roles surged — life sciences students with computing skills are in high demand."
-      },
+      "defaultCurrentState": "AI is accelerating discovery in biology, chemistry, and physics — from protein folding to materials simulation.",
       "explanation": {
         "base": "The boundary between life sciences and computational methods is dissolving across research and industry.",
         "byRole": {
@@ -799,39 +692,32 @@
           "investor": "Track life sciences AI companies by publication citations and commercial partnerships."
         }
       },
-      "sources": [
-        { "label": "Research AI adoption survey (mock)", "type": "mock" },
-        { "label": "Science grad employment data (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Academic Research",
+        "Pharmaceuticals",
+        "Environmental Science"
       ],
-      "affectedIndustries": ["Academic Research", "Pharmaceuticals", "Environmental Science"],
-      "affectedRoles": ["Research Scientists", "Graduate Students", "Lab Directors"],
-      "momentumDrivers": [
-        { "label": "Cross-disciplinary hiring", "value": 32, "unit": "%" },
-        { "label": "Research output", "value": 24, "unit": "%" },
-        { "label": "Grad program growth", "value": 20, "unit": "%" }
+      "affectedRoles": [
+        "Research Scientists",
+        "Graduate Students",
+        "Lab Directors"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 84, "unit": "score" },
-        { "label": "Data consistency", "value": 81, "unit": "score" },
-        { "label": "Regional adoption", "value": 78, "unit": "score" }
+      "relatedSkills": [
+        "scientific-computing",
+        "bioinformatics"
       ],
-      "relatedSkills": ["scientific-computing", "bioinformatics"],
-      "relatedOpportunities": ["research-science-pathways"]
+      "relatedOpportunities": [
+        "research-science-pathways"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "creative-ai-tools",
       "name": "AI Tools for Creative Careers",
       "category": "Arts",
       "interest": "arts",
-      "currentState": "AI is reshaping design, media, writing, and UX workflows — creative professionals who adapt are gaining leverage.",
-      "momentum": 81,
-      "confidence": 77,
-      "previousMomentum": 70,
-      "previousConfidence": 72,
-      "change": {
-        "type": "rising",
-        "summary": "Creative AI literacy became a hiring factor — arts graduates with tool fluency are standing out."
-      },
+      "defaultCurrentState": "AI is reshaping design, media, writing, and UX workflows — creative professionals who adapt are gaining leverage.",
       "explanation": {
         "base": "Creative careers are not being replaced by AI — but they are being redefined by it.",
         "byRole": {
@@ -850,39 +736,34 @@
           "investor": "Track creative AI platforms by creator retention and enterprise adoption."
         }
       },
-      "sources": [
-        { "label": "Creative hiring trends (mock)", "type": "mock" },
-        { "label": "Portfolio platform data (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Media",
+        "Design",
+        "Advertising",
+        "Entertainment"
       ],
-      "affectedIndustries": ["Media", "Design", "Advertising", "Entertainment"],
-      "affectedRoles": ["Designers", "Writers", "UX Researchers", "Content Creators"],
-      "momentumDrivers": [
-        { "label": "Tool adoption", "value": 34, "unit": "%" },
-        { "label": "Freelance demand", "value": 27, "unit": "%" },
-        { "label": "Internship growth", "value": 22, "unit": "%" }
+      "affectedRoles": [
+        "Designers",
+        "Writers",
+        "UX Researchers",
+        "Content Creators"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 77, "unit": "score" },
-        { "label": "Data consistency", "value": 74, "unit": "score" },
-        { "label": "Regional adoption", "value": 73, "unit": "score" }
+      "relatedSkills": [
+        "creative-ai-tools",
+        "ux-design"
       ],
-      "relatedSkills": ["creative-ai-tools", "ux-design"],
-      "relatedOpportunities": ["creative-tech-careers"]
+      "relatedOpportunities": [
+        "creative-tech-careers"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     },
     {
       "id": "commerce-analytics-demand",
       "name": "Data Skills in Commerce Careers",
       "category": "Commerce",
       "interest": "commerce",
-      "currentState": "Accounting, finance, and business graduates with data and AI literacy are commanding premium starting salaries.",
-      "momentum": 77,
-      "confidence": 85,
-      "previousMomentum": 73,
-      "previousConfidence": 83,
-      "change": {
-        "type": "rising",
-        "summary": "Employers raised requirements for analytics skills in commerce roles — demand shifted this week."
-      },
+      "defaultCurrentState": "Accounting, finance, and business graduates with data and AI literacy are commanding premium starting salaries.",
       "explanation": {
         "base": "Commerce careers are evolving from pure accounting and management toward data-informed decision making.",
         "byRole": {
@@ -901,24 +782,27 @@
           "investor": "Track commerce SaaS platforms by SMB customer growth and retention."
         }
       },
-      "sources": [
-        { "label": "Graduate placement survey (mock)", "type": "mock" },
-        { "label": "Commerce hiring index (mock)", "type": "mock" }
+      "affectedIndustries": [
+        "Banking",
+        "Consulting",
+        "Retail",
+        "Professional Services"
       ],
-      "affectedIndustries": ["Banking", "Consulting", "Retail", "Professional Services"],
-      "affectedRoles": ["Accountants", "Analysts", "Management Trainees", "Consultants"],
-      "momentumDrivers": [
-        { "label": "Placement rate lift", "value": 19, "unit": "%" },
-        { "label": "Skill requirement growth", "value": 24, "unit": "%" },
-        { "label": "Starting salary premium", "value": 15, "unit": "%" }
+      "affectedRoles": [
+        "Accountants",
+        "Analysts",
+        "Management Trainees",
+        "Consultants"
       ],
-      "confidenceFactors": [
-        { "label": "Source count", "value": 86, "unit": "score" },
-        { "label": "Data consistency", "value": 84, "unit": "score" },
-        { "label": "Regional adoption", "value": 82, "unit": "score" }
+      "relatedSkills": [
+        "financial-analytics",
+        "business-data-literacy"
       ],
-      "relatedSkills": ["financial-analytics", "business-data-literacy"],
-      "relatedOpportunities": ["commerce-analyst-pathways"]
+      "relatedOpportunities": [
+        "commerce-analyst-pathways"
+      ],
+      "introducedInPeriod": "2026-W26",
+      "status": "active"
     }
   ]
 }

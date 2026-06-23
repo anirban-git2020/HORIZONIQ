@@ -1,5 +1,6 @@
 {
-  "briefingPeriod": "2026-W25",
-  "briefingLabel": "Week of June 22, 2026",
-  "updatedAt": "2026-06-22T00:00:00Z"
+  "briefingPeriod": "2026-W26",
+  "briefingLabel": "Week of June 23, 2026",
+  "updatedAt": "2026-06-23T00:00:00Z",
+  "activeBriefingFile": "2026-W26.json"
 }

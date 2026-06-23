@@ -7,6 +7,8 @@ import { Loader2 } from "lucide-react";
 import { TopBar } from "@/components/layout/top-bar";
 import { DashboardHeader } from "@/components/dashboard/dashboard-header";
 import { RoleLens } from "@/components/dashboard/role-lens";
+import { BaselineBriefingBanner } from "@/components/dashboard/baseline-briefing-banner";
+import { NextBriefingPreview } from "@/components/dashboard/next-briefing-preview";
 import { WhatChangedHero } from "@/components/dashboard/what-changed-hero";
 import { Section } from "@/components/dashboard/section";
 import { SignalCard } from "@/components/dashboard/signal-card";
@@ -29,7 +31,7 @@ import type { DashboardSection, RoleId } from "@/lib/types";
 import {
   buildSignalSnapshot,
   clearVisitSnapshot,
-  hasVisitSnapshot,
+  isReturnVisitForPeriod,
   loadVisitSnapshot,
   saveVisitSnapshot,
 } from "@/lib/visit-snapshot";
@@ -69,8 +71,9 @@ export default function DashboardPage() {
   );
 
   const whatChanged = useMemo(() => {
+    const meta = getMeta();
     const snapshot = loadVisitSnapshot();
-    const isReturnVisit = hasVisitSnapshot();
+    const isReturnVisit = isReturnVisitForPeriod(snapshot, meta.briefingPeriod);
     return getWhatChangedForYou(preferences, {
       isReturnVisit,
       previousSignals: snapshot?.signals ?? null,
@@ -102,6 +105,8 @@ export default function DashboardPage() {
   if (!isComplete) {
     return <FullScreenLoader label="Redirecting to setup…" />;
   }
+
+  const isFirstVisit = !whatChanged.isReturnVisit;
 
   const handleReset = () => {
     clearVisitSnapshot();
@@ -214,17 +219,30 @@ export default function DashboardPage() {
   return (
     <div className="min-h-dvh bg-background">
       <TopBar />
-      <DashboardHeader
-        preferences={preferences}
-        briefing={briefing}
-        onReset={handleReset}
-      />
 
-      <main className="container space-y-12 py-12 md:space-y-16 md:py-16">
-        <RoleLens role={role} />
-        <WhatChangedHero briefing={whatChanged} />
+      <main>
+        <div className="container pt-10 md:pt-12">
+          {isFirstVisit && <BaselineBriefingBanner />}
+          <WhatChangedHero briefing={whatChanged} />
+        </div>
 
-        {experience.sectionOrder.map((key) => sections[key])}
+        <DashboardHeader
+          preferences={preferences}
+          briefing={briefing}
+          onReset={handleReset}
+        />
+
+        <div className="container space-y-12 pb-12 md:space-y-16 md:pb-16">
+          <RoleLens role={role} />
+          {experience.sectionOrder.map((key) => sections[key])}
+          {isFirstVisit && (
+            <NextBriefingPreview
+              signals={signals}
+              skills={skills}
+              opportunities={opportunities}
+            />
+          )}
+        </div>
       </main>
 
       <footer className="border-t border-border">

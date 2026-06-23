@@ -25,7 +25,7 @@ const PILLARS = [
 
 export function LandingPillars() {
   return (
-    <section className="container pb-28 md:pb-32">
+    <section className="container pb-16 md:pb-20">
       <FadeIn>
         <p className="label-caps mb-8 text-center">How it works</p>
       </FadeIn>

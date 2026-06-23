@@ -290,6 +290,8 @@ Each signal record must include **change metadata** and **personalized explanati
 
 Mock data must be **refreshed on a weekly cadence** (manual updates acceptable for MVP).
 
+See **`data/README.md`** for the weekly refresh checklist.
+
 Visit state stored in localStorage:
 
 - `lastVisitAt`
@@ -423,10 +425,12 @@ Deprioritized / removed from MVP:
 - Visit snapshot (`lib/visit-snapshot.ts`) for return-visit diffs
 - Role-based personalization ("so what for you")
 - Primary action per briefing
+- Briefing freshness UI in change hero (`briefingLabel`, "Updated [date]")
+- Weekly mock data refresh checklist (`data/README.md`)
+- Briefing-period-aware return visits (`isReturnVisitForPeriod`)
 
 ### Needs Improvement
 
-- Weekly manual data refresh process (operational)
 - Broader signal coverage across all 14 interests
 - Analytics for Week 2 return rate
 - More region-specific explanation variants

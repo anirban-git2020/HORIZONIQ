@@ -35,6 +35,18 @@ export function hasVisitSnapshot(): boolean {
   return snapshot !== null && Object.keys(snapshot.signals).length > 0;
 }
 
+/** Return visits compare against snapshot only within the same briefing period. */
+export function isReturnVisitForPeriod(
+  snapshot: VisitSnapshot | null,
+  briefingPeriod: string
+): boolean {
+  return (
+    snapshot !== null &&
+    Object.keys(snapshot.signals).length > 0 &&
+    snapshot.briefingPeriod === briefingPeriod
+  );
+}
+
 /**
  * First visit stores baseline (previousMomentum) so return visits can show movement.
  * Subsequent saves store current values for the next comparison.

@@ -1,0 +1,175 @@
+HorizonIQ MVP — Product Review
+Scope: MVP V1.1 (Change-First) as implemented
+Method: Review against product memory, retention strategy, and current user flow
+Verdict: Strong strategic direction; execution validates format more than habit today.
+
+Executive Summary
+HorizonIQ has a clear wedge: personalized change intelligence, not another signal feed. The “What Changed Since Your Last Visit” feature is the right retention bet and is directionally well-built.
+
+The MVP currently wins on concept clarity and loses on trust, time-to-value friction, and sustained retention once mock data stops moving. The product feels like a promising briefing prototype, not yet a weekly habit.
+
+Dimension Scores
+Dimension	Score	Summary
+Clarity
+7/10
+Observe → Understand → Act is clear; dashboard still asks users to parse too much
+Time to value
+6/10
+Good promise; onboarding + dashboard length undermines “under 60 seconds”
+Trust
+5/10
+Explainability exists; data honesty and source credibility are weak
+Retention
+6/10
+Right mechanic (visit snapshot); fragile without refresh cadence or cross-session hooks
+Delight
+6/10
+Calm, premium feel; limited moments of “this is unmistakably for me”
+1. Clarity — 7/10
+What works
+Observe → Understand → Act is consistent from onboarding through signal detail.
+Role-aware interests (especially for students) make personalization feel intentional.
+New / Rising / Falling buckets make change scannable.
+“So what for you” on signals answers the right question.
+What hurts
+Too many comprehension layers before value: landing hero → Observe/Understand/Act → Why HorizonIQ → 3 onboarding steps → full dashboard.
+Dashboard cognitive load: hero, role lens, changed signals, skills rising, opportunities, actions — multiple parallel stories.
+First vs return visit framing may confuse: first visit says “This Week,” return visit says “Since Your Last Visit,” but both can look similar if buckets overlap.
+Copy overreach: landing/subheadline references jobs, funding, research ingestion that MVP does not yet perform.
+Clarity risk
+Users may understand what HorizonIQ is but not what to do first on the dashboard.
+
+2. Time to Value — 6/10
+What works
+No login removes friction.
+Role-first onboarding quickly frames relevance.
+Primary action in the change hero points toward decision.
+What hurts
+60-second claim is aspirational, not measured: 3 onboarding steps + multi-select interests (up to 11 for students) often exceeds 60 seconds.
+Value is back-loaded: users must complete onboarding before seeing any intelligence.
+Interest–data mismatch risk: if selected interests lack strong mock coverage, sections feel empty — value drops sharply.
+First visit shows weekly change, not visit-specific delta — the core retention hook activates only on return.
+Time-to-value verdict
+Users get a briefing quickly; they don’t always get their most relevant briefing quickly.
+
+3. Trust — 5/10
+What works
+Mock sources are labeled.
+Momentum/confidence drivers are expandable.
+Change deltas and badges add transparency.
+Design is calm and credible (not “AI hype dashboard”).
+What hurts
+Intelligence feels curated, not observed: scores and momentum can read as authoritative without live provenance.
+Marketing copy outruns product reality (“analyzes jobs, funding, research…”).
+Personalization depth varies: role/region copy helps, but repeat visits may feel templated if mock data is static.
+No credibility anchor: no briefing date freshness indicator beyond label, no “what updated this week” operational signal.
+Trust verdict
+Users may enjoy the first briefing but hesitate to act or return if they suspect the numbers are decorative.
+
+4. Retention — 6/10
+What works
+Correct north star: users return for change, not signals.
+localStorage snapshot comparison enables return-visit diff without accounts.
+Baseline snapshot trick makes second visit show rising/falling with mock data.
+Grouped buckets (New / Rising / Falling) support weekly habit framing.
+What hurts
+Retention is device-bound: clearing storage, switching browsers, or mobile/desktop split breaks the loop.
+Static mock data ceiling: after visit 2–3 with unchanged JSON, “What Changed” loses credibility.
+No pull mechanism: no email digest, notification, or “your briefing updated” hook.
+No action follow-up: product doesn’t close the loop (“Last week we said X — here’s what shifted”).
+Weekly refresh is operational, not productized: without a visible refresh cadence, retention depends on manual ops discipline.
+Retention verdict
+Architecture is right; habit infrastructure is incomplete.
+
+5. Delight — 6/10
+What works
+Premium, readable UI aligned with Apple/Linear/Bloomberg inspiration.
+Personalized one-liners can feel like a “future analyst.”
+Signal detail depth rewards curiosity.
+Change-first hero is a differentiated moment vs generic trend sites.
+What hurts
+Few “only for me” peaks: delight depends heavily on copy, not surprising insight.
+Repeat visits may feel samey without fresh data or narrative progression.
+Limited emotional payoff: users see intelligence but not progress (“you’re ahead of X”).
+Onboarding is functional, not memorable — competent, not remarkable.
+Delight verdict
+Respectful and polished; not yet magical.
+
+Top 5 Improvements (Ranked by Impact)
+1. Productize weekly change freshness (Data + UI)
+Impact: Very high · Retention · Trust
+
+Make “what changed” real and visible every week:
+
+Manual weekly JSON refresh as a scheduled product ritual
+Prominent “Updated [date]” and “X signals changed since last week” in the hero
+Briefing period as a first-class UI element
+Why #1: Without fresh change, the core retention promise decays after 1–2 visits. This is the difference between a demo and a habit product.
+
+2. Radical first-dashboard focus — one decision, not six sections
+Impact: Very high · Clarity · Time to value
+
+Restructure first visit around:
+
+What Changed (top 3 only)
+Why it matters for you (one paragraph)
+One primary action (everything else collapsed or below fold)
+Defer skills, opportunities, and secondary signals until visit 2+ or explicit expand.
+
+Why #2: Current dashboard teaches the product instead of delivering a decision. This directly unlocks the 60-second promise.
+
+3. Trust layer — honest intelligence labeling
+Impact: High · Trust · Retention
+
+Replace ingestion claims with honest MVP framing: “Curated intelligence (mock)” or “Sample briefing”
+Standardize source + reasoning on every signal in the hero (not only detail page)
+Add plain-language “Why we believe this” under momentum/confidence
+Why #3: Trust is the gate to action and return. Users won’t build a weekly habit on intelligence they don’t believe.
+
+4. Cross-session retention hook (lightweight, no full accounts)
+Impact: High · Retention
+
+Options in order of MVP feasibility:
+
+Email capture: “Send my weekly briefing”
+Bookmarkable briefing URL with encoded preferences
+“Briefing updated” browser prompt on return after weekly refresh
+Why #4: localStorage alone cannot sustain weekly habit at scale. Retention needs a pull mechanism outside the session.
+
+5. Compress onboarding to true ≤60 seconds
+Impact: Medium-high · Time to value · Clarity
+
+Smart defaults by role (pre-select 2–3 interests; user can adjust)
+Consider merging region + interests when region has low differentiation impact
+Show preview intelligence after step 1 (role) to reward early progress
+Why #5: Friction before the dashboard is the biggest leak in the funnel. Faster path to first briefing = more users reach the retention feature at all.
+
+Honorable Mentions (Not Top 5, Still Worth Tracking)
+Improvement	Why lower rank
+Action follow-up loop (“You were told X last week…”)
+High retention value, but depends on #1 and #4 first
+Expand mock coverage for all student/science/arts interests
+Important for empty states, narrower than retention core
+Investor/entrepreneur interest tuning
+Persona polish, not platform-wide leverage
+Delight moments (progress, streaks, “you’re early”)
+Meaningful post-PMF, premature before trust/freshness
+Priority Matrix
+                    HIGH IMPACT
+                         │
+    #1 Weekly freshness  │  #2 Dashboard focus
+    #4 Retention hook    │  #3 Trust labeling
+                         │
+    ─────────────────────┼─────────────────────
+                         │
+    Interest coverage    │  #5 Onboarding compression
+    Persona polish       │  Delight/streaks
+                         │
+                    LOW IMPACT
+Bottom Line
+HorizonIQ’s strategy is correct: change-first, personalized, actionable. The MVP proves the briefing format but does not yet prove the weekly habit.
+
+If you fix only one thing: make change visibly real every week.
+If you fix two: add dashboard focus so users decide in 60 seconds, not 6 minutes.
+
+The product is one retention loop away from a compelling MVP story — and that loop is fresh, trusted, weekly change delivered with one clear action.

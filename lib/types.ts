@@ -196,7 +196,10 @@ export interface WhatChangedBriefing {
   primaryAction: ActionView | null;
   groups: SignalChangeGroup[];
   changes: ChangeItem[];
+  briefingPeriod: string;
   briefingLabel: string;
+  updatedAt: string;
+  updatedLabel: string;
 }
 
 /** @deprecated Use RoleExperience */

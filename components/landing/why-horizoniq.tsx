@@ -18,7 +18,7 @@ export function WhyHorizonIQ() {
   return (
     <section
       aria-labelledby="why-horizoniq-heading"
-      className="mt-16 border-t border-border/50 pt-12 md:mt-20 md:pt-14"
+      className="border-t border-border/50 pt-12 md:pt-14"
     >
       <h2
         id="why-horizoniq-heading"

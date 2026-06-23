@@ -98,4 +98,50 @@ export interface MetaRecord {
   briefingPeriod: string;
   briefingLabel: string;
   updatedAt: string;
+  activeBriefingFile: string;
+}
+
+export type SignalCatalogStatus = "active" | "archived" | "draft";
+
+export interface SignalCatalogRecord {
+  id: string;
+  name: string;
+  category: string;
+  interest: InterestId;
+  defaultCurrentState: string;
+  explanation: PersonalizedTextRaw;
+  recommendedAction: PersonalizedTextRaw;
+  affectedIndustries: string[];
+  affectedRoles: string[];
+  relatedSkills: string[];
+  relatedOpportunities: string[];
+  introducedInPeriod: string;
+  status: SignalCatalogStatus;
+}
+
+export interface SignalBriefingState {
+  signalId: string;
+  momentum: number;
+  confidence: number;
+  previousMomentum: number;
+  previousConfidence: number;
+  change: SignalChangeRaw;
+  currentStateOverride?: string;
+  sources: DataSource[];
+  momentumDrivers: EvidenceDriverRaw[];
+  confidenceFactors: EvidenceDriverRaw[];
+}
+
+export interface BriefingRecord {
+  briefingPeriod: string;
+  briefingLabel: string;
+  publishedAt: string;
+  dataProvenance: "curated-mock";
+  buckets: {
+    new: string[];
+    rising: string[];
+    falling: string[];
+    stable: string[];
+  };
+  signalStates: SignalBriefingState[];
 }

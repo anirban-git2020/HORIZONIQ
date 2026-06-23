@@ -15,6 +15,7 @@ import {
 } from "@/lib/data/access";
 import type { SignalRecord } from "@/lib/data/schemas";
 import { INTEREST_LABEL, REGION_LABEL, ROLE_LABEL } from "@/lib/options";
+import { formatBriefingUpdatedAt, formatTodayLabel } from "@/lib/utils";
 import type {
   ActionView,
   Briefing,
@@ -297,21 +298,37 @@ export function getWhatChangedForYou(
           action: signal.recommendedAction,
         }));
 
+  const displayGroups: SignalChangeGroup[] =
+    groups.length > 0
+      ? groups
+      : bucketOrder
+          .map((bucket) => ({
+            bucket,
+            label: bucketLabels[bucket],
+            items: flatChanges.filter(
+              (item) => item.signal.change.type === bucket
+            ),
+          }))
+          .filter((group) => group.items.length > 0);
+
   return {
     title: options.isReturnVisit
       ? "What Changed Since Your Last Visit"
-      : "What Changed This Week",
+      : "Week 1 Briefing",
     subtitle: options.isReturnVisit
       ? options.lastVisitAt
         ? `Compared to your last visit on ${formatVisitDate(options.lastVisitAt)}.`
         : "Compared to your last visit."
-      : meta.briefingLabel,
+      : `Baseline set on ${formatTodayLabel()}. Your next visit shows what changed since today.`,
     isReturnVisit: options.isReturnVisit,
     lastVisitAt: options.lastVisitAt,
     primaryAction,
-    groups,
+    groups: displayGroups,
     changes: flatChanges,
+    briefingPeriod: meta.briefingPeriod,
     briefingLabel: meta.briefingLabel,
+    updatedAt: meta.updatedAt,
+    updatedLabel: formatBriefingUpdatedAt(meta.updatedAt),
   };
 }
 

@@ -1,0 +1,970 @@
+{
+  "briefingPeriod": "2026-W26",
+  "briefingLabel": "Week of June 23, 2026",
+  "publishedAt": "2026-06-23T00:00:00Z",
+  "dataProvenance": "curated-mock",
+  "buckets": {
+    "new": [
+      "quantum-error-correction",
+      "ai-native-startups"
+    ],
+    "rising": [
+      "ai-agents",
+      "humanoid-robotics",
+      "ai-cyber-threats",
+      "smart-manufacturing",
+      "ai-diagnostics",
+      "embedded-finance",
+      "grid-storage",
+      "vc-ai-concentration",
+      "synthetic-biology",
+      "lab-automation-biochem",
+      "life-sciences-ai-research",
+      "creative-ai-tools",
+      "commerce-analytics-demand"
+    ],
+    "falling": [
+      "supply-chain-resilience"
+    ],
+    "stable": [
+      "cloud-cost-reckoning"
+    ]
+  },
+  "signalStates": [
+    {
+      "signalId": "ai-agents",
+      "momentum": 98,
+      "confidence": 90,
+      "previousMomentum": 96,
+      "previousConfidence": 88,
+      "change": {
+        "type": "rising",
+        "summary": "Fortune 500 agent rollouts expanded — pilot-to-production conversion hit a new high this week."
+      },
+      "sources": [
+        {
+          "label": "Curated enterprise adoption survey (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Job posting trend analysis (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Job growth",
+          "value": 38,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 42,
+          "unit": "%"
+        },
+        {
+          "label": "Research activity",
+          "value": 35,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 91,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 86,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 88,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "humanoid-robotics",
+      "momentum": 91,
+      "confidence": 82,
+      "previousMomentum": 88,
+      "previousConfidence": 79,
+      "change": {
+        "type": "rising",
+        "summary": "Warehouse pilot contracts signed in three new regions — hardware costs dropped another 8%."
+      },
+      "sources": [
+        {
+          "label": "Pilot deployment tracker (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Manufacturing labor index (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Pilot growth",
+          "value": 52,
+          "unit": "%"
+        },
+        {
+          "label": "Patent growth",
+          "value": 28,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 34,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 78,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 76,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 72,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "quantum-error-correction",
+      "momentum": 72,
+      "confidence": 68,
+      "previousMomentum": 58,
+      "previousConfidence": 62,
+      "change": {
+        "type": "new",
+        "summary": "First commercial error correction milestone reported — signal entered tracking this week."
+      },
+      "sources": [
+        {
+          "label": "Research preprint digest (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Government quantum initiative report (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Research activity",
+          "value": 45,
+          "unit": "%"
+        },
+        {
+          "label": "Patent growth",
+          "value": 22,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 18,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 68,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 65,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 60,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-cyber-threats",
+      "momentum": 91,
+      "confidence": 85,
+      "previousMomentum": 86,
+      "previousConfidence": 83,
+      "change": {
+        "type": "rising",
+        "summary": "AI-generated phishing success rates climbed — defensive AI adoption is now urgent."
+      },
+      "sources": [
+        {
+          "label": "Threat intelligence brief (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Breach cost index (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Incident growth",
+          "value": 41,
+          "unit": "%"
+        },
+        {
+          "label": "Job growth",
+          "value": 33,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 29,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 87,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 84,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 80,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "cloud-cost-reckoning",
+      "momentum": 78,
+      "confidence": 86,
+      "previousMomentum": 75,
+      "previousConfidence": 85,
+      "change": {
+        "type": "stable",
+        "summary": "Momentum holding steady — cost pressure remains constant but no sharp shift this week."
+      },
+      "sources": [
+        {
+          "label": "Cloud spend benchmark report (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "FinOps adoption survey (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Job growth",
+          "value": 19,
+          "unit": "%"
+        },
+        {
+          "label": "Enterprise adoption",
+          "value": 24,
+          "unit": "%"
+        },
+        {
+          "label": "Tool market growth",
+          "value": 21,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 90,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 88,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 85,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "smart-manufacturing",
+      "momentum": 85,
+      "confidence": 82,
+      "previousMomentum": 78,
+      "previousConfidence": 80,
+      "change": {
+        "type": "rising",
+        "summary": "Factory AI adoption jumped — predictive maintenance ROI cases are driving executive buy-in."
+      },
+      "sources": [
+        {
+          "label": "Manufacturing AI adoption index (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Industry ROI case study (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Deployment growth",
+          "value": 31,
+          "unit": "%"
+        },
+        {
+          "label": "Job growth",
+          "value": 26,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 22,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 84,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 82,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 79,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "supply-chain-resilience",
+      "momentum": 68,
+      "confidence": 80,
+      "previousMomentum": 74,
+      "previousConfidence": 81,
+      "change": {
+        "type": "falling",
+        "summary": "Momentum cooling — near-term urgency easing as inventory levels normalize."
+      },
+      "sources": [
+        {
+          "label": "Global trade flow index (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Inventory normalization report (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Trade flow shift",
+          "value": -8,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": -5,
+          "unit": "%"
+        },
+        {
+          "label": "Job growth",
+          "value": 4,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 82,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 80,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 77,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-diagnostics",
+      "momentum": 89,
+      "confidence": 84,
+      "previousMomentum": 82,
+      "previousConfidence": 81,
+      "change": {
+        "type": "rising",
+        "summary": "Two new regulatory approvals this week — clinical adoption timeline compressing."
+      },
+      "sources": [
+        {
+          "label": "Regulatory approval tracker (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Clinical adoption survey (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Approval growth",
+          "value": 36,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 28,
+          "unit": "%"
+        },
+        {
+          "label": "Job growth",
+          "value": 22,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 86,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 83,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 78,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "embedded-finance",
+      "momentum": 83,
+      "confidence": 87,
+      "previousMomentum": 79,
+      "previousConfidence": 86,
+      "change": {
+        "type": "rising",
+        "summary": "Platform embed rates climbed — fintech infrastructure is becoming a standard build vs. buy decision."
+      },
+      "sources": [
+        {
+          "label": "Embedded finance market report (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Platform integration survey (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Integration growth",
+          "value": 27,
+          "unit": "%"
+        },
+        {
+          "label": "Job growth",
+          "value": 23,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 19,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 89,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 87,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 84,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "grid-storage",
+      "momentum": 86,
+      "confidence": 83,
+      "previousMomentum": 80,
+      "previousConfidence": 81,
+      "change": {
+        "type": "rising",
+        "summary": "Utility-scale storage contracts signed at record pace — deployment timeline moved up."
+      },
+      "sources": [
+        {
+          "label": "Energy storage deployment index (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Utility contract tracker (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Deployment growth",
+          "value": 33,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 25,
+          "unit": "%"
+        },
+        {
+          "label": "Policy momentum",
+          "value": 20,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 85,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 83,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 80,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-native-startups",
+      "momentum": 92,
+      "confidence": 80,
+      "previousMomentum": 70,
+      "previousConfidence": 72,
+      "change": {
+        "type": "new",
+        "summary": "AI-native founding velocity hit a new high — signal entered tracking this week."
+      },
+      "sources": [
+        {
+          "label": "Startup formation index (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Seed funding tracker (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Founding velocity",
+          "value": 48,
+          "unit": "%"
+        },
+        {
+          "label": "Seed funding",
+          "value": 39,
+          "unit": "%"
+        },
+        {
+          "label": "Talent migration",
+          "value": 31,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 80,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 76,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 78,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "vc-ai-concentration",
+      "momentum": 87,
+      "confidence": 89,
+      "previousMomentum": 84,
+      "previousConfidence": 88,
+      "change": {
+        "type": "rising",
+        "summary": "AI share of total VC funding reached a new high — capital flight from other sectors accelerating."
+      },
+      "sources": [
+        {
+          "label": "VC funding report (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Sector allocation analysis (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "AI funding share",
+          "value": 35,
+          "unit": "%"
+        },
+        {
+          "label": "Deal count growth",
+          "value": 22,
+          "unit": "%"
+        },
+        {
+          "label": "Average round size",
+          "value": 18,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 92,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 90,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 86,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "synthetic-biology",
+      "momentum": 84,
+      "confidence": 81,
+      "previousMomentum": 76,
+      "previousConfidence": 78,
+      "change": {
+        "type": "rising",
+        "summary": "Biotech hiring and grad program demand rose — synthetic biology skills gaining traction."
+      },
+      "sources": [
+        {
+          "label": "Biotech hiring index (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Research funding tracker (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Grad program demand",
+          "value": 28,
+          "unit": "%"
+        },
+        {
+          "label": "Job growth",
+          "value": 22,
+          "unit": "%"
+        },
+        {
+          "label": "Funding growth",
+          "value": 19,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 82,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 79,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 76,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "lab-automation-biochem",
+      "momentum": 79,
+      "confidence": 80,
+      "previousMomentum": 72,
+      "previousConfidence": 77,
+      "change": {
+        "type": "rising",
+        "summary": "Automated lab skill demand rising — biochemistry roles increasingly require computational literacy."
+      },
+      "sources": [
+        {
+          "label": "Pharma R&D trends (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Grad employment survey (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Job growth",
+          "value": 21,
+          "unit": "%"
+        },
+        {
+          "label": "Tool adoption",
+          "value": 26,
+          "unit": "%"
+        },
+        {
+          "label": "Grad placements",
+          "value": 18,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 80,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 78,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 75,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "life-sciences-ai-research",
+      "momentum": 86,
+      "confidence": 83,
+      "previousMomentum": 78,
+      "previousConfidence": 80,
+      "change": {
+        "type": "rising",
+        "summary": "Cross-disciplinary science + AI roles surged — life sciences students with computing skills are in high demand."
+      },
+      "sources": [
+        {
+          "label": "Research AI adoption survey (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Science grad employment data (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Cross-disciplinary hiring",
+          "value": 32,
+          "unit": "%"
+        },
+        {
+          "label": "Research output",
+          "value": 24,
+          "unit": "%"
+        },
+        {
+          "label": "Grad program growth",
+          "value": 20,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 84,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 81,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 78,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "creative-ai-tools",
+      "momentum": 81,
+      "confidence": 77,
+      "previousMomentum": 70,
+      "previousConfidence": 72,
+      "change": {
+        "type": "rising",
+        "summary": "Creative AI literacy became a hiring factor — arts graduates with tool fluency are standing out."
+      },
+      "sources": [
+        {
+          "label": "Creative hiring trends (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Portfolio platform data (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Tool adoption",
+          "value": 34,
+          "unit": "%"
+        },
+        {
+          "label": "Freelance demand",
+          "value": 27,
+          "unit": "%"
+        },
+        {
+          "label": "Internship growth",
+          "value": 22,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 77,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 74,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 73,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "commerce-analytics-demand",
+      "momentum": 77,
+      "confidence": 85,
+      "previousMomentum": 73,
+      "previousConfidence": 83,
+      "change": {
+        "type": "rising",
+        "summary": "Employers raised requirements for analytics skills in commerce roles — demand shifted this week."
+      },
+      "sources": [
+        {
+          "label": "Graduate placement survey (mock)",
+          "type": "mock"
+        },
+        {
+          "label": "Commerce hiring index (mock)",
+          "type": "mock"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Placement rate lift",
+          "value": 19,
+          "unit": "%"
+        },
+        {
+          "label": "Skill requirement growth",
+          "value": 24,
+          "unit": "%"
+        },
+        {
+          "label": "Starting salary premium",
+          "value": 15,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Source count",
+          "value": 86,
+          "unit": "score"
+        },
+        {
+          "label": "Data consistency",
+          "value": 84,
+          "unit": "score"
+        },
+        {
+          "label": "Regional adoption",
+          "value": 82,
+          "unit": "score"
+        }
+      ]
+    }
+  ]
+}

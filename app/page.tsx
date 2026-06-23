@@ -4,6 +4,7 @@ import { IntelligenceBackground } from "@/components/layout/intelligence-backgro
 import { TopBar } from "@/components/layout/top-bar";
 import { LandingHero } from "@/components/landing/landing-hero";
 import { LandingPillars } from "@/components/landing/landing-pillars";
+import { WhyHorizonIQ } from "@/components/landing/why-horizoniq";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -26,6 +27,9 @@ export default function LandingPage() {
         <main>
           <LandingHero />
           <LandingPillars />
+          <div className="container max-w-4xl pb-28 md:pb-32">
+            <WhyHorizonIQ />
+          </div>
         </main>
 
         <footer className="border-t border-border/50">

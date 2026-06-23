@@ -31,6 +31,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Preferences migration for legacy region/interest IDs
 - Pre-onboarding hero copy on landing page (value proposition + 60-second promise)
 - Observe → Understand → Act steps above role selection (`observe-understand-act-steps.tsx`)
+- "Why HorizonIQ?" section below onboarding steps (Signals, Skills, Opportunities)
 - Student interest fields: biotechnology, biochemistry, life sciences, arts, commerce
 - Role-aware curated interest lists per persona
 

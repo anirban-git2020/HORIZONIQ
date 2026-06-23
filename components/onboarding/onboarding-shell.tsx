@@ -1,6 +1,7 @@
 import { IntelligenceBackground } from "@/components/layout/intelligence-background";
 import { TopBar } from "@/components/layout/top-bar";
 import { StepProgress } from "@/components/onboarding/step-progress";
+import { WhyHorizonIQ } from "@/components/onboarding/why-horizoniq";
 import { FadeIn } from "@/components/motion/fade-in";
 
 export function OnboardingShell({
@@ -41,6 +42,8 @@ export function OnboardingShell({
           </FadeIn>
 
           {children}
+
+          <WhyHorizonIQ />
 
           <FadeIn delay={0.16}>
             <div className="mt-12 flex items-center justify-between gap-4 border-t border-border/50 pt-8">

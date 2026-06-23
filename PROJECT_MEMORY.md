@@ -414,45 +414,32 @@ Deprioritized / removed from MVP:
 
 - Core vision and product direction
 - User personas and design principles
-- Basic onboarding flow (role → region → interests)
-- Initial dashboard (signals, skills, opportunities, actions)
-- Role-based personalization layer (`ROLE_EXPERIENCE`)
-- Signal cards with momentum / confidence evidence
-- Data in TypeScript modules (`lib/data/`) — not yet JSON files
+- Onboarding flow (role → region → interests) with 8 regions and 14 categorized interests
+- **What Changed For You** hero section
+- Dashboard with change-first signals, skills rising, opportunities, actions
+- Signal detail pages (`/signals/[id]`) with change-first layout
+- JSON data layer (`data/*.json`) with change metadata
+- Data access layer (`lib/data/access.ts`)
+- Visit snapshot (`lib/visit-snapshot.ts`) for return-visit diffs
+- Role-based personalization ("so what for you")
+- Primary action per briefing
 
 ### Needs Improvement
 
-- Personalization depth ("so what for you" per signal)
-- Signal intelligence and explainability
-- Recommended actions (collapse to one primary action)
-- Signal detail pages (not yet built)
-- User trust (labeled sources, change transparency)
-- **What Changed For You** layer (not yet built)
-- Regions and interests (codebase does not match spec — see gaps below)
-- Data layer (migrate TS modules → JSON with change metadata)
+- Weekly manual data refresh process (operational)
+- Broader signal coverage across all 14 interests
+- Analytics for Week 2 return rate
+- More region-specific explanation variants
 
 ### Not Yet Started
 
-- `signals.json`, `skills.json`, `jobs.json`, `recommendations.json`
-- Change-aware data model
-- localStorage visit snapshot
 - Live data ingestion
-- Relationship graph (future — partial UI exists prematurely)
+- Relationship graph (future)
 - Discussion boards
 - User accounts
 - Premium features
 - Community features
-
-### Known Codebase Gaps (vs Spec)
-
-| Area | Current State | Target State |
-|---|---|---|
-| Regions | 6 regions incl. "Asia Pacific" + "Global" | 8 fixed regions |
-| Interests | 8 flat tech topics | 14 categorized interests (Technology / Industry / Business) |
-| Data | TypeScript modules | JSON files with change metadata |
-| Dashboard hero | None | "What Changed Since Your Last Visit" |
-| Signal detail | No route | Dedicated change-first page |
-| Relationship UI | Signal map + flow components exist | Remove / hide for MVP |
+- Email digest for weekly briefing
 
 ---
 

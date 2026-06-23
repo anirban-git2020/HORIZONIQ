@@ -1,0 +1,90 @@
+{
+  "north-america": {
+    "label": "North America",
+    "context": "Enterprise AI adoption and venture funding lead globally.",
+    "hubs": ["San Francisco", "New York", "Toronto", "Austin"],
+    "growthBias": {
+      "artificial-intelligence": 8,
+      "startups": 6,
+      "venture-capital": 5,
+      "cloud-computing": 4
+    }
+  },
+  "europe": {
+    "label": "Europe",
+    "context": "Regulated AI, climate tech, and industrial automation are accelerating.",
+    "hubs": ["London", "Berlin", "Paris", "Stockholm"],
+    "growthBias": {
+      "energy": 6,
+      "manufacturing": 5,
+      "cybersecurity": 4,
+      "healthcare": 3
+    }
+  },
+  "india": {
+    "label": "India",
+    "context": "AI services, fintech, and engineering talent scale fastest here.",
+    "hubs": ["Bangalore", "Hyderabad", "Mumbai", "Delhi NCR"],
+    "growthBias": {
+      "artificial-intelligence": 10,
+      "cloud-computing": 7,
+      "finance": 6,
+      "product-management": 5
+    }
+  },
+  "china": {
+    "label": "China",
+    "context": "Manufacturing automation, EVs, and AI deployment at national scale.",
+    "hubs": ["Shenzhen", "Shanghai", "Beijing", "Hangzhou"],
+    "growthBias": {
+      "robotics": 8,
+      "manufacturing": 7,
+      "energy": 6,
+      "artificial-intelligence": 5
+    }
+  },
+  "southeast-asia": {
+    "label": "Southeast Asia",
+    "context": "Mobile-first fintech and supply chain hubs are expanding rapidly.",
+    "hubs": ["Singapore", "Jakarta", "Ho Chi Minh City", "Bangkok"],
+    "growthBias": {
+      "finance": 7,
+      "supply-chain": 6,
+      "startups": 5,
+      "entrepreneurship": 4
+    }
+  },
+  "middle-east": {
+    "label": "Middle East",
+    "context": "Sovereign investment in AI, energy transition, and infrastructure.",
+    "hubs": ["Dubai", "Riyadh", "Abu Dhabi", "Doha"],
+    "growthBias": {
+      "energy": 8,
+      "finance": 5,
+      "artificial-intelligence": 4,
+      "venture-capital": 4
+    }
+  },
+  "africa": {
+    "label": "Africa",
+    "context": "Mobile payments, solar energy, and distributed healthcare are leapfrogging.",
+    "hubs": ["Lagos", "Nairobi", "Cape Town", "Cairo"],
+    "growthBias": {
+      "finance": 8,
+      "energy": 6,
+      "healthcare": 5,
+      "entrepreneurship": 4
+    }
+  },
+  "latin-america": {
+    "label": "Latin America",
+    "context": "Fintech, agtech, and nearshoring drive regional growth.",
+    "hubs": ["São Paulo", "Mexico City", "Bogotá", "Buenos Aires"],
+    "growthBias": {
+      "finance": 6,
+      "supply-chain": 5,
+      "startups": 5,
+      "manufacturing": 4
+    }
+  }
+}

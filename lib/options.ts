@@ -2,20 +2,36 @@ import {
   Atom,
   Bot,
   Briefcase,
+  Cloud,
   Cpu,
   Dna,
+  Factory,
+  FlaskConical,
   Globe2,
   GraduationCap,
-  Leaf,
-  Lightbulb,
+  HeartPulse,
   Landmark,
-  type LucideIcon,
+  Lightbulb,
+  LineChart,
+  Microscope,
+  Palette,
   Rocket,
   ShieldCheck,
+  Sparkles,
+  Target,
   TrendingUp,
+  Truck,
+  Zap,
+  type LucideIcon,
 } from "lucide-react";
 
-import type { InterestId, RegionId, RoleExperience, RoleId } from "@/lib/types";
+import type {
+  InterestCategory,
+  InterestId,
+  RegionId,
+  RoleExperience,
+  RoleId,
+} from "@/lib/types";
 
 export interface RoleOption {
   id: RoleId;
@@ -81,27 +97,39 @@ export const REGIONS: RegionOption[] = [
     icon: Globe2,
   },
   {
-    id: "asia-pacific",
-    label: "Asia Pacific",
-    description: "India, SEA, China, ANZ",
+    id: "india",
+    label: "India",
+    description: "Bangalore, Mumbai & beyond",
     icon: Globe2,
   },
   {
-    id: "middle-east-africa",
-    label: "Middle East & Africa",
-    description: "GCC & Sub-Saharan growth",
+    id: "china",
+    label: "China",
+    description: "Shenzhen, Shanghai & beyond",
+    icon: Globe2,
+  },
+  {
+    id: "southeast-asia",
+    label: "Southeast Asia",
+    description: "Singapore, Jakarta & beyond",
+    icon: Globe2,
+  },
+  {
+    id: "middle-east",
+    label: "Middle East",
+    description: "Dubai, Riyadh & GCC",
+    icon: Globe2,
+  },
+  {
+    id: "africa",
+    label: "Africa",
+    description: "Lagos, Nairobi & beyond",
     icon: Globe2,
   },
   {
     id: "latin-america",
     label: "Latin America",
-    description: "Brazil, Mexico & beyond",
-    icon: Globe2,
-  },
-  {
-    id: "global",
-    label: "Global",
-    description: "Worldwide intelligence",
+    description: "São Paulo, Mexico City & beyond",
     icon: Globe2,
   },
 ];
@@ -110,57 +138,227 @@ export interface InterestOption {
   id: InterestId;
   label: string;
   description: string;
+  category: InterestCategory;
   icon: LucideIcon;
 }
 
+/**
+ * Curated interest lists per role — no Business category in onboarding.
+ * Full catalog remains in INTERESTS for data layer; users only pick from these.
+ */
+export const ROLE_INTEREST_IDS: Record<RoleId, InterestId[]> = {
+  student: [
+    "artificial-intelligence",
+    "cybersecurity",
+    "cloud-computing",
+    "robotics",
+    "biotechnology",
+    "biochemistry",
+    "life-sciences",
+    "healthcare",
+    "energy",
+    "arts",
+    "commerce",
+  ],
+  professional: [
+    "artificial-intelligence",
+    "cybersecurity",
+    "cloud-computing",
+    "healthcare",
+    "finance",
+    "manufacturing",
+  ],
+  entrepreneur: [
+    "artificial-intelligence",
+    "healthcare",
+    "finance",
+    "energy",
+    "manufacturing",
+  ],
+  investor: [
+    "artificial-intelligence",
+    "healthcare",
+    "finance",
+    "energy",
+    "quantum-computing",
+    "cybersecurity",
+  ],
+};
+
+export const INTEREST_CATEGORIES: {
+  id: InterestCategory;
+  label: string;
+}[] = [
+  { id: "technology", label: "Technology" },
+  { id: "science", label: "Science" },
+  { id: "arts-commerce", label: "Arts & Commerce" },
+  { id: "industry", label: "Industry" },
+  { id: "business", label: "Business" },
+];
+
+/** Student onboarding groups — technology, science, and arts/commerce careers. */
+export const STUDENT_INTEREST_SECTIONS: {
+  label: string;
+  ids: InterestId[];
+}[] = [
+  {
+    label: "Technology",
+    ids: [
+      "artificial-intelligence",
+      "cybersecurity",
+      "cloud-computing",
+      "robotics",
+    ],
+  },
+  {
+    label: "Science",
+    ids: [
+      "biotechnology",
+      "biochemistry",
+      "life-sciences",
+      "healthcare",
+      "energy",
+    ],
+  },
+  {
+    label: "Arts & Commerce",
+    ids: ["arts", "commerce"],
+  },
+];
+
 export const INTERESTS: InterestOption[] = [
   {
-    id: "ai",
-    label: "AI & Machine Learning",
-    description: "Agents, foundation models, applied AI",
+    id: "artificial-intelligence",
+    label: "Artificial Intelligence",
+    description: "Agents, models, and applied AI",
+    category: "technology",
     icon: Cpu,
   },
   {
     id: "robotics",
-    label: "Robotics & Automation",
-    description: "Humanoids, industrial automation",
+    label: "Robotics",
+    description: "Automation, humanoids, industrial systems",
+    category: "technology",
     icon: Bot,
   },
   {
-    id: "biotech",
-    label: "Biotech & Health",
-    description: "Synthetic biology, longevity, medtech",
-    icon: Dna,
-  },
-  {
-    id: "climate",
-    label: "Climate & Energy",
-    description: "Grid storage, clean energy, climate tech",
-    icon: Leaf,
-  },
-  {
-    id: "fintech",
-    label: "Fintech & Digital Assets",
-    description: "Embedded finance, payments, tokenization",
-    icon: Landmark,
-  },
-  {
-    id: "space",
-    label: "Space & Frontier Tech",
-    description: "Launch, in-orbit, deep tech",
-    icon: Rocket,
+    id: "quantum-computing",
+    label: "Quantum Computing",
+    description: "Hardware, algorithms, error correction",
+    category: "technology",
+    icon: Atom,
   },
   {
     id: "cybersecurity",
     label: "Cybersecurity",
     description: "AI threats, zero trust, resilience",
+    category: "technology",
     icon: ShieldCheck,
   },
   {
-    id: "quantum",
-    label: "Quantum Computing",
-    description: "Hardware, error correction, algorithms",
-    icon: Atom,
+    id: "cloud-computing",
+    label: "Cloud Computing",
+    description: "Infrastructure, FinOps, distributed systems",
+    category: "technology",
+    icon: Cloud,
+  },
+  {
+    id: "manufacturing",
+    label: "Manufacturing",
+    description: "Smart factories, industrial AI",
+    category: "industry",
+    icon: Factory,
+  },
+  {
+    id: "supply-chain",
+    label: "Supply Chain",
+    description: "Logistics, visibility, nearshoring",
+    category: "industry",
+    icon: Truck,
+  },
+  {
+    id: "healthcare",
+    label: "Healthcare",
+    description: "Clinical AI, diagnostics, medtech",
+    category: "science",
+    icon: HeartPulse,
+  },
+  {
+    id: "finance",
+    label: "Finance",
+    description: "Embedded finance, payments, banking",
+    category: "industry",
+    icon: Landmark,
+  },
+  {
+    id: "energy",
+    label: "Energy",
+    description: "Storage, renewables, grid modernization",
+    category: "science",
+    icon: Zap,
+  },
+  {
+    id: "biotechnology",
+    label: "Biotechnology",
+    description: "Synthetic biology, genomics, and bioengineering",
+    category: "science",
+    icon: Dna,
+  },
+  {
+    id: "biochemistry",
+    label: "Biochemistry",
+    description: "Molecular biology, lab sciences, and drug discovery",
+    category: "science",
+    icon: FlaskConical,
+  },
+  {
+    id: "life-sciences",
+    label: "Life Sciences",
+    description: "Biology, chemistry, physics, and research careers",
+    category: "science",
+    icon: Microscope,
+  },
+  {
+    id: "arts",
+    label: "Arts & Creative Fields",
+    description: "Design, media, humanities, and creative careers",
+    category: "arts-commerce",
+    icon: Palette,
+  },
+  {
+    id: "commerce",
+    label: "Commerce & Business Studies",
+    description: "Accounting, economics, finance, and management",
+    category: "arts-commerce",
+    icon: Briefcase,
+  },
+  {
+    id: "entrepreneurship",
+    label: "Entrepreneurship",
+    description: "Starting and scaling new ventures",
+    category: "business",
+    icon: Sparkles,
+  },
+  {
+    id: "startups",
+    label: "Startups",
+    description: "Early-stage companies and ecosystems",
+    category: "business",
+    icon: Rocket,
+  },
+  {
+    id: "venture-capital",
+    label: "Venture Capital",
+    description: "Funding, allocation, sector momentum",
+    category: "business",
+    icon: LineChart,
+  },
+  {
+    id: "product-management",
+    label: "Product Management",
+    description: "Strategy, roadmaps, product-led growth",
+    category: "business",
+    icon: Target,
   },
 ];
 
@@ -183,14 +381,14 @@ export const ROLE_EXPERIENCE: Record<RoleId, RoleExperience> = {
     lensTitle: "Learning intelligence",
     lensSubtitle: "Skills, careers, and paths tailored to where the world is going.",
     focusAreas: ["Skills", "Careers", "Learning paths"],
-    skillsTitle: "Skills to Learn Next",
-    skillsQuestion: "What should you learn to stay ahead?",
-    actionsTitle: "Your Learning Moves",
-    actionsQuestion: "What should you do this month?",
+    skillsTitle: "Skills Rising",
+    skillsQuestion: "Which skills gained demand this week?",
+    actionsTitle: "Your Next Move",
+    actionsQuestion: "What should you do this week?",
     signalsQuestion: "What is changing in your future?",
-    opportunitiesTitle: "Growing Careers",
-    opportunitiesQuestion: "Where are the jobs and entry points?",
-    sectionOrder: ["map", "signals", "skills", "opportunities", "actions"],
+    opportunitiesTitle: "New This Week",
+    opportunitiesQuestion: "Where are new opportunities emerging?",
+    sectionOrder: ["signals", "skills", "opportunities", "actions"],
     accentClass: "border-l-primary",
   },
   professional: {
@@ -199,14 +397,14 @@ export const ROLE_EXPERIENCE: Record<RoleId, RoleExperience> = {
     lensTitle: "Industry intelligence",
     lensSubtitle: "Emerging skills, promotions, and shifts in your field.",
     focusAreas: ["Emerging skills", "Promotions", "Industry shifts"],
-    skillsTitle: "Capabilities to Master",
-    skillsQuestion: "What should you master next?",
-    actionsTitle: "Your Career Moves",
-    actionsQuestion: "What should you do next?",
+    skillsTitle: "Skills Rising",
+    skillsQuestion: "Which capabilities gained demand this week?",
+    actionsTitle: "Your Next Move",
+    actionsQuestion: "What should you do this week?",
     signalsQuestion: "What is changing in your industry?",
-    opportunitiesTitle: "Industry Leverage",
-    opportunitiesQuestion: "Where is the leverage in your field?",
-    sectionOrder: ["map", "signals", "skills", "actions", "opportunities"],
+    opportunitiesTitle: "Heating Up",
+    opportunitiesQuestion: "Where is momentum building in your field?",
+    sectionOrder: ["signals", "skills", "actions", "opportunities"],
     accentClass: "border-l-success",
   },
   entrepreneur: {
@@ -215,14 +413,14 @@ export const ROLE_EXPERIENCE: Record<RoleId, RoleExperience> = {
     lensTitle: "Market intelligence",
     lensSubtitle: "Startup opportunities, market gaps, and demand signals.",
     focusAreas: ["Startup opportunities", "Market gaps", "Demand signals"],
-    skillsTitle: "Capabilities to Build",
-    skillsQuestion: "What should you build?",
-    actionsTitle: "Your Build Moves",
-    actionsQuestion: "Where should you act first?",
+    skillsTitle: "Skills Rising",
+    skillsQuestion: "Which capabilities matter most right now?",
+    actionsTitle: "Your Next Move",
+    actionsQuestion: "Where should you act first this week?",
     signalsQuestion: "What is changing in the market?",
-    opportunitiesTitle: "Market Gaps",
-    opportunitiesQuestion: "Where is the white space?",
-    sectionOrder: ["map", "signals", "opportunities", "actions", "skills"],
+    opportunitiesTitle: "New This Week",
+    opportunitiesQuestion: "Where is white space opening up?",
+    sectionOrder: ["signals", "opportunities", "actions", "skills"],
     accentClass: "border-l-warning",
   },
   investor: {
@@ -231,17 +429,144 @@ export const ROLE_EXPERIENCE: Record<RoleId, RoleExperience> = {
     lensTitle: "Capital intelligence",
     lensSubtitle: "Capital flows, growth signals, and sector momentum.",
     focusAreas: ["Capital flows", "Growth signals", "Sector momentum"],
-    skillsTitle: "Investment Capabilities",
-    skillsQuestion: "What should you understand to deploy capital?",
-    actionsTitle: "Your Allocation Moves",
-    actionsQuestion: "Where should capital flow next?",
+    skillsTitle: "Skills Rising",
+    skillsQuestion: "Which investment capabilities matter now?",
+    actionsTitle: "Your Next Move",
+    actionsQuestion: "Where should capital flow this week?",
     signalsQuestion: "What is moving markets?",
-    opportunitiesTitle: "Sector Momentum",
+    opportunitiesTitle: "Heating Up",
     opportunitiesQuestion: "Where is capital concentrating?",
-    sectionOrder: ["map", "signals", "opportunities", "skills", "actions"],
+    sectionOrder: ["signals", "opportunities", "skills", "actions"],
     accentClass: "border-l-primary",
   },
 };
 
 /** @deprecated Use ROLE_EXPERIENCE */
 export const ROLE_CONTENT = ROLE_EXPERIENCE;
+
+export const ROLE_INTEREST_COPY: Record<
+  RoleId,
+  { title: string; subtitle: string; sectionLabel: string }
+> = {
+  student: {
+    title: "What do you want to study and build toward?",
+    subtitle:
+      "Pick skills and fields across technology, science, arts, and commerce — we'll track what's rising in each.",
+    sectionLabel: "Your focus areas",
+  },
+  professional: {
+    title: "What's shaping your career?",
+    subtitle:
+      "Select the skills and sectors most relevant to your role — nothing else.",
+    sectionLabel: "Your focus areas",
+  },
+  entrepreneur: {
+    title: "Which markets are you pursuing?",
+    subtitle:
+      "Pick the sectors and technologies where opportunity is forming right now.",
+    sectionLabel: "Markets to watch",
+  },
+  investor: {
+    title: "Where is capital moving?",
+    subtitle:
+      "Select the sectors and technologies with the strongest momentum signals.",
+    sectionLabel: "Sectors & themes",
+  },
+};
+
+const INTEREST_BY_ID = new Map(INTERESTS.map((i) => [i.id, i]));
+
+/** Skill-oriented labels shown to students only. */
+const STUDENT_SKILL_LABELS: Partial<Record<InterestId, { label: string; description: string }>> = {
+  "artificial-intelligence": {
+    label: "AI & Machine Learning",
+    description: "Models, agents, and applied AI — one of the fastest-growing skill areas.",
+  },
+  robotics: {
+    label: "Robotics & Automation",
+    description: "Engineering paths in perception, control, and physical systems.",
+  },
+  cybersecurity: {
+    label: "Cybersecurity",
+    description: "Defensive skills and AI security — critical across every industry.",
+  },
+  "cloud-computing": {
+    label: "Cloud & Infrastructure",
+    description: "Build and operate modern software at scale.",
+  },
+  biotechnology: {
+    label: "Biotechnology",
+    description: "Genomics, synthetic biology, and bioengineering career paths.",
+  },
+  biochemistry: {
+    label: "Biochemistry",
+    description: "Lab sciences, molecular research, and pharmaceutical pathways.",
+  },
+  "life-sciences": {
+    label: "Life Sciences",
+    description: "Biology, chemistry, physics, and academic or industry research.",
+  },
+  healthcare: {
+    label: "Healthcare & Medtech",
+    description: "Clinical careers, diagnostics, and health technology.",
+  },
+  energy: {
+    label: "Energy & Environment",
+    description: "Clean energy, climate science, and sustainability careers.",
+  },
+  arts: {
+    label: "Arts & Creative Fields",
+    description: "Design, media, UX, content, and humanities-driven careers.",
+  },
+  commerce: {
+    label: "Commerce & Business",
+    description: "Accounting, economics, finance, and management career paths.",
+  },
+};
+
+export function getStudentInterestSections() {
+  return STUDENT_INTEREST_SECTIONS;
+}
+
+export function getInterestsForRole(role: RoleId): InterestOption[] {
+  return ROLE_INTEREST_IDS[role]
+    .map((id) => INTEREST_BY_ID.get(id))
+    .filter((i): i is InterestOption => i !== undefined);
+}
+
+export function getInterestDisplayForRole(
+  role: RoleId,
+  interest: InterestOption
+): { label: string; description: string } {
+  if (role === "student") {
+    const skill = STUDENT_SKILL_LABELS[interest.id];
+    if (skill) return skill;
+  }
+  return { label: interest.label, description: interest.description };
+}
+
+export function getInterestCategoriesForRole(
+  role: RoleId
+): { id: InterestCategory; label: string }[] {
+  const visible = getInterestsForRole(role);
+  const categoryIds = new Set(visible.map((i) => i.category));
+  return INTEREST_CATEGORIES.filter((c) => categoryIds.has(c.id));
+}
+
+export function getInterestsByCategoryForRole(
+  role: RoleId,
+  category: InterestCategory
+) {
+  return getInterestsForRole(role).filter((i) => i.category === category);
+}
+
+export function getInterestsByCategory(category: InterestCategory) {
+  return INTERESTS.filter((i) => i.category === category);
+}
+
+export function isInterestAllowedForRole(
+  role: RoleId,
+  interestId: InterestId
+): boolean {
+  return ROLE_INTEREST_IDS[role].includes(interestId);
+}

@@ -6,25 +6,32 @@ import { Loader2 } from "lucide-react";
 
 import { TopBar } from "@/components/layout/top-bar";
 import { DashboardHeader } from "@/components/dashboard/dashboard-header";
-import { StoryIntro } from "@/components/dashboard/story-intro";
 import { RoleLens } from "@/components/dashboard/role-lens";
-import { SignalMap } from "@/components/dashboard/signal-map";
+import { WhatChangedHero } from "@/components/dashboard/what-changed-hero";
 import { Section } from "@/components/dashboard/section";
 import { SignalCard } from "@/components/dashboard/signal-card";
 import { SkillCard } from "@/components/dashboard/skill-card";
 import { OpportunityCard } from "@/components/dashboard/opportunity-card";
 import { ActionCard } from "@/components/dashboard/action-card";
 import { Stagger, StaggerItem } from "@/components/motion/fade-in";
+import { getMeta } from "@/lib/data/access";
 import { ROLE_EXPERIENCE } from "@/lib/options";
-import { usePreferences } from "@/lib/preferences";
-import type { DashboardSection, RoleId } from "@/lib/types";
 import {
   getBriefing,
   getOpportunities,
   getRecommendations,
   getRecommendedSkills,
   getTopSignals,
+  getWhatChangedForYou,
 } from "@/lib/personalize";
+import { usePreferences } from "@/lib/preferences";
+import type { DashboardSection, RoleId } from "@/lib/types";
+import {
+  buildSignalSnapshot,
+  diffAgainstSnapshot,
+  loadVisitSnapshot,
+  saveVisitSnapshot,
+} from "@/lib/visit-snapshot";
 
 function FullScreenLoader({ label }: { label: string }) {
   return (
@@ -60,10 +67,32 @@ export default function DashboardPage() {
     [preferences]
   );
 
+  const whatChanged = useMemo(() => {
+    const snapshot = loadVisitSnapshot();
+    const meta = getMeta();
+    const isReturnVisit =
+      snapshot !== null && snapshot.briefingPeriod === meta.briefingPeriod;
+    const visitChanges = isReturnVisit
+      ? diffAgainstSnapshot(signals, snapshot.signals)
+      : null;
+    return getWhatChangedForYou(preferences, visitChanges, isReturnVisit);
+  }, [preferences, signals]);
+
+  useEffect(() => {
+    if (!hydrated || !isComplete || signals.length === 0) return;
+    const meta = getMeta();
+    saveVisitSnapshot({
+      lastVisitAt: new Date().toISOString(),
+      briefingPeriod: meta.briefingPeriod,
+      signals: buildSignalSnapshot(signals),
+    });
+  }, [hydrated, isComplete, signals]);
+
   const role = (preferences.role ?? "professional") as RoleId;
   const experience = ROLE_EXPERIENCE[role];
   const leadSignal = signals[0];
   const restSignals = signals.slice(1);
+  const secondaryActions = actions.filter((a) => !a.isPrimary);
 
   if (!hydrated) {
     return <FullScreenLoader label="Loading your preferences…" />;
@@ -79,12 +108,11 @@ export default function DashboardPage() {
   };
 
   const sections: Record<DashboardSection, React.ReactNode> = {
-    map: <SignalMap key="map" signals={signals} />,
     signals: (
       <Section
         key="signals"
         step={sectionStep(experience.sectionOrder, "signals")}
-        title="Top Signals"
+        title="Changed Signals"
         question={experience.signalsQuestion}
       >
         {signals.length > 0 ? (
@@ -154,11 +182,25 @@ export default function DashboardPage() {
       >
         {actions.length > 0 ? (
           <Stagger className="grid gap-4">
-            {actions.map((action, index) => (
-              <StaggerItem key={action.id}>
-                <ActionCard action={action} index={index} />
-              </StaggerItem>
-            ))}
+            {actions
+              .filter((a) => a.isPrimary)
+              .map((action, index) => (
+                <StaggerItem key={action.id}>
+                  <ActionCard action={action} index={index} />
+                </StaggerItem>
+              ))}
+            {secondaryActions.length > 0 && (
+              <>
+                <p className="label-caps pt-2 text-muted-foreground">
+                  Also consider
+                </p>
+                {secondaryActions.map((action, index) => (
+                  <StaggerItem key={action.id}>
+                    <ActionCard action={action} index={index + 1} />
+                  </StaggerItem>
+                ))}
+              </>
+            )}
           </Stagger>
         ) : (
           <EmptyState />
@@ -178,14 +220,14 @@ export default function DashboardPage() {
 
       <main className="container space-y-12 py-12 md:space-y-16 md:py-16">
         <RoleLens role={role} />
-        <StoryIntro lead={briefing.storyLead} />
+        <WhatChangedHero briefing={whatChanged} />
 
         {experience.sectionOrder.map((key) => sections[key])}
       </main>
 
       <footer className="border-t border-border">
         <div className="container py-8 text-center text-sm text-muted-foreground">
-          HorizonIQ · Personalized intelligence based on curated demo data.
+          HorizonIQ · Curated demo data · {briefing.briefingLabel}
         </div>
       </footer>
     </div>

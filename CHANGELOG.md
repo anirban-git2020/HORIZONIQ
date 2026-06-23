@@ -16,42 +16,37 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - MVP version bumped to **V1.1 (Change-First)**
 - MVP now validates **habit** (Week 2 return), not just first-visit format
 
-### Added (Planned)
+### Added
 
-- Dashboard hero: "What Changed Since Your Last Visit"
+- JSON datasets: `data/signals.json`, `data/skills.json`, `data/jobs.json`, `data/recommendations.json`, `data/regions.json`, `data/meta.json`
+- Data access layer: `lib/data/access.ts`, `lib/data/schemas.ts`
+- Visit snapshot: `lib/visit-snapshot.ts` (localStorage, no login)
+- Dashboard hero: `components/dashboard/what-changed-hero.tsx`
+- Change badges: `components/dashboard/change-badge.tsx`
+- Signal detail page: `app/signals/[id]/page.tsx` (change-first layout)
+- Personalized "so what for you" on every signal
 - First-visit fallback: "What Changed This Week"
-- Dashboard contract: What Changed · Why It Matters · What To Do
-- Signal contract: Current State · Change Since Last Period · Explanation · Recommended Action
-- Personalized explanations by role, region, and interests
-- Change metadata in mock datasets
-- localStorage visit snapshot for return-visit diffs
-- Signal detail view (change-first layout)
-- JSON data files: `signals.json`, `skills.json`, `jobs.json`, `recommendations.json`
-- Feature retention filter (litmus test for all new features)
-- Retention success metrics (Week 2 return, change hero engagement)
-- `ROADMAP.md` with phased build plan
+- Return visit: "What Changed Since Your Last Visit"
+- Interest categories in onboarding (Technology / Industry / Business)
+- Preferences migration for legacy region/interest IDs
 
-### Changed (Planned)
+### Changed
 
 - Data layer: TypeScript modules → JSON files with change metadata
 - Regions: 6 combined regions → 8 fixed regions
-- Interests: 8 flat topics → 14 categorized interests (Technology / Industry / Business)
-- Skills section → "Skills Rising" (change-framed)
-- Opportunities section → "New This Week" / "Heating Up"
-- Actions section → one primary action per briefing
-- Momentum / confidence → always show change delta
-- Signal detail → lead with What Changed, not overview
-- Product feel: "personal future analyst" → "personal future analyst who tells you what changed"
+- Interests: 8 flat topics → 14 categorized interests
+- Dashboard: hero-first layout, removed signal map
+- Signal cards: change badges, delta indicators, link to detail
+- Skills section → "Skills Rising" with demand change
+- Opportunities section → "New This Week" / "Heating Up" with growth change
+- Actions section → primary action + secondary suggestions
+- Dashboard header title → "What changed for you"
 
-### Removed / Deprioritized (MVP)
+### Removed
 
-- Signal relationship map (existing UI to be hidden)
-- Relationship flow visualizations (existing UI to be hidden)
-- Community features
-- Discussion boards
-- User accounts
-- Live data ingestion
-- Premium features
+- Signal relationship map and flow UI
+- Legacy TypeScript data modules (`intelligence.ts`, `signal-intelligence.ts`, etc.)
+- `map` section from dashboard section order
 
 ### Documentation
 

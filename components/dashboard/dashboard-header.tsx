@@ -45,7 +45,7 @@ export function DashboardHeader({
                 {role ? ROLE_EXPERIENCE[role].greeting : "Your edge"}
               </p>
               <h1 className="display-title text-3xl md:text-4xl lg:text-[2.75rem]">
-                Your intelligence briefing
+                What changed for you
               </h1>
               <p className="body-lg mt-4 text-balance">{briefing.summary}</p>
 

@@ -7,20 +7,44 @@ export type RoleId =
 export type RegionId =
   | "north-america"
   | "europe"
-  | "asia-pacific"
-  | "middle-east-africa"
-  | "latin-america"
-  | "global";
+  | "india"
+  | "china"
+  | "southeast-asia"
+  | "middle-east"
+  | "africa"
+  | "latin-america";
+
+export type InterestCategory =
+  | "technology"
+  | "industry"
+  | "business"
+  | "science"
+  | "arts-commerce";
 
 export type InterestId =
-  | "ai"
+  | "artificial-intelligence"
   | "robotics"
-  | "biotech"
-  | "climate"
-  | "fintech"
-  | "space"
+  | "quantum-computing"
   | "cybersecurity"
-  | "quantum";
+  | "cloud-computing"
+  | "manufacturing"
+  | "supply-chain"
+  | "healthcare"
+  | "finance"
+  | "energy"
+  | "biotechnology"
+  | "biochemistry"
+  | "life-sciences"
+  | "arts"
+  | "commerce"
+  | "entrepreneurship"
+  | "startups"
+  | "venture-capital"
+  | "product-management";
+
+export type ChangeType = "new" | "rising" | "falling" | "stable";
+export type DemandChange = "new" | "rising" | "falling" | "stable";
+export type GrowthChange = "new" | "rising" | "falling" | "stable";
 
 export interface Preferences {
   role: RoleId | null;
@@ -37,61 +61,12 @@ export interface EvidenceDriver {
   unit: "%" | "score";
 }
 
-export interface SignalSeed {
-  id: string;
-  name: string;
-  category: string;
-  momentum: number;
-  confidence: number;
-  summary: string;
-  roleImpact: Partial<Record<RoleId, string>> & {
-    student: string;
-    professional: string;
-    entrepreneur: string;
-  };
-}
-
-export interface SkillSeed {
-  name: string;
-  demand: Demand;
-  summary: string;
-}
-
-export interface OpportunitySeed {
-  id: string;
-  title: string;
-  sector: string;
-  baseGrowth: number;
-  summary: string;
-  roleAngle: Partial<Record<RoleId, string>> & {
-    student: string;
-    professional: string;
-    entrepreneur: string;
-  };
-}
-
-export interface ActionSeed {
-  title: string;
-  detail: string;
-  priority: Priority;
-}
-
-export interface InterestContent {
-  signals: SignalSeed[];
-  skills: Record<"student" | "professional" | "entrepreneur", SkillSeed[]>;
-  opportunities: OpportunitySeed[];
-  actions: Record<"student" | "professional" | "entrepreneur", ActionSeed[]>;
-}
-
-export interface RegionContent {
-  hubs: string[];
-  context: string;
-  hubsByInterest: Partial<Record<InterestId, string[]>>;
-  growthBias: Partial<Record<InterestId, number>>;
+export interface DataSource {
+  label: string;
+  type: "mock" | "live";
 }
 
 export type DashboardSection =
-  | "map"
   | "signals"
   | "skills"
   | "opportunities"
@@ -116,29 +91,40 @@ export interface RoleExperience {
 
 export interface SignalView {
   id: string;
-  seedId: string;
   name: string;
   category: string;
-  momentum: number;
-  confidence: number;
-  summary: string;
-  impact: string;
-  whyItMatters: string;
-  causedBy: string[];
-  impacts: string[];
-  benefits: string[];
-  actions: string[];
-  momentumDrivers: EvidenceDriver[];
-  confidenceFactors: EvidenceDriver[];
-  rank: number;
   interest: InterestId;
   interestLabel: string;
+  currentState: string;
+  momentum: number;
+  confidence: number;
+  previousMomentum: number;
+  previousConfidence: number;
+  momentumDelta: number;
+  confidenceDelta: number;
+  change: {
+    type: ChangeType;
+    summary: string;
+  };
+  soWhatForYou: string;
+  recommendedAction: string;
+  explanation: string;
+  sources: DataSource[];
+  affectedIndustries: string[];
+  affectedRoles: string[];
+  momentumDrivers: EvidenceDriver[];
+  confidenceFactors: EvidenceDriver[];
+  relatedSkills: string[];
+  relatedOpportunities: string[];
+  rank: number;
 }
 
 export interface SkillView {
   id: string;
   name: string;
   demand: Demand;
+  demandChange: DemandChange;
+  changeSummary: string;
   summary: string;
   interest: InterestId;
   interestLabel: string;
@@ -149,6 +135,8 @@ export interface OpportunityView {
   title: string;
   sector: string;
   growth: number;
+  growthChange: GrowthChange;
+  changeSummary: string;
   summary: string;
   angle: string;
   hubs: string[];
@@ -162,40 +150,45 @@ export interface ActionView {
   title: string;
   detail: string;
   priority: Priority;
+  isPrimary: boolean;
+  changeReason: string;
   interest: InterestId | null;
   interestLabel: string | null;
-}
-
-export interface MapNode {
-  id: string;
-  label: string;
-  type: "driver" | "signal" | "outcome";
-  signalSeedId?: string;
-  momentum?: number;
-}
-
-export interface MapLink {
-  source: string;
-  target: string;
-  strength: number;
-}
-
-export interface SignalMapGraph {
-  nodes: MapNode[];
-  links: MapLink[];
 }
 
 export interface Briefing {
   summary: string;
   regionContext: string;
   hubs: string[];
-  storyLead: string;
+  briefingPeriod: string;
+  briefingLabel: string;
   stats: {
     signals: number;
     skills: number;
     opportunities: number;
     actions: number;
   };
+}
+
+export interface ChangeItem {
+  signal: SignalView;
+  whyItMatters: string;
+  action: string;
+  visitChange?: {
+    momentumDelta: number;
+    confidenceDelta: number;
+    previousMomentum?: number;
+    previousConfidence?: number;
+  };
+}
+
+export interface WhatChangedBriefing {
+  title: string;
+  subtitle: string;
+  isReturnVisit: boolean;
+  primaryAction: ActionView | null;
+  changes: ChangeItem[];
+  briefingLabel: string;
 }
 
 /** @deprecated Use RoleExperience */

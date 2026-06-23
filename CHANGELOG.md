@@ -41,6 +41,7 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Interests: 8 flat topics → 14 categorized interests with role-specific onboarding lists
 - Student onboarding: Technology, Science, and Arts & Commerce sections
 - Landing hero headline and subheadline updated for onboarding clarity
+- Role card copy: benefit-first taglines with clear "For…" audience lines
 - Dashboard: hero-first layout, removed signal map
 - Signal cards: change badges, delta indicators, link to detail
 - Skills section → "Skills Rising" with demand change

@@ -45,33 +45,29 @@ export const ROLES: RoleOption[] = [
   {
     id: "student",
     label: "Student",
-    tagline: "Build the right skills early",
-    description:
-      "See which technologies, careers, and skills are rising so you can plan what to learn next.",
+    tagline: "For students choosing skills and career paths.",
+    description: "Learn what's rising before your peers.",
     icon: GraduationCap,
   },
   {
     id: "professional",
     label: "Professional",
-    tagline: "Stay ahead in your industry",
-    description:
-      "Track shifts in your field, spot emerging risks, and keep your career resilient.",
+    tagline: "For professionals growing and staying relevant.",
+    description: "Stay ahead of change in your field.",
     icon: Briefcase,
   },
   {
     id: "entrepreneur",
     label: "Entrepreneur",
-    tagline: "Find tomorrow's opportunities",
-    description:
-      "Discover growing markets and emerging trends before they become obvious.",
+    tagline: "For founders looking for their next market.",
+    description: "Spot opportunities before they're crowded.",
     icon: Lightbulb,
   },
   {
     id: "investor",
     label: "Investor",
-    tagline: "Follow capital and momentum",
-    description:
-      "Track sector momentum, capital flows, and growth signals before they price in.",
+    tagline: "For investors tracking where capital should move.",
+    description: "See momentum before the market does.",
     icon: TrendingUp,
   },
 ];

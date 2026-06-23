@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { OnboardingShell } from "@/components/onboarding/onboarding-shell";
+import { ObserveUnderstandActSteps } from "@/components/onboarding/observe-understand-act-steps";
 import { OptionCard } from "@/components/onboarding/option-card";
 import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
@@ -41,6 +42,7 @@ export default function RolePage() {
         </>
       }
     >
+      <ObserveUnderstandActSteps />
       <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
         {ROLES.map((role) => (
           <StaggerItem key={role.id}>

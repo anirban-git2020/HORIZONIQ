@@ -29,12 +29,18 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - Return visit: "What Changed Since Your Last Visit"
 - Interest categories in onboarding (Technology / Industry / Business)
 - Preferences migration for legacy region/interest IDs
+- Pre-onboarding hero copy on landing page (value proposition + 60-second promise)
+- Observe → Understand → Act steps above role selection (`observe-understand-act-steps.tsx`)
+- Student interest fields: biotechnology, biochemistry, life sciences, arts, commerce
+- Role-aware curated interest lists per persona
 
 ### Changed
 
 - Data layer: TypeScript modules → JSON files with change metadata
 - Regions: 6 combined regions → 8 fixed regions
-- Interests: 8 flat topics → 14 categorized interests
+- Interests: 8 flat topics → 14 categorized interests with role-specific onboarding lists
+- Student onboarding: Technology, Science, and Arts & Commerce sections
+- Landing hero headline and subheadline updated for onboarding clarity
 - Dashboard: hero-first layout, removed signal map
 - Signal cards: change badges, delta indicators, link to detail
 - Skills section → "Skills Rising" with demand change

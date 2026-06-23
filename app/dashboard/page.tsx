@@ -8,7 +8,7 @@ import { TopBar } from "@/components/layout/top-bar";
 import { DashboardHeader } from "@/components/dashboard/dashboard-header";
 import { RoleLens } from "@/components/dashboard/role-lens";
 import { BaselineBriefingBanner } from "@/components/dashboard/baseline-briefing-banner";
-import { NextBriefingPreview } from "@/components/dashboard/next-briefing-preview";
+import { SignalsWeAreTracking } from "@/components/dashboard/signals-we-are-tracking";
 import { WhatChangedHero } from "@/components/dashboard/what-changed-hero";
 import { Section } from "@/components/dashboard/section";
 import { SignalCard } from "@/components/dashboard/signal-card";
@@ -221,28 +221,46 @@ export default function DashboardPage() {
       <TopBar />
 
       <main>
-        <div className="container pt-10 md:pt-12">
+        <div className="container space-y-12 pt-10 pb-12 md:space-y-12 md:pb-16">
           {isFirstVisit && <BaselineBriefingBanner />}
           <WhatChangedHero briefing={whatChanged} />
+          {isFirstVisit && <SignalsWeAreTracking signals={signals} />}
         </div>
 
-        <DashboardHeader
-          preferences={preferences}
-          briefing={briefing}
-          onReset={handleReset}
-        />
-
-        <div className="container space-y-12 pb-12 md:space-y-16 md:pb-16">
-          <RoleLens role={role} />
-          {experience.sectionOrder.map((key) => sections[key])}
-          {isFirstVisit && (
-            <NextBriefingPreview
-              signals={signals}
-              skills={skills}
-              opportunities={opportunities}
+        {!isFirstVisit && (
+          <>
+            <DashboardHeader
+              preferences={preferences}
+              briefing={briefing}
+              onReset={handleReset}
             />
-          )}
-        </div>
+
+            <div className="container space-y-12 pb-12 md:space-y-16 md:pb-16">
+              <RoleLens role={role} />
+              {experience.sectionOrder.map((key) => sections[key])}
+            </div>
+          </>
+        )}
+
+        {isFirstVisit && (
+          <div className="container border-t border-border/50 pb-12 pt-8">
+            <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
+              <a
+                href="/onboarding/interests"
+                className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+              >
+                Adjust interests
+              </a>
+              <button
+                type="button"
+                onClick={handleReset}
+                className="text-muted-foreground underline-offset-4 hover:text-foreground hover:underline"
+              >
+                Start over
+              </button>
+            </div>
+          </div>
+        )}
       </main>
 
       <footer className="border-t border-border">

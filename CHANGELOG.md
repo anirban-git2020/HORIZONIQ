@@ -46,13 +46,15 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 - **`formatBriefingUpdatedAt`** utility for consistent date display
 - **`isReturnVisitForPeriod`** — return-visit diff only within the same `briefingPeriod`
 - **`data/README.md`** — weekly mock data refresh checklist
-- **First-visit return framing:** Week 1 Briefing label, baseline banner, today's date, Next Briefing Preview, signal tracking footer
+- **First-visit return framing:** Week 1 Briefing label, baseline banner, today's date, signal tracking watchlist, signal detail tracking footer
 
 ### Changed
 
 - Signal data access reads **catalog + active briefing** instead of flat `signals.json`
 - First-visit hero title → **Week 1 Briefing** (return visits unchanged)
 - First-visit subtitle explains baseline date and next-visit delta
+- **Next Briefing Preview** replaced with **Signals We're Tracking For You** (3–5 personalized signals + next-briefing reveal list)
+- First-visit dashboard simplified: hero + watchlist only; full sections on return visits
 - `MetaRecord` extended with `activeBriefingFile`
 - New schema types: `SignalCatalogRecord`, `SignalBriefingState`, `BriefingRecord`
 - Data layer: TypeScript modules → JSON files with change metadata

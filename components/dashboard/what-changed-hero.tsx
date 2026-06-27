@@ -1,20 +1,36 @@
 "use client";
 
 import Link from "next/link";
+import { useCallback } from "react";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
 import {
   ChangeBadge,
   DeltaIndicator,
 } from "@/components/dashboard/change-badge";
 import { ProvenanceBadge } from "@/components/trust/provenance-badge";
 import { getDataProvenance } from "@/lib/data/access";
+import {
+  rememberSignalSource,
+  track,
+  useTrackOnVisible,
+} from "@/lib/analytics";
+import type { SignalSource } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 import type { ChangeItem, SignalChangeGroup, WhatChangedBriefing } from "@/lib/types";
+
+function trackSignalClick(item: ChangeItem, source: SignalSource) {
+  rememberSignalSource(source);
+  track("signal_click", {
+    signalId: item.signal.id,
+    source,
+    changeType: item.signal.change.type,
+  });
+}
 
 function SignalChangeRow({ item }: { item: ChangeItem }) {
   return (
@@ -34,6 +50,7 @@ function SignalChangeRow({ item }: { item: ChangeItem }) {
         <div className="min-w-0 flex-1">
           <Link
             href={`/signals/${item.signal.id}`}
+            onClick={() => trackSignalClick(item, "change-hero")}
             className="group inline-flex items-center gap-2"
           >
             <h4 className="text-base font-semibold leading-snug transition-colors group-hover:text-primary">
@@ -94,8 +111,17 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
   const provenance = getDataProvenance();
   const hasGroups = groups.length > 0;
 
+  const onHeroVisible = useCallback(() => {
+    track("change_hero_viewed", {
+      visitType: isReturnVisit ? "return" : "first",
+      briefingPeriod: briefing.briefingPeriod,
+    });
+  }, [isReturnVisit, briefing.briefingPeriod]);
+
+  const heroRef = useTrackOnVisible<HTMLElement>(onHeroVisible);
+
   return (
-    <section aria-labelledby="what-changed-heading">
+    <section ref={heroRef} aria-labelledby="what-changed-heading">
       <FadeIn>
         <PremiumCard glow className="overflow-hidden">
           <div className="border-b border-border/60 bg-primary/[0.03] px-6 py-5 md:px-8 md:py-6">
@@ -161,6 +187,7 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
             <div className="border-t border-border/60 px-6 py-4 md:px-8">
               <Link
                 href={`/signals/${changes[0].signal.id}`}
+                onClick={() => trackSignalClick(changes[0], "change-hero-cta")}
                 className={cn(
                   buttonVariants({ variant: "secondary", size: "sm" })
                 )}

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
@@ -28,6 +28,7 @@ import {
   getWhatChangedForYou,
 } from "@/lib/personalize";
 import { usePreferences } from "@/lib/preferences";
+import { getSessionElapsedMs, track } from "@/lib/analytics";
 import type { DashboardSection, RoleId } from "@/lib/types";
 import { formatBriefingUpdatedAt } from "@/lib/utils";
 import {
@@ -83,6 +84,23 @@ export default function DashboardPage() {
     });
   }, [preferences]);
 
+  const viewTracked = useRef(false);
+  useEffect(() => {
+    if (viewTracked.current) return;
+    if (!hydrated || !isComplete || !preferences.role || !preferences.region) {
+      return;
+    }
+    viewTracked.current = true;
+    const visitType = whatChanged.isReturnVisit ? "return" : "first";
+    track("dashboard_viewed", {
+      visitType,
+      briefingPeriod: whatChanged.briefingPeriod,
+      role: preferences.role,
+      region: preferences.region,
+      timeToValueMs: visitType === "first" ? getSessionElapsedMs() : null,
+    });
+  }, [hydrated, isComplete, preferences.role, preferences.region, whatChanged]);
+
   useEffect(() => {
     if (!hydrated || !isComplete || signals.length === 0) return;
     const meta = getMeta();
@@ -111,6 +129,7 @@ export default function DashboardPage() {
   const isFirstVisit = !whatChanged.isReturnVisit;
 
   const handleReset = () => {
+    track("start_over", {});
     clearVisitSnapshot();
     reset();
     router.push("/");

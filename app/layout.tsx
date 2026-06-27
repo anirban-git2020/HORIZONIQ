@@ -3,6 +3,7 @@ import { IBM_Plex_Sans, Inter } from "next/font/google";
 
 import { PreferencesProvider } from "@/lib/preferences";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
 import "./globals.css";
 
 const inter = Inter({
@@ -41,6 +42,7 @@ export default function RootLayout({
       <body className="min-h-dvh bg-background font-sans text-foreground">
         <ThemeProvider>
           <PreferencesProvider>{children}</PreferencesProvider>
+          <AnalyticsProvider />
         </ThemeProvider>
       </body>
     </html>

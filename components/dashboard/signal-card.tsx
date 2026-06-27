@@ -8,20 +8,40 @@ import { Badge } from "@/components/ui/badge";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { ChangeBadge, DeltaIndicator } from "@/components/dashboard/change-badge";
 import { SignalEvidence } from "@/components/dashboard/signal-evidence";
+import { rememberSignalSource, track } from "@/lib/analytics";
+import type { SignalSource } from "@/lib/analytics";
 import type { SignalView } from "@/lib/types";
 
 interface SignalCardProps {
   signal: SignalView;
   featured?: boolean;
+  source?: SignalSource;
 }
 
-export function SignalCard({ signal, featured = false }: SignalCardProps) {
+function trackSignalCardClick(signal: SignalView, source: SignalSource) {
+  rememberSignalSource(source);
+  track("signal_click", {
+    signalId: signal.id,
+    source,
+    changeType: signal.change.type,
+  });
+}
+
+export function SignalCard({
+  signal,
+  featured = false,
+  source = "dashboard-signals",
+}: SignalCardProps) {
   if (featured) {
-    return <FeaturedSignalCard signal={signal} />;
+    return <FeaturedSignalCard signal={signal} source={source} />;
   }
 
   return (
-    <Link href={`/signals/${signal.id}`} className="block h-full">
+    <Link
+      href={`/signals/${signal.id}`}
+      onClick={() => trackSignalCardClick(signal, source)}
+      className="block h-full"
+    >
       <PremiumCard className="flex h-full flex-col p-6 transition-colors hover:border-primary/30">
         <div className="mb-4 flex items-start justify-between gap-3">
           <div className="flex flex-wrap gap-2">
@@ -59,9 +79,19 @@ export function SignalCard({ signal, featured = false }: SignalCardProps) {
   );
 }
 
-function FeaturedSignalCard({ signal }: { signal: SignalView }) {
+function FeaturedSignalCard({
+  signal,
+  source,
+}: {
+  signal: SignalView;
+  source: SignalSource;
+}) {
   return (
-    <Link href={`/signals/${signal.id}`} className="block">
+    <Link
+      href={`/signals/${signal.id}`}
+      onClick={() => trackSignalCardClick(signal, source)}
+      className="block"
+    >
       <PremiumCard glow className="p-7 md:p-8 lg:p-10 transition-colors hover:border-primary/40">
         <div className="mb-6 flex flex-wrap items-center gap-2">
           <Badge variant="primary">Top change</Badge>

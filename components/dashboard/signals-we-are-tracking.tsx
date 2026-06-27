@@ -7,6 +7,7 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { ChangeBadge } from "@/components/dashboard/change-badge";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { Badge } from "@/components/ui/badge";
+import { rememberSignalSource, track } from "@/lib/analytics";
 import type { SignalView } from "@/lib/types";
 import { cn } from "@/lib/utils";
 
@@ -58,6 +59,14 @@ export function SignalsWeAreTracking({
                 <li key={signal.id}>
                   <Link
                     href={`/signals/${signal.id}`}
+                    onClick={() => {
+                      rememberSignalSource("watchlist");
+                      track("signal_click", {
+                        signalId: signal.id,
+                        source: "watchlist",
+                        changeType: signal.change.type,
+                      });
+                    }}
                     className="group flex flex-col gap-2 px-6 py-4 transition-colors hover:bg-secondary/30 md:px-8 md:py-5"
                   >
                     <div className="flex flex-wrap items-center gap-2">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Loader2 } from "lucide-react";
@@ -23,6 +23,7 @@ import {
   getSignalById,
 } from "@/lib/personalize";
 import { usePreferences } from "@/lib/preferences";
+import { consumeSignalSource, track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 export default function SignalDetailPage() {
@@ -41,6 +42,17 @@ export default function SignalDetailPage() {
     () => getSignalById(signalId, preferences),
     [signalId, preferences]
   );
+
+  const detailTracked = useRef(false);
+  useEffect(() => {
+    if (detailTracked.current || !signal) return;
+    detailTracked.current = true;
+    track("signal_detail_viewed", {
+      signalId: signal.id,
+      source: consumeSignalSource(),
+      changeType: signal.change.type,
+    });
+  }, [signal]);
 
   const relatedSkills = useMemo(() => {
     if (!signal) return [];

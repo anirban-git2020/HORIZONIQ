@@ -21,8 +21,14 @@ export function ThemeToggle({ className }: { className?: string }) {
       size="icon"
       className={cn("shrink-0", className)}
       onClick={() => setTheme(isDark ? "light" : "dark")}
-      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      title={isDark ? "Light mode" : "Dark mode"}
+      aria-label={
+        mounted
+          ? isDark
+            ? "Switch to light theme"
+            : "Switch to dark theme"
+          : "Toggle theme"
+      }
+      title={mounted ? (isDark ? "Light mode" : "Dark mode") : "Toggle theme"}
       disabled={!mounted}
     >
       {mounted ? (

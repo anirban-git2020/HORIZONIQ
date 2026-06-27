@@ -10,6 +10,7 @@ import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { REGIONS } from "@/lib/options";
 import { usePreferences } from "@/lib/preferences";
+import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 export default function RegionPage() {
@@ -48,7 +49,10 @@ export default function RegionPage() {
               label={region.label}
               description={region.description}
               selected={preferences.region === region.id}
-              onSelect={() => setRegion(region.id)}
+              onSelect={() => {
+                setRegion(region.id);
+                track("onboarding_region_selected", { region: region.id });
+              }}
             />
           </StaggerItem>
         ))}

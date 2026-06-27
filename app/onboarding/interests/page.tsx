@@ -16,6 +16,7 @@ import {
   getStudentInterestSections,
 } from "@/lib/options";
 import { usePreferences } from "@/lib/preferences";
+import { getSessionElapsedMs, track } from "@/lib/analytics";
 import type { InterestOption } from "@/lib/options";
 import type { RoleId } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -104,7 +105,18 @@ export default function InterestsPage() {
               {count} selected
             </span>
             <Button
-              onClick={() => router.push("/dashboard")}
+              onClick={() => {
+                if (preferences.role && preferences.region) {
+                  track("onboarding_completed", {
+                    role: preferences.role,
+                    region: preferences.region,
+                    interestCount: preferences.interests.length,
+                    interests: preferences.interests,
+                    durationMs: getSessionElapsedMs(),
+                  });
+                }
+                router.push("/dashboard");
+              }}
               disabled={count === 0}
             >
               <Sparkles />

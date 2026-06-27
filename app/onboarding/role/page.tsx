@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { OnboardingShell } from "@/components/onboarding/onboarding-shell";
@@ -12,11 +13,17 @@ import { Button } from "@/components/ui/button";
 import { buttonVariants } from "@/components/ui/button";
 import { ROLES } from "@/lib/options";
 import { usePreferences } from "@/lib/preferences";
+import { startSessionTiming, track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 export default function RolePage() {
   const router = useRouter();
   const { preferences, setRole } = usePreferences();
+
+  useEffect(() => {
+    startSessionTiming();
+    track("onboarding_started", {});
+  }, []);
 
   return (
     <OnboardingShell
@@ -52,7 +59,10 @@ export default function RolePage() {
               tagline={role.tagline}
               description={role.description}
               selected={preferences.role === role.id}
-              onSelect={() => setRole(role.id)}
+              onSelect={() => {
+                setRole(role.id);
+                track("onboarding_role_selected", { role: role.id });
+              }}
             />
           </StaggerItem>
         ))}

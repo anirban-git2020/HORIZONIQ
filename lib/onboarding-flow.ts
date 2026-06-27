@@ -13,3 +13,24 @@ export function getFirstTimeOnboardingPath(): string {
   }
   return "/onboarding/role";
 }
+
+/** Welcome, name, and greeting steps before profile onboarding. */
+export function hasCompletedIdentityOnboarding(): boolean {
+  return (
+    identityService.hasCompletedWelcome() &&
+    identityService.getDisplayName() !== null &&
+    identityService.hasCompletedGreeting()
+  );
+}
+
+/**
+ * Redirect target when a protected route requires setup.
+ * Identity steps take priority over profile onboarding.
+ */
+export function getOnboardingRedirectPath(): string {
+  const identityPath = getFirstTimeOnboardingPath();
+  if (identityPath !== "/onboarding/role") {
+    return identityPath;
+  }
+  return "/onboarding/role";
+}

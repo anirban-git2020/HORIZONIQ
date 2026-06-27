@@ -12,6 +12,7 @@ import type {
 export interface DataSource {
   label: string;
   type: "mock" | "live";
+  url?: string;
 }
 
 export interface EvidenceDriverRaw {

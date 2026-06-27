@@ -12,8 +12,10 @@ import { identityService } from "@/lib/identity";
 export default function NamePage() {
   const router = useRouter();
   const [name, setName] = useState("");
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    setReady(true);
     if (!identityService.hasCompletedWelcome()) {
       router.replace("/onboarding/welcome");
       return;
@@ -29,6 +31,10 @@ export default function NamePage() {
     identityService.setDisplayName(trimmed);
     router.push("/onboarding/greeting");
   };
+
+  if (!ready || !identityService.hasCompletedWelcome() || identityService.getDisplayName()) {
+    return null;
+  }
 
   return (
     <FirstTimeShell

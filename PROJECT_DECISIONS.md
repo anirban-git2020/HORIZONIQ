@@ -243,6 +243,48 @@ No authentication in Sprint 1.
 
 Identity layer must be swappable before Google/GitHub/Supabase integration.
 
+Approved
+
+---
+
+## 2026-06-27 — Sprint 3A: Information Architecture
+
+### Decision
+
+Redesign dashboard hierarchy without changing functionality — one story, progressive disclosure, Intelligence Focus Areas label.
+
+### Reason
+
+Users must understand the page in under 15 seconds. Visual competition and duplicate information violated cognitive load principles.
+
+### Implementation
+
+- Story-driven hero and `StorySection` acts
+- `DashboardContextBar` replaces heavy header
+- Single-question cards; supporting content in `DisclosurePanel`
+
+### Outcome
+
+Approved
+
+---
+
+## 2026-06-27 — Sprint 2.5A: Intelligence Reasoning Layer
+
+### Decision
+
+Every signal renders as a reusable Intelligence Card with seven analyst sections — including outlook (projection) and plain-English confidence tiers.
+
+### Reason
+
+HorizonIQ must behave like an intelligence analyst, not a trend aggregator. Users need causal reasoning, calibrated confidence, and labeled projections without hype.
+
+### Implementation
+
+- `IntelligenceCard` + section/evidence subcomponents
+- Extended `lib/intelligence.ts` reasoning builders
+- No dashboard redesign; intelligence quality only
+
 ### Outcome
 
 Approved

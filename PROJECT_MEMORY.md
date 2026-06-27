@@ -182,17 +182,48 @@ Never decoration.
 
 ## Intelligence Layer: What Changed For You
 
-The primary intelligence layer of MVP V1.
+The primary intelligence layer of MVP V1.1+.
 
 Not a feature. The product.
+
+### Four-Question Intelligence Contract (Sprint 2.5 → 2.5A)
+
+Every signal is rendered as a reusable **Intelligence Card** answering:
+
+1. **What happened?** — one sentence
+2. **Why is it happening?** — underlying drivers from live source activity
+3. **Why should you care?** — personalized by role, region, and interests
+4. **What should you do next?** — concrete recommendation
+5. **Outlook (projection)** — 3–12 month directional view, clearly not a fact
+6. **How confident are we?** — High / Medium / Low in plain English
+7. **Evidence** — sources, last updated, region, categories
+
+Components: `IntelligenceCard`, `IntelligenceCardSection`, `IntelligenceCardEvidence`  
+Logic: `lib/intelligence.ts`
+
+### Trust Contract (Sprint 2.5)
+
+Every signal must also show:
+
+| Element | Implementation |
+|---|---|
+| **Evidence** | Momentum + confidence drivers (`SignalEvidence`) |
+| **Source links** | Clickable URLs — live from pipeline or resolved from labels |
+| **Confidence explanation** | Human-readable prose from `buildConfidenceExplanation()` |
+| **Last updated** | Briefing `meta.updatedAt` per signal |
+| **Region relevance** | Explicit region calibration copy |
+| **Role relevance** | Explicit role impact copy |
+
+Rendered in **`IntelligenceConfidencePanel`** — users should trust HorizonIQ without reading documentation.
 
 ### Dashboard Contract
 
 Every dashboard must contain:
 
 1. **What Changed** — what is new, rising, falling, or different
-2. **Why It Matters** — personalized impact for this user
-3. **What To Do** — one clear recommended action
+2. **Why It Changed** — causal explanation (not just that it moved)
+3. **Why It Matters** — personalized impact for this user
+4. **What To Do** — one clear recommended action
 
 ### Top-Level Section (Required)
 
@@ -212,16 +243,21 @@ Every signal must contain:
 
 | Field | Purpose |
 |---|---|
-| **Current State** | What is happening now |
-| **Change Since Last Period** | New · Rising · Falling · Stable — with delta detail |
-| **Explanation** | Why the change matters — personalized by role, region, interests |
-| **Recommended Action** | What this user should do about it |
+| **What Changed** | `change.summary` — what is new, rising, falling, or stable |
+| **Why It Changed** | Causal narrative from `momentumDrivers` |
+| **Why It Matters** | Personalized explanation (role × region × interests) |
+| **What To Do Next** | Recommended action (role variants) |
+| **Evidence** | Momentum + confidence drivers |
+| **Sources** | Labeled live/sample with optional `url` |
+| **Confidence Explanation** | Prose trust summary |
+| **Last Updated** | From active briefing period |
+| **Role / Region Relevance** | Explicit relevance copy |
 
-Legacy Observe → Understand → Act maps to this structure:
+Legacy Observe → Understand → Act maps to:
 
-- Observe = Current State + Change
-- Understand = Explanation (personalized)
-- Act = Recommended Action
+- Observe = What Changed + Why It Changed
+- Understand = Why It Matters (personalized)
+- Act = What To Do Next
 
 ### Personalization Dimensions
 
@@ -275,49 +311,112 @@ Future: Google Login, GitHub Login, Supabase — interface documented; not imple
 
 Every signal includes:
 
-Current State
+What Changed + Why It Changed
 
-Change Since Last Period (type, summary, delta)
+Why It Matters (base + role/region variants)
 
-Explanation (base + role/region/interest variants)
+What To Do Next (base + role variants)
 
-Recommended Action (base + role variants)
+Momentum + Confidence (with drivers + explanation prose)
 
-Momentum + Confidence (with drivers)
+Sources (labeled, clickable when URL available)
 
-Sources (labeled — mock data must be labeled)
+Role relevance + Region relevance (explicit copy)
 
-Affected Industries
-
-Affected Roles
+Last updated timestamp (briefing period)
 
 ---
 
-## Data Strategy (MVP V1)
+## Data Strategy
 
-Curated mock datasets. No live pipeline.
+**Catalog + weekly briefing** architecture with **live 5-source pipeline** (Hacker News, arXiv, Wikimedia, GitHub, Product Hunt).
 
-Files:
+- Evergreen definitions: `data/catalog/signals.json`
+- Weekly state: `data/briefings/{period}.json`
+- Pipeline: `npm run pipeline:full` + GitHub Actions (Monday 06:00 UTC)
+- Curated explanations; live activity metrics from pipeline
 
-- `signals.json`
-- `skills.json`
-- `jobs.json`
-- `recommendations.json`
-
-Architecture must allow swapping JSON for live APIs later.
-
-Each signal record must include **change metadata** and **personalized explanation variants**.
-
-Mock data must be **refreshed on a weekly cadence** (manual updates acceptable for MVP).
-
-See **`data/README.md`** for the weekly refresh checklist.
+No new data sources in Sprint 2.5 — intelligence quality improved in presentation layer.
 
 Visit state stored in localStorage:
 
 - `lastVisitAt`
 - Snapshot of signal states at last visit
 
-Enables "since your last visit" without accounts.
+---
+
+## Sprint 3A — Information Architecture (Complete)
+
+### Principles
+
+1. One primary message per screen (hero carries the story)
+2. Progressive disclosure (supporting intelligence collapsed by default)
+3. Story flow: What changed → Why it matters → What to do
+4. No visual competition (removed duplicate headers, stats, RoleLens)
+5. Every section has a clear purpose via `StorySection`
+6. **"Intelligence Focus Areas"** replaces user-facing "Interests"
+7. Apple-like hierarchy: display title hero, calm spacing, single focal column
+8. Duplicate information removed (primary action once in hero; compact change list)
+9. Every card answers one question only (`SignalCard` focus modes)
+
+### Components
+
+- `StorySection` — story act headers
+- `DashboardContextBar` — role, region, focus areas (replaces heavy header)
+- `DisclosurePanel` — skills + opportunities behind progressive disclosure
+- `lib/copy.ts` — shared labels
+
+### Dashboard layout (return visit)
+
+1. What Changed hero (full story in one card)
+2. Context bar (briefing lens)
+3. Why it matters — signal cards (`focus="why"`)
+4. What to do — secondary actions only (primary in hero)
+5. Supporting intelligence — collapsed disclosure
+
+### First visit
+
+Hero + context bar + watchlist (unchanged functionality)
+
+---
+
+## Sprint 2.5A — Intelligence Reasoning Layer (Complete)
+
+### Added
+
+- `IntelligenceCard` with `full` / `summary` / `compact` variants
+- Seven-section analyst contract including outlook (projection) and plain-English confidence
+- Interest-aware `buildWhyYouShouldCare()`
+- `buildOutlook()` — rule-based 3–12 month projections, no hype
+
+### Changed
+
+- All signal UI uses `IntelligenceCard` (not trend-aggregator blocks)
+- `SignalIntelligence` type expanded for reasoning layer
+
+---
+
+## Sprint 2.5 — Intelligence Quality (Complete)
+
+### Added
+
+- `lib/intelligence.ts` — four-question assembler, role/region relevance, source URL enrichment
+- `IntelligenceConfidencePanel` — trust without documentation
+- `SignalIntelligenceBlock` — consistent 4-question layout (full / compact / inline)
+- `buildConfidenceExplanation()` + `resolveSourceUrl()` in `lib/trust.ts`
+- Source `url` field on `DataSource` schema; pipeline preserves observation URLs
+
+### Changed
+
+- Signal cards, hero rows, watchlist, and detail page use 4-question contract
+- Signal detail: Intelligence Brief + Intelligence Confidence Panel (removed low-value sections)
+- Skill / opportunity / action cards trimmed to decision-relevant fields only
+- `SignalView` extended with intelligence bundle + trust fields
+
+### Removed from signal surfaces
+
+- Decorative rank badges, duplicate momentum displays, non-actionable industry lists on detail
+- Card clutter that did not aid decisions
 
 ---
 
@@ -439,31 +538,35 @@ Deprioritized / removed from MVP:
 - Onboarding flow (welcome → name → greeting → role → region → interests → tour choice) with 8 regions and 14 categorized interests
 - **What Changed For You** hero section
 - Dashboard with change-first signals, skills rising, opportunities, actions
-- Signal detail pages (`/signals/[id]`) with change-first layout
-- JSON data layer (`data/*.json`) with change metadata
+- Signal detail pages (`/signals/[id]`) with 4-question intelligence layout
+- **Sprint 2.5:** `IntelligenceConfidencePanel`, `SignalIntelligenceBlock`, `lib/intelligence.ts`
+- JSON data layer with catalog + briefing + change metadata
+- Live 5-source pipeline + weekly GitHub Actions refresh
 - Data access layer (`lib/data/access.ts`)
 - Visit snapshot (`lib/visit-snapshot.ts`) for return-visit diffs
-- Role-based personalization ("so what for you")
+- Role-based personalization ("so what for you") + explicit role/region relevance
 - Primary action per briefing
 - Briefing freshness UI in change hero (`briefingLabel`, "Updated [date]")
-- Weekly mock data refresh checklist (`data/README.md`)
-- Briefing-period-aware return visits (`isReturnVisitForPeriod`)
+- Clickable source links (pipeline URLs + label-based fallback)
+- Confidence explanation prose on every signal
 - Sprint 1 first-time onboarding: welcome animation, name + greeting, IdentityService, guided tour overlay
 
 ### Needs Improvement
 
 - Broader signal coverage across all 14 interests
 - Analytics for Week 2 return rate
-- More region-specific explanation variants
+- More region-specific explanation variants in catalog
+- PostHog funnels for trust interactions (source clicks, confidence panel)
 
 ### Not Yet Started
 
-- Live data ingestion
 - Relationship graph (future)
 - Discussion boards
 - User accounts
 - Community features
 - Email digest for weekly briefing
+
+~~Live data ingestion~~ — **Built** (5-source pipeline). No *additional* sources until post-PMF.
 
 ---
 

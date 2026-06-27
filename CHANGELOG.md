@@ -8,6 +8,74 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Sprint 3A — Information Architecture
+
+#### Added
+
+- **`StorySection`** — story act headers (What changed / Why it matters / What to do)
+- **`DashboardContextBar`** — slim briefing lens (role, region, Intelligence Focus Areas)
+- **`DisclosurePanel`** — progressive disclosure for skills + opportunities
+- **`lib/copy.ts`** — `INTELLIGENCE_FOCUS_AREAS_LABEL` and story act labels
+
+#### Changed
+
+- Dashboard tells one story in the hero: changed → matters → action
+- Removed competing `DashboardHeader` title/stats and `RoleLens` from return visits
+- Hero uses compact change rows (no duplicate full intelligence cards)
+- Signal grid cards answer one question (`focus="why"`)
+- Primary action shown once in hero; actions section is secondary only
+- Skills/opportunities collapsed under "Supporting intelligence"
+- User-facing **"Interests"** → **"Intelligence Focus Areas"**
+- Baseline banner reduced to one line
+
+#### Removed
+
+- Duplicate primary action in hero sidebar
+- Featured signal card + full `IntelligenceCard` in hero rows
+- Stats row (signals/skills/opportunities/actions counts)
+- Per-card multi-question clutter on dashboard cards
+
+### Sprint 2.5A — Intelligence Reasoning Layer
+
+#### Added
+
+- **`IntelligenceCard`** — reusable analyst-style card (`full` / `summary` / `compact` variants)
+- **`IntelligenceCardSection`** + **`IntelligenceCardEvidence`** subcomponents
+- Seven-part reasoning contract: what happened · why happening · why you care · what to do · outlook (projection) · confidence · evidence
+- Rule-based **outlook** (3–12 months, clearly labeled projection)
+- **Confidence tiers** in plain English: High / Medium / Low
+- Interest-aware personalization in `buildWhyYouShouldCare()`
+
+#### Changed
+
+- `SignalIntelligence` restructured for analyst reasoning (replaces 2.5 four-question shape)
+- All signal surfaces use `IntelligenceCard` (cards, hero, watchlist, detail)
+- Removed `SignalIntelligenceBlock` and `IntelligenceConfidencePanel` (superseded)
+
+### Sprint 2.5 — Intelligence Quality
+
+#### Added
+
+- **Four-question intelligence contract** — What changed · Why it changed · Why it matters to me · What to do next
+- **`lib/intelligence.ts`** — `buildSignalIntelligence()`, role/region relevance, source URL enrichment
+- **`IntelligenceConfidencePanel`** — evidence, source links, confidence explanation, last updated, role/region relevance
+- **`SignalIntelligenceBlock`** — reusable 4-question layout (full / compact / inline variants)
+- **`buildConfidenceExplanation()`** and **`resolveSourceUrl()`** in `lib/trust.ts`
+- **`url` field** on `DataSource` schema; pipeline preserves observation URLs on regenerate
+
+#### Changed
+
+- Signal cards, What Changed hero rows, watchlist, and detail page aligned to 4-question contract
+- Signal detail restructured: Intelligence Brief + Intelligence Confidence Panel
+- Skill, opportunity, and action cards trimmed to decision-relevant content only
+- `SignalView` extended with `intelligence`, `whyItChanged`, `confidenceExplanation`, relevance fields
+
+#### Removed
+
+- Decorative rank badges and duplicate momentum/confidence displays on signal cards
+- Low-value detail sections (standalone industry lists, redundant evidence blocks)
+- Card clutter that did not help users decide
+
 ### Sprint 1 — Premium First-Time Onboarding
 
 #### Added

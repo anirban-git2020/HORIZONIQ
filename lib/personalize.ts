@@ -3,6 +3,7 @@ import {
   filterRecommendationsForUser,
   filterSignalsForUser,
   filterSkillsForUser,
+  getDataProvenance,
   getGrowthWithBias,
   getJobAngle,
   getMeta,
@@ -14,6 +15,7 @@ import {
   getRegionLabel,
 } from "@/lib/data/access";
 import type { SignalRecord } from "@/lib/data/schemas";
+import { buildSignalIntelligence } from "@/lib/intelligence";
 import { INTEREST_LABEL, REGION_LABEL, ROLE_LABEL } from "@/lib/options";
 import { formatBriefingUpdatedAt, formatTodayLabel } from "@/lib/utils";
 import type {
@@ -51,6 +53,15 @@ function toSignalView(
 ): SignalView {
   const role = prefs.role ?? FALLBACK_ROLE;
   const region = prefs.region ?? FALLBACK_REGION;
+  const meta = getMeta();
+  const intelligenceFields = buildSignalIntelligence(
+    signal,
+    role,
+    region,
+    prefs.interests,
+    getDataProvenance(),
+    meta.updatedAt
+  );
 
   return {
     id: signal.id,
@@ -66,10 +77,9 @@ function toSignalView(
     momentumDelta: signal.momentum - signal.previousMomentum,
     confidenceDelta: signal.confidence - signal.previousConfidence,
     change: signal.change,
-    soWhatForYou: getSoWhatForYou(signal, role, region),
-    recommendedAction: getRecommendedActionForUser(signal, role, region),
-    explanation: getSoWhatForYou(signal, role, region),
-    sources: signal.sources,
+    soWhatForYou: intelligenceFields.intelligence.whyYouShouldCare,
+    recommendedAction: intelligenceFields.intelligence.whatToDoNext,
+    explanation: intelligenceFields.intelligence.whyYouShouldCare,
     affectedIndustries: signal.affectedIndustries,
     affectedRoles: signal.affectedRoles,
     momentumDrivers: signal.momentumDrivers,
@@ -77,6 +87,7 @@ function toSignalView(
     relatedSkills: signal.relatedSkills,
     relatedOpportunities: signal.relatedOpportunities,
     rank,
+    ...intelligenceFields,
   };
 }
 
@@ -254,6 +265,7 @@ export function getWhatChangedForYou(
     return [
       {
         signal,
+        whyItChanged: signal.whyItChanged,
         whyItMatters: signal.soWhatForYou,
         action: signal.recommendedAction,
         visitChange: {
@@ -294,6 +306,7 @@ export function getWhatChangedForYou(
       ? changes.slice(0, 5)
       : signals.slice(0, 3).map((signal) => ({
           signal,
+          whyItChanged: signal.whyItChanged,
           whyItMatters: signal.soWhatForYou,
           action: signal.recommendedAction,
         }));

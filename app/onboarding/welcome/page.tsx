@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { WelcomeScreen } from "@/components/onboarding/welcome-screen";
@@ -9,14 +9,16 @@ import { identityService } from "@/lib/identity";
 
 export default function WelcomePage() {
   const router = useRouter();
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    setReady(true);
     if (identityService.hasCompletedWelcome()) {
       router.replace(getFirstTimeOnboardingPath());
     }
   }, [router]);
 
-  if (identityService.hasCompletedWelcome()) {
+  if (!ready || identityService.hasCompletedWelcome()) {
     return null;
   }
 

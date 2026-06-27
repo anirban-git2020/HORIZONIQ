@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useId, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
@@ -38,7 +38,7 @@ const TOUR_STEPS: TourStep[] = [
     target: "[data-tour='signals']",
     title: "Signals",
     description:
-      "Signals are the changes we're tracking for your role, region, and interests.",
+      "Signals are the changes we're tracking for your role, region, and focus areas.",
     fallbackDescription:
       "Signals are the changes we track for you. Your watchlist shows what we're following this week.",
   },
@@ -69,17 +69,19 @@ interface SpotlightRect {
   height: number;
 }
 
+const SPOTLIGHT_PAD = 10;
+const SPOTLIGHT_RADIUS = 12;
+
 function measureTarget(selector: string): SpotlightRect | null {
   const el = document.querySelector(selector);
   if (!el) return null;
   const rect = el.getBoundingClientRect();
   if (rect.width === 0 && rect.height === 0) return null;
-  const pad = 8;
   return {
-    top: Math.max(8, rect.top - pad),
-    left: Math.max(8, rect.left - pad),
-    width: rect.width + pad * 2,
-    height: rect.height + pad * 2,
+    top: Math.max(8, rect.top - SPOTLIGHT_PAD),
+    left: Math.max(8, rect.left - SPOTLIGHT_PAD),
+    width: rect.width + SPOTLIGHT_PAD * 2,
+    height: rect.height + SPOTLIGHT_PAD * 2,
   };
 }
 
@@ -90,6 +92,7 @@ export function GuidedTourOverlay({
   active: boolean;
   onComplete: () => void;
 }) {
+  const maskId = useId().replace(/:/g, "");
   const [stepIndex, setStepIndex] = useState(0);
   const [spotlight, setSpotlight] = useState<SpotlightRect | null>(null);
 
@@ -111,16 +114,22 @@ export function GuidedTourOverlay({
   useEffect(() => {
     if (!active) return;
     setStepIndex(0);
+    setSpotlight(null);
   }, [active]);
 
   useEffect(() => {
     if (!active || !step) return;
+
     updateSpotlight();
+    const timers = [80, 280, 600].map((ms) =>
+      window.setTimeout(updateSpotlight, ms)
+    );
+
     window.addEventListener("resize", updateSpotlight);
     window.addEventListener("scroll", updateSpotlight, true);
-    const timer = window.setTimeout(updateSpotlight, 120);
+
     return () => {
-      window.clearTimeout(timer);
+      timers.forEach((timer) => window.clearTimeout(timer));
       window.removeEventListener("resize", updateSpotlight);
       window.removeEventListener("scroll", updateSpotlight, true);
     };
@@ -153,15 +162,43 @@ export function GuidedTourOverlay({
         aria-modal="true"
         aria-labelledby="guided-tour-title"
       >
-        <div
-          className="absolute inset-0 bg-background/80 backdrop-blur-[2px]"
-          onClick={handleSkip}
-          aria-hidden
-        />
+        {spotlight ? (
+          <svg
+            className="absolute inset-0 h-full w-full"
+            aria-hidden
+            onClick={handleSkip}
+          >
+            <defs>
+              <mask id={maskId}>
+                <rect width="100%" height="100%" fill="white" />
+                <rect
+                  x={spotlight.left}
+                  y={spotlight.top}
+                  width={spotlight.width}
+                  height={spotlight.height}
+                  rx={SPOTLIGHT_RADIUS}
+                  fill="black"
+                />
+              </mask>
+            </defs>
+            <rect
+              width="100%"
+              height="100%"
+              className="fill-background/75"
+              mask={`url(#${maskId})`}
+            />
+          </svg>
+        ) : (
+          <div
+            className="absolute inset-0 bg-background/80 backdrop-blur-[2px]"
+            onClick={handleSkip}
+            aria-hidden
+          />
+        )}
 
         {spotlight && (
           <motion.div
-            className="pointer-events-none absolute rounded-xl ring-2 ring-primary/60 ring-offset-2 ring-offset-background"
+            className="pointer-events-none absolute rounded-xl ring-2 ring-primary shadow-[0_0_0_1px_hsl(var(--primary)/0.25)]"
             initial={false}
             animate={{
               top: spotlight.top,
@@ -177,8 +214,8 @@ export function GuidedTourOverlay({
           key={step.id}
           className={
             spotlight
-              ? "absolute left-1/2 w-[min(92vw,28rem)] -translate-x-1/2 rounded-2xl border border-border bg-card p-6 shadow-premium"
-              : "absolute left-1/2 top-1/2 w-[min(92vw,28rem)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-6 shadow-premium"
+              ? "absolute left-1/2 z-[101] w-[min(92vw,28rem)] -translate-x-1/2 rounded-2xl border border-border bg-card p-6 shadow-premium"
+              : "absolute left-1/2 top-1/2 z-[101] w-[min(92vw,28rem)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-6 shadow-premium"
           }
           style={
             spotlight

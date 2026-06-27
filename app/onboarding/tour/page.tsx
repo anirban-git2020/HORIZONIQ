@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { usePreferences } from "@/lib/preferences";
 import { identityService } from "@/lib/identity";
+import { getFirstTimeOnboardingPath, hasCompletedIdentityOnboarding } from "@/lib/onboarding-flow";
 
 export default function TourChoicePage() {
   const router = useRouter();
@@ -16,6 +17,10 @@ export default function TourChoicePage() {
 
   useEffect(() => {
     if (!hydrated) return;
+    if (!hasCompletedIdentityOnboarding()) {
+      router.replace(getFirstTimeOnboardingPath());
+      return;
+    }
     if (!isComplete) {
       router.replace("/onboarding/role");
     }

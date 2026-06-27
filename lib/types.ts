@@ -64,6 +64,28 @@ export interface EvidenceDriver {
 export interface DataSource {
   label: string;
   type: "mock" | "live";
+  url?: string;
+}
+
+export type IntelligenceConfidenceTier = "high" | "medium" | "low";
+
+export interface IntelligenceEvidence {
+  sources: DataSource[];
+  lastUpdatedLabel: string;
+  regionLabel: string;
+  categories: string[];
+}
+
+/** Analyst-style reasoning bundle for a single signal (Sprint 2.5A). */
+export interface SignalIntelligence {
+  whatHappened: string;
+  whyItIsHappening: string;
+  whyYouShouldCare: string;
+  whatToDoNext: string;
+  outlook: string;
+  confidenceTier: IntelligenceConfidenceTier;
+  confidenceExplanation: string;
+  evidence: IntelligenceEvidence;
 }
 
 export type DashboardSection =
@@ -117,6 +139,13 @@ export interface SignalView {
   relatedSkills: string[];
   relatedOpportunities: string[];
   rank: number;
+  whyItChanged: string;
+  confidenceExplanation: string;
+  roleRelevance: string;
+  regionRelevance: string;
+  lastUpdated: string;
+  lastUpdatedLabel: string;
+  intelligence: SignalIntelligence;
 }
 
 export interface SkillView {
@@ -172,6 +201,7 @@ export interface Briefing {
 
 export interface ChangeItem {
   signal: SignalView;
+  whyItChanged: string;
   whyItMatters: string;
   action: string;
   visitChange?: {

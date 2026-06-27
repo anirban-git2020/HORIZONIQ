@@ -7,16 +7,20 @@ import { ArrowLeft, Loader2 } from "lucide-react";
 
 import { TopBar } from "@/components/layout/top-bar";
 import { Section } from "@/components/dashboard/section";
-import { ChangeBadge, DeltaIndicator } from "@/components/dashboard/change-badge";
-import { SignalEvidence } from "@/components/dashboard/signal-evidence";
+import { ChangeBadge } from "@/components/dashboard/change-badge";
+import { IntelligenceCard } from "@/components/intelligence/intelligence-card";
 import { SkillCard } from "@/components/dashboard/skill-card";
 import { OpportunityCard } from "@/components/dashboard/opportunity-card";
 import { FadeIn } from "@/components/motion/fade-in";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { getSignalById as getRawSignal, getDataProvenance, getRefreshSchedule } from "@/lib/data/access";
-import { getSourceBadgeVariant, getSourceTypeLabel, getTrustDisclaimer } from "@/lib/trust";
+import {
+  getSignalById as getRawSignal,
+  getDataProvenance,
+  getRefreshSchedule,
+} from "@/lib/data/access";
+import { getTrustDisclaimer } from "@/lib/trust";
 import {
   getOpportunities,
   getRecommendedSkills,
@@ -24,7 +28,12 @@ import {
 } from "@/lib/personalize";
 import { usePreferences } from "@/lib/preferences";
 import { consumeSignalSource, track } from "@/lib/analytics";
+import {
+  getFirstTimeOnboardingPath,
+  hasCompletedIdentityOnboarding,
+} from "@/lib/onboarding-flow";
 import { cn } from "@/lib/utils";
+import { INTELLIGENCE_FOCUS_AREAS_LABEL } from "@/lib/copy";
 
 export default function SignalDetailPage() {
   const params = useParams();
@@ -33,7 +42,12 @@ export default function SignalDetailPage() {
   const signalId = params.id as string;
 
   useEffect(() => {
-    if (hydrated && !isComplete) {
+    if (!hydrated) return;
+    if (!hasCompletedIdentityOnboarding()) {
+      router.replace(getFirstTimeOnboardingPath());
+      return;
+    }
+    if (!isComplete) {
       router.replace("/onboarding/role");
     }
   }, [hydrated, isComplete, router]);
@@ -83,7 +97,7 @@ export default function SignalDetailPage() {
           <h1 className="text-2xl font-semibold">Signal not found</h1>
           <p className="mt-2 text-muted-foreground">
             {exists
-              ? "This signal isn't in your current interests. Adjust your tracking preferences to see it."
+              ? `This signal isn't in your current ${INTELLIGENCE_FOCUS_AREAS_LABEL.toLowerCase()}. Adjust your briefing lens to see it.`
               : "This signal doesn't exist in our current briefing."}
           </p>
           <Link
@@ -96,6 +110,8 @@ export default function SignalDetailPage() {
       </div>
     );
   }
+
+  const provenance = getDataProvenance();
 
   return (
     <div className="min-h-dvh bg-background">
@@ -124,143 +140,54 @@ export default function SignalDetailPage() {
             <h1 className="display-title mt-4 text-3xl md:text-4xl">
               {signal.name}
             </h1>
-
-            <div className="mt-4 flex flex-wrap gap-4">
-              <DeltaIndicator delta={signal.momentumDelta} label="momentum" />
-              <DeltaIndicator delta={signal.confidenceDelta} label="confidence" />
-            </div>
           </FadeIn>
         </div>
       </div>
 
-      <main className="container space-y-12 py-12 md:space-y-16 md:py-16">
-        <Section step={1} title="What Changed" question="What is happening?">
+      <main className="container space-y-10 py-10 md:space-y-12 md:py-12">
+        <Section
+          title="Intelligence Brief"
+          question="Analyst reasoning for this signal"
+        >
           <PremiumCard className="p-6 md:p-8">
-            <p className="text-lg font-medium text-foreground">
-              {signal.change.summary}
-            </p>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground md:text-base">
-              {signal.currentState}
-            </p>
+            <IntelligenceCard
+              intelligence={signal.intelligence}
+              variant="full"
+            />
           </PremiumCard>
         </Section>
 
-        <Section
-          step={2}
-          title="Why It Matters For You"
-          question="Why does this change matter?"
-        >
-          <PremiumCard className="border-primary/20 bg-primary/[0.03] p-6 md:p-8">
-            <p className="text-base leading-relaxed md:text-lg">
-              {signal.soWhatForYou}
-            </p>
-          </PremiumCard>
-        </Section>
-
-        <Section
-          step={3}
-          title="Momentum Drivers"
-          question="What is driving this change?"
-        >
-          <SignalEvidence
-            momentum={signal.momentum}
-            confidence={signal.confidence}
-            momentumDrivers={signal.momentumDrivers}
-            confidenceFactors={signal.confidenceFactors}
-          />
-          <div className="mt-4">
-            <p className="label-caps mb-2 text-xs">Sources</p>
-            <p className="mb-3 text-xs text-muted-foreground">
-              Live = measured from public APIs this week. Sample = illustrative
-              when live coverage was limited.
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {signal.sources.map((source) => (
-                <Badge
-                  key={source.label}
-                  variant={getSourceBadgeVariant(source.type)}
-                >
-                  <span className="font-semibold">
-                    {getSourceTypeLabel(source.type)}
-                  </span>
-                  <span className="mx-1 opacity-40">·</span>
-                  {source.label}
-                </Badge>
-              ))}
-            </div>
-          </div>
-        </Section>
-
-        <Section
-          step={4}
-          title="Affected Industries"
-          question="What industries are affected?"
-        >
-          <div className="flex flex-wrap gap-2">
-            {signal.affectedIndustries.map((industry) => (
-              <Badge key={industry} variant="default">
-                {industry}
-              </Badge>
-            ))}
-          </div>
-          <p className="mt-4 text-sm text-muted-foreground">
-            Roles most impacted: {signal.affectedRoles.join(", ")}
-          </p>
-        </Section>
-
-        {relatedSkills.length > 0 && (
+        {(relatedSkills.length > 0 || relatedOpportunities.length > 0) && (
           <Section
-            step={5}
-            title="Recommended Skills"
-            question="What skills are relevant?"
+            title="Related Moves"
+            question="Skills and opportunities tied to this signal"
           >
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedSkills.map((skill) => (
-                <SkillCard key={skill.id} skill={skill} />
-              ))}
+            <div className="space-y-8">
+              {relatedSkills.length > 0 && (
+                <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                  {relatedSkills.map((skill) => (
+                    <SkillCard key={skill.id} skill={skill} />
+                  ))}
+                </div>
+              )}
+              {relatedOpportunities.length > 0 && (
+                <div className="grid gap-5 sm:grid-cols-2">
+                  {relatedOpportunities.map((opportunity) => (
+                    <OpportunityCard
+                      key={opportunity.id}
+                      opportunity={opportunity}
+                    />
+                  ))}
+                </div>
+              )}
             </div>
           </Section>
         )}
-
-        {relatedOpportunities.length > 0 && (
-          <Section
-            step={6}
-            title="Opportunities"
-            question="What opportunities are emerging?"
-          >
-            <div className="grid gap-5 sm:grid-cols-2">
-              {relatedOpportunities.map((opportunity) => (
-                <OpportunityCard key={opportunity.id} opportunity={opportunity} />
-              ))}
-            </div>
-          </Section>
-        )}
-
-        <Section
-          step={7}
-          title="Recommended Action"
-          question="What should you do next?"
-        >
-          <PremiumCard glow className="p-6 md:p-8">
-            <p className="text-base leading-relaxed md:text-lg">
-              {signal.recommendedAction}
-            </p>
-            <Link
-              href="/dashboard"
-              className={cn(buttonVariants({ variant: "secondary" }), "mt-6 inline-flex")}
-            >
-              Return to your briefing
-            </Link>
-          </PremiumCard>
-        </Section>
 
         <FadeIn>
           <div className="rounded-xl border border-border/70 bg-secondary/30 px-6 py-5 text-center md:px-8">
-            <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
-              We&apos;re tracking this signal for your next briefing.
-            </p>
-            <p className="mt-2 text-xs text-muted-foreground">
-              {getTrustDisclaimer(getDataProvenance(), getRefreshSchedule())}
+            <p className="text-sm leading-relaxed text-muted-foreground">
+              {getTrustDisclaimer(provenance, getRefreshSchedule())}
             </p>
           </div>
         </FadeIn>

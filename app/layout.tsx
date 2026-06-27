@@ -39,7 +39,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${plex.variable}`} suppressHydrationWarning>
-      <body className="min-h-dvh bg-background font-sans text-foreground">
+      <body
+        className="min-h-dvh bg-background font-sans text-foreground"
+        suppressHydrationWarning
+      >
         <ThemeProvider>
           <PreferencesProvider>{children}</PreferencesProvider>
           <AnalyticsProvider />

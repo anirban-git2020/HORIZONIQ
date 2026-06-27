@@ -1,7 +1,7 @@
 # HorizonIQ — Session Handoff V5
 
 **Last updated:** 2026-06-27  
-**Version:** MVP V1.1 (Change-First) + Live Pipeline + Sprint 1 Onboarding  
+**Version:** MVP V1.1 (Change-First) + Live Pipeline + Sprint 1 Onboarding + Sprint 2.5 Intelligence Quality  
 **Status:** Active Development — **Deployed to Vercel (beta)** + local dev  
 **Purpose:** Zero-context handoff for the next chat session or engineer.  
 **Supersedes:** `SESSION_HANDOFF_V4.md`, `SESSION_HANDOFF_V3.md`, `SESSION_HANDOFF_V2.md`, `SESSION_HANDOFF.md`
@@ -143,6 +143,16 @@ Current active briefing: **`pipeline`** (live public data). Active period: **`20
 - [x] Landing pillars, **Why HorizonIQ?** section
 - [x] Footer with briefing week + refresh schedule
 - [x] CTA → `/onboarding/welcome` *(local Sprint 1; was `/onboarding/role` on main)*
+
+### Sprint 2.5 — Intelligence Quality *(complete)*
+
+- [x] **Four-question contract** — What changed · Why it changed · Why it matters · What to do
+- [x] **`lib/intelligence.ts`** — assembler, role/region relevance, source URL enrichment
+- [x] **`IntelligenceConfidencePanel`** — evidence, sources, confidence, timestamps, relevance
+- [x] **`SignalIntelligenceBlock`** — full / compact / inline variants
+- [x] Signal cards, hero, watchlist, detail aligned to intelligence contract
+- [x] Clickable source links (pipeline URLs + label fallback)
+- [x] Downstream cards trimmed to decision-relevant fields
 
 ### Sprint 1 — Premium First-Time Onboarding *(local, uncommitted)*
 

@@ -9,6 +9,7 @@ import { PremiumCard } from "@/components/ui/premium-card";
 import { Badge } from "@/components/ui/badge";
 import { rememberSignalSource, track } from "@/lib/analytics";
 import type { SignalView } from "@/lib/types";
+import { INTELLIGENCE_FOCUS_AREAS_LABEL } from "@/lib/copy";
 import { cn } from "@/lib/utils";
 
 const NEXT_BRIEFING_POINTS = [
@@ -49,8 +50,7 @@ export function SignalsWeAreTracking({
               Signals We&apos;re Tracking For You
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
-              These signals match your role, region, and interests. We saved
-              today as your baseline.
+              Your baseline for next week. Each signal links to full intelligence.
             </p>
           </div>
 
@@ -68,35 +68,46 @@ export function SignalsWeAreTracking({
                         changeType: signal.change.type,
                       });
                     }}
-                    className="group flex flex-col gap-2 px-6 py-4 transition-colors hover:bg-secondary/30 md:px-8 md:py-5"
+                    className="group block px-6 py-5 transition-colors hover:bg-secondary/30 md:px-8"
                   >
                     <div className="flex flex-wrap items-center gap-2">
                       <ChangeBadge type={signal.change.type} />
                       <Badge variant="muted">{signal.category}</Badge>
                     </div>
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="min-w-0">
-                        <h3 className="text-base font-semibold leading-snug group-hover:text-primary">
-                          {signal.name}
-                        </h3>
-                        <p className="mt-1.5 line-clamp-2 text-sm text-muted-foreground">
-                          {signal.soWhatForYou}
-                        </p>
-                      </div>
-                      <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                    </div>
+                    <h3 className="mt-2 text-base font-semibold leading-snug group-hover:text-primary">
+                      {signal.name}
+                    </h3>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      <span className="font-medium text-foreground/80">
+                        What happened:{" "}
+                      </span>
+                      {signal.intelligence.whatHappened}
+                    </p>
+                    <p className="mt-2 text-sm text-muted-foreground">
+                      <span className="font-medium text-foreground/80">
+                        Your move:{" "}
+                      </span>
+                      {signal.intelligence.whatToDoNext}
+                    </p>
+                    <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-primary">
+                      Full intelligence
+                      <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+                    </span>
                   </Link>
                 </li>
               ))}
             </ul>
           ) : (
             <p className="px-6 py-8 text-sm text-muted-foreground md:px-8">
-              No signals match your interests yet. Adjust your focus areas to
-              start tracking.
+              No signals match your focus areas yet. Adjust your{" "}
+              {INTELLIGENCE_FOCUS_AREAS_LABEL.toLowerCase()} to start tracking.
             </p>
           )}
 
-          <div className="border-t border-border/60 bg-secondary/20 px-6 py-5 md:px-8 md:py-6">
+          <div
+            className="border-t border-border/60 bg-secondary/20 px-6 py-5 md:px-8 md:py-6"
+            data-tour="opportunities"
+          >
             <p className="text-sm font-semibold text-foreground">
               Your next briefing will reveal:
             </p>
@@ -106,7 +117,10 @@ export function SignalsWeAreTracking({
                   key={point}
                   className="flex items-center gap-2 text-sm text-muted-foreground"
                 >
-                  <span className="h-1 w-1 shrink-0 rounded-full bg-primary" aria-hidden />
+                  <span
+                    className="h-1 w-1 shrink-0 rounded-full bg-primary"
+                    aria-hidden
+                  />
                   {point}
                 </li>
               ))}

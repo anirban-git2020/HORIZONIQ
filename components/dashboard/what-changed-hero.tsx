@@ -2,17 +2,14 @@
 
 import Link from "next/link";
 import { useCallback } from "react";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 import { FadeIn } from "@/components/motion/fade-in";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { Badge } from "@/components/ui/badge";
-import { buttonVariants } from "@/components/ui/button";
-import {
-  ChangeBadge,
-  DeltaIndicator,
-} from "@/components/dashboard/change-badge";
+import { ChangeBadge } from "@/components/dashboard/change-badge";
 import { ProvenanceBadge } from "@/components/trust/provenance-badge";
+import { STORY_ACTS } from "@/lib/copy";
 import { getDataProvenance } from "@/lib/data/access";
 import {
   rememberSignalSource,
@@ -20,7 +17,6 @@ import {
   useTrackOnVisible,
 } from "@/lib/analytics";
 import type { SignalSource } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
 import type { ChangeItem, SignalChangeGroup, WhatChangedBriefing } from "@/lib/types";
 
 function trackSignalClick(item: ChangeItem, source: SignalSource) {
@@ -32,64 +28,38 @@ function trackSignalClick(item: ChangeItem, source: SignalSource) {
   });
 }
 
-function SignalChangeRow({ item }: { item: ChangeItem }) {
+function CompactChangeRow({ item }: { item: ChangeItem }) {
   return (
-    <div className="px-5 py-4 md:px-6">
-      <div className="flex flex-wrap items-center gap-2">
-        <ChangeBadge type={item.signal.change.type} />
-        <Badge variant="muted">{item.signal.category}</Badge>
-        {item.visitChange && item.visitChange.momentumDelta !== 0 && (
-          <DeltaIndicator
-            delta={item.visitChange.momentumDelta}
-            label="momentum"
-          />
-        )}
+    <Link
+      href={`/signals/${item.signal.id}`}
+      onClick={() => trackSignalClick(item, "change-hero")}
+      className="group flex items-start gap-3 px-5 py-3.5 transition-colors hover:bg-secondary/30 md:px-8"
+    >
+      <ChangeBadge type={item.signal.change.type} />
+      <div className="min-w-0 flex-1">
+        <p className="text-sm font-semibold leading-snug group-hover:text-primary">
+          {item.signal.name}
+        </p>
+        <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">
+          {item.signal.intelligence.whatHappened}
+        </p>
       </div>
-
-      <div className="mt-3 flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
-        <div className="min-w-0 flex-1">
-          <Link
-            href={`/signals/${item.signal.id}`}
-            onClick={() => trackSignalClick(item, "change-hero")}
-            className="group inline-flex items-center gap-2"
-          >
-            <h4 className="text-base font-semibold leading-snug transition-colors group-hover:text-primary">
-              {item.signal.name}
-            </h4>
-            <ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-          </Link>
-          <p className="mt-1.5 text-sm text-foreground">
-            {item.signal.change.summary}
-          </p>
-          <p className="label-caps mb-1.5 mt-3 text-xs">Why this matters to you</p>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {item.whyItMatters}
-          </p>
-        </div>
-        <div className="lg:w-64 shrink-0">
-          <p className="label-caps mb-1.5 text-xs">Recommended action</p>
-          <p className="text-sm leading-relaxed text-muted-foreground">
-            {item.action}
-          </p>
-        </div>
-      </div>
-    </div>
+      <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
+    </Link>
   );
 }
 
 function ChangeGroupSection({ group }: { group: SignalChangeGroup }) {
   return (
     <div>
-      <div className="border-b border-border/60 bg-secondary/30 px-5 py-3 md:px-6">
-        <h3 className="text-sm font-semibold tracking-tight">{group.label}</h3>
-        <p className="mt-0.5 text-xs text-muted-foreground">
-          {group.items.length}{" "}
-          {group.items.length === 1 ? "signal" : "signals"}
-        </p>
+      <div className="bg-secondary/20 px-5 py-2.5 md:px-8">
+        <h3 className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
+          {group.label}
+        </h3>
       </div>
-      <div className="divide-y divide-border/60">
+      <div className="divide-y divide-border/50">
         {group.items.map((item) => (
-          <SignalChangeRow key={item.signal.id} item={item} />
+          <CompactChangeRow key={item.signal.id} item={item} />
         ))}
       </div>
     </div>
@@ -110,6 +80,7 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
 
   const provenance = getDataProvenance();
   const hasGroups = groups.length > 0;
+  const leadChange = changes[0];
 
   const onHeroVisible = useCallback(() => {
     track("change_hero_viewed", {
@@ -124,77 +95,93 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
     <section ref={heroRef} aria-labelledby="what-changed-heading" data-tour="what-changed">
       <FadeIn>
         <PremiumCard glow className="overflow-hidden">
-          <div className="border-b border-border/60 bg-primary/[0.03] px-6 py-5 md:px-8 md:py-6">
-            <div className="flex flex-wrap items-start justify-between gap-4">
-              <div>
-                <div className="mb-2 flex flex-wrap items-center gap-x-2 gap-y-1">
-                  <p className="label-caps text-primary">
-                    {isReturnVisit ? "Since your last visit" : "Week 1 Briefing"}
-                  </p>
-                  <ProvenanceBadge provenance={provenance} />
-                  <span className="hidden text-muted-foreground/60 sm:inline" aria-hidden>
-                    ·
-                  </span>
-                  <p className="text-xs font-medium text-foreground/80">
-                    {briefingLabel}
-                  </p>
-                  <span className="hidden text-muted-foreground/60 sm:inline" aria-hidden>
-                    ·
-                  </span>
-                  <p className="text-xs text-muted-foreground">
-                    Updated {updatedLabel}
-                  </p>
-                </div>
-                <h2
-                  id="what-changed-heading"
-                  className="section-title text-2xl md:text-3xl"
-                >
-                  {title}
-                </h2>
-                <p className="mt-2 text-sm text-muted-foreground md:text-base">
-                  {subtitle}
+          {/* Act 1 — primary message */}
+          <header className="border-b border-border/60 px-6 py-8 md:px-10 md:py-10">
+            <p className="label-caps text-primary">{STORY_ACTS.changed}</p>
+            <h2
+              id="what-changed-heading"
+              className="display-title mt-2 text-2xl md:text-3xl lg:text-4xl"
+            >
+              {title}
+            </h2>
+            <p className="mt-3 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+              {subtitle}
+            </p>
+            <div className="mt-4 flex flex-wrap items-center gap-2 text-xs text-muted-foreground">
+              <ProvenanceBadge provenance={provenance} />
+              <span aria-hidden>·</span>
+              <span>{briefingLabel}</span>
+              <span aria-hidden>·</span>
+              <span>Updated {updatedLabel}</span>
+            </div>
+          </header>
+
+          {/* What changed — compact list */}
+          {(hasGroups || changes.length > 0) && (
+            <div data-tour="signals">
+              <div className="border-b border-border/60 px-6 py-3 md:px-8">
+                <p className="text-xs font-medium text-muted-foreground">
+                  {hasGroups
+                    ? "Signals that moved this period"
+                    : "Top changes in your briefing"}
                 </p>
               </div>
-              {primaryAction && (
-                <div className="w-full sm:w-auto sm:max-w-xs" data-tour="recommended-actions">
-                  <p className="label-caps mb-2">Recommended action</p>
-                  <div className="rounded-xl border border-primary/20 bg-primary/[0.05] p-4">
-                    <p className="text-sm font-semibold">{primaryAction.title}</p>
-                    <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-                      {primaryAction.detail}
-                    </p>
-                  </div>
+              {hasGroups ? (
+                <div className="divide-y divide-border/50">
+                  {groups.map((group) => (
+                    <ChangeGroupSection key={group.bucket} group={group} />
+                  ))}
+                </div>
+              ) : (
+                <div className="divide-y divide-border/50">
+                  {changes.map((item) => (
+                    <CompactChangeRow key={item.signal.id} item={item} />
+                  ))}
                 </div>
               )}
             </div>
-          </div>
+          )}
 
-          {hasGroups ? (
-            <div className="divide-y divide-border/60">
-              {groups.map((group) => (
-                <ChangeGroupSection key={group.bucket} group={group} />
-              ))}
-            </div>
-          ) : (
-            <div className="divide-y divide-border/60">
-              {changes.map((item) => (
-                <SignalChangeRow key={item.signal.id} item={item} />
-              ))}
+          {/* Act 2 — why it matters (lead change only) */}
+          {leadChange && (
+            <div className="border-t border-border/60 bg-primary/[0.02] px-6 py-6 md:px-10 md:py-8">
+              <p className="label-caps text-primary">{STORY_ACTS.matters}</p>
+              <p className="mt-3 max-w-3xl text-base leading-relaxed text-foreground md:text-lg">
+                {leadChange.signal.intelligence.whyYouShouldCare}
+              </p>
+              {changes.length > 1 && (
+                <p className="mt-3 text-sm text-muted-foreground">
+                  {changes.length - 1} more{" "}
+                  {changes.length === 2 ? "change" : "changes"} below — open any
+                  signal for full analysis.
+                </p>
+              )}
             </div>
           )}
 
-          {changes.length > 0 && (
-            <div className="border-t border-border/60 px-6 py-4 md:px-8">
-              <Link
-                href={`/signals/${changes[0].signal.id}`}
-                onClick={() => trackSignalClick(changes[0], "change-hero-cta")}
-                className={cn(
-                  buttonVariants({ variant: "secondary", size: "sm" })
-                )}
-              >
-                <Sparkles />
-                Explore top change in detail
-              </Link>
+          {/* Act 3 — what to do */}
+          {primaryAction && (
+            <div
+              className="border-t border-primary/20 bg-primary/[0.04] px-6 py-6 md:px-10 md:py-8"
+              data-tour="recommended-actions"
+            >
+              <p className="label-caps text-primary">{STORY_ACTS.action}</p>
+              <p className="mt-3 text-lg font-semibold text-foreground md:text-xl">
+                {primaryAction.title}
+              </p>
+              <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+                {primaryAction.detail}
+              </p>
+              {leadChange && (
+                <Link
+                  href={`/signals/${leadChange.signal.id}`}
+                  onClick={() => trackSignalClick(leadChange, "change-hero-cta")}
+                  className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-primary hover:underline"
+                >
+                  See intelligence behind this action
+                  <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+              )}
             </div>
           )}
         </PremiumCard>

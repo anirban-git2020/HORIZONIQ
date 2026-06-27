@@ -11,6 +11,7 @@ import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { getDefaultInterestsForRole, REGIONS } from "@/lib/options";
+import { INTELLIGENCE_FOCUS_AREAS_LABEL } from "@/lib/copy";
 import { ONBOARDING_TOUR_PATH, trackOnboardingCompleted } from "@/lib/onboarding";
 import { usePreferences } from "@/lib/preferences";
 import { track } from "@/lib/analytics";
@@ -60,7 +61,7 @@ export default function RegionPage() {
               onClick={() => router.push("/onboarding/interests")}
               disabled={!preferences.region}
             >
-              Customize interests
+              Customize {INTELLIGENCE_FOCUS_AREAS_LABEL.toLowerCase()}
             </Button>
             <Button onClick={handleQuickStart} disabled={!preferences.region}>
               <Sparkles />
@@ -78,7 +79,7 @@ export default function RegionPage() {
           </p>
           <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
             Start my briefing uses three recommended focus areas for your role.
-            You can fine-tune interests anytime from your dashboard.
+            You can fine-tune {INTELLIGENCE_FOCUS_AREAS_LABEL.toLowerCase()} anytime from your dashboard.
           </p>
         </PremiumCard>
       )}

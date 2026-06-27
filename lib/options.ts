@@ -456,25 +456,25 @@ export const ROLE_INTEREST_COPY: Record<
     title: "What do you want to study and build toward?",
     subtitle:
       "Pick skills and fields across technology, science, arts, and commerce — we'll track what's rising in each.",
-    sectionLabel: "Your focus areas",
+    sectionLabel: "Intelligence Focus Areas",
   },
   professional: {
     title: "What's shaping your career?",
     subtitle:
       "Select the skills and sectors most relevant to your role — nothing else.",
-    sectionLabel: "Your focus areas",
+    sectionLabel: "Intelligence Focus Areas",
   },
   entrepreneur: {
     title: "Which markets are you pursuing?",
     subtitle:
       "Pick the sectors and technologies where opportunity is forming right now.",
-    sectionLabel: "Markets to watch",
+    sectionLabel: "Intelligence Focus Areas",
   },
   investor: {
     title: "Where is capital moving?",
     subtitle:
       "Select the sectors and technologies with the strongest momentum signals.",
-    sectionLabel: "Sectors & themes",
+    sectionLabel: "Intelligence Focus Areas",
   },
 };
 

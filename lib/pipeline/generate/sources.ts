@@ -36,6 +36,7 @@ export function buildLiveSources(
       sources.push({
         label: `${SOURCE_LABELS[sourceId]}: ${sample.title}`,
         type: "live",
+        url: sample.url,
       });
     }
   }

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 
@@ -11,23 +11,25 @@ import { identityService } from "@/lib/identity";
 
 export default function GreetingPage() {
   const router = useRouter();
-  const displayName = identityService.getDisplayName();
+  const [ready, setReady] = useState(false);
+  const displayName = ready ? identityService.getDisplayName() : null;
 
   useEffect(() => {
+    setReady(true);
     if (!identityService.hasCompletedWelcome()) {
       router.replace("/onboarding/welcome");
       return;
     }
-    if (!displayName) {
+    if (!identityService.getDisplayName()) {
       router.replace("/onboarding/name");
       return;
     }
     if (identityService.hasCompletedGreeting()) {
       router.replace("/onboarding/role");
     }
-  }, [router, displayName]);
+  }, [router]);
 
-  if (!displayName) {
+  if (!ready || !displayName) {
     return null;
   }
 

@@ -3,19 +3,21 @@
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { AnimatedCounter } from "@/components/motion/animated-counter";
 import { Badge } from "@/components/ui/badge";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { ChangeBadge, DeltaIndicator } from "@/components/dashboard/change-badge";
-import { SignalEvidence } from "@/components/dashboard/signal-evidence";
+import { ChangeBadge } from "@/components/dashboard/change-badge";
 import { rememberSignalSource, track } from "@/lib/analytics";
 import type { SignalSource } from "@/lib/analytics";
 import type { SignalView } from "@/lib/types";
+import { cn } from "@/lib/utils";
+
+export type SignalCardFocus = "change" | "why" | "action";
 
 interface SignalCardProps {
   signal: SignalView;
-  featured?: boolean;
+  focus?: SignalCardFocus;
   source?: SignalSource;
+  className?: string;
 }
 
 function trackSignalCardClick(signal: SignalView, source: SignalSource) {
@@ -29,118 +31,60 @@ function trackSignalCardClick(signal: SignalView, source: SignalSource) {
 
 export function SignalCard({
   signal,
-  featured = false,
+  focus = "why",
   source = "dashboard-signals",
+  className,
 }: SignalCardProps) {
-  if (featured) {
-    return <FeaturedSignalCard signal={signal} source={source} />;
-  }
+  const question =
+    focus === "change"
+      ? "What happened?"
+      : focus === "action"
+        ? "What to do next"
+        : "Why it matters to you";
+
+  const answer =
+    focus === "change"
+      ? signal.intelligence.whatHappened
+      : focus === "action"
+        ? signal.intelligence.whatToDoNext
+        : signal.intelligence.whyYouShouldCare;
 
   return (
     <Link
       href={`/signals/${signal.id}`}
       onClick={() => trackSignalCardClick(signal, source)}
-      className="block h-full"
+      className={cn("block h-full", className)}
     >
-      <PremiumCard className="flex h-full flex-col p-6 transition-colors hover:border-primary/30">
-        <div className="mb-4 flex items-start justify-between gap-3">
-          <div className="flex flex-wrap gap-2">
-            <ChangeBadge type={signal.change.type} />
-            <Badge variant="muted">{signal.category}</Badge>
-          </div>
-          <span className="label-caps text-primary/80">#{signal.rank}</span>
-        </div>
-
-        <h3 className="text-lg font-semibold leading-snug">{signal.name}</h3>
-        <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          {signal.currentState}
-        </p>
-
-        <div className="mt-3 flex items-start gap-2 rounded-lg border border-primary/15 bg-primary/[0.04] p-3 text-sm">
-          <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span className="text-foreground">{signal.soWhatForYou}</span>
-        </div>
-
-        <div className="mt-3 flex flex-wrap gap-3">
-          <DeltaIndicator delta={signal.momentumDelta} label="momentum" />
-          <DeltaIndicator delta={signal.confidenceDelta} label="confidence" />
-        </div>
-
-        <div className="mt-auto pt-5">
-          <SignalEvidence
-            momentum={signal.momentum}
-            confidence={signal.confidence}
-            momentumDrivers={signal.momentumDrivers}
-            confidenceFactors={signal.confidenceFactors}
-          />
-        </div>
-      </PremiumCard>
-    </Link>
-  );
-}
-
-function FeaturedSignalCard({
-  signal,
-  source,
-}: {
-  signal: SignalView;
-  source: SignalSource;
-}) {
-  return (
-    <Link
-      href={`/signals/${signal.id}`}
-      onClick={() => trackSignalCardClick(signal, source)}
-      className="block"
-    >
-      <PremiumCard glow className="p-7 md:p-8 lg:p-10 transition-colors hover:border-primary/40">
-        <div className="mb-6 flex flex-wrap items-center gap-2">
-          <Badge variant="primary">Top change</Badge>
+      <PremiumCard className="flex h-full flex-col p-5 transition-colors hover:border-primary/25 md:p-6">
+        <div className="mb-3 flex flex-wrap gap-2">
           <ChangeBadge type={signal.change.type} />
-          <Badge variant="muted">{signal.category}</Badge>
+          <Badge variant="muted" className="text-xs">
+            {signal.category}
+          </Badge>
         </div>
 
-        <h2 className="section-title text-2xl md:text-3xl">{signal.name}</h2>
-        <p className="body-lg mt-3 max-w-3xl">{signal.change.summary}</p>
+        <h3 className="text-base font-semibold leading-snug">{signal.name}</h3>
 
-        <div className="mt-3 flex items-start gap-2 rounded-lg border border-primary/20 bg-primary/[0.05] p-3 text-sm md:p-4 md:text-base">
-          <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
-          <span className="text-foreground">{signal.soWhatForYou}</span>
+        <div className="mt-4 flex-1">
+          <p className="label-caps mb-1.5 text-[10px] text-muted-foreground">
+            {question}
+          </p>
+          <p
+            className={cn(
+              "text-sm leading-relaxed",
+              focus === "action"
+                ? "font-medium text-foreground"
+                : "text-muted-foreground"
+            )}
+          >
+            {answer}
+          </p>
         </div>
 
-        <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-          {signal.currentState}
-        </p>
-
-        <div className="mt-6 flex flex-wrap gap-4">
-          <DeltaIndicator delta={signal.momentumDelta} label="momentum" />
-          <DeltaIndicator delta={signal.confidenceDelta} label="confidence" />
-        </div>
-
-        <div className="mt-8 grid gap-6 lg:grid-cols-2">
-          <SignalEvidence
-            momentum={signal.momentum}
-            confidence={signal.confidence}
-            momentumDrivers={signal.momentumDrivers}
-            confidenceFactors={signal.confidenceFactors}
-          />
-          <div className="rounded-xl border border-border bg-secondary/50 p-5">
-            <p className="label-caps mb-4">Signal strength</p>
-            <div className="flex items-baseline gap-6">
-              <div>
-                <p className="text-xs text-muted-foreground">Momentum</p>
-                <p className="text-3xl font-semibold tabular-nums text-success">
-                  <AnimatedCounter value={signal.momentum} />
-                </p>
-              </div>
-              <div>
-                <p className="text-xs text-muted-foreground">Confidence</p>
-                <p className="text-3xl font-semibold tabular-nums text-primary">
-                  <AnimatedCounter value={signal.confidence} />
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <span className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-primary">
+          Full intelligence
+          <ArrowRight className="h-3.5 w-3.5" />
+        </span>
       </PremiumCard>
     </Link>
   );

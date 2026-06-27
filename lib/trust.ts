@@ -1,4 +1,4 @@
-import type { BriefingRecord } from "@/lib/data/schemas";
+import type { BriefingRecord, DataSource } from "@/lib/data/schemas";
 
 export type DataProvenance = BriefingRecord["dataProvenance"];
 
@@ -75,4 +75,68 @@ export function getSourceBadgeVariant(
   type: "mock" | "live"
 ): "success" | "muted" {
   return type === "live" ? "success" : "muted";
+}
+
+const SOURCE_SEARCH_URLS: Record<string, (title: string) => string> = {
+  "Hacker News": (title) =>
+    `https://hn.algolia.com/?dateRange=pastWeek&page=0&prefix&query=${encodeURIComponent(title)}`,
+  arXiv: (title) =>
+    `https://arxiv.org/search/?query=${encodeURIComponent(title)}&searchtype=all`,
+  GitHub: (title) =>
+    `https://github.com/search?q=${encodeURIComponent(title)}&type=repositories`,
+  "Product Hunt": (title) =>
+    `https://www.producthunt.com/search?q=${encodeURIComponent(title)}`,
+  Wikimedia: (title) =>
+    `https://www.google.com/search?q=${encodeURIComponent(`${title} wikipedia`)}`,
+};
+
+function extractSampleTitle(label: string): string {
+  const colon = label.indexOf(": ");
+  return colon >= 0 ? label.slice(colon + 2).trim() : label;
+}
+
+function detectSourcePrefix(label: string): string | null {
+  for (const prefix of Object.keys(SOURCE_SEARCH_URLS)) {
+    if (label.startsWith(`${prefix}:`)) return prefix;
+  }
+  return null;
+}
+
+export function resolveSourceUrl(source: DataSource): string | undefined {
+  if (source.url) return source.url;
+  const prefix = detectSourcePrefix(source.label);
+  if (!prefix) return undefined;
+  const title = extractSampleTitle(source.label);
+  if (!title) return undefined;
+  return SOURCE_SEARCH_URLS[prefix](title);
+}
+
+export function buildConfidenceExplanation(
+  confidence: number,
+  factors: { label: string; value: number; unit: "%" | "score" }[],
+  provenance: DataProvenance
+): string {
+  if (provenance === "curated-mock") {
+    return "Sample briefing — confidence score is illustrative. Live briefings score agreement across public sources.";
+  }
+
+  const coverage = factors.find((f) => f.label === "Live source coverage");
+  const agreement = factors.find((f) => f.label === "Cross-source agreement");
+  const level =
+    confidence >= 80 ? "High" : confidence >= 60 ? "Moderate" : "Early";
+
+  const parts = [
+    `${level} confidence (${confidence}/100).`,
+    coverage
+      ? `Live source coverage scored ${coverage.value}/100.`
+      : null,
+    agreement
+      ? `Cross-source agreement at ${agreement.value}/100.`
+      : null,
+    provenance === "pipeline-mock"
+      ? "Some sources were unavailable this week — mixed live and sample data."
+      : "Multiple independent public feeds corroborate this signal.",
+  ].filter(Boolean);
+
+  return parts.join(" ");
 }

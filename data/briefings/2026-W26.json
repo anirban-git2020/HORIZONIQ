@@ -1,17 +1,20 @@
 {
   "briefingPeriod": "2026-W26",
   "briefingLabel": "Week of June 22, 2026 – June 28, 2026",
-  "publishedAt": "2026-06-27T10:59:08.124Z",
+  "publishedAt": "2026-06-27T11:08:48.439Z",
   "dataProvenance": "pipeline",
   "buckets": {
     "new": [],
     "rising": [
-      "vc-ai-concentration"
-    ],
-    "falling": [
-      "synthetic-biology",
       "life-sciences-ai-research",
       "commerce-analytics-demand"
+    ],
+    "falling": [
+      "grid-storage",
+      "ai-native-startups",
+      "vc-ai-concentration",
+      "lab-automation-biochem",
+      "creative-ai-tools"
     ],
     "stable": [
       "ai-agents",
@@ -23,16 +26,13 @@
       "supply-chain-resilience",
       "ai-diagnostics",
       "embedded-finance",
-      "grid-storage",
-      "ai-native-startups",
-      "lab-automation-biochem",
-      "creative-ai-tools"
+      "synthetic-biology"
     ]
   },
   "signalStates": [
     {
       "signalId": "ai-agents",
-      "momentum": 48,
+      "momentum": 47,
       "confidence": 95,
       "previousMomentum": 48,
       "previousConfidence": 95,
@@ -78,7 +78,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 100,
+          "value": 75,
           "unit": "score"
         },
         {
@@ -90,7 +90,7 @@
     },
     {
       "signalId": "humanoid-robotics",
-      "momentum": 50,
+      "momentum": 51,
       "confidence": 95,
       "previousMomentum": 50,
       "previousConfidence": 95,
@@ -131,7 +131,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 125,
+          "value": 100,
           "unit": "score"
         },
         {
@@ -143,7 +143,7 @@
     },
     {
       "signalId": "quantum-error-correction",
-      "momentum": 60,
+      "momentum": 63,
       "confidence": 95,
       "previousMomentum": 60,
       "previousConfidence": 95,
@@ -189,7 +189,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 75,
+          "value": 50,
           "unit": "score"
         },
         {
@@ -201,7 +201,7 @@
     },
     {
       "signalId": "ai-cyber-threats",
-      "momentum": 59,
+      "momentum": 62,
       "confidence": 95,
       "previousMomentum": 59,
       "previousConfidence": 95,
@@ -247,7 +247,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 100,
+          "value": 75,
           "unit": "score"
         },
         {
@@ -259,7 +259,7 @@
     },
     {
       "signalId": "cloud-cost-reckoning",
-      "momentum": 43,
+      "momentum": 41,
       "confidence": 95,
       "previousMomentum": 43,
       "previousConfidence": 95,
@@ -310,7 +310,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 75,
+          "value": 50,
           "unit": "score"
         },
         {
@@ -385,9 +385,9 @@
     },
     {
       "signalId": "supply-chain-resilience",
-      "momentum": 43,
+      "momentum": 41,
       "confidence": 95,
-      "previousMomentum": 45,
+      "previousMomentum": 43,
       "previousConfidence": 95,
       "change": {
         "type": "stable",
@@ -436,7 +436,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 75,
+          "value": 50,
           "unit": "score"
         },
         {
@@ -448,7 +448,7 @@
     },
     {
       "signalId": "ai-diagnostics",
-      "momentum": 43,
+      "momentum": 41,
       "confidence": 95,
       "previousMomentum": 43,
       "previousConfidence": 95,
@@ -494,7 +494,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 75,
+          "value": 50,
           "unit": "score"
         },
         {
@@ -506,7 +506,7 @@
     },
     {
       "signalId": "embedded-finance",
-      "momentum": 56,
+      "momentum": 58,
       "confidence": 95,
       "previousMomentum": 56,
       "previousConfidence": 95,
@@ -552,7 +552,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 100,
+          "value": 75,
           "unit": "score"
         },
         {
@@ -564,13 +564,13 @@
     },
     {
       "signalId": "grid-storage",
-      "momentum": 33,
+      "momentum": 27,
       "confidence": 95,
-      "previousMomentum": 32,
+      "previousMomentum": 33,
       "previousConfidence": 95,
       "change": {
-        "type": "stable",
-        "summary": "Grid-Scale Energy Storage held steady in Energy with arXiv -50%."
+        "type": "falling",
+        "summary": "Momentum cooled in Energy this week (arXiv -50%)."
       },
       "sources": [
         {
@@ -627,13 +627,13 @@
     },
     {
       "signalId": "ai-native-startups",
-      "momentum": 45,
-      "confidence": 95,
-      "previousMomentum": 43,
+      "momentum": 34,
+      "confidence": 87,
+      "previousMomentum": 45,
       "previousConfidence": 95,
       "change": {
-        "type": "stable",
-        "summary": "AI-Native Startup Formation held steady in Startups with arXiv -75%."
+        "type": "falling",
+        "summary": "Momentum cooled in Startups this week (arXiv -75%)."
       },
       "sources": [
         {
@@ -663,17 +663,12 @@
           "label": "Wikimedia Pageviews",
           "value": 8,
           "unit": "%"
-        },
-        {
-          "label": "GitHub",
-          "value": 17,
-          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 60,
+          "value": 40,
           "unit": "score"
         },
         {
@@ -683,20 +678,20 @@
         },
         {
           "label": "Pipeline confidence",
-          "value": 98,
+          "value": 87,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "vc-ai-concentration",
-      "momentum": 60,
+      "momentum": 51,
       "confidence": 95,
-      "previousMomentum": 50,
+      "previousMomentum": 60,
       "previousConfidence": 95,
       "change": {
-        "type": "rising",
-        "summary": "Live activity accelerating in Venture Capital (Wikimedia Pageviews +2%)."
+        "type": "falling",
+        "summary": "Momentum cooled in Venture Capital this week (Wikimedia Pageviews +2%)."
       },
       "sources": [
         {
@@ -712,7 +707,7 @@
           "type": "live"
         },
         {
-          "label": "Product Hunt: FounderNode",
+          "label": "Wikimedia: Venture Capital — Wikipedia pageviews",
           "type": "live"
         }
       ],
@@ -721,40 +716,35 @@
           "label": "Wikimedia Pageviews",
           "value": 2,
           "unit": "%"
-        },
-        {
-          "label": "Product Hunt",
-          "value": 75,
-          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 40,
+          "value": 20,
           "unit": "score"
         },
         {
           "label": "Cross-source agreement",
-          "value": 100,
+          "value": 75,
           "unit": "score"
         },
         {
           "label": "Pipeline confidence",
-          "value": 98,
+          "value": 95,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "synthetic-biology",
-      "momentum": 42,
+      "momentum": 40,
       "confidence": 95,
-      "previousMomentum": 47,
+      "previousMomentum": 42,
       "previousConfidence": 95,
       "change": {
-        "type": "falling",
-        "summary": "Momentum cooled in Biotechnology this week (arXiv -29%)."
+        "type": "stable",
+        "summary": "Synthetic Biology Breakthroughs held steady in Biotechnology with arXiv -29%."
       },
       "sources": [
         {
@@ -799,7 +789,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 75,
+          "value": 50,
           "unit": "score"
         },
         {
@@ -811,13 +801,13 @@
     },
     {
       "signalId": "lab-automation-biochem",
-      "momentum": 37,
+      "momentum": 32,
       "confidence": 95,
-      "previousMomentum": 38,
+      "previousMomentum": 37,
       "previousConfidence": 95,
       "change": {
-        "type": "stable",
-        "summary": "Lab Automation in Biochemistry held steady in Biochemistry with arXiv -33%."
+        "type": "falling",
+        "summary": "Momentum cooled in Biochemistry this week (arXiv -33%)."
       },
       "sources": [
         {
@@ -862,7 +852,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 75,
+          "value": 50,
           "unit": "score"
         },
         {
@@ -874,13 +864,13 @@
     },
     {
       "signalId": "life-sciences-ai-research",
-      "momentum": 41,
+      "momentum": 50,
       "confidence": 95,
-      "previousMomentum": 50,
+      "previousMomentum": 41,
       "previousConfidence": 95,
       "change": {
-        "type": "falling",
-        "summary": "Momentum cooled in Life Sciences this week (Wikimedia Pageviews +1%)."
+        "type": "rising",
+        "summary": "Live activity accelerating in Life Sciences (Wikimedia Pageviews +1%)."
       },
       "sources": [
         {
@@ -896,7 +886,7 @@
           "type": "live"
         },
         {
-          "label": "Product Hunt: Chasing Pink",
+          "label": "Wikimedia: Life Sciences — Wikipedia pageviews",
           "type": "live"
         }
       ],
@@ -905,40 +895,35 @@
           "label": "Wikimedia Pageviews",
           "value": 1,
           "unit": "%"
-        },
-        {
-          "label": "Product Hunt",
-          "value": 69,
-          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 40,
+          "value": 20,
           "unit": "score"
         },
         {
           "label": "Cross-source agreement",
-          "value": 100,
+          "value": 75,
           "unit": "score"
         },
         {
           "label": "Pipeline confidence",
-          "value": 98,
+          "value": 95,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "creative-ai-tools",
-      "momentum": 42,
-      "confidence": 95,
-      "previousMomentum": 40,
+      "momentum": 35,
+      "confidence": 79,
+      "previousMomentum": 42,
       "previousConfidence": 95,
       "change": {
-        "type": "stable",
-        "summary": "AI Tools for Creative Careers held steady in Arts & Creative Fields with Hacker News -100%."
+        "type": "falling",
+        "summary": "Momentum cooled in Arts & Creative Fields this week (Hacker News -100%)."
       },
       "sources": [
         {
@@ -954,7 +939,7 @@
           "type": "live"
         },
         {
-          "label": "Product Hunt: Pool Atlas",
+          "label": "Wikimedia: Arts — Wikipedia pageviews",
           "type": "live"
         }
       ],
@@ -968,40 +953,35 @@
           "label": "Wikimedia Pageviews",
           "value": 15,
           "unit": "%"
-        },
-        {
-          "label": "Product Hunt",
-          "value": 0,
-          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 60,
+          "value": 40,
           "unit": "score"
         },
         {
           "label": "Cross-source agreement",
-          "value": 75,
+          "value": 25,
           "unit": "score"
         },
         {
           "label": "Pipeline confidence",
-          "value": 98,
+          "value": 79,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "commerce-analytics-demand",
-      "momentum": 57,
-      "confidence": 95,
-      "previousMomentum": 61,
+      "momentum": 66,
+      "confidence": 87,
+      "previousMomentum": 57,
       "previousConfidence": 95,
       "change": {
-        "type": "falling",
-        "summary": "Momentum cooled in Commerce & Business Studies this week (arXiv +100%)."
+        "type": "rising",
+        "summary": "Live activity accelerating in Commerce & Business Studies (arXiv +100%)."
       },
       "sources": [
         {
@@ -1017,7 +997,7 @@
           "type": "live"
         },
         {
-          "label": "Product Hunt: Group Subscriptions by beehiiv",
+          "label": "Wikimedia: Commerce — Wikipedia pageviews",
           "type": "live"
         }
       ],
@@ -1031,27 +1011,22 @@
           "label": "Wikimedia Pageviews",
           "value": 0,
           "unit": "%"
-        },
-        {
-          "label": "Product Hunt",
-          "value": 10,
-          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 60,
+          "value": 40,
           "unit": "score"
         },
         {
           "label": "Cross-source agreement",
-          "value": 75,
+          "value": 50,
           "unit": "score"
         },
         {
           "label": "Pipeline confidence",
-          "value": 98,
+          "value": 87,
           "unit": "score"
         }
       ]

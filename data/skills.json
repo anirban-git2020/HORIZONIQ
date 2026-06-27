@@ -142,7 +142,7 @@
       "name": "AI Product Building",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes BrowserAct.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -5% this week in Product Management.",
       "summary": "Ship AI-native products from concept to market with lean teams.",
       "interests": [
         "startups",
@@ -160,7 +160,7 @@
       "name": "Venture & Market Analysis",
       "demand": "High",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes FounderNode.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Bluerails Discovery .",
       "summary": "Evaluate markets, map competitive landscapes, and assess investment theses.",
       "interests": [
         "venture-capital",
@@ -176,7 +176,7 @@
       "id": "supply-chain-analytics",
       "name": "Supply Chain Analytics",
       "demand": "Growing",
-      "demandChange": "stable",
+      "demandChange": "rising",
       "changeSummary": "Skills demand shifted — Product Hunt activity includes Steam Machine.",
       "summary": "Model supplier risk, optimize logistics, and build visibility dashboards.",
       "interests": [
@@ -209,7 +209,7 @@
       "name": "Molecular Biology",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes PathMap.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews +1% this week in Life Sciences.",
       "summary": "Foundations in genetics, cell biology, and lab techniques for biotech careers.",
       "interests": [
         "biotechnology",
@@ -226,7 +226,7 @@
       "name": "Bioinformatics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Swimio.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews +1% this week in Life Sciences.",
       "summary": "Analyze biological data with computational tools and programming.",
       "interests": [
         "biotechnology",
@@ -243,7 +243,7 @@
       "name": "Lab Data Analysis",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Chasing Pink.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews +1% this week in Life Sciences.",
       "summary": "Process, visualize, and interpret experimental data from modern lab systems.",
       "interests": [
         "biochemistry",
@@ -259,7 +259,7 @@
       "name": "Scientific Computing",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Chasing Pink.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews +1% this week in Life Sciences.",
       "summary": "Use Python, simulation, and modeling tools for research and industry science.",
       "interests": [
         "life-sciences",
@@ -275,7 +275,7 @@
       "name": "Creative AI Tool Fluency",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Pool Atlas.",
+      "changeSummary": "Skills demand shifted — Hacker News -100% this week in Arts & Creative Fields.",
       "summary": "Use AI tools for design, writing, video, and UX while maintaining creative direction.",
       "interests": [
         "arts"
@@ -290,7 +290,7 @@
       "name": "UX & Design Fundamentals",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes BrowserAct.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -5% this week in Product Management.",
       "summary": "User research, visual design, and product thinking for creative careers.",
       "interests": [
         "arts",
@@ -307,7 +307,7 @@
       "name": "Financial Analytics",
       "demand": "High",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Group Subscriptions by beehiiv.",
+      "changeSummary": "Skills demand shifted — arXiv +100% this week in Commerce & Business Studies.",
       "summary": "Model, analyze, and visualize financial and business data for decision making.",
       "interests": [
         "commerce",
@@ -323,7 +323,7 @@
       "name": "Business Data Literacy",
       "demand": "High",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Group Subscriptions by beehiiv.",
+      "changeSummary": "Skills demand shifted — arXiv +100% this week in Commerce & Business Studies.",
       "summary": "Excel, SQL, and dashboard skills for accounting, finance, and management paths.",
       "interests": [
         "commerce"

@@ -188,24 +188,4 @@
       0 16px 48px -20px hsl(0 0% 0% / 0.55);
   }
 
-  .animate-page-in {
-    animation: page-in 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  @keyframes page-in {
-    from {
-      opacity: 0;
-      transform: translateY(6px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .animate-page-in {
-      animation: none;
-    }
-  }
 }

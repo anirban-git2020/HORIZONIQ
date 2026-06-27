@@ -11,17 +11,21 @@ import { OptionCard } from "@/components/onboarding/option-card";
 import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
 import { buttonVariants } from "@/components/ui/button";
+import { PageLoader } from "@/components/ui/page-loader";
 import { ROLES } from "@/lib/options";
 import { getFirstTimeOnboardingPath } from "@/lib/onboarding-flow";
 import { usePreferences } from "@/lib/preferences";
 import { startSessionTiming, track } from "@/lib/analytics";
+import { useRequireIdentityOnboarding } from "@/hooks/use-require-identity-onboarding";
 import { cn } from "@/lib/utils";
 
 export default function RolePage() {
   const router = useRouter();
-  const { preferences, setRole } = usePreferences();
+  const { preferences, setRole, hydrated } = usePreferences();
+  const identityReady = useRequireIdentityOnboarding(hydrated);
 
   useEffect(() => {
+    if (!hydrated || !identityReady) return;
     startSessionTiming();
     const resumePath = getFirstTimeOnboardingPath();
     if (resumePath !== "/onboarding/role") {
@@ -29,7 +33,11 @@ export default function RolePage() {
       return;
     }
     track("onboarding_started", {});
-  }, [router]);
+  }, [hydrated, identityReady, router]);
+
+  if (!hydrated || !identityReady) {
+    return <PageLoader />;
+  }
 
   return (
     <OnboardingShell

@@ -17,7 +17,7 @@ import { SignalCard } from "@/components/dashboard/signal-card";
 import { SkillCard } from "@/components/dashboard/skill-card";
 import { OpportunityCard } from "@/components/dashboard/opportunity-card";
 import { ActionCard } from "@/components/dashboard/action-card";
-import { Stagger, StaggerItem } from "@/components/motion/fade-in";
+import { FadeIn, Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { getMeta, getDataProvenance, getRefreshSchedule } from "@/lib/data/access";
 import { getProvenanceShortLabel } from "@/lib/trust";
 import { ADJUST_FOCUS_AREAS_LABEL } from "@/lib/copy";
@@ -42,6 +42,7 @@ import {
   saveVisitSnapshot,
 } from "@/lib/visit-snapshot";
 import { identityService } from "@/lib/identity";
+import { formatPersonalizedGreeting } from "@/lib/identity/greeting";
 import {
   getFirstTimeOnboardingPath,
   hasCompletedIdentityOnboarding,
@@ -58,7 +59,7 @@ function FullScreenLoader({ label }: { label: string }) {
 
 export default function DashboardPage() {
   const router = useRouter();
-  const { preferences, hydrated, isComplete, reset } = usePreferences();
+  const { preferences, hydrated, isComplete } = usePreferences();
   const [guidedTourActive, setGuidedTourActive] = useState(false);
 
   useEffect(() => {
@@ -129,7 +130,6 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!hydrated || !isComplete) return;
-    if (!identityService.shouldShowGuidedTour()) return;
 
     const timer = window.setTimeout(() => {
       setGuidedTourActive(true);
@@ -140,7 +140,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!hydrated || !isComplete || signals.length === 0) return;
-    if (identityService.shouldShowGuidedTour()) return;
+    if (guidedTourActive) return;
     persistVisitSnapshot();
   }, [hydrated, isComplete, signals, persistVisitSnapshot, guidedTourActive]);
 
@@ -165,13 +165,20 @@ export default function DashboardPage() {
   }
 
   const isFirstVisit = !whatChanged.isReturnVisit;
+  const displayName = identityService.getDisplayName();
 
   const handleReset = () => {
     track("start_over", {});
     clearVisitSnapshot();
     identityService.clear();
-    reset();
-    router.push("/");
+    try {
+      window.localStorage.removeItem("horizoniq.preferences.v2");
+      window.localStorage.removeItem("horizoniq.preferences.v1");
+    } catch {
+      // Ignore storage errors and still return to landing.
+    }
+    // Full navigation avoids dashboard guard redirects and loader flash after reset.
+    window.location.assign("/");
   };
 
   const handleTourComplete = () => {
@@ -186,7 +193,19 @@ export default function DashboardPage() {
       <TopBar showBeta />
 
       <main className="container relative z-10 space-y-12 pt-10 pb-14 md:space-y-16 md:pt-12 md:pb-20">
-        {isFirstVisit && <BaselineBriefingBanner />}
+        {isFirstVisit && (
+          <BaselineBriefingBanner displayName={displayName} />
+        )}
+
+        {!isFirstVisit && displayName && (
+          <FadeIn>
+            <p className="text-sm text-muted-foreground md:text-base">
+              <span className="font-medium text-foreground">
+                {formatPersonalizedGreeting(displayName).salutation}
+              </span>
+            </p>
+          </FadeIn>
+        )}
 
         <WhatChangedHero briefing={whatChanged} />
 

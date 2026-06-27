@@ -6,6 +6,7 @@ import { Compass, Map } from "lucide-react";
 
 import { FirstTimeShell } from "@/components/onboarding/first-time-shell";
 import { Button } from "@/components/ui/button";
+import { PageLoader } from "@/components/ui/page-loader";
 import { PremiumCard } from "@/components/ui/premium-card";
 import { usePreferences } from "@/lib/preferences";
 import { identityService } from "@/lib/identity";
@@ -32,7 +33,7 @@ export default function TourChoicePage() {
   };
 
   if (!hydrated || !isComplete) {
-    return null;
+    return <PageLoader />;
   }
 
   return (

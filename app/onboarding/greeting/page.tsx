@@ -6,39 +6,42 @@ import { ArrowRight } from "lucide-react";
 
 import { FirstTimeShell } from "@/components/onboarding/first-time-shell";
 import { Button } from "@/components/ui/button";
+import { PageLoader } from "@/components/ui/page-loader";
 import { formatPersonalizedGreeting } from "@/lib/identity/greeting";
 import { identityService } from "@/lib/identity";
 
 export default function GreetingPage() {
   const router = useRouter();
-  const [ready, setReady] = useState(false);
-  const displayName = ready ? identityService.getDisplayName() : null;
+  const [redirecting, setRedirecting] = useState(false);
+  const displayName = identityService.getDisplayName();
 
   useEffect(() => {
-    setReady(true);
     if (!identityService.hasCompletedWelcome()) {
+      setRedirecting(true);
       router.replace("/onboarding/welcome");
       return;
     }
-    if (!identityService.getDisplayName()) {
+    if (!displayName) {
+      setRedirecting(true);
       router.replace("/onboarding/name");
       return;
     }
     if (identityService.hasCompletedGreeting()) {
+      setRedirecting(true);
       router.replace("/onboarding/role");
     }
-  }, [router]);
-
-  if (!ready || !displayName) {
-    return null;
-  }
-
-  const greeting = formatPersonalizedGreeting(displayName);
+  }, [displayName, router]);
 
   const handleContinue = () => {
     identityService.markGreetingComplete();
     router.push("/onboarding/role");
   };
+
+  if (redirecting || !displayName) {
+    return <PageLoader label="Continuing…" />;
+  }
+
+  const greeting = formatPersonalizedGreeting(displayName);
 
   return (
     <FirstTimeShell

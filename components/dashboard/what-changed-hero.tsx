@@ -177,8 +177,9 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
             <StoryAct
               act="action"
               className="border-b-0 bg-primary/[0.03]"
+              data-tour="recommended-actions"
             >
-              <p className="text-lg font-semibold tracking-[-0.02em] text-foreground md:text-xl" data-tour="recommended-actions">
+              <p className="text-lg font-semibold tracking-[-0.02em] text-foreground md:text-xl">
                 {primaryAction.title}
               </p>
               <p className="prose-lead mt-3 max-w-2xl text-sm md:text-base">

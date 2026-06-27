@@ -40,7 +40,10 @@ export class LocalIdentityService implements IdentityService {
   }
 
   getDisplayName(): string | null {
-    return readRecord().displayName;
+    const name = readRecord().displayName;
+    if (!name) return null;
+    const trimmed = name.trim();
+    return trimmed.length > 0 ? trimmed : null;
   }
 
   setDisplayName(name: string): void {

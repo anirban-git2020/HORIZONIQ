@@ -6,21 +6,23 @@ import { ArrowRight } from "lucide-react";
 
 import { FirstTimeShell } from "@/components/onboarding/first-time-shell";
 import { Button } from "@/components/ui/button";
+import { PageLoader } from "@/components/ui/page-loader";
 import { getFirstTimeOnboardingPath } from "@/lib/onboarding-flow";
 import { identityService } from "@/lib/identity";
 
 export default function NamePage() {
   const router = useRouter();
   const [name, setName] = useState("");
-  const [ready, setReady] = useState(false);
+  const [redirecting, setRedirecting] = useState(false);
 
   useEffect(() => {
-    setReady(true);
     if (!identityService.hasCompletedWelcome()) {
+      setRedirecting(true);
       router.replace("/onboarding/welcome");
       return;
     }
     if (identityService.getDisplayName()) {
+      setRedirecting(true);
       router.replace(getFirstTimeOnboardingPath());
     }
   }, [router]);
@@ -32,8 +34,8 @@ export default function NamePage() {
     router.push("/onboarding/greeting");
   };
 
-  if (!ready || !identityService.hasCompletedWelcome() || identityService.getDisplayName()) {
-    return null;
+  if (redirecting) {
+    return <PageLoader label="Continuing…" />;
   }
 
   return (

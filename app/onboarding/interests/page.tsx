@@ -9,6 +9,7 @@ import { OnboardingShell } from "@/components/onboarding/onboarding-shell";
 import { OptionCard } from "@/components/onboarding/option-card";
 import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { PageLoader } from "@/components/ui/page-loader";
 import { PremiumCard } from "@/components/ui/premium-card";
 import {
   ROLE_INTEREST_COPY,
@@ -21,6 +22,7 @@ import { trackOnboardingCompleted, ONBOARDING_TOUR_PATH } from "@/lib/onboarding
 import { usePreferences } from "@/lib/preferences";
 import type { InterestOption } from "@/lib/options";
 import type { RoleId } from "@/lib/types";
+import { useRequireIdentityOnboarding } from "@/hooks/use-require-identity-onboarding";
 import { cn } from "@/lib/utils";
 
 function InterestGrid({
@@ -60,9 +62,10 @@ export default function InterestsPage() {
     usePreferences();
   const role = preferences.role;
   const count = preferences.interests.length;
+  const identityReady = useRequireIdentityOnboarding(hydrated);
 
   useEffect(() => {
-    if (!hydrated) return;
+    if (!hydrated || !identityReady) return;
     if (!role) {
       router.replace("/onboarding/role");
       return;
@@ -70,7 +73,7 @@ export default function InterestsPage() {
     if (!preferences.region) {
       router.replace("/onboarding/region");
     }
-  }, [hydrated, role, preferences.region, router]);
+  }, [hydrated, identityReady, role, preferences.region, router]);
 
   useEffect(() => {
     if (!role) return;
@@ -81,8 +84,8 @@ export default function InterestsPage() {
     }
   }, [role, preferences.interests, setInterests]);
 
-  if (!hydrated || !role) {
-    return null;
+  if (!hydrated || !identityReady || !role) {
+    return <PageLoader />;
   }
 
   const copy = ROLE_INTEREST_COPY[role];

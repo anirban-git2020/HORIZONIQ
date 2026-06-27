@@ -4,6 +4,7 @@ import { Inter, Outfit } from "next/font/google";
 import { PreferencesProvider } from "@/lib/preferences";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
+import { ScrollToTop } from "@/components/navigation/scroll-to-top";
 import "./globals.css";
 
 const inter = Inter({
@@ -44,7 +45,10 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <PreferencesProvider>{children}</PreferencesProvider>
+          <PreferencesProvider>
+            <ScrollToTop />
+            {children}
+          </PreferencesProvider>
           <AnalyticsProvider />
         </ThemeProvider>
       </body>

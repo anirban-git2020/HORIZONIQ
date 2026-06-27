@@ -16,11 +16,27 @@ export function getFirstTimeOnboardingPath(): string {
 
 /** Welcome, name, and greeting steps before profile onboarding. */
 export function hasCompletedIdentityOnboarding(): boolean {
+  const displayName = identityService.getDisplayName();
   return (
     identityService.hasCompletedWelcome() &&
-    identityService.getDisplayName() !== null &&
+    displayName !== null &&
+    displayName.length > 0 &&
     identityService.hasCompletedGreeting()
   );
+}
+
+/**
+ * Smart entry when the user clicks Get started / Build my dashboard.
+ * Resumes incomplete identity or profile steps; otherwise opens the dashboard.
+ */
+export function getOnboardingEntryPath(isProfileComplete: boolean): string {
+  if (!hasCompletedIdentityOnboarding()) {
+    return getFirstTimeOnboardingPath();
+  }
+  if (isProfileComplete) {
+    return "/dashboard";
+  }
+  return "/onboarding/role";
 }
 
 /**

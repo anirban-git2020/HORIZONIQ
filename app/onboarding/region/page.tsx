@@ -15,18 +15,26 @@ import { INTELLIGENCE_FOCUS_AREAS_LABEL } from "@/lib/copy";
 import { ONBOARDING_TOUR_PATH, trackOnboardingCompleted } from "@/lib/onboarding";
 import { usePreferences } from "@/lib/preferences";
 import { track } from "@/lib/analytics";
+import { useRequireIdentityOnboarding } from "@/hooks/use-require-identity-onboarding";
+import { PageLoader } from "@/components/ui/page-loader";
 import { cn } from "@/lib/utils";
 
 export default function RegionPage() {
   const router = useRouter();
-  const { preferences, setRegion, setInterests } = usePreferences();
+  const { preferences, setRegion, setInterests, hydrated } = usePreferences();
   const role = preferences.role;
+  const identityReady = useRequireIdentityOnboarding(hydrated);
 
   useEffect(() => {
+    if (!hydrated || !identityReady) return;
     if (!role) {
       router.replace("/onboarding/role");
     }
-  }, [role, router]);
+  }, [hydrated, identityReady, role, router]);
+
+  if (!hydrated || !identityReady || !role) {
+    return <PageLoader />;
+  }
 
   const handleQuickStart = () => {
     if (!role || !preferences.region) return;

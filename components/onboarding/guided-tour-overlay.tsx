@@ -15,6 +15,9 @@ interface TourStep {
   title: string;
   description: string;
   fallbackDescription: string;
+  scrollBlock?: ScrollLogicalPosition;
+  /** Extra measure delays (ms) after scroll — used when the target is far from prior step. */
+  measureDelays?: number[];
 }
 
 const TOUR_STEPS: TourStep[] = [
@@ -53,6 +56,8 @@ const TOUR_STEPS: TourStep[] = [
       "One clear action per briefing — what to do differently this week.",
     fallbackDescription:
       "Your primary recommended action lives in the briefing hero above.",
+    scrollBlock: "start",
+    measureDelays: [80, 250, 450, 700, 1000, 1400],
   },
 ];
 
@@ -162,7 +167,11 @@ export function GuidedTourOverlay({
 
     let cancelled = false;
     const target = document.querySelector(step.target);
-    target?.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    target?.scrollIntoView({
+      behavior: "smooth",
+      block: step.scrollBlock ?? "center",
+      inline: "nearest",
+    });
 
     const measure = () => {
       if (!cancelled) setSpotlight(measureTarget(step.target));
@@ -170,7 +179,8 @@ export function GuidedTourOverlay({
 
     // Measure across the smooth-scroll settle window.
     measure();
-    const timers = [80, 250, 450, 700].map((ms) => window.setTimeout(measure, ms));
+    const delays = step.measureDelays ?? [80, 250, 450, 700];
+    const timers = delays.map((ms) => window.setTimeout(measure, ms));
 
     return () => {
       cancelled = true;

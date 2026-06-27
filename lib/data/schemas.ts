@@ -136,7 +136,7 @@ export interface BriefingRecord {
   briefingPeriod: string;
   briefingLabel: string;
   publishedAt: string;
-  dataProvenance: "curated-mock";
+  dataProvenance: "curated-mock" | "pipeline" | "pipeline-mock";
   buckets: {
     new: string[];
     rising: string[];

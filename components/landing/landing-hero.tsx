@@ -1,10 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { BetaBadge } from "@/components/brand/beta-badge";
 import { TaglineLockup } from "@/components/brand/tagline-lockup";
-import { OnboardingEntryLink } from "@/components/onboarding/onboarding-entry-link";
 import { FadeIn } from "@/components/motion/fade-in";
 import { ProvenanceBadge } from "@/components/trust/provenance-badge";
 import { buttonVariants } from "@/components/ui/button";
@@ -46,12 +46,13 @@ export function LandingHero({ provenance }: LandingHeroProps) {
 
           <FadeIn delay={0.24} immediate>
             <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
-              <OnboardingEntryLink
+              <Link
+                href="/onboarding/welcome"
                 className={cn(buttonVariants({ size: "lg" }), "group min-w-[240px]")}
               >
                 Build my dashboard
                 <ArrowRight className="transition-transform duration-300 ease-premium group-hover:translate-x-0.5" />
-              </OnboardingEntryLink>
+              </Link>
               <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
                 {getLandingCtaNote(provenance)}
               </p>

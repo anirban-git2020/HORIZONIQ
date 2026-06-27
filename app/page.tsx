@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
-import { OnboardingEntryLink } from "@/components/onboarding/onboarding-entry-link";
 import { TopBar } from "@/components/layout/top-bar";
 import { DataTrustPanel } from "@/components/landing/data-trust-panel";
 import { LandingHero } from "@/components/landing/landing-hero";
@@ -28,11 +27,12 @@ export default function LandingPage() {
           <TopBar
             showBeta
             right={
-              <OnboardingEntryLink
+              <Link
+                href="/onboarding/welcome"
                 className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
               >
                 Get started
-              </OnboardingEntryLink>
+              </Link>
             }
           />
           <LandingHero provenance={provenance} />

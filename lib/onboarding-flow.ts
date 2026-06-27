@@ -25,37 +25,6 @@ export function hasCompletedIdentityOnboarding(): boolean {
   );
 }
 
-/** Tour choice (guided vs solo) before the first dashboard visit. */
-export function hasCompletedTourChoice(): boolean {
-  return identityService.getTourChoice() !== null;
-}
-
-/** Full onboarding through identity, profile, and tour choice. */
-export function hasCompletedFullOnboarding(isProfileComplete: boolean): boolean {
-  return (
-    hasCompletedIdentityOnboarding() &&
-    isProfileComplete &&
-    hasCompletedTourChoice()
-  );
-}
-
-/**
- * Smart entry when the user clicks Get started / Build my dashboard.
- * Resumes incomplete steps in order; only opens dashboard after tour choice.
- */
-export function getOnboardingEntryPath(isProfileComplete: boolean): string {
-  if (!hasCompletedIdentityOnboarding()) {
-    return getFirstTimeOnboardingPath();
-  }
-  if (!isProfileComplete) {
-    return "/onboarding/role";
-  }
-  if (!hasCompletedTourChoice()) {
-    return "/onboarding/tour";
-  }
-  return "/dashboard";
-}
-
 /**
  * Redirect target when a protected route requires setup.
  * Identity steps take priority over profile onboarding.

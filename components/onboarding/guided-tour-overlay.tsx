@@ -7,7 +7,6 @@ import { X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { track } from "@/lib/analytics";
-import { cn } from "@/lib/utils";
 
 interface TourStep {
   id: string;
@@ -16,7 +15,6 @@ interface TourStep {
   description: string;
   fallbackDescription: string;
   scrollBlock?: ScrollLogicalPosition;
-  /** Extra measure delays (ms) after scroll — used when the target is far from prior step. */
   measureDelays?: number[];
 }
 
@@ -86,8 +84,6 @@ function measureTarget(selector: string): SpotlightRect | null {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
 
-  // Clamp the spotlight to the visible viewport so a tall or partially
-  // off-screen target still produces a usable highlight.
   const top = Math.max(8, rect.top - SPOTLIGHT_PAD);
   const left = Math.max(8, rect.left - SPOTLIGHT_PAD);
   const bottom = Math.min(vh - 8, rect.bottom + SPOTLIGHT_PAD);
@@ -98,12 +94,6 @@ function measureTarget(selector: string): SpotlightRect | null {
   if (width < 8 || height < 8) return null;
 
   return { top, left, width, height };
-}
-
-function getAvailableSteps(): TourStep[] {
-  if (typeof document === "undefined") return TOUR_STEPS;
-  const available = TOUR_STEPS.filter((step) => measureTarget(step.target) !== null);
-  return available.length > 0 ? available : TOUR_STEPS;
 }
 
 /** Place the card below the spotlight, else above, else centered — always in view. */
@@ -137,46 +127,30 @@ export function GuidedTourOverlay({
   const [spotlight, setSpotlight] = useState<SpotlightRect | null>(null);
   const [ready, setReady] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [steps, setSteps] = useState<TourStep[]>(TOUR_STEPS);
 
-  // The overlay must render through a portal to document.body. A transformed
-  // ancestor (the page-transition wrapper) would otherwise trap our
-  // position:fixed overlay, causing the spotlight and card to scroll away.
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const step = steps[stepIndex];
-  const isLast = stepIndex === steps.length - 1;
+  const step = TOUR_STEPS[stepIndex];
+  const isLast = stepIndex === TOUR_STEPS.length - 1;
 
   const remeasure = useCallback(() => {
     if (!step) return;
     setSpotlight(measureTarget(step.target));
   }, [step]);
 
-  // Reset and arm the tour when it becomes active.
   useEffect(() => {
     if (!active) {
       setReady(false);
       setStepIndex(0);
       setSpotlight(null);
-      setSteps(TOUR_STEPS);
       return;
     }
-    setStepIndex(0);
-    setReady(false);
-    setSpotlight(null);
-    const timer = window.setTimeout(() => {
-      setSteps(getAvailableSteps());
-      setStepIndex(0);
-      setReady(true);
-    }, TOUR_START_DELAY_MS);
+    const timer = window.setTimeout(() => setReady(true), TOUR_START_DELAY_MS);
     return () => window.clearTimeout(timer);
   }, [active]);
 
-  // On step change: scroll the target into view ONCE, then settle-measure.
-  // Scrolling is intentionally separated from measuring to avoid a
-  // scroll → scrollIntoView → scroll feedback loop.
   useEffect(() => {
     if (!active || !ready || !step) return;
 
@@ -192,7 +166,6 @@ export function GuidedTourOverlay({
       if (!cancelled) setSpotlight(measureTarget(step.target));
     };
 
-    // Measure across the smooth-scroll settle window.
     measure();
     const delays = step.measureDelays ?? [80, 250, 450, 700];
     const timers = delays.map((ms) => window.setTimeout(measure, ms));
@@ -203,8 +176,6 @@ export function GuidedTourOverlay({
     };
   }, [active, ready, step]);
 
-  // Re-measure (never re-scroll) on scroll/resize so the spotlight tracks
-  // the target if the user scrolls manually.
   useEffect(() => {
     if (!active || !ready || !step) return;
 
@@ -221,11 +192,11 @@ export function GuidedTourOverlay({
     (skipped: boolean) => {
       track("guided_tour_completed", {
         skipped,
-        stepsCompleted: skipped ? stepIndex : steps.length,
+        stepsCompleted: skipped ? stepIndex : TOUR_STEPS.length,
       });
       onComplete();
     },
-    [stepIndex, steps.length, onComplete]
+    [stepIndex, onComplete]
   );
 
   const handleNext = useCallback(() => {
@@ -238,7 +209,6 @@ export function GuidedTourOverlay({
 
   const handleSkip = useCallback(() => finishTour(true), [finishTour]);
 
-  // Keyboard support: Esc skips, Enter/→ advances.
   useEffect(() => {
     if (!active || !ready) return;
     const onKey = (e: KeyboardEvent) => {
@@ -269,7 +239,6 @@ export function GuidedTourOverlay({
         aria-modal="true"
         aria-labelledby="guided-tour-title"
       >
-        {/* Dimmer + spotlight cutout. Sits at the base layer. */}
         {spotlight ? (
           <svg className="absolute inset-0 h-full w-full" aria-hidden>
             <defs>
@@ -299,7 +268,6 @@ export function GuidedTourOverlay({
           />
         )}
 
-        {/* Backdrop click target — explicitly below the highlight and card. */}
         <button
           type="button"
           className="absolute inset-0 z-[201] cursor-default"
@@ -308,7 +276,6 @@ export function GuidedTourOverlay({
           tabIndex={-1}
         />
 
-        {/* Highlight ring around the spotlight. */}
         {spotlight && (
           <motion.div
             className="pointer-events-none absolute z-[202] rounded-xl ring-2 ring-primary shadow-[0_0_0_1px_hsl(var(--primary)/0.3)]"
@@ -323,7 +290,6 @@ export function GuidedTourOverlay({
           />
         )}
 
-        {/* Step card. Always on top and clickable. */}
         <motion.div
           key={step.id}
           className="pointer-events-auto absolute left-1/2 z-[210] w-[min(92vw,28rem)] -translate-x-1/2 rounded-2xl border border-border bg-card p-6 shadow-premium"
@@ -335,7 +301,7 @@ export function GuidedTourOverlay({
           <div className="mb-4 flex items-start justify-between gap-3">
             <div>
               <p className="label-caps mb-1 text-primary">
-                Step {stepIndex + 1} of {steps.length}
+                Step {stepIndex + 1} of {TOUR_STEPS.length}
               </p>
               <h2 id="guided-tour-title" className="text-lg font-semibold">
                 {step.title}

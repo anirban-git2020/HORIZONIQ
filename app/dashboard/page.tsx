@@ -46,7 +46,9 @@ import { formatPersonalizedGreeting } from "@/lib/identity/greeting";
 import {
   getFirstTimeOnboardingPath,
   hasCompletedIdentityOnboarding,
+  hasCompletedTourChoice,
 } from "@/lib/onboarding-flow";
+import { ONBOARDING_TOUR_PATH } from "@/lib/onboarding";
 
 function FullScreenLoader({ label }: { label: string }) {
   return (
@@ -70,6 +72,10 @@ export default function DashboardPage() {
     }
     if (!isComplete) {
       router.replace("/onboarding/role");
+      return;
+    }
+    if (!hasCompletedTourChoice()) {
+      router.replace(ONBOARDING_TOUR_PATH);
     }
   }, [hydrated, isComplete, router]);
 
@@ -130,6 +136,7 @@ export default function DashboardPage() {
 
   useEffect(() => {
     if (!hydrated || !isComplete) return;
+    if (!identityService.shouldShowGuidedTour()) return;
 
     const timer = window.setTimeout(() => {
       setGuidedTourActive(true);
@@ -160,7 +167,7 @@ export default function DashboardPage() {
     return <FullScreenLoader label="Loading your preferences…" />;
   }
 
-  if (!isComplete) {
+  if (!isComplete || !hasCompletedTourChoice()) {
     return <FullScreenLoader label="Redirecting to setup…" />;
   }
 

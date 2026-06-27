@@ -29,7 +29,7 @@ export default function TourChoicePage() {
 
   const goToDashboard = (choice: "guided" | "solo") => {
     identityService.setTourChoice(choice);
-    router.push("/dashboard");
+    window.location.assign("/dashboard");
   };
 
   if (!hydrated || !isComplete) {

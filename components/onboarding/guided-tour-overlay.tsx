@@ -100,6 +100,12 @@ function measureTarget(selector: string): SpotlightRect | null {
   return { top, left, width, height };
 }
 
+function getAvailableSteps(): TourStep[] {
+  if (typeof document === "undefined") return TOUR_STEPS;
+  const available = TOUR_STEPS.filter((step) => measureTarget(step.target) !== null);
+  return available.length > 0 ? available : TOUR_STEPS;
+}
+
 /** Place the card below the spotlight, else above, else centered — always in view. */
 function cardTop(spotlight: SpotlightRect | null): number {
   const vh = typeof window === "undefined" ? 800 : window.innerHeight;
@@ -131,6 +137,7 @@ export function GuidedTourOverlay({
   const [spotlight, setSpotlight] = useState<SpotlightRect | null>(null);
   const [ready, setReady] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [steps, setSteps] = useState<TourStep[]>(TOUR_STEPS);
 
   // The overlay must render through a portal to document.body. A transformed
   // ancestor (the page-transition wrapper) would otherwise trap our
@@ -139,8 +146,8 @@ export function GuidedTourOverlay({
     setMounted(true);
   }, []);
 
-  const step = TOUR_STEPS[stepIndex];
-  const isLast = stepIndex === TOUR_STEPS.length - 1;
+  const step = steps[stepIndex];
+  const isLast = stepIndex === steps.length - 1;
 
   const remeasure = useCallback(() => {
     if (!step) return;
@@ -153,9 +160,17 @@ export function GuidedTourOverlay({
       setReady(false);
       setStepIndex(0);
       setSpotlight(null);
+      setSteps(TOUR_STEPS);
       return;
     }
-    const timer = window.setTimeout(() => setReady(true), TOUR_START_DELAY_MS);
+    setStepIndex(0);
+    setReady(false);
+    setSpotlight(null);
+    const timer = window.setTimeout(() => {
+      setSteps(getAvailableSteps());
+      setStepIndex(0);
+      setReady(true);
+    }, TOUR_START_DELAY_MS);
     return () => window.clearTimeout(timer);
   }, [active]);
 
@@ -206,11 +221,11 @@ export function GuidedTourOverlay({
     (skipped: boolean) => {
       track("guided_tour_completed", {
         skipped,
-        stepsCompleted: skipped ? stepIndex : TOUR_STEPS.length,
+        stepsCompleted: skipped ? stepIndex : steps.length,
       });
       onComplete();
     },
-    [stepIndex, onComplete]
+    [stepIndex, steps.length, onComplete]
   );
 
   const handleNext = useCallback(() => {
@@ -320,7 +335,7 @@ export function GuidedTourOverlay({
           <div className="mb-4 flex items-start justify-between gap-3">
             <div>
               <p className="label-caps mb-1 text-primary">
-                Step {stepIndex + 1} of {TOUR_STEPS.length}
+                Step {stepIndex + 1} of {steps.length}
               </p>
               <h2 id="guided-tour-title" className="text-lg font-semibold">
                 {step.title}

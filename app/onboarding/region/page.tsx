@@ -58,14 +58,20 @@ export default function RegionPage() {
           <div className="flex flex-wrap items-center justify-end gap-3">
             <Button
               variant="ghost"
-              onClick={() => router.push("/onboarding/interests")}
+              onClick={handleQuickStart}
               disabled={!preferences.region}
             >
-              Customize {INTELLIGENCE_FOCUS_AREAS_LABEL.toLowerCase()}
-            </Button>
-            <Button onClick={handleQuickStart} disabled={!preferences.region}>
               <Sparkles />
-              Start my briefing
+              Quick start
+            </Button>
+            <Button
+              onClick={() => {
+                setInterests([]);
+                router.push("/onboarding/interests");
+              }}
+              disabled={!preferences.region}
+            >
+              Continue
               <ArrowRight />
             </Button>
           </div>
@@ -75,16 +81,16 @@ export default function RegionPage() {
       {preferences.region && role && (
         <PremiumCard className="mb-8 border-primary/20 bg-primary/[0.03] p-5 md:p-6">
           <p className="text-sm font-medium text-foreground">
-            Ready in under 60 seconds
+            Next: choose your {INTELLIGENCE_FOCUS_AREAS_LABEL.toLowerCase()}
           </p>
           <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-            Start my briefing uses three recommended focus areas for your role.
-            You can fine-tune {INTELLIGENCE_FOCUS_AREAS_LABEL.toLowerCase()} anytime from your dashboard.
+            Continue to pick the topics that shape your briefing. Quick start
+            skips this step and uses three recommended focus areas for your role.
           </p>
         </PremiumCard>
       )}
 
-      <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      <Stagger className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3" immediate>
         {REGIONS.map((region) => (
           <StaggerItem key={region.id}>
             <OptionCard

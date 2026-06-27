@@ -15,6 +15,8 @@ interface FadeInProps {
   className?: string;
   delay?: number;
   duration?: number;
+  /** Animate on mount instead of waiting for scroll into view. Use on onboarding steps. */
+  immediate?: boolean;
 }
 
 export function FadeIn({
@@ -22,13 +24,15 @@ export function FadeIn({
   className,
   delay = 0,
   duration = DURATION_NORMAL,
+  immediate = false,
 }: FadeInProps) {
   return (
     <motion.div
       className={cn(className)}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-48px" }}
+      animate={immediate ? "visible" : undefined}
+      whileInView={immediate ? undefined : "visible"}
+      viewport={immediate ? undefined : { once: true, margin: "-48px" }}
       variants={fadeUp}
       transition={{ duration, delay, ease: EASE_PREMIUM }}
     >
@@ -41,15 +45,23 @@ interface StaggerProps {
   children: React.ReactNode;
   className?: string;
   stagger?: number;
+  /** Animate on mount instead of waiting for scroll into view. Use on onboarding grids. */
+  immediate?: boolean;
 }
 
-export function Stagger({ children, className, stagger = 0.05 }: StaggerProps) {
+export function Stagger({
+  children,
+  className,
+  stagger = 0.05,
+  immediate = false,
+}: StaggerProps) {
   return (
     <motion.div
       className={className}
       initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: "-40px" }}
+      animate={immediate ? "visible" : undefined}
+      whileInView={immediate ? undefined : "visible"}
+      viewport={immediate ? undefined : { once: true, margin: "-40px" }}
       variants={{
         hidden: {},
         visible: { transition: { staggerChildren: stagger } },

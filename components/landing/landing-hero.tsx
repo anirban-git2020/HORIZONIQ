@@ -21,42 +21,50 @@ interface LandingHeroProps {
 
 export function LandingHero({ provenance }: LandingHeroProps) {
   return (
-    <section className="relative overflow-hidden">
-      <div className="container relative flex flex-col items-center py-32 text-center md:py-40 lg:py-44">
-        <FadeIn>
-          <div className="mb-10 flex flex-col items-center gap-4">
-            <BetaBadge />
-            <TaglineLockup size="sm" className="text-center" />
-            <ProvenanceBadge provenance={provenance} />
-          </div>
-        </FadeIn>
+    <section className="relative min-h-[min(92vh,880px)]">
+      <div className="container relative grid min-h-[min(92vh,880px)] items-center gap-12 py-24 md:grid-cols-[minmax(0,1fr)_minmax(0,0.85fr)] md:py-28 lg:py-32">
+        <div className="relative z-10 max-w-xl text-left">
+          <FadeIn immediate>
+            <div className="mb-8 flex flex-col items-start gap-4">
+              <BetaBadge />
+              <TaglineLockup size="sm" />
+              <ProvenanceBadge provenance={provenance} />
+            </div>
+          </FadeIn>
 
-        <FadeIn delay={0.08}>
-          <h1 className="display-title max-w-4xl text-balance">
-            See what is changing before everyone else does.
-          </h1>
-        </FadeIn>
+          <FadeIn delay={0.08} immediate>
+            <h1 className="display-title max-w-[14ch] text-balance text-4xl md:text-5xl lg:text-[3.25rem] lg:leading-[1.05]">
+              See what is changing before everyone else does.
+            </h1>
+          </FadeIn>
 
-        <FadeIn delay={0.16}>
-          <p className="prose-lead mx-auto mt-8 max-w-2xl text-balance">
-            {getLandingSubheadline(provenance)}
-          </p>
-        </FadeIn>
-
-        <FadeIn delay={0.24}>
-          <div className="mt-14 flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
-            <Link
-              href="/onboarding/welcome"
-              className={cn(buttonVariants({ size: "lg" }), "group min-w-[240px]")}
-            >
-              Build my dashboard
-              <ArrowRight className="transition-transform duration-300 ease-premium group-hover:translate-x-0.5" />
-            </Link>
-            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground sm:text-left">
-              {getLandingCtaNote(provenance)}
+          <FadeIn delay={0.16} immediate>
+            <p className="prose-lead mt-6 max-w-lg text-pretty">
+              {getLandingSubheadline(provenance)}
             </p>
-          </div>
-        </FadeIn>
+          </FadeIn>
+
+          <FadeIn delay={0.24} immediate>
+            <div className="mt-10 flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-8">
+              <Link
+                href="/onboarding/welcome"
+                className={cn(buttonVariants({ size: "lg" }), "group min-w-[240px]")}
+              >
+                Build my dashboard
+                <ArrowRight className="transition-transform duration-300 ease-premium group-hover:translate-x-0.5" />
+              </Link>
+              <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+                {getLandingCtaNote(provenance)}
+              </p>
+            </div>
+          </FadeIn>
+        </div>
+
+        <div className="pointer-events-none relative hidden min-h-[420px] md:block" aria-hidden="true">
+          <p className="label-caps absolute bottom-8 left-0 max-w-[16rem] text-muted-foreground/80">
+            Personalized intelligence — what changed, why it matters, what to do.
+          </p>
+        </div>
       </div>
     </section>
   );

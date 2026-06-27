@@ -70,6 +70,7 @@ Help people understand **what is changing**, **why it matters**, and **what to d
 - [x] Remove / hide relationship flow components
 - [x] **Sprint 3A:** Story-driven IA, progressive disclosure, single-question cards
 - [x] **Sprint 3B:** Premium visual system — dark-first, typography-led, branding lockup
+- [x] **Sprint 3C:** Living Intelligence Core — R3F + GLSL, data-reactive field, welcome reveal
 
 ### 1.6 Trust & Explainability
 

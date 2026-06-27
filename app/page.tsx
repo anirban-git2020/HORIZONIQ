@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-import { IntelligenceBackground } from "@/components/layout/intelligence-background";
+import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
 import { TopBar } from "@/components/layout/top-bar";
 import { DataTrustPanel } from "@/components/landing/data-trust-panel";
 import { LandingHero } from "@/components/landing/landing-hero";
@@ -20,33 +20,35 @@ export default function LandingPage() {
   const refreshSchedule = getRefreshSchedule();
 
   return (
-    <div className="relative min-h-dvh">
-      <IntelligenceBackground variant="hero" />
-      <div className="relative">
-        <TopBar
-          showBeta
-          right={
-            <Link
-              href="/onboarding/welcome"
-              className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
-            >
-              Get started
-            </Link>
-          }
-        />
-
-        <main>
+    <div className="relative min-h-dvh bg-background">
+      <section className="relative overflow-hidden">
+        <IntelligenceFieldLayer variant="hero" mode="webgl" />
+        <div className="relative z-10">
+          <TopBar
+            showBeta
+            right={
+              <Link
+                href="/onboarding/welcome"
+                className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
+              >
+                Get started
+              </Link>
+            }
+          />
           <LandingHero provenance={provenance} />
-          <LandingPillars />
-          <div className="container max-w-4xl space-y-10 pb-28 md:pb-32">
-            <DataTrustPanel
-              provenance={provenance}
-              briefingLabel={meta.briefingLabel}
-              refreshSchedule={refreshSchedule}
-            />
-            <WhyHorizonIQ />
-          </div>
-        </main>
+        </div>
+      </section>
+
+      <div className="relative z-10 bg-background">
+        <LandingPillars />
+        <div className="container max-w-4xl space-y-10 pb-28 md:pb-32">
+          <DataTrustPanel
+            provenance={provenance}
+            briefingLabel={meta.briefingLabel}
+            refreshSchedule={refreshSchedule}
+          />
+          <WhyHorizonIQ />
+        </div>
 
         <footer className="border-t border-border/50">
           <div className="container space-y-1 py-6 text-sm text-muted-foreground">

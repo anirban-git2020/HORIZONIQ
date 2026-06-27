@@ -72,10 +72,20 @@ const config: Config = {
           "0%": { transform: "translateX(-100%)" },
           "100%": { transform: "translateX(100%)" },
         },
+        "field-breathe": {
+          "0%, 100%": { transform: "scale(1)", opacity: "0.85" },
+          "50%": { transform: "scale(1.04)", opacity: "1" },
+        },
+        "field-drift": {
+          "0%": { transform: "translate(0%, 0%) scale(1)" },
+          "100%": { transform: "translate(2%, -1.5%) scale(1.03)" },
+        },
       },
       animation: {
         "fade-up": "fade-up 0.5s ease-out both",
         shimmer: "shimmer 2.5s ease-in-out infinite",
+        "field-breathe": "field-breathe 9s ease-in-out infinite",
+        "field-drift": "field-drift 28s ease-in-out infinite alternate",
       },
       transitionTimingFunction: {
         premium: "cubic-bezier(0.25, 0.1, 0.25, 1)",

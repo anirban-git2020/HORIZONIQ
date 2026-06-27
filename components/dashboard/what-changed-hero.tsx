@@ -108,10 +108,10 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
   const heroRef = useTrackOnVisible<HTMLElement>(onHeroVisible);
 
   return (
-    <section ref={heroRef} aria-labelledby="what-changed-heading" data-tour="what-changed">
+    <section ref={heroRef} aria-labelledby="what-changed-heading">
       <FadeIn>
         <PremiumCard flat className="overflow-hidden">
-          <header className="px-6 py-10 md:px-10 md:py-12 lg:py-14">
+          <header className="px-6 py-10 md:px-10 md:py-12 lg:py-14" data-tour="what-changed">
             <p className="label-caps text-primary">{STORY_ACTS.changed}</p>
             <h2
               id="what-changed-heading"
@@ -134,7 +134,7 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
           </header>
 
           {(hasGroups || changes.length > 0) && (
-            <div className="border-t border-border/60" data-tour="signals">
+            <div className="border-t border-border/60" data-tour="briefing-signals">
               <div className="hairline-b px-6 py-3.5 md:px-10">
                 <p className="text-xs font-medium tracking-wide text-muted-foreground">
                   {hasGroups
@@ -177,9 +177,8 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
             <StoryAct
               act="action"
               className="border-b-0 bg-primary/[0.03]"
-              data-tour="recommended-actions"
             >
-              <p className="text-lg font-semibold tracking-[-0.02em] text-foreground md:text-xl">
+              <p className="text-lg font-semibold tracking-[-0.02em] text-foreground md:text-xl" data-tour="recommended-actions">
                 {primaryAction.title}
               </p>
               <p className="prose-lead mt-3 max-w-2xl text-sm md:text-base">

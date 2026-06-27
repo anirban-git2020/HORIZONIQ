@@ -56,6 +56,10 @@ export interface AnalyticsEventProps {
     changeType: ChangeType;
   };
   start_over: Record<string, never>;
+  guided_tour_completed: {
+    skipped: boolean;
+    stepsCompleted: number;
+  };
 }
 
 export type AnalyticsEventName = keyof AnalyticsEventProps;

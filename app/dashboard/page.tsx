@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
 import { TopBar } from "@/components/layout/top-bar";
+import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
 import { GuidedTourOverlay } from "@/components/onboarding/guided-tour-overlay";
 import { DashboardContextBar } from "@/components/dashboard/dashboard-context-bar";
 import { DisclosurePanel } from "@/components/dashboard/disclosure-panel";
@@ -132,7 +133,7 @@ export default function DashboardPage() {
 
     const timer = window.setTimeout(() => {
       setGuidedTourActive(true);
-    }, 400);
+    }, 900);
 
     return () => window.clearTimeout(timer);
   }, [hydrated, isComplete]);
@@ -180,10 +181,11 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-dvh bg-background bg-ambient" data-tour="dashboard">
+    <div className="relative min-h-dvh bg-background" data-tour="dashboard">
+      <IntelligenceFieldLayer variant="ambient" mode="webgl" signals={signals} />
       <TopBar showBeta />
 
-      <main className="container space-y-12 pt-10 pb-14 md:space-y-16 md:pt-12 md:pb-20">
+      <main className="container relative z-10 space-y-12 pt-10 pb-14 md:space-y-16 md:pt-12 md:pb-20">
         {isFirstVisit && <BaselineBriefingBanner />}
 
         <WhatChangedHero briefing={whatChanged} />
@@ -279,7 +281,7 @@ export default function DashboardPage() {
         )}
       </main>
 
-      <footer className="border-t border-border">
+      <footer className="relative z-10 border-t border-border">
         <div className="container space-y-1 py-8 text-center text-sm text-muted-foreground">
           <p>
             HorizonIQ · {getProvenanceShortLabel(getDataProvenance())} ·{" "}

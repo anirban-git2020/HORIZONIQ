@@ -6,6 +6,7 @@ import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Loader2 } from "lucide-react";
 
 import { TopBar } from "@/components/layout/top-bar";
+import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
 import { Section } from "@/components/dashboard/section";
 import { ChangeBadge } from "@/components/dashboard/change-badge";
 import { IntelligenceCard } from "@/components/intelligence/intelligence-card";
@@ -114,10 +115,11 @@ export default function SignalDetailPage() {
   const provenance = getDataProvenance();
 
   return (
-    <div className="min-h-dvh bg-background">
-      <TopBar />
+    <div className="relative min-h-dvh overflow-hidden bg-background">
+      <IntelligenceFieldLayer variant="ambient" mode="webgl" signals={[signal]} />
+      <TopBar showBeta />
 
-      <div className="border-b border-border bg-card/80 backdrop-blur-sm">
+      <div className="relative z-10 border-b border-border/60 bg-background/75 backdrop-blur-sm">
         <div className="container py-8 md:py-10">
           <Link
             href="/dashboard"
@@ -144,7 +146,7 @@ export default function SignalDetailPage() {
         </div>
       </div>
 
-      <main className="container space-y-10 py-10 md:space-y-12 md:py-12">
+      <main className="container relative z-10 space-y-10 py-10 md:space-y-12 md:py-12">
         <Section
           title="Intelligence Brief"
           question="Analyst reasoning for this signal"

@@ -22,13 +22,13 @@ export function OnboardingShell({
       <div className="relative">
         <TopBar />
         <main className="container max-w-4xl py-12 md:py-16 lg:py-20">
-          <FadeIn>
+          <FadeIn immediate>
             <div className="mb-10 flex justify-center">
               <StepProgress current={step} />
             </div>
           </FadeIn>
 
-          <FadeIn delay={0.08}>
+          <FadeIn delay={0.08} immediate>
             <div className="mb-10 text-center md:mb-12">
               <p className="label-caps mb-3 text-primary/80">
                 Step {step} of 3
@@ -42,7 +42,7 @@ export function OnboardingShell({
 
           {children}
 
-          <FadeIn delay={0.16}>
+          <FadeIn delay={0.16} immediate>
             <div className="mt-12 flex items-center justify-between gap-4 border-t border-border/50 pt-8">
               {footer}
             </div>

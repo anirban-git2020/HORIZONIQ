@@ -1,10 +1,13 @@
 "use client";
 
-import { useCallback, useEffect, useId, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
+import { track } from "@/lib/analytics";
+import { cn } from "@/lib/utils";
 
 interface TourStep {
   id: string;
@@ -16,49 +19,40 @@ interface TourStep {
 
 const TOUR_STEPS: TourStep[] = [
   {
-    id: "dashboard",
-    target: "[data-tour='dashboard']",
-    title: "Your Dashboard",
-    description:
-      "This is your personal intelligence briefing — refreshed weekly with changes that matter to you.",
-    fallbackDescription:
-      "This is your personal intelligence briefing — refreshed weekly with changes that matter to you.",
-  },
-  {
     id: "what-changed",
     target: "[data-tour='what-changed']",
-    title: "What Changed",
+    title: "Your Week 1 Briefing",
     description:
-      "Every visit starts here: what shifted, why it matters to you, and what to do next.",
+      "Every visit starts here: what shifted, why it matters to you, and your recommended action.",
     fallbackDescription:
-      "Every visit starts here: what shifted, why it matters to you, and what to do next.",
+      "Your briefing hero shows what changed, why it matters, and what to do next.",
   },
   {
-    id: "signals",
-    target: "[data-tour='signals']",
-    title: "Signals",
+    id: "watchlist",
+    target: "[data-tour='watchlist']",
+    title: "Signals We're Tracking",
     description:
-      "Signals are the changes we're tracking for your role, region, and focus areas.",
+      "Your watchlist — signals matched to your role, region, and focus areas. Open any for the full intelligence brief.",
     fallbackDescription:
-      "Signals are the changes we track for you. Your watchlist shows what we're following this week.",
+      "We track signals aligned with your profile. Each links to a full intelligence brief.",
   },
   {
-    id: "opportunities",
-    target: "[data-tour='opportunities']",
-    title: "Opportunities",
+    id: "next-briefing",
+    target: "[data-tour='next-briefing']",
+    title: "What's Coming Next",
     description:
-      "New This Week and Heating Up opportunities — matched to your profile.",
+      "Your next weekly briefing will reveal accelerations, slowdowns, and emerging opportunities.",
     fallbackDescription:
-      "On your next visit, emerging opportunities tailored to you will appear in this section.",
+      "Return next week to see what accelerated, slowed, and what opportunities emerged.",
   },
   {
     id: "recommended-actions",
     target: "[data-tour='recommended-actions']",
-    title: "Recommended Actions",
+    title: "Recommended Action",
     description:
       "One clear action per briefing — what to do differently this week.",
     fallbackDescription:
-      "Your primary recommended action lives in the What Changed section on first visits. Full action cards unlock when you return.",
+      "Your primary recommended action lives in the briefing hero above.",
   },
 ];
 
@@ -71,18 +65,54 @@ interface SpotlightRect {
 
 const SPOTLIGHT_PAD = 10;
 const SPOTLIGHT_RADIUS = 12;
+const TOUR_START_DELAY_MS = 600;
+const CARD_HEIGHT_ESTIMATE = 240;
+const CARD_GAP = 16;
 
+/** Measure the target relative to the viewport. Never scrolls. */
 function measureTarget(selector: string): SpotlightRect | null {
+  if (typeof document === "undefined") return null;
   const el = document.querySelector(selector);
   if (!el) return null;
+
   const rect = el.getBoundingClientRect();
-  if (rect.width === 0 && rect.height === 0) return null;
-  return {
-    top: Math.max(8, rect.top - SPOTLIGHT_PAD),
-    left: Math.max(8, rect.left - SPOTLIGHT_PAD),
-    width: rect.width + SPOTLIGHT_PAD * 2,
-    height: rect.height + SPOTLIGHT_PAD * 2,
-  };
+  if (rect.width < 8 || rect.height < 8) return null;
+
+  const vw = window.innerWidth;
+  const vh = window.innerHeight;
+
+  // Clamp the spotlight to the visible viewport so a tall or partially
+  // off-screen target still produces a usable highlight.
+  const top = Math.max(8, rect.top - SPOTLIGHT_PAD);
+  const left = Math.max(8, rect.left - SPOTLIGHT_PAD);
+  const bottom = Math.min(vh - 8, rect.bottom + SPOTLIGHT_PAD);
+  const right = Math.min(vw - 8, rect.right + SPOTLIGHT_PAD);
+
+  const width = right - left;
+  const height = bottom - top;
+  if (width < 8 || height < 8) return null;
+
+  return { top, left, width, height };
+}
+
+/** Place the card below the spotlight, else above, else centered — always in view. */
+function cardTop(spotlight: SpotlightRect | null): number {
+  const vh = typeof window === "undefined" ? 800 : window.innerHeight;
+  if (!spotlight) {
+    return Math.max(CARD_GAP, (vh - CARD_HEIGHT_ESTIMATE) / 2);
+  }
+
+  const below = spotlight.top + spotlight.height + CARD_GAP;
+  if (below + CARD_HEIGHT_ESTIMATE <= vh - CARD_GAP) {
+    return below;
+  }
+
+  const above = spotlight.top - CARD_HEIGHT_ESTIMATE - CARD_GAP;
+  if (above >= CARD_GAP) {
+    return above;
+  }
+
+  return Math.max(CARD_GAP, (vh - CARD_HEIGHT_ESTIMATE) / 2);
 }
 
 export function GuidedTourOverlay({
@@ -92,69 +122,121 @@ export function GuidedTourOverlay({
   active: boolean;
   onComplete: () => void;
 }) {
-  const maskId = useId().replace(/:/g, "");
   const [stepIndex, setStepIndex] = useState(0);
   const [spotlight, setSpotlight] = useState<SpotlightRect | null>(null);
+  const [ready, setReady] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // The overlay must render through a portal to document.body. A transformed
+  // ancestor (the page-transition wrapper) would otherwise trap our
+  // position:fixed overlay, causing the spotlight and card to scroll away.
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const step = TOUR_STEPS[stepIndex];
   const isLast = stepIndex === TOUR_STEPS.length - 1;
 
-  const updateSpotlight = useCallback(() => {
+  const remeasure = useCallback(() => {
     if (!step) return;
-    const rect = measureTarget(step.target);
-    setSpotlight(rect);
-    if (rect) {
-      document.querySelector(step.target)?.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-    }
+    setSpotlight(measureTarget(step.target));
   }, [step]);
 
+  // Reset and arm the tour when it becomes active.
   useEffect(() => {
-    if (!active) return;
-    setStepIndex(0);
-    setSpotlight(null);
+    if (!active) {
+      setReady(false);
+      setStepIndex(0);
+      setSpotlight(null);
+      return;
+    }
+    const timer = window.setTimeout(() => setReady(true), TOUR_START_DELAY_MS);
+    return () => window.clearTimeout(timer);
   }, [active]);
 
+  // On step change: scroll the target into view ONCE, then settle-measure.
+  // Scrolling is intentionally separated from measuring to avoid a
+  // scroll → scrollIntoView → scroll feedback loop.
   useEffect(() => {
-    if (!active || !step) return;
+    if (!active || !ready || !step) return;
 
-    updateSpotlight();
-    const timers = [80, 280, 600].map((ms) =>
-      window.setTimeout(updateSpotlight, ms)
-    );
+    let cancelled = false;
+    const target = document.querySelector(step.target);
+    target?.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
 
-    window.addEventListener("resize", updateSpotlight);
-    window.addEventListener("scroll", updateSpotlight, true);
+    const measure = () => {
+      if (!cancelled) setSpotlight(measureTarget(step.target));
+    };
+
+    // Measure across the smooth-scroll settle window.
+    measure();
+    const timers = [80, 250, 450, 700].map((ms) => window.setTimeout(measure, ms));
 
     return () => {
-      timers.forEach((timer) => window.clearTimeout(timer));
-      window.removeEventListener("resize", updateSpotlight);
-      window.removeEventListener("scroll", updateSpotlight, true);
+      cancelled = true;
+      timers.forEach((t) => window.clearTimeout(t));
     };
-  }, [active, step, updateSpotlight]);
+  }, [active, ready, step]);
 
-  const handleNext = () => {
-    if (isLast) {
+  // Re-measure (never re-scroll) on scroll/resize so the spotlight tracks
+  // the target if the user scrolls manually.
+  useEffect(() => {
+    if (!active || !ready || !step) return;
+
+    window.addEventListener("resize", remeasure);
+    window.addEventListener("scroll", remeasure, true);
+
+    return () => {
+      window.removeEventListener("resize", remeasure);
+      window.removeEventListener("scroll", remeasure, true);
+    };
+  }, [active, ready, step, remeasure]);
+
+  const finishTour = useCallback(
+    (skipped: boolean) => {
+      track("guided_tour_completed", {
+        skipped,
+        stepsCompleted: skipped ? stepIndex : TOUR_STEPS.length,
+      });
       onComplete();
+    },
+    [stepIndex, onComplete]
+  );
+
+  const handleNext = useCallback(() => {
+    if (isLast) {
+      finishTour(false);
       return;
     }
     setStepIndex((i) => i + 1);
-  };
+  }, [isLast, finishTour]);
 
-  const handleSkip = () => {
-    onComplete();
-  };
+  const handleSkip = useCallback(() => finishTour(true), [finishTour]);
 
-  if (!active || !step) return null;
+  // Keyboard support: Esc skips, Enter/→ advances.
+  useEffect(() => {
+    if (!active || !ready) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        e.preventDefault();
+        handleSkip();
+      } else if (e.key === "Enter" || e.key === "ArrowRight") {
+        e.preventDefault();
+        handleNext();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [active, ready, handleSkip, handleNext]);
+
+  if (!active || !ready || !step || !mounted) return null;
 
   const body = spotlight ? step.description : step.fallbackDescription;
 
-  return (
+  return createPortal(
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 z-[100]"
+        className="fixed inset-0 z-[200]"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -162,14 +244,11 @@ export function GuidedTourOverlay({
         aria-modal="true"
         aria-labelledby="guided-tour-title"
       >
+        {/* Dimmer + spotlight cutout. Sits at the base layer. */}
         {spotlight ? (
-          <svg
-            className="absolute inset-0 h-full w-full"
-            aria-hidden
-            onClick={handleSkip}
-          >
+          <svg className="absolute inset-0 h-full w-full" aria-hidden>
             <defs>
-              <mask id={maskId}>
+              <mask id="guided-tour-mask">
                 <rect width="100%" height="100%" fill="white" />
                 <rect
                   x={spotlight.left}
@@ -184,21 +263,30 @@ export function GuidedTourOverlay({
             <rect
               width="100%"
               height="100%"
-              className="fill-background/75"
-              mask={`url(#${maskId})`}
+              className="fill-background/80"
+              mask="url(#guided-tour-mask)"
             />
           </svg>
         ) : (
           <div
-            className="absolute inset-0 bg-background/80 backdrop-blur-[2px]"
-            onClick={handleSkip}
+            className="absolute inset-0 bg-background/85 backdrop-blur-[2px]"
             aria-hidden
           />
         )}
 
+        {/* Backdrop click target — explicitly below the highlight and card. */}
+        <button
+          type="button"
+          className="absolute inset-0 z-[201] cursor-default"
+          aria-label="Dismiss tour"
+          onClick={handleSkip}
+          tabIndex={-1}
+        />
+
+        {/* Highlight ring around the spotlight. */}
         {spotlight && (
           <motion.div
-            className="pointer-events-none absolute rounded-xl ring-2 ring-primary shadow-[0_0_0_1px_hsl(var(--primary)/0.25)]"
+            className="pointer-events-none absolute z-[202] rounded-xl ring-2 ring-primary shadow-[0_0_0_1px_hsl(var(--primary)/0.3)]"
             initial={false}
             animate={{
               top: spotlight.top,
@@ -210,23 +298,11 @@ export function GuidedTourOverlay({
           />
         )}
 
+        {/* Step card. Always on top and clickable. */}
         <motion.div
           key={step.id}
-          className={
-            spotlight
-              ? "absolute left-1/2 z-[101] w-[min(92vw,28rem)] -translate-x-1/2 rounded-2xl border border-border bg-card p-6 shadow-premium"
-              : "absolute left-1/2 top-1/2 z-[101] w-[min(92vw,28rem)] -translate-x-1/2 -translate-y-1/2 rounded-2xl border border-border bg-card p-6 shadow-premium"
-          }
-          style={
-            spotlight
-              ? {
-                  top: Math.min(
-                    spotlight.top + spotlight.height + 16,
-                    window.innerHeight - 220
-                  ),
-                }
-              : undefined
-          }
+          className="pointer-events-auto absolute left-1/2 z-[210] w-[min(92vw,28rem)] -translate-x-1/2 rounded-2xl border border-border bg-card p-6 shadow-premium"
+          style={{ top: cardTop(spotlight) }}
           initial={{ opacity: 0, y: 8 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.25 }}
@@ -262,6 +338,7 @@ export function GuidedTourOverlay({
           </div>
         </motion.div>
       </motion.div>
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }

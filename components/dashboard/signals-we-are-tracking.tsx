@@ -38,10 +38,9 @@ export function SignalsWeAreTracking({
       <section
         aria-labelledby="signals-tracking-heading"
         className={cn(className)}
-        data-tour="signals"
       >
         <PremiumCard flat className="overflow-hidden">
-          <div className="hairline-b px-6 py-8 md:px-10 md:py-10">
+          <div className="hairline-b px-6 py-8 md:px-10 md:py-10" data-tour="watchlist">
             <p className="label-caps mb-3 text-primary">Your watchlist</p>
             <h2 id="signals-tracking-heading" className="section-title">
               Signals We&apos;re Tracking For You
@@ -99,9 +98,8 @@ export function SignalsWeAreTracking({
 
           <div
             className="border-t border-border/60 bg-secondary/20 px-6 py-5 md:px-8 md:py-6"
-            data-tour="opportunities"
           >
-            <p className="text-sm font-semibold text-foreground">
+            <p className="text-sm font-semibold text-foreground" data-tour="next-briefing">
               Your next briefing will reveal:
             </p>
             <ul className="mt-3 space-y-2">

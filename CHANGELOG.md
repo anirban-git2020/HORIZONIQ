@@ -8,6 +8,29 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Sprint 3C — Immersive Intelligence Experience
+
+#### Added
+
+- **Living Intelligence Core** — React Three Fiber + GLSL shader particle field (not globe/brain/network cliché)
+- **`IntelligenceFieldLayer`** — lazy-loaded canvas with CSS procedural fallback
+- **`lib/intelligence-field/`** — data-reactive params (energy, confidence, region phase, role tint, interest density)
+- **`hooks/use-intelligence-field-params.ts`** — maps preferences + signals → visual uniforms
+- **`hooks/use-reduced-motion.ts`** — graceful degradation for `prefers-reduced-motion`
+- Welcome **phased experience**: greeting → fade into core → Enter HorizonIQ
+
+#### Changed
+
+- Welcome screen reveals Living Intelligence Core after tagline (auto sequence)
+- Landing + dashboard + signal detail use ambient intelligence field backgrounds
+- Replaced static `IntelligenceBackground` on landing with reactive field
+- Page transitions: subtle opacity + y fade in `app/template.tsx`
+- Microinteractions: button glow hover, card lift refinement
+
+#### Dependencies
+
+- `three`, `@react-three/fiber@8`, `@react-three/drei@9`, `@types/three`
+
 ### Sprint 3B — Premium Visual Experience
 
 #### Added

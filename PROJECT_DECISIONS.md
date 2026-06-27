@@ -316,6 +316,39 @@ Premium 8 · Clarity 8 · Typography 8 · Motion 7 · Branding 8 · Trust 8
 
 ---
 
+## 2026-06-27 — Sprint 3C: Immersive Intelligence Experience
+
+### Decision
+
+Build the **Living Intelligence Core** — a data-reactive abstract particle field (R3F + GLSL) as HorizonIQ's signature visual. Position as Personal Intelligence Operating System.
+
+### Reason
+
+Users should pause on arrival. The UI should feel alive and intelligent without AI clichés (no globe, brain, or neural network). Visualization represents intelligence, not decoration.
+
+### Implementation
+
+- `IntelligenceFieldLayer` with lazy WebGL + CSS fallback
+- Field reacts to signal energy, confidence, region, role, focus areas
+- Welcome phased experience: greeting → core reveal → enter
+- Ambient field on landing, dashboard, signal detail
+
+### Constraints (locked)
+
+- No video, no Lottie hero, no copied Draftly layouts
+- `prefers-reduced-motion` graceful degradation
+- No product functionality changes
+
+### Outcome
+
+Approved
+
+### Review Scores (2026-06-27)
+
+Uniqueness 8 · Performance 7 · Accessibility 8 · Originality 8 · Brand 9 · Production 7
+
+---
+
 ## 2026-06-27 — Sprint 2.5A: Intelligence Reasoning Layer
 
 ### Decision

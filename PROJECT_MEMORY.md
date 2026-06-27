@@ -360,6 +360,83 @@ Visit state stored in localStorage:
 
 ---
 
+## Sprint 3C — Immersive Intelligence Experience (Shipped)
+
+**Mission:** Transform HorizonIQ into a Personal Intelligence Operating System — not a dashboard. One signature visual: the **Living Intelligence Core**.
+
+**Technology:** React Three Fiber · Three.js · GLSL shaders · Framer Motion · lazy-loaded WebGL
+
+### Living Intelligence Core
+
+Abstract particle intelligence field — **not** a globe, brain, or neural-network cliché. Represents knowledge, connections, discovery, momentum, prediction.
+
+| Behavior | Data source |
+|---|---|
+| Motion energy | Signal momentum + change type (rising/new) |
+| Brightness | Confidence tier average |
+| Field reorganization | Region phase (8 regions) |
+| Color tint | Role |
+| Vertical density | Intelligence Focus Areas count |
+
+Motion uses irrational frequency offsets so patterns **never repeat exactly**. Field breathes subtly.
+
+### Architecture
+
+```
+lib/intelligence-field/params.ts     → computeIntelligenceFieldParams()
+lib/intelligence-field/shaders.ts  → GLSL vertex/fragment
+components/intelligence-field/
+  intelligence-field-layer.tsx     → page wrapper
+  intelligence-field-canvas.tsx    → lazy R3F + fallback
+  living-intelligence-core.tsx     → Canvas scene
+  intelligence-field-points.tsx    → shader Points mesh
+  intelligence-field-fallback.tsx  → CSS procedural (reduced motion)
+hooks/use-intelligence-field-params.ts
+hooks/use-reduced-motion.ts
+```
+
+### Surfaces
+
+| Page | Variant | Behavior |
+|---|---|---|
+| Welcome | `welcome` | Phased: greeting → core reveal → Enter |
+| Landing | `hero` | Full field behind hero |
+| Dashboard | `ambient` | Reacts to user signals + preferences |
+| Signal detail | `ambient` | Reacts to single signal |
+
+### Performance
+
+- Lazy dynamic import (no SSR WebGL)
+- Particle budget: ~9k desktop · ~5k tablet · ~2.8k mobile
+- `prefers-reduced-motion` → CSS fallback
+- `dpr` capped at 1.75
+
+### Post-Implementation Review (Apple · IDEO · Stripe · Linear · Palantir lens)
+
+| Dimension | Score | Notes |
+|---|---|---|
+| **Visual uniqueness** | 8/10 | Original abstract field; recognizable HorizonIQ signature |
+| **Performance** | 7/10 | Lazy load works; multiple canvases on navigation need monitoring |
+| **Accessibility** | 8/10 | Reduced-motion fallback; field is decorative (`aria-hidden`) |
+| **Originality** | 8/10 | Not imitating AI SaaS templates; data-reactive not decorative |
+| **Brand identity** | 9/10 | Welcome → core moment is memorable; tagline + field unified |
+| **Production readiness** | 7/10 | Shipped; needs FPS telemetry and single-canvas optimization |
+
+### Top 10 Improvements (Next)
+
+1. **Single shared canvas** — one WebGL context across route changes (avoid remount)
+2. **FPS / GPU tier detection** — auto particle budget + quality presets
+3. **Onboarding continuity** — ambient field on role/region steps (same organism)
+4. **Briefing period pulse** — field energy spike on new weekly briefing
+5. **WebGL load skeleton** — match fallback gradient until shaders compile
+6. **Dev performance overlay** — frame time monitoring in beta
+7. **Touch microinteractions** — subtle haptic on primary CTAs (mobile)
+8. **Landing section pass** — pillars/trust panel aligned with 3B/3C surfaces
+9. **Core screenshot moment** — shareable still for marketing
+10. **Welcome timing A/B** — optimize core reveal duration for comprehension vs awe
+
+---
+
 ## Sprint 3B — Premium Visual Experience (Shipped)
 
 **Mission:** Transform UI into a premium intelligence experience — elegant, minimal, dark-first, typography-led. No functionality changes.
@@ -569,7 +646,7 @@ Deprioritized / removed from MVP:
 - Dashboard with change-first signals, skills rising, opportunities, actions
 - Signal detail pages (`/signals/[id]`) with full `IntelligenceCard` analyst layout
 - **Sprint 2.5 / 2.5A:** `IntelligenceCard`, `lib/intelligence.ts`, seven-section reasoning contract
-- **Sprint 3B:** Premium visual system — dark-first palette, Outfit typography, BetaBadge, TaglineLockup, calmer motion
+- **Sprint 3C:** Living Intelligence Core (R3F + GLSL), data-reactive field, welcome core reveal
 - JSON data layer with catalog + briefing + change metadata
 - Live 5-source pipeline + weekly GitHub Actions refresh
 - Data access layer (`lib/data/access.ts`)
@@ -583,7 +660,7 @@ Deprioritized / removed from MVP:
 
 ### Needs Improvement
 
-- Sprint 3B follow-up: signal detail page, onboarding profile steps, landing pillars/trust panel visual pass
+- Sprint 3C follow-up: shared WebGL canvas, GPU tier detection, onboarding field continuity
 - Broader signal coverage across all 14 interests
 - Analytics for Week 2 return rate and 15-second dashboard comprehension
 - More region-specific explanation variants in catalog

@@ -13,7 +13,7 @@ export function IntelligenceBackground({
   className,
 }: IntelligenceBackgroundProps) {
   const gridOpacity =
-    variant === "hero" ? 0.45 : variant === "subtle" ? 0.25 : 0.35;
+    variant === "hero" ? 0.28 : variant === "subtle" ? 0.18 : 0.22;
 
   return (
     <div

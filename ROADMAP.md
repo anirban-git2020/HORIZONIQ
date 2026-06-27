@@ -1,6 +1,6 @@
 # HorizonIQ Roadmap
 
-Last updated: 2026-06-22
+Last updated: 2026-06-27
 
 ---
 
@@ -31,48 +31,57 @@ Help people understand **what is changing**, **why it matters**, and **what to d
 
 ### 1.1 Data Layer
 
-- [ ] Create `signals.json`, `skills.json`, `jobs.json`, `recommendations.json`
-- [ ] Add change metadata to every signal (type, summary, delta)
-- [ ] Add personalized explanation variants (role, region, interest)
-- [ ] Add labeled mock sources to every signal
-- [ ] Build swappable data access layer (JSON now, API later)
-- [ ] Establish weekly manual data refresh cadence
+- [x] Catalog + briefing JSON architecture (`signals.json` catalog, weekly briefings, derived skills/jobs/recommendations)
+- [x] Change metadata on every signal (type, summary, delta)
+- [x] Personalized explanation variants (role, region, interest)
+- [x] Labeled sources on every signal (live pipeline URLs where available)
+- [x] Swappable data access layer (`lib/data/access.ts`)
+- [x] Weekly data refresh cadence (GitHub Actions Monday 06:00 UTC + manual `pipeline:full`)
 
 ### 1.2 Onboarding Alignment
 
-- [ ] Update regions to 8 fixed options (remove "Global", split Asia Pacific)
-- [ ] Update interests to 14 categorized options with multi-select
-- [ ] Group interests by Technology / Industry / Business in UI
+- [x] 8 fixed regions
+- [x] 14 categorized interests with multi-select
+- [x] Group interests by Technology / Industry / Business (and student sections) in UI
+- [ ] Step progress label: "Interests" → Intelligence Focus Areas (Sprint 3A polish)
 
 ### 1.3 What Changed For You (Core)
 
-- [ ] localStorage visit snapshot (`lastVisitAt`, signal state snapshot)
-- [ ] Hero section: "What Changed Since Your Last Visit"
-- [ ] First-visit fallback: "What Changed This Week"
-- [ ] Dashboard contract on every visit: What Changed · Why It Matters · What To Do
-- [ ] One primary recommended action per briefing
+- [x] localStorage visit snapshot (`lastVisitAt`, signal state snapshot)
+- [x] Hero section: "What Changed Since Your Last Visit"
+- [x] First-visit fallback: "What Changed This Week" / Week 1 Briefing
+- [x] Dashboard contract on every visit: What Changed · Why It Matters · What To Do
+- [x] One primary recommended action per briefing
 
 ### 1.4 Signal Intelligence
 
-- [ ] Personalized "so what for you" on every signal card
-- [ ] Change badges on signals (new · rising · falling · stable)
-- [ ] Momentum / confidence with change arrows
-- [ ] Signal detail page (change-first layout)
-- [ ] Signal detail sections: Overview, What Changed, Momentum Drivers, Affected Industries, Recommended Skills, Opportunities, Recommended Actions
+- [x] Personalized "so what for you" on every signal
+- [x] Change badges on signals (new · rising · falling · stable)
+- [x] Momentum / confidence with change context
+- [x] Signal detail page (change-first / full IntelligenceCard layout)
+- [x] Sprint 2.5A seven-section analyst reasoning (`IntelligenceCard`)
 
 ### 1.5 Dashboard Reframe
 
-- [ ] Reframe skills → "Skills Rising"
-- [ ] Reframe opportunities → "New This Week" / "Heating Up"
-- [ ] Reframe actions → primary action + optional secondary
-- [ ] Remove / hide signal relationship map
-- [ ] Remove / hide relationship flow components
+- [x] Reframe skills → "Skills Rising"
+- [x] Reframe opportunities → "New This Week" / "Heating Up"
+- [x] Reframe actions → primary in hero + secondary section
+- [x] Remove / hide signal relationship map
+- [x] Remove / hide relationship flow components
+- [x] **Sprint 3A:** Story-driven IA, progressive disclosure, single-question cards
+- [x] **Sprint 3B:** Premium visual system — dark-first, typography-led, branding lockup
 
 ### 1.6 Trust & Explainability
 
-- [ ] Labeled sources on all signals
-- [ ] Expandable momentum / confidence drivers
-- [ ] Clear mock data labeling where applicable
+- [x] Labeled sources on all signals
+- [x] Confidence explanation prose + plain-English tiers
+- [x] Honest provenance labeling (Live / Mixed / Sample)
+- [ ] Trust interaction analytics (source clicks, evidence expand)
+
+### 1.7 Sprint 1 — Premium Onboarding (Complete)
+
+- [x] Welcome, name, greeting, guided tour choice, tour overlay
+- [x] IdentityService (localStorage, no auth)
 
 ---
 
@@ -81,25 +90,29 @@ Help people understand **what is changing**, **why it matters**, and **what to d
 **Prerequisite:** Phase 1 shows Week 2 return > baseline.
 
 - [ ] Email / digest for weekly briefing (requires accounts or email capture)
-- [ ] Briefing period labels ("Week of Jun 22")
+- [ ] Briefing period labels in digest UX
 - [ ] Action follow-up ("Last week we recommended X — here's what changed")
 - [ ] Expanded signal library with richer change history
 - [ ] A/B test change hero formats
+- [ ] PostHog funnels: Week 2 return, onboarding path, change-hero → signal-detail
+- [ ] Display name on dashboard (identity loop closure)
 
 ---
 
-## Phase 3 — Live Data (Post-PMF)
+## Phase 3 — Live Data Expansion (Post-PMF)
 
-**Prerequisite:** Proven retention with curated data.
+**Prerequisite:** Proven retention with curated + pipeline data.
+
+**Note:** Five-source live pipeline is **built** (HN, arXiv, Wikimedia, GitHub, Product Hunt). Phase 3 adds *additional* sources.
 
 - [ ] Job board integrations
-- [ ] Research paper ingestion
+- [ ] Research paper ingestion (beyond arXiv)
 - [ ] Patent data
 - [ ] Funding databases
 - [ ] News sources
 - [ ] Government reports
-- [ ] Automated change detection pipeline
-- [ ] Real momentum / confidence scoring
+- [ ] Automated change detection beyond weekly cadence
+- [ ] Real momentum / confidence scoring at scale
 
 ---
 
@@ -115,12 +128,13 @@ Help people understand **what is changing**, **why it matters**, and **what to d
 
 ## Explicitly Out of Scope (MVP V1.1)
 
-- Live data ingestion
 - Relationship graphs
 - Community / discussion boards
 - User accounts
 - Premium / enterprise features
 - AI chatbot homepage
+- LLM summarization in pipeline
+- Additional data sources beyond locked five (until post-PMF)
 
 ---
 
@@ -131,6 +145,7 @@ Help people understand **what is changing**, **why it matters**, and **what to d
 | Phase 1 | Week 2 return rate |
 | Phase 1 | Change hero engagement |
 | Phase 1 | Time to first actionable insight (< 60s) |
+| Phase 1 | 15-second dashboard comprehension (Sprint 3A) |
 | Phase 2 | Week 4 return rate |
 | Phase 2 | Digest open rate |
 | Phase 3 | Change accuracy vs manual curation |

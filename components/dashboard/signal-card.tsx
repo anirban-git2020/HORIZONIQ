@@ -55,7 +55,7 @@ export function SignalCard({
       onClick={() => trackSignalCardClick(signal, source)}
       className={cn("block h-full", className)}
     >
-      <PremiumCard className="flex h-full flex-col p-5 transition-colors hover:border-primary/25 md:p-6">
+      <PremiumCard flat hover className="flex h-full flex-col p-6 md:p-7">
         <div className="mb-3 flex flex-wrap gap-2">
           <ChangeBadge type={signal.change.type} />
           <Badge variant="muted" className="text-xs">
@@ -63,7 +63,9 @@ export function SignalCard({
           </Badge>
         </div>
 
-        <h3 className="text-base font-semibold leading-snug">{signal.name}</h3>
+        <h3 className="text-base font-semibold leading-snug tracking-[-0.01em]">
+          {signal.name}
+        </h3>
 
         <div className="mt-4 flex-1">
           <p className="label-caps mb-1.5 text-[10px] text-muted-foreground">

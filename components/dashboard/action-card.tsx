@@ -5,7 +5,7 @@ import type { ActionView } from "@/lib/types";
 
 export function ActionCard({ action }: { action: ActionView }) {
   return (
-    <PremiumCard className="p-5">
+    <PremiumCard flat className="p-6">
       <p className="label-caps mb-1.5 text-[10px] text-muted-foreground">
         What else to consider
       </p>

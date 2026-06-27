@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { IBM_Plex_Sans, Inter } from "next/font/google";
+import { Inter, Outfit } from "next/font/google";
 
 import { PreferencesProvider } from "@/lib/preferences";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -12,10 +12,10 @@ const inter = Inter({
   display: "swap",
 });
 
-const plex = IBM_Plex_Sans({
+const outfit = Outfit({
   subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  variable: "--font-plex",
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-outfit",
   display: "swap",
 });
 
@@ -27,8 +27,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "#F8FAFC" },
-    { media: "(prefers-color-scheme: dark)", color: "#0A0F1E" },
+    { media: "(prefers-color-scheme: light)", color: "#F5F6F8" },
+    { media: "(prefers-color-scheme: dark)", color: "#06080F" },
   ],
 };
 
@@ -38,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${plex.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${outfit.variable} dark`} suppressHydrationWarning>
       <body
         className="min-h-dvh bg-background font-sans text-foreground"
         suppressHydrationWarning

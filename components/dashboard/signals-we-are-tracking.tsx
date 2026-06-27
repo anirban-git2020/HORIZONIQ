@@ -40,16 +40,13 @@ export function SignalsWeAreTracking({
         className={cn(className)}
         data-tour="signals"
       >
-        <PremiumCard className="overflow-hidden">
-          <div className="border-b border-border/60 px-6 py-5 md:px-8 md:py-6">
-            <p className="label-caps mb-2 text-primary">Your watchlist</p>
-            <h2
-              id="signals-tracking-heading"
-              className="section-title text-xl md:text-2xl"
-            >
+        <PremiumCard flat className="overflow-hidden">
+          <div className="hairline-b px-6 py-8 md:px-10 md:py-10">
+            <p className="label-caps mb-3 text-primary">Your watchlist</p>
+            <h2 id="signals-tracking-heading" className="section-title">
               Signals We&apos;re Tracking For You
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-muted-foreground md:text-base">
+            <p className="prose-lead mt-3 text-sm md:text-base">
               Your baseline for next week. Each signal links to full intelligence.
             </p>
           </div>
@@ -68,7 +65,7 @@ export function SignalsWeAreTracking({
                         changeType: signal.change.type,
                       });
                     }}
-                    className="group block px-6 py-5 transition-colors hover:bg-secondary/30 md:px-8"
+                    className="group block px-6 py-6 transition-colors duration-200 hover:bg-secondary/20 md:px-10 md:py-7"
                   >
                     <div className="flex flex-wrap items-center gap-2">
                       <ChangeBadge type={signal.change.type} />
@@ -77,18 +74,14 @@ export function SignalsWeAreTracking({
                     <h3 className="mt-2 text-base font-semibold leading-snug group-hover:text-primary">
                       {signal.name}
                     </h3>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      <span className="font-medium text-foreground/80">
-                        What happened:{" "}
-                      </span>
-                      {signal.intelligence.whatHappened}
-                    </p>
-                    <p className="mt-2 text-sm text-muted-foreground">
-                      <span className="font-medium text-foreground/80">
-                        Your move:{" "}
-                      </span>
-                      {signal.intelligence.whatToDoNext}
-                    </p>
+                    <div className="mt-3">
+                      <p className="label-caps mb-1.5 text-[10px] text-muted-foreground">
+                        What happened?
+                      </p>
+                      <p className="text-sm leading-relaxed text-muted-foreground">
+                        {signal.intelligence.whatHappened}
+                      </p>
+                    </div>
                     <span className="mt-3 inline-flex items-center gap-1 text-xs font-medium text-primary">
                       Full intelligence
                       <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />

@@ -20,7 +20,7 @@ export function NeuralBackground({
   className,
 }: NeuralBackgroundProps) {
   const intensity =
-    variant === "hero" ? 1 : variant === "subtle" ? 0.55 : 0.75;
+    variant === "hero" ? 0.65 : variant === "subtle" ? 0.4 : 0.55;
 
   const activeEdges = useMemo(
     () => NEURAL_EDGES.filter((e) => e.active),

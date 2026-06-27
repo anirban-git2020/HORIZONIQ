@@ -5,18 +5,20 @@ import { cn } from "@/lib/utils";
 export interface PremiumCardProps extends React.HTMLAttributes<HTMLDivElement> {
   hover?: boolean;
   glow?: boolean;
+  flat?: boolean;
 }
 
 const PremiumCard = React.forwardRef<HTMLDivElement, PremiumCardProps>(
-  ({ className, hover = true, glow = false, ...props }, ref) => (
+  ({ className, hover = true, glow = false, flat = false, ...props }, ref) => (
     <div
       ref={ref}
       className={cn(
-        "relative overflow-hidden rounded-xl border border-border bg-card",
-        "shadow-[0_1px_2px_hsl(222_47%_11%/0.04)] dark:shadow-[0_1px_2px_hsl(0_0%_0%/0.25)]",
+        "relative overflow-hidden rounded-xl border border-border/70 bg-card",
+        !flat && "shadow-premium",
         hover &&
-          "transition-all duration-300 ease-out hover:-translate-y-0.5 hover:border-border hover:shadow-premium",
-        glow && "ring-1 ring-primary/15",
+          "transition-[border-color,box-shadow,transform] duration-300 ease-premium hover:border-border",
+        hover && !flat && "hover:shadow-premium",
+        glow && "ring-1 ring-primary/10",
         className
       )}
       {...props}

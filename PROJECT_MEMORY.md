@@ -347,36 +347,65 @@ Visit state stored in localStorage:
 
 ## Sprint 3A — Information Architecture (Complete)
 
-### Principles
+**Mission:** Redesign dashboard hierarchy without changing functionality. User understands the page in under 15 seconds.
 
-1. One primary message per screen (hero carries the story)
-2. Progressive disclosure (supporting intelligence collapsed by default)
-3. Story flow: What changed → Why it matters → What to do
-4. No visual competition (removed duplicate headers, stats, RoleLens)
-5. Every section has a clear purpose via `StorySection`
-6. **"Intelligence Focus Areas"** replaces user-facing "Interests"
-7. Apple-like hierarchy: display title hero, calm spacing, single focal column
-8. Duplicate information removed (primary action once in hero; compact change list)
-9. Every card answers one question only (`SignalCard` focus modes)
+### Nine Principles — All Met (post Phase A polish)
+
+| # | Principle | Status |
+|---|---|---|
+| 1–5 | Primary message, disclosure, story, no competition, clear purpose | **Met** |
+| 6 | Intelligence Focus Areas label | **Met** — incl. step progress "Focus Areas" |
+| 7–8 | Apple hierarchy, no duplicates | **Met** |
+| 9 | One question per card | **Met** — incl. watchlist single question |
+
+---
+
+## Sprint 3B — Premium Visual Experience (Shipped)
+
+**Mission:** Transform UI into a premium intelligence experience — elegant, minimal, dark-first, typography-led. No functionality changes.
+
+**Inspiration:** Apple · Linear · Stripe · Bloomberg · Raycast (original HorizonIQ identity — not copied layouts)
+
+### Design System
+
+| Layer | Change |
+|---|---|
+| **Color** | Deep dark-first palette; restrained teal primary; excellent contrast |
+| **Typography** | Outfit headings + Inter body; `display-title`, `tagline-line`, `prose-lead` |
+| **Motion** | `lib/motion.ts` tokens; subtle fade-up; page template transition; 60fps micro-interactions |
+| **Surfaces** | Hairline dividers over card boxes; `flat` PremiumCard; `bg-ambient` page wash |
+| **Branding** | `BetaBadge`, `TaglineLockup`, strengthened welcome + landing lockup |
 
 ### Components
 
-- `StorySection` — story act headers
-- `DashboardContextBar` — role, region, focus areas (replaces heavy header)
-- `DisclosurePanel` — skills + opportunities behind progressive disclosure
-- `lib/copy.ts` — shared labels
+- `components/brand/beta-badge.tsx`
+- `components/brand/tagline-lockup.tsx`
+- `lib/motion.ts`
+- `app/template.tsx`
 
-### Dashboard layout (return visit)
+### Post-Implementation Review Scores (2026-06-27)
 
-1. What Changed hero (full story in one card)
-2. Context bar (briefing lens)
-3. Why it matters — signal cards (`focus="why"`)
-4. What to do — secondary actions only (primary in hero)
-5. Supporting intelligence — collapsed disclosure
+| Dimension | Score | Notes |
+|---|---|---|
+| **Premium feel** | 8/10 | Deep palette, calm surfaces, reduced card noise |
+| **Clarity** | 8/10 | Typography hierarchy improved; hero reads faster |
+| **Typography** | 8/10 | Outfit + scale refinements; tagline lockup memorable |
+| **Motion** | 7/10 | Subtle and purposeful; page fade adds polish |
+| **Branding** | 8/10 | Welcome + Beta Preview + tagline strengthened |
+| **Trust** | 8/10 | Calm professional tone; provenance unchanged and clear |
 
-### First visit
+### Remaining Weaknesses
 
-Hero + context bar + watchlist (unchanged functionality)
+- Light mode less refined than dark (dark-first; light is companion)
+- Signal detail page not fully reskinned in 3B (inherits tokens only)
+- Onboarding profile steps (role/region) unchanged visually
+- 15-second comprehension still not instrumented
+- Display name not yet on dashboard
+- Some landing sections (`LandingPillars`, `DataTrustPanel`) retain pre-3B card styling
+
+---
+
+## Sprint 3A — Information Architecture (archived detail)
 
 ---
 
@@ -538,8 +567,9 @@ Deprioritized / removed from MVP:
 - Onboarding flow (welcome → name → greeting → role → region → interests → tour choice) with 8 regions and 14 categorized interests
 - **What Changed For You** hero section
 - Dashboard with change-first signals, skills rising, opportunities, actions
-- Signal detail pages (`/signals/[id]`) with 4-question intelligence layout
-- **Sprint 2.5:** `IntelligenceConfidencePanel`, `SignalIntelligenceBlock`, `lib/intelligence.ts`
+- Signal detail pages (`/signals/[id]`) with full `IntelligenceCard` analyst layout
+- **Sprint 2.5 / 2.5A:** `IntelligenceCard`, `lib/intelligence.ts`, seven-section reasoning contract
+- **Sprint 3B:** Premium visual system — dark-first palette, Outfit typography, BetaBadge, TaglineLockup, calmer motion
 - JSON data layer with catalog + briefing + change metadata
 - Live 5-source pipeline + weekly GitHub Actions refresh
 - Data access layer (`lib/data/access.ts`)
@@ -553,8 +583,9 @@ Deprioritized / removed from MVP:
 
 ### Needs Improvement
 
+- Sprint 3B follow-up: signal detail page, onboarding profile steps, landing pillars/trust panel visual pass
 - Broader signal coverage across all 14 interests
-- Analytics for Week 2 return rate
+- Analytics for Week 2 return rate and 15-second dashboard comprehension
 - More region-specific explanation variants in catalog
 - PostHog funnels for trust interactions (source clicks, confidence panel)
 

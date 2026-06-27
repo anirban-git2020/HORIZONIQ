@@ -15,8 +15,8 @@
 
 | State | Contents |
 |---|---|
-| **On `main` (committed)** | Sprint 1 onboarding, onboarding compression, analytics, trust labeling, live pipeline, Vercel deploy (`42fd6c7` and earlier) |
-| **Local uncommitted** | Sprint 2.5, 2.5A, 3A, guided-tour spotlight fix, onboarding routing fixes, `suppressHydrationWarning` on `<body>`, intelligence + IA components |
+| **On `main` (committed + deployed)** | Sprint 1–3A, intelligence reasoning, dashboard IA, tour fixes, analytics, trust labeling, live pipeline (`a43eeaa` latest) |
+| **Sprint 3A polish (not yet coded)** | Step-progress "Interests" label, dead component deletion, optional watchlist single-question trim |
 
 **Read first in a new session:** This file → `PROJECT_MEMORY.md` → `PROJECT_DECISIONS.md` → `CHANGELOG.md` → `.cursorrules`
 
@@ -77,7 +77,7 @@ A user receives useful, personalized intelligence and has a reason to **return w
 | Time to first actionable insight | < 60s | **Partially met** — quick-start helps; Sprint 1 adds pre-steps |
 | Onboarding completion rate | — | **Instrumented** — `onboarding_completed` with `path: quick \| custom` |
 | Trust indicators | Source reads, confidence engagement | **Not instrumented** |
-| 15-second dashboard comprehension | Sprint 3A goal | **Designed** — not yet measured |
+| 15-second dashboard comprehension | Sprint 3A goal | **Shipped (IA)** — not yet measured |
 
 ### Dashboard Story Contract (Sprint 3A)
 
@@ -212,7 +212,7 @@ Constants: `lib/copy.ts` — `INTELLIGENCE_FOCUS_AREAS_LABEL`, `ADJUST_FOCUS_ARE
 - [x] Signal detail — full analyst brief
 - [x] Source `url` on `DataSource`; pipeline preserves observation URLs
 
-### Sprint 3A — Information Architecture (local)
+### Sprint 3A — Information Architecture (on `main`)
 
 - [x] **Story-driven hero** — What changed → Why it matters → What to do (one card)
 - [x] **`StorySection`** — story act headers
@@ -233,11 +233,18 @@ Constants: `lib/copy.ts` — `INTELLIGENCE_FOCUS_AREAS_LABEL`, `ADJUST_FOCUS_ARE
 
 ## 4. Pending Features
 
-### Commit & Deploy (High Priority)
+### Commit & Deploy
 
-- [ ] Commit Sprint 2.5, 2.5A, 3A + tour/IA fixes to `main`
-- [ ] Push → Vercel auto-deploy
-- [ ] Verify production build with PostHog env vars
+- [x] Commit Sprint 2.5, 2.5A, 3A + tour/IA fixes to `main` (`a43eeaa`)
+- [x] Push → Vercel auto-deploy
+- [ ] Verify production build with PostHog env vars (if not already set)
+
+### Sprint 3A Polish (Hierarchy Only — No New Features)
+
+- [ ] `step-progress.tsx` — replace "Interests" with Intelligence Focus Areas
+- [ ] Delete dead code: `dashboard-header.tsx`, `role-lens.tsx`, `story-intro.tsx`
+- [ ] Optional: watchlist rows → one question per row (principle 9)
+- [ ] Measure 15-second dashboard comprehension
 
 ### Post-Sprint Polish
 
@@ -662,7 +669,7 @@ Users return because **something changed for them** — not because a static fee
 
 | Issue | Severity | Notes |
 |---|---|---|
-| Sprint 2.5–3A uncommitted | **High** | Production may lag local |
+| Sprint 3A polish gaps | **Low** | Step-progress label, dead code, watchlist two-question rows |
 | Display name captured but not shown on dashboard | Medium | Identity loop incomplete |
 | 60-second promise vs full first-time flow | Medium | Quick-start mitigates |
 | Empty states for some focus area combos | Medium | arts, commerce, biochemistry thin |
@@ -692,10 +699,10 @@ Users return because **something changed for them** — not because a static fee
 
 ## 12. Next Tasks (Priority Order)
 
-### 1. Commit and deploy Sprint 2.5 + 2.5A + 3A + fixes
+### 1. Sprint 3A polish (hierarchy only)
 
-**Why:** Production does not include intelligence reasoning, IA redesign, or tour fixes.  
-**Do:** Stage all local changes, commit, push `main`, verify Vercel build.
+**Why:** Close remaining IA gaps from 2026-06-27 review — step-progress label, dead components.  
+**Do:** Small targeted edits; no branding or feature changes.
 
 ### 2. Use display name on dashboard
 
@@ -793,7 +800,7 @@ ef7e983 feat: add analytics instrumentation with optional PostHog
 4b3e9be chore(pipeline): weekly briefing [skip ci]
 ```
 
-**Local uncommitted:** Sprint 2.5, 2.5A, 3A, intelligence components, IA dashboard, tour fixes, docs.
+**Latest on `main`:** `a43eeaa` — intelligence reasoning, dashboard IA, tour fixes, docs.
 
 ---
 
@@ -935,8 +942,8 @@ Freemium → Premium (forecasting, reports) → Enterprise (API, white-label).
 | Change-first dashboard + visit snapshot | Built |
 | Live pipeline + trust labeling | Built |
 | Sprint 1 onboarding + tour | On `main` |
-| Intelligence reasoning (2.5A) | Local |
-| Dashboard IA (3A) | Local |
+| Intelligence reasoning (2.5A) | On `main` |
+| Dashboard IA (3A) | On `main` (polish gaps remain) |
 | PostHog funnels | Not built |
 | Email digest / accounts | Not started |
 | Broader focus area catalog coverage | Needs improvement |

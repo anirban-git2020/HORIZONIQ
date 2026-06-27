@@ -3,7 +3,9 @@
 import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 
-const STEPS = ["Role", "Region", "Interests"] as const;
+import { ONBOARDING_STEP_FOCUS_AREAS_LABEL } from "@/lib/copy";
+
+const STEPS = ["Role", "Region", ONBOARDING_STEP_FOCUS_AREAS_LABEL] as const;
 
 export function StepProgress({ current }: { current: 1 | 2 | 3 }) {
   return (

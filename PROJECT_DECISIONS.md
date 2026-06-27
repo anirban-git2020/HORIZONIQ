@@ -265,7 +265,54 @@ Users must understand the page in under 15 seconds. Visual competition and dupli
 
 ### Outcome
 
+Approved — shipped on `main` (`a43eeaa`)
+
+### Review (2026-06-27)
+
+All nine IA principles met after Phase A polish.
+
+---
+
+## 2026-06-27 — Sprint 3B: Premium Visual Experience
+
+### Decision
+
+Visual-only sprint — premium intelligence aesthetic without changing product functionality.
+
+Dark mode first. Typography as primary design element. Strengthen Welcome to HorizonIQ, Observe · Predict · Lead, and Beta Preview branding.
+
+### Reason
+
+HorizonIQ must feel like premium future software (Apple · Linear · Stripe · Bloomberg · Raycast inspiration) — not a generic SaaS dashboard. Visual trust and memorability support retention.
+
+### Implementation
+
+- Deep premium palette in `globals.css`; default theme dark
+- Outfit + Inter font pairing
+- `BetaBadge`, `TaglineLockup`, `lib/motion.ts`, `app/template.tsx`
+- Dashboard/landing/welcome visual pass — hairline surfaces, reduced card noise
+- Calmer neural background; subtler motion
+
+### Constraints (locked)
+
+- No functionality, routing, data, or intelligence logic changes
+- No glassmorphism overload, neon, or cyberpunk
+- Original HorizonIQ identity — Draftly Cognitra inspiration only, no copied layouts
+
+### Outcome
+
 Approved
+
+### Review Scores (2026-06-27)
+
+Premium 8 · Clarity 8 · Typography 8 · Motion 7 · Branding 8 · Trust 8
+
+### Remaining weaknesses
+
+- Light mode secondary to dark
+- Signal detail + partial landing/onboarding surfaces not fully reskinned
+- 15-second comprehension not measured
+- Display name not on dashboard
 
 ---
 

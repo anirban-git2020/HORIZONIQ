@@ -4,12 +4,12 @@ import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+import { BetaBadge } from "@/components/brand/beta-badge";
+import { TaglineLockup } from "@/components/brand/tagline-lockup";
 import { Button } from "@/components/ui/button";
+import { WELCOME_HEADLINE } from "@/lib/copy";
 import { identityService } from "@/lib/identity";
-
-const TAGLINE_LINES = ["Observe.", "Predict.", "Lead."] as const;
-
-const ease = [0.22, 1, 0.36, 1] as const;
+import { DURATION_SLOW, EASE_PREMIUM } from "@/lib/motion";
 
 export function WelcomeScreen() {
   const router = useRouter();
@@ -21,7 +21,7 @@ export function WelcomeScreen() {
 
   return (
     <div className="fixed inset-0 z-50 flex flex-col bg-background">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_40%,hsl(var(--primary)/0.08),transparent)]" />
+      <div className="pointer-events-none absolute inset-0 bg-ambient" />
 
       <div className="relative z-10 flex justify-end p-6 md:p-8">
         <Button
@@ -34,46 +34,37 @@ export function WelcomeScreen() {
         </Button>
       </div>
 
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pb-24 text-center">
-        <motion.p
-          className="label-caps mb-6 text-primary"
-          initial={{ opacity: 0, y: 12 }}
+      <div className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 pb-28 text-center md:pb-32">
+        <motion.div
+          className="mb-8 flex flex-col items-center gap-3"
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease }}
+          transition={{ duration: DURATION_SLOW, ease: EASE_PREMIUM }}
         >
-          HorizonIQ
-        </motion.p>
+          <p className="label-caps text-primary">HorizonIQ</p>
+          <BetaBadge />
+        </motion.div>
 
         <motion.h1
-          className="display-title max-w-3xl text-4xl md:text-5xl lg:text-6xl"
-          initial={{ opacity: 0, y: 20 }}
+          className="display-title max-w-4xl text-balance text-4xl md:text-5xl lg:text-6xl"
+          initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.15, ease }}
+          transition={{ duration: DURATION_SLOW, delay: 0.12, ease: EASE_PREMIUM }}
         >
-          Welcome to HorizonIQ.
+          {WELCOME_HEADLINE}
         </motion.h1>
 
-        <div className="mt-10 space-y-2 md:mt-12 md:space-y-3">
-          {TAGLINE_LINES.map((line, index) => (
-            <motion.p
-              key={line}
-              className="text-xl font-medium tracking-tight text-foreground/90 md:text-2xl"
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.65, delay: 0.45 + index * 0.18, ease }}
-            >
-              {line}
-            </motion.p>
-          ))}
+        <div className="mt-12 md:mt-16">
+          <TaglineLockup size="lg" animated />
         </div>
 
         <motion.div
-          className="mt-14 md:mt-16"
-          initial={{ opacity: 0, y: 12 }}
+          className="mt-16 md:mt-20"
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.1, ease }}
+          transition={{ duration: 0.5, delay: 1.05, ease: EASE_PREMIUM }}
         >
-          <Button size="lg" onClick={() => advance(false)} className="min-w-[200px]">
+          <Button size="lg" onClick={() => advance(false)} className="min-w-[220px]">
             Continue
             <ArrowRight />
           </Button>

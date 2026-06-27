@@ -2,10 +2,11 @@
 
 import { motion, type Variants } from "framer-motion";
 
+import { DURATION_NORMAL, EASE_PREMIUM } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 
 const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 10 },
   visible: { opacity: 1, y: 0 },
 };
 
@@ -20,7 +21,7 @@ export function FadeIn({
   children,
   className,
   delay = 0,
-  duration = 0.45,
+  duration = DURATION_NORMAL,
 }: FadeInProps) {
   return (
     <motion.div
@@ -29,7 +30,7 @@ export function FadeIn({
       whileInView="visible"
       viewport={{ once: true, margin: "-48px" }}
       variants={fadeUp}
-      transition={{ duration, delay, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration, delay, ease: EASE_PREMIUM }}
     >
       {children}
     </motion.div>
@@ -42,7 +43,7 @@ interface StaggerProps {
   stagger?: number;
 }
 
-export function Stagger({ children, className, stagger = 0.06 }: StaggerProps) {
+export function Stagger({ children, className, stagger = 0.05 }: StaggerProps) {
   return (
     <motion.div
       className={className}
@@ -70,11 +71,11 @@ export function StaggerItem({
     <motion.div
       className={className}
       variants={{
-        hidden: { opacity: 0, y: 12 },
+        hidden: { opacity: 0, y: 8 },
         visible: {
           opacity: 1,
           y: 0,
-          transition: { duration: 0.4, ease: [0.25, 0.1, 0.25, 1] },
+          transition: { duration: 0.35, ease: EASE_PREMIUM },
         },
       }}
     >

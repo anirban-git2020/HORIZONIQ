@@ -180,10 +180,10 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-dvh bg-background" data-tour="dashboard">
-      <TopBar />
+    <div className="min-h-dvh bg-background bg-ambient" data-tour="dashboard">
+      <TopBar showBeta />
 
-      <main className="container space-y-10 pt-8 pb-12 md:space-y-14 md:pt-10 md:pb-16">
+      <main className="container space-y-12 pt-10 pb-14 md:space-y-16 md:pt-12 md:pb-20">
         {isFirstVisit && <BaselineBriefingBanner />}
 
         <WhatChangedHero briefing={whatChanged} />
@@ -191,7 +191,7 @@ export default function DashboardPage() {
         <DashboardContextBar preferences={preferences} onReset={handleReset} />
 
         {!isFirstVisit && (
-          <div className="space-y-14 md:space-y-16">
+          <div className="space-y-16 md:space-y-20">
             {signals.length > 0 && (
               <StorySection
                 act="matters"

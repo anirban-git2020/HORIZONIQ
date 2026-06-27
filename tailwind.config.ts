@@ -18,7 +18,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        heading: ["var(--font-plex)", "var(--font-inter)", "sans-serif"],
+        heading: ["var(--font-outfit)", "var(--font-inter)", "system-ui", "sans-serif"],
       },
       fontSize: {
         "2xs": ["0.6875rem", { lineHeight: "1rem" }],

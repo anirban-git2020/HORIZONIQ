@@ -13,7 +13,7 @@ const demandVariant = {
 
 export function SkillCard({ skill }: { skill: SkillView }) {
   return (
-    <PremiumCard className="flex h-full flex-col p-5">
+    <PremiumCard className="flex h-full flex-col p-6">
       <div className="mb-3 flex flex-wrap gap-2">
         <ChangeBadge type={skill.demandChange} />
         <Badge variant={demandVariant[skill.demand]} className="text-xs">

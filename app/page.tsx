@@ -24,6 +24,7 @@ export default function LandingPage() {
       <IntelligenceBackground variant="hero" />
       <div className="relative">
         <TopBar
+          showBeta
           right={
             <Link
               href="/onboarding/welcome"

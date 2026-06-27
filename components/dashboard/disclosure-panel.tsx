@@ -21,28 +21,32 @@ export function DisclosurePanel({
 
   return (
     <FadeIn>
-      <div className="rounded-xl border border-border/80 bg-card/50">
+      <div className="hairline-b border-b border-border/60">
         <button
           type="button"
           onClick={() => setOpen((v) => !v)}
-          className="flex w-full items-start justify-between gap-4 px-5 py-4 text-left md:px-6 md:py-5"
+          className="flex w-full items-start justify-between gap-4 py-5 text-left transition-colors hover:text-foreground md:py-6"
           aria-expanded={open}
         >
           <div>
-            <p className="text-sm font-semibold text-foreground">{title}</p>
+            <p className="text-sm font-semibold tracking-[-0.01em] text-foreground">
+              {title}
+            </p>
             {description && (
-              <p className="mt-1 text-sm text-muted-foreground">{description}</p>
+              <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+                {description}
+              </p>
             )}
           </div>
           <ChevronDown
             className={cn(
-              "mt-0.5 h-5 w-5 shrink-0 text-muted-foreground transition-transform",
+              "mt-0.5 h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-300 ease-premium",
               open && "rotate-180"
             )}
           />
         </button>
         {open && (
-          <div className="border-t border-border/60 px-5 pb-5 pt-4 md:px-6 md:pb-6">
+          <div className="border-t border-border/50 pb-8 pt-6 md:pb-10">
             {children}
           </div>
         )}

@@ -20,13 +20,11 @@ export function StorySection({
   return (
     <FadeIn className={cn(className)}>
       <section>
-        <header className="mb-6 md:mb-8">
+        <header className="mb-8 md:mb-10">
           <p className="label-caps text-primary">{STORY_ACTS[act]}</p>
-          <h2 className="mt-1.5 text-xl font-semibold tracking-tight md:text-2xl">
-            {title}
-          </h2>
+          <h2 className="section-title mt-2">{title}</h2>
           {question && (
-            <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
+            <p className="prose-lead mt-3 max-w-2xl text-sm md:text-base">
               {question}
             </p>
           )}

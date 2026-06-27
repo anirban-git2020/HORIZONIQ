@@ -11,7 +11,7 @@ export function OpportunityCard({
   opportunity: OpportunityView;
 }) {
   return (
-    <PremiumCard className="flex h-full flex-col p-5">
+    <PremiumCard flat className="flex h-full flex-col p-6">
       <div className="mb-3 flex flex-wrap gap-2">
         <ChangeBadge type={opportunity.growthChange} />
         <Badge variant="muted" className="text-xs">

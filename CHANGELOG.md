@@ -8,6 +8,48 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Sprint 3B — Premium Visual Experience
+
+#### Added
+
+- **`BetaBadge`** — memorable "Beta Preview" label across welcome, landing, logo
+- **`TaglineLockup`** — reusable Observe · Predict · Lead typography component
+- **`lib/motion.ts`** — shared premium easing and duration tokens
+- **`app/template.tsx`** — subtle page transition fade
+- Design tokens: `prose-lead`, `tagline-line`, `surface-elevated`, `bg-ambient`, refined `shadow-premium`
+
+#### Changed
+
+- **Dark mode first** — default theme dark; deep premium palette (restrained teal accent, no neon cyan)
+- **Typography** — Outfit for headings, Inter for body; tighter tracking on display titles
+- **Welcome screen** — strengthened branding: Welcome to HorizonIQ + Beta Preview + animated tagline lockup
+- **Landing hero** — tagline lockup + beta badge; increased vertical rhythm
+- **Top bar** — lighter blur, hairline border, optional beta on logo
+- **Dashboard** — typography-led hero, flat surfaces, hairline dividers (less card boxing)
+- **Context bar & disclosure** — borderless hairline layout (reduced visual noise)
+- **PremiumCard** — flat variant; removed hover lift; subtler shadows
+- **Motion** — reduced y-offset, premium easing, calmer neural background intensity
+- **Buttons** — rounded-lg, refined hover/active micro-interactions
+
+#### Unchanged (by design)
+
+- No product functionality, data, routing, or intelligence logic changes
+- Sprint 3A information architecture preserved
+
+### Sprint 3A — Phase A Polish
+
+- Step progress step 3 → **Focus Areas**
+- Removed dead dashboard components (`dashboard-header`, `role-lens`, `story-intro`)
+- Watchlist rows → single question ("What happened?")
+
+### Sprint 3A — Review (2026-06-27)
+
+Sprint 3A shipped on `main` (`a43eeaa`). Pre-implementation review confirms hierarchy redesign is largely complete without functionality changes. Remaining polish: onboarding step-progress label, dead component cleanup, optional watchlist single-question trim. See `PROJECT_MEMORY.md` Sprint 3A audit table.
+
+---
+
+## [2026-06-27] — Sprint 2.5, 2.5A, 3A
+
 ### Sprint 3A — Information Architecture
 
 #### Added

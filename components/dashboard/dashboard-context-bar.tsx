@@ -25,25 +25,17 @@ export function DashboardContextBar({
 
   return (
     <FadeIn>
-      <div className="rounded-xl border border-border/60 bg-card/40 px-4 py-3 md:px-5 md:py-4">
-        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-          <div className="min-w-0">
-            <p className="label-caps mb-2 text-[10px] text-muted-foreground">
-              Your briefing lens
-            </p>
+      <div className="hairline-b border-b border-border/60 pb-6 md:pb-8">
+        <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:justify-between">
+          <div className="min-w-0 space-y-3">
+            <p className="label-caps">Your briefing lens</p>
             <div className="flex flex-wrap items-center gap-2">
-              {role && (
-                <Badge variant="default">{ROLE_LABEL[role]}</Badge>
-              )}
-              {region && (
-                <Badge variant="default">{REGION_LABEL[region]}</Badge>
-              )}
+              {role && <Badge variant="default">{ROLE_LABEL[role]}</Badge>}
+              {region && <Badge variant="default">{REGION_LABEL[region]}</Badge>}
             </div>
             {interests.length > 0 && (
-              <div className="mt-2">
-                <p className="mb-1.5 text-[10px] font-medium uppercase tracking-wider text-muted-foreground/80">
-                  {INTELLIGENCE_FOCUS_AREAS_LABEL}
-                </p>
+              <div>
+                <p className="label-caps mb-2">{INTELLIGENCE_FOCUS_AREAS_LABEL}</p>
                 <div className="flex flex-wrap gap-1.5">
                   {interests.map((id) => (
                     <Badge key={id} variant="muted" className="text-xs">

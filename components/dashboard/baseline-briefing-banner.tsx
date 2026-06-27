@@ -3,10 +3,14 @@
 import { CalendarDays } from "lucide-react";
 
 import { FadeIn } from "@/components/motion/fade-in";
+import { getDataProvenance, getRefreshSchedule } from "@/lib/data/access";
+import { getTrustDisclaimer } from "@/lib/trust";
 import { formatTodayLabel } from "@/lib/utils";
 
 export function BaselineBriefingBanner() {
   const todayLabel = formatTodayLabel();
+  const provenance = getDataProvenance();
+  const refreshSchedule = getRefreshSchedule();
 
   return (
     <FadeIn>
@@ -21,6 +25,9 @@ export function BaselineBriefingBanner() {
         <p className="mt-2 inline-flex items-center gap-1.5 text-xs text-muted-foreground md:text-sm">
           <CalendarDays className="h-3.5 w-3.5 shrink-0 text-primary" aria-hidden />
           <span>Baseline date: {todayLabel}</span>
+        </p>
+        <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+          {getTrustDisclaimer(provenance, refreshSchedule)}
         </p>
       </div>
     </FadeIn>

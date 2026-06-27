@@ -17,6 +17,7 @@ import { OpportunityCard } from "@/components/dashboard/opportunity-card";
 import { ActionCard } from "@/components/dashboard/action-card";
 import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { getMeta, getDataProvenance, getRefreshSchedule } from "@/lib/data/access";
+import { getProvenanceShortLabel } from "@/lib/trust";
 import { ROLE_EXPERIENCE } from "@/lib/options";
 import {
   getBriefing,
@@ -267,7 +268,8 @@ export default function DashboardPage() {
       <footer className="border-t border-border">
         <div className="container space-y-1 py-8 text-center text-sm text-muted-foreground">
           <p>
-            HorizonIQ · {provenanceFooterLabel()} · {briefing.briefingLabel}
+            HorizonIQ · {getProvenanceShortLabel(getDataProvenance())} ·{" "}
+            {briefing.briefingLabel}
           </p>
           <p className="text-xs">
             Briefing period {getMeta().briefingPeriod} · Last updated{" "}
@@ -278,17 +280,6 @@ export default function DashboardPage() {
       </footer>
     </div>
   );
-}
-
-function provenanceFooterLabel(): string {
-  switch (getDataProvenance()) {
-    case "pipeline":
-      return "Live intelligence";
-    case "pipeline-mock":
-      return "Mixed live + curated data";
-    default:
-      return "Curated demo data";
-  }
 }
 
 function sectionStep(order: DashboardSection[], section: DashboardSection) {

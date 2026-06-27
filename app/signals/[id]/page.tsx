@@ -15,7 +15,8 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { Badge } from "@/components/ui/badge";
 import { buttonVariants } from "@/components/ui/button";
 import { PremiumCard } from "@/components/ui/premium-card";
-import { getSignalById as getRawSignal } from "@/lib/data/access";
+import { getSignalById as getRawSignal, getDataProvenance, getRefreshSchedule } from "@/lib/data/access";
+import { getSourceBadgeVariant, getSourceTypeLabel, getTrustDisclaimer } from "@/lib/trust";
 import {
   getOpportunities,
   getRecommendedSkills,
@@ -155,13 +156,26 @@ export default function SignalDetailPage() {
             momentumDrivers={signal.momentumDrivers}
             confidenceFactors={signal.confidenceFactors}
           />
-          <div className="mt-4 flex flex-wrap gap-2">
-            {signal.sources.map((source) => (
-              <Badge key={source.label} variant="muted">
-                {source.label}
-                {source.type === "mock" ? " · mock" : ""}
-              </Badge>
-            ))}
+          <div className="mt-4">
+            <p className="label-caps mb-2 text-xs">Sources</p>
+            <p className="mb-3 text-xs text-muted-foreground">
+              Live = measured from public APIs this week. Sample = illustrative
+              when live coverage was limited.
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {signal.sources.map((source) => (
+                <Badge
+                  key={source.label}
+                  variant={getSourceBadgeVariant(source.type)}
+                >
+                  <span className="font-semibold">
+                    {getSourceTypeLabel(source.type)}
+                  </span>
+                  <span className="mx-1 opacity-40">·</span>
+                  {source.label}
+                </Badge>
+              ))}
+            </div>
           </div>
         </Section>
 
@@ -232,6 +246,9 @@ export default function SignalDetailPage() {
           <div className="rounded-xl border border-border/70 bg-secondary/30 px-6 py-5 text-center md:px-8">
             <p className="text-sm leading-relaxed text-muted-foreground md:text-base">
               We&apos;re tracking this signal for your next briefing.
+            </p>
+            <p className="mt-2 text-xs text-muted-foreground">
+              {getTrustDisclaimer(getDataProvenance(), getRefreshSchedule())}
             </p>
           </div>
         </FadeIn>

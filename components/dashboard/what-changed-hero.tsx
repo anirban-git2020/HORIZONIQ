@@ -11,6 +11,8 @@ import {
   ChangeBadge,
   DeltaIndicator,
 } from "@/components/dashboard/change-badge";
+import { ProvenanceBadge } from "@/components/trust/provenance-badge";
+import { getDataProvenance } from "@/lib/data/access";
 import { cn } from "@/lib/utils";
 import type { ChangeItem, SignalChangeGroup, WhatChangedBriefing } from "@/lib/types";
 
@@ -89,6 +91,7 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
     updatedLabel,
   } = briefing;
 
+  const provenance = getDataProvenance();
   const hasGroups = groups.length > 0;
 
   return (
@@ -102,6 +105,7 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
                   <p className="label-caps text-primary">
                     {isReturnVisit ? "Since your last visit" : "Week 1 Briefing"}
                   </p>
+                  <ProvenanceBadge provenance={provenance} />
                   <span className="hidden text-muted-foreground/60 sm:inline" aria-hidden>
                     ·
                   </span>

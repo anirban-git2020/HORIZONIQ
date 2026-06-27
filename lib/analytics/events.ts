@@ -32,6 +32,7 @@ export interface AnalyticsEventProps {
     interestCount: number;
     interests: InterestId[];
     durationMs: number | null;
+    path: "quick" | "custom";
   };
   dashboard_viewed: {
     visitType: VisitType;

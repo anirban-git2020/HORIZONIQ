@@ -45,7 +45,7 @@ export function LandingHero({ provenance }: LandingHeroProps) {
         <FadeIn delay={0.24}>
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row">
             <Link
-              href="/onboarding/role"
+              href="/onboarding/welcome"
               className={cn(buttonVariants({ size: "lg" }), "group min-w-[220px]")}
             >
               Build my dashboard

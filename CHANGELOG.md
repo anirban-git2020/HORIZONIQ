@@ -8,6 +8,25 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Sprint 1 — Premium First-Time Onboarding
+
+#### Added
+
+- **Full-screen welcome** (`/onboarding/welcome`) — animated Observe · Predict · Lead with Skip
+- **Name capture** (`/onboarding/name`) — "What should we call you?" stored via IdentityService
+- **Personalized greeting** (`/onboarding/greeting`) — time-of-day salutation (Good Morning/Afternoon/Evening)
+- **Guided tour choice** (`/onboarding/tour`) — Start Guided Tour vs I'll Explore Myself before first briefing
+- **Guided tour overlay** on dashboard — highlights Dashboard, What Changed, Signals, Opportunities, Recommended Actions
+- **`IdentityService` abstraction** (`lib/identity/`) — `LocalIdentityService` + localStorage; future Google/GitHub/Supabase stubs documented (no auth implemented)
+- **`lib/onboarding-flow.ts`** — resume-path helper for first-time flow
+- Landing CTAs route to `/onboarding/welcome`
+
+#### Changed
+
+- Onboarding completion (quick + custom paths) routes to `/onboarding/tour` before dashboard
+- Start over clears identity state alongside preferences and visit snapshot
+- Dashboard: `data-tour` attributes + guided tour overlay only (no briefing logic changes)
+
 ### Strategy
 
 - Pivot MVP from signal platform to **signal change platform**

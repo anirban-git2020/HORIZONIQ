@@ -2,21 +2,24 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { ArrowLeft, Sparkles } from "lucide-react";
 
 import { OnboardingShell } from "@/components/onboarding/onboarding-shell";
 import { OptionCard } from "@/components/onboarding/option-card";
 import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { PremiumCard } from "@/components/ui/premium-card";
 import {
   ROLE_INTEREST_COPY,
+  getDefaultInterestLabelsForRole,
+  getDefaultInterestsForRole,
   getInterestDisplayForRole,
   getInterestsForRole,
   getStudentInterestSections,
 } from "@/lib/options";
+import { trackOnboardingCompleted, ONBOARDING_TOUR_PATH } from "@/lib/onboarding";
 import { usePreferences } from "@/lib/preferences";
-import { getSessionElapsedMs, track } from "@/lib/analytics";
 import type { InterestOption } from "@/lib/options";
 import type { RoleId } from "@/lib/types";
 import { cn } from "@/lib/utils";
@@ -58,6 +61,7 @@ export default function InterestsPage() {
     usePreferences();
   const role = preferences.role;
   const count = preferences.interests.length;
+  const defaultsApplied = useRef(false);
 
   useEffect(() => {
     if (!hydrated) return;
@@ -79,12 +83,31 @@ export default function InterestsPage() {
     }
   }, [role, preferences.interests, setInterests]);
 
+  useEffect(() => {
+    if (!hydrated || !role || defaultsApplied.current) return;
+    if (preferences.interests.length > 0) return;
+    setInterests(getDefaultInterestsForRole(role));
+    defaultsApplied.current = true;
+  }, [hydrated, role, preferences.interests.length, setInterests]);
+
   if (!role) {
     return null;
   }
 
   const copy = ROLE_INTEREST_COPY[role];
   const interestById = new Map(getInterestsForRole(role).map((i) => [i.id, i]));
+  const defaultLabels = getDefaultInterestLabelsForRole(role);
+
+  const handleComplete = () => {
+    if (!preferences.role || !preferences.region) return;
+    trackOnboardingCompleted({
+      role: preferences.role,
+      region: preferences.region,
+      interests: preferences.interests,
+      path: "custom",
+    });
+    router.push(ONBOARDING_TOUR_PATH);
+  };
 
   return (
     <OnboardingShell
@@ -104,21 +127,7 @@ export default function InterestsPage() {
             <span className="text-sm text-muted-foreground">
               {count} selected
             </span>
-            <Button
-              onClick={() => {
-                if (preferences.role && preferences.region) {
-                  track("onboarding_completed", {
-                    role: preferences.role,
-                    region: preferences.region,
-                    interestCount: preferences.interests.length,
-                    interests: preferences.interests,
-                    durationMs: getSessionElapsedMs(),
-                  });
-                }
-                router.push("/dashboard");
-              }}
-              disabled={count === 0}
-            >
+            <Button onClick={handleComplete} disabled={count === 0}>
               <Sparkles />
               Build my dashboard
             </Button>
@@ -126,6 +135,16 @@ export default function InterestsPage() {
         </>
       }
     >
+      <PremiumCard className="mb-8 border-primary/20 bg-primary/[0.03] p-5 md:p-6">
+        <p className="text-sm font-medium text-foreground">
+          Recommended for you
+        </p>
+        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+          We pre-selected {defaultLabels.join(", ")}. Adjust any time — or
+          continue to your briefing now.
+        </p>
+      </PremiumCard>
+
       {role === "student" ? (
         <div className="space-y-10">
           {getStudentInterestSections().map((section) => {

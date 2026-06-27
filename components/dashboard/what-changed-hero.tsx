@@ -121,7 +121,7 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
   const heroRef = useTrackOnVisible<HTMLElement>(onHeroVisible);
 
   return (
-    <section ref={heroRef} aria-labelledby="what-changed-heading">
+    <section ref={heroRef} aria-labelledby="what-changed-heading" data-tour="what-changed">
       <FadeIn>
         <PremiumCard glow className="overflow-hidden">
           <div className="border-b border-border/60 bg-primary/[0.03] px-6 py-5 md:px-8 md:py-6">
@@ -156,7 +156,7 @@ export function WhatChangedHero({ briefing }: { briefing: WhatChangedBriefing })
                 </p>
               </div>
               {primaryAction && (
-                <div className="w-full sm:w-auto sm:max-w-xs">
+                <div className="w-full sm:w-auto sm:max-w-xs" data-tour="recommended-actions">
                   <p className="label-caps mb-2">Recommended action</p>
                   <div className="rounded-xl border border-primary/20 bg-primary/[0.05] p-4">
                     <p className="text-sm font-semibold">{primaryAction.title}</p>

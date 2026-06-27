@@ -181,6 +181,14 @@ export const ROLE_INTEREST_IDS: Record<RoleId, InterestId[]> = {
   ],
 };
 
+/** Three high-signal defaults per role for the ≤60s quick-start path. */
+export const ROLE_DEFAULT_INTERESTS: Record<RoleId, InterestId[]> = {
+  student: ["artificial-intelligence", "cybersecurity", "healthcare"],
+  professional: ["artificial-intelligence", "cybersecurity", "cloud-computing"],
+  entrepreneur: ["artificial-intelligence", "healthcare", "finance"],
+  investor: ["artificial-intelligence", "healthcare", "finance"],
+};
+
 export const INTEREST_CATEGORIES: {
   id: InterestCategory;
   label: string;
@@ -528,6 +536,18 @@ export function getInterestsForRole(role: RoleId): InterestOption[] {
   return ROLE_INTEREST_IDS[role]
     .map((id) => INTEREST_BY_ID.get(id))
     .filter((i): i is InterestOption => i !== undefined);
+}
+
+export function getDefaultInterestsForRole(role: RoleId): InterestId[] {
+  return [...ROLE_DEFAULT_INTERESTS[role]];
+}
+
+export function getDefaultInterestLabelsForRole(role: RoleId): string[] {
+  return getDefaultInterestsForRole(role).map((id) => {
+    const interest = INTEREST_BY_ID.get(id);
+    if (!interest) return id;
+    return getInterestDisplayForRole(role, interest).label;
+  });
 }
 
 export function getInterestDisplayForRole(

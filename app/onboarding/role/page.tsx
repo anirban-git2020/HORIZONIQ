@@ -12,6 +12,7 @@ import { Stagger, StaggerItem } from "@/components/motion/fade-in";
 import { Button } from "@/components/ui/button";
 import { buttonVariants } from "@/components/ui/button";
 import { ROLES } from "@/lib/options";
+import { getFirstTimeOnboardingPath } from "@/lib/onboarding-flow";
 import { usePreferences } from "@/lib/preferences";
 import { startSessionTiming, track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
@@ -22,8 +23,13 @@ export default function RolePage() {
 
   useEffect(() => {
     startSessionTiming();
+    const resumePath = getFirstTimeOnboardingPath();
+    if (resumePath !== "/onboarding/role") {
+      router.replace(resumePath);
+      return;
+    }
     track("onboarding_started", {});
-  }, []);
+  }, [router]);
 
   return (
     <OnboardingShell

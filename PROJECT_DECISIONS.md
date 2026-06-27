@@ -209,3 +209,41 @@ Litmus test: "Does this give the user a reason to come back next week?"
 Reason:
 Prevents feature creep that improves first visit but not return visits.
 
+---
+
+## 2026-06-27 — Sprint 1: Premium First-Time Onboarding
+
+### Decision
+
+First-time users see a welcome animation, name capture, personalized greeting, and optional guided tour before the first briefing.
+
+### Reason
+
+Premium first impression and clearer orientation without changing dashboard intelligence logic.
+
+### Implementation
+
+- Routes: `/onboarding/welcome`, `/name`, `/greeting`, `/tour`
+- `IdentityService` with `LocalIdentityService` (localStorage key `horizoniq.identity.v1`)
+- Future auth providers documented in `lib/identity/future-providers.ts` — not implemented
+- Guided tour overlay on dashboard via `data-tour` attributes only
+- Tour choice required before first dashboard visit
+
+### Outcome
+
+Approved
+
+---
+
+### Decision
+
+No authentication in Sprint 1.
+
+### Reason
+
+Identity layer must be swappable before Google/GitHub/Supabase integration.
+
+### Outcome
+
+Approved
+

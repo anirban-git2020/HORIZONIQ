@@ -237,7 +237,13 @@ Same signal. Different "so what" per user.
 
 ## Current MVP Flow
 
+Step 0 — Welcome animation (first visit only; skippable)
+
+Step 0b — Name + personalized greeting (first visit only)
+
 Step 1 — User selects role, region, interests
+
+Step 1b — Guided tour choice (first briefing only)
 
 Step 2 — System creates personalized intelligence briefing
 
@@ -247,7 +253,21 @@ Step 4 — User sees changed signals, skills, opportunities, actions
 
 Step 5 — User opens signal detail for full change context
 
-**Time target:** Useful personalized intelligence within 60 seconds.
+**Time target:** Useful personalized intelligence within 60 seconds (quick-start path: welcome → name → greeting → role → region → briefing).
+
+---
+
+## Identity Layer (Sprint 1)
+
+`IdentityService` (`lib/identity/`) stores:
+
+- `displayName` — used in time-of-day greeting
+- Welcome / greeting completion flags
+- Guided tour choice (`guided` | `solo`) and completion
+
+Storage: `horizoniq.identity.v1` in localStorage.
+
+Future: Google Login, GitHub Login, Supabase — interface documented; not implemented.
 
 ---
 
@@ -416,7 +436,7 @@ Deprioritized / removed from MVP:
 
 - Core vision and product direction
 - User personas and design principles
-- Onboarding flow (role → region → interests) with 8 regions and 14 categorized interests
+- Onboarding flow (welcome → name → greeting → role → region → interests → tour choice) with 8 regions and 14 categorized interests
 - **What Changed For You** hero section
 - Dashboard with change-first signals, skills rising, opportunities, actions
 - Signal detail pages (`/signals/[id]`) with change-first layout
@@ -428,6 +448,7 @@ Deprioritized / removed from MVP:
 - Briefing freshness UI in change hero (`briefingLabel`, "Updated [date]")
 - Weekly mock data refresh checklist (`data/README.md`)
 - Briefing-period-aware return visits (`isReturnVisitForPeriod`)
+- Sprint 1 first-time onboarding: welcome animation, name + greeting, IdentityService, guided tour overlay
 
 ### Needs Improvement
 
@@ -441,7 +462,6 @@ Deprioritized / removed from MVP:
 - Relationship graph (future)
 - Discussion boards
 - User accounts
-- Premium features
 - Community features
 - Email digest for weekly briefing
 

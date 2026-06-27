@@ -1,10 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
 import { TopBar } from "@/components/layout/top-bar";
+import { GuidedTourOverlay } from "@/components/onboarding/guided-tour-overlay";
 import { DashboardHeader } from "@/components/dashboard/dashboard-header";
 import { RoleLens } from "@/components/dashboard/role-lens";
 import { BaselineBriefingBanner } from "@/components/dashboard/baseline-briefing-banner";
@@ -38,6 +39,7 @@ import {
   loadVisitSnapshot,
   saveVisitSnapshot,
 } from "@/lib/visit-snapshot";
+import { identityService } from "@/lib/identity";
 
 function FullScreenLoader({ label }: { label: string }) {
   return (
@@ -51,6 +53,7 @@ function FullScreenLoader({ label }: { label: string }) {
 export default function DashboardPage() {
   const router = useRouter();
   const { preferences, hydrated, isComplete, reset } = usePreferences();
+  const [guidedTourActive, setGuidedTourActive] = useState(false);
 
   useEffect(() => {
     if (hydrated && !isComplete) {
@@ -102,6 +105,13 @@ export default function DashboardPage() {
   }, [hydrated, isComplete, preferences.role, preferences.region, whatChanged]);
 
   useEffect(() => {
+    if (!hydrated || !isComplete) return;
+    if (identityService.shouldShowGuidedTour()) {
+      setGuidedTourActive(true);
+    }
+  }, [hydrated, isComplete]);
+
+  useEffect(() => {
     if (!hydrated || !isComplete || signals.length === 0) return;
     const meta = getMeta();
     const existing = loadVisitSnapshot();
@@ -131,8 +141,14 @@ export default function DashboardPage() {
   const handleReset = () => {
     track("start_over", {});
     clearVisitSnapshot();
+    identityService.clear();
     reset();
     router.push("/");
+  };
+
+  const handleTourComplete = () => {
+    identityService.markGuidedTourComplete();
+    setGuidedTourActive(false);
   };
 
   const sections: Record<DashboardSection, React.ReactNode> = {
@@ -238,7 +254,7 @@ export default function DashboardPage() {
   };
 
   return (
-    <div className="min-h-dvh bg-background">
+    <div className="min-h-dvh bg-background" data-tour="dashboard">
       <TopBar />
 
       <main>
@@ -258,7 +274,22 @@ export default function DashboardPage() {
 
             <div className="container space-y-12 pb-12 md:space-y-16 md:pb-16">
               <RoleLens role={role} />
-              {experience.sectionOrder.map((key) => sections[key])}
+              {experience.sectionOrder.map((key) => (
+                <div
+                  key={key}
+                  data-tour={
+                    key === "opportunities"
+                      ? "opportunities"
+                      : key === "actions"
+                        ? "recommended-actions"
+                        : key === "signals"
+                          ? "signals"
+                          : undefined
+                  }
+                >
+                  {sections[key]}
+                </div>
+              ))}
             </div>
           </>
         )}
@@ -297,6 +328,8 @@ export default function DashboardPage() {
           </p>
         </div>
       </footer>
+
+      <GuidedTourOverlay active={guidedTourActive} onComplete={handleTourComplete} />
     </div>
   );
 }

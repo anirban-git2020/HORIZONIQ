@@ -37,6 +37,7 @@ export function SignalsWeAreTracking({
       <section
         aria-labelledby="signals-tracking-heading"
         className={cn(className)}
+        data-tour="signals"
       >
         <PremiumCard className="overflow-hidden">
           <div className="border-b border-border/60 px-6 py-5 md:px-8 md:py-6">

@@ -26,7 +26,7 @@ export default function LandingPage() {
         <TopBar
           right={
             <Link
-              href="/onboarding/role"
+              href="/onboarding/welcome"
               className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
             >
               Get started

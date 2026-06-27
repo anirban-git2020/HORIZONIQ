@@ -1,10 +1,11 @@
 import metaJson from "@/data/meta.json";
 import catalogSignalsJson from "@/data/catalog/signals.json";
-import briefing2026W26Json from "@/data/briefings/2026-W26.json";
 import regionsJson from "@/data/regions.json";
 import skillsJson from "@/data/skills.json";
 import jobsJson from "@/data/jobs.json";
 import recommendationsJson from "@/data/recommendations.json";
+
+import { BRIEFINGS_BY_PERIOD } from "@/lib/data/briefings-registry";
 
 import type {
   InterestId,
@@ -36,16 +37,11 @@ const recommendations = (
   recommendationsJson as { recommendations: RecommendationRecord[] }
 ).recommendations;
 
-/** Register weekly briefing files by `briefingPeriod`. */
-const BRIEFINGS: Record<string, BriefingRecord> = {
-  "2026-W26": briefing2026W26Json as BriefingRecord,
-};
-
 function getActiveBriefing(): BriefingRecord {
-  const briefing = BRIEFINGS[meta.briefingPeriod];
+  const briefing = BRIEFINGS_BY_PERIOD[meta.briefingPeriod];
   if (!briefing) {
     throw new Error(
-      `No briefing registered for period "${meta.briefingPeriod}" (${meta.activeBriefingFile}).`
+      `No briefing registered for period "${meta.briefingPeriod}" (${meta.activeBriefingFile}). Run npm run pipeline:generate.`
     );
   }
   return briefing;
@@ -55,6 +51,14 @@ const signals = resolveSignalsFromBriefing(catalogSignals, getActiveBriefing());
 
 export function getMeta(): MetaRecord {
   return meta;
+}
+
+export function getDataProvenance(): BriefingRecord["dataProvenance"] {
+  return getActiveBriefing().dataProvenance;
+}
+
+export function getRefreshSchedule(): string {
+  return meta.refreshSchedule ?? "Every Monday at 06:00 UTC";
 }
 
 export function getActiveBriefingRecord(): BriefingRecord {

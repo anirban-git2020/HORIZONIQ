@@ -5,8 +5,13 @@
       "title": "Start one agent pilot this week",
       "detail": "Pick a repetitive workflow and prototype an AI agent to automate it — this is the highest-impact move for your profile right now.",
       "priority": "High",
-      "interests": ["artificial-intelligence"],
-      "roles": ["professional", "entrepreneur"],
+      "interests": [
+        "artificial-intelligence"
+      ],
+      "roles": [
+        "professional",
+        "entrepreneur"
+      ],
       "isPrimary": true,
       "changeReason": "Agent adoption accelerated — early movers gain disproportionate advantage."
     },
@@ -15,8 +20,12 @@
       "title": "Build and publish one agent project",
       "detail": "Create a public agent demo and add it to your portfolio — hiring managers are actively scanning for this.",
       "priority": "High",
-      "interests": ["artificial-intelligence"],
-      "roles": ["student"],
+      "interests": [
+        "artificial-intelligence"
+      ],
+      "roles": [
+        "student"
+      ],
       "isPrimary": true,
       "changeReason": "Agent-building became a baseline hiring expectation this week."
     },
@@ -25,8 +34,13 @@
       "title": "Map the agent infrastructure stack",
       "detail": "Identify the models, orchestration, and tooling layers — find one underpriced investment or partnership opportunity.",
       "priority": "High",
-      "interests": ["artificial-intelligence", "venture-capital"],
-      "roles": ["investor"],
+      "interests": [
+        "artificial-intelligence",
+        "venture-capital"
+      ],
+      "roles": [
+        "investor"
+      ],
       "isPrimary": true,
       "changeReason": "Agent infrastructure is attracting concentrated capital."
     },
@@ -35,8 +49,13 @@
       "title": "Audit AI security in your environment",
       "detail": "Review whether your tools detect AI-generated phishing and whether AI tools in use meet security standards.",
       "priority": "High",
-      "interests": ["cybersecurity"],
-      "roles": ["professional", "entrepreneur"],
+      "interests": [
+        "cybersecurity"
+      ],
+      "roles": [
+        "professional",
+        "entrepreneur"
+      ],
       "isPrimary": false,
       "changeReason": "AI-powered threat success rates climbed this week."
     },
@@ -45,8 +64,13 @@
       "title": "Review approved AI diagnostic tools",
       "detail": "Check which AI diagnostics are approved in your region and whether your organization has an evaluation workflow.",
       "priority": "High",
-      "interests": ["healthcare"],
-      "roles": ["professional", "student"],
+      "interests": [
+        "healthcare"
+      ],
+      "roles": [
+        "professional",
+        "student"
+      ],
       "isPrimary": false,
       "changeReason": "Two new regulatory approvals this week."
     },
@@ -55,8 +79,13 @@
       "title": "Write a one-page AI-native business thesis",
       "detail": "Validate with ten potential customers before building — AI-native founding velocity makes speed critical.",
       "priority": "High",
-      "interests": ["startups", "entrepreneurship"],
-      "roles": ["entrepreneur"],
+      "interests": [
+        "startups",
+        "entrepreneurship"
+      ],
+      "roles": [
+        "entrepreneur"
+      ],
       "isPrimary": true,
       "changeReason": "AI-native founding velocity hit a new high."
     },
@@ -65,8 +94,13 @@
       "title": "Run a cloud cost review",
       "detail": "Identify one optimization opportunity in your team's infrastructure spend this month.",
       "priority": "Medium",
-      "interests": ["cloud-computing"],
-      "roles": ["professional", "entrepreneur"],
+      "interests": [
+        "cloud-computing"
+      ],
+      "roles": [
+        "professional",
+        "entrepreneur"
+      ],
       "isPrimary": false,
       "changeReason": "Cloud cost pressure remains constant as AI workloads scale."
     },
@@ -75,8 +109,14 @@
       "title": "Track one storage deployment in your region",
       "detail": "Follow a utility-scale storage project announcement and note the companies and roles involved.",
       "priority": "Medium",
-      "interests": ["energy"],
-      "roles": ["student", "investor", "professional"],
+      "interests": [
+        "energy"
+      ],
+      "roles": [
+        "student",
+        "investor",
+        "professional"
+      ],
       "isPrimary": false,
       "changeReason": "Utility-scale storage contracts signed at record pace."
     },
@@ -85,8 +125,14 @@
       "title": "Follow three humanoid pilot announcements",
       "detail": "Note which industries deploy first — this signals where robotics careers and investments concentrate.",
       "priority": "Medium",
-      "interests": ["robotics"],
-      "roles": ["student", "investor", "entrepreneur"],
+      "interests": [
+        "robotics"
+      ],
+      "roles": [
+        "student",
+        "investor",
+        "entrepreneur"
+      ],
       "isPrimary": false,
       "changeReason": "Humanoid pilot deployments doubled this week."
     },
@@ -95,8 +141,13 @@
       "title": "Review VC allocation in your portfolio",
       "detail": "Check AI concentration across holdings and rebalance to avoid over-exposure to a single sub-category.",
       "priority": "High",
-      "interests": ["venture-capital", "finance"],
-      "roles": ["investor"],
+      "interests": [
+        "venture-capital",
+        "finance"
+      ],
+      "roles": [
+        "investor"
+      ],
       "isPrimary": false,
       "changeReason": "AI share of total VC funding reached a new high."
     }

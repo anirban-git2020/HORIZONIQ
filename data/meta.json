@@ -1,6 +1,7 @@
 {
   "briefingPeriod": "2026-W26",
-  "briefingLabel": "Week of June 23, 2026",
-  "updatedAt": "2026-06-23T00:00:00Z",
-  "activeBriefingFile": "2026-W26.json"
+  "briefingLabel": "Week of June 22, 2026 – June 28, 2026",
+  "updatedAt": "2026-06-27T10:26:58.709Z",
+  "activeBriefingFile": "2026-W26.json",
+  "refreshSchedule": "Every Monday at 06:00 UTC"
 }

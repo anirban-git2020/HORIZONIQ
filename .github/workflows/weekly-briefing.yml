@@ -1,0 +1,39 @@
+name: Weekly intelligence briefing
+
+on:
+  schedule:
+    # Monday 06:00 UTC — new weekly briefing for all users
+    - cron: "0 6 * * 1"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Ingest live sources and generate briefing
+        run: npm run pipeline:full
+        env:
+          PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
+
+      - name: Commit and push briefing data
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "chore(pipeline): weekly briefing [skip ci]"
+          file_pattern: |
+            data/**
+            lib/data/briefings-registry.ts

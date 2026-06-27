@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "pipeline:ingest": "tsx scripts/pipeline-ingest.ts"
+    "pipeline:ingest": "tsx scripts/pipeline-ingest.ts",
+    "pipeline:generate": "tsx scripts/pipeline-generate.ts",
+    "pipeline:full": "tsx scripts/pipeline-full.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

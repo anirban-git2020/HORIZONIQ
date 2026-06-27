@@ -47,6 +47,15 @@ export async function writeObservations(
   return { latestPath, datedPath };
 }
 
+export async function readLatestScores(): Promise<ScoreBundle | null> {
+  try {
+    const raw = await readFile(path.join(SCORES_DIR, "latest.json"), "utf8");
+    return JSON.parse(raw) as ScoreBundle;
+  } catch {
+    return null;
+  }
+}
+
 export async function writeScores(bundle: ScoreBundle): Promise<string> {
   await ensureDir(SCORES_DIR);
   const latestPath = path.join(SCORES_DIR, "latest.json");

@@ -1,967 +1,1036 @@
 {
   "briefingPeriod": "2026-W26",
-  "briefingLabel": "Week of June 23, 2026",
-  "publishedAt": "2026-06-23T00:00:00Z",
-  "dataProvenance": "curated-mock",
+  "briefingLabel": "Week of June 22, 2026 – June 28, 2026",
+  "publishedAt": "2026-06-27T10:26:58.709Z",
+  "dataProvenance": "pipeline",
   "buckets": {
-    "new": [
-      "quantum-error-correction",
+    "new": [],
+    "rising": [],
+    "falling": [
+      "grid-storage",
       "ai-native-startups"
     ],
-    "rising": [
+    "stable": [
       "ai-agents",
       "humanoid-robotics",
+      "quantum-error-correction",
       "ai-cyber-threats",
+      "cloud-cost-reckoning",
       "smart-manufacturing",
+      "supply-chain-resilience",
       "ai-diagnostics",
       "embedded-finance",
-      "grid-storage",
       "vc-ai-concentration",
       "synthetic-biology",
       "lab-automation-biochem",
       "life-sciences-ai-research",
       "creative-ai-tools",
       "commerce-analytics-demand"
-    ],
-    "falling": [
-      "supply-chain-resilience"
-    ],
-    "stable": [
-      "cloud-cost-reckoning"
     ]
   },
   "signalStates": [
     {
       "signalId": "ai-agents",
-      "momentum": 98,
-      "confidence": 90,
-      "previousMomentum": 96,
-      "previousConfidence": 88,
+      "momentum": 48,
+      "confidence": 95,
+      "previousMomentum": 98,
+      "previousConfidence": 90,
       "change": {
-        "type": "rising",
-        "summary": "Fortune 500 agent rollouts expanded — pilot-to-production conversion hit a new high this week."
+        "type": "stable",
+        "summary": "Autonomous AI Agents held steady in Artificial Intelligence with Wikimedia Pageviews -2%."
       },
       "sources": [
         {
-          "label": "Curated enterprise adoption survey (mock)",
-          "type": "mock"
+          "label": "Hacker News: Previewing GPT‑5.6 Sol: a next-generation model",
+          "type": "live"
         },
         {
-          "label": "Job posting trend analysis (mock)",
-          "type": "mock"
+          "label": "Hacker News: U.S. allows Anthropic to release Mythos AI to ‘trusted’ US organizations",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: DanceOPD: On-Policy Generative Field Distillation",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Reinforcement Learning without Ground-Truth Solutions can Improve LLMs",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Job growth",
-          "value": 38,
+          "label": "Wikimedia Pageviews",
+          "value": 2,
           "unit": "%"
         },
         {
-          "label": "Funding growth",
-          "value": 42,
-          "unit": "%"
-        },
-        {
-          "label": "Research activity",
-          "value": 35,
+          "label": "Product Hunt",
+          "value": 12,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 91,
+          "label": "Live source coverage",
+          "value": 40,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 86,
+          "label": "Cross-source agreement",
+          "value": 100,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 88,
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "humanoid-robotics",
-      "momentum": 91,
-      "confidence": 82,
-      "previousMomentum": 88,
-      "previousConfidence": 79,
-      "change": {
-        "type": "rising",
-        "summary": "Warehouse pilot contracts signed in three new regions — hardware costs dropped another 8%."
-      },
-      "sources": [
-        {
-          "label": "Pilot deployment tracker (mock)",
-          "type": "mock"
-        },
-        {
-          "label": "Manufacturing labor index (mock)",
-          "type": "mock"
-        }
-      ],
-      "momentumDrivers": [
-        {
-          "label": "Pilot growth",
-          "value": 52,
-          "unit": "%"
-        },
-        {
-          "label": "Patent growth",
-          "value": 28,
-          "unit": "%"
-        },
-        {
-          "label": "Funding growth",
-          "value": 34,
-          "unit": "%"
-        }
-      ],
-      "confidenceFactors": [
-        {
-          "label": "Source count",
-          "value": 78,
-          "unit": "score"
-        },
-        {
-          "label": "Data consistency",
-          "value": 76,
-          "unit": "score"
-        },
-        {
-          "label": "Regional adoption",
-          "value": 72,
-          "unit": "score"
-        }
-      ]
-    },
-    {
-      "signalId": "quantum-error-correction",
-      "momentum": 72,
-      "confidence": 68,
-      "previousMomentum": 58,
-      "previousConfidence": 62,
-      "change": {
-        "type": "new",
-        "summary": "First commercial error correction milestone reported — signal entered tracking this week."
-      },
-      "sources": [
-        {
-          "label": "Research preprint digest (mock)",
-          "type": "mock"
-        },
-        {
-          "label": "Government quantum initiative report (mock)",
-          "type": "mock"
-        }
-      ],
-      "momentumDrivers": [
-        {
-          "label": "Research activity",
-          "value": 45,
-          "unit": "%"
-        },
-        {
-          "label": "Patent growth",
-          "value": 22,
-          "unit": "%"
-        },
-        {
-          "label": "Funding growth",
-          "value": 18,
-          "unit": "%"
-        }
-      ],
-      "confidenceFactors": [
-        {
-          "label": "Source count",
-          "value": 68,
-          "unit": "score"
-        },
-        {
-          "label": "Data consistency",
-          "value": 65,
-          "unit": "score"
-        },
-        {
-          "label": "Regional adoption",
-          "value": 60,
-          "unit": "score"
-        }
-      ]
-    },
-    {
-      "signalId": "ai-cyber-threats",
-      "momentum": 91,
-      "confidence": 85,
-      "previousMomentum": 86,
-      "previousConfidence": 83,
-      "change": {
-        "type": "rising",
-        "summary": "AI-generated phishing success rates climbed — defensive AI adoption is now urgent."
-      },
-      "sources": [
-        {
-          "label": "Threat intelligence brief (mock)",
-          "type": "mock"
-        },
-        {
-          "label": "Breach cost index (mock)",
-          "type": "mock"
-        }
-      ],
-      "momentumDrivers": [
-        {
-          "label": "Incident growth",
-          "value": 41,
-          "unit": "%"
-        },
-        {
-          "label": "Job growth",
-          "value": 33,
-          "unit": "%"
-        },
-        {
-          "label": "Funding growth",
-          "value": 29,
-          "unit": "%"
-        }
-      ],
-      "confidenceFactors": [
-        {
-          "label": "Source count",
-          "value": 87,
-          "unit": "score"
-        },
-        {
-          "label": "Data consistency",
-          "value": 84,
-          "unit": "score"
-        },
-        {
-          "label": "Regional adoption",
-          "value": 80,
-          "unit": "score"
-        }
-      ]
-    },
-    {
-      "signalId": "cloud-cost-reckoning",
-      "momentum": 78,
-      "confidence": 86,
-      "previousMomentum": 75,
-      "previousConfidence": 85,
+      "momentum": 50,
+      "confidence": 95,
+      "previousMomentum": 91,
+      "previousConfidence": 82,
       "change": {
         "type": "stable",
-        "summary": "Momentum holding steady — cost pressure remains constant but no sharp shift this week."
+        "summary": "Humanoid Robotics held steady in Robotics with Wikimedia Pageviews +4%."
       },
       "sources": [
         {
-          "label": "Cloud spend benchmark report (mock)",
-          "type": "mock"
+          "label": "arXiv: Scalable Behavior Cloning with Open Data, Training, and Evaluation",
+          "type": "live"
         },
         {
-          "label": "FinOps adoption survey (mock)",
-          "type": "mock"
+          "label": "arXiv: World Action Models Enable Continual Imitation Learning with Recurrent Generative Replays",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: RouterVLA: Turning Smoke Tests into Supervision for Heterogeneous VLA Selection",
+          "type": "live"
+        },
+        {
+          "label": "Wikimedia: Robotics — Wikipedia pageviews",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Job growth",
-          "value": 19,
-          "unit": "%"
-        },
-        {
-          "label": "Enterprise adoption",
-          "value": 24,
-          "unit": "%"
-        },
-        {
-          "label": "Tool market growth",
-          "value": 21,
-          "unit": "%"
-        }
-      ],
-      "confidenceFactors": [
-        {
-          "label": "Source count",
-          "value": 90,
-          "unit": "score"
-        },
-        {
-          "label": "Data consistency",
-          "value": 88,
-          "unit": "score"
-        },
-        {
-          "label": "Regional adoption",
-          "value": 85,
-          "unit": "score"
-        }
-      ]
-    },
-    {
-      "signalId": "smart-manufacturing",
-      "momentum": 85,
-      "confidence": 82,
-      "previousMomentum": 78,
-      "previousConfidence": 80,
-      "change": {
-        "type": "rising",
-        "summary": "Factory AI adoption jumped — predictive maintenance ROI cases are driving executive buy-in."
-      },
-      "sources": [
-        {
-          "label": "Manufacturing AI adoption index (mock)",
-          "type": "mock"
-        },
-        {
-          "label": "Industry ROI case study (mock)",
-          "type": "mock"
-        }
-      ],
-      "momentumDrivers": [
-        {
-          "label": "Deployment growth",
-          "value": 31,
-          "unit": "%"
-        },
-        {
-          "label": "Job growth",
-          "value": 26,
-          "unit": "%"
-        },
-        {
-          "label": "Funding growth",
-          "value": 22,
-          "unit": "%"
-        }
-      ],
-      "confidenceFactors": [
-        {
-          "label": "Source count",
-          "value": 84,
-          "unit": "score"
-        },
-        {
-          "label": "Data consistency",
-          "value": 82,
-          "unit": "score"
-        },
-        {
-          "label": "Regional adoption",
-          "value": 79,
-          "unit": "score"
-        }
-      ]
-    },
-    {
-      "signalId": "supply-chain-resilience",
-      "momentum": 68,
-      "confidence": 80,
-      "previousMomentum": 74,
-      "previousConfidence": 81,
-      "change": {
-        "type": "falling",
-        "summary": "Momentum cooling — near-term urgency easing as inventory levels normalize."
-      },
-      "sources": [
-        {
-          "label": "Global trade flow index (mock)",
-          "type": "mock"
-        },
-        {
-          "label": "Inventory normalization report (mock)",
-          "type": "mock"
-        }
-      ],
-      "momentumDrivers": [
-        {
-          "label": "Trade flow shift",
-          "value": -8,
-          "unit": "%"
-        },
-        {
-          "label": "Funding growth",
-          "value": -5,
-          "unit": "%"
-        },
-        {
-          "label": "Job growth",
+          "label": "Wikimedia Pageviews",
           "value": 4,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 82,
+          "label": "Live source coverage",
+          "value": 20,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 80,
+          "label": "Cross-source agreement",
+          "value": 125,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 77,
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "quantum-error-correction",
+      "momentum": 60,
+      "confidence": 95,
+      "previousMomentum": 72,
+      "previousConfidence": 68,
+      "change": {
+        "type": "stable",
+        "summary": "Quantum Error Correction Breakthroughs held steady in Quantum Computing with Hacker News +400%."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Microsoft's quantum computing technology called into question, again",
+          "type": "live"
+        },
+        {
+          "label": "Hacker News: New Presidential Executive Orders to Fast-Track Quantum Computing",
+          "type": "live"
+        },
+        {
+          "label": "Hacker News: Microsoft's quantum computing technology called into question, again",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Cultivating logical catalysts for fault-tolerant dyadic phase rotations",
+          "type": "live"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Hacker News",
+          "value": 400,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 8,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-cyber-threats",
+      "momentum": 59,
+      "confidence": 95,
+      "previousMomentum": 91,
+      "previousConfidence": 85,
+      "change": {
+        "type": "stable",
+        "summary": "AI-Powered Cyber Threats held steady in Cybersecurity with arXiv +151%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Tilikum: Transaction Fair Ordering on a DAG without Weak Edges",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: The Observer World: A Cryptographic Extension of Impagliazzo's Five Worlds",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: PRISM: PE Relational Inter-Section Matrix. A 2D Section-Aware Dataset for Static PE Malware Detection",
+          "type": "live"
+        },
+        {
+          "label": "Wikimedia: Cybersecurity — Wikipedia pageviews",
+          "type": "live"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 151,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 1,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 100,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "cloud-cost-reckoning",
+      "momentum": 43,
+      "confidence": 95,
+      "previousMomentum": 78,
+      "previousConfidence": 86,
+      "change": {
+        "type": "stable",
+        "summary": "Cloud Cost Optimization held steady in Cloud Computing with arXiv -40%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Tilikum: Transaction Fair Ordering on a DAG without Weak Edges",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: CHAMB-GA: A Containerized HPC Scalable Microservice-Based Framework for Genetic Algorithms",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: DMuon: Efficient Distributed Muon Training with Near-Adam Overhead",
+          "type": "live"
+        },
+        {
+          "label": "Product Hunt: AgentX",
+          "type": "live"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 40,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 1,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 9,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "smart-manufacturing",
+      "momentum": 48,
+      "confidence": 95,
+      "previousMomentum": 85,
+      "previousConfidence": 82,
+      "change": {
+        "type": "stable",
+        "summary": "AI-Driven Smart Manufacturing held steady in Manufacturing with arXiv -87%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: An Integrated Hardware-Software Design for Low-Data Spatial Defect Detection in Robotic Visual Inspection with Hybrid Optoelectronic Neural Networks",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: The Power of Light: Improving Synthetic-to-Real Domain Adaptation through Physically-Based Indirect Illumination",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: OPC UA Shared-Memory: Conceptual Elaboration and Prototypical Implementation Using Iceoryx2",
+          "type": "live"
+        },
+        {
+          "label": "Product Hunt: Steam Machine",
+          "type": "live"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 87,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 38,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 13,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "supply-chain-resilience",
+      "momentum": 45,
+      "confidence": 95,
+      "previousMomentum": 68,
+      "previousConfidence": 80,
+      "change": {
+        "type": "stable",
+        "summary": "Supply Chain Resilience Tech held steady in Supply Chain with arXiv -12%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: A Deterministic Control Plane for LLM Coding Agents",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: End-to-end probabilistic hierarchical forecasting of large hierarchies via probabilistic top-down",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Batch-Invariant Spectral Intelligence for Robust and Explainable Insect Authentication",
+          "type": "live"
+        },
+        {
+          "label": "Product Hunt: BrowserAct",
+          "type": "live"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 12,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 2,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 20,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "ai-diagnostics",
-      "momentum": 89,
-      "confidence": 84,
-      "previousMomentum": 82,
-      "previousConfidence": 81,
+      "momentum": 43,
+      "confidence": 95,
+      "previousMomentum": 89,
+      "previousConfidence": 84,
       "change": {
-        "type": "rising",
-        "summary": "Two new regulatory approvals this week — clinical adoption timeline compressing."
+        "type": "stable",
+        "summary": "AI Clinical Diagnostics held steady in Healthcare with Wikimedia Pageviews -21%."
       },
       "sources": [
         {
-          "label": "Regulatory approval tracker (mock)",
-          "type": "mock"
+          "label": "Hacker News: Medical students are using popular research tool to pump out misleading studies",
+          "type": "live"
         },
         {
-          "label": "Clinical adoption survey (mock)",
-          "type": "mock"
+          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Approval growth",
-          "value": 36,
+          "label": "Wikimedia Pageviews",
+          "value": 21,
           "unit": "%"
         },
         {
-          "label": "Funding growth",
+          "label": "Product Hunt",
           "value": 28,
-          "unit": "%"
-        },
-        {
-          "label": "Job growth",
-          "value": 22,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 86,
+          "label": "Live source coverage",
+          "value": 40,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 83,
+          "label": "Cross-source agreement",
+          "value": 75,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 78,
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "embedded-finance",
-      "momentum": 83,
-      "confidence": 87,
-      "previousMomentum": 79,
-      "previousConfidence": 86,
+      "momentum": 56,
+      "confidence": 95,
+      "previousMomentum": 83,
+      "previousConfidence": 87,
       "change": {
-        "type": "rising",
-        "summary": "Platform embed rates climbed — fintech infrastructure is becoming a standard build vs. buy decision."
+        "type": "stable",
+        "summary": "Embedded Finance Expansion held steady in Finance with Wikimedia Pageviews +49%."
       },
       "sources": [
         {
-          "label": "Embedded finance market report (mock)",
-          "type": "mock"
+          "label": "Product Hunt: Bluerails Discovery ",
+          "type": "live"
         },
         {
-          "label": "Platform integration survey (mock)",
-          "type": "mock"
+          "label": "Product Hunt: Well - Business Context Graph",
+          "type": "live"
+        },
+        {
+          "label": "Product Hunt: Treasury AI",
+          "type": "live"
+        },
+        {
+          "label": "Product Hunt: Miravel",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Integration growth",
-          "value": 27,
+          "label": "Wikimedia Pageviews",
+          "value": 49,
           "unit": "%"
         },
         {
-          "label": "Job growth",
-          "value": 23,
-          "unit": "%"
-        },
-        {
-          "label": "Funding growth",
-          "value": 19,
+          "label": "Product Hunt",
+          "value": 0,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 89,
+          "label": "Live source coverage",
+          "value": 40,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 87,
+          "label": "Cross-source agreement",
+          "value": 100,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 84,
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "grid-storage",
-      "momentum": 86,
-      "confidence": 83,
-      "previousMomentum": 80,
-      "previousConfidence": 81,
+      "momentum": 32,
+      "confidence": 95,
+      "previousMomentum": 86,
+      "previousConfidence": 83,
       "change": {
-        "type": "rising",
-        "summary": "Utility-scale storage contracts signed at record pace — deployment timeline moved up."
+        "type": "falling",
+        "summary": "Momentum cooled in Energy this week (arXiv -53%)."
       },
       "sources": [
         {
-          "label": "Energy storage deployment index (mock)",
-          "type": "mock"
+          "label": "Hacker News: Why does kinetic energy increase quadratically, not linearly, with speed? (2011)",
+          "type": "live"
         },
         {
-          "label": "Utility contract tracker (mock)",
-          "type": "mock"
+          "label": "arXiv: Graph Neural Networks Applications Across Domains: All Insights You Need",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Comparative Analysis of Linear Battery Models for Carbon Emission Optimization in Solar Energy Systems",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Health feature extraction from battery energy storage system field fault data",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Deployment growth",
-          "value": 33,
+          "label": "arXiv",
+          "value": 53,
           "unit": "%"
         },
         {
-          "label": "Funding growth",
-          "value": 25,
+          "label": "Wikimedia Pageviews",
+          "value": 14,
           "unit": "%"
         },
         {
-          "label": "Policy momentum",
-          "value": 20,
+          "label": "Product Hunt",
+          "value": 54,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 85,
+          "label": "Live source coverage",
+          "value": 60,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 83,
+          "label": "Cross-source agreement",
+          "value": 75,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 80,
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "ai-native-startups",
-      "momentum": 92,
-      "confidence": 80,
-      "previousMomentum": 70,
-      "previousConfidence": 72,
+      "momentum": 43,
+      "confidence": 95,
+      "previousMomentum": 92,
+      "previousConfidence": 80,
       "change": {
-        "type": "new",
-        "summary": "AI-native founding velocity hit a new high — signal entered tracking this week."
+        "type": "falling",
+        "summary": "Momentum cooled in Startups this week (arXiv -75%)."
       },
       "sources": [
         {
-          "label": "Startup formation index (mock)",
-          "type": "mock"
+          "label": "Hacker News: MicroVMs: Run isolated sandboxes with full lifecycle control",
+          "type": "live"
         },
         {
-          "label": "Seed funding tracker (mock)",
-          "type": "mock"
+          "label": "arXiv: Energy-Efficient CNN Acceleration with MSDF Digit-Serial Arithmetic on FPGA",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: StickyInvoc: Rethinking Task Models for High-throughput Workflows in the LLM Era",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Coordinating Treatment Allocation and Recommendation",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Founding velocity",
-          "value": 48,
+          "label": "arXiv",
+          "value": 75,
           "unit": "%"
         },
         {
-          "label": "Seed funding",
-          "value": 39,
+          "label": "Wikimedia Pageviews",
+          "value": 8,
           "unit": "%"
         },
         {
-          "label": "Talent migration",
-          "value": 31,
+          "label": "GitHub",
+          "value": 17,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 80,
+          "label": "Live source coverage",
+          "value": 60,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 76,
+          "label": "Cross-source agreement",
+          "value": 50,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 78,
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "vc-ai-concentration",
-      "momentum": 87,
-      "confidence": 89,
-      "previousMomentum": 84,
-      "previousConfidence": 88,
+      "momentum": 50,
+      "confidence": 95,
+      "previousMomentum": 87,
+      "previousConfidence": 89,
       "change": {
-        "type": "rising",
-        "summary": "AI share of total VC funding reached a new high — capital flight from other sectors accelerating."
+        "type": "stable",
+        "summary": "VC Capital Concentration in AI held steady in Venture Capital with Wikimedia Pageviews +2%."
       },
       "sources": [
         {
-          "label": "VC funding report (mock)",
-          "type": "mock"
+          "label": "arXiv: A Multi-Agent Orchestration Framework for Venture Capital Due Diligence",
+          "type": "live"
         },
         {
-          "label": "Sector allocation analysis (mock)",
-          "type": "mock"
+          "label": "arXiv: Engineering Economy: A New Paradigm for Escaping the Middle-Income Trap",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Do Venture Capitalists Beat Random Allocation?",
+          "type": "live"
+        },
+        {
+          "label": "Wikimedia: Venture Capital — Wikipedia pageviews",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "AI funding share",
-          "value": 35,
-          "unit": "%"
-        },
-        {
-          "label": "Deal count growth",
-          "value": 22,
-          "unit": "%"
-        },
-        {
-          "label": "Average round size",
-          "value": 18,
+          "label": "Wikimedia Pageviews",
+          "value": 2,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 92,
+          "label": "Live source coverage",
+          "value": 20,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 90,
+          "label": "Cross-source agreement",
+          "value": 100,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 86,
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "synthetic-biology",
-      "momentum": 84,
-      "confidence": 81,
-      "previousMomentum": 76,
-      "previousConfidence": 78,
+      "momentum": 47,
+      "confidence": 95,
+      "previousMomentum": 84,
+      "previousConfidence": 81,
       "change": {
-        "type": "rising",
-        "summary": "Biotech hiring and grad program demand rose — synthetic biology skills gaining traction."
+        "type": "stable",
+        "summary": "Synthetic Biology Breakthroughs held steady in Biotechnology with arXiv 0%."
       },
       "sources": [
         {
-          "label": "Biotech hiring index (mock)",
-          "type": "mock"
+          "label": "arXiv: Frustrated shapes of solid domains in fluid membrane vesicles: From rolls and folds to crumples and wrinkles",
+          "type": "live"
         },
         {
-          "label": "Research funding tracker (mock)",
-          "type": "mock"
+          "label": "arXiv: Molexar: A Unified Multimodal Molecular Foundation Model for Drug Design",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: CABS-flex standalone 3: an open command-line platform for protein flexibility simulation, peptide structure modeling, and protein-peptide docking",
+          "type": "live"
+        },
+        {
+          "label": "Product Hunt: PathMap",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Grad program demand",
-          "value": 28,
+          "label": "arXiv",
+          "value": 0,
           "unit": "%"
         },
         {
-          "label": "Job growth",
-          "value": 22,
+          "label": "Wikimedia Pageviews",
+          "value": 5,
           "unit": "%"
         },
         {
-          "label": "Funding growth",
-          "value": 19,
+          "label": "Product Hunt",
+          "value": 17,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 82,
+          "label": "Live source coverage",
+          "value": 60,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 79,
+          "label": "Cross-source agreement",
+          "value": 100,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 76,
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "lab-automation-biochem",
-      "momentum": 79,
-      "confidence": 80,
-      "previousMomentum": 72,
-      "previousConfidence": 77,
+      "momentum": 38,
+      "confidence": 95,
+      "previousMomentum": 79,
+      "previousConfidence": 80,
       "change": {
-        "type": "rising",
-        "summary": "Automated lab skill demand rising — biochemistry roles increasingly require computational literacy."
+        "type": "stable",
+        "summary": "Lab Automation in Biochemistry held steady in Biochemistry with arXiv -26%."
       },
       "sources": [
         {
-          "label": "Pharma R&D trends (mock)",
-          "type": "mock"
+          "label": "arXiv: Deep learning model emulators for marine biogeochemistry forecasting from days to decades",
+          "type": "live"
         },
         {
-          "label": "Grad employment survey (mock)",
-          "type": "mock"
+          "label": "arXiv: State-Specific Respiratory Signatures for Affective and Stress Recognition: Interpretable Respiratory Markers, Autocorrelation Lags, and Compact CNN Models",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: pVACtools v6: A comprehensive suite for neoantigen prediction, visualization, and therapy design",
+          "type": "live"
+        },
+        {
+          "label": "Product Hunt: Chasing Pink",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Job growth",
-          "value": 21,
-          "unit": "%"
-        },
-        {
-          "label": "Tool adoption",
+          "label": "arXiv",
           "value": 26,
           "unit": "%"
         },
         {
-          "label": "Grad placements",
-          "value": 18,
+          "label": "Wikimedia Pageviews",
+          "value": 3,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 69,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 80,
+          "label": "Live source coverage",
+          "value": 60,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 78,
-          "unit": "score"
-        },
-        {
-          "label": "Regional adoption",
+          "label": "Cross-source agreement",
           "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "life-sciences-ai-research",
-      "momentum": 86,
-      "confidence": 83,
-      "previousMomentum": 78,
-      "previousConfidence": 80,
+      "momentum": 50,
+      "confidence": 95,
+      "previousMomentum": 86,
+      "previousConfidence": 83,
       "change": {
-        "type": "rising",
-        "summary": "Cross-disciplinary science + AI roles surged — life sciences students with computing skills are in high demand."
+        "type": "stable",
+        "summary": "AI in Life Sciences Research held steady in Life Sciences with Wikimedia Pageviews +1%."
       },
       "sources": [
         {
-          "label": "Research AI adoption survey (mock)",
-          "type": "mock"
+          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
+          "type": "live"
         },
         {
-          "label": "Science grad employment data (mock)",
-          "type": "mock"
+          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
+          "type": "live"
+        },
+        {
+          "label": "Wikimedia: Life Sciences — Wikipedia pageviews",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Cross-disciplinary hiring",
-          "value": 32,
-          "unit": "%"
-        },
-        {
-          "label": "Research output",
-          "value": 24,
-          "unit": "%"
-        },
-        {
-          "label": "Grad program growth",
-          "value": 20,
+          "label": "Wikimedia Pageviews",
+          "value": 1,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 84,
+          "label": "Live source coverage",
+          "value": 20,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 81,
+          "label": "Cross-source agreement",
+          "value": 100,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 78,
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]
     },
     {
       "signalId": "creative-ai-tools",
-      "momentum": 81,
-      "confidence": 77,
-      "previousMomentum": 70,
-      "previousConfidence": 72,
+      "momentum": 40,
+      "confidence": 95,
+      "previousMomentum": 81,
+      "previousConfidence": 77,
       "change": {
-        "type": "rising",
-        "summary": "Creative AI literacy became a hiring factor — arts graduates with tool fluency are standing out."
+        "type": "stable",
+        "summary": "AI Tools for Creative Careers held steady in Arts & Creative Fields with Hacker News -100%."
       },
       "sources": [
         {
-          "label": "Creative hiring trends (mock)",
-          "type": "mock"
+          "label": "arXiv: IVIE: A Neuro-symbolic Approach to Incremental and Validated Generation of Interactive Fiction Worlds",
+          "type": "live"
         },
         {
-          "label": "Portfolio platform data (mock)",
-          "type": "mock"
+          "label": "arXiv: I Was Scrolling and Then I Saw a Pregnant Strawberry",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: Anchor-Conditioned Compositional Control for Landscape Image Generation",
+          "type": "live"
+        },
+        {
+          "label": "Wikimedia: Arts — Wikipedia pageviews",
+          "type": "live"
         }
       ],
       "momentumDrivers": [
         {
-          "label": "Tool adoption",
-          "value": 34,
+          "label": "Hacker News",
+          "value": 100,
           "unit": "%"
         },
         {
-          "label": "Freelance demand",
-          "value": 27,
-          "unit": "%"
-        },
-        {
-          "label": "Internship growth",
-          "value": 22,
-          "unit": "%"
-        }
-      ],
-      "confidenceFactors": [
-        {
-          "label": "Source count",
-          "value": 77,
-          "unit": "score"
-        },
-        {
-          "label": "Data consistency",
-          "value": 74,
-          "unit": "score"
-        },
-        {
-          "label": "Regional adoption",
-          "value": 73,
-          "unit": "score"
-        }
-      ]
-    },
-    {
-      "signalId": "commerce-analytics-demand",
-      "momentum": 77,
-      "confidence": 85,
-      "previousMomentum": 73,
-      "previousConfidence": 83,
-      "change": {
-        "type": "rising",
-        "summary": "Employers raised requirements for analytics skills in commerce roles — demand shifted this week."
-      },
-      "sources": [
-        {
-          "label": "Graduate placement survey (mock)",
-          "type": "mock"
-        },
-        {
-          "label": "Commerce hiring index (mock)",
-          "type": "mock"
-        }
-      ],
-      "momentumDrivers": [
-        {
-          "label": "Placement rate lift",
-          "value": 19,
-          "unit": "%"
-        },
-        {
-          "label": "Skill requirement growth",
-          "value": 24,
-          "unit": "%"
-        },
-        {
-          "label": "Starting salary premium",
+          "label": "Wikimedia Pageviews",
           "value": 15,
           "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
-          "label": "Source count",
-          "value": 86,
+          "label": "Live source coverage",
+          "value": 40,
           "unit": "score"
         },
         {
-          "label": "Data consistency",
-          "value": 84,
+          "label": "Cross-source agreement",
+          "value": 50,
           "unit": "score"
         },
         {
-          "label": "Regional adoption",
-          "value": 82,
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "commerce-analytics-demand",
+      "momentum": 61,
+      "confidence": 95,
+      "previousMomentum": 77,
+      "previousConfidence": 85,
+      "change": {
+        "type": "stable",
+        "summary": "Data Skills in Commerce Careers held steady in Commerce & Business Studies with arXiv +100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Cross-Head Attention Uplift Network with Inverse Propensity Score under Unobserved Confounding",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: AIGP: An LLM-Based Framework for Long-Term Value Alignment in E-Commerce Pricing",
+          "type": "live"
+        },
+        {
+          "label": "arXiv: AutoRelAnnotator: Calibrated Model Cascades for Cost-Efficient Relevance Evaluation in Sponsored Search",
+          "type": "live"
+        },
+        {
+          "label": "Wikimedia: Commerce — Wikipedia pageviews",
+          "type": "live"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 0,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
           "unit": "score"
         }
       ]

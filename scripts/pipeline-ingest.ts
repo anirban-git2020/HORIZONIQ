@@ -33,6 +33,7 @@ async function main(): Promise<void> {
 
   const elapsed = ((Date.now() - started) / 1000).toFixed(1);
   console.log(`\nDone in ${elapsed}s`);
+  console.log("\nNext: npm run pipeline:generate  (or npm run pipeline:full)");
 }
 
 main().catch((error) => {

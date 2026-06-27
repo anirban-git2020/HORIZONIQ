@@ -16,7 +16,7 @@ import { SkillCard } from "@/components/dashboard/skill-card";
 import { OpportunityCard } from "@/components/dashboard/opportunity-card";
 import { ActionCard } from "@/components/dashboard/action-card";
 import { Stagger, StaggerItem } from "@/components/motion/fade-in";
-import { getMeta } from "@/lib/data/access";
+import { getMeta, getDataProvenance, getRefreshSchedule } from "@/lib/data/access";
 import { ROLE_EXPERIENCE } from "@/lib/options";
 import {
   getBriefing,
@@ -28,6 +28,7 @@ import {
 } from "@/lib/personalize";
 import { usePreferences } from "@/lib/preferences";
 import type { DashboardSection, RoleId } from "@/lib/types";
+import { formatBriefingUpdatedAt } from "@/lib/utils";
 import {
   buildSignalSnapshot,
   clearVisitSnapshot,
@@ -264,12 +265,30 @@ export default function DashboardPage() {
       </main>
 
       <footer className="border-t border-border">
-        <div className="container py-8 text-center text-sm text-muted-foreground">
-          HorizonIQ · Curated demo data · {briefing.briefingLabel}
+        <div className="container space-y-1 py-8 text-center text-sm text-muted-foreground">
+          <p>
+            HorizonIQ · {provenanceFooterLabel()} · {briefing.briefingLabel}
+          </p>
+          <p className="text-xs">
+            Briefing period {getMeta().briefingPeriod} · Last updated{" "}
+            {formatBriefingUpdatedAt(getMeta().updatedAt)} ·{" "}
+            {getRefreshSchedule()}
+          </p>
         </div>
       </footer>
     </div>
   );
+}
+
+function provenanceFooterLabel(): string {
+  switch (getDataProvenance()) {
+    case "pipeline":
+      return "Live intelligence";
+    case "pipeline-mock":
+      return "Mixed live + curated data";
+    default:
+      return "Curated demo data";
+  }
 }
 
 function sectionStep(order: DashboardSection[], section: DashboardSection) {

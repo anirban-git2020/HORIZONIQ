@@ -99,6 +99,7 @@ export interface MetaRecord {
   briefingLabel: string;
   updatedAt: string;
   activeBriefingFile: string;
+  refreshSchedule?: string;
 }
 
 export type SignalCatalogStatus = "active" | "archived" | "draft";

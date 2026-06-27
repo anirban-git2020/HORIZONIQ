@@ -1,28 +1,9 @@
 {
   "version": 1,
-  "scoredAt": "2026-06-27T10:19:15.243Z",
+  "scoredAt": "2026-06-27T10:59:08.121Z",
   "period": "2026-W26",
-  "observationIngestedAt": "2026-06-27T10:17:24.360Z",
+  "observationIngestedAt": "2026-06-27T10:57:04.854Z",
   "interests": [
-    {
-      "interestId": "commerce",
-      "momentum": 61,
-      "confidence": 98,
-      "sourceAgreement": 3,
-      "direction": "stable",
-      "drivers": [
-        {
-          "label": "arXiv",
-          "value": 100,
-          "unit": "%"
-        },
-        {
-          "label": "Wikimedia Pageviews",
-          "value": 0,
-          "unit": "%"
-        }
-      ]
-    },
     {
       "interestId": "quantum-computing",
       "momentum": 60,
@@ -43,6 +24,25 @@
       ]
     },
     {
+      "interestId": "venture-capital",
+      "momentum": 60,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 2,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 75,
+          "unit": "%"
+        }
+      ]
+    },
+    {
       "interestId": "cybersecurity",
       "momentum": 59,
       "confidence": 98,
@@ -51,12 +51,36 @@
       "drivers": [
         {
           "label": "arXiv",
-          "value": 151,
+          "value": 108,
           "unit": "%"
         },
         {
           "label": "Wikimedia Pageviews",
           "value": 1,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "commerce",
+      "momentum": 57,
+      "confidence": 98,
+      "sourceAgreement": 3,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 0,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -10,
           "unit": "%"
         }
       ]
@@ -90,48 +114,6 @@
         {
           "label": "Wikimedia Pageviews",
           "value": 4,
-          "unit": "%"
-        }
-      ]
-    },
-    {
-      "interestId": "life-sciences",
-      "momentum": 50,
-      "confidence": 98,
-      "sourceAgreement": 4,
-      "direction": "stable",
-      "drivers": [
-        {
-          "label": "Wikimedia Pageviews",
-          "value": 1,
-          "unit": "%"
-        }
-      ]
-    },
-    {
-      "interestId": "venture-capital",
-      "momentum": 50,
-      "confidence": 98,
-      "sourceAgreement": 4,
-      "direction": "stable",
-      "drivers": [
-        {
-          "label": "Wikimedia Pageviews",
-          "value": 2,
-          "unit": "%"
-        }
-      ]
-    },
-    {
-      "interestId": "product-management",
-      "momentum": 49,
-      "confidence": 98,
-      "sourceAgreement": 4,
-      "direction": "stable",
-      "drivers": [
-        {
-          "label": "Wikimedia Pageviews",
-          "value": -5,
           "unit": "%"
         }
       ]
@@ -180,17 +162,12 @@
       ]
     },
     {
-      "interestId": "biotechnology",
-      "momentum": 47,
+      "interestId": "product-management",
+      "momentum": 46,
       "confidence": 98,
       "sourceAgreement": 4,
       "direction": "stable",
       "drivers": [
-        {
-          "label": "arXiv",
-          "value": 0,
-          "unit": "%"
-        },
         {
           "label": "Wikimedia Pageviews",
           "value": -5,
@@ -198,31 +175,31 @@
         },
         {
           "label": "Product Hunt",
-          "value": -17,
+          "value": -20,
           "unit": "%"
         }
       ]
     },
     {
-      "interestId": "supply-chain",
+      "interestId": "startups",
       "momentum": 45,
       "confidence": 98,
-      "sourceAgreement": 3,
+      "sourceAgreement": 2,
       "direction": "stable",
       "drivers": [
         {
           "label": "arXiv",
-          "value": -12,
+          "value": -75,
           "unit": "%"
         },
         {
           "label": "Wikimedia Pageviews",
-          "value": -2,
+          "value": -8,
           "unit": "%"
         },
         {
-          "label": "Product Hunt",
-          "value": -20,
+          "label": "GitHub",
+          "value": 17,
           "unit": "%"
         }
       ]
@@ -236,7 +213,7 @@
       "drivers": [
         {
           "label": "arXiv",
-          "value": -40,
+          "value": -39,
           "unit": "%"
         },
         {
@@ -247,6 +224,30 @@
         {
           "label": "Product Hunt",
           "value": -9,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "supply-chain",
+      "momentum": 43,
+      "confidence": 98,
+      "sourceAgreement": 3,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -24,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -2,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -20,
           "unit": "%"
         }
       ]
@@ -271,34 +272,34 @@
       ]
     },
     {
-      "interestId": "startups",
-      "momentum": 43,
+      "interestId": "biotechnology",
+      "momentum": 42,
       "confidence": 98,
-      "sourceAgreement": 2,
-      "direction": "falling",
+      "sourceAgreement": 3,
+      "direction": "stable",
       "drivers": [
         {
           "label": "arXiv",
-          "value": -75,
+          "value": -29,
           "unit": "%"
         },
         {
           "label": "Wikimedia Pageviews",
-          "value": -8,
+          "value": -5,
           "unit": "%"
         },
         {
-          "label": "GitHub",
-          "value": 17,
+          "label": "Product Hunt",
+          "value": -17,
           "unit": "%"
         }
       ]
     },
     {
       "interestId": "arts",
-      "momentum": 40,
+      "momentum": 42,
       "confidence": 98,
-      "sourceAgreement": 2,
+      "sourceAgreement": 3,
       "direction": "stable",
       "drivers": [
         {
@@ -310,19 +311,43 @@
           "label": "Wikimedia Pageviews",
           "value": 15,
           "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 0,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "life-sciences",
+      "momentum": 41,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 1,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -69,
+          "unit": "%"
         }
       ]
     },
     {
       "interestId": "biochemistry",
-      "momentum": 38,
+      "momentum": 37,
       "confidence": 98,
       "sourceAgreement": 3,
       "direction": "stable",
       "drivers": [
         {
           "label": "arXiv",
-          "value": -26,
+          "value": -33,
           "unit": "%"
         },
         {
@@ -339,14 +364,14 @@
     },
     {
       "interestId": "entrepreneurship",
-      "momentum": 33,
+      "momentum": 36,
       "confidence": 98,
       "sourceAgreement": 2,
-      "direction": "falling",
+      "direction": "stable",
       "drivers": [
         {
           "label": "Hacker News",
-          "value": -19,
+          "value": -20,
           "unit": "%"
         },
         {
@@ -363,14 +388,14 @@
     },
     {
       "interestId": "energy",
-      "momentum": 32,
+      "momentum": 33,
       "confidence": 98,
       "sourceAgreement": 3,
       "direction": "falling",
       "drivers": [
         {
           "label": "arXiv",
-          "value": -53,
+          "value": -50,
           "unit": "%"
         },
         {

@@ -1,14 +1,17 @@
 {
   "briefingPeriod": "2026-W26",
   "briefingLabel": "Week of June 22, 2026 – June 28, 2026",
-  "publishedAt": "2026-06-27T10:26:58.709Z",
+  "publishedAt": "2026-06-27T10:59:08.124Z",
   "dataProvenance": "pipeline",
   "buckets": {
     "new": [],
-    "rising": [],
+    "rising": [
+      "vc-ai-concentration"
+    ],
     "falling": [
-      "grid-storage",
-      "ai-native-startups"
+      "synthetic-biology",
+      "life-sciences-ai-research",
+      "commerce-analytics-demand"
     ],
     "stable": [
       "ai-agents",
@@ -20,12 +23,10 @@
       "supply-chain-resilience",
       "ai-diagnostics",
       "embedded-finance",
-      "vc-ai-concentration",
-      "synthetic-biology",
+      "grid-storage",
+      "ai-native-startups",
       "lab-automation-biochem",
-      "life-sciences-ai-research",
-      "creative-ai-tools",
-      "commerce-analytics-demand"
+      "creative-ai-tools"
     ]
   },
   "signalStates": [
@@ -33,8 +34,8 @@
       "signalId": "ai-agents",
       "momentum": 48,
       "confidence": 95,
-      "previousMomentum": 98,
-      "previousConfidence": 90,
+      "previousMomentum": 48,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
         "summary": "Autonomous AI Agents held steady in Artificial Intelligence with Wikimedia Pageviews -2%."
@@ -91,8 +92,8 @@
       "signalId": "humanoid-robotics",
       "momentum": 50,
       "confidence": 95,
-      "previousMomentum": 91,
-      "previousConfidence": 82,
+      "previousMomentum": 50,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
         "summary": "Humanoid Robotics held steady in Robotics with Wikimedia Pageviews +4%."
@@ -144,8 +145,8 @@
       "signalId": "quantum-error-correction",
       "momentum": 60,
       "confidence": 95,
-      "previousMomentum": 72,
-      "previousConfidence": 68,
+      "previousMomentum": 60,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
         "summary": "Quantum Error Correction Breakthroughs held steady in Quantum Computing with Hacker News +400%."
@@ -202,11 +203,11 @@
       "signalId": "ai-cyber-threats",
       "momentum": 59,
       "confidence": 95,
-      "previousMomentum": 91,
-      "previousConfidence": 85,
+      "previousMomentum": 59,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
-        "summary": "AI-Powered Cyber Threats held steady in Cybersecurity with arXiv +151%."
+        "summary": "AI-Powered Cyber Threats held steady in Cybersecurity with arXiv +108%."
       },
       "sources": [
         {
@@ -229,7 +230,7 @@
       "momentumDrivers": [
         {
           "label": "arXiv",
-          "value": 151,
+          "value": 108,
           "unit": "%"
         },
         {
@@ -260,11 +261,11 @@
       "signalId": "cloud-cost-reckoning",
       "momentum": 43,
       "confidence": 95,
-      "previousMomentum": 78,
-      "previousConfidence": 86,
+      "previousMomentum": 43,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
-        "summary": "Cloud Cost Optimization held steady in Cloud Computing with arXiv -40%."
+        "summary": "Cloud Cost Optimization held steady in Cloud Computing with arXiv -39%."
       },
       "sources": [
         {
@@ -287,7 +288,7 @@
       "momentumDrivers": [
         {
           "label": "arXiv",
-          "value": 40,
+          "value": 39,
           "unit": "%"
         },
         {
@@ -323,8 +324,8 @@
       "signalId": "smart-manufacturing",
       "momentum": 48,
       "confidence": 95,
-      "previousMomentum": 85,
-      "previousConfidence": 82,
+      "previousMomentum": 48,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
         "summary": "AI-Driven Smart Manufacturing held steady in Manufacturing with arXiv -87%."
@@ -384,13 +385,13 @@
     },
     {
       "signalId": "supply-chain-resilience",
-      "momentum": 45,
+      "momentum": 43,
       "confidence": 95,
-      "previousMomentum": 68,
-      "previousConfidence": 80,
+      "previousMomentum": 45,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
-        "summary": "Supply Chain Resilience Tech held steady in Supply Chain with arXiv -12%."
+        "summary": "Supply Chain Resilience Tech held steady in Supply Chain with arXiv -24%."
       },
       "sources": [
         {
@@ -413,7 +414,7 @@
       "momentumDrivers": [
         {
           "label": "arXiv",
-          "value": 12,
+          "value": 24,
           "unit": "%"
         },
         {
@@ -449,8 +450,8 @@
       "signalId": "ai-diagnostics",
       "momentum": 43,
       "confidence": 95,
-      "previousMomentum": 89,
-      "previousConfidence": 84,
+      "previousMomentum": 43,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
         "summary": "AI Clinical Diagnostics held steady in Healthcare with Wikimedia Pageviews -21%."
@@ -507,13 +508,17 @@
       "signalId": "embedded-finance",
       "momentum": 56,
       "confidence": 95,
-      "previousMomentum": 83,
-      "previousConfidence": 87,
+      "previousMomentum": 56,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
         "summary": "Embedded Finance Expansion held steady in Finance with Wikimedia Pageviews +49%."
       },
       "sources": [
+        {
+          "label": "Hacker News: Fintech Engineering Handbook",
+          "type": "live"
+        },
         {
           "label": "Product Hunt: Bluerails Discovery ",
           "type": "live"
@@ -524,10 +529,6 @@
         },
         {
           "label": "Product Hunt: Treasury AI",
-          "type": "live"
-        },
-        {
-          "label": "Product Hunt: Miravel",
           "type": "live"
         }
       ],
@@ -563,13 +564,13 @@
     },
     {
       "signalId": "grid-storage",
-      "momentum": 32,
+      "momentum": 33,
       "confidence": 95,
-      "previousMomentum": 86,
-      "previousConfidence": 83,
+      "previousMomentum": 32,
+      "previousConfidence": 95,
       "change": {
-        "type": "falling",
-        "summary": "Momentum cooled in Energy this week (arXiv -53%)."
+        "type": "stable",
+        "summary": "Grid-Scale Energy Storage held steady in Energy with arXiv -50%."
       },
       "sources": [
         {
@@ -592,7 +593,7 @@
       "momentumDrivers": [
         {
           "label": "arXiv",
-          "value": 53,
+          "value": 50,
           "unit": "%"
         },
         {
@@ -626,13 +627,13 @@
     },
     {
       "signalId": "ai-native-startups",
-      "momentum": 43,
+      "momentum": 45,
       "confidence": 95,
-      "previousMomentum": 92,
-      "previousConfidence": 80,
+      "previousMomentum": 43,
+      "previousConfidence": 95,
       "change": {
-        "type": "falling",
-        "summary": "Momentum cooled in Startups this week (arXiv -75%)."
+        "type": "stable",
+        "summary": "AI-Native Startup Formation held steady in Startups with arXiv -75%."
       },
       "sources": [
         {
@@ -689,13 +690,13 @@
     },
     {
       "signalId": "vc-ai-concentration",
-      "momentum": 50,
+      "momentum": 60,
       "confidence": 95,
-      "previousMomentum": 87,
-      "previousConfidence": 89,
+      "previousMomentum": 50,
+      "previousConfidence": 95,
       "change": {
-        "type": "stable",
-        "summary": "VC Capital Concentration in AI held steady in Venture Capital with Wikimedia Pageviews +2%."
+        "type": "rising",
+        "summary": "Live activity accelerating in Venture Capital (Wikimedia Pageviews +2%)."
       },
       "sources": [
         {
@@ -711,7 +712,7 @@
           "type": "live"
         },
         {
-          "label": "Wikimedia: Venture Capital — Wikipedia pageviews",
+          "label": "Product Hunt: FounderNode",
           "type": "live"
         }
       ],
@@ -720,12 +721,17 @@
           "label": "Wikimedia Pageviews",
           "value": 2,
           "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 75,
+          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 20,
+          "value": 40,
           "unit": "score"
         },
         {
@@ -742,13 +748,13 @@
     },
     {
       "signalId": "synthetic-biology",
-      "momentum": 47,
+      "momentum": 42,
       "confidence": 95,
-      "previousMomentum": 84,
-      "previousConfidence": 81,
+      "previousMomentum": 47,
+      "previousConfidence": 95,
       "change": {
-        "type": "stable",
-        "summary": "Synthetic Biology Breakthroughs held steady in Biotechnology with arXiv 0%."
+        "type": "falling",
+        "summary": "Momentum cooled in Biotechnology this week (arXiv -29%)."
       },
       "sources": [
         {
@@ -771,7 +777,7 @@
       "momentumDrivers": [
         {
           "label": "arXiv",
-          "value": 0,
+          "value": 29,
           "unit": "%"
         },
         {
@@ -793,7 +799,7 @@
         },
         {
           "label": "Cross-source agreement",
-          "value": 100,
+          "value": 75,
           "unit": "score"
         },
         {
@@ -805,13 +811,13 @@
     },
     {
       "signalId": "lab-automation-biochem",
-      "momentum": 38,
+      "momentum": 37,
       "confidence": 95,
-      "previousMomentum": 79,
-      "previousConfidence": 80,
+      "previousMomentum": 38,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
-        "summary": "Lab Automation in Biochemistry held steady in Biochemistry with arXiv -26%."
+        "summary": "Lab Automation in Biochemistry held steady in Biochemistry with arXiv -33%."
       },
       "sources": [
         {
@@ -834,7 +840,7 @@
       "momentumDrivers": [
         {
           "label": "arXiv",
-          "value": 26,
+          "value": 33,
           "unit": "%"
         },
         {
@@ -868,13 +874,13 @@
     },
     {
       "signalId": "life-sciences-ai-research",
-      "momentum": 50,
+      "momentum": 41,
       "confidence": 95,
-      "previousMomentum": 86,
-      "previousConfidence": 83,
+      "previousMomentum": 50,
+      "previousConfidence": 95,
       "change": {
-        "type": "stable",
-        "summary": "AI in Life Sciences Research held steady in Life Sciences with Wikimedia Pageviews +1%."
+        "type": "falling",
+        "summary": "Momentum cooled in Life Sciences this week (Wikimedia Pageviews +1%)."
       },
       "sources": [
         {
@@ -890,7 +896,7 @@
           "type": "live"
         },
         {
-          "label": "Wikimedia: Life Sciences — Wikipedia pageviews",
+          "label": "Product Hunt: Chasing Pink",
           "type": "live"
         }
       ],
@@ -899,12 +905,17 @@
           "label": "Wikimedia Pageviews",
           "value": 1,
           "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 69,
+          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 20,
+          "value": 40,
           "unit": "score"
         },
         {
@@ -921,10 +932,10 @@
     },
     {
       "signalId": "creative-ai-tools",
-      "momentum": 40,
+      "momentum": 42,
       "confidence": 95,
-      "previousMomentum": 81,
-      "previousConfidence": 77,
+      "previousMomentum": 40,
+      "previousConfidence": 95,
       "change": {
         "type": "stable",
         "summary": "AI Tools for Creative Careers held steady in Arts & Creative Fields with Hacker News -100%."
@@ -943,7 +954,7 @@
           "type": "live"
         },
         {
-          "label": "Wikimedia: Arts — Wikipedia pageviews",
+          "label": "Product Hunt: Pool Atlas",
           "type": "live"
         }
       ],
@@ -957,17 +968,22 @@
           "label": "Wikimedia Pageviews",
           "value": 15,
           "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 0,
+          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 40,
+          "value": 60,
           "unit": "score"
         },
         {
           "label": "Cross-source agreement",
-          "value": 50,
+          "value": 75,
           "unit": "score"
         },
         {
@@ -979,13 +995,13 @@
     },
     {
       "signalId": "commerce-analytics-demand",
-      "momentum": 61,
+      "momentum": 57,
       "confidence": 95,
-      "previousMomentum": 77,
-      "previousConfidence": 85,
+      "previousMomentum": 61,
+      "previousConfidence": 95,
       "change": {
-        "type": "stable",
-        "summary": "Data Skills in Commerce Careers held steady in Commerce & Business Studies with arXiv +100%."
+        "type": "falling",
+        "summary": "Momentum cooled in Commerce & Business Studies this week (arXiv +100%)."
       },
       "sources": [
         {
@@ -1001,7 +1017,7 @@
           "type": "live"
         },
         {
-          "label": "Wikimedia: Commerce — Wikipedia pageviews",
+          "label": "Product Hunt: Group Subscriptions by beehiiv",
           "type": "live"
         }
       ],
@@ -1015,12 +1031,17 @@
           "label": "Wikimedia Pageviews",
           "value": 0,
           "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 10,
+          "unit": "%"
         }
       ],
       "confidenceFactors": [
         {
           "label": "Live source coverage",
-          "value": 40,
+          "value": 60,
           "unit": "score"
         },
         {

@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "ingestedAt": "2026-06-27T10:17:24.360Z",
+  "ingestedAt": "2026-06-27T10:57:04.854Z",
   "period": "2026-W26",
   "periodLabel": "Week of June 22, 2026 – June 28, 2026",
   "sources": {
     "hacker-news": {
       "source": "hacker-news",
       "status": "ok",
-      "fetchedAt": "2026-06-27T10:17:24.372Z",
+      "fetchedAt": "2026-06-27T10:57:04.868Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -21,12 +21,12 @@
             {
               "title": "Previewing GPT‑5.6 Sol: a next-generation model",
               "url": "https://openai.com/index/previewing-gpt-5-6-sol/",
-              "score": 1011
+              "score": 1019
             },
             {
               "title": "U.S. allows Anthropic to release Mythos AI to ‘trusted’ US organizations",
               "url": "https://www.semafor.com/article/06/27/2026/us-releases-powerful-anthropic-model-mythos-to-some-us-companies",
-              "score": 439
+              "score": 454
             }
           ]
         },
@@ -130,7 +130,13 @@
             "delta": 0,
             "deltaPercent": null
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "Fintech Engineering Handbook",
+              "url": "https://w.pitula.me/fintech-engineering-handbook/",
+              "score": 19
+            }
+          ]
         },
         "energy": {
           "interestId": "energy",
@@ -144,7 +150,7 @@
             {
               "title": "Why does kinetic energy increase quadratically, not linearly, with speed? (2011)",
               "url": "https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed",
-              "score": 240
+              "score": 247
             }
           ]
         },
@@ -201,16 +207,16 @@
         "entrepreneurship": {
           "interestId": "entrepreneurship",
           "metrics": {
-            "current": 752,
-            "previous": 923,
-            "delta": -171,
-            "deltaPercent": -19
+            "current": 733,
+            "previous": 919,
+            "delta": -186,
+            "deltaPercent": -20
           },
           "samples": [
             {
               "title": "Show HN: I made Google Trends for Hacker News by indexing 18 years of comments",
               "url": "https://hackernewstrends.com",
-              "score": 778
+              "score": 781
             },
             {
               "title": "Show HN: TikZ Editor – WYSIWYG editor for figures in LaTeX",
@@ -220,12 +226,12 @@
             {
               "title": "Show HN: OpenKnowledge – open source AI-first alternative to Obsidian/Notion",
               "url": "https://github.com/inkeep/open-knowledge",
-              "score": 367
+              "score": 368
             },
             {
               "title": "Show HN: Hacker News on a train station-style flip board",
               "url": "https://popflame.quickish.space/hn-flipboard/",
-              "score": 73
+              "score": 77
             },
             {
               "title": "Show HN: DBOSify – Drop-in Temporal replacement built on Postgres",
@@ -246,7 +252,7 @@
             {
               "title": "MicroVMs: Run isolated sandboxes with full lifecycle control",
               "url": "https://aws.amazon.com/blogs/aws/run-isolated-sandboxes-with-full-lifecycle-control-aws-lambda-introduces-microvms/",
-              "score": 331
+              "score": 336
             }
           ]
         },
@@ -275,7 +281,7 @@
     "arxiv": {
       "source": "arxiv",
       "status": "ok",
-      "fetchedAt": "2026-06-27T10:17:24.409Z",
+      "fetchedAt": "2026-06-27T10:57:04.919Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -349,10 +355,10 @@
         "cybersecurity": {
           "interestId": "cybersecurity",
           "metrics": {
-            "current": 143,
-            "previous": 57,
-            "delta": 86,
-            "deltaPercent": 151
+            "current": 135,
+            "previous": 65,
+            "delta": 70,
+            "deltaPercent": 108
           },
           "samples": [
             {
@@ -372,10 +378,10 @@
         "cloud-computing": {
           "interestId": "cloud-computing",
           "metrics": {
-            "current": 64,
-            "previous": 106,
-            "delta": -42,
-            "deltaPercent": -40
+            "current": 63,
+            "previous": 104,
+            "delta": -41,
+            "deltaPercent": -39
           },
           "samples": [
             {
@@ -418,10 +424,10 @@
         "supply-chain": {
           "interestId": "supply-chain",
           "metrics": {
-            "current": 14,
-            "previous": 16,
-            "delta": -2,
-            "deltaPercent": -12
+            "current": 13,
+            "previous": 17,
+            "delta": -4,
+            "deltaPercent": -24
           },
           "samples": [
             {
@@ -475,9 +481,9 @@
           "interestId": "energy",
           "metrics": {
             "current": 9,
-            "previous": 19,
-            "delta": -10,
-            "deltaPercent": -53
+            "previous": 18,
+            "delta": -9,
+            "deltaPercent": -50
           },
           "samples": [
             {
@@ -497,10 +503,10 @@
         "biotechnology": {
           "interestId": "biotechnology",
           "metrics": {
-            "current": 6,
-            "previous": 6,
-            "delta": 0,
-            "deltaPercent": 0
+            "current": 5,
+            "previous": 7,
+            "delta": -2,
+            "deltaPercent": -29
           },
           "samples": [
             {
@@ -520,10 +526,10 @@
         "biochemistry": {
           "interestId": "biochemistry",
           "metrics": {
-            "current": 26,
-            "previous": 35,
-            "delta": -9,
-            "deltaPercent": -26
+            "current": 24,
+            "previous": 36,
+            "delta": -12,
+            "deltaPercent": -33
           },
           "samples": [
             {
@@ -706,7 +712,7 @@
     "wikimedia": {
       "source": "wikimedia",
       "status": "ok",
-      "fetchedAt": "2026-06-27T10:17:24.409Z",
+      "fetchedAt": "2026-06-27T10:57:04.919Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -1016,7 +1022,7 @@
     },
     "github": {
       "source": "github",
-      "status": "ok",
+      "status": "stale",
       "fetchedAt": "2026-06-27T10:17:24.410Z",
       "interests": {
         "artificial-intelligence": {
@@ -1229,9 +1235,8 @@
     },
     "product-hunt": {
       "source": "product-hunt",
-      "status": "stale",
-      "fetchedAt": "2026-06-27T10:17:24.411Z",
-      "error": "HTTP 429 for https://api.producthunt.com/v2/api/graphql",
+      "status": "ok",
+      "fetchedAt": "2026-06-27T10:57:04.922Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -1250,7 +1255,7 @@
             {
               "title": "Tencent EdgeOne Makers",
               "url": "https://www.producthunt.com/products/tencent-edgeone-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 633
+              "score": 634
             },
             {
               "title": "AgentX",
@@ -1350,6 +1355,11 @@
               "score": 187
             },
             {
+              "title": "Copilot Buddy",
+              "url": "https://www.producthunt.com/products/copilot-buddy?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
+            },
+            {
               "title": "AI Blocker",
               "url": "https://www.producthunt.com/products/ai-blocker?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 4
@@ -1360,13 +1370,8 @@
               "score": 4
             },
             {
-              "title": "ShapesFoundry",
-              "url": "https://www.producthunt.com/products/shapesfoundry?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 3
-            },
-            {
-              "title": "IT Asset Management for Global Teams.",
-              "url": "https://www.producthunt.com/products/it-asset-management-for-global-teams?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "RUCKUS2 Hybrid",
+              "url": "https://www.producthunt.com/products/ruckus2-hybrid?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 3
             }
           ]
@@ -1473,8 +1478,8 @@
               "score": 12
             },
             {
-              "title": "Delphina",
-              "url": "https://www.producthunt.com/products/delphina?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "handa",
+              "url": "https://www.producthunt.com/products/handa?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 9
             }
           ]
@@ -1579,6 +1584,201 @@
               "title": "3D-Universe",
               "url": "https://www.producthunt.com/products/3d-universe?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 2
+            }
+          ]
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 4,
+            "previous": 13,
+            "delta": -9,
+            "deltaPercent": -69
+          },
+          "samples": [
+            {
+              "title": "Chasing Pink",
+              "url": "https://www.producthunt.com/products/chasing-pink?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 4
+            },
+            {
+              "title": "Soilytix",
+              "url": "https://www.producthunt.com/products/soilytix?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 3
+            },
+            {
+              "title": "MoldChem Tools",
+              "url": "https://www.producthunt.com/products/moldchem-tools?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 3
+            },
+            {
+              "title": "3D-Universe",
+              "url": "https://www.producthunt.com/products/3d-universe?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 2
+            }
+          ]
+        },
+        "arts": {
+          "interestId": "arts",
+          "metrics": {
+            "current": 9,
+            "previous": 9,
+            "delta": 0,
+            "deltaPercent": 0
+          },
+          "samples": [
+            {
+              "title": "Pool Atlas",
+              "url": "https://www.producthunt.com/products/pool-atlas?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 4
+            },
+            {
+              "title": "Image Color Picker",
+              "url": "https://www.producthunt.com/products/image-color-picker-5?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 4
+            },
+            {
+              "title": "WeConvertIt",
+              "url": "https://www.producthunt.com/products/weconvertit?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
+            },
+            {
+              "title": "Saumya Studio",
+              "url": "https://www.producthunt.com/products/saumya-studio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 3
+            },
+            {
+              "title": "Design for the AI era",
+              "url": "https://www.producthunt.com/products/design-for-the-ai-era?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 3
+            }
+          ]
+        },
+        "commerce": {
+          "interestId": "commerce",
+          "metrics": {
+            "current": 160,
+            "previous": 177,
+            "delta": -17,
+            "deltaPercent": -10
+          },
+          "samples": [
+            {
+              "title": "Group Subscriptions by beehiiv",
+              "url": "https://www.producthunt.com/products/beehiiv?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 116
+            },
+            {
+              "title": "Photoroom API",
+              "url": "https://www.producthunt.com/products/bg-app?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 100
+            },
+            {
+              "title": "Crop.photo AI for Shopify",
+              "url": "https://www.producthunt.com/products/crop-photo-ai-for-shopify?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 48
+            },
+            {
+              "title": "UX Agent",
+              "url": "https://www.producthunt.com/products/ux-agent?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 25
+            },
+            {
+              "title": "quyash - AI product visuals in 60 sec.",
+              "url": "https://www.producthunt.com/products/quyash-ai-product-photo-generator?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 25
+            }
+          ]
+        },
+        "entrepreneurship": {
+          "interestId": "entrepreneurship",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "startups": {
+          "interestId": "startups",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "venture-capital": {
+          "interestId": "venture-capital",
+          "metrics": {
+            "current": 7,
+            "previous": 4,
+            "delta": 3,
+            "deltaPercent": 75
+          },
+          "samples": [
+            {
+              "title": "FounderNode",
+              "url": "https://www.producthunt.com/products/foundernode?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 3
+            },
+            {
+              "title": "UndergradVC- Campus Startup Intelligence",
+              "url": "https://www.producthunt.com/products/undergradvc-campus-startup-intelligence?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 3
+            },
+            {
+              "title": "Klypp",
+              "url": "https://www.producthunt.com/products/klypp-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 3
+            },
+            {
+              "title": "EquityOS",
+              "url": "https://www.producthunt.com/products/equityos?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
+            },
+            {
+              "title": "HPSILab MCP",
+              "url": "https://www.producthunt.com/products/h-quantum-finance?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 2
+            }
+          ]
+        },
+        "product-management": {
+          "interestId": "product-management",
+          "metrics": {
+            "current": 1286,
+            "previous": 1614,
+            "delta": -328,
+            "deltaPercent": -20
+          },
+          "samples": [
+            {
+              "title": "BrowserAct",
+              "url": "https://www.producthunt.com/products/browseract?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 550
+            },
+            {
+              "title": "Propane ",
+              "url": "https://www.producthunt.com/products/propane?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 523
+            },
+            {
+              "title": "Zaro",
+              "url": "https://www.producthunt.com/products/zaro?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 457
+            },
+            {
+              "title": "Cotypist",
+              "url": "https://www.producthunt.com/products/cotypist?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 391
+            },
+            {
+              "title": "Alai 2.0",
+              "url": "https://www.producthunt.com/products/alai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 314
             }
           ]
         }

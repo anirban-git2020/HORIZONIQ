@@ -101,7 +101,7 @@
       "id": "storage-installation-services",
       "title": "Energy Storage Installation",
       "sector": "Energy",
-      "growth": 27,
+      "growth": 28,
       "growthChange": "falling",
       "changeSummary": "Market signal update — Product Hunt activity includes TruNorth.",
       "summary": "Grid-scale battery storage deployment requires specialized installation and maintenance.",
@@ -139,9 +139,9 @@
       "id": "ai-infrastructure-investing",
       "title": "AI Infrastructure Investing",
       "sector": "Venture Capital",
-      "growth": 43,
+      "growth": 51,
       "growthChange": "stable",
-      "changeSummary": "Market signal update — Wikimedia Pageviews +2% this week in Venture Capital.",
+      "changeSummary": "Market signal update — Product Hunt activity includes FounderNode.",
       "summary": "VC capital is concentrating in AI models, tooling, and infrastructure layers.",
       "interests": [
         "venture-capital",
@@ -158,9 +158,9 @@
       "id": "biotech-research-roles",
       "title": "Biotech Research & Lab Careers",
       "sector": "Biotechnology",
-      "growth": 43,
+      "growth": 36,
       "growthChange": "stable",
-      "changeSummary": "Market signal update — Wikimedia Pageviews +1% this week in Life Sciences.",
+      "changeSummary": "Market signal update — Product Hunt activity includes PathMap.",
       "summary": "Research associate, lab technician, and bioengineering roles are growing in biotech hubs.",
       "interests": [
         "biotechnology",
@@ -178,9 +178,9 @@
       "id": "creative-tech-careers",
       "title": "Creative Technology Careers",
       "sector": "Arts & Media",
-      "growth": 34,
+      "growth": 36,
       "growthChange": "stable",
-      "changeSummary": "Market signal update — Hacker News -100% this week in Arts & Creative Fields.",
+      "changeSummary": "Market signal update — Product Hunt activity includes Pool Atlas.",
       "summary": "UX, content, design, and media roles increasingly require creative AI fluency.",
       "interests": [
         "arts"
@@ -196,9 +196,9 @@
       "id": "commerce-analyst-pathways",
       "title": "Commerce & Analytics Graduate Roles",
       "sector": "Commerce",
-      "growth": 52,
+      "growth": 48,
       "growthChange": "stable",
-      "changeSummary": "Market signal update — arXiv +100% this week in Commerce & Business Studies.",
+      "changeSummary": "Market signal update — Product Hunt activity includes Group Subscriptions by beehiiv.",
       "summary": "Graduate analyst, accounting tech, and business operations roles favor data skills.",
       "interests": [
         "commerce"

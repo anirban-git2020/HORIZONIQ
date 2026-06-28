@@ -1,4 +1,5 @@
 import { TopBar } from "@/components/layout/top-bar";
+import { StartFreshLink } from "@/components/onboarding/start-fresh-link";
 import { FadeIn } from "@/components/motion/fade-in";
 
 export function FirstTimeShell({
@@ -15,7 +16,12 @@ export function FirstTimeShell({
         <FadeIn>{children}</FadeIn>
         {footer && (
           <FadeIn delay={0.12}>
-            <div className="mt-10 border-t border-border/50 pt-8">{footer}</div>
+            <div className="mt-10 space-y-6 border-t border-border/50 pt-8">
+              {footer}
+              <div className="flex justify-center">
+                <StartFreshLink />
+              </div>
+            </div>
           </FadeIn>
         )}
       </main>

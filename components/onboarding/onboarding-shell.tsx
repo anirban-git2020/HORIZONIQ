@@ -1,5 +1,6 @@
 import { IntelligenceBackground } from "@/components/layout/intelligence-background";
 import { TopBar } from "@/components/layout/top-bar";
+import { StartFreshLink } from "@/components/onboarding/start-fresh-link";
 import { StepProgress } from "@/components/onboarding/step-progress";
 import { FadeIn } from "@/components/motion/fade-in";
 
@@ -43,8 +44,11 @@ export function OnboardingShell({
           {children}
 
           <FadeIn delay={0.16} immediate>
-            <div className="mt-12 flex items-center justify-between gap-4 border-t border-border/50 pt-8">
-              {footer}
+            <div className="mt-12 flex flex-col gap-6 border-t border-border/50 pt-8">
+              <div className="flex items-center justify-between gap-4">{footer}</div>
+              <div className="flex justify-center">
+                <StartFreshLink />
+              </div>
             </div>
           </FadeIn>
         </main>

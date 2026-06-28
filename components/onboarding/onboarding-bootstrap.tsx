@@ -3,10 +3,15 @@
 import { useEffect, useState } from "react";
 
 import { PageLoader } from "@/components/ui/page-loader";
-import { bootstrapOnboardingState } from "@/lib/onboarding-state";
+import {
+  bootstrapOnboardingState,
+  resetOnboardingBootstrap,
+} from "@/lib/onboarding-state";
+import { navigateOnboarding } from "@/lib/onboarding-nav";
 
 /**
- * Loads and reconciles unified onboarding state before any route reads storage.
+ * Reconciles onboarding state before any route reads storage.
+ * Redirects when cookie phase disagrees with localStorage truth.
  */
 export function OnboardingBootstrap({
   children,
@@ -16,7 +21,14 @@ export function OnboardingBootstrap({
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    bootstrapOnboardingState();
+    const result = bootstrapOnboardingState();
+
+    if (result.redirectTo) {
+      resetOnboardingBootstrap();
+      navigateOnboarding(result.redirectTo);
+      return;
+    }
+
     setReady(true);
   }, []);
 

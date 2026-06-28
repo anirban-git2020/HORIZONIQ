@@ -1,52 +1,214 @@
-import { ONBOARDING_COOKIE_NAME } from "@/lib/onboarding-phase";
+import {
+  ONBOARDING_COOKIE_NAME,
+} from "@/lib/onboarding-phase";
+import { ONBOARDING_SCHEMA_VERSION, SCHEMA_VERSION_KEY } from "@/lib/onboarding-reconcile";
 
 /**
- * Runs before React. Sets step cookie if missing.
- * Never reads localStorage to skip ahead — only migrates fully complete users.
+ * Runs before React on every page load.
+ * Reconciles hziq_ob_v3 cookie with localStorage — repairs stale cookies
+ * (e.g. profile with empty prefs) without DevTools or incognito.
  */
 export const ONBOARDING_COOKIE_INIT_SCRIPT = `
 (function () {
   try {
-    var name = ${JSON.stringify(ONBOARDING_COOKIE_NAME)};
-    if (document.cookie.indexOf(name + "=") !== -1) return;
+    var COOKIE = ${JSON.stringify(ONBOARDING_COOKIE_NAME)};
+    var SCHEMA = ${JSON.stringify(SCHEMA_VERSION_KEY)};
+    var SCHEMA_VER = ${ONBOARDING_SCHEMA_VERSION};
+    var ONE_YEAR = 31536000;
+    var legacyCookies = ["horizoniq_phase","horizoniq_phase_v1","horizoniq_phase_v2"];
+    var legacyStorage = ["horizoniq.identity.v1","horizoniq.onboarding.flowVersion","horizoniq.preferences.v1"];
 
-    var legacy = ["horizoniq_phase","horizoniq_phase_v1","horizoniq_phase_v2"];
-    for (var i = 0; i < legacy.length; i++) {
-      document.cookie = legacy[i] + "=;path=/;max-age=0;SameSite=Lax";
+    for (var i = 0; i < legacyCookies.length; i++) {
+      document.cookie = legacyCookies[i] + "=;path=/;max-age=0;SameSite=Lax";
+    }
+    for (var j = 0; j < legacyStorage.length; j++) {
+      localStorage.removeItem(legacyStorage[j]);
     }
 
-    var onboarding = localStorage.getItem("horizoniq.onboarding.v1");
-    var prefs = localStorage.getItem("horizoniq.preferences.v2");
-    var step = "welcome";
-
-    if (onboarding && prefs) {
-      try {
-        var r = JSON.parse(onboarding);
-        var p = JSON.parse(prefs);
-        if (
-          r.welcomeCompletedAt &&
-          r.displayName &&
-          r.landingAcknowledgedAt &&
-          p.role &&
-          p.region &&
-          p.interests &&
-          p.interests.length > 0
-        ) {
-          step = "complete";
+    function readCookiePhase() {
+      var parts = document.cookie.split("; ");
+      for (var i = 0; i < parts.length; i++) {
+        if (parts[i].indexOf(COOKIE + "=") === 0) {
+          var v = parts[i].split("=")[1];
+          if (v === "welcome" || v === "name" || v === "landing" || v === "profile" || v === "complete") {
+            return v;
+          }
         }
-      } catch (e) {}
+      }
+      return null;
     }
 
-    if (step === "welcome") {
-      localStorage.removeItem("horizoniq.onboarding.v1");
-      localStorage.removeItem("horizoniq.identity.v1");
+    function setCookiePhase(phase) {
+      document.cookie = COOKIE + "=" + phase + ";path=/;max-age=" + ONE_YEAR + ";SameSite=Lax";
+    }
+
+    function emptyRecord() {
+      return {
+        displayName: null,
+        welcomeCompletedAt: null,
+        welcomeSkipped: false,
+        landingAcknowledgedAt: null,
+        tourChoice: null,
+        guidedTourCompletedAt: null
+      };
+    }
+
+    function readRecord() {
+      var raw = localStorage.getItem("horizoniq.onboarding.v1");
+      if (!raw) return emptyRecord();
+      try {
+        var p = JSON.parse(raw);
+        var r = emptyRecord();
+        for (var k in r) {
+          if (Object.prototype.hasOwnProperty.call(p, k)) r[k] = p[k];
+        }
+        if (typeof r.displayName === "string") {
+          r.displayName = r.displayName.trim() || null;
+        }
+        return r;
+      } catch (e) {
+        return emptyRecord();
+      }
+    }
+
+    function readPrefs() {
+      var raw = localStorage.getItem("horizoniq.preferences.v2");
+      if (!raw) return { role: null, region: null, interests: [] };
+      try {
+        var p = JSON.parse(raw);
+        return {
+          role: p.role || null,
+          region: p.region || null,
+          interests: Array.isArray(p.interests) ? p.interests : []
+        };
+      } catch (e) {
+        return { role: null, region: null, interests: [] };
+      }
+    }
+
+    function isProfileComplete(prefs) {
+      return prefs.role && prefs.region && prefs.interests && prefs.interests.length > 0;
+    }
+
+    function isValidChain(r) {
+      if (r.displayName && !r.welcomeCompletedAt) return false;
+      if (r.landingAcknowledgedAt && !r.welcomeCompletedAt) return false;
+      if (r.landingAcknowledgedAt && !r.displayName) return false;
+      if (r.tourChoice && !r.landingAcknowledgedAt) return false;
+      if (r.guidedTourCompletedAt && r.tourChoice !== "guided") return false;
+      return true;
+    }
+
+    function repairRecord(r) {
+      if (!isValidChain(r)) return emptyRecord();
+      if (!r.welcomeCompletedAt) return emptyRecord();
+      if (!r.displayName) {
+        return {
+          welcomeCompletedAt: r.welcomeCompletedAt,
+          welcomeSkipped: r.welcomeSkipped,
+          displayName: null,
+          landingAcknowledgedAt: null,
+          tourChoice: null,
+          guidedTourCompletedAt: null
+        };
+      }
+      if (!r.landingAcknowledgedAt) {
+        return {
+          welcomeCompletedAt: r.welcomeCompletedAt,
+          welcomeSkipped: r.welcomeSkipped,
+          displayName: r.displayName,
+          landingAcknowledgedAt: null,
+          tourChoice: null,
+          guidedTourCompletedAt: null
+        };
+      }
+      return r;
+    }
+
+    function isStrictlyComplete(r, prefs) {
+      return (
+        r.welcomeCompletedAt &&
+        r.displayName &&
+        r.landingAcknowledgedAt &&
+        isProfileComplete(prefs)
+      );
+    }
+
+    function deriveCanonical(r, prefs) {
+      if (!isValidChain(r)) {
+        return { phase: "welcome", record: emptyRecord(), wipePrefs: true };
+      }
+      var repaired = repairRecord(r);
+      if (isStrictlyComplete(repaired, prefs)) {
+        return { phase: "complete", record: repaired, wipePrefs: false };
+      }
+      if (isProfileComplete(prefs)) {
+        return { phase: "profile", record: repaired, wipePrefs: false };
+      }
+      if (repaired.landingAcknowledgedAt) {
+        return { phase: "profile", record: repaired, wipePrefs: false };
+      }
+      if (repaired.displayName) {
+        return { phase: "landing", record: repaired, wipePrefs: false };
+      }
+      if (repaired.welcomeCompletedAt) {
+        return { phase: "name", record: repaired, wipePrefs: false };
+      }
+      return { phase: "welcome", record: repaired, wipePrefs: false };
+    }
+
+  var pathPrefixes = {
+      welcome: ["/onboarding/welcome"],
+      name: ["/onboarding/name"],
+      landing: ["/"],
+      profile: [
+        "/onboarding/greeting",
+        "/onboarding/role",
+        "/onboarding/region",
+        "/onboarding/interests",
+        "/onboarding/tour"
+      ],
+      complete: ["/", "/dashboard", "/signals", "/onboarding/interests"]
+    };
+
+    function pathForPhase(phase) {
+      if (phase === "welcome") return "/onboarding/welcome";
+      if (phase === "name") return "/onboarding/name";
+      if (phase === "landing") return "/";
+      if (phase === "profile") return "/onboarding/role";
+      return "/dashboard";
+    }
+
+    function pathAllowed(pathname, phase) {
+      var list = pathPrefixes[phase] || [];
+      for (var i = 0; i < list.length; i++) {
+        var prefix = list[i];
+        if (pathname === prefix || pathname.indexOf(prefix + "/") === 0) return true;
+      }
+      return false;
+    }
+
+    var record = readRecord();
+    var prefs = readPrefs();
+    var cookiePhase = readCookiePhase();
+    var derived = deriveCanonical(record, prefs);
+    var canonical = derived.phase;
+    var repaired = cookiePhase !== canonical;
+
+    localStorage.setItem("horizoniq.onboarding.v1", JSON.stringify(derived.record));
+    if (derived.wipePrefs) {
       localStorage.removeItem("horizoniq.preferences.v2");
-      localStorage.removeItem("horizoniq.preferences.v1");
-      localStorage.removeItem("horizoniq.onboarding.flowVersion");
       localStorage.removeItem("horizoniq-visit-snapshot");
     }
+    if (repaired || !cookiePhase) {
+      setCookiePhase(canonical);
+    }
+    localStorage.setItem(SCHEMA, String(SCHEMA_VER));
 
-    document.cookie = name + "=" + step + ";path=/;max-age=31536000;SameSite=Lax";
+    var pathname = window.location.pathname;
+    if (!pathAllowed(pathname, canonical)) {
+      window.location.replace(pathForPhase(canonical));
+    }
   } catch (e) {}
 })();
 `;

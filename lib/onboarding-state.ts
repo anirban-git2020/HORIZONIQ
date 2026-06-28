@@ -6,24 +6,17 @@ import {
   readOnboardingPhaseCookie,
   setOnboardingPhaseCookie,
 } from "@/lib/onboarding-cookie";
+import {
+  clearLegacyOnboardingArtifacts,
+  reconcileOnboardingState,
+  type ReconcileResult,
+} from "@/lib/onboarding-reconcile";
 
 export type { OnboardingPhase };
 export { getPathForPhase } from "@/lib/onboarding-phase";
 
 const STORAGE_KEY = "horizoniq.onboarding.v1";
 const PREFS_KEY = "horizoniq.preferences.v2";
-
-const LEGACY_COOKIES = [
-  "horizoniq_phase",
-  "horizoniq_phase_v1",
-  "horizoniq_phase_v2",
-];
-
-const LEGACY_STORAGE = [
-  "horizoniq.identity.v1",
-  "horizoniq.onboarding.flowVersion",
-  "horizoniq.preferences.v1",
-];
 
 export interface OnboardingRecord {
   displayName: string | null;
@@ -117,16 +110,6 @@ export function advanceOnboardingPhase(phase: OnboardingPhase): void {
   setOnboardingPhaseCookie(phase);
 }
 
-function clearLegacyArtifacts(): void {
-  if (!isBrowser()) return;
-  for (const key of LEGACY_STORAGE) {
-    window.localStorage.removeItem(key);
-  }
-  for (const name of LEGACY_COOKIES) {
-    document.cookie = `${name}=;path=/;max-age=0;SameSite=Lax`;
-  }
-}
-
 /** Wipe partial onboarding data so stale prefs cannot skip steps. */
 export function wipeIncompleteOnboardingData(): void {
   if (!isBrowser()) return;
@@ -135,33 +118,33 @@ export function wipeIncompleteOnboardingData(): void {
   writeOnboardingRecord({ ...EMPTY_ONBOARDING });
   window.localStorage.removeItem(PREFS_KEY);
   window.localStorage.removeItem("horizoniq-visit-snapshot");
-  clearLegacyArtifacts();
+  clearLegacyOnboardingArtifacts();
 }
 
 let bootstrapRan = false;
 
+export function resetOnboardingBootstrap(): void {
+  bootstrapRan = false;
+}
+
 /**
- * One-time client init: clear legacy artifacts, ensure cookie exists.
- * Does NOT sync phase from localStorage (that caused skip-ahead bugs).
+ * Client init: reconcile cookie with localStorage on every first mount per page.
  */
-export function bootstrapOnboardingState(): OnboardingPhase {
-  if (!isBrowser()) return "welcome";
-  if (bootstrapRan) return getActivePhase();
-  bootstrapRan = true;
-
-  clearLegacyArtifacts();
-
-  const cookie = readOnboardingPhaseCookie();
-  if (!cookie) {
-    if (isStrictlyOnboardingComplete()) {
-      setOnboardingPhaseCookie("complete");
-    } else {
-      wipeIncompleteOnboardingData();
-      setOnboardingPhaseCookie("welcome");
-    }
+export function bootstrapOnboardingState(): ReconcileResult {
+  if (!isBrowser()) {
+    return { phase: "welcome", repaired: false };
+  }
+  if (bootstrapRan) {
+    return { phase: getActivePhase(), repaired: false };
   }
 
-  return getActivePhase();
+  const result = reconcileOnboardingState();
+
+  if (!result.redirectTo) {
+    bootstrapRan = true;
+  }
+
+  return result;
 }
 
 export function clearAllHorizonIQClientState(): void {
@@ -181,7 +164,7 @@ export function clearAllHorizonIQClientState(): void {
   }
 
   clearOnboardingPhaseCookie();
-  clearLegacyArtifacts();
+  clearLegacyOnboardingArtifacts();
   bootstrapRan = false;
   setOnboardingPhaseCookie("welcome");
 }

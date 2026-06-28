@@ -1,37 +1,44 @@
-import { identityService } from "@/lib/identity";
+import {
+  bootstrapOnboardingState,
+  derivePhase,
+  getPathForPhase,
+  isProfileComplete,
+  readOnboardingRecord,
+  readPreferencesFromStorage,
+} from "@/lib/onboarding-state";
 
 /**
- * Resume path for first-time identity onboarding.
- * Welcome → Name → Landing (greeting) → Profile.
+ * Resume path from derived onboarding phase.
+ * Welcome → Name → Landing → Profile → Dashboard.
  */
 export function getFirstTimeOnboardingPath(): string {
-  if (!identityService.hasCompletedWelcome()) {
-    return "/onboarding/welcome";
-  }
-  if (!identityService.getDisplayName()) {
-    return "/onboarding/name";
-  }
-  if (!identityService.hasCompletedGreeting()) {
-    return "/";
-  }
-  return "/onboarding/role";
+  const record = readOnboardingRecord();
+  const prefs = readPreferencesFromStorage();
+  return getPathForPhase(derivePhase(record, prefs));
 }
 
-/** Welcome, name, and landing greeting before profile onboarding. */
+/** Landing acknowledged — user may enter profile setup. */
 export function hasCompletedIdentityOnboarding(): boolean {
-  const displayName = identityService.getDisplayName();
+  const phase = derivePhase(
+    readOnboardingRecord(),
+    readPreferencesFromStorage()
+  );
+  return phase === "profile" || phase === "complete";
+}
+
+export function isFullyOnboarded(): boolean {
   return (
-    identityService.hasCompletedWelcome() &&
-    displayName !== null &&
-    displayName.length > 0 &&
-    identityService.hasCompletedGreeting()
+    derivePhase(readOnboardingRecord(), readPreferencesFromStorage()) ===
+    "complete"
   );
 }
 
-/**
- * Redirect target when a protected route requires setup.
- * Identity steps take priority over profile onboarding.
- */
 export function getOnboardingRedirectPath(): string {
   return getFirstTimeOnboardingPath();
 }
+
+export function ensureOnboardingReady(): void {
+  bootstrapOnboardingState();
+}
+
+export { isProfileComplete };

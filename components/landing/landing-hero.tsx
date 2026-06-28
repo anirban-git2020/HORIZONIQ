@@ -9,7 +9,10 @@ import { FadeIn } from "@/components/motion/fade-in";
 import { ProvenanceBadge } from "@/components/trust/provenance-badge";
 import { buttonVariants } from "@/components/ui/button";
 import { LANDING_HERO_HEADLINE } from "@/lib/copy";
-import { identityService } from "@/lib/identity";
+import {
+  derivePhase,
+  readOnboardingRecord,
+} from "@/lib/onboarding-state";
 import { formatPersonalizedGreeting } from "@/lib/identity/greeting";
 import {
   getLandingCtaNote,
@@ -23,9 +26,10 @@ interface LandingHeroProps {
 }
 
 export function LandingHero({ provenance }: LandingHeroProps) {
-  const displayName = identityService.getDisplayName();
-  const showPersonalizedGreeting =
-    displayName !== null && !identityService.hasCompletedGreeting();
+  const record = readOnboardingRecord();
+  const phase = derivePhase(record);
+  const displayName = record.displayName;
+  const showPersonalizedGreeting = phase === "landing" && displayName !== null;
   const personalizedGreeting = showPersonalizedGreeting
     ? formatPersonalizedGreeting(displayName)
     : null;

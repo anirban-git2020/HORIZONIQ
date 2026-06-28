@@ -41,6 +41,7 @@ import {
   loadVisitSnapshot,
   saveVisitSnapshot,
 } from "@/lib/visit-snapshot";
+import { clearAllHorizonIQClientState } from "@/lib/onboarding-bootstrap";
 import { identityService } from "@/lib/identity";
 import { formatPersonalizedGreeting } from "@/lib/identity/greeting";
 import {
@@ -171,14 +172,7 @@ export default function DashboardPage() {
   const handleReset = () => {
     track("start_over", {});
     clearVisitSnapshot();
-    identityService.clear();
-    try {
-      window.localStorage.removeItem("horizoniq.preferences.v2");
-      window.localStorage.removeItem("horizoniq.preferences.v1");
-    } catch {
-      // Ignore storage errors and still return to landing.
-    }
-    // Full navigation avoids dashboard guard redirects and loader flash after reset.
+    clearAllHorizonIQClientState();
     window.location.assign("/onboarding/welcome");
   };
 

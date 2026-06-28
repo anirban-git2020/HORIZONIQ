@@ -34,6 +34,10 @@ export interface IdentityService {
   shouldShowGuidedTour(): boolean;
   markGuidedTourComplete(): void;
   clear(): void;
+  /** Normalize invalid flag combinations from stale or corrupt storage. */
+  repair(): void;
+  /** Replace the full identity record (used by bootstrap repair). */
+  replaceRecord(record: IdentityRecord): void;
   /** Future: resolve auth provider when accounts ship. */
   getAuthProvider(): AuthProvider;
 }

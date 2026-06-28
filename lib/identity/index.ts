@@ -12,4 +12,5 @@ export {
 } from "./greeting";
 export type { TimeOfDayPeriod } from "./greeting";
 export { LocalIdentityService, identityService } from "./local-identity-service";
+export { isValidIdentityChain, repairIdentityRecord } from "./repair";
 export type { FutureAuthIdentityService, FutureAuthProvider } from "./future-providers";

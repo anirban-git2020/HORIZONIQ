@@ -5,45 +5,41 @@ import type {
   TourChoice,
 } from "./types";
 import { EMPTY_IDENTITY } from "./types";
+import {
+  bootstrapOnboardingState,
+  clearOnboardingState,
+  derivePhase,
+  readOnboardingRecord,
+  writeOnboardingRecord,
+  type OnboardingRecord,
+} from "@/lib/onboarding-state";
 
-const STORAGE_KEY = "horizoniq.identity.v1";
-
-function isBrowser(): boolean {
-  return typeof window !== "undefined";
+function toIdentityRecord(record: OnboardingRecord): IdentityRecord {
+  return {
+    displayName: record.displayName,
+    welcomeCompletedAt: record.welcomeCompletedAt,
+    welcomeSkipped: record.welcomeSkipped,
+    greetingCompletedAt: record.landingAcknowledgedAt,
+    tourChoice: record.tourChoice,
+    guidedTourCompletedAt: record.guidedTourCompletedAt,
+  };
 }
 
-function readRecord(): IdentityRecord {
-  if (!isBrowser()) return { ...EMPTY_IDENTITY };
-  try {
-    const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (!raw) return { ...EMPTY_IDENTITY };
-    const parsed = JSON.parse(raw) as Partial<IdentityRecord>;
-    return {
-      ...EMPTY_IDENTITY,
-      ...parsed,
-      displayName:
-        typeof parsed.displayName === "string" ? parsed.displayName.trim() : null,
-    };
-  } catch {
-    return { ...EMPTY_IDENTITY };
-  }
+function readRecord(): OnboardingRecord {
+  return readOnboardingRecord();
 }
 
-function writeRecord(record: IdentityRecord): void {
-  if (!isBrowser()) return;
-  window.localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
+function writeRecord(record: OnboardingRecord): void {
+  writeOnboardingRecord(record);
 }
 
 export class LocalIdentityService implements IdentityService {
   getRecord(): IdentityRecord {
-    return readRecord();
+    return toIdentityRecord(readRecord());
   }
 
   getDisplayName(): string | null {
-    const name = readRecord().displayName;
-    if (!name) return null;
-    const trimmed = name.trim();
-    return trimmed.length > 0 ? trimmed : null;
+    return readRecord().displayName;
   }
 
   setDisplayName(name: string): void {
@@ -65,13 +61,13 @@ export class LocalIdentityService implements IdentityService {
   }
 
   hasCompletedGreeting(): boolean {
-    return readRecord().greetingCompletedAt !== null;
+    return readRecord().landingAcknowledgedAt !== null;
   }
 
   markGreetingComplete(): void {
     writeRecord({
       ...readRecord(),
-      greetingCompletedAt: new Date().toISOString(),
+      landingAcknowledgedAt: new Date().toISOString(),
     });
   }
 
@@ -97,13 +93,34 @@ export class LocalIdentityService implements IdentityService {
     });
   }
 
+  repair(): void {
+    bootstrapOnboardingState();
+  }
+
+  replaceRecord(record: IdentityRecord): void {
+    writeRecord({
+      ...readRecord(),
+      displayName: record.displayName,
+      welcomeCompletedAt: record.welcomeCompletedAt,
+      welcomeSkipped: record.welcomeSkipped,
+      landingAcknowledgedAt: record.greetingCompletedAt,
+      tourChoice: record.tourChoice,
+      guidedTourCompletedAt: record.guidedTourCompletedAt,
+    });
+    bootstrapOnboardingState();
+  }
+
   clear(): void {
-    if (!isBrowser()) return;
-    window.localStorage.removeItem(STORAGE_KEY);
+    clearOnboardingState();
   }
 
   getAuthProvider(): AuthProvider {
     return "local";
+  }
+
+  /** Current onboarding step derived from stored timestamps + profile. */
+  getPhase() {
+    return derivePhase(readRecord());
   }
 }
 

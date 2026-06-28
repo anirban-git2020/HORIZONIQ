@@ -3,6 +3,7 @@ import { Inter, Outfit } from "next/font/google";
 
 import { PreferencesProvider } from "@/lib/preferences";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { OnboardingBootstrap } from "@/components/onboarding/onboarding-bootstrap";
 import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
 import { ScrollToTop } from "@/components/navigation/scroll-to-top";
 import "./globals.css";
@@ -46,8 +47,10 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <PreferencesProvider>
-            <ScrollToTop />
-            {children}
+            <OnboardingBootstrap>
+              <ScrollToTop />
+              {children}
+            </OnboardingBootstrap>
           </PreferencesProvider>
           <AnalyticsProvider />
         </ThemeProvider>

@@ -14,6 +14,8 @@ export function getTimeOfDayGreeting(date = new Date()): string {
   return "Good Evening";
 }
 
+import { LANDING_HERO_HEADLINE } from "@/lib/copy";
+
 export function formatPersonalizedGreeting(displayName: string, date = new Date()): {
   salutation: string;
   headline: string;
@@ -22,7 +24,7 @@ export function formatPersonalizedGreeting(displayName: string, date = new Date(
   const firstName = displayName.trim().split(/\s+/)[0] ?? displayName;
   return {
     salutation: `${getTimeOfDayGreeting(date)}, ${firstName}.`,
-    headline: "Welcome to HorizonIQ.",
+    headline: LANDING_HERO_HEADLINE,
     subline: "Let's build your personal intelligence profile.",
   };
 }

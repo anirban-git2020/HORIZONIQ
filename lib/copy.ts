@@ -6,6 +6,9 @@ export const BETA_PREVIEW_LABEL = "Beta Preview";
 
 export const WELCOME_HEADLINE = "Welcome to HorizonIQ";
 
+export const LANDING_HERO_HEADLINE =
+  "See what is changing before everyone else does.";
+
 export const INTELLIGENCE_FOCUS_AREAS_LABEL = "Intelligence Focus Areas";
 
 /** Compact label for onboarding step progress (step 3). */

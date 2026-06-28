@@ -16,6 +16,8 @@ interface TourStep {
   fallbackDescription: string;
   scrollBlock?: ScrollLogicalPosition;
   measureDelays?: number[];
+  instantScroll?: boolean;
+  scrollWindowToTop?: boolean;
 }
 
 const TOUR_STEPS: TourStep[] = [
@@ -54,8 +56,10 @@ const TOUR_STEPS: TourStep[] = [
       "One clear action per briefing — what to do differently this week.",
     fallbackDescription:
       "Your primary recommended action lives in the briefing hero above.",
-    scrollBlock: "start",
-    measureDelays: [80, 250, 450, 700, 1000, 1400],
+    scrollBlock: "center",
+    scrollWindowToTop: true,
+    measureDelays: [0, 50, 120, 250, 450, 700, 1000, 1500],
+    instantScroll: true,
   },
 ];
 
@@ -84,10 +88,29 @@ function measureTarget(selector: string): SpotlightRect | null {
   const vw = window.innerWidth;
   const vh = window.innerHeight;
 
-  const top = Math.max(8, rect.top - SPOTLIGHT_PAD);
-  const left = Math.max(8, rect.left - SPOTLIGHT_PAD);
-  const bottom = Math.min(vh - 8, rect.bottom + SPOTLIGHT_PAD);
-  const right = Math.min(vw - 8, rect.right + SPOTLIGHT_PAD);
+  const intersectTop = Math.max(rect.top, 0);
+  const intersectLeft = Math.max(rect.left, 0);
+  const intersectBottom = Math.min(rect.bottom, vh);
+  const intersectRight = Math.min(rect.right, vw);
+
+  const visibleWidth = intersectRight - intersectLeft;
+  const visibleHeight = intersectBottom - intersectTop;
+
+  // Prefer the visible intersection; fall back to clamped full rect when the
+  // element is mostly on-screen after an instant scroll (step 4).
+  const useFullRect = visibleWidth < 8 || visibleHeight < 8;
+  const top = useFullRect
+    ? Math.max(8, rect.top - SPOTLIGHT_PAD)
+    : Math.max(8, intersectTop - SPOTLIGHT_PAD);
+  const left = useFullRect
+    ? Math.max(8, rect.left - SPOTLIGHT_PAD)
+    : Math.max(8, intersectLeft - SPOTLIGHT_PAD);
+  const bottom = useFullRect
+    ? Math.min(vh - 8, rect.bottom + SPOTLIGHT_PAD)
+    : Math.min(vh - 8, intersectBottom + SPOTLIGHT_PAD);
+  const right = useFullRect
+    ? Math.min(vw - 8, rect.right + SPOTLIGHT_PAD)
+    : Math.min(vw - 8, intersectRight + SPOTLIGHT_PAD);
 
   const width = right - left;
   const height = bottom - top;
@@ -155,18 +178,36 @@ export function GuidedTourOverlay({
     if (!active || !ready || !step) return;
 
     let cancelled = false;
-    const target = document.querySelector(step.target);
-    target?.scrollIntoView({
-      behavior: "smooth",
-      block: step.scrollBlock ?? "center",
-      inline: "nearest",
-    });
+
+    const scrollToTarget = () => {
+      const target = document.querySelector(step.target);
+      target?.scrollIntoView({
+        behavior: step.instantScroll ? "auto" : "smooth",
+        block: step.scrollBlock ?? "center",
+        inline: "nearest",
+      });
+    };
 
     const measure = () => {
       if (!cancelled) setSpotlight(measureTarget(step.target));
     };
 
-    measure();
+    if (step.scrollWindowToTop) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+      requestAnimationFrame(() => {
+        scrollToTarget();
+        measure();
+        requestAnimationFrame(measure);
+      });
+    } else {
+      scrollToTarget();
+      measure();
+      if (step.instantScroll) {
+        requestAnimationFrame(() => {
+          requestAnimationFrame(measure);
+        });
+      }
+    }
     const delays = step.measureDelays ?? [80, 250, 450, 700];
     const timers = delays.map((ms) => window.setTimeout(measure, ms));
 

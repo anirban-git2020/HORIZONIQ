@@ -179,7 +179,7 @@ export default function DashboardPage() {
       // Ignore storage errors and still return to landing.
     }
     // Full navigation avoids dashboard guard redirects and loader flash after reset.
-    window.location.assign("/");
+    window.location.assign("/onboarding/welcome");
   };
 
   const handleTourComplete = () => {

@@ -13,29 +13,36 @@ import { identityService } from "@/lib/identity";
 export default function NamePage() {
   const router = useRouter();
   const [name, setName] = useState("");
-  const [redirecting, setRedirecting] = useState(false);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (!identityService.hasCompletedWelcome()) {
-      setRedirecting(true);
       router.replace("/onboarding/welcome");
       return;
     }
-    if (identityService.getDisplayName()) {
-      setRedirecting(true);
-      router.replace(getFirstTimeOnboardingPath());
+
+    const existingName = identityService.getDisplayName();
+    if (existingName) {
+      const next = getFirstTimeOnboardingPath();
+      if (next !== "/onboarding/name") {
+        router.replace(next);
+        return;
+      }
+      setName(existingName);
     }
+
+    setReady(true);
   }, [router]);
 
   const handleContinue = () => {
     const trimmed = name.trim();
     if (!trimmed) return;
     identityService.setDisplayName(trimmed);
-    router.push("/onboarding/greeting");
+    router.push("/");
   };
 
-  if (redirecting) {
-    return <PageLoader label="Continuing…" />;
+  if (!ready) {
+    return <PageLoader label="Loading…" />;
   }
 
   return (

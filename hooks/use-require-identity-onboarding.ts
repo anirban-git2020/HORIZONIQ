@@ -8,7 +8,7 @@ import {
   hasCompletedIdentityOnboarding,
 } from "@/lib/onboarding-flow";
 
-/** Redirect to welcome / name / greeting when identity onboarding is incomplete. */
+/** Redirect to welcome / name / landing when identity onboarding is incomplete. */
 export function useRequireIdentityOnboarding(hydrated = true): boolean {
   const router = useRouter();
   const [ready, setReady] = useState(false);

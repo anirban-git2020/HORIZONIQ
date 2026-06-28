@@ -1,6 +1,6 @@
-import Link from "next/link";
-
 import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
+import { LandingEntryGuard } from "@/components/landing/landing-entry-guard";
+import { OnboardingStartLink } from "@/components/onboarding/onboarding-start-link";
 import { TopBar } from "@/components/layout/top-bar";
 import { DataTrustPanel } from "@/components/landing/data-trust-panel";
 import { LandingHero } from "@/components/landing/landing-hero";
@@ -20,19 +20,19 @@ export default function LandingPage() {
   const refreshSchedule = getRefreshSchedule();
 
   return (
-    <div className="relative min-h-dvh bg-background">
+    <LandingEntryGuard>
+      <div className="relative min-h-dvh bg-background">
       <section className="relative overflow-hidden">
         <IntelligenceFieldLayer variant="hero" mode="webgl" />
         <div className="relative z-10">
           <TopBar
             showBeta
             right={
-              <Link
-                href="/onboarding/welcome"
+              <OnboardingStartLink
                 className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
               >
                 Get started
-              </Link>
+              </OnboardingStartLink>
             }
           />
           <LandingHero provenance={provenance} />
@@ -62,6 +62,7 @@ export default function LandingPage() {
           </div>
         </footer>
       </div>
-    </div>
+      </div>
+    </LandingEntryGuard>
   );
 }

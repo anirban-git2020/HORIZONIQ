@@ -1,15 +1,18 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 
 import { PageLoader } from "@/components/ui/page-loader";
-import { getFirstTimeOnboardingPath } from "@/lib/onboarding-flow";
 import { identityService } from "@/lib/identity";
 
-/** Legacy URL — personalized greeting now lives on the landing page. */
-export default function GreetingPage() {
+/**
+ * Landing is shown only after Welcome and Name.
+ * Greeting completion happens when the user continues to profile setup.
+ */
+export function LandingEntryGuard({ children }: { children: React.ReactNode }) {
   const router = useRouter();
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
     if (!identityService.hasCompletedWelcome()) {
@@ -20,8 +23,13 @@ export default function GreetingPage() {
       router.replace("/onboarding/name");
       return;
     }
-    router.replace(getFirstTimeOnboardingPath());
+
+    setReady(true);
   }, [router]);
 
-  return <PageLoader label="Continuing…" />;
+  if (!ready) {
+    return <PageLoader label="Loading…" />;
+  }
+
+  return <>{children}</>;
 }

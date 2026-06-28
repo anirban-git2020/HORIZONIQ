@@ -1,6 +1,9 @@
 import { identityService } from "@/lib/identity";
 
-/** Resume path for first-time onboarding (Sprint 1). */
+/**
+ * Resume path for first-time identity onboarding.
+ * Welcome → Name → Landing (greeting) → Profile.
+ */
 export function getFirstTimeOnboardingPath(): string {
   if (!identityService.hasCompletedWelcome()) {
     return "/onboarding/welcome";
@@ -9,12 +12,12 @@ export function getFirstTimeOnboardingPath(): string {
     return "/onboarding/name";
   }
   if (!identityService.hasCompletedGreeting()) {
-    return "/onboarding/greeting";
+    return "/";
   }
   return "/onboarding/role";
 }
 
-/** Welcome, name, and greeting steps before profile onboarding. */
+/** Welcome, name, and landing greeting before profile onboarding. */
 export function hasCompletedIdentityOnboarding(): boolean {
   const displayName = identityService.getDisplayName();
   return (
@@ -30,9 +33,5 @@ export function hasCompletedIdentityOnboarding(): boolean {
  * Identity steps take priority over profile onboarding.
  */
 export function getOnboardingRedirectPath(): string {
-  const identityPath = getFirstTimeOnboardingPath();
-  if (identityPath !== "/onboarding/role") {
-    return identityPath;
-  }
-  return "/onboarding/role";
+  return getFirstTimeOnboardingPath();
 }

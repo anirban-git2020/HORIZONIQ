@@ -1,6 +1,5 @@
 "use client";
 
-import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 
 import { BetaBadge } from "@/components/brand/beta-badge";
@@ -10,13 +9,12 @@ import { Button } from "@/components/ui/button";
 import { WELCOME_HEADLINE } from "@/lib/copy";
 import { identityService } from "@/lib/identity";
 import { NEUTRAL_FIELD_PARAMS } from "@/lib/intelligence-field/params";
+import { navigateOnboarding } from "@/lib/onboarding-nav";
 
 export function WelcomeScreen() {
-  const router = useRouter();
-
   const advance = (skipped: boolean) => {
     identityService.markWelcomeComplete({ skipped });
-    router.push("/onboarding/name");
+    navigateOnboarding("/onboarding/name");
   };
 
   return (

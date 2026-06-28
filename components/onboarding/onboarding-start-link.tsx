@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import type { ComponentProps } from "react";
 
 import { identityService } from "@/lib/identity";
@@ -9,21 +8,23 @@ import {
   bootstrapOnboardingState,
   getActivePhase,
 } from "@/lib/onboarding-state";
+import { navigateOnboarding } from "@/lib/onboarding-nav";
 import { usePreferences } from "@/lib/preferences";
 
-type OnboardingStartLinkProps = Omit<ComponentProps<typeof Link>, "href"> & {
-  href?: ComponentProps<typeof Link>["href"];
+type OnboardingStartLinkProps = ComponentProps<"a"> & {
+  href?: string;
 };
 
 export function OnboardingStartLink({
-  href,
+  href: hrefProp,
   onClick,
+  children,
   ...props
 }: OnboardingStartLinkProps) {
-  const { hydrated, preferences, isComplete } = usePreferences();
+  const { hydrated, isComplete } = usePreferences();
 
   const destination = (() => {
-    if (href) return href;
+    if (hrefProp) return hrefProp;
     if (!hydrated) return "/onboarding/welcome";
 
     bootstrapOnboardingState();
@@ -41,16 +42,20 @@ export function OnboardingStartLink({
   })();
 
   return (
-    <Link
+    <a
       href={destination}
       onClick={(event) => {
+        event.preventDefault();
         bootstrapOnboardingState();
         if (getActivePhase() === "landing") {
           identityService.markGreetingComplete();
         }
         onClick?.(event);
+        navigateOnboarding(destination);
       }}
       {...props}
-    />
+    >
+      {children}
+    </a>
   );
 }

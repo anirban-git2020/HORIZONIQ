@@ -17,6 +17,7 @@ import {
   bootstrapOnboardingState,
   getActivePhase,
 } from "@/lib/onboarding-flow";
+import { navigateOnboarding } from "@/lib/onboarding-nav";
 import { usePreferences } from "@/lib/preferences";
 import { startSessionTiming, track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
@@ -32,14 +33,14 @@ export default function RolePage() {
 
     const phase = getActivePhase();
     if (phase !== "profile") {
-      router.replace(getPathForPhase(phase));
+      navigateOnboarding(getPathForPhase(phase));
       return;
     }
 
     startSessionTiming();
     track("onboarding_started", {});
     setReady(true);
-  }, [hydrated, router]);
+  }, [hydrated]);
 
   if (!hydrated || !ready) {
     return <PageLoader />;

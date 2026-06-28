@@ -1,27 +1,25 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 
 import { PageLoader } from "@/components/ui/page-loader";
 import { getFirstTimeOnboardingPath } from "@/lib/onboarding-flow";
 import { identityService } from "@/lib/identity";
+import { navigateOnboarding } from "@/lib/onboarding-nav";
 
 /** Legacy URL — personalized greeting now lives on the landing page. */
 export default function GreetingPage() {
-  const router = useRouter();
-
   useEffect(() => {
     if (!identityService.hasCompletedWelcome()) {
-      router.replace("/onboarding/welcome");
+      navigateOnboarding("/onboarding/welcome");
       return;
     }
     if (!identityService.getDisplayName()) {
-      router.replace("/onboarding/name");
+      navigateOnboarding("/onboarding/name");
       return;
     }
-    router.replace(getFirstTimeOnboardingPath());
-  }, [router]);
+    navigateOnboarding(getFirstTimeOnboardingPath());
+  }, []);
 
   return <PageLoader label="Continuing…" />;
 }

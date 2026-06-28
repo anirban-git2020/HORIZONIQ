@@ -10,6 +10,7 @@ import {
   getActivePhase,
   migrateCompleteUserIfValid,
 } from "@/lib/onboarding-flow";
+import { navigateOnboarding } from "@/lib/onboarding-nav";
 
 export default function WelcomePage() {
   const [ready, setReady] = useState(false);
@@ -18,13 +19,13 @@ export default function WelcomePage() {
     bootstrapOnboardingState();
 
     if (migrateCompleteUserIfValid()) {
-      window.location.replace("/dashboard");
+      navigateOnboarding("/dashboard");
       return;
     }
 
     const phase = getActivePhase();
     if (phase !== "welcome") {
-      window.location.replace(getPathForPhase(phase));
+      navigateOnboarding(getPathForPhase(phase));
       return;
     }
 

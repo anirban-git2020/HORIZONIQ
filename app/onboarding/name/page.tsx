@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 import { ArrowRight } from "lucide-react";
 
 import { FirstTimeShell } from "@/components/onboarding/first-time-shell";
@@ -14,9 +13,9 @@ import {
   bootstrapOnboardingState,
   getActivePhase,
 } from "@/lib/onboarding-flow";
+import { navigateOnboarding } from "@/lib/onboarding-nav";
 
 export default function NamePage() {
-  const router = useRouter();
   const [name, setName] = useState("");
   const [ready, setReady] = useState(false);
 
@@ -25,21 +24,21 @@ export default function NamePage() {
     const phase = getActivePhase();
 
     if (phase !== "name") {
-      router.replace(getPathForPhase(phase));
+      navigateOnboarding(getPathForPhase(phase));
       return;
     }
 
     const existingName = identityService.getDisplayName();
     if (existingName) setName(existingName);
     setReady(true);
-  }, [router]);
+  }, []);
 
   const handleContinue = () => {
     const trimmed = name.trim();
     if (!trimmed) return;
     identityService.setDisplayName(trimmed);
     advanceOnboardingPhase("landing");
-    router.push("/");
+    navigateOnboarding("/");
   };
 
   if (!ready) return <PageLoader label="Loading…" />;

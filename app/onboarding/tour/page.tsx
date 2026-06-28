@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { Compass, Map } from "lucide-react";
 
 import { FirstTimeShell } from "@/components/onboarding/first-time-shell";
@@ -12,26 +11,26 @@ import { usePreferences } from "@/lib/preferences";
 import { identityService } from "@/lib/identity";
 import { getFirstTimeOnboardingPath, hasCompletedIdentityOnboarding } from "@/lib/onboarding-flow";
 import { advanceOnboardingPhase } from "@/lib/onboarding-state";
+import { navigateOnboarding } from "@/lib/onboarding-nav";
 
 export default function TourChoicePage() {
-  const router = useRouter();
   const { isComplete, hydrated } = usePreferences();
 
   useEffect(() => {
     if (!hydrated) return;
     if (!hasCompletedIdentityOnboarding()) {
-      router.replace(getFirstTimeOnboardingPath());
+      navigateOnboarding(getFirstTimeOnboardingPath());
       return;
     }
     if (!isComplete) {
-      router.replace("/onboarding/role");
+      navigateOnboarding("/onboarding/role");
     }
-  }, [hydrated, isComplete, router]);
+  }, [hydrated, isComplete]);
 
   const goToDashboard = (choice: "guided" | "solo") => {
     identityService.setTourChoice(choice);
     advanceOnboardingPhase("complete");
-    router.push("/dashboard");
+    navigateOnboarding("/dashboard");
   };
 
   if (!hydrated || !isComplete) {

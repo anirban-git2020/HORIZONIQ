@@ -1,20 +1,27 @@
 import type { Preferences } from "@/lib/types";
 import type { TourChoice } from "@/lib/identity/types";
+import type { OnboardingPhase } from "@/lib/onboarding-phase";
+import { getPathForPhase } from "@/lib/onboarding-phase";
+import {
+  clearOnboardingPhaseCookie,
+  hasOnboardingPhaseCookie,
+  readOnboardingPhaseCookie,
+  setOnboardingPhaseCookie,
+} from "@/lib/onboarding-cookie";
 
-/** Canonical onboarding progress — derived from timestamps + profile, never trusted alone. */
-export type OnboardingPhase =
-  | "welcome"
-  | "name"
-  | "landing"
-  | "profile"
-  | "complete";
+export type { OnboardingPhase };
+export { getPathForPhase };
 
 export const ONBOARDING_SCHEMA_VERSION = 1;
 
 const STORAGE_KEY = "horizoniq.onboarding.v1";
 
-const LEGACY_IDENTITY_KEY = "horizoniq.identity.v1";
-const LEGACY_FLOW_VERSION_KEY = "horizoniq.onboarding.flowVersion";
+const LEGACY_KEYS = [
+  "horizoniq.identity.v1",
+  "horizoniq.onboarding.flowVersion",
+  "horizoniq_phase",
+  "horizoniq_phase_v1",
+];
 
 export interface OnboardingRecord {
   schemaVersion: number;
@@ -68,8 +75,8 @@ export function isProfileComplete(prefs: Preferences): boolean {
   );
 }
 
-/** Single source of truth — recomputed on every read after bootstrap. */
-export function derivePhase(
+/** Derive phase from persisted data — used only for migration, not routing. */
+export function derivePhaseFromStorage(
   record: OnboardingRecord,
   prefs = readPreferencesFromStorage()
 ): OnboardingPhase {
@@ -80,19 +87,11 @@ export function derivePhase(
   return "complete";
 }
 
-export function getPathForPhase(phase: OnboardingPhase): string {
-  switch (phase) {
-    case "welcome":
-      return "/onboarding/welcome";
-    case "name":
-      return "/onboarding/name";
-    case "landing":
-      return "/";
-    case "profile":
-      return "/onboarding/role";
-    case "complete":
-      return "/dashboard";
-  }
+/** Active routing phase — cookie first, always. */
+export function getActivePhase(): OnboardingPhase {
+  const cookiePhase = readOnboardingPhaseCookie();
+  if (cookiePhase) return cookiePhase;
+  return "welcome";
 }
 
 function normalizeRecord(raw: Partial<OnboardingRecord>): OnboardingRecord {
@@ -105,63 +104,6 @@ function normalizeRecord(raw: Partial<OnboardingRecord>): OnboardingRecord {
   };
 }
 
-/** Strip impossible downstream timestamps so phase derivation stays consistent. */
-export function reconcileRecord(record: OnboardingRecord): OnboardingRecord {
-  if (!record.welcomeCompletedAt) {
-    return { ...EMPTY_ONBOARDING };
-  }
-
-  if (!record.displayName) {
-    return {
-      ...record,
-      landingAcknowledgedAt: null,
-      tourChoice: null,
-      guidedTourCompletedAt: null,
-    };
-  }
-
-  if (!record.landingAcknowledgedAt) {
-    return {
-      ...record,
-      tourChoice: null,
-      guidedTourCompletedAt: null,
-    };
-  }
-
-  if (record.guidedTourCompletedAt && record.tourChoice !== "guided") {
-    return { ...record, guidedTourCompletedAt: null };
-  }
-
-  return { ...record };
-}
-
-function readLegacyIdentity(): Partial<OnboardingRecord> | null {
-  if (!isBrowser()) return null;
-  try {
-    const raw = window.localStorage.getItem(LEGACY_IDENTITY_KEY);
-    if (!raw) return null;
-    const parsed = JSON.parse(raw) as {
-      displayName?: string | null;
-      welcomeCompletedAt?: string | null;
-      welcomeSkipped?: boolean;
-      greetingCompletedAt?: string | null;
-      tourChoice?: TourChoice | null;
-      guidedTourCompletedAt?: string | null;
-    };
-    return {
-      displayName:
-        typeof parsed.displayName === "string" ? parsed.displayName.trim() : null,
-      welcomeCompletedAt: parsed.welcomeCompletedAt ?? null,
-      welcomeSkipped: parsed.welcomeSkipped ?? false,
-      landingAcknowledgedAt: parsed.greetingCompletedAt ?? null,
-      tourChoice: parsed.tourChoice ?? null,
-      guidedTourCompletedAt: parsed.guidedTourCompletedAt ?? null,
-    };
-  } catch {
-    return null;
-  }
-}
-
 export function readOnboardingRecord(): OnboardingRecord {
   if (!isBrowser()) return { ...EMPTY_ONBOARDING };
 
@@ -171,12 +113,7 @@ export function readOnboardingRecord(): OnboardingRecord {
       return normalizeRecord(JSON.parse(raw) as Partial<OnboardingRecord>);
     }
   } catch {
-    // Fall through to legacy migration.
-  }
-
-  const legacy = readLegacyIdentity();
-  if (legacy) {
-    return normalizeRecord(legacy);
+    // Ignore corrupt storage.
   }
 
   return { ...EMPTY_ONBOARDING };
@@ -187,38 +124,70 @@ export function writeOnboardingRecord(record: OnboardingRecord): void {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
 }
 
-function cleanupLegacyKeys(): void {
+function cleanupLegacyStorageKeys(): void {
   if (!isBrowser()) return;
-  window.localStorage.removeItem(LEGACY_IDENTITY_KEY);
-  window.localStorage.removeItem(LEGACY_FLOW_VERSION_KEY);
+  for (const key of LEGACY_KEYS) {
+    window.localStorage.removeItem(key);
+  }
+  const legacyCookies = ["horizoniq_phase", "horizoniq_phase_v1"];
+  for (const name of legacyCookies) {
+    document.cookie = `${name}=;path=/;max-age=0;SameSite=Lax`;
+  }
 }
 
 let bootstrapRan = false;
 
 /**
- * Load unified onboarding state, reconcile timestamps, persist, and remove legacy keys.
- * Must run once before any route guard reads storage.
+ * Sync cookie + storage on first client load.
+ * Cookie is routing authority; storage holds user data only.
  */
-export function bootstrapOnboardingState(): OnboardingRecord {
-  if (!isBrowser()) return { ...EMPTY_ONBOARDING };
-  if (bootstrapRan) return readOnboardingRecord();
+export function bootstrapOnboardingState(): OnboardingPhase {
+  if (!isBrowser()) return "welcome";
+  if (bootstrapRan) return getActivePhase();
   bootstrapRan = true;
 
-  const reconciled = reconcileRecord(readOnboardingRecord());
-  writeOnboardingRecord(reconciled);
-  cleanupLegacyKeys();
-  return reconciled;
+  cleanupLegacyStorageKeys();
+
+  const record = readOnboardingRecord();
+  const prefs = readPreferencesFromStorage();
+  const storedPhase = derivePhaseFromStorage(record, prefs);
+
+  if (!hasOnboardingPhaseCookie()) {
+    if (storedPhase === "complete") {
+      setOnboardingPhaseCookie("complete");
+    } else {
+      writeOnboardingRecord({ ...EMPTY_ONBOARDING });
+      setOnboardingPhaseCookie("welcome");
+    }
+    return getActivePhase();
+  }
+
+  const cookiePhase = readOnboardingPhaseCookie()!;
+
+  if (cookiePhase === "complete" && storedPhase !== "complete") {
+    setOnboardingPhaseCookie(storedPhase);
+    return storedPhase;
+  }
+
+  if (cookiePhase !== "complete" && storedPhase === "complete") {
+    setOnboardingPhaseCookie("complete");
+    return "complete";
+  }
+
+  return cookiePhase;
+}
+
+export function advanceOnboardingPhase(phase: OnboardingPhase): void {
+  setOnboardingPhaseCookie(phase);
 }
 
 export function clearOnboardingState(): void {
   if (!isBrowser()) return;
   window.localStorage.removeItem(STORAGE_KEY);
-  window.localStorage.removeItem(LEGACY_IDENTITY_KEY);
-  window.localStorage.removeItem(LEGACY_FLOW_VERSION_KEY);
+  clearOnboardingPhaseCookie();
   bootstrapRan = false;
 }
 
-/** Clear all HorizonIQ client storage (Start over). */
 export function clearAllHorizonIQClientState(): void {
   if (!isBrowser()) return;
 
@@ -234,6 +203,9 @@ export function clearAllHorizonIQClientState(): void {
   }
   window.localStorage.removeItem("horizoniq-visit-snapshot");
 
+  clearOnboardingPhaseCookie();
+  cleanupLegacyStorageKeys();
+
   try {
     window.sessionStorage.clear();
   } catch {
@@ -241,4 +213,5 @@ export function clearAllHorizonIQClientState(): void {
   }
 
   bootstrapRan = false;
+  setOnboardingPhaseCookie("welcome");
 }

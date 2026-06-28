@@ -4,6 +4,7 @@ import { Inter, Outfit } from "next/font/google";
 import { PreferencesProvider } from "@/lib/preferences";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { OnboardingBootstrap } from "@/components/onboarding/onboarding-bootstrap";
+import { ONBOARDING_COOKIE_INIT_SCRIPT } from "@/components/onboarding/onboarding-cookie-init";
 import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
 import { ScrollToTop } from "@/components/navigation/scroll-to-top";
 import "./globals.css";
@@ -41,6 +42,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} dark`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: ONBOARDING_COOKIE_INIT_SCRIPT }} />
+      </head>
       <body
         className="min-h-dvh bg-background font-sans text-foreground"
         suppressHydrationWarning

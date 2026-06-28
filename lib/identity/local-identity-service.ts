@@ -6,9 +6,8 @@ import type {
 } from "./types";
 import { EMPTY_IDENTITY } from "./types";
 import {
-  bootstrapOnboardingState,
+  advanceOnboardingPhase,
   clearOnboardingState,
-  derivePhase,
   readOnboardingRecord,
   writeOnboardingRecord,
   type OnboardingRecord,
@@ -58,6 +57,7 @@ export class LocalIdentityService implements IdentityService {
       welcomeCompletedAt: new Date().toISOString(),
       welcomeSkipped: options?.skipped ?? false,
     });
+    advanceOnboardingPhase("name");
   }
 
   hasCompletedGreeting(): boolean {
@@ -69,6 +69,7 @@ export class LocalIdentityService implements IdentityService {
       ...readRecord(),
       landingAcknowledgedAt: new Date().toISOString(),
     });
+    advanceOnboardingPhase("profile");
   }
 
   getTourChoice(): TourChoice | null {
@@ -94,7 +95,7 @@ export class LocalIdentityService implements IdentityService {
   }
 
   repair(): void {
-    bootstrapOnboardingState();
+    // Cookie + middleware own routing; storage repair is a no-op.
   }
 
   replaceRecord(record: IdentityRecord): void {
@@ -107,20 +108,15 @@ export class LocalIdentityService implements IdentityService {
       tourChoice: record.tourChoice,
       guidedTourCompletedAt: record.guidedTourCompletedAt,
     });
-    bootstrapOnboardingState();
   }
 
   clear(): void {
     clearOnboardingState();
+    advanceOnboardingPhase("welcome");
   }
 
   getAuthProvider(): AuthProvider {
     return "local";
-  }
-
-  /** Current onboarding step derived from stored timestamps + profile. */
-  getPhase() {
-    return derivePhase(readRecord());
   }
 }
 

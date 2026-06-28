@@ -1,24 +1,29 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
 
 import { WelcomeScreen } from "@/components/onboarding/welcome-screen";
 import { PageLoader } from "@/components/ui/page-loader";
-import { getFirstTimeOnboardingPath } from "@/lib/onboarding-flow";
-import { identityService } from "@/lib/identity";
+import { getPathForPhase } from "@/lib/onboarding-phase";
+import {
+  bootstrapOnboardingState,
+  getActivePhase,
+} from "@/lib/onboarding-state";
 
 export default function WelcomePage() {
-  const router = useRouter();
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (identityService.hasCompletedWelcome()) {
-      router.replace(getFirstTimeOnboardingPath());
+    bootstrapOnboardingState();
+    const phase = getActivePhase();
+
+    if (phase !== "welcome") {
+      window.location.replace(getPathForPhase(phase));
       return;
     }
+
     setReady(true);
-  }, [router]);
+  }, []);
 
   if (!ready) {
     return <PageLoader label="Loading…" />;

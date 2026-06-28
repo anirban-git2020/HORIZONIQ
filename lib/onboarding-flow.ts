@@ -1,36 +1,21 @@
 import {
   bootstrapOnboardingState,
-  derivePhase,
-  getPathForPhase,
-  isProfileComplete,
-  readOnboardingRecord,
-  readPreferencesFromStorage,
+  getActivePhase,
 } from "@/lib/onboarding-state";
+import { getPathForPhase } from "@/lib/onboarding-phase";
 
-/**
- * Resume path from derived onboarding phase.
- * Welcome → Name → Landing → Profile → Dashboard.
- */
 export function getFirstTimeOnboardingPath(): string {
-  const record = readOnboardingRecord();
-  const prefs = readPreferencesFromStorage();
-  return getPathForPhase(derivePhase(record, prefs));
+  bootstrapOnboardingState();
+  return getPathForPhase(getActivePhase());
 }
 
-/** Landing acknowledged — user may enter profile setup. */
 export function hasCompletedIdentityOnboarding(): boolean {
-  const phase = derivePhase(
-    readOnboardingRecord(),
-    readPreferencesFromStorage()
-  );
+  const phase = getActivePhase();
   return phase === "profile" || phase === "complete";
 }
 
 export function isFullyOnboarded(): boolean {
-  return (
-    derivePhase(readOnboardingRecord(), readPreferencesFromStorage()) ===
-    "complete"
-  );
+  return getActivePhase() === "complete";
 }
 
 export function getOnboardingRedirectPath(): string {
@@ -41,4 +26,14 @@ export function ensureOnboardingReady(): void {
   bootstrapOnboardingState();
 }
 
-export { isProfileComplete };
+export {
+  bootstrapOnboardingState,
+  clearAllHorizonIQClientState,
+  getActivePhase,
+  advanceOnboardingPhase,
+  isProfileComplete,
+  readOnboardingRecord,
+  readPreferencesFromStorage,
+} from "@/lib/onboarding-state";
+
+export { getPathForPhase } from "@/lib/onboarding-phase";

@@ -7,8 +7,13 @@ import { ArrowRight } from "lucide-react";
 import { FirstTimeShell } from "@/components/onboarding/first-time-shell";
 import { Button } from "@/components/ui/button";
 import { PageLoader } from "@/components/ui/page-loader";
-import { getFirstTimeOnboardingPath } from "@/lib/onboarding-flow";
 import { identityService } from "@/lib/identity";
+import { getPathForPhase } from "@/lib/onboarding-phase";
+import {
+  advanceOnboardingPhase,
+  bootstrapOnboardingState,
+  getActivePhase,
+} from "@/lib/onboarding-state";
 
 export default function NamePage() {
   const router = useRouter();
@@ -16,19 +21,22 @@ export default function NamePage() {
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!identityService.hasCompletedWelcome()) {
+    bootstrapOnboardingState();
+    const phase = getActivePhase();
+
+    if (phase === "welcome") {
       router.replace("/onboarding/welcome");
       return;
     }
 
     const existingName = identityService.getDisplayName();
     if (existingName) {
-      const next = getFirstTimeOnboardingPath();
-      if (next !== "/onboarding/name") {
-        router.replace(next);
-        return;
-      }
       setName(existingName);
+    }
+
+    if (phase !== "name") {
+      router.replace(getPathForPhase(phase));
+      return;
     }
 
     setReady(true);
@@ -38,6 +46,7 @@ export default function NamePage() {
     const trimmed = name.trim();
     if (!trimmed) return;
     identityService.setDisplayName(trimmed);
+    advanceOnboardingPhase("landing");
     router.push("/");
   };
 

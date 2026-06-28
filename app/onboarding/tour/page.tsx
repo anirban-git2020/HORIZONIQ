@@ -11,6 +11,7 @@ import { PremiumCard } from "@/components/ui/premium-card";
 import { usePreferences } from "@/lib/preferences";
 import { identityService } from "@/lib/identity";
 import { getFirstTimeOnboardingPath, hasCompletedIdentityOnboarding } from "@/lib/onboarding-flow";
+import { advanceOnboardingPhase } from "@/lib/onboarding-state";
 
 export default function TourChoicePage() {
   const router = useRouter();
@@ -29,6 +30,7 @@ export default function TourChoicePage() {
 
   const goToDashboard = (choice: "guided" | "solo") => {
     identityService.setTourChoice(choice);
+    advanceOnboardingPhase("complete");
     router.push("/dashboard");
   };
 

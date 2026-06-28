@@ -203,7 +203,8 @@ export function clearLegacyOnboardingArtifacts(): void {
 }
 
 function applyReconcileWrites(
-  result: ReturnType<typeof reconcileState>
+  result: ReturnType<typeof reconcileState>,
+  cookiePhase: OnboardingPhase | null
 ): void {
   if (typeof window === "undefined") return;
 
@@ -243,7 +244,7 @@ export function reconcileOnboardingState(
   const path = pathname ?? window.location.pathname;
 
   const result = reconcileState(cookiePhase, record, prefs, path);
-  applyReconcileWrites(result);
+  applyReconcileWrites(result, cookiePhase);
 
   return {
     phase: result.phase,

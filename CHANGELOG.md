@@ -8,6 +8,10 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Fallback timeline
+
+- **2026-06-28** — Established known-good restore point `fallback/2026-06-28-v1.1-stable` at `aab7e55`. Full Vercel onboarding flow verified in incognito. See `FALLBACK_TIMELINE.md`.
+
 ### Sprint 3C — Immersive Intelligence Experience
 
 #### Added

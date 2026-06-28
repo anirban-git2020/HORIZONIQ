@@ -13,6 +13,8 @@
 
 **Read first in a new session:** This file → `PROJECT_MEMORY.md` → `PROJECT_DECISIONS.md` → `CHANGELOG.md` → `.cursorrules`
 
+**Known-good fallback:** `FALLBACK_TIMELINE.md` — tag `fallback/2026-06-28-v1.1-stable` at `aab7e55` (Vercel onboarding verified 2026-06-28).
+
 ---
 
 ## Repo State (2026-06-28)

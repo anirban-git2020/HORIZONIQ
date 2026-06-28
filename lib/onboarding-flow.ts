@@ -1,11 +1,13 @@
 import {
   bootstrapOnboardingState,
   getActivePhase,
+  isStrictlyOnboardingComplete,
+  wipeIncompleteOnboardingData,
 } from "@/lib/onboarding-state";
 import { getPathForPhase } from "@/lib/onboarding-phase";
+import { setOnboardingPhaseCookie } from "@/lib/onboarding-cookie";
 
 export function getFirstTimeOnboardingPath(): string {
-  bootstrapOnboardingState();
   return getPathForPhase(getActivePhase());
 }
 
@@ -26,6 +28,16 @@ export function ensureOnboardingReady(): void {
   bootstrapOnboardingState();
 }
 
+/** Returning users with valid saved data — skip re-onboarding once. */
+export function migrateCompleteUserIfValid(): boolean {
+  bootstrapOnboardingState();
+  if (isStrictlyOnboardingComplete() && getActivePhase() !== "complete") {
+    setOnboardingPhaseCookie("complete");
+    return true;
+  }
+  return false;
+}
+
 export {
   bootstrapOnboardingState,
   clearAllHorizonIQClientState,
@@ -34,6 +46,7 @@ export {
   isProfileComplete,
   readOnboardingRecord,
   readPreferencesFromStorage,
+  wipeIncompleteOnboardingData,
 } from "@/lib/onboarding-state";
 
 export { getPathForPhase } from "@/lib/onboarding-phase";

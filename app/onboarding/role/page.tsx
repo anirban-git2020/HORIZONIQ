@@ -1,8 +1,7 @@
 "use client";
 
-import Link from "next/link";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { OnboardingShell } from "@/components/onboarding/onboarding-shell";
@@ -13,29 +12,36 @@ import { Button } from "@/components/ui/button";
 import { buttonVariants } from "@/components/ui/button";
 import { PageLoader } from "@/components/ui/page-loader";
 import { ROLES } from "@/lib/options";
-import { getFirstTimeOnboardingPath } from "@/lib/onboarding-flow";
+import { getPathForPhase } from "@/lib/onboarding-phase";
+import {
+  bootstrapOnboardingState,
+  getActivePhase,
+} from "@/lib/onboarding-flow";
 import { usePreferences } from "@/lib/preferences";
 import { startSessionTiming, track } from "@/lib/analytics";
-import { useRequireIdentityOnboarding } from "@/hooks/use-require-identity-onboarding";
 import { cn } from "@/lib/utils";
 
 export default function RolePage() {
   const router = useRouter();
   const { preferences, setRole, hydrated } = usePreferences();
-  const identityReady = useRequireIdentityOnboarding(hydrated);
+  const [ready, setReady] = useState(false);
 
   useEffect(() => {
-    if (!hydrated || !identityReady) return;
-    startSessionTiming();
-    const resumePath = getFirstTimeOnboardingPath();
-    if (resumePath !== "/onboarding/role") {
-      router.replace(resumePath);
+    if (!hydrated) return;
+    bootstrapOnboardingState();
+
+    const phase = getActivePhase();
+    if (phase !== "profile") {
+      router.replace(getPathForPhase(phase));
       return;
     }
-    track("onboarding_started", {});
-  }, [hydrated, identityReady, router]);
 
-  if (!hydrated || !identityReady) {
+    startSessionTiming();
+    track("onboarding_started", {});
+    setReady(true);
+  }, [hydrated, router]);
+
+  if (!hydrated || !ready) {
     return <PageLoader />;
   }
 
@@ -46,13 +52,14 @@ export default function RolePage() {
       subtitle="We tailor every signal, skill, and recommendation to your goals."
       footer={
         <>
-          <Link
-            href="/"
+          <button
+            type="button"
             className={cn(buttonVariants({ variant: "ghost", size: "md" }))}
+            onClick={() => router.push("/")}
           >
             <ArrowLeft />
             Back
-          </Link>
+          </button>
           <Button
             onClick={() => router.push("/onboarding/region")}
             disabled={!preferences.role}

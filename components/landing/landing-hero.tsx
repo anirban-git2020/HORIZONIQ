@@ -10,7 +10,6 @@ import { ProvenanceBadge } from "@/components/trust/provenance-badge";
 import { buttonVariants } from "@/components/ui/button";
 import { LANDING_HERO_HEADLINE } from "@/lib/copy";
 import {
-  derivePhaseFromStorage,
   getActivePhase,
   readOnboardingRecord,
 } from "@/lib/onboarding-state";

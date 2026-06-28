@@ -13,7 +13,7 @@ import {
   advanceOnboardingPhase,
   bootstrapOnboardingState,
   getActivePhase,
-} from "@/lib/onboarding-state";
+} from "@/lib/onboarding-flow";
 
 export default function NamePage() {
   const router = useRouter();
@@ -24,21 +24,13 @@ export default function NamePage() {
     bootstrapOnboardingState();
     const phase = getActivePhase();
 
-    if (phase === "welcome") {
-      router.replace("/onboarding/welcome");
-      return;
-    }
-
-    const existingName = identityService.getDisplayName();
-    if (existingName) {
-      setName(existingName);
-    }
-
     if (phase !== "name") {
       router.replace(getPathForPhase(phase));
       return;
     }
 
+    const existingName = identityService.getDisplayName();
+    if (existingName) setName(existingName);
     setReady(true);
   }, [router]);
 
@@ -50,9 +42,7 @@ export default function NamePage() {
     router.push("/");
   };
 
-  if (!ready) {
-    return <PageLoader label="Loading…" />;
-  }
+  if (!ready) return <PageLoader label="Loading…" />;
 
   return (
     <FirstTimeShell

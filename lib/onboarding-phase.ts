@@ -6,8 +6,11 @@ export type OnboardingPhase =
   | "profile"
   | "complete";
 
-/** Bump to invalidate all prior client storage/cookies and restart onboarding. */
-export const ONBOARDING_COOKIE_NAME = "horizoniq_phase_v2";
+/**
+ * Bump version suffix to invalidate all prior cookies on deploy.
+ * Old names: horizoniq_phase, horizoniq_phase_v1, horizoniq_phase_v2
+ */
+export const ONBOARDING_COOKIE_NAME = "hziq_ob_v3";
 
 export const ONBOARDING_PHASES: OnboardingPhase[] = [
   "welcome",
@@ -36,7 +39,6 @@ export function getPathForPhase(phase: OnboardingPhase): string {
   }
 }
 
-/** Routes allowed while in each phase (middleware uses prefix matching for signals). */
 export function getAllowedPathPrefixes(phase: OnboardingPhase): string[] {
   switch (phase) {
     case "welcome":
@@ -54,14 +56,7 @@ export function getAllowedPathPrefixes(phase: OnboardingPhase): string[] {
         "/onboarding/tour",
       ];
     case "complete":
-      return [
-        "/",
-        "/dashboard",
-        "/signals",
-        "/onboarding/interests",
-        "/onboarding/role",
-        "/onboarding/region",
-      ];
+      return ["/", "/dashboard", "/signals", "/onboarding/interests"];
   }
 }
 
@@ -74,6 +69,7 @@ export function isPathAllowedForPhase(
   );
 }
 
+/** Unknown or legacy cookie → welcome (never skip ahead). */
 export function parsePhaseCookie(value: string | undefined): OnboardingPhase {
   if (value && isOnboardingPhase(value)) return value;
   return "welcome";

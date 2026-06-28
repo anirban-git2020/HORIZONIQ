@@ -1,30 +1,31 @@
 import type { Preferences } from "@/lib/types";
 import type { TourChoice } from "@/lib/identity/types";
 import type { OnboardingPhase } from "@/lib/onboarding-phase";
-import { getPathForPhase } from "@/lib/onboarding-phase";
 import {
   clearOnboardingPhaseCookie,
-  hasOnboardingPhaseCookie,
   readOnboardingPhaseCookie,
   setOnboardingPhaseCookie,
 } from "@/lib/onboarding-cookie";
 
 export type { OnboardingPhase };
-export { getPathForPhase };
-
-export const ONBOARDING_SCHEMA_VERSION = 1;
+export { getPathForPhase } from "@/lib/onboarding-phase";
 
 const STORAGE_KEY = "horizoniq.onboarding.v1";
+const PREFS_KEY = "horizoniq.preferences.v2";
 
-const LEGACY_KEYS = [
-  "horizoniq.identity.v1",
-  "horizoniq.onboarding.flowVersion",
+const LEGACY_COOKIES = [
   "horizoniq_phase",
   "horizoniq_phase_v1",
+  "horizoniq_phase_v2",
+];
+
+const LEGACY_STORAGE = [
+  "horizoniq.identity.v1",
+  "horizoniq.onboarding.flowVersion",
+  "horizoniq.preferences.v1",
 ];
 
 export interface OnboardingRecord {
-  schemaVersion: number;
   displayName: string | null;
   welcomeCompletedAt: string | null;
   welcomeSkipped: boolean;
@@ -34,7 +35,6 @@ export interface OnboardingRecord {
 }
 
 export const EMPTY_ONBOARDING: OnboardingRecord = {
-  schemaVersion: ONBOARDING_SCHEMA_VERSION,
   displayName: null,
   welcomeCompletedAt: null,
   welcomeSkipped: false,
@@ -50,11 +50,8 @@ function isBrowser(): boolean {
 export function readPreferencesFromStorage(): Preferences {
   const empty: Preferences = { role: null, region: null, interests: [] };
   if (!isBrowser()) return empty;
-
   try {
-    const raw =
-      window.localStorage.getItem("horizoniq.preferences.v2") ??
-      window.localStorage.getItem("horizoniq.preferences.v1");
+    const raw = window.localStorage.getItem(PREFS_KEY);
     if (!raw) return empty;
     const parsed = JSON.parse(raw) as Partial<Preferences>;
     return {
@@ -75,48 +72,35 @@ export function isProfileComplete(prefs: Preferences): boolean {
   );
 }
 
-/** Derive phase from persisted data — used only for migration, not routing. */
-export function derivePhaseFromStorage(
-  record: OnboardingRecord,
-  prefs = readPreferencesFromStorage()
-): OnboardingPhase {
-  if (!record.welcomeCompletedAt) return "welcome";
-  if (!record.displayName) return "name";
-  if (!record.landingAcknowledgedAt) return "landing";
-  if (!isProfileComplete(prefs)) return "profile";
-  return "complete";
-}
-
-/** Active routing phase — cookie first, always. */
-export function getActivePhase(): OnboardingPhase {
-  const cookiePhase = readOnboardingPhaseCookie();
-  if (cookiePhase) return cookiePhase;
-  return "welcome";
-}
-
-function normalizeRecord(raw: Partial<OnboardingRecord>): OnboardingRecord {
-  return {
-    ...EMPTY_ONBOARDING,
-    ...raw,
-    schemaVersion: ONBOARDING_SCHEMA_VERSION,
-    displayName:
-      typeof raw.displayName === "string" ? raw.displayName.trim() || null : null,
-  };
+/** True only when every onboarding step was finished in a prior session. */
+export function isStrictlyOnboardingComplete(): boolean {
+  const record = readOnboardingRecord();
+  const prefs = readPreferencesFromStorage();
+  return (
+    record.welcomeCompletedAt !== null &&
+    record.displayName !== null &&
+    record.landingAcknowledgedAt !== null &&
+    isProfileComplete(prefs)
+  );
 }
 
 export function readOnboardingRecord(): OnboardingRecord {
   if (!isBrowser()) return { ...EMPTY_ONBOARDING };
-
   try {
     const raw = window.localStorage.getItem(STORAGE_KEY);
-    if (raw) {
-      return normalizeRecord(JSON.parse(raw) as Partial<OnboardingRecord>);
-    }
+    if (!raw) return { ...EMPTY_ONBOARDING };
+    const parsed = JSON.parse(raw) as Partial<OnboardingRecord>;
+    return {
+      ...EMPTY_ONBOARDING,
+      ...parsed,
+      displayName:
+        typeof parsed.displayName === "string"
+          ? parsed.displayName.trim() || null
+          : null,
+    };
   } catch {
-    // Ignore corrupt storage.
+    return { ...EMPTY_ONBOARDING };
   }
-
-  return { ...EMPTY_ONBOARDING };
 }
 
 export function writeOnboardingRecord(record: OnboardingRecord): void {
@@ -124,87 +108,71 @@ export function writeOnboardingRecord(record: OnboardingRecord): void {
   window.localStorage.setItem(STORAGE_KEY, JSON.stringify(record));
 }
 
-function cleanupLegacyStorageKeys(): void {
-  if (!isBrowser()) return;
-  for (const key of LEGACY_KEYS) {
-    window.localStorage.removeItem(key);
-  }
-  const legacyCookies = ["horizoniq_phase", "horizoniq_phase_v1"];
-  for (const name of legacyCookies) {
-    document.cookie = `${name}=;path=/;max-age=0;SameSite=Lax`;
-  }
-}
-
-let bootstrapRan = false;
-
-/**
- * Sync cookie + storage on first client load.
- * Cookie is routing authority; storage holds user data only.
- */
-export function bootstrapOnboardingState(): OnboardingPhase {
-  if (!isBrowser()) return "welcome";
-  if (bootstrapRan) return getActivePhase();
-  bootstrapRan = true;
-
-  cleanupLegacyStorageKeys();
-
-  const record = readOnboardingRecord();
-  const prefs = readPreferencesFromStorage();
-  const storedPhase = derivePhaseFromStorage(record, prefs);
-
-  if (!hasOnboardingPhaseCookie()) {
-    if (storedPhase === "complete") {
-      setOnboardingPhaseCookie("complete");
-    } else {
-      writeOnboardingRecord({ ...EMPTY_ONBOARDING });
-      setOnboardingPhaseCookie("welcome");
-    }
-    return getActivePhase();
-  }
-
-  const cookiePhase = readOnboardingPhaseCookie()!;
-
-  if (cookiePhase === "complete" && storedPhase !== "complete") {
-    setOnboardingPhaseCookie(storedPhase);
-    return storedPhase;
-  }
-
-  if (cookiePhase !== "complete" && storedPhase === "complete") {
-    setOnboardingPhaseCookie("complete");
-    return "complete";
-  }
-
-  return cookiePhase;
+/** Cookie is the only routing authority — never derived from localStorage. */
+export function getActivePhase(): OnboardingPhase {
+  return readOnboardingPhaseCookie() ?? "welcome";
 }
 
 export function advanceOnboardingPhase(phase: OnboardingPhase): void {
   setOnboardingPhaseCookie(phase);
 }
 
-export function clearOnboardingState(): void {
+function clearLegacyArtifacts(): void {
   if (!isBrowser()) return;
-  window.localStorage.removeItem(STORAGE_KEY);
-  clearOnboardingPhaseCookie();
-  bootstrapRan = false;
+  for (const key of LEGACY_STORAGE) {
+    window.localStorage.removeItem(key);
+  }
+  for (const name of LEGACY_COOKIES) {
+    document.cookie = `${name}=;path=/;max-age=0;SameSite=Lax`;
+  }
+}
+
+/** Wipe partial onboarding data so stale prefs cannot skip steps. */
+export function wipeIncompleteOnboardingData(): void {
+  if (!isBrowser()) return;
+  if (isStrictlyOnboardingComplete()) return;
+
+  writeOnboardingRecord({ ...EMPTY_ONBOARDING });
+  window.localStorage.removeItem(PREFS_KEY);
+  window.localStorage.removeItem("horizoniq-visit-snapshot");
+  clearLegacyArtifacts();
+}
+
+let bootstrapRan = false;
+
+/**
+ * One-time client init: clear legacy artifacts, ensure cookie exists.
+ * Does NOT sync phase from localStorage (that caused skip-ahead bugs).
+ */
+export function bootstrapOnboardingState(): OnboardingPhase {
+  if (!isBrowser()) return "welcome";
+  if (bootstrapRan) return getActivePhase();
+  bootstrapRan = true;
+
+  clearLegacyArtifacts();
+
+  const cookie = readOnboardingPhaseCookie();
+  if (!cookie) {
+    if (isStrictlyOnboardingComplete()) {
+      setOnboardingPhaseCookie("complete");
+    } else {
+      wipeIncompleteOnboardingData();
+      setOnboardingPhaseCookie("welcome");
+    }
+  }
+
+  return getActivePhase();
 }
 
 export function clearAllHorizonIQClientState(): void {
   if (!isBrowser()) return;
 
-  const keys: string[] = [];
-  for (let i = 0; i < window.localStorage.length; i++) {
+  for (let i = window.localStorage.length - 1; i >= 0; i--) {
     const key = window.localStorage.key(i);
-    if (key?.startsWith("horizoniq.")) {
-      keys.push(key);
+    if (key?.startsWith("horizoniq.") || key === "horizoniq-visit-snapshot") {
+      window.localStorage.removeItem(key);
     }
   }
-  for (const key of keys) {
-    window.localStorage.removeItem(key);
-  }
-  window.localStorage.removeItem("horizoniq-visit-snapshot");
-
-  clearOnboardingPhaseCookie();
-  cleanupLegacyStorageKeys();
 
   try {
     window.sessionStorage.clear();
@@ -212,6 +180,14 @@ export function clearAllHorizonIQClientState(): void {
     // Ignore.
   }
 
+  clearOnboardingPhaseCookie();
+  clearLegacyArtifacts();
   bootstrapRan = false;
   setOnboardingPhaseCookie("welcome");
+}
+
+export function clearOnboardingState(): void {
+  writeOnboardingRecord({ ...EMPTY_ONBOARDING });
+  clearOnboardingPhaseCookie();
+  bootstrapRan = false;
 }

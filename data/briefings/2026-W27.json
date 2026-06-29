@@ -1,0 +1,1097 @@
+{
+  "briefingPeriod": "2026-W27",
+  "briefingLabel": "Week of June 29, 2026 – July 5, 2026",
+  "publishedAt": "2026-06-29T10:55:14.320Z",
+  "dataProvenance": "pipeline",
+  "buckets": {
+    "new": [],
+    "rising": [],
+    "falling": [
+      "quantum-error-correction",
+      "cloud-cost-reckoning",
+      "smart-manufacturing",
+      "grid-storage",
+      "lab-automation-biochem",
+      "creative-ai-tools"
+    ],
+    "stable": [
+      "ai-agents",
+      "humanoid-robotics",
+      "ai-cyber-threats",
+      "supply-chain-resilience",
+      "ai-diagnostics",
+      "embedded-finance",
+      "ai-native-startups",
+      "vc-ai-concentration",
+      "synthetic-biology",
+      "life-sciences-ai-research",
+      "commerce-analytics-demand"
+    ]
+  },
+  "signalStates": [
+    {
+      "signalId": "ai-agents",
+      "momentum": 36,
+      "confidence": 79,
+      "previousMomentum": 40,
+      "previousConfidence": 75,
+      "change": {
+        "type": "stable",
+        "summary": "Autonomous AI Agents held steady in Artificial Intelligence with Wikimedia Pageviews +10%."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: HackerRank open sourced its ATS. My resume scored 90/100. Oh wait 74. No – 88",
+          "type": "live",
+          "url": "https://danunparsed.com/p/hackerrank-open-source-ats"
+        },
+        {
+          "label": "Hacker News: Herdr: Agent multiplexer that lives in your terminal",
+          "type": "live",
+          "url": "https://github.com/ogulcancelik/herdr"
+        },
+        {
+          "label": "Product Hunt: Spira for Product Hunt Makers",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/spira-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        },
+        {
+          "label": "Product Hunt: Receiptor AI — Agent Mode",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/receiptor-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 10,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 89,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 25,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 79,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "humanoid-robotics",
+      "momentum": 49,
+      "confidence": 95,
+      "previousMomentum": 43,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "Humanoid Robotics held steady in Robotics with Wikimedia Pageviews -6%."
+      },
+      "sources": [
+        {
+          "label": "Wikimedia: Robotics — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Robotics"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 6,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 20,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 95,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "quantum-error-correction",
+      "momentum": 20,
+      "confidence": 87,
+      "previousMomentum": 40,
+      "previousConfidence": 83,
+      "change": {
+        "type": "falling",
+        "summary": "Momentum cooled in Quantum Computing this week (Hacker News -100%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Diameter truncated operator evolution",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28313v1"
+        },
+        {
+          "label": "arXiv: Composing Quantum Instruments",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28291v1"
+        },
+        {
+          "label": "arXiv: Revealing precision bounds on neutrino oscillation parameters with quantum estimation theory",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28275v1"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Hacker News",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 87,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-cyber-threats",
+      "momentum": 42,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "AI-Powered Cyber Threats held steady in Cybersecurity with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Post-Mythos Cybersecurity: Keep calm and carry on",
+          "type": "live",
+          "url": "https://cephalosec.com/blog/cybersecurity-in-the-post-mythos-era-keep-calm-and-carry-on/"
+        },
+        {
+          "label": "Hacker News: Enhancing x11 Application Security with LXC (2025)",
+          "type": "live",
+          "url": "https://dobrowolski.dev/article/enhancing-x11-application-security-with-lxc/"
+        },
+        {
+          "label": "arXiv: Robust Harmful Features Under Jailbreak Attacks: Mechanistic Evidence from Attention Head Specialization in Large Language Models",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28153v1"
+        },
+        {
+          "label": "arXiv: How Humans, Bots, and Agents Communicate About Vulnerabilities in Pull Requests",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28125v1"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 18,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "cloud-cost-reckoning",
+      "momentum": 21,
+      "confidence": 87,
+      "previousMomentum": 40,
+      "previousConfidence": 83,
+      "change": {
+        "type": "falling",
+        "summary": "Momentum cooled in Cloud Computing this week (arXiv -100%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Towards Value-Constrained Credit Assignment in Fully Delegated AI Cooperatives",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28217v1"
+        },
+        {
+          "label": "arXiv: DiStash: A Disaggregated Multi-Stash Transactional Key-Value Store",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27979v1"
+        },
+        {
+          "label": "arXiv: RAMSES: Secure high-performance computing for sensitive data",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27919v1"
+        },
+        {
+          "label": "Product Hunt: ClinePass",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/cline-4?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 89,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 87,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "smart-manufacturing",
+      "momentum": 22,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "falling",
+        "summary": "Momentum cooled in Manufacturing this week (arXiv -100%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: V-TSN: A Software-Defined TSN Overlay for General-Purpose Networks",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28285v1"
+        },
+        {
+          "label": "arXiv: An Integrated Hardware-Software Design for Low-Data Spatial Defect Detection in Robotic Visual Inspection with Hybrid Optoelectronic Neural Networks",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.25277v1"
+        },
+        {
+          "label": "arXiv: The Power of Light: Improving Synthetic-to-Real Domain Adaptation through Physically-Based Indirect Illumination",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.22574v1"
+        },
+        {
+          "label": "Product Hunt: KEEP",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/keep-9?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 30,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 71,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "supply-chain-resilience",
+      "momentum": 27,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "Supply Chain Resilience Tech held steady in Supply Chain with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: The Reciprocal Impact of Science and Software: A Cross-Corpus Analysis of How Research Shapes Software and Software Enables Research",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28120v1"
+        },
+        {
+          "label": "arXiv: Enhancing Co-packaging Optics Enabled Silicon Photonics Security Assurance Hardware Fingerprinting",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27612v1"
+        },
+        {
+          "label": "arXiv: A Deterministic Control Plane for LLM Coding Agents",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.26924v1"
+        },
+        {
+          "label": "Product Hunt: Crest",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/crest-3?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 3,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 90,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-diagnostics",
+      "momentum": 41,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "AI Clinical Diagnostics held steady in Healthcare with Wikimedia Pageviews +16%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
+          "type": "live",
+          "url": "http://arxiv.org/abs/physics/0307155v1"
+        },
+        {
+          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
+          "type": "live",
+          "url": "http://arxiv.org/abs/cond-mat/0307747v1"
+        },
+        {
+          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
+          "type": "live",
+          "url": "http://arxiv.org/abs/physics/0307136v1"
+        },
+        {
+          "label": "Product Hunt: Gymifi",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/gymifi-the-complete-fitness-app?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 16,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 83,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "embedded-finance",
+      "momentum": 36,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "Embedded Finance Expansion held steady in Finance with Wikimedia Pageviews -14%."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Fintech Engineering Handbook",
+          "type": "live",
+          "url": "https://w.pitula.me/fintech-engineering-handbook/"
+        },
+        {
+          "label": "Product Hunt: Receiptor AI — Agent Mode",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/receiptor-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        },
+        {
+          "label": "Product Hunt: split biller",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/split-biller?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        },
+        {
+          "label": "Product Hunt: AP Automation ROI Calculator",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/cashflow-pick?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 14,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 88,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "grid-storage",
+      "momentum": 21,
+      "confidence": 87,
+      "previousMomentum": 40,
+      "previousConfidence": 83,
+      "change": {
+        "type": "falling",
+        "summary": "Momentum cooled in Energy this week (arXiv -100%)."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Why does kinetic energy increase quadratically, not linearly, with speed? (2011)",
+          "type": "live",
+          "url": "https://physics.stackexchange.com/questions/535/why-does-kinetic-energy-increase-quadratically-not-linearly-with-speed"
+        },
+        {
+          "label": "arXiv: TA-SparseMG: Trend-Aware Sparse Forecasting via Multi-Scale Gating for Long-Term Time Series",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27908v1"
+        },
+        {
+          "label": "arXiv: Unlocking Cryogenic Energy Storage by Constructing Dipole Glass with Unit-cell-level Polar Disorder",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27887v1"
+        },
+        {
+          "label": "arXiv: Entropy engineering of BF-BT-based high-entropy ceramics for ultra-high energy storage performance",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27621v1"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 87,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-native-startups",
+      "momentum": 27,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "AI-Native Startup Formation held steady in Startups with Hacker News -100%."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Asian AI startups launch Mythos-like models",
+          "type": "live",
+          "url": "https://techcrunch.com/2026/06/27/asian-ai-startups-launch-mythos-like-models-as-anthropics-export-ban-drags-on/"
+        },
+        {
+          "label": "arXiv: Energy-Efficient CNN Acceleration with MSDF Digit-Serial Arithmetic on FPGA",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.25562v1"
+        },
+        {
+          "label": "arXiv: StickyInvoc: Rethinking Task Models for High-throughput Workflows in the LLM Era",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.22175v1"
+        },
+        {
+          "label": "arXiv: Coordinating Treatment Allocation and Recommendation",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.21120v1"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Hacker News",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 7,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "vc-ai-concentration",
+      "momentum": 36,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "VC Capital Concentration in AI held steady in Venture Capital with Wikimedia Pageviews -10%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: A Multi-Agent Orchestration Framework for Venture Capital Due Diligence",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2605.13110v1"
+        },
+        {
+          "label": "arXiv: Engineering Economy: A New Paradigm for Escaping the Middle-Income Trap",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2605.09145v1"
+        },
+        {
+          "label": "arXiv: Do Venture Capitalists Beat Random Allocation?",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2605.03980v1"
+        },
+        {
+          "label": "Wikimedia: Venture Capital — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Venture_capital"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 10,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "synthetic-biology",
+      "momentum": 26,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "Synthetic Biology Breakthroughs held steady in Biotechnology with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Reconstructability of evolutionary intermediates in generative epistatic landscapes",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27983v1"
+        },
+        {
+          "label": "arXiv: Towards coevolution-aware ancestral sequence reconstruction",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27942v1"
+        },
+        {
+          "label": "arXiv: Two-Stage Fine-Tuning for Protein Sequence Generation with Targeted Amino-Acid Composition",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27939v1"
+        },
+        {
+          "label": "Product Hunt: Praenox — Biometric Sound Synthesis",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/praenox-biometric-sound-synthesis?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 5,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 80,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "lab-automation-biochem",
+      "momentum": 28,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "falling",
+        "summary": "Momentum cooled in Biochemistry this week (arXiv -100%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Habitual lifestyle timing explains circadian timing, but daily lifestyle changes do not, in free-living humans across 2000 days",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28261v1"
+        },
+        {
+          "label": "arXiv: Reconstructability of evolutionary intermediates in generative epistatic landscapes",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27983v1"
+        },
+        {
+          "label": "arXiv: Towards coevolution-aware ancestral sequence reconstruction",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27942v1"
+        },
+        {
+          "label": "Wikimedia: Biochemistry — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Biochemistry"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 8,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "life-sciences-ai-research",
+      "momentum": 35,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "AI in Life Sciences Research held steady in Life Sciences with Wikimedia Pageviews -21%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
+          "type": "live",
+          "url": "http://arxiv.org/abs/physics/0307155v1"
+        },
+        {
+          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
+          "type": "live",
+          "url": "http://arxiv.org/abs/cond-mat/0307747v1"
+        },
+        {
+          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
+          "type": "live",
+          "url": "http://arxiv.org/abs/physics/0307136v1"
+        },
+        {
+          "label": "Wikimedia: Life Sciences — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Life_sciences"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 21,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "creative-ai-tools",
+      "momentum": 22,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "falling",
+        "summary": "Momentum cooled in Arts & Creative Fields this week (Hacker News -100%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: IVIE: A Neuro-symbolic Approach to Incremental and Validated Generation of Interactive Fiction Worlds",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.13348v1"
+        },
+        {
+          "label": "arXiv: I Was Scrolling and Then I Saw a Pregnant Strawberry",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.09589v1"
+        },
+        {
+          "label": "arXiv: Anchor-Conditioned Compositional Control for Landscape Image Generation",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.07638v1"
+        },
+        {
+          "label": "Wikimedia: Arts — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Digital_art"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Hacker News",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 17,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "commerce-analytics-demand",
+      "momentum": 27,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 91,
+      "change": {
+        "type": "stable",
+        "summary": "Data Skills in Commerce Careers held steady in Commerce & Business Studies with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: JD Oxygen AI Item Center (Oxygen AIIC) V1: An Industrial-Scale LLM/VLM-Centric Solution for Item Understanding, Management, and Applications",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28070v1"
+        },
+        {
+          "label": "arXiv: Fast and Feasible: Permutation-based Constrained Reranking for Revenue Maximization",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28059v1"
+        },
+        {
+          "label": "arXiv: Home3D 1.0: A High-Fidelity Image-to-3D Asset Generation System for Interior Design",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.27923v1"
+        },
+        {
+          "label": "Product Hunt: superAEO",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/superaeo?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 3,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 86,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    }
+  ]
+}

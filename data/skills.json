@@ -5,7 +5,7 @@
       "name": "Agent Orchestration",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Spira for Product Hunt Makers.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Cursor for iOS.",
       "summary": "Design, deploy, and manage multi-step AI agents in production workflows.",
       "interests": [
         "artificial-intelligence"
@@ -22,7 +22,7 @@
       "name": "LLM Engineering",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Spira for Product Hunt Makers.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Cursor for iOS.",
       "summary": "Fine-tune, prompt, and integrate large language models into products.",
       "interests": [
         "artificial-intelligence",
@@ -37,9 +37,9 @@
     {
       "id": "robotics-perception",
       "name": "Robotics Perception",
-      "demand": "Growing",
+      "demand": "High",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -6% this week in Robotics.",
+      "changeSummary": "Skills demand shifted — arXiv +633% this week in Robotics.",
       "summary": "Computer vision and sensor fusion for physical automation systems.",
       "interests": [
         "robotics",
@@ -56,7 +56,7 @@
       "name": "AI Security",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — arXiv -100% this week in Cybersecurity.",
+      "changeSummary": "Skills demand shifted — arXiv -31% this week in Cybersecurity.",
       "summary": "Defend against AI-powered attacks and secure AI systems in production.",
       "interests": [
         "cybersecurity",
@@ -74,7 +74,7 @@
       "name": "FinOps & Cloud Cost Management",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Receiptor AI — Agent Mode.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Agent Mode by Receiptor AI.",
       "summary": "Optimize cloud spend and govern AI infrastructure costs.",
       "interests": [
         "cloud-computing",
@@ -91,7 +91,7 @@
       "name": "Health Informatics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Gymifi.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Aruki .",
       "summary": "Bridge clinical workflows with AI diagnostic and data systems.",
       "interests": [
         "healthcare",
@@ -106,9 +106,9 @@
     {
       "id": "fintech-engineering",
       "name": "Fintech Engineering",
-      "demand": "Growing",
+      "demand": "Critical",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Receiptor AI — Agent Mode.",
+      "changeSummary": "Skills demand shifted — GitHub repos like chethanyadav456/hyderabad-tech-events gained traction.",
       "summary": "Build payments, lending, and compliance into software platforms.",
       "interests": [
         "finance",
@@ -124,8 +124,8 @@
       "id": "energy-systems",
       "name": "Energy Systems Engineering",
       "demand": "Growing",
-      "demandChange": "falling",
-      "changeSummary": "Skills demand shifted — arXiv -100% this week in Energy.",
+      "demandChange": "stable",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes OmniRisk.",
       "summary": "Design and optimize grid-scale energy storage and renewable systems.",
       "interests": [
         "energy"
@@ -140,9 +140,9 @@
     {
       "id": "ai-product-building",
       "name": "AI Product Building",
-      "demand": "Growing",
+      "demand": "Critical",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Crest.",
+      "changeSummary": "Skills demand shifted — GitHub repos like chethanyadav456/hyderabad-tech-events gained traction.",
       "summary": "Ship AI-native products from concept to market with lean teams.",
       "interests": [
         "startups",
@@ -160,7 +160,7 @@
       "name": "Venture & Market Analysis",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -10% this week in Venture Capital.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Agent Mode by Receiptor AI.",
       "summary": "Evaluate markets, map competitive landscapes, and assess investment theses.",
       "interests": [
         "venture-capital",
@@ -177,7 +177,7 @@
       "name": "Supply Chain Analytics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand still rising — Product Hunt activity includes Crest.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes KEEP.",
       "summary": "Model supplier risk, optimize logistics, and build visibility dashboards.",
       "interests": [
         "supply-chain",
@@ -192,8 +192,8 @@
       "id": "quantum-literacy",
       "name": "Quantum Computing Literacy",
       "demand": "Growing",
-      "demandChange": "falling",
-      "changeSummary": "Skills demand shifted — Hacker News -100% this week in Quantum Computing.",
+      "demandChange": "stable",
+      "changeSummary": "Skills demand shifted — Hacker News -20% this week in Quantum Computing.",
       "summary": "Understand quantum principles and assess organizational quantum readiness.",
       "interests": [
         "quantum-computing"
@@ -209,7 +209,7 @@
       "name": "Molecular Biology",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -21% this week in Life Sciences.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Claude Science.",
       "summary": "Foundations in genetics, cell biology, and lab techniques for biotech careers.",
       "interests": [
         "biotechnology",
@@ -226,7 +226,7 @@
       "name": "Bioinformatics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Gymifi.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -21% this week in Life Sciences.",
       "summary": "Analyze biological data with computational tools and programming.",
       "interests": [
         "biotechnology",
@@ -243,7 +243,7 @@
       "name": "Lab Data Analysis",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -21% this week in Life Sciences.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Claude Science.",
       "summary": "Process, visualize, and interpret experimental data from modern lab systems.",
       "interests": [
         "biochemistry",
@@ -274,8 +274,8 @@
       "id": "creative-ai-tools",
       "name": "Creative AI Tool Fluency",
       "demand": "Growing",
-      "demandChange": "falling",
-      "changeSummary": "Skills demand shifted — Hacker News -100% this week in Arts & Creative Fields.",
+      "demandChange": "stable",
+      "changeSummary": "Skills demand shifted — Hacker News 0% this week in Arts & Creative Fields.",
       "summary": "Use AI tools for design, writing, video, and UX while maintaining creative direction.",
       "interests": [
         "arts"
@@ -290,7 +290,7 @@
       "name": "UX & Design Fundamentals",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Crest.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -4% this week in Product Management.",
       "summary": "User research, visual design, and product thinking for creative careers.",
       "interests": [
         "arts",
@@ -307,7 +307,7 @@
       "name": "Financial Analytics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Receiptor AI — Agent Mode.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Agent Mode by Receiptor AI.",
       "summary": "Model, analyze, and visualize financial and business data for decision making.",
       "interests": [
         "commerce",
@@ -323,7 +323,7 @@
       "name": "Business Data Literacy",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes superAEO.",
+      "changeSummary": "Skills demand shifted — arXiv -79% this week in Commerce & Business Studies.",
       "summary": "Excel, SQL, and dashboard skills for accounting, finance, and management paths.",
       "interests": [
         "commerce"

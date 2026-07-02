@@ -25,6 +25,30 @@ export function formatBriefingPeriod(date = new Date()): string {
   return `${year}-W${String(week).padStart(2, "0")}`;
 }
 
+/** Monday (UTC) of the ISO week encoded as `YYYY-Www`. */
+export function parseBriefingPeriod(period: string): Date | null {
+  const match = /^(\d{4})-W(\d{2})$/.exec(period);
+  if (!match) return null;
+
+  const year = Number(match[1]);
+  const week = Number(match[2]);
+  const jan4 = new Date(Date.UTC(year, 0, 4));
+  const dayOfWeek = jan4.getUTCDay() || 7;
+  const mondayOfWeek1 = new Date(jan4);
+  mondayOfWeek1.setUTCDate(jan4.getUTCDate() - dayOfWeek + 1);
+  const monday = new Date(mondayOfWeek1);
+  monday.setUTCDate(mondayOfWeek1.getUTCDate() + (week - 1) * 7);
+  return monday;
+}
+
+export function getPreviousBriefingPeriod(period: string): string | null {
+  const monday = parseBriefingPeriod(period);
+  if (!monday) return null;
+  const previousMonday = new Date(monday);
+  previousMonday.setUTCDate(previousMonday.getUTCDate() - 7);
+  return formatBriefingPeriod(previousMonday);
+}
+
 export function formatBriefingLabel(date = new Date()): string {
   const { start, end } = getWeekRange(date);
   const formatter = new Intl.DateTimeFormat("en-US", {

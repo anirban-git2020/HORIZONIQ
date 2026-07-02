@@ -9,6 +9,7 @@ import type {
   SkillRecord,
 } from "@/lib/data/schemas";
 import type { GenerateBriefingResult } from "@/lib/pipeline/generate/briefing";
+import { getPreviousBriefingPeriod } from "@/lib/pipeline/utils/periods";
 
 const DATA_ROOT = path.join(process.cwd(), "data");
 const BRIEFINGS_DIR = path.join(DATA_ROOT, "briefings");
@@ -96,13 +97,24 @@ export async function readBriefingFromDisk(
   return JSON.parse(raw) as BriefingRecord;
 }
 
-export async function wasPipelineBriefingBefore(
-  period: string
-): Promise<boolean> {
+async function wasPipelineBriefingForPeriod(period: string): Promise<boolean> {
   try {
     const briefing = await readBriefingFromDisk(`${period}.json`);
     return briefing.dataProvenance !== "curated-mock";
   } catch {
     return false;
   }
+}
+
+export async function wasPipelineBriefingBefore(
+  period: string
+): Promise<boolean> {
+  if (await wasPipelineBriefingForPeriod(period)) return true;
+
+  const previousPeriod = getPreviousBriefingPeriod(period);
+  if (previousPeriod) {
+    return wasPipelineBriefingForPeriod(previousPeriod);
+  }
+
+  return false;
 }

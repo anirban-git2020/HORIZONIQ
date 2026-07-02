@@ -28,12 +28,13 @@ jobs:
       - name: Ingest live sources and generate briefing
         run: npm run pipeline:full
         env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
 
       - name: Commit and push briefing data
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
-          commit_message: "chore(pipeline): weekly briefing [skip ci]"
+          commit_message: "chore(pipeline): weekly briefing"
           file_pattern: |
             data/**
             lib/data/briefings-registry.ts

@@ -35,6 +35,7 @@ import {
 import {
   formatBriefingLabel,
   formatBriefingPeriod,
+  getPreviousBriefingPeriod,
 } from "@/lib/pipeline/utils/periods";
 
 const DATA_ROOT = path.join(process.cwd(), "data");
@@ -56,7 +57,7 @@ export interface GenerateBriefingResult {
   topRisingSignalId?: string;
 }
 
-async function loadPreviousBriefing(
+async function readBriefingForPeriod(
   period: string
 ): Promise<BriefingRecord | null> {
   const filePath = path.join(DATA_ROOT, "briefings", `${period}.json`);
@@ -66,6 +67,18 @@ async function loadPreviousBriefing(
   } catch {
     return null;
   }
+}
+
+/** Prior artifact for momentum deltas — same-week re-run, else previous ISO week. */
+async function loadPreviousBriefing(
+  period: string
+): Promise<BriefingRecord | null> {
+  const sameWeek = await readBriefingForPeriod(period);
+  if (sameWeek) return sameWeek;
+
+  const previousPeriod = getPreviousBriefingPeriod(period);
+  if (!previousPeriod) return null;
+  return readBriefingForPeriod(previousPeriod);
 }
 
 function previousStateMap(

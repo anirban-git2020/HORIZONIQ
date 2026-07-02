@@ -2,11 +2,14 @@
 import type { BriefingRecord } from "@/lib/data/schemas";
 
 import briefing_2026_W26 from "@/data/briefings/2026-W26.json";
+import briefing_2026_W27 from "@/data/briefings/2026-W27.json";
 
 export const BRIEFINGS_BY_PERIOD: Record<string, BriefingRecord> = {
   "2026-W26": briefing_2026_W26 as BriefingRecord,
+  "2026-W27": briefing_2026_W27 as BriefingRecord,
 };
 
 export const BRIEFINGS_BY_FILE: Record<string, BriefingRecord> = {
   "2026-W26.json": briefing_2026_W26 as BriefingRecord,
+  "2026-W27.json": briefing_2026_W27 as BriefingRecord,
 };

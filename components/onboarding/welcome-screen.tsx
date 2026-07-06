@@ -1,9 +1,7 @@
 "use client";
 
-import { ArrowRight } from "lucide-react";
-
 import { BetaBadge } from "@/components/brand/beta-badge";
-import { BrandName, HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
+import { HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
 import { TaglineLockup } from "@/components/brand/tagline-lockup";
 import { IntelligenceFieldCanvas } from "@/components/intelligence-field/intelligence-field-canvas";
 import { Button } from "@/components/ui/button";
@@ -62,13 +60,9 @@ export function WelcomeScreen() {
           <Button
             size="lg"
             onClick={() => advance(false)}
-            className="mt-12 min-w-[240px] md:mt-14"
+            className="mt-12 min-w-[240px] font-bold md:mt-14"
           >
-            <span className="inline-flex items-center gap-1.5">
-              Enter
-              <BrandName monochrome className="font-semibold" />
-            </span>
-            <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
+            Enter
           </Button>
         </div>
       </div>

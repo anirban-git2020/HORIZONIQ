@@ -41,7 +41,7 @@ function getActiveBriefing(): BriefingRecord {
   const briefing = BRIEFINGS_BY_PERIOD[meta.briefingPeriod];
   if (!briefing) {
     throw new Error(
-      `No briefing registered for period "${meta.briefingPeriod}" (${meta.activeBriefingFile}). Run npm run pipeline:generate.`
+      `No briefing registered for period "${meta.briefingPeriod}" (${meta.activeBriefingFile}). Run npm run pipeline:full.`
     );
   }
   return briefing;

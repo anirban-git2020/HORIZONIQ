@@ -10,7 +10,9 @@
     "lint": "next lint",
     "pipeline:ingest": "tsx scripts/pipeline-ingest.ts",
     "pipeline:generate": "tsx scripts/pipeline-generate.ts",
-    "pipeline:full": "tsx scripts/pipeline-full.ts"
+    "pipeline:full": "tsx scripts/pipeline-full.ts",
+    "pipeline:sync-registry": "tsx scripts/sync-briefings-registry.ts",
+    "pipeline:verify": "tsx scripts/verify-briefing.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^9.5.0",

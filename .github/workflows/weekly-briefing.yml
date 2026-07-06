@@ -31,10 +31,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
 
+      - name: Sync briefing registry
+        run: npm run pipeline:sync-registry
+
+      - name: Verify briefing data and registry
+        run: npm run pipeline:verify
+
+      - name: Verify production build
+        run: npm run build
+
       - name: Commit and push briefing data
-        uses: stefanzweifel/git-auto-commit-action@v7
-        with:
-          commit_message: "chore(pipeline): weekly briefing"
-          file_pattern: |
-            data/**
-            lib/data/briefings-registry.ts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/ lib/data/briefings-registry.ts
+          if git diff --staged --quiet; then
+            echo "No briefing changes to commit."
+            exit 0
+          fi
+          git commit -m "chore(pipeline): weekly briefing"
+          git push

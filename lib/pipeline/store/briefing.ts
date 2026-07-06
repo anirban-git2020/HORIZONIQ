@@ -30,7 +30,6 @@ export async function writeBriefingArtifacts(
 ): Promise<{
   briefingPath: string;
   metaPath: string;
-  registryPath: string;
 }> {
   const briefingPath = path.join(BRIEFINGS_DIR, result.briefingFile);
   const metaPath = path.join(DATA_ROOT, "meta.json");
@@ -48,10 +47,10 @@ export async function writeBriefingArtifacts(
   return {
     briefingPath,
     metaPath,
-    registryPath: REGISTRY_PATH,
   };
 }
 
+/** Regenerate lib/data/briefings-registry.ts from data/briefings/*.json */
 export async function syncBriefingsRegistry(): Promise<void> {
   await mkdir(BRIEFINGS_DIR, { recursive: true });
   const files = (await readdir(BRIEFINGS_DIR))

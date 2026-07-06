@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 
 import { PreferencesProvider } from "@/lib/preferences";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -58,6 +59,7 @@ export default function RootLayout({
           </PreferencesProvider>
           <AnalyticsProvider />
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );

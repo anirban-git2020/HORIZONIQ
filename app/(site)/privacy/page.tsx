@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { BrandName } from "@/components/brand/horizoniq-wordmark";
 import {
   ContentList,
   ContentPage,
@@ -23,7 +24,7 @@ export default function PrivacyPage() {
     >
       <ContentSection title="Overview">
         <p>
-          HorizonIQ is committed to transparent data practices. During the Beta
+          <BrandName /> is committed to transparent data practices. During the Beta
           Preview, we collect only the minimum information needed to deliver
           personalized intelligence and understand anonymous product usage.
         </p>
@@ -48,7 +49,7 @@ export default function PrivacyPage() {
 
       <ContentSection title="No personal information sold">
         <p>
-          HorizonIQ does not sell personal information. We do not operate an
+          <BrandName /> does not sell personal information. We do not operate an
           advertising business and do not share identifiable user data with data
           brokers.
         </p>
@@ -57,7 +58,7 @@ export default function PrivacyPage() {
       <ContentSection title="No advertising trackers">
         <p>
           We do not use advertising pixels or third-party ad networks. Product
-          analytics are scoped to understanding how HorizonIQ is used — not to
+          analytics are scoped to understanding how <BrandName /> is used — not to
           profile you for ads.
         </p>
       </ContentSection>
@@ -89,7 +90,7 @@ export default function PrivacyPage() {
 
       <ContentSection title="Transparent data practices">
         <p>
-          HorizonIQ labels data provenance on signals (Live / Mixed / Sample)
+          <BrandName /> labels data provenance on signals (Live / Mixed / Sample)
           and links to source material where available. We believe trust comes
           from showing evidence — not from hiding how intelligence is produced.
         </p>

@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 
+import { BetaBadge } from "@/components/brand/beta-badge";
+import { BrandName, HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
+import { TaglineLockup } from "@/components/brand/tagline-lockup";
 import {
   ContentList,
   ContentPage,
   ContentSection,
 } from "@/components/layout/content-page";
 import { FounderSection } from "@/components/site/founder-section";
-import { BetaBadge } from "@/components/brand/beta-badge";
-import { TaglineLockup } from "@/components/brand/tagline-lockup";
 import { pageMetadata } from "@/lib/seo";
-import { SITE_NAME, SITE_TAGLINE, SITE_VERSION } from "@/lib/site";
+import { SITE_TAGLINE, SITE_VERSION } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "About",
@@ -21,7 +22,11 @@ export const metadata: Metadata = pageMetadata({
 export default function AboutPage() {
   return (
     <ContentPage
-      title="About HorizonIQ"
+      title={
+        <>
+          About <HorizonIQWordmark size="inherit" className="inline text-[1em]" />
+        </>
+      }
       description="A personalized intelligence platform built for people who want to understand change before it becomes mainstream."
     >
       <div className="space-y-3">
@@ -31,7 +36,7 @@ export default function AboutPage() {
 
       <ContentSection title="Mission">
         <p>
-          {SITE_NAME} helps people understand what is changing, why it matters,
+          <BrandName /> helps people understand what is changing, why it matters,
           and what to do next — before everyone else. We turn fragmented signals
           into clear, personalized intelligence you can act on.
         </p>
@@ -40,15 +45,22 @@ export default function AboutPage() {
       <ContentSection title="Vision">
         <p>
           The world&apos;s first personalized intelligence platform — not a
-          dashboard, not a trend tracker, and not an AI chatbot. HorizonIQ
-          should feel like having a personal future analyst who tells you what
-          changed.
+          dashboard, not a trend tracker, and not an AI chatbot.{" "}
+          <BrandName /> should feel like having a personal future analyst who tells
+          you what changed.
         </p>
       </ContentSection>
 
-      <ContentSection title="What HorizonIQ Is">
+      <ContentSection
+        title={
+          <>
+            What <BrandName /> Is
+          </>
+        }
+      >
         <p>
-          HorizonIQ is a <strong className="text-foreground">signal change platform</strong>.
+          <BrandName /> is a{" "}
+          <strong className="text-foreground">signal change platform</strong>.
           Users return because something changed for them — not because a static
           feed exists. Every briefing answers four questions: what happened, why
           it is happening, why you should care, and what to do next.
@@ -74,7 +86,7 @@ export default function AboutPage() {
 
       <ContentSection title="Personal Intelligence Operating System">
         <p>
-          HorizonIQ is designed as a Personal Intelligence Operating System —
+          <BrandName /> is designed as a Personal Intelligence Operating System —
           an environment where intelligence feels alive, trustworthy, and
           actionable. The Living Intelligence Core visual reflects momentum and
           confidence from your briefing; the dashboard tells one story: what
@@ -86,10 +98,10 @@ export default function AboutPage() {
 
       <ContentSection title="Current Status">
         <p>
-          HorizonIQ is in <strong className="text-foreground">{SITE_VERSION}</strong>{" "}
-          public beta. Features, data sources, and intelligence presentation
-          continue to evolve weekly as we validate retention and trust with real
-          users.
+          <BrandName /> is in{" "}
+          <strong className="text-foreground">{SITE_VERSION}</strong> public beta.
+          Features, data sources, and intelligence presentation continue to evolve
+          weekly as we validate retention and trust with real users.
         </p>
       </ContentSection>
 

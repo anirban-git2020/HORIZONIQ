@@ -1,6 +1,8 @@
 import Link from "next/link";
 
 import { BetaBadge } from "@/components/brand/beta-badge";
+import { HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
+import { BRAND_IQ_COLOR } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function Logo({
@@ -26,7 +28,8 @@ export function Logo({
         <svg
           viewBox="0 0 24 24"
           fill="none"
-          className="relative h-[18px] w-[18px] text-primary"
+          className="relative h-[18px] w-[18px]"
+          style={{ color: BRAND_IQ_COLOR }}
           aria-hidden="true"
         >
           <path
@@ -39,9 +42,7 @@ export function Logo({
         </svg>
       </span>
       <span className="flex items-center gap-2.5">
-        <span>
-          Horizon<span className="text-primary">IQ</span>
-        </span>
+        <HorizonIQWordmark size="lg" />
         {showBeta && <BetaBadge />}
       </span>
     </Link>

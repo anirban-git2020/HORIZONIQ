@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 
+import { BrandName } from "@/components/brand/horizoniq-wordmark";
 import {
   ContentList,
   ContentPage,
   ContentSection,
 } from "@/components/layout/content-page";
 import { pageMetadata } from "@/lib/seo";
-import { FOUNDER, SITE_NAME } from "@/lib/site";
+import { FOUNDER } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "Terms of Use",
@@ -23,16 +24,17 @@ export default function TermsPage() {
     >
       <ContentSection title="Beta software disclaimer">
         <p>
-          {SITE_NAME} is provided as <strong className="text-foreground">Beta Preview</strong>{" "}
-          software. Features, intelligence content, data sources, and user
-          experience may change without notice. The product is under active
-          development and may contain errors or incomplete functionality.
+          <BrandName /> is provided as{" "}
+          <strong className="text-foreground">Beta Preview</strong> software.
+          Features, intelligence content, data sources, and user experience may
+          change without notice. The product is under active development and may
+          contain errors or incomplete functionality.
         </p>
       </ContentSection>
 
       <ContentSection title="No warranty">
         <p>
-          HorizonIQ is provided &quot;as is&quot; and &quot;as available&quot;
+          <BrandName /> is provided &quot;as is&quot; and &quot;as available&quot;
           without warranties of any kind, whether express or implied, including
           but not limited to implied warranties of merchantability, fitness for a
           particular purpose, or non-infringement.
@@ -54,8 +56,8 @@ export default function TermsPage() {
 
       <ContentSection title="Feedback">
         <p>
-          If you submit feedback, bug reports, or suggestions, you grant
-          HorizonIQ a non-exclusive right to use that feedback to improve the
+          If you submit feedback, bug reports, or suggestions, you grant{" "}
+          <BrandName /> a non-exclusive right to use that feedback to improve the
           product without obligation to you. Feedback may be incorporated into
           future versions.
         </p>
@@ -73,8 +75,13 @@ export default function TermsPage() {
       <ContentSection title="Acceptable use">
         <ContentList
           items={[
-            "Do not attempt to disrupt, scrape, or overload HorizonIQ services",
-            "Do not misrepresent HorizonIQ intelligence as guaranteed fact",
+            <>
+              Do not attempt to disrupt, scrape, or overload <BrandName />{" "}
+              services
+            </>,
+            <>
+              Do not misrepresent <BrandName /> intelligence as guaranteed fact
+            </>,
             "Do not use the product for unlawful purposes",
             "Respect source websites and APIs linked from intelligence cards",
           ]}
@@ -83,7 +90,7 @@ export default function TermsPage() {
 
       <ContentSection title="Limitation of liability">
         <p>
-          To the fullest extent permitted by applicable law, HorizonIQ and its
+          To the fullest extent permitted by applicable law, <BrandName /> and its
           creator shall not be liable for any indirect, incidental, special,
           consequential, or punitive damages, or any loss of profits, data, or
           goodwill arising from your use of the Beta Preview.

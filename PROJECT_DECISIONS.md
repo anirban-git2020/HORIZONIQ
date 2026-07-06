@@ -371,6 +371,35 @@ Approved
 
 ---
 
+## 2026-07-06 — Sprint 3.95: World-Class Feedback System
+
+### Decision
+
+Implement in-app feedback with Supabase storage — floating button, premium modal, automatic metadata, optional screenshots.
+
+### Reason
+
+Beta users need frictionless feedback (Linear/Vercel-quality) without opening an email client. Product team needs structured data for triage and future admin dashboard.
+
+### Implementation
+
+- Client: `components/feedback/*`, `hooks/useFeedback.ts`, `services/feedbackService.ts`
+- Server: `app/api/feedback/route.ts` with service role (no client Supabase writes)
+- Schema: `supabase/schema/feedback.sql`, bucket `feedback-screenshots`
+- Admin query presets only — no admin UI in this sprint
+
+### Privacy
+
+- Optional email only — never required
+- Anonymous visitor/session IDs from existing analytics keys
+- No modification to analytics provider implementation
+
+### Outcome
+
+Approved
+
+---
+
 ## 2026-07-06 — Sprint 3.9: Brand Identity, Legal, Trust & Founder Attribution
 
 ### Decision

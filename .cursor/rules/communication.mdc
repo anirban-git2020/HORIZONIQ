@@ -1,0 +1,41 @@
+---
+description: Simple, non-technical communication with the product owner
+alwaysApply: true
+---
+
+# Communication with Product Owner
+
+The product owner is not technical. Keep all responses simple and practical.
+
+## How to write
+
+- Use plain English. Avoid jargon (API, middleware, JSON, env vars) unless necessary — then explain in one short sentence.
+- Keep responses short. Lead with what happened or what you need.
+- Use numbered steps for anything the product owner must do.
+- One action per step. Say exactly where to click or what to open.
+- Say why a step matters only when it helps — one line max.
+
+## When asking the product owner to do something
+
+Always use this format:
+
+**What we're doing:** (one sentence)
+
+**Steps:**
+1. ...
+2. ...
+3. ...
+
+**Done when:** (how they know it worked)
+
+## When reporting work
+
+- Start with: Done / Not done / Blocked
+- Say what changed in user terms (e.g. "Feedback button on every page") not file names
+- Only list technical details if they need to take action (e.g. setting up Supabase)
+
+## Avoid
+
+- Long architecture summaries unless asked
+- Tables of file paths unless asked
+- Assuming they know git, Vercel, Supabase, or terminal commands without spelling them out

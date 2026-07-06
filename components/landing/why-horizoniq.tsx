@@ -1,3 +1,5 @@
+import { BrandName } from "@/components/brand/horizoniq-wordmark";
+
 const CARDS = [
   {
     title: "Signals",
@@ -24,7 +26,7 @@ export function WhyHorizonIQ() {
         id="why-horizoniq-heading"
         className="text-center text-2xl font-semibold tracking-tight md:text-[1.75rem]"
       >
-        Why HorizonIQ?
+        Why <BrandName />?
       </h2>
 
       <ul className="mt-8 grid gap-4 sm:grid-cols-3">

@@ -360,6 +360,31 @@ Visit state stored in localStorage:
 
 ---
 
+## Sprint 3.95 — World-Class Feedback System (Shipped)
+
+**Mission:** Frictionless in-app feedback for Beta — under 30 seconds, no email draft required.
+
+### Added
+
+- `FeedbackWidget` — global FAB + accessible modal (`<dialog>`)
+- Five feedback types: Bug Report, Feature Request, Improvement, Question, General Feedback
+- Optional screenshot upload → Supabase Storage
+- Auto metadata from analytics visitor/session + preferences
+- `POST /api/feedback` — server-side Supabase insert (service role)
+- Admin query presets in `lib/feedback/admin-queries.ts` (UI deferred)
+
+### Backend
+
+- Table: `public.feedback` (status default `NEW`)
+- Bucket: `feedback-screenshots`
+- Env: `NEXT_PUBLIC_SUPABASE_URL`, `SUPABASE_SERVICE_ROLE_KEY`
+
+### Outcome
+
+Approved
+
+---
+
 ## Sprint 3.9 — Brand Identity, Legal, Trust & Founder Attribution (Shipped)
 
 **Mission:** Prepare HorizonIQ for public Beta with world-class branding, legal readiness, founder attribution, SEO, and a production-grade global footer.
@@ -685,6 +710,7 @@ Deprioritized / removed from MVP:
 - Sprint 1 first-time onboarding: welcome animation, name + greeting, IdentityService, guided tour overlay
 - **Sprint 4A:** Vercel Analytics, Speed Insights, Clarity scaffold, provider-agnostic `lib/analytics/`, anonymous visitor ID, session tracking, typed product events (`docs/analytics/metrics.md`)
 - **Sprint 3.9:** Global footer, legal/trust pages (About, Contact, Privacy, Terms, Changelog, Roadmap), site navigation, SEO metadata, JSON-LD, founder attribution
+- **Sprint 3.95:** In-app feedback widget, Supabase feedback API, screenshot uploads, auto metadata
 
 ### Needs Improvement
 

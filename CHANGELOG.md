@@ -8,6 +8,23 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Sprint 3.95 — World-Class Feedback System
+
+#### Added
+
+- **Floating Feedback button** — global FAB (desktop bottom-right, mobile safe-area)
+- **Feedback modal** — type selector, message, optional email, optional screenshot (PNG/JPEG/WEBP, 5 MB)
+- **Automatic metadata** — visitor ID, session ID, URL, page, app version, browser, OS, viewport, role/region/interests
+- **Supabase backend** — `feedback` table + Storage uploads via `POST /api/feedback`
+- **Architecture** — `types/feedback.ts`, `services/feedbackService.ts`, `lib/feedback/`, `hooks/useFeedback.ts`, `components/feedback/`
+- **Future admin presets** — `lib/feedback/admin-queries.ts` (no admin UI)
+- **`docs/feedback/README.md`** — schema, storage, API flow
+- **`supabase/schema/feedback.sql`** — table + indexes
+
+#### Dependencies
+
+- `@supabase/supabase-js`
+
 ### Sprint 3.9 — Brand Identity, Legal, Trust & Founder Attribution
 
 #### Added

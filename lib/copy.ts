@@ -4,6 +4,9 @@ export const TAGLINE_LINES = ["Observe.", "Predict.", "Lead."] as const;
 
 export const BETA_PREVIEW_LABEL = "Beta Preview";
 
+export const WELCOME_HEADLINE_PREFIX = "Welcome to";
+
+/** @deprecated Use WELCOME_HEADLINE_PREFIX + HorizonIQWordmark in UI */
 export const WELCOME_HEADLINE = "Welcome to HorizonIQ";
 
 export const LANDING_HERO_HEADLINE =

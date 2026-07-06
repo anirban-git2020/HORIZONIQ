@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 type ContentPageProps = {
-  title: string;
+  title: React.ReactNode;
   description?: string;
   children: React.ReactNode;
   className?: string;
@@ -31,7 +31,7 @@ export function ContentSection({
   children,
   id,
 }: {
-  title: string;
+  title: React.ReactNode;
   children: React.ReactNode;
   id?: string;
 }) {
@@ -45,11 +45,11 @@ export function ContentSection({
   );
 }
 
-export function ContentList({ items }: { items: string[] }) {
+export function ContentList({ items }: { items: React.ReactNode[] }) {
   return (
     <ul className="list-disc space-y-2 pl-5">
-      {items.map((item) => (
-        <li key={item}>{item}</li>
+      {items.map((item, index) => (
+        <li key={index}>{item}</li>
       ))}
     </ul>
   );

@@ -9,6 +9,7 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { OnboardingBootstrap } from "@/components/onboarding/onboarding-bootstrap";
 import { ONBOARDING_COOKIE_INIT_SCRIPT } from "@/components/onboarding/onboarding-cookie-init";
 import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
+import { FeedbackWidget } from "@/components/feedback/feedback-widget";
 import { ScrollToTop } from "@/components/navigation/scroll-to-top";
 import { defaultMetadata } from "@/lib/seo";
 import "./globals.css";
@@ -55,6 +56,7 @@ export default function RootLayout({
             <OnboardingBootstrap>
               <ScrollToTop />
               {children}
+              <FeedbackWidget />
             </OnboardingBootstrap>
           </PreferencesProvider>
           <AnalyticsProvider />

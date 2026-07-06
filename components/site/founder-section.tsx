@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ExternalLink, Mail } from "lucide-react";
 
+import { BrandName } from "@/components/brand/horizoniq-wordmark";
 import { FooterLink } from "@/components/layout/footer-link";
 import { FOUNDER } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -19,7 +20,9 @@ export function FounderSection({ className }: { className?: string }) {
       <h2 id="founder-heading" className="section-title mt-2 text-2xl">
         {FOUNDER.name}
       </h2>
-      <p className="mt-1 text-sm text-foreground/90">{FOUNDER.role}</p>
+      <p className="mt-1 text-sm text-foreground/90">
+        Creator of <BrandName />
+      </p>
 
       <ul className="mt-6 space-y-3">
         <li>

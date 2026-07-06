@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { BrandName } from "@/components/brand/horizoniq-wordmark";
 import {
   ContentList,
   ContentPage,
@@ -35,7 +36,7 @@ export default function ContactPage() {
 
       <ContentSection title="How to reach us">
         <p>
-          Email is the fastest way to reach the HorizonIQ team during beta. We
+          Email is the fastest way to reach the <BrandName /> team during beta. We
           read every message and use feedback to prioritize improvements.
         </p>
       </ContentSection>
@@ -47,7 +48,7 @@ export default function ContactPage() {
 
       <ContentSection title="Response time">
         <p>
-          HorizonIQ is in active beta development. We aim to respond to
+          <BrandName /> is in active beta development. We aim to respond to
           substantive enquiries within a few business days. For urgent security
           issues, please include &quot;Security&quot; in your subject line.
         </p>

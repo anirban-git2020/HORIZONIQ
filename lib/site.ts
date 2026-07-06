@@ -2,6 +2,10 @@
 
 export const SITE_NAME = "HorizonIQ";
 
+/** Brand wordmark colors — Horizon white on dark surfaces; IQ accent. */
+export const BRAND_HORIZON_COLOR = "#ffffff";
+export const BRAND_IQ_COLOR = "#00c5ff";
+
 export const SITE_TAGLINE = "Observe. Predict. Lead.";
 
 export const SITE_DESCRIPTION =

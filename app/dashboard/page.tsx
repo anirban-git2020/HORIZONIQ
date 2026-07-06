@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
+import { HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { TopBar } from "@/components/layout/top-bar";
 import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
@@ -314,11 +315,14 @@ export default function DashboardPage() {
 
       <SiteFooter
         supplementary={
-          <p>
-            HorizonIQ · {getProvenanceShortLabel(getDataProvenance())} ·{" "}
-            {briefing.briefingLabel} · Briefing period {getMeta().briefingPeriod}{" "}
-            · Last updated {formatBriefingUpdatedAt(getMeta().updatedAt)} ·{" "}
-            {getRefreshSchedule()}
+          <p className="inline-flex flex-wrap items-center justify-center gap-x-1 gap-y-0.5">
+            <HorizonIQWordmark size="inherit" className="inline" />
+            <span>
+              · {getProvenanceShortLabel(getDataProvenance())} ·{" "}
+              {briefing.briefingLabel} · Briefing period {getMeta().briefingPeriod}{" "}
+              · Last updated {formatBriefingUpdatedAt(getMeta().updatedAt)} ·{" "}
+              {getRefreshSchedule()}
+            </span>
           </p>
         }
       />

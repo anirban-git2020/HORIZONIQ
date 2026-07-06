@@ -1,8 +1,13 @@
 import { ImageResponse } from "next/og";
 
-import { SITE_DESCRIPTION, SITE_NAME, SITE_TAGLINE } from "@/lib/site";
+import {
+  BRAND_HORIZON_COLOR,
+  BRAND_IQ_COLOR,
+  SITE_DESCRIPTION,
+  SITE_TAGLINE,
+} from "@/lib/site";
 
-export const alt = `${SITE_NAME} — ${SITE_TAGLINE}`;
+export const alt = `HorizonIQ — ${SITE_TAGLINE}`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -47,12 +52,13 @@ export default function OpenGraphImage() {
                 width: 24,
                 height: 24,
                 borderRadius: "50%",
-                background: "#2DD4BF",
+                background: BRAND_IQ_COLOR,
               }}
             />
           </div>
           <span style={{ fontSize: 28, fontWeight: 600, letterSpacing: "-0.02em" }}>
-            {SITE_NAME}
+            <span style={{ color: BRAND_HORIZON_COLOR }}>Horizon</span>
+            <span style={{ color: BRAND_IQ_COLOR }}>IQ</span>
           </span>
         </div>
         <p

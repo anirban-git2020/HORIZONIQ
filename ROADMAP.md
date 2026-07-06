@@ -108,6 +108,18 @@ Help people understand **what is changing**, **why it matters**, and **what to d
 - [ ] GitHub footer link (placeholder until public repo)
 - [ ] Formal legal review of Terms and Privacy copy
 
+### 1.10 Sprint 3.95 — Feedback System (Complete)
+
+- [x] Floating Feedback button (global)
+- [x] Premium feedback modal with five types
+- [x] Optional email + screenshot upload (5 MB, PNG/JPEG/WEBP)
+- [x] Automatic metadata capture
+- [x] Supabase `feedback` table + Storage integration
+- [x] Success confirmation with tagline
+- [x] Modular architecture + admin query presets (no admin UI)
+- [ ] Configure Supabase env vars in Vercel Production
+- [ ] Admin dashboard UI (deferred)
+
 ---
 
 ## Phase 2 — Retention & Habit (Post-MVP Validation)

@@ -1,4 +1,5 @@
 import { BetaBadge } from "@/components/brand/beta-badge";
+import { HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
 import { TaglineLockup } from "@/components/brand/tagline-lockup";
 import { FooterLink, FooterTextLink } from "@/components/layout/footer-link";
 import {
@@ -6,7 +7,6 @@ import {
   COPYRIGHT_NOTICE,
   FOOTER_QUICK_LINKS,
   FOUNDER,
-  SITE_NAME,
   SITE_VERSION,
   TECH_STACK,
   TRUST_BADGES,
@@ -35,9 +35,7 @@ export function SiteFooter({ className, supplementary }: SiteFooterProps) {
           {/* Brand */}
           <div className="space-y-4 sm:col-span-2 lg:col-span-1 xl:col-span-1">
             <div className="space-y-3">
-              <p className="font-heading text-lg font-semibold tracking-[-0.02em]">
-                {SITE_NAME}
-              </p>
+              <HorizonIQWordmark size="md" />
               <TaglineLockup size="sm" />
               <BetaBadge />
             </div>

@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { ArrowLeft, Loader2 } from "lucide-react";
 
+import { SiteFooter } from "@/components/layout/site-footer";
 import { TopBar } from "@/components/layout/top-bar";
 import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
 import { Section } from "@/components/dashboard/section";
@@ -94,7 +95,7 @@ export default function SignalDetailPage() {
     const exists = getRawSignal(signalId);
     return (
       <div className="min-h-dvh bg-background">
-        <TopBar />
+        <TopBar showBeta showNav />
         <div className="container py-20 text-center">
           <h1 className="text-2xl font-semibold">Signal not found</h1>
           <p className="mt-2 text-muted-foreground">
@@ -118,7 +119,7 @@ export default function SignalDetailPage() {
   return (
     <div className="relative min-h-dvh overflow-hidden bg-background">
       <IntelligenceFieldLayer variant="ambient" mode="webgl" signals={[signal]} />
-      <TopBar showBeta />
+      <TopBar showBeta showNav />
 
       <div className="relative z-10 border-b border-border/60 bg-background/75 backdrop-blur-sm">
         <div className="container py-8 md:py-10">
@@ -195,6 +196,8 @@ export default function SignalDetailPage() {
           </div>
         </FadeIn>
       </main>
+
+      <SiteFooter />
     </div>
   );
 }

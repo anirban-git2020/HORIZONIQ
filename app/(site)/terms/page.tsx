@@ -1,0 +1,110 @@
+import type { Metadata } from "next";
+
+import {
+  ContentList,
+  ContentPage,
+  ContentSection,
+} from "@/components/layout/content-page";
+import { pageMetadata } from "@/lib/seo";
+import { FOUNDER, SITE_NAME } from "@/lib/site";
+
+export const metadata: Metadata = pageMetadata({
+  title: "Terms of Use",
+  description:
+    "HorizonIQ Beta Preview terms of use — beta software disclaimer, acceptable use, and limitation of liability.",
+  path: "/terms",
+});
+
+export default function TermsPage() {
+  return (
+    <ContentPage
+      title="Terms of Use"
+      description="Last updated: July 6, 2026. By using HorizonIQ during the Beta Preview, you agree to these terms."
+    >
+      <ContentSection title="Beta software disclaimer">
+        <p>
+          {SITE_NAME} is provided as <strong className="text-foreground">Beta Preview</strong>{" "}
+          software. Features, intelligence content, data sources, and user
+          experience may change without notice. The product is under active
+          development and may contain errors or incomplete functionality.
+        </p>
+      </ContentSection>
+
+      <ContentSection title="No warranty">
+        <p>
+          HorizonIQ is provided &quot;as is&quot; and &quot;as available&quot;
+          without warranties of any kind, whether express or implied, including
+          but not limited to implied warranties of merchantability, fitness for a
+          particular purpose, or non-infringement.
+        </p>
+        <p>
+          Intelligence outputs — including outlook projections, confidence tiers,
+          and recommended actions — are for informational purposes only. They do
+          not constitute professional, financial, legal, or career advice.
+        </p>
+      </ContentSection>
+
+      <ContentSection title="Features may change">
+        <p>
+          We may add, modify, or remove features during beta. Weekly briefing
+          data, signal coverage, and presentation may change as we improve the
+          product and pipeline.
+        </p>
+      </ContentSection>
+
+      <ContentSection title="Feedback">
+        <p>
+          If you submit feedback, bug reports, or suggestions, you grant
+          HorizonIQ a non-exclusive right to use that feedback to improve the
+          product without obligation to you. Feedback may be incorporated into
+          future versions.
+        </p>
+      </ContentSection>
+
+      <ContentSection title="Your information">
+        <p>
+          You retain ownership of information you submit (such as feedback emails
+          or bug reports). By submitting information, you represent that you
+          have the right to share it and that it does not violate third-party
+          rights.
+        </p>
+      </ContentSection>
+
+      <ContentSection title="Acceptable use">
+        <ContentList
+          items={[
+            "Do not attempt to disrupt, scrape, or overload HorizonIQ services",
+            "Do not misrepresent HorizonIQ intelligence as guaranteed fact",
+            "Do not use the product for unlawful purposes",
+            "Respect source websites and APIs linked from intelligence cards",
+          ]}
+        />
+      </ContentSection>
+
+      <ContentSection title="Limitation of liability">
+        <p>
+          To the fullest extent permitted by applicable law, HorizonIQ and its
+          creator shall not be liable for any indirect, incidental, special,
+          consequential, or punitive damages, or any loss of profits, data, or
+          goodwill arising from your use of the Beta Preview.
+        </p>
+        <p className="text-xs text-muted-foreground/80">
+          This section is placeholder language intended for legal review before
+          general availability. Consult qualified counsel for binding terms.
+        </p>
+      </ContentSection>
+
+      <ContentSection title="Contact">
+        <p>
+          Terms questions:{" "}
+          <a
+            href={`mailto:${FOUNDER.email}`}
+            className="text-primary underline-offset-4 hover:underline"
+          >
+            {FOUNDER.email}
+          </a>
+        </p>
+      </ContentSection>
+    </ContentPage>
+  );
+}

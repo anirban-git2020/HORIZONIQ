@@ -95,6 +95,19 @@ Help people understand **what is changing**, **why it matters**, and **what to d
 - [ ] Analytics dashboard UI (deferred)
 - [ ] Wire `search_executed`, `recommendation_opened`, `forecast_opened` when features ship
 
+### 1.9 Sprint 3.9 — Brand, Legal & Trust (Complete)
+
+- [x] Global production footer on all primary surfaces
+- [x] About, Contact, Privacy, Terms, Changelog, Roadmap pages
+- [x] Founder attribution (About + Contact + footer credit)
+- [x] Site navigation (desktop + mobile)
+- [x] SEO metadata, Open Graph, JSON-LD, sitemap, robots
+- [x] Favicon and web manifest
+- [x] Public path allowlist for legal pages during onboarding
+- [x] `footer_link_clicked` analytics wired
+- [ ] GitHub footer link (placeholder until public repo)
+- [ ] Formal legal review of Terms and Privacy copy
+
 ---
 
 ## Phase 2 — Retention & Habit (Post-MVP Validation)

@@ -1,6 +1,7 @@
 import {
   ONBOARDING_COOKIE_NAME,
 } from "@/lib/onboarding-phase";
+import { PUBLIC_SITE_PATH_PREFIXES } from "@/lib/site";
 import { ONBOARDING_SCHEMA_VERSION, SCHEMA_VERSION_KEY } from "@/lib/onboarding-reconcile";
 
 /**
@@ -179,7 +180,18 @@ export const ONBOARDING_COOKIE_INIT_SCRIPT = `
       return "/dashboard";
     }
 
+    var publicPaths = ${JSON.stringify([...PUBLIC_SITE_PATH_PREFIXES])};
+
+    function isPublicPath(pathname) {
+      for (var p = 0; p < publicPaths.length; p++) {
+        var pub = publicPaths[p];
+        if (pathname === pub || pathname.indexOf(pub + "/") === 0) return true;
+      }
+      return false;
+    }
+
     function pathAllowed(pathname, phase) {
+      if (isPublicPath(pathname)) return true;
       var list = pathPrefixes[phase] || [];
       for (var i = 0; i < list.length; i++) {
         var prefix = list[i];

@@ -1,6 +1,7 @@
 import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
 import { LandingEntryGuard } from "@/components/landing/landing-entry-guard";
 import { OnboardingStartLink } from "@/components/onboarding/onboarding-start-link";
+import { SiteFooter } from "@/components/layout/site-footer";
 import { TopBar } from "@/components/layout/top-bar";
 import { DataTrustPanel } from "@/components/landing/data-trust-panel";
 import { LandingHero } from "@/components/landing/landing-hero";
@@ -27,6 +28,7 @@ export default function LandingPage() {
         <div className="relative z-10">
           <TopBar
             showBeta
+            showNav
             right={
               <OnboardingStartLink
                 className={cn(buttonVariants({ variant: "ghost", size: "sm" }))}
@@ -50,17 +52,13 @@ export default function LandingPage() {
           <WhyHorizonIQ />
         </div>
 
-        <footer className="border-t border-border/50">
-          <div className="container space-y-1 py-6 text-sm text-muted-foreground">
-            <div className="flex flex-col items-center justify-between gap-2 sm:flex-row">
-              <span>© {new Date().getFullYear()} HorizonIQ</span>
-              <span>{meta.briefingLabel}</span>
-            </div>
-            <p className="text-center text-xs sm:text-right">
-              Refreshes {refreshSchedule.toLowerCase()}
+        <SiteFooter
+          supplementary={
+            <p>
+              {meta.briefingLabel} · Refreshes {refreshSchedule.toLowerCase()}
             </p>
-          </div>
-        </footer>
+          }
+        />
       </div>
       </div>
     </LandingEntryGuard>

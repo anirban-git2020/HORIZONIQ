@@ -1,15 +1,19 @@
-import type { Metadata, Viewport } from "next";
+import type { Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { JsonLd } from "@/components/seo/json-ld";
 import { PreferencesProvider } from "@/lib/preferences";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { OnboardingBootstrap } from "@/components/onboarding/onboarding-bootstrap";
 import { ONBOARDING_COOKIE_INIT_SCRIPT } from "@/components/onboarding/onboarding-cookie-init";
 import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
 import { ScrollToTop } from "@/components/navigation/scroll-to-top";
+import { defaultMetadata } from "@/lib/seo";
 import "./globals.css";
+
+export const metadata = defaultMetadata;
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,12 +27,6 @@ const outfit = Outfit({
   variable: "--font-outfit",
   display: "swap",
 });
-
-export const metadata: Metadata = {
-  title: "HorizonIQ — Observe. Predict. Lead.",
-  description:
-    "Understand what is changing in the world, why it matters, and what action to take next.",
-};
 
 export const viewport: Viewport = {
   themeColor: [
@@ -45,6 +43,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} dark`} suppressHydrationWarning>
       <head>
+        <JsonLd />
         <script dangerouslySetInnerHTML={{ __html: ONBOARDING_COOKIE_INIT_SCRIPT }} />
       </head>
       <body

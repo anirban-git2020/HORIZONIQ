@@ -371,6 +371,36 @@ Approved
 
 ---
 
+## 2026-07-06 — Sprint 3.9: Brand Identity, Legal, Trust & Founder Attribution
+
+### Decision
+
+Add production-grade global footer, legal/trust pages, site navigation, SEO metadata, and founder attribution before public Beta.
+
+### Reason
+
+HorizonIQ must present as a serious software product — discoverable, trustworthy, and legally transparent — without redesigning core intelligence surfaces.
+
+### Implementation
+
+- `components/layout/site-footer.tsx`, `site-nav.tsx`, `footer-link.tsx`
+- `app/(site)/` route group for About, Contact, Privacy, Terms, Changelog, Roadmap
+- `lib/site.ts` constants; `lib/seo.ts` metadata + JSON-LD
+- Public paths exempt from onboarding middleware via `isPublicSitePath()`
+- `footer_link_clicked` event wired (existing Sprint 4A taxonomy)
+
+### Constraints (locked)
+
+- No changes to dashboard layout, recommendations, analytics implementation, or pipeline
+- Welcome screen design unchanged
+- Terms limitation-of-liability and privacy policy marked for formal legal review
+
+### Outcome
+
+Approved
+
+---
+
 ## 2026-07-06 — Sprint 4A: Product Analytics & User Intelligence
 
 ### Decision

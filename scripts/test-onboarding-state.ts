@@ -67,6 +67,12 @@ test("middleware allows role only in profile phase", () => {
   assert.equal(isPathAllowedForPhase("/onboarding/role", "profile"), true);
 });
 
+test("public site paths allowed during welcome", () => {
+  assert.equal(isPathAllowedForPhase("/privacy", "welcome"), true);
+  assert.equal(isPathAllowedForPhase("/about", "welcome"), true);
+  assert.equal(isPathAllowedForPhase("/contact", "welcome"), true);
+});
+
 console.log("\nonboarding reconcile tests\n");
 
 test("invalid chain → welcome + wipe", () => {

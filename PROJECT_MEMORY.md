@@ -360,6 +360,32 @@ Visit state stored in localStorage:
 
 ---
 
+## Sprint 3.9 — Brand Identity, Legal, Trust & Founder Attribution (Shipped)
+
+**Mission:** Prepare HorizonIQ for public Beta with world-class branding, legal readiness, founder attribution, SEO, and a production-grade global footer.
+
+### Added
+
+- `SiteFooter` — brand, copyright, founder credit, contact, quick links, technology stack, version, trust badges
+- `SiteNav` + `TopBar showNav` — About, Roadmap, Contact, Privacy, Terms, Changelog
+- Routes: `/about`, `/contact`, `/privacy`, `/terms`, `/changelog`, `/roadmap` under `app/(site)/`
+- `lib/site.ts`, `lib/seo.ts`, `lib/site-content/changelog.ts`, `lib/site-content/roadmap.ts`
+- SEO: metadata expansion, OG image, icon, manifest, sitemap, robots, JSON-LD
+- Public path allowlist — site pages accessible during onboarding (`isPublicSitePath`)
+
+### Constraints (locked)
+
+- No dashboard redesign, no analytics/provider/pipeline changes
+- Founder attribution on About/Contact/footer only — product remains hero
+- Terms/Privacy include legal-review placeholders where noted
+- GitHub quick link remains placeholder until repo is public
+
+### Outcome
+
+Approved
+
+---
+
 ## Sprint 3C — Immersive Intelligence Experience (Shipped)
 
 **Mission:** Transform HorizonIQ into a Personal Intelligence Operating System — not a dashboard. One signature visual: the **Living Intelligence Core**.
@@ -658,6 +684,7 @@ Deprioritized / removed from MVP:
 - Confidence explanation prose on every signal
 - Sprint 1 first-time onboarding: welcome animation, name + greeting, IdentityService, guided tour overlay
 - **Sprint 4A:** Vercel Analytics, Speed Insights, Clarity scaffold, provider-agnostic `lib/analytics/`, anonymous visitor ID, session tracking, typed product events (`docs/analytics/metrics.md`)
+- **Sprint 3.9:** Global footer, legal/trust pages (About, Contact, Privacy, Terms, Changelog, Roadmap), site navigation, SEO metadata, JSON-LD, founder attribution
 
 ### Needs Improvement
 

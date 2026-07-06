@@ -1,3 +1,5 @@
+import { isPublicSitePath } from "@/lib/site";
+
 /** Shared onboarding phase — used by middleware (server) and client. */
 export type OnboardingPhase =
   | "welcome"
@@ -64,6 +66,7 @@ export function isPathAllowedForPhase(
   pathname: string,
   phase: OnboardingPhase
 ): boolean {
+  if (isPublicSitePath(pathname)) return true;
   return getAllowedPathPrefixes(phase).some(
     (prefix) => pathname === prefix || pathname.startsWith(`${prefix}/`)
   );

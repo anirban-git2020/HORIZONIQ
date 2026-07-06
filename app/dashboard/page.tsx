@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
+import { SiteFooter } from "@/components/layout/site-footer";
 import { TopBar } from "@/components/layout/top-bar";
 import { IntelligenceFieldLayer } from "@/components/intelligence-field/intelligence-field-layer";
 import { GuidedTourOverlay } from "@/components/onboarding/guided-tour-overlay";
@@ -198,7 +199,7 @@ export default function DashboardPage() {
   return (
     <div className="relative min-h-dvh bg-background" data-tour="dashboard">
       <IntelligenceFieldLayer variant="ambient" mode="webgl" signals={signals} />
-      <TopBar showBeta />
+      <TopBar showBeta showNav />
 
       <main className="container relative z-10 space-y-12 pt-10 pb-14 md:space-y-16 md:pt-12 md:pb-20">
         {isFirstVisit && (
@@ -311,19 +312,16 @@ export default function DashboardPage() {
         )}
       </main>
 
-      <footer className="relative z-10 border-t border-border">
-        <div className="container space-y-1 py-8 text-center text-sm text-muted-foreground">
+      <SiteFooter
+        supplementary={
           <p>
             HorizonIQ · {getProvenanceShortLabel(getDataProvenance())} ·{" "}
-            {briefing.briefingLabel}
-          </p>
-          <p className="text-xs">
-            Briefing period {getMeta().briefingPeriod} · Last updated{" "}
-            {formatBriefingUpdatedAt(getMeta().updatedAt)} ·{" "}
+            {briefing.briefingLabel} · Briefing period {getMeta().briefingPeriod}{" "}
+            · Last updated {formatBriefingUpdatedAt(getMeta().updatedAt)} ·{" "}
             {getRefreshSchedule()}
           </p>
-        </div>
-      </footer>
+        }
+      />
 
       <GuidedTourOverlay active={guidedTourActive} onComplete={handleTourComplete} />
     </div>

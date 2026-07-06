@@ -8,6 +8,31 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Sprint 3.9 — Brand Identity, Legal, Trust & Founder Attribution
+
+#### Added
+
+- **Global `SiteFooter`** — premium production footer on landing, dashboard, signal detail, and all site pages
+- **Site navigation** — About, Roadmap, Contact, Privacy, Terms, Changelog in `TopBar` (desktop + mobile menu)
+- **`footer_link_clicked` analytics** — wired via `FooterLink` component
+- **Static pages** — `/about`, `/contact`, `/privacy`, `/terms`, `/changelog`, `/roadmap`
+- **Founder section** — dedicated attribution on About and Contact pages
+- **SEO foundation** — `lib/seo.ts`, expanded root metadata, `metadataBase`, keywords, robots
+- **Open Graph** — `app/opengraph-image.tsx` dynamic preview image
+- **Favicon** — `app/icon.tsx`
+- **Web manifest** — `app/manifest.ts`
+- **Sitemap & robots** — `app/sitemap.ts`, `app/robots.ts`
+- **Schema.org JSON-LD** — `SoftwareApplication` structured data in root layout
+- **`lib/site.ts`** — branding, legal, founder, and public path constants
+- **Public path allowlist** — legal/site pages accessible during all onboarding phases
+
+#### Changed
+
+- `TopBar` — optional `showNav` prop with `SiteNav`
+- Landing, dashboard, signal detail — inline footers replaced with `SiteFooter`
+- Onboarding cookie init script — respects public site paths
+- `.env.example` — `NEXT_PUBLIC_SITE_URL` documented
+
 ### Sprint 4A — Product Analytics & User Intelligence
 
 #### Added

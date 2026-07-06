@@ -64,8 +64,11 @@ export function WelcomeScreen() {
             onClick={() => advance(false)}
             className="mt-12 min-w-[240px] md:mt-14"
           >
-            Enter <BrandName adaptive={false} className="font-semibold" />
-            <ArrowRight />
+            <span className="inline-flex items-center gap-1.5">
+              Enter
+              <BrandName monochrome className="font-semibold" />
+            </span>
+            <ArrowRight className="size-4 shrink-0" aria-hidden="true" />
           </Button>
         </div>
       </div>

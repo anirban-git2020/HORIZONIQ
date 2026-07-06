@@ -15,6 +15,8 @@ export type HorizonIQWordmarkProps = {
    * When false, Horizon is always white (for dark hero surfaces).
    */
   adaptive?: boolean;
+  /** Both parts use current text color (e.g. primary button label). */
+  monochrome?: boolean;
 };
 
 /** Consistent HorizonIQ lockup: Horizon + IQ (#00c5ff). */
@@ -22,6 +24,7 @@ export function HorizonIQWordmark({
   className,
   size = "lg",
   adaptive = true,
+  monochrome = false,
 }: HorizonIQWordmarkProps) {
   return (
     <span
@@ -34,12 +37,16 @@ export function HorizonIQWordmark({
     >
       <span
         className={cn(
-          adaptive ? "text-foreground dark:text-brand-horizon" : "text-brand-horizon"
+          monochrome
+            ? "text-current"
+            : adaptive
+              ? "text-foreground dark:text-brand-horizon"
+              : "text-brand-horizon"
         )}
       >
         Horizon
       </span>
-      <span className="text-brand-iq">IQ</span>
+      <span className={cn(monochrome ? "text-current" : "text-brand-iq")}>IQ</span>
     </span>
   );
 }
@@ -48,15 +55,18 @@ export function HorizonIQWordmark({
 export function BrandName({
   className,
   adaptive = true,
+  monochrome = false,
 }: {
   className?: string;
   adaptive?: boolean;
+  monochrome?: boolean;
 }) {
   return (
     <HorizonIQWordmark
       size="inherit"
       adaptive={adaptive}
-      className={cn("inline align-baseline", className)}
+      monochrome={monochrome}
+      className={cn("inline", className)}
     />
   );
 }

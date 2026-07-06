@@ -8,6 +8,37 @@ Format based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ## [Unreleased]
 
+### Sprint 4A — Product Analytics & User Intelligence
+
+#### Added
+
+- **Vercel Analytics** — `@vercel/analytics` in root layout (`<Analytics />`)
+- **Vercel Speed Insights** — `@vercel/speed-insights` in root layout (`<SpeedInsights />`)
+- **Microsoft Clarity** — lazy-loaded in production when `NEXT_PUBLIC_CLARITY_PROJECT_ID` is set
+- **Analytics abstraction layer** — `lib/analytics/` (`analytics.ts`, `events.ts`, `providers.ts`, `types.ts`, `visitor.ts`, `session.ts`, `clarity.ts`)
+- **Anonymous visitor ID** — UUID in `horizoniq.analytics.visitor-id.v1` (localStorage)
+- **Session tracking** — start/end, duration, pages, event count; archived in `horizoniq.analytics.sessions.v1`
+- **Sprint 4A product events** — `app_opened`, `guided_tour_*`, `role_selected`, `region_selected`, `interest_selected`, `dashboard_loaded`, `return_visit`, `signal_opened`, `briefing_expanded`, `cta_clicked`, and infrastructure events for search/recommendations/forecast
+- **`docs/analytics/metrics.md`** — metric definitions (activation, return rate, session length, etc.)
+- **`.env.example`** — analytics and pipeline env var documentation
+
+#### Changed
+
+- Refactored analytics from `core.ts` → `analytics.ts` with multi-provider sink architecture
+- Migrated instrumented call sites to Sprint 4A event names
+- `AnalyticsProvider` — bootstraps visitor, session, `app_opened`, providers, page views
+- PostHog integration — `capture_pageview: false` (Vercel Analytics handles page views); events forwarded via abstraction
+- `DisclosurePanel` — optional `onExpanded` callback (dashboard tracks `briefing_expanded`)
+
+#### Removed
+
+- `lib/analytics/core.ts` (superseded by `analytics.ts`)
+
+### Pipeline deploy reliability (2026-07-06)
+
+- Fixed weekly briefing Vercel deploy failures when `briefings-registry.ts` was not committed
+- CI now runs `pipeline:sync-registry`, `pipeline:verify`, and `npm run build` before push
+
 ### Fallback timeline
 
 - **2026-06-28** — Established known-good restore point `fallback/2026-06-28-v1.1-stable` at `aab7e55`. Full Vercel onboarding flow verified in incognito. See `FALLBACK_TIMELINE.md`.

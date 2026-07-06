@@ -22,10 +22,11 @@ interface SignalCardProps {
 
 function trackSignalCardClick(signal: SignalView, source: SignalSource) {
   rememberSignalSource(source);
-  track("signal_click", {
+  track("signal_opened", {
     signalId: signal.id,
     source,
     changeType: signal.change.type,
+    surface: "card",
   });
 }
 

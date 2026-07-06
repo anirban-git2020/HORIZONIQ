@@ -657,14 +657,15 @@ Deprioritized / removed from MVP:
 - Clickable source links (pipeline URLs + label-based fallback)
 - Confidence explanation prose on every signal
 - Sprint 1 first-time onboarding: welcome animation, name + greeting, IdentityService, guided tour overlay
+- **Sprint 4A:** Vercel Analytics, Speed Insights, Clarity scaffold, provider-agnostic `lib/analytics/`, anonymous visitor ID, session tracking, typed product events (`docs/analytics/metrics.md`)
 
 ### Needs Improvement
 
 - Sprint 3C follow-up: shared WebGL canvas, GPU tier detection, onboarding field continuity
 - Broader signal coverage across all 14 interests
-- Analytics for Week 2 return rate and 15-second dashboard comprehension
+- PostHog funnels and dashboard for Week 2 return rate (events instrumented; funnel UI deferred)
 - More region-specific explanation variants in catalog
-- PostHog funnels for trust interactions (source clicks, confidence panel)
+- Wire `search_executed`, `recommendation_opened`, `forecast_opened` when features ship
 
 ### Not Yet Started
 

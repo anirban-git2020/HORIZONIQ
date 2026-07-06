@@ -21,10 +21,11 @@ import { cn } from "@/lib/utils";
 
 function trackSignalClick(item: ChangeItem, source: SignalSource) {
   rememberSignalSource(source);
-  track("signal_click", {
+  track("signal_opened", {
     signalId: item.signal.id,
     source,
     changeType: item.signal.change.type,
+    surface: "hero",
   });
 }
 

@@ -62,10 +62,11 @@ export default function SignalDetailPage() {
   useEffect(() => {
     if (detailTracked.current || !signal) return;
     detailTracked.current = true;
-    track("signal_detail_viewed", {
+    track("signal_opened", {
       signalId: signal.id,
       source: consumeSignalSource(),
       changeType: signal.change.type,
+      surface: "detail",
     });
   }, [signal]);
 

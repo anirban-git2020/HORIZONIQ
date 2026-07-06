@@ -1,6 +1,6 @@
 # HorizonIQ Roadmap
 
-Last updated: 2026-06-27
+Last updated: 2026-07-06
 
 ---
 
@@ -83,6 +83,17 @@ Help people understand **what is changing**, **why it matters**, and **what to d
 
 - [x] Welcome, name, greeting, guided tour choice, tour overlay
 - [x] IdentityService (localStorage, no auth)
+
+### 1.8 Sprint 4A — Product Analytics (Complete)
+
+- [x] Vercel Analytics + Speed Insights in root layout
+- [x] Microsoft Clarity scaffold (lazy, production-only, env-gated)
+- [x] Provider-agnostic `lib/analytics/` abstraction
+- [x] Anonymous visitor ID + session tracking (localStorage)
+- [x] Sprint 4A typed product events
+- [x] `docs/analytics/metrics.md` metric definitions
+- [ ] Analytics dashboard UI (deferred)
+- [ ] Wire `search_executed`, `recommendation_opened`, `forecast_opened` when features ship
 
 ---
 

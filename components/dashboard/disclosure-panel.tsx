@@ -11,20 +11,30 @@ export function DisclosurePanel({
   description,
   children,
   defaultOpen = false,
+  onExpanded,
 }: {
   title: string;
   description?: string;
   children: React.ReactNode;
   defaultOpen?: boolean;
+  onExpanded?: () => void;
 }) {
   const [open, setOpen] = useState(defaultOpen);
+
+  const toggle = (): void => {
+    setOpen((wasOpen) => {
+      const next = !wasOpen;
+      if (next) onExpanded?.();
+      return next;
+    });
+  };
 
   return (
     <FadeIn>
       <div className="hairline-b border-b border-border/60">
         <button
           type="button"
-          onClick={() => setOpen((v) => !v)}
+          onClick={toggle}
           className="flex w-full items-start justify-between gap-4 py-5 text-left transition-colors hover:text-foreground md:py-6"
           aria-expanded={open}
         >

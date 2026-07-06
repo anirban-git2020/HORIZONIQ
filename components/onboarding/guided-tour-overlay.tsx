@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { X } from "lucide-react";
@@ -157,6 +157,13 @@ export function GuidedTourOverlay({
 
   const step = TOUR_STEPS[stepIndex];
   const isLast = stepIndex === TOUR_STEPS.length - 1;
+  const tourStarted = useRef(false);
+
+  useEffect(() => {
+    if (!active || !ready || tourStarted.current) return;
+    tourStarted.current = true;
+    track("guided_tour_started", { stepsTotal: TOUR_STEPS.length });
+  }, [active, ready]);
 
   const remeasure = useCallback(() => {
     if (!step) return;
@@ -231,10 +238,15 @@ export function GuidedTourOverlay({
 
   const finishTour = useCallback(
     (skipped: boolean) => {
-      track("guided_tour_completed", {
-        skipped,
-        stepsCompleted: skipped ? stepIndex : TOUR_STEPS.length,
-      });
+      if (skipped) {
+        track("guided_tour_skipped", {
+          stepsCompleted: stepIndex,
+        });
+      } else {
+        track("guided_tour_completed", {
+          stepsCompleted: TOUR_STEPS.length,
+        });
+      }
       onComplete();
     },
     [stepIndex, onComplete]

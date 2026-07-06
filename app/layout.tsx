@@ -1,5 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import { PreferencesProvider } from "@/lib/preferences";
 import { ThemeProvider } from "@/components/theme/theme-provider";
@@ -57,6 +59,8 @@ export default function RootLayout({
             </OnboardingBootstrap>
           </PreferencesProvider>
           <AnalyticsProvider />
+          <Analytics />
+          <SpeedInsights />
         </ThemeProvider>
       </body>
     </html>

@@ -369,3 +369,34 @@ HorizonIQ must behave like an intelligence analyst, not a trend aggregator. User
 
 Approved
 
+---
+
+## 2026-07-06 — Sprint 4A: Product Analytics & User Intelligence
+
+### Decision
+
+Implement a provider-agnostic analytics layer with Vercel Analytics, Speed Insights, optional Clarity and PostHog — no UI redesign, no business logic changes.
+
+### Reason
+
+Beta is live on Vercel. Engineering foundation is stable. Next priority is measuring real user behavior to validate retention hypotheses (Week 2 return, activation, change hero engagement).
+
+### Implementation
+
+- `lib/analytics/` abstraction — UI calls `track()` only, never provider SDKs
+- Anonymous UUID visitor ID (localStorage) + session tracking (sessionStorage + archive)
+- Vercel Analytics + Speed Insights in `app/layout.tsx`
+- Clarity lazy-loaded in production only via `NEXT_PUBLIC_CLARITY_PROJECT_ID`
+- Typed Sprint 4A events; infrastructure events for search/recommendations/forecast (not wired until features ship)
+- `docs/analytics/metrics.md` — metric definitions only, no analytics dashboard UI
+
+### Privacy (locked)
+
+- No emails, passwords, or raw search query text
+- Anonymous product usage only
+- Predefined interest IDs only (no free text)
+
+### Outcome
+
+Approved
+

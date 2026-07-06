@@ -19,7 +19,7 @@ import {
 } from "@/lib/onboarding-flow";
 import { navigateOnboarding } from "@/lib/onboarding-nav";
 import { usePreferences } from "@/lib/preferences";
-import { startSessionTiming, track } from "@/lib/analytics";
+import { track } from "@/lib/analytics";
 import { cn } from "@/lib/utils";
 
 export default function RolePage() {
@@ -37,8 +37,6 @@ export default function RolePage() {
       return;
     }
 
-    startSessionTiming();
-    track("onboarding_started", {});
     setReady(true);
   }, [hydrated]);
 
@@ -83,7 +81,7 @@ export default function RolePage() {
               selected={preferences.role === role.id}
               onSelect={() => {
                 setRole(role.id);
-                track("onboarding_role_selected", { role: role.id });
+                track("role_selected", { role: role.id, surface: "onboarding" });
               }}
             />
           </StaggerItem>

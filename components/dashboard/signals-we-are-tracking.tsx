@@ -58,10 +58,11 @@ export function SignalsWeAreTracking({
                     href={`/signals/${signal.id}`}
                     onClick={() => {
                       rememberSignalSource("watchlist");
-                      track("signal_click", {
+                      track("signal_opened", {
                         signalId: signal.id,
                         source: "watchlist",
                         changeType: signal.change.type,
+                        surface: "watchlist",
                       });
                     }}
                     className="group block px-6 py-6 transition-colors duration-200 hover:bg-secondary/20 md:px-10 md:py-7"

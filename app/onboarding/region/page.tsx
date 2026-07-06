@@ -108,7 +108,7 @@ export default function RegionPage() {
               selected={preferences.region === region.id}
               onSelect={() => {
                 setRegion(region.id);
-                track("onboarding_region_selected", { region: region.id });
+                track("region_selected", { region: region.id, surface: "onboarding" });
               }}
             />
           </StaggerItem>

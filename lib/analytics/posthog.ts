@@ -1,11 +1,8 @@
-import { registerAnalyticsSink } from "./core";
+import { registerAnalyticsSink } from "./analytics";
 
 /**
- * Optional PostHog integration.
- *
- * Activates only when `NEXT_PUBLIC_POSTHOG_KEY` is set. PostHog is loaded
- * lazily so it adds no bundle weight when analytics has no configured provider.
- * Idempotent — safe to call on every mount.
+ * Optional PostHog integration — activated when NEXT_PUBLIC_POSTHOG_KEY is set.
+ * Loaded lazily so it adds no bundle weight when unconfigured.
  */
 
 let initialized = false;
@@ -28,15 +25,19 @@ export async function initPostHog(): Promise<void> {
 
     posthog.init(key, {
       api_host: apiHost,
-      capture_pageview: true,
-      person_profiles: "always",
+      capture_pageview: false,
+      person_profiles: "identified_only",
     });
 
     registerAnalyticsSink((event) => {
-      posthog.capture(event.name, { ...event.props, ts: event.ts });
+      posthog.capture(event.name, {
+        ...event.props,
+        visitorId: event.visitorId,
+        sessionId: event.sessionId,
+        ts: event.ts,
+      });
     });
   } catch {
-    // Never let a failed analytics provider break the app.
     initialized = false;
   }
 }

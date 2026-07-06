@@ -120,13 +120,26 @@ export default function DashboardPage() {
     }
     viewTracked.current = true;
     const visitType = whatChanged.isReturnVisit ? "return" : "first";
-    track("dashboard_viewed", {
+    track("dashboard_loaded", {
       visitType,
       briefingPeriod: whatChanged.briefingPeriod,
       role: preferences.role,
       region: preferences.region,
       timeToValueMs: visitType === "first" ? getSessionElapsedMs() : null,
     });
+    if (visitType === "return") {
+      const snapshot = loadVisitSnapshot();
+      const daysSinceLastVisit =
+        snapshot?.lastVisitAt != null
+          ? Math.floor(
+              (Date.now() - Date.parse(snapshot.lastVisitAt)) / 86_400_000
+            )
+          : null;
+      track("return_visit", {
+        briefingPeriod: whatChanged.briefingPeriod,
+        daysSinceLastVisit,
+      });
+    }
   }, [hydrated, isComplete, preferences.role, preferences.region, whatChanged]);
 
   useEffect(() => {
@@ -170,7 +183,7 @@ export default function DashboardPage() {
   const displayName = identityService.getDisplayName();
 
   const handleReset = () => {
-    track("start_over", {});
+    track("cta_clicked", { cta: "start_over", surface: "dashboard" });
     clearVisitSnapshot();
     clearAllHorizonIQClientState();
     window.location.assign("/onboarding/welcome");
@@ -244,6 +257,9 @@ export default function DashboardPage() {
               <DisclosurePanel
                 title="Supporting intelligence"
                 description="Skills and opportunities connected to your focus areas."
+                onExpanded={() =>
+                  track("briefing_expanded", { section: "supporting_intelligence" })
+                }
               >
                 <div className="space-y-10">
                   {supportingSections.map((key) => {

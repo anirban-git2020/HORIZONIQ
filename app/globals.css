@@ -188,4 +188,153 @@
       0 16px 48px -20px hsl(0 0% 0% / 0.55);
   }
 
+  /* —— HorizonIQ Motion Language v1.0 (Epic 8) —— */
+
+  @keyframes hq-motion-fade-up-hero {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 12px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes hq-motion-fade-up-featured {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 16px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  @keyframes hq-motion-fade-up-signal {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 12px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .hq-motion-hero-enter {
+    animation: hq-motion-fade-up-hero 260ms ease-out both;
+  }
+
+  .hq-motion-featured-enter {
+    animation: hq-motion-fade-up-featured 260ms ease-out both;
+    animation-delay: 60ms;
+  }
+
+  .hq-motion-signal-enter {
+    opacity: 0;
+    transform: translate3d(0, 12px, 0);
+  }
+
+  .hq-motion-signals-revealed .hq-motion-signal-enter {
+    animation: hq-motion-fade-up-signal 260ms ease-out both;
+  }
+
+  .hq-motion-btn {
+    transition:
+      transform 120ms ease-out,
+      filter 120ms ease-out,
+      background-color 120ms ease-out,
+      border-color 120ms ease-out,
+      color 120ms ease-out;
+  }
+
+  .hq-motion-btn:hover {
+    transform: translate3d(0, -2px, 0);
+    filter: brightness(1.04);
+  }
+
+  .hq-motion-btn:active {
+    transform: translate3d(0, 0, 0);
+    filter: none;
+  }
+
+  .hq-motion-signal {
+    transition: transform 180ms ease-out;
+  }
+
+  .hq-motion-signal:not(:disabled):hover {
+    transform: translate3d(0, -2px, 0);
+    box-shadow:
+      0 1px 2px hsl(228 40% 9% / 0.06),
+      0 16px 44px -18px hsl(228 40% 9% / 0.16);
+  }
+
+  .dark .hq-motion-signal:not(:disabled):hover {
+    box-shadow:
+      0 1px 0 hsl(0 0% 100% / 0.04),
+      0 20px 52px -18px hsl(0 0% 0% / 0.62);
+  }
+
+  .hq-motion-signal-headline {
+    filter: brightness(1);
+    transition: filter 180ms ease-out;
+  }
+
+  .group:hover .hq-motion-signal-headline {
+    filter: brightness(1.1);
+  }
+
+  .hq-motion-signal-momentum {
+    filter: brightness(1);
+    transition: filter 180ms ease-out;
+  }
+
+  .group:hover .hq-motion-signal-momentum {
+    filter: brightness(1.08);
+  }
+
+  .hq-motion-signal-cta {
+    opacity: 0.95;
+    transition:
+      transform 180ms ease-out,
+      opacity 180ms ease-out;
+  }
+
+  .group:hover .hq-motion-signal-cta {
+    opacity: 1;
+    transform: translate3d(4px, 0, 0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hq-motion-hero-enter,
+    .hq-motion-featured-enter,
+    .hq-motion-signals-revealed .hq-motion-signal-enter {
+      animation: none !important;
+    }
+
+    .hq-motion-hero-enter,
+    .hq-motion-featured-enter,
+    .hq-motion-signal-enter {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+
+    .hq-motion-btn:hover,
+    .hq-motion-btn:active,
+    .hq-motion-signal:hover {
+      transform: none !important;
+      filter: none !important;
+    }
+
+    .hq-motion-signal-headline,
+    .hq-motion-signal-momentum,
+    .hq-motion-signal-cta {
+      transition: none !important;
+      filter: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
 }

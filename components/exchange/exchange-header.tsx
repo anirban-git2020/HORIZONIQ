@@ -1,9 +1,9 @@
 "use client";
 
-import { Bell, ChevronDown, Globe2 } from "lucide-react";
+import { Bell, ChevronDown, Globe2, RotateCcw } from "lucide-react";
 
 import { Logo } from "@/components/brand/logo";
-import { TaglineLockup } from "@/components/brand/tagline-lockup";
+import { clearLandingJourney } from "@/hooks/use-landing-journey";
 import { cn } from "@/lib/utils";
 
 /**
@@ -22,12 +22,22 @@ export function ExchangeHeader({ className }: { className?: string }) {
       <div className="container flex h-16 items-center justify-between gap-4 md:h-[4.25rem]">
         <div className="flex items-center gap-4 md:gap-6">
           <Logo showBeta />
-          <div className="hidden lg:block">
-            <TaglineLockup size="sm" />
-          </div>
         </div>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          <button
+            type="button"
+            onClick={() => {
+              clearLandingJourney();
+              window.location.href = "/";
+            }}
+            className="hidden items-center gap-2 rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-accent/70 hover:text-foreground sm:inline-flex"
+            aria-label="Start over"
+          >
+            <RotateCcw className="h-4 w-4" />
+            <span className="font-medium">Start over</span>
+          </button>
+
           <button
             type="button"
             className="hidden items-center gap-2 rounded-lg border border-border/80 bg-secondary/60 px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary sm:inline-flex"

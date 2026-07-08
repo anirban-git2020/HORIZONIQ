@@ -6,8 +6,13 @@ import { X } from "lucide-react";
 import { IntelligencePulseBriefPanel } from "@/components/exchange/intelligence-pulse-brief";
 import { PulseTileSummary } from "@/components/exchange/intelligence-pulse-tile";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
+import { useLandingJourney } from "@/hooks/use-landing-journey";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import { useScrollLock } from "@/hooks/use-scroll-lock";
+import {
+  getPersonalizedBrief,
+  journeyToPreferences,
+} from "@/lib/exchange/personalized-pulse";
 import { getPulseBrief } from "@/lib/exchange/pulse-brief-data";
 import type { IntelligencePulseTile } from "@/lib/exchange/pulse-mock-data";
 import { cn } from "@/lib/utils";
@@ -26,8 +31,11 @@ const MOTION_MS = 260;
  */
 export function FocusOverlay({ signal, onClose }: FocusOverlayProps) {
   const reducedMotion = useReducedMotion();
+  const { journey } = useLandingJourney();
   const dialogRef = useRef<HTMLDivElement>(null);
-  const brief = getPulseBrief(signal.id);
+  const brief =
+    getPersonalizedBrief(signal.id, journeyToPreferences(journey)) ??
+    getPulseBrief(signal.id);
   const briefPanelId = `pulse-brief-${signal.id}`;
   const headingId = `pulse-heading-${signal.id}`;
   const isHero = signal.tier === "hero";

@@ -4,7 +4,7 @@ import { memo, useCallback } from "react";
 
 import { IntelligencePulseTileCard } from "@/components/exchange/intelligence-pulse-tile";
 import { useMotionReveal } from "@/hooks/use-motion-reveal";
-import { getPulseTilesByTier } from "@/lib/exchange/pulse-mock-data";
+import { usePersonalizedPulse } from "@/hooks/use-personalized-pulse";
 import type { IntelligencePulseTile } from "@/lib/exchange/pulse-mock-data";
 import { MOTION_CLASS } from "@/lib/motion-language";
 import { cn } from "@/lib/utils";
@@ -22,7 +22,7 @@ function WorldIntelligencePulseInner({
   className,
   onSignalSelected,
 }: WorldIntelligencePulseProps) {
-  const { hero, featured, compact } = getPulseTilesByTier();
+  const { hero, featured, compact } = usePersonalizedPulse();
   const { ref: signalsRef, revealed: signalsRevealed } = useMotionReveal();
 
   const orderedTiles: IntelligencePulseTile[] = [

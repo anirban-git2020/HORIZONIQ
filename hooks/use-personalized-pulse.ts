@@ -7,35 +7,22 @@ import {
   buildPersonalizedTiles,
   journeyToPreferences,
 } from "@/lib/exchange/personalized-pulse";
+import type { PersonalizedPulse } from "@/lib/exchange/personalized-pulse";
 import { getPulseTilesByTier } from "@/lib/exchange/pulse-mock-data";
-import type { IntelligencePulseTile } from "@/lib/exchange/pulse-mock-data";
-
-type PulseTiles = {
-  hero: IntelligencePulseTile | undefined;
-  featured: IntelligencePulseTile[];
-  compact: IntelligencePulseTile[];
-};
 
 /**
- * Chooses the Pulse's data source, hydration-safe:
- * - Non-onboarded (no interests) or pre-hydration → curated editorial front page.
- * - Onboarded (has interests) → engine-personalized Signals for their profile.
- * Falls back to the editorial set if the engine yields nothing.
+ * Chooses the Pulse's data, hydration-safe:
+ * - Non-onboarded (no interests) or pre-hydration → the full editorial front page.
+ * - Onboarded → only Signals matching chosen interests (main), plus adjacent
+ *   Signals as `related`. Nothing irrelevant is padded into the main grid.
  */
-export function usePersonalizedPulse(): PulseTiles {
+export function usePersonalizedPulse(): PersonalizedPulse {
   const { hydrated, journey } = useLandingJourney();
 
-  return useMemo<PulseTiles>(() => {
+  return useMemo<PersonalizedPulse>(() => {
     if (!hydrated || journey.selectedInterests.length === 0) {
-      return getPulseTilesByTier();
+      return { ...getPulseTilesByTier(), related: [] };
     }
-
-    const personalized = buildPersonalizedTiles(journeyToPreferences(journey));
-    const isEmpty =
-      !personalized.hero &&
-      personalized.featured.length === 0 &&
-      personalized.compact.length === 0;
-
-    return isEmpty ? getPulseTilesByTier() : personalized;
+    return buildPersonalizedTiles(journeyToPreferences(journey));
   }, [hydrated, journey]);
 }

@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 import { FocusOverlay } from "@/components/focus/FocusOverlay";
 import { LivingIntelligenceField } from "@/components/background/living-intelligence-field";
 import { ExchangeHeader } from "@/components/exchange/exchange-header";
+import { IntelligenceAudience } from "@/components/exchange/intelligence-audience";
 import { IntelligenceHero } from "@/components/exchange/intelligence-hero";
 import { WorldIntelligencePulse } from "@/components/exchange/world-intelligence-pulse";
 import { SiteFooter } from "@/components/layout/site-footer";
@@ -42,6 +43,7 @@ export function IntelligenceExchangeShell() {
 
         <main className="relative z-10">
           <IntelligenceHero />
+          <IntelligenceAudience />
           <WorldIntelligencePulse onSignalSelected={handleSignalSelected} />
         </main>
 

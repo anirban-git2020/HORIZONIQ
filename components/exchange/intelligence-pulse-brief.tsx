@@ -1,5 +1,3 @@
-import { ArrowRight } from "lucide-react";
-
 import type { IntelligencePulseBrief } from "@/lib/exchange/pulse-brief-data";
 import { cn } from "@/lib/utils";
 
@@ -85,16 +83,6 @@ export function IntelligencePulseBriefPanel({
           {brief.forecast}
         </p>
       </section>
-
-      <div className={cn("border-t border-border/25", compact ? "pt-5" : "pt-8")}>
-        <button
-          type="button"
-          className="inline-flex items-center gap-1.5 text-sm font-medium text-foreground transition-transform duration-300 ease-in-out hover:translate-x-1 motion-reduce:transition-none motion-reduce:hover:translate-x-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:rounded-sm"
-        >
-          Read Full Brief
-          <ArrowRight className="h-3.5 w-3.5" aria-hidden="true" />
-        </button>
-      </div>
     </div>
   );
 }

@@ -8,7 +8,7 @@
  * and no tile ever claims an interest the user did not choose.
  */
 
-import { mockSignalRepository } from "@/lib/domain";
+import { getSignalRepository } from "@/lib/domain/live-repository";
 import type { Signal } from "@/lib/domain";
 import { getPulseBrief } from "@/lib/exchange/pulse-brief-data";
 import type { IntelligencePulseBrief } from "@/lib/exchange/pulse-brief-data";
@@ -83,7 +83,7 @@ function sortForRegion(signals: readonly Signal[], region: RegionId | null): Sig
 export function buildPersonalizedTiles(profile: PulseProfile): PersonalizedPulse {
   const wanted = new Set<InterestId>(profile.interests);
   const adjacent = expand(profile.interests);
-  const all = mockSignalRepository.getAll();
+  const all = getSignalRepository().getAll();
 
   const directSignals = sortForRegion(
     all.filter((s) => isDirect(s, wanted)),

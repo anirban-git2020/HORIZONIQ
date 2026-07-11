@@ -7,7 +7,7 @@
  * here anymore.
  */
 
-import { MOCK_SIGNALS } from "@/lib/domain";
+import { getSignalRepository } from "@/lib/domain/live-repository";
 import type { Signal, Trajectory } from "@/lib/domain";
 
 export type PulseTileTier = "hero" | "featured" | "compact";
@@ -82,9 +82,9 @@ export function toPulseTile(signal: Signal, index: number): IntelligencePulseTil
 }
 
 /** All tiles in default (momentum) order, sourced from the domain. */
-export const INTELLIGENCE_PULSE_TILES: IntelligencePulseTile[] = MOCK_SIGNALS.map(
-  (signal, index) => toPulseTile(signal, index)
-);
+export const INTELLIGENCE_PULSE_TILES: IntelligencePulseTile[] = getSignalRepository()
+  .getAll()
+  .map((signal, index) => toPulseTile(signal, index));
 
 export function getPulseTilesByTier() {
   const hero = INTELLIGENCE_PULSE_TILES.find((t) => t.tier === "hero");

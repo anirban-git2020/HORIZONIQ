@@ -7,7 +7,7 @@
  * editorial intelligence, never a personalized claim.
  */
 
-import { mockSignalRepository } from "@/lib/domain";
+import { getSignalRepository } from "@/lib/domain/live-repository";
 import type { Signal } from "@/lib/domain";
 
 export type BriefEvidenceStat = {
@@ -25,7 +25,7 @@ export type IntelligencePulseBrief = {
 
 function toBrief(signal: Signal): IntelligencePulseBrief {
   const titleOf = (id: string) =>
-    mockSignalRepository.getById(id)?.identity.title ?? id;
+    getSignalRepository().getById(id)?.identity.title ?? id;
   return {
     whyItMatters: signal.reading.brief,
     evidence: signal.evidence.sources.map((source) => ({
@@ -39,6 +39,6 @@ function toBrief(signal: Signal): IntelligencePulseBrief {
 }
 
 export function getPulseBrief(tileId: string): IntelligencePulseBrief | undefined {
-  const signal = mockSignalRepository.getById(tileId);
+  const signal = getSignalRepository().getById(tileId);
   return signal ? toBrief(signal) : undefined;
 }

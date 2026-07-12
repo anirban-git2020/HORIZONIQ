@@ -72,7 +72,7 @@ function WorldIntelligencePulseInner({
       </header>
 
       {isEmpty ? (
-        <div className="rounded-2xl border border-border/40 bg-card/20 p-10 text-center md:p-14">
+        <div className="hq-motion-hero-enter rounded-2xl border border-border/40 bg-card/20 p-10 text-center md:p-14">
           <p className="text-lg text-foreground/90">
             No Signals match your current focus yet.
           </p>

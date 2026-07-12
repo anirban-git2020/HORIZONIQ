@@ -40,7 +40,6 @@ function detectOs(userAgent: string): string {
 
 function resolvePageLabel(pathname: string): string {
   if (PAGE_LABELS[pathname]) return PAGE_LABELS[pathname];
-  if (pathname.startsWith("/signals/")) return "Signal Detail";
   if (pathname.startsWith("/onboarding/")) return "Onboarding";
   return pathname;
 }

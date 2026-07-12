@@ -27,7 +27,7 @@ export function IntelligenceAudience() {
   ].filter((v): v is string => Boolean(v));
 
   return (
-    <section className="mx-auto w-full max-w-[1500px] px-6 pb-10">
+    <section className="hq-motion-hero-enter mx-auto w-full max-w-[1500px] px-6 pb-10">
       <p className="label-caps text-primary">Your Intelligence Brief</p>
       <p className="mt-3 max-w-3xl text-base text-muted-foreground md:text-lg">
         Curated for{" "}

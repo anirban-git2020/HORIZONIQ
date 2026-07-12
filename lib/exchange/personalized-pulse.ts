@@ -21,7 +21,7 @@ const GRID_SIZE = 12;
 const RELATED_SIZE = 8;
 
 /** Adjacent fields shown as clearly-labeled "Related", never as direct matches. */
-const ADJACENCY: Partial<Record<InterestId, readonly InterestId[]>> = {
+export const ADJACENCY: Partial<Record<InterestId, readonly InterestId[]>> = {
   manufacturing: ["robotics", "supply-chain"],
   "supply-chain": ["manufacturing", "robotics"],
   robotics: ["manufacturing", "supply-chain"],
@@ -33,7 +33,7 @@ const ADJACENCY: Partial<Record<InterestId, readonly InterestId[]>> = {
   biotechnology: ["healthcare", "life-sciences", "biochemistry"],
   "life-sciences": ["biotechnology", "healthcare", "biochemistry"],
   biochemistry: ["biotechnology", "life-sciences"],
-  arts: ["commerce", "artificial-intelligence"],
+  arts: ["commerce"],
   "artificial-intelligence": ["cloud-computing", "cybersecurity"],
   "cloud-computing": ["artificial-intelligence", "cybersecurity"],
   cybersecurity: ["artificial-intelligence", "cloud-computing"],

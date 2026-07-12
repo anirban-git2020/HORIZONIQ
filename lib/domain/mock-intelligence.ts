@@ -196,7 +196,7 @@ const SEEDS: readonly Seed[] = [
     summary:
       "Nations and firms race to secure advanced packaging before the next capacity crunch.",
     brief:
-      "Advanced packaging and geopolitical alignment now determine who can build AI at scale. Supply security has become a board-level risk, not a procurement detail.",
+      "Advanced packaging and geopolitical alignment now determine who can build frontier compute at scale. Supply security has become a board-level risk, not a procurement detail.",
     forecast:
       "Regional diversification will accelerate through 2027. Companies without dual-source strategies face multi-quarter delays on every hardware roadmap.",
     domain: "Supply Chain",
@@ -374,13 +374,13 @@ const SEEDS: readonly Seed[] = [
   {
     id: "biotechnology",
     title: "Biotechnology",
-    headline: "Drug discovery timelines are collapsing.",
+    headline: "Gene editing is reaching the clinic.",
     summary:
-      "AI-designed molecules reach trials in months, not years. Pipelines are rewiring.",
+      "Approved CRISPR and cell therapies move from single trials into standard treatment pipelines.",
     brief:
-      "AI-designed molecules are reaching trials in months rather than years. Pharmaceutical pipelines are being restructured around computational discovery teams.",
+      "The first gene-editing therapies have cleared regulators and are entering care pathways for sickle-cell and inherited disease, while cell therapies broaden beyond oncology. Manufacturing scale and durable pricing — not the underlying biology — now decide which programs reach patients.",
     forecast:
-      "Regulatory frameworks will adapt to AI-assisted trials, but unevenly across regions. Early movers gain compound data advantages in target identification.",
+      "Payer coverage and one-time-cure pricing models set the pace. Regions that solve reimbursement and cold-chain delivery adopt first; others wait for cost curves to fall.",
     domain: "Life Sciences",
     interest: "biotechnology",
     momentumScore: 68,
@@ -389,8 +389,8 @@ const SEEDS: readonly Seed[] = [
     evidenceCount: 341,
     confidence: "low",
     sources: sources("+52%", "+31%", "+68%", "+45%"),
-    relatedSignals: ["quantum-computing", "fusion-energy", "agentic-ai"],
-    relatedCompanies: ["DeepMind", "Recursion", "Moderna", "Roche"],
+    relatedSignals: ["computational-biochemistry", "ai-life-sciences", "ai-clinical-diagnostics"],
+    relatedCompanies: ["Vertex", "CRISPR Therapeutics", "Novartis", "Regeneron"],
     recommendedRoles: ["investor", "entrepreneur", "student"],
     recommendedInterests: ["biotechnology"],
     featured: false,
@@ -451,14 +451,14 @@ const SEEDS: readonly Seed[] = [
   },
   {
     id: "ai-manufacturing",
-    title: "AI-Driven Manufacturing",
-    headline: "Factories are becoming self-optimizing.",
+    title: "Advanced Manufacturing",
+    headline: "Production is reshoring and automating.",
     summary:
-      "Industrial AI links vision, control, and supply data into plants that tune themselves.",
+      "Supply-chain security and robotics pull factories closer to demand.",
     brief:
-      "Manufacturers are wiring AI into the plant floor, turning fixed production lines into systems that adapt to demand, defects, and disruption in real time. The edge now goes to operators who own their process data.",
+      "Manufacturers are relocating capacity closer to end markets and rebuilding lines around robotics and flexible tooling, driven by supply-chain risk and industrial policy. The advantage shifts to operators who can retool quickly and secure their inputs.",
     forecast:
-      "Adoption leads in regions with wage pressure and new capacity. Software-defined plants will out-margin fixed automation within the decade.",
+      "Adoption leads where wages, subsidies, and energy costs align. Flexible, software-defined plants out-margin fixed automation within the decade.",
     domain: "Manufacturing",
     interest: "manufacturing",
     momentumScore: 71,
@@ -479,14 +479,14 @@ const SEEDS: readonly Seed[] = [
   },
   {
     id: "ai-financial-services",
-    title: "AI in Financial Services",
-    headline: "Underwriting is being rebuilt on models.",
+    title: "Financial Markets",
+    headline: "Private credit is reshaping lending.",
     summary:
-      "Credit, fraud, and risk pipelines are moving from fixed rules to learned systems.",
+      "Capital shifts from banks to private funds as rates reset risk and returns.",
     brief:
-      "Banks and fintechs are replacing static rules with models across credit, fraud, and compliance. The advantage accrues to institutions with clean proprietary data and the governance to deploy models safely.",
+      "Private credit funds are taking lending share from banks while higher-for-longer rates reprice risk across the system. Institutions with durable deposits and disciplined underwriting gain; those reliant on cheap funding retreat.",
     forecast:
-      "Regulation shapes pace more than technology. Firms that pair model-risk management with speed take share from incumbents.",
+      "Rate paths and regulation shape the pace more than any single product. Firms that pair balance-sheet strength with distribution take share from incumbents.",
     domain: "Finance",
     interest: "finance",
     momentumScore: 73,
@@ -495,8 +495,8 @@ const SEEDS: readonly Seed[] = [
     evidenceCount: 402,
     confidence: "medium",
     sources: sources("+58%", "+13%", "+81%", "+49%"),
-    relatedSignals: ["cybersecurity", "cloud-infrastructure", "agentic-ai"],
-    relatedCompanies: ["JPMorgan", "Stripe", "Visa", "Revolut"],
+    relatedSignals: ["venture-capital-flows", "ai-commerce", "cybersecurity"],
+    relatedCompanies: ["JPMorgan", "Blackstone", "Apollo", "Visa"],
     recommendedRoles: ["professional", "investor", "entrepreneur"],
     recommendedInterests: ["finance"],
     primaryRegion: "north-america",
@@ -507,14 +507,14 @@ const SEEDS: readonly Seed[] = [
   },
   {
     id: "ai-clinical-diagnostics",
-    title: "AI Clinical Diagnostics",
-    headline: "Diagnosis is getting a second reader.",
+    title: "Metabolic Medicine",
+    headline: "Obesity drugs are reshaping healthcare economics.",
     summary:
-      "Imaging and pathology models are reaching specialist parity on narrow tasks.",
+      "GLP-1 therapies expand from diabetes into chronic-disease care, straining supply and budgets.",
     brief:
-      "AI diagnostic tools are clearing regulators and entering clinical workflows, easing specialist shortages. Health systems that integrate them into care pathways — not just pilots — capture the outcomes and the savings.",
+      "GLP-1 medicines are spreading from diabetes into obesity, cardiovascular, and other chronic indications, shifting demand and drug budgets faster than health systems planned. Supply, coverage rules, and adherence — not efficacy — now govern who gets treated.",
     forecast:
-      "Reimbursement and liability frameworks gate scale. Markets with specialist shortages adopt fastest.",
+      "Coverage decisions and biosimilar timelines determine access. Markets with public reimbursement or local manufacturing widen availability first.",
     domain: "Healthcare",
     interest: "healthcare",
     momentumScore: 70,
@@ -523,26 +523,26 @@ const SEEDS: readonly Seed[] = [
     evidenceCount: 356,
     confidence: "medium",
     sources: sources("+54%", "+21%", "+72%", "+38%"),
-    relatedSignals: ["biotechnology", "agentic-ai", "cloud-infrastructure"],
-    relatedCompanies: ["Google", "Siemens Healthineers", "Nvidia", "Tempus"],
+    relatedSignals: ["biotechnology", "ai-life-sciences", "computational-biochemistry"],
+    relatedCompanies: ["Novo Nordisk", "Eli Lilly", "Pfizer", "Roche"],
     recommendedRoles: ["professional", "student", "investor"],
     recommendedInterests: ["healthcare"],
     primaryRegion: "north-america",
     regions: ["north-america", "europe", "india", "africa"],
     featured: false,
-    narrative: "Research Breakthrough",
+    narrative: "Rapid Adoption",
     sparkline: [54, 56, 58, 60, 62, 63, 65, 67, 68, 69, 70],
   },
   {
     id: "venture-capital-flows",
     title: "Venture Capital Flows",
-    headline: "Capital is concentrating in AI infrastructure.",
+    headline: "Venture funding is repricing risk.",
     summary:
-      "Funding is narrowing to fewer, larger bets on compute, agents, and applied AI.",
+      "Higher rates and scarce exits concentrate capital and lengthen fundraising.",
     brief:
-      "Venture capital is consolidating around AI infrastructure and applied-AI platforms, thinning funding elsewhere. Founders and investors are repricing which categories can still raise — and at what velocity.",
+      "Venture capital is adjusting to higher rates, fewer IPOs, and slower distributions, concentrating capital in fewer firms and later stages. Founders and funds are repricing which categories can raise — and how long the runway must be.",
     forecast:
-      "Concentration persists until rates ease or a breakout application broadens the field. Hubs with policy support retain share.",
+      "Exit windows and rate cuts set the recovery pace. Hubs with deep talent and policy support retain share as capital turns selective.",
     domain: "Capital Markets",
     interest: "venture-capital",
     momentumScore: 69,
@@ -551,26 +551,26 @@ const SEEDS: readonly Seed[] = [
     evidenceCount: 331,
     confidence: "medium",
     sources: sources("+52%", "+9%", "+44%", "+88%"),
-    relatedSignals: ["agentic-ai", "cuda", "cloud-infrastructure"],
+    relatedSignals: ["ai-financial-services", "ai-commerce", "biotechnology"],
     relatedCompanies: ["Sequoia", "a16z", "Tiger Global", "SoftBank"],
     recommendedRoles: ["investor", "entrepreneur"],
     recommendedInterests: ["venture-capital", "startups"],
     primaryRegion: "north-america",
     regions: ["north-america", "europe", "india", "southeast-asia"],
     featured: false,
-    narrative: "Infrastructure Expansion",
+    narrative: "Market Shift",
     sparkline: [52, 54, 56, 58, 60, 62, 64, 66, 67, 68, 69],
   },
   {
     id: "computational-biochemistry",
-    title: "Computational Biochemistry",
-    headline: "Protein design is becoming programmable.",
+    title: "Protein Engineering",
+    headline: "Designed proteins are entering industry.",
     summary:
-      "Generative models are turning molecular design from search into specification.",
+      "Engineered enzymes and de novo proteins move from journals into materials, food, and medicine.",
     brief:
-      "Structure prediction and generative chemistry are compressing the discovery loop — teams specify a target and design toward it. Wet-lab validation, not ideas, is now the bottleneck.",
+      "Custom-designed enzymes and de novo proteins are crossing from academic milestones into industrial catalysis, sustainable materials, and therapeutics. Wet-lab validation and scale-up, not design ideas, now set the pace.",
     forecast:
-      "Design tools commoditize; proprietary assays and data become the moat. AI labs and bench science partner to close the loop.",
+      "Proprietary assays and fermentation capacity become the moat as design methods spread. Chemistry and bench science partner to close the loop.",
     domain: "Life Sciences",
     interest: "biochemistry",
     momentumScore: 66,
@@ -579,8 +579,8 @@ const SEEDS: readonly Seed[] = [
     evidenceCount: 274,
     confidence: "low",
     sources: sources("+47%", "+34%", "+51%", "+29%"),
-    relatedSignals: ["biotechnology", "ai-clinical-diagnostics", "quantum-computing"],
-    relatedCompanies: ["DeepMind", "Isomorphic Labs", "Genentech", "BASF"],
+    relatedSignals: ["biotechnology", "ai-life-sciences", "ai-clinical-diagnostics"],
+    relatedCompanies: ["Genentech", "Novozymes", "BASF", "Ginkgo Bioworks"],
     recommendedRoles: ["student", "investor", "entrepreneur"],
     recommendedInterests: ["biochemistry", "life-sciences"],
     primaryRegion: "europe",
@@ -591,14 +591,14 @@ const SEEDS: readonly Seed[] = [
   },
   {
     id: "ai-life-sciences",
-    title: "AI in Life Sciences",
-    headline: "Research is compounding on models.",
+    title: "Life Sciences Research",
+    headline: "Single-cell biology is redrawing disease maps.",
     summary:
-      "Literature, lab data, and trials are unified into models that propose the next experiment.",
+      "Spatial and single-cell techniques resolve tissues cell by cell, changing how disease is defined.",
     brief:
-      "Life-science teams are layering AI over fragmented research and trial data to surface hypotheses and cut dead-end experiments. The advantage goes to institutions that can connect their data, not just collect it.",
+      "Spatial and single-cell methods let researchers read gene activity one cell at a time, redrawing the maps of cancer, immunity, and neurological disease. The bottleneck has moved from generating data to interpreting and reproducing it.",
     forecast:
-      "Data interoperability and provenance decide winners. Expect consolidation around platforms that make evidence auditable.",
+      "Standardized protocols and shared reference atlases decide which findings translate. Institutions that pool data and reagents compound their advantage.",
     domain: "Life Sciences",
     interest: "life-sciences",
     momentumScore: 64,
@@ -607,8 +607,8 @@ const SEEDS: readonly Seed[] = [
     evidenceCount: 258,
     confidence: "low",
     sources: sources("+44%", "+38%", "+49%", "+26%"),
-    relatedSignals: ["biotechnology", "ai-clinical-diagnostics", "computational-biochemistry"],
-    relatedCompanies: ["Recursion", "Insitro", "Novartis", "AstraZeneca"],
+    relatedSignals: ["biotechnology", "computational-biochemistry", "ai-clinical-diagnostics"],
+    relatedCompanies: ["10x Genomics", "Illumina", "Genentech", "AstraZeneca"],
     recommendedRoles: ["student", "professional", "investor"],
     recommendedInterests: ["life-sciences", "healthcare"],
     primaryRegion: "north-america",
@@ -619,14 +619,14 @@ const SEEDS: readonly Seed[] = [
   },
   {
     id: "generative-creative-tools",
-    title: "Generative Creative Tools",
-    headline: "Creative work is being reorganized.",
+    title: "Creative Economy",
+    headline: "Creators are becoming media companies.",
     summary:
-      "Image, video, and audio models are shifting craft from execution to direction.",
+      "Direct monetization and live experiences reshape who captures cultural value.",
     brief:
-      "Generative tools are collapsing production time for image, video, and audio, moving the scarce skill from execution to taste and direction. Studios and independents are renegotiating who owns the output — and the rights.",
+      "Independent artists and creators are building direct-to-audience businesses — subscriptions, live events, licensing — capturing value that once flowed to labels, galleries, and studios. Distribution reach no longer guarantees the audience relationship.",
     forecast:
-      "Provenance, licensing, and authorship rules shape the market more than model quality. Curation becomes the differentiator.",
+      "Platform economics and rights ownership decide who keeps the margin. Creators who own their audience and catalog outlast algorithm cycles.",
     domain: "Arts & Media",
     interest: "arts",
     momentumScore: 67,
@@ -635,8 +635,8 @@ const SEEDS: readonly Seed[] = [
     evidenceCount: 289,
     confidence: "medium",
     sources: sources("+63%", "+8%", "+41%", "+31%"),
-    relatedSignals: ["agentic-ai", "spatial-computing", "cloud-infrastructure"],
-    relatedCompanies: ["Adobe", "OpenAI", "Runway", "Canva"],
+    relatedSignals: ["ai-commerce", "venture-capital-flows", "ai-financial-services"],
+    relatedCompanies: ["Spotify", "Patreon", "Live Nation", "Sotheby's"],
     recommendedRoles: ["student", "entrepreneur"],
     recommendedInterests: ["arts", "commerce"],
     primaryRegion: "north-america",
@@ -647,14 +647,14 @@ const SEEDS: readonly Seed[] = [
   },
   {
     id: "ai-commerce",
-    title: "AI-Native Commerce",
-    headline: "Storefronts are becoming conversational.",
+    title: "Retail Reinvention",
+    headline: "Retail media is becoming the margin.",
     summary:
-      "Discovery, pricing, and support are shifting from pages to agents.",
+      "Ad networks, quick commerce, and first-party data reshape where retailers earn.",
     brief:
-      "Retail is moving from search-and-browse to agent-led discovery, dynamic pricing, and automated support. Merchants with clean catalog and behavioral data adapt fastest; the rest cede the customer relationship to platforms.",
+      "Retailers are building high-margin advertising networks on their shopper data while quick commerce compresses delivery windows. Profit is shifting from selling goods to monetizing attention and logistics.",
     forecast:
-      "Platform agents intermediate more demand. Brands invest in first-party data and direct channels to avoid disintermediation.",
+      "First-party data and last-mile density decide winners. Merchants that own the customer relationship resist platform disintermediation.",
     domain: "Commerce",
     interest: "commerce",
     momentumScore: 68,
@@ -663,7 +663,7 @@ const SEEDS: readonly Seed[] = [
     evidenceCount: 312,
     confidence: "medium",
     sources: sources("+57%", "+7%", "+63%", "+35%"),
-    relatedSignals: ["agentic-ai", "ai-financial-services", "cloud-infrastructure"],
+    relatedSignals: ["ai-financial-services", "generative-creative-tools", "venture-capital-flows"],
     relatedCompanies: ["Amazon", "Shopify", "Mercado Libre", "Alibaba"],
     recommendedRoles: ["entrepreneur", "student", "professional"],
     recommendedInterests: ["commerce", "startups"],

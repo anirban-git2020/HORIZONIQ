@@ -315,7 +315,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "Advanced packaging and geopolitical alignment now determine who can build AI at scale. Supply security has become a board-level risk, not a procurement detail."
+      "brief": "Advanced packaging and geopolitical alignment now determine who can build frontier compute at scale. Supply security has become a board-level risk, not a procurement detail."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -972,8 +972,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "id": "biotechnology",
       "slug": "biotechnology",
       "title": "Biotechnology",
-      "headline": "Drug discovery timelines are collapsing.",
-      "summary": "AI-designed molecules reach trials in months, not years. Pipelines are rewiring."
+      "headline": "Gene editing is reaching the clinic.",
+      "summary": "Approved CRISPR and cell therapies move from single trials into standard treatment pipelines."
     },
     "classification": {
       "domain": "Life Sciences",
@@ -1016,20 +1016,20 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Regulatory frameworks will adapt to AI-assisted trials, but unevenly across regions. Early movers gain compound data advantages in target identification.",
+      "forecast": "Payer coverage and one-time-cure pricing models set the pace. Regions that solve reimbursement and cold-chain delivery adopt first; others wait for cost curves to fall.",
       "forecastConfidence": "low"
     },
     "relationships": {
       "relatedSignals": [
-        "quantum-computing",
-        "fusion-energy",
-        "agentic-ai"
+        "computational-biochemistry",
+        "ai-life-sciences",
+        "ai-clinical-diagnostics"
       ],
       "relatedCompanies": [
-        "DeepMind",
-        "Recursion",
-        "Moderna",
-        "Roche"
+        "Vertex",
+        "CRISPR Therapeutics",
+        "Novartis",
+        "Regeneron"
       ],
       "relatedTechnologies": [],
       "relatedIndustries": []
@@ -1065,7 +1065,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "AI-designed molecules are reaching trials in months rather than years. Pharmaceutical pipelines are being restructured around computational discovery teams."
+      "brief": "The first gene-editing therapies have cleared regulators and are entering care pathways for sickle-cell and inherited disease, while cell therapies broaden beyond oncology. Manufacturing scale and durable pricing — not the underlying biology — now decide which programs reach patients."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -1290,9 +1290,9 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     "identity": {
       "id": "ai-manufacturing",
       "slug": "ai-manufacturing",
-      "title": "AI-Driven Manufacturing",
-      "headline": "Factories are becoming self-optimizing.",
-      "summary": "Industrial AI links vision, control, and supply data into plants that tune themselves."
+      "title": "Advanced Manufacturing",
+      "headline": "Production is reshoring and automating.",
+      "summary": "Supply-chain security and robotics pull factories closer to demand."
     },
     "classification": {
       "domain": "Manufacturing",
@@ -1342,7 +1342,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Adoption leads in regions with wage pressure and new capacity. Software-defined plants will out-margin fixed automation within the decade.",
+      "forecast": "Adoption leads where wages, subsidies, and energy costs align. Flexible, software-defined plants out-margin fixed automation within the decade.",
       "forecastConfidence": "medium"
     },
     "relationships": {
@@ -1397,7 +1397,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "Manufacturers are wiring AI into the plant floor, turning fixed production lines into systems that adapt to demand, defects, and disruption in real time. The edge now goes to operators who own their process data."
+      "brief": "Manufacturers are relocating capacity closer to end markets and rebuilding lines around robotics and flexible tooling, driven by supply-chain risk and industrial policy. The advantage shifts to operators who can retool quickly and secure their inputs."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -1410,9 +1410,9 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     "identity": {
       "id": "ai-financial-services",
       "slug": "ai-financial-services",
-      "title": "AI in Financial Services",
-      "headline": "Underwriting is being rebuilt on models.",
-      "summary": "Credit, fraud, and risk pipelines are moving from fixed rules to learned systems."
+      "title": "Financial Markets",
+      "headline": "Private credit is reshaping lending.",
+      "summary": "Capital shifts from banks to private funds as rates reset risk and returns."
     },
     "classification": {
       "domain": "Finance",
@@ -1460,20 +1460,20 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Regulation shapes pace more than technology. Firms that pair model-risk management with speed take share from incumbents.",
+      "forecast": "Rate paths and regulation shape the pace more than any single product. Firms that pair balance-sheet strength with distribution take share from incumbents.",
       "forecastConfidence": "medium"
     },
     "relationships": {
       "relatedSignals": [
-        "cybersecurity",
-        "cloud-infrastructure",
-        "agentic-ai"
+        "venture-capital-flows",
+        "ai-commerce",
+        "cybersecurity"
       ],
       "relatedCompanies": [
         "JPMorgan",
-        "Stripe",
-        "Visa",
-        "Revolut"
+        "Blackstone",
+        "Apollo",
+        "Visa"
       ],
       "relatedTechnologies": [],
       "relatedIndustries": []
@@ -1514,7 +1514,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "Banks and fintechs are replacing static rules with models across credit, fraud, and compliance. The advantage accrues to institutions with clean proprietary data and the governance to deploy models safely."
+      "brief": "Private credit funds are taking lending share from banks while higher-for-longer rates reprice risk across the system. Institutions with durable deposits and disciplined underwriting gain; those reliant on cheap funding retreat."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -1527,9 +1527,9 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     "identity": {
       "id": "ai-clinical-diagnostics",
       "slug": "ai-clinical-diagnostics",
-      "title": "AI Clinical Diagnostics",
-      "headline": "Diagnosis is getting a second reader.",
-      "summary": "Imaging and pathology models are reaching specialist parity on narrow tasks."
+      "title": "Metabolic Medicine",
+      "headline": "Obesity drugs are reshaping healthcare economics.",
+      "summary": "GLP-1 therapies expand from diabetes into chronic-disease care, straining supply and budgets."
     },
     "classification": {
       "domain": "Healthcare",
@@ -1577,20 +1577,20 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Reimbursement and liability frameworks gate scale. Markets with specialist shortages adopt fastest.",
+      "forecast": "Coverage decisions and biosimilar timelines determine access. Markets with public reimbursement or local manufacturing widen availability first.",
       "forecastConfidence": "medium"
     },
     "relationships": {
       "relatedSignals": [
         "biotechnology",
-        "agentic-ai",
-        "cloud-infrastructure"
+        "ai-life-sciences",
+        "computational-biochemistry"
       ],
       "relatedCompanies": [
-        "Google",
-        "Siemens Healthineers",
-        "Nvidia",
-        "Tempus"
+        "Novo Nordisk",
+        "Eli Lilly",
+        "Pfizer",
+        "Roche"
       ],
       "relatedTechnologies": [],
       "relatedIndustries": []
@@ -1614,7 +1614,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "presentation": {
       "featured": false,
-      "narrative": "Research Breakthrough",
+      "narrative": "Rapid Adoption",
       "sparkline": [
         54,
         56,
@@ -1631,7 +1631,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "AI diagnostic tools are clearing regulators and entering clinical workflows, easing specialist shortages. Health systems that integrate them into care pathways — not just pilots — capture the outcomes and the savings."
+      "brief": "GLP-1 medicines are spreading from diabetes into obesity, cardiovascular, and other chronic indications, shifting demand and drug budgets faster than health systems planned. Supply, coverage rules, and adherence — not efficacy — now govern who gets treated."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -1645,8 +1645,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "id": "venture-capital-flows",
       "slug": "venture-capital-flows",
       "title": "Venture Capital Flows",
-      "headline": "Capital is concentrating in AI infrastructure.",
-      "summary": "Funding is narrowing to fewer, larger bets on compute, agents, and applied AI."
+      "headline": "Venture funding is repricing risk.",
+      "summary": "Higher rates and scarce exits concentrate capital and lengthen fundraising."
     },
     "classification": {
       "domain": "Capital Markets",
@@ -1694,14 +1694,14 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Concentration persists until rates ease or a breakout application broadens the field. Hubs with policy support retain share.",
+      "forecast": "Exit windows and rate cuts set the recovery pace. Hubs with deep talent and policy support retain share as capital turns selective.",
       "forecastConfidence": "medium"
     },
     "relationships": {
       "relatedSignals": [
-        "agentic-ai",
-        "cuda",
-        "cloud-infrastructure"
+        "ai-financial-services",
+        "ai-commerce",
+        "biotechnology"
       ],
       "relatedCompanies": [
         "Sequoia",
@@ -1731,7 +1731,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "presentation": {
       "featured": false,
-      "narrative": "Infrastructure Expansion",
+      "narrative": "Market Shift",
       "sparkline": [
         52,
         54,
@@ -1748,7 +1748,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "Venture capital is consolidating around AI infrastructure and applied-AI platforms, thinning funding elsewhere. Founders and investors are repricing which categories can still raise — and at what velocity."
+      "brief": "Venture capital is adjusting to higher rates, fewer IPOs, and slower distributions, concentrating capital in fewer firms and later stages. Founders and funds are repricing which categories can raise — and how long the runway must be."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -1761,9 +1761,9 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     "identity": {
       "id": "computational-biochemistry",
       "slug": "computational-biochemistry",
-      "title": "Computational Biochemistry",
-      "headline": "Protein design is becoming programmable.",
-      "summary": "Generative models are turning molecular design from search into specification."
+      "title": "Protein Engineering",
+      "headline": "Designed proteins are entering industry.",
+      "summary": "Engineered enzymes and de novo proteins move from journals into materials, food, and medicine."
     },
     "classification": {
       "domain": "Life Sciences",
@@ -1812,20 +1812,20 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Design tools commoditize; proprietary assays and data become the moat. AI labs and bench science partner to close the loop.",
+      "forecast": "Proprietary assays and fermentation capacity become the moat as design methods spread. Chemistry and bench science partner to close the loop.",
       "forecastConfidence": "low"
     },
     "relationships": {
       "relatedSignals": [
         "biotechnology",
-        "ai-clinical-diagnostics",
-        "quantum-computing"
+        "ai-life-sciences",
+        "ai-clinical-diagnostics"
       ],
       "relatedCompanies": [
-        "DeepMind",
-        "Isomorphic Labs",
         "Genentech",
-        "BASF"
+        "Novozymes",
+        "BASF",
+        "Ginkgo Bioworks"
       ],
       "relatedTechnologies": [],
       "relatedIndustries": []
@@ -1867,7 +1867,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "Structure prediction and generative chemistry are compressing the discovery loop — teams specify a target and design toward it. Wet-lab validation, not ideas, is now the bottleneck."
+      "brief": "Custom-designed enzymes and de novo proteins are crossing from academic milestones into industrial catalysis, sustainable materials, and therapeutics. Wet-lab validation and scale-up, not design ideas, now set the pace."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -1880,9 +1880,9 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     "identity": {
       "id": "ai-life-sciences",
       "slug": "ai-life-sciences",
-      "title": "AI in Life Sciences",
-      "headline": "Research is compounding on models.",
-      "summary": "Literature, lab data, and trials are unified into models that propose the next experiment."
+      "title": "Life Sciences Research",
+      "headline": "Single-cell biology is redrawing disease maps.",
+      "summary": "Spatial and single-cell techniques resolve tissues cell by cell, changing how disease is defined."
     },
     "classification": {
       "domain": "Life Sciences",
@@ -1930,19 +1930,19 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Data interoperability and provenance decide winners. Expect consolidation around platforms that make evidence auditable.",
+      "forecast": "Standardized protocols and shared reference atlases decide which findings translate. Institutions that pool data and reagents compound their advantage.",
       "forecastConfidence": "low"
     },
     "relationships": {
       "relatedSignals": [
         "biotechnology",
-        "ai-clinical-diagnostics",
-        "computational-biochemistry"
+        "computational-biochemistry",
+        "ai-clinical-diagnostics"
       ],
       "relatedCompanies": [
-        "Recursion",
-        "Insitro",
-        "Novartis",
+        "10x Genomics",
+        "Illumina",
+        "Genentech",
         "AstraZeneca"
       ],
       "relatedTechnologies": [],
@@ -1985,7 +1985,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "Life-science teams are layering AI over fragmented research and trial data to surface hypotheses and cut dead-end experiments. The advantage goes to institutions that can connect their data, not just collect it."
+      "brief": "Spatial and single-cell methods let researchers read gene activity one cell at a time, redrawing the maps of cancer, immunity, and neurological disease. The bottleneck has moved from generating data to interpreting and reproducing it."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -1998,9 +1998,9 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     "identity": {
       "id": "generative-creative-tools",
       "slug": "generative-creative-tools",
-      "title": "Generative Creative Tools",
-      "headline": "Creative work is being reorganized.",
-      "summary": "Image, video, and audio models are shifting craft from execution to direction."
+      "title": "Creative Economy",
+      "headline": "Creators are becoming media companies.",
+      "summary": "Direct monetization and live experiences reshape who captures cultural value."
     },
     "classification": {
       "domain": "Arts & Media",
@@ -2049,20 +2049,20 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Provenance, licensing, and authorship rules shape the market more than model quality. Curation becomes the differentiator.",
+      "forecast": "Platform economics and rights ownership decide who keeps the margin. Creators who own their audience and catalog outlast algorithm cycles.",
       "forecastConfidence": "medium"
     },
     "relationships": {
       "relatedSignals": [
-        "agentic-ai",
-        "spatial-computing",
-        "cloud-infrastructure"
+        "ai-commerce",
+        "venture-capital-flows",
+        "ai-financial-services"
       ],
       "relatedCompanies": [
-        "Adobe",
-        "OpenAI",
-        "Runway",
-        "Canva"
+        "Spotify",
+        "Patreon",
+        "Live Nation",
+        "Sotheby's"
       ],
       "relatedTechnologies": [],
       "relatedIndustries": []
@@ -2103,7 +2103,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "Generative tools are collapsing production time for image, video, and audio, moving the scarce skill from execution to taste and direction. Studios and independents are renegotiating who owns the output — and the rights."
+      "brief": "Independent artists and creators are building direct-to-audience businesses — subscriptions, live events, licensing — capturing value that once flowed to labels, galleries, and studios. Distribution reach no longer guarantees the audience relationship."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -2116,9 +2116,9 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     "identity": {
       "id": "ai-commerce",
       "slug": "ai-commerce",
-      "title": "AI-Native Commerce",
-      "headline": "Storefronts are becoming conversational.",
-      "summary": "Discovery, pricing, and support are shifting from pages to agents."
+      "title": "Retail Reinvention",
+      "headline": "Retail media is becoming the margin.",
+      "summary": "Ad networks, quick commerce, and first-party data reshape where retailers earn."
     },
     "classification": {
       "domain": "Commerce",
@@ -2168,14 +2168,14 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "trajectory": "emerging"
     },
     "forecast": {
-      "forecast": "Platform agents intermediate more demand. Brands invest in first-party data and direct channels to avoid disintermediation.",
+      "forecast": "First-party data and last-mile density decide winners. Merchants that own the customer relationship resist platform disintermediation.",
       "forecastConfidence": "medium"
     },
     "relationships": {
       "relatedSignals": [
-        "agentic-ai",
         "ai-financial-services",
-        "cloud-infrastructure"
+        "generative-creative-tools",
+        "venture-capital-flows"
       ],
       "relatedCompanies": [
         "Amazon",
@@ -2224,7 +2224,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "reading": {
       "estimatedReadTime": 1,
-      "brief": "Retail is moving from search-and-browse to agent-led discovery, dynamic pricing, and automated support. Merchants with clean catalog and behavioral data adapt fastest; the rest cede the customer relationship to platforms."
+      "brief": "Retailers are building high-margin advertising networks on their shopper data while quick commerce compresses delivery windows. Profit is shifting from selling goods to monetizing attention and logistics."
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
@@ -2234,4 +2234,4 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     }
   }
 ] as const;
-export const GENERATED_AT = "2026-07-11T17:50:57.794Z";
+export const GENERATED_AT = "2026-07-12T18:13:45.335Z";

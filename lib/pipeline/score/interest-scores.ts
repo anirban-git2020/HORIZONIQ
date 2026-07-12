@@ -12,6 +12,8 @@ const SOURCE_LABELS: Record<PipelineSourceId, string> = {
   wikimedia: "Wikimedia Pageviews",
   github: "GitHub",
   "product-hunt": "Product Hunt",
+  pubmed: "PubMed",
+  gdelt: "Global News (GDELT)",
 };
 
 const SOURCE_WEIGHTS: Record<PipelineSourceId, number> = {
@@ -20,6 +22,11 @@ const SOURCE_WEIGHTS: Record<PipelineSourceId, number> = {
   wikimedia: 0.15,
   github: 0.25,
   "product-hunt": 0.2,
+  // Domain sources carry meaningful weight for the interests they cover, so
+  // life-science momentum leans on medical evidence and non-tech momentum on
+  // news attention rather than developer activity.
+  pubmed: 0.3,
+  gdelt: 0.2,
 };
 
 type Direction = "rising" | "falling" | "stable";
@@ -57,6 +64,8 @@ function scoreInterest(
     "wikimedia",
     "github",
     "product-hunt",
+    "pubmed",
+    "gdelt",
   ];
 
   for (const sourceId of sources) {

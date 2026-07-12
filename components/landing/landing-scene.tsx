@@ -39,7 +39,7 @@ export function LandingScene({
       exit={reduced ? { opacity: 0 } : { opacity: 0, y: -14 }}
       transition={{ duration: reduced ? 0.16 : 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "relative flex min-h-dvh w-full flex-col overflow-hidden bg-background",
+        "relative flex min-h-dvh w-full flex-col overflow-hidden",
         className
       )}
     >

@@ -34,7 +34,7 @@ export function IntelligenceExchangeShell() {
 
       <div
         className={cn(
-          "transition-opacity duration-[220ms] ease-out motion-reduce:transition-none",
+          "transition-opacity [transition-duration:220ms] ease-out motion-reduce:transition-none",
           isFocusOpen && "pointer-events-none opacity-[0.35]"
         )}
         aria-hidden={isFocusOpen ? true : undefined}

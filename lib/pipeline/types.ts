@@ -5,7 +5,9 @@ export type PipelineSourceId =
   | "arxiv"
   | "wikimedia"
   | "github"
-  | "product-hunt";
+  | "product-hunt"
+  | "pubmed"
+  | "gdelt";
 
 export type SourceHealth = "ok" | "stale" | "failed";
 

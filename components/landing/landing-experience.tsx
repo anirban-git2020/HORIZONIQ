@@ -2,9 +2,10 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
+import { IntelligenceNetwork } from "@/components/landing/intelligence-network";
 import { BetaBadge } from "@/components/brand/beta-badge";
 import { HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
 import { GuidedTourScenes } from "@/components/landing/guided-tour-scenes";
@@ -12,6 +13,7 @@ import { LandingScene } from "@/components/landing/landing-scene";
 import { OptionCard } from "@/components/onboarding/option-card";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { useLandingJourney } from "@/hooks/use-landing-journey";
+import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import {
   REGIONS,
   ROLES,
@@ -43,6 +45,25 @@ export function LandingExperience() {
   const [scene, setScene] = useState<Scene>("welcome");
   const [nameDraft, setNameDraft] = useState("");
   const redirectingRef = useRef(false);
+  const reducedMotion = useReducedMotion();
+
+  // Cinematic welcome entrance — composed, sequential reveal. Calm, not theatrical.
+  const stagger = {
+    hidden: {},
+    show: {
+      transition: { staggerChildren: reducedMotion ? 0 : 0.12, delayChildren: 0.08 },
+    },
+  };
+  const rise = reducedMotion
+    ? { hidden: { opacity: 0 }, show: { opacity: 1, transition: { duration: 0.2 } } }
+    : {
+        hidden: { opacity: 0, y: 18 },
+        show: {
+          opacity: 1,
+          y: 0,
+          transition: { duration: 0.6, ease: "easeOut" },
+        },
+      };
 
   // Single, guarded handoff to the Intelligence Experience. Prevents a
   // double-navigation race (tour finish + this effect both firing) that
@@ -72,9 +93,7 @@ export function LandingExperience() {
     return journey.selectedInterests.filter((id) => allowed.has(id)).length;
   }, [journey.selectedRole, journey.selectedInterests]);
 
-  if (!hydrated || journey.tourCompleted) {
-    return <div className="min-h-dvh bg-background" aria-hidden />;
-  }
+  const showScenes = hydrated && !journey.tourCompleted;
 
   const commitName = () => {
     const trimmed = nameDraft.trim();
@@ -89,34 +108,86 @@ export function LandingExperience() {
   };
 
   return (
-    <AnimatePresence mode="wait">
+    <div className="relative min-h-dvh bg-background">
+      <IntelligenceNetwork />
+      {showScenes && (
+        <AnimatePresence mode="wait">
       {scene === "welcome" && (
         <LandingScene sceneKey="welcome">
-          <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
-            <div className="mb-10 flex flex-col items-center gap-4">
+          <motion.div
+            variants={stagger}
+            initial="hidden"
+            animate="show"
+            className="flex flex-1 flex-col items-center justify-center px-6 text-center"
+          >
+            <motion.div
+              variants={rise}
+              className="mb-8 inline-flex items-center gap-2"
+            >
+              <span className="relative flex h-2 w-2">
+                {!reducedMotion && (
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/60" />
+                )}
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
+              </span>
+              <span className="label-caps text-primary">Live Intelligence</span>
+            </motion.div>
+            <motion.div
+              variants={rise}
+              className="mb-10 flex flex-col items-center gap-4"
+            >
               <HorizonIQWordmark
                 size="inherit"
                 adaptive={false}
                 className="text-5xl font-bold tracking-[-0.03em] md:text-7xl"
               />
               <BetaBadge />
-            </div>
-            <h1 className="display-title text-balance text-4xl md:text-5xl lg:text-6xl">
-              Intelligence, before it becomes obvious.
+            </motion.div>
+            <h1 className="display-title flex flex-wrap items-center justify-center gap-x-3 text-balance text-4xl md:text-5xl lg:text-6xl">
+              {["Intelligence,", "before", "it", "becomes", "obvious."].map(
+                (word) => (
+                  <motion.span key={word} variants={rise} className="inline-block">
+                    {word}
+                  </motion.span>
+                )
+              )}
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            <motion.p
+              variants={rise}
+              className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg"
+            >
               HorizonIQ turns the world&apos;s noise into a daily brief of what
               changed, why it matters, and how it connects.
-            </p>
-            <Button
-              size="lg"
-              className="mt-12 min-w-[240px] font-bold"
-              onClick={() => setScene("name")}
+            </motion.p>
+            <motion.div
+              variants={rise}
+              className="mt-8 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted-foreground/80"
             >
-              Enter
-              <ArrowRight />
-            </Button>
-          </div>
+              <span className="label-caps text-muted-foreground/60">
+                Synthesizing
+              </span>
+              {["GitHub", "arXiv", "Hacker News", "Wikimedia", "Product Hunt"].map(
+                (source, i, arr) => (
+                  <span key={source} className="inline-flex items-center gap-2">
+                    <span className="text-foreground/70">{source}</span>
+                    {i < arr.length - 1 && (
+                      <span className="text-muted-foreground/40">·</span>
+                    )}
+                  </span>
+                )
+              )}
+            </motion.div>
+            <motion.div variants={rise}>
+              <Button
+                size="lg"
+                className="mt-12 min-w-[240px] font-bold"
+                onClick={() => setScene("name")}
+              >
+                Enter
+                <ArrowRight />
+              </Button>
+            </motion.div>
+          </motion.div>
         </LandingScene>
       )}
 
@@ -291,7 +362,9 @@ export function LandingExperience() {
           <GuidedTourScenes name={journey.displayName} onComplete={finish} />
         </LandingScene>
       )}
-    </AnimatePresence>
+        </AnimatePresence>
+      )}
+    </div>
   );
 }
 

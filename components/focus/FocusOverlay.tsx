@@ -88,7 +88,7 @@ export function FocusOverlay({ signal, onClose }: FocusOverlayProps) {
         className={cn(
           "absolute inset-0 bg-background/70 backdrop-blur-[2px]",
           !reducedMotion &&
-            "transition-opacity duration-[260ms] ease-out motion-reduce:transition-none",
+            "transition-opacity [transition-duration:260ms] ease-out motion-reduce:transition-none",
           isVisible ? "opacity-100" : "opacity-0"
         )}
       />
@@ -107,7 +107,7 @@ export function FocusOverlay({ signal, onClose }: FocusOverlayProps) {
           "p-6 md:p-8 [-webkit-overflow-scrolling:touch]",
           !reducedMotion &&
             cn(
-              "transition-[opacity,transform] duration-[260ms] ease-out motion-reduce:transition-none",
+              "transition-[opacity,transform] [transition-duration:260ms] ease-out motion-reduce:transition-none",
               isVisible
                 ? "translate-y-0 scale-100 opacity-100"
                 : "translate-y-2 scale-[0.98] opacity-0"

@@ -5,15 +5,13 @@
   "scripts": {
     "dev": "next dev -p 3000",
     "dev:clean": "node -e \"require('fs').rmSync('.next',{recursive:true,force:true})\" && next dev -p 3000",
+    "verify:domain": "tsx scripts/verify-domain-purity.ts",
+    "prebuild": "npm run pipeline:signals && npm run verify:domain",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "pipeline:ingest": "tsx scripts/pipeline-ingest.ts",
-    "pipeline:generate": "tsx scripts/pipeline-generate.ts",
-    "pipeline:signals": "tsx scripts/pipeline-signals.ts",
-    "pipeline:full": "tsx scripts/pipeline-full.ts",
-    "pipeline:sync-registry": "tsx scripts/sync-briefings-registry.ts",
-    "pipeline:verify": "tsx scripts/verify-briefing.ts"
+    "pipeline:signals": "tsx scripts/pipeline-signals.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^9.5.0",

@@ -46,6 +46,8 @@ const SOURCE_TYPE: Record<PipelineSourceId, SourceType> = {
   "hacker-news": "hacker-news",
   wikimedia: "wikipedia",
   "product-hunt": "product-hunt",
+  pubmed: "research-paper",
+  gdelt: "news",
 };
 
 const SOURCE_LABEL: Record<PipelineSourceId, string> = {
@@ -54,6 +56,8 @@ const SOURCE_LABEL: Record<PipelineSourceId, string> = {
   "hacker-news": "Developer Discussion",
   wikimedia: "Public Attention",
   "product-hunt": "Product Launches",
+  pubmed: "Medical Research",
+  gdelt: "Global News",
 };
 
 /** Real evidence for an interest, from each healthy source's observation. */

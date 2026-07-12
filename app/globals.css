@@ -78,6 +78,9 @@
 
   html {
     scroll-behavior: smooth;
+    /* Always reserve the scrollbar so content never shifts sideways when a
+       vertical scrollbar appears on first paint (premium stability). */
+    scrollbar-gutter: stable;
   }
 
   body {

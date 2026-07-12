@@ -1,16 +1,22 @@
 "use client";
 
-import { Bell, ChevronDown, Globe2, RotateCcw } from "lucide-react";
+import { RotateCcw } from "lucide-react";
 
 import { Logo } from "@/components/brand/logo";
-import { clearLandingJourney } from "@/hooks/use-landing-journey";
+import {
+  clearLandingJourney,
+  useLandingJourney,
+} from "@/hooks/use-landing-journey";
 import { cn } from "@/lib/utils";
 
 /**
  * Intelligence Exchange header — distinct from the marketing `TopBar`.
- * Layout only: region selector, notifications, and avatar are static.
+ * Logo, Start over, and the professional's initial. No non-functional controls.
  */
 export function ExchangeHeader({ className }: { className?: string }) {
+  const { journey } = useLandingJourney();
+  const initial = journey.displayName.trim().charAt(0).toUpperCase() || "U";
+
   return (
     <header
       id="exchange-header"
@@ -38,35 +44,13 @@ export function ExchangeHeader({ className }: { className?: string }) {
             <span className="font-medium">Start over</span>
           </button>
 
-          <button
-            type="button"
-            className="hidden items-center gap-2 rounded-lg border border-border/80 bg-secondary/60 px-3 py-2 text-sm text-foreground transition-colors hover:bg-secondary sm:inline-flex"
-            aria-label="Region selector"
+          <span
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-secondary text-xs font-semibold text-secondary-foreground"
+            aria-label="Your profile"
+            title="Your profile"
           >
-            <Globe2 className="h-4 w-4 text-muted-foreground" />
-            <span className="font-medium">Global</span>
-            <ChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
-          </button>
-
-          <button
-            type="button"
-            className="relative inline-flex h-11 w-11 items-center justify-center rounded-lg text-foreground transition-colors hover:bg-accent/70"
-            aria-label="Notifications"
-          >
-            <Bell className="h-[18px] w-[18px]" />
-            <span
-              className="absolute right-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-primary"
-              aria-hidden="true"
-            />
-          </button>
-
-          <button
-            type="button"
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-secondary text-xs font-semibold text-secondary-foreground transition-colors hover:bg-secondary/80"
-            aria-label="Account menu"
-          >
-            U
-          </button>
+            {initial}
+          </span>
         </div>
       </div>
     </header>

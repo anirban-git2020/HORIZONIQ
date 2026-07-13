@@ -28,24 +28,25 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         },
         {
           "type": "arxiv",
-          "label": "Research Publications"
+          "label": "Research Publications",
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-9%"
+          "delta": "+2%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 50,
+      "momentumScore": 33,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -90,7 +91,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         36,
         46,
         32,
-        50
+        50,
+        33
       ]
     },
     "reading": {
@@ -99,7 +101,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -131,26 +133,26 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "-45%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "+12%"
+          "delta": "-14%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 45,
+      "momentumScore": 31,
       "velocity": 0,
-      "trajectory": "emerging"
+      "trajectory": "cooling"
     },
     "forecast": {
       "forecast": "Inference demand will outpace training within eighteen months. Firms that secure long-term compute contracts now will ship features others cannot.",
@@ -191,7 +193,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         21,
         37,
         30,
-        45
+        45,
+        31
       ]
     },
     "reading": {
@@ -200,7 +203,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -232,24 +235,24 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "-50%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-5%"
+          "delta": "+8%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 42,
+      "momentumScore": 34,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -292,7 +295,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         27,
         36,
         32,
-        42
+        42,
+        34
       ]
     },
     "reading": {
@@ -301,7 +305,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -333,25 +337,25 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "+752%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "+3%"
+          "delta": "+34%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 59,
-      "velocity": 378,
+      "momentumScore": 46,
+      "velocity": 0,
       "trajectory": "emerging"
     },
     "forecast": {
@@ -393,7 +397,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         49,
         58,
         42,
-        59
+        59,
+        46
       ]
     },
     "reading": {
@@ -402,7 +407,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -430,28 +435,29 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "hacker-news",
           "label": "Developer Discussion",
-          "delta": "-40%"
+          "delta": "-100%"
         },
         {
           "type": "arxiv",
-          "label": "Research Publications"
+          "label": "Research Publications",
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-35%"
+          "delta": "-4%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 39,
+      "momentumScore": 32,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -494,7 +500,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         20,
         53,
         29,
-        39
+        39,
+        32
       ]
     },
     "reading": {
@@ -503,7 +510,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -535,25 +542,25 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "+752%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "+3%"
+          "delta": "+34%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 59,
-      "velocity": 378,
+      "momentumScore": 46,
+      "velocity": 0,
       "trajectory": "emerging"
     },
     "forecast": {
@@ -595,7 +602,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         49,
         58,
         42,
-        59
+        59,
+        46
       ]
     },
     "reading": {
@@ -604,7 +612,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -636,25 +644,25 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "+752%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "+3%"
+          "delta": "+34%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 59,
-      "velocity": 378,
+      "momentumScore": 46,
+      "velocity": 0,
       "trajectory": "emerging"
     },
     "forecast": {
@@ -696,7 +704,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         49,
         58,
         42,
-        59
+        59,
+        46
       ]
     },
     "reading": {
@@ -705,7 +714,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -737,25 +746,25 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "+177%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-10%"
+          "delta": "-1%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 57,
-      "velocity": 84,
+      "momentumScore": 42,
+      "velocity": 0,
       "trajectory": "emerging"
     },
     "forecast": {
@@ -798,7 +807,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         42,
         48,
         41,
-        57
+        57,
+        42
       ]
     },
     "reading": {
@@ -807,7 +817,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -839,26 +849,26 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "-45%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "+12%"
+          "delta": "-14%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 45,
+      "momentumScore": 31,
       "velocity": 0,
-      "trajectory": "emerging"
+      "trajectory": "cooling"
     },
     "forecast": {
       "forecast": "Multi-cloud inference orchestration will become standard for enterprises avoiding vendor lock-in. Price competition intensifies as utilization rates climb.",
@@ -899,7 +909,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         21,
         37,
         30,
-        45
+        45,
+        31
       ]
     },
     "reading": {
@@ -908,7 +919,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -940,26 +951,26 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "-30%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-3%"
+          "delta": "+26%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 39,
+      "momentumScore": 37,
       "velocity": 0,
-      "trajectory": "emerging"
+      "trajectory": "cooling"
     },
     "forecast": {
       "forecast": "Payer coverage and one-time-cure pricing models set the pace. Regions that solve reimbursement and cold-chain delivery adopt first; others wait for cost curves to fall.",
@@ -1000,7 +1011,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         26,
         32,
         33,
-        39
+        39,
+        37
       ]
     },
     "reading": {
@@ -1009,7 +1021,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1040,24 +1052,25 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         },
         {
           "type": "arxiv",
-          "label": "Research Publications"
+          "label": "Research Publications",
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-9%"
+          "delta": "+2%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 50,
+      "momentumScore": 33,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -1100,7 +1113,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         36,
         46,
         32,
-        50
+        50,
+        33
       ]
     },
     "reading": {
@@ -1109,7 +1123,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1141,24 +1155,24 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "-41%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-1%"
+          "delta": "+28%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 44,
+      "momentumScore": 36,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -1200,7 +1214,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         21,
         39,
         33,
-        44
+        44,
+        36
       ]
     },
     "reading": {
@@ -1209,7 +1224,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1247,25 +1262,24 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         },
         {
           "type": "arxiv",
-          "label": "Research Publications",
-          "delta": "-100%"
+          "label": "Research Publications"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-2%"
+          "delta": "-4%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 45,
+      "momentumScore": 41,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -1314,7 +1328,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         22,
         50,
         33,
-        45
+        45,
+        41
       ]
     },
     "reading": {
@@ -1323,7 +1338,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1365,19 +1380,19 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-10%"
+          "delta": "-5%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 50,
+      "momentumScore": 40,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -1425,7 +1440,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         36,
         42,
         40,
-        50
+        50,
+        40
       ]
     },
     "reading": {
@@ -1434,7 +1450,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1483,12 +1499,12 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 47,
+      "momentumScore": 41,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -1536,7 +1552,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         41,
         47,
         41,
-        47
+        47,
+        41
       ]
     },
     "reading": {
@@ -1545,7 +1562,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1585,16 +1602,16 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
           "label": "Research Publications"
         },
         {
-          "type": "github",
-          "label": "GitHub Activity"
+          "type": "wikipedia",
+          "label": "Public Attention",
+          "delta": "+38%"
         },
         {
-          "type": "product-hunt",
-          "label": "Product Launches",
-          "delta": "-22%"
+          "type": "github",
+          "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
@@ -1647,6 +1664,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         36,
         38,
         42,
+        46,
         46
       ]
     },
@@ -1656,7 +1674,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1694,26 +1712,26 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "-29%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-4%"
+          "delta": "-8%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 40,
+      "momentumScore": 35,
       "velocity": 0,
-      "trajectory": "emerging"
+      "trajectory": "cooling"
     },
     "forecast": {
       "forecast": "Proprietary assays and fermentation capacity become the moat as design methods spread. Chemistry and bench science partner to close the loop.",
@@ -1760,7 +1778,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         28,
         51,
         32,
-        40
+        40,
+        35
       ]
     },
     "reading": {
@@ -1769,7 +1788,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1809,21 +1828,21 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
           "label": "Research Publications"
         },
         {
-          "type": "github",
-          "label": "GitHub Activity"
+          "type": "wikipedia",
+          "label": "Public Attention",
+          "delta": "-13%"
         },
         {
-          "type": "product-hunt",
-          "label": "Product Launches",
-          "delta": "-33%"
+          "type": "github",
+          "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 44,
+      "momentumScore": 41,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -1872,7 +1891,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         35,
         47,
         39,
-        44
+        44,
+        41
       ]
     },
     "reading": {
@@ -1881,7 +1901,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -1918,25 +1938,24 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         },
         {
           "type": "arxiv",
-          "label": "Research Publications",
-          "delta": "-100%"
+          "label": "Research Publications"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "-11%"
+          "delta": "+14%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 41,
+      "momentumScore": 43,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -1984,7 +2003,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         22,
         37,
         32,
-        41
+        41,
+        43
       ]
     },
     "reading": {
@@ -1993,7 +2013,7 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
@@ -2032,24 +2052,24 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         {
           "type": "arxiv",
           "label": "Research Publications",
-          "delta": "-58%"
+          "delta": "-100%"
         },
         {
           "type": "wikipedia",
           "label": "Public Attention",
-          "delta": "+0%"
+          "delta": "+21%"
         },
         {
           "type": "github",
           "label": "GitHub Activity"
         }
       ],
-      "lastObserved": "2026-07-11T16:55:19.414Z",
+      "lastObserved": "2026-07-13T19:17:47.302Z",
       "freshness": "live",
       "confidence": "high"
     },
     "momentum": {
-      "momentumScore": 42,
+      "momentumScore": 35,
       "velocity": 0,
       "trajectory": "emerging"
     },
@@ -2099,7 +2119,8 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
         27,
         40,
         30,
-        42
+        42,
+        35
       ]
     },
     "reading": {
@@ -2108,10 +2129,10 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     },
     "versioning": {
       "createdAt": "2026-07-08T00:00:00.000Z",
-      "updatedAt": "2026-07-11T16:55:19.414Z",
+      "updatedAt": "2026-07-13T19:17:47.302Z",
       "revision": 2,
       "status": "active"
     }
   }
 ] as const;
-export const GENERATED_AT = "2026-07-13T18:57:59.444Z";
+export const GENERATED_AT = "2026-07-13T19:23:06.829Z";

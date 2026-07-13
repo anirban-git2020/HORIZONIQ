@@ -1,0 +1,1137 @@
+{
+  "briefingPeriod": "2026-W29",
+  "briefingLabel": "Week of July 13, 2026 – July 19, 2026",
+  "publishedAt": "2026-07-13T09:01:49.824Z",
+  "dataProvenance": "pipeline",
+  "buckets": {
+    "new": [],
+    "rising": [
+      "humanoid-robotics",
+      "smart-manufacturing",
+      "ai-native-startups",
+      "vc-ai-concentration",
+      "creative-ai-tools",
+      "commerce-analytics-demand"
+    ],
+    "falling": [],
+    "stable": [
+      "ai-agents",
+      "quantum-error-correction",
+      "ai-cyber-threats",
+      "cloud-cost-reckoning",
+      "supply-chain-resilience",
+      "ai-diagnostics",
+      "embedded-finance",
+      "grid-storage",
+      "synthetic-biology",
+      "lab-automation-biochem",
+      "life-sciences-ai-research"
+    ]
+  },
+  "signalStates": [
+    {
+      "signalId": "ai-agents",
+      "momentum": 33,
+      "confidence": 95,
+      "previousMomentum": 32,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "Autonomous AI Agents held steady in Artificial Intelligence with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Interrail: 6,379Km and 13 Countries over 7 weeks",
+          "type": "live",
+          "url": "https://shkspr.mobi/blog/2026/07/another-ridiculous-interrail-holiday-6379km-and-13-countries-over-7-weeks/"
+        },
+        {
+          "label": "Hacker News: Ask HN: Add flag for AI-generated articles",
+          "type": "live",
+          "url": "https://news.ycombinator.com/item?id=48886741"
+        },
+        {
+          "label": "arXiv: PHINN-EEG: Topological Time-Series Analysis of Dream-State EEG -- Dynamic Betti Curves for Dream Content Classification and Topology-Conditioned Neural Signal Synthesis",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09662v1"
+        },
+        {
+          "label": "arXiv: Scalable Visual Pretraining for Language Intelligence",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09657v1"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 2,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 88,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "humanoid-robotics",
+      "momentum": 46,
+      "confidence": 95,
+      "previousMomentum": 42,
+      "previousConfidence": 95,
+      "change": {
+        "type": "rising",
+        "summary": "Live activity accelerating in Robotics (arXiv -100%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: B-spline Policy: Accelerating Manipulation Policies via B-spline Action Representations",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09648v1"
+        },
+        {
+          "label": "arXiv: PAC-ACT: Post-training Actor-Critic for Action Chunking Transformers",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09590v1"
+        },
+        {
+          "label": "arXiv: CoDiMAD: Diffusion-Based Privileged Distillation for Communication-Free Multi-Robot Coordination",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09587v1"
+        },
+        {
+          "label": "Wikimedia: Robotics — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Robotics"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 34,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "quantum-error-correction",
+      "momentum": 32,
+      "confidence": 95,
+      "previousMomentum": 29,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "Quantum Error Correction Breakthroughs held steady in Quantum Computing with Hacker News -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Phase-switchable nonreciprocal entanglement via magnon squeezing in ring-cavity optomagnomechanics",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09663v1"
+        },
+        {
+          "label": "arXiv: Nonlinear particle detectors across the Rindler firewall",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09660v1"
+        },
+        {
+          "label": "arXiv: Silicon-Germanium Heterostructures with Enhanced Valley Splitting for Spin Qubits",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09652v1"
+        },
+        {
+          "label": "Wikimedia: Quantum Computing — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Quantum_computing"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Hacker News",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 4,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-cyber-threats",
+      "momentum": 42,
+      "confidence": 95,
+      "previousMomentum": 41,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "AI-Powered Cyber Threats held steady in Cybersecurity with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Cyberpunk Comics, Manga and Graphic Novels",
+          "type": "live",
+          "url": "https://shellzine.net/cyberpunk-comics/"
+        },
+        {
+          "label": "Hacker News: The State of MCP Security [pdf]",
+          "type": "live",
+          "url": "https://www.canopii.dev/State%20of%20MCP%20Security%202026.pdf"
+        },
+        {
+          "label": "arXiv: Impact of Benign Connectivity Variations on Intrusion Detection for Encrypted OPC UA Traffic in Industrial Private 5G Networks",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09659v1"
+        },
+        {
+          "label": "arXiv: VEXAIoT: Autonomous IoT Vulnerability EXploitation using AI Agents",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09653v1"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 1,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 100,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "cloud-cost-reckoning",
+      "momentum": 31,
+      "confidence": 95,
+      "previousMomentum": 30,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "Cloud Cost Optimization held steady in Cloud Computing with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: New Complexity Classes in Locally Checkable Labeling for Local Computation Algorithms",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09626v1"
+        },
+        {
+          "label": "arXiv: Short Graph Sketches Suffice for Error-resilient Leader Verification in CONGEST",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09522v1"
+        },
+        {
+          "label": "arXiv: STEEL: Sparsity-Aware Fused Attention for Energy-Efficient Long-Sequence Inference on AMD's XDNA NPU",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09385v1"
+        },
+        {
+          "label": "Product Hunt: UnitPay",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/unitpay?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 14,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 86,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "smart-manufacturing",
+      "momentum": 41,
+      "confidence": 95,
+      "previousMomentum": 33,
+      "previousConfidence": 95,
+      "change": {
+        "type": "rising",
+        "summary": "Live activity accelerating in Manufacturing (Wikimedia Pageviews -4%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Orchestrating Communication, Computing, and Energy Transfer for Wireless-Powered 6G Closed-Loop Controls",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.04225v1"
+        },
+        {
+          "label": "arXiv: Sample-Efficient Pareto Front Modeling for Energy-Aware Reinforcement Learning Using Bayesian Optimization",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.03140v1"
+        },
+        {
+          "label": "arXiv: Optimal Reconfiguration of Distributed Battery Networks Under Connectivity and Energy Constraints",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.01462v1"
+        },
+        {
+          "label": "Wikimedia: Manufacturing — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Manufacturing"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 4,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 100,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "supply-chain-resilience",
+      "momentum": 34,
+      "confidence": 95,
+      "previousMomentum": 32,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "Supply Chain Resilience Tech held steady in Supply Chain with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Is sub-metre resolution necessary for cocoa mapping? A landscape-stratified evaluation of very high resolution imagery, decametric Earth Observation inputs, and operational products in Cote d'Ivoire",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.08945v1"
+        },
+        {
+          "label": "arXiv: Inflation as an emergent phenomenon",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.07864v1"
+        },
+        {
+          "label": "arXiv: AI-integrated models for assessing agricultural resilience",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.07759v1"
+        },
+        {
+          "label": "Product Hunt: AgentKey",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/agentkey?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 8,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 89,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-diagnostics",
+      "momentum": 41,
+      "confidence": 95,
+      "previousMomentum": 41,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "AI Clinical Diagnostics held steady in Healthcare with Wikimedia Pageviews -1%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
+          "type": "live",
+          "url": "http://arxiv.org/abs/physics/0307155v1"
+        },
+        {
+          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
+          "type": "live",
+          "url": "http://arxiv.org/abs/cond-mat/0307747v1"
+        },
+        {
+          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
+          "type": "live",
+          "url": "http://arxiv.org/abs/physics/0307136v1"
+        },
+        {
+          "label": "Product Hunt: Shaynee",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/shaynee-your-ai-skincare-coach?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 1,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 88,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 100,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "embedded-finance",
+      "momentum": 40,
+      "confidence": 95,
+      "previousMomentum": 40,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "Embedded Finance Expansion held steady in Finance with Wikimedia Pageviews -5%."
+      },
+      "sources": [
+        {
+          "label": "Product Hunt: UnitPay",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/unitpay?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        },
+        {
+          "label": "Product Hunt: Yano",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/yano-ticketing-for-indian-organizers?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        },
+        {
+          "label": "Product Hunt: Blunex",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/blunex?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        },
+        {
+          "label": "Product Hunt: Fynov",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/fynov?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 5,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 88,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 100,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "grid-storage",
+      "momentum": 36,
+      "confidence": 95,
+      "previousMomentum": 33,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "Grid-Scale Energy Storage held steady in Energy with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: A Boosted Energy Extraction from the CapMix Process by Grafting with Titratable Polymers",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09554v1"
+        },
+        {
+          "label": "arXiv: Sharing Coefficient-Based Price Signals for Demand Response in Renewable Energy Communities",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09357v1"
+        },
+        {
+          "label": "arXiv: Inertia-Aware Optimal Power Flow Using PINN in IBR-Dominated Power Systems",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09297v1"
+        },
+        {
+          "label": "Product Hunt: Bonsai",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/bonsai-10?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 28,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 90,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "ai-native-startups",
+      "momentum": 24,
+      "confidence": 95,
+      "previousMomentum": 16,
+      "previousConfidence": 95,
+      "change": {
+        "type": "rising",
+        "summary": "Live activity accelerating in Startups (Hacker News -50%) — e.g. Show HN: Monitor any website, discuss outages, and post verified owner updates."
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Show HN: Monitor any website, discuss outages, and post verified owner updates",
+          "type": "live",
+          "url": "https://anysite.live/site/news.ycombinator.com"
+        },
+        {
+          "label": "Hacker News: LARP – Revenue infrastructure for serious founders",
+          "type": "live",
+          "url": "https://www.larp.website/"
+        },
+        {
+          "label": "Hacker News: The Seed Beneath the Snow",
+          "type": "live",
+          "url": "https://eli.li/the-seed-beneath-the-snow"
+        },
+        {
+          "label": "arXiv: Entropy Bootstrapping for Wireless Embedded Systems",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.08865v1"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Hacker News",
+          "value": 50,
+          "unit": "%"
+        },
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 14,
+          "unit": "%"
+        },
+        {
+          "label": "GitHub",
+          "value": 79,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 80,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "vc-ai-concentration",
+      "momentum": 46,
+      "confidence": 95,
+      "previousMomentum": 42,
+      "previousConfidence": 95,
+      "change": {
+        "type": "rising",
+        "summary": "Live activity accelerating in Venture Capital (Wikimedia Pageviews +38%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: FinInvest-GTCN: Explainable Graph-Temporal-Causal Modeling for Risk-Aware Investment Decision Optimization",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28933v1"
+        },
+        {
+          "label": "arXiv: A Multi-Agent Orchestration Framework for Venture Capital Due Diligence",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2605.13110v1"
+        },
+        {
+          "label": "arXiv: Engineering Economy: A New Paradigm for Escaping the Middle-Income Trap",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2605.09145v1"
+        },
+        {
+          "label": "Product Hunt: VCWorld",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/vcworld?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 38,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 75,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "synthetic-biology",
+      "momentum": 36,
+      "confidence": 95,
+      "previousMomentum": 33,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "Synthetic Biology Breakthroughs held steady in Biotechnology with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: UMA-Inverse: Ligand-Conditioned Protein Inverse Folding with a Distogram-Supervised Dense Pair Encoder",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.07866v1"
+        },
+        {
+          "label": "arXiv: Bayesian Learning of Distance Metrics Beyond RMSD for Biomolecule Alignment, Clustering, and Domain Identification",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.07352v1"
+        },
+        {
+          "label": "arXiv: Resource-Efficient Hybrid Quantum Neighborhood Selection for Large-Scale Molecular Diversity Optimization",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.07336v1"
+        },
+        {
+          "label": "Product Hunt: Expressive",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/expressive?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 26,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 67,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "lab-automation-biochem",
+      "momentum": 32,
+      "confidence": 95,
+      "previousMomentum": 32,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "Lab Automation in Biochemistry held steady in Biochemistry with arXiv -100%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Comprehensive identifiability analysis and reliable parameter estimation for an SEIR model",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09137v1"
+        },
+        {
+          "label": "arXiv: Variable-Length Generative Protein Design via Generalized Poisson Flow",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09039v1"
+        },
+        {
+          "label": "arXiv: Model Predictive Controller to Regulate Cortisol Levels in Individuals With Adrenal Insufficiency",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.08902v1"
+        },
+        {
+          "label": "Wikimedia: Biochemistry — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Biochemistry"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 8,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "life-sciences-ai-research",
+      "momentum": 40,
+      "confidence": 95,
+      "previousMomentum": 39,
+      "previousConfidence": 95,
+      "change": {
+        "type": "stable",
+        "summary": "AI in Life Sciences Research held steady in Life Sciences with Wikimedia Pageviews -13%."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
+          "type": "live",
+          "url": "http://arxiv.org/abs/physics/0307155v1"
+        },
+        {
+          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
+          "type": "live",
+          "url": "http://arxiv.org/abs/cond-mat/0307747v1"
+        },
+        {
+          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
+          "type": "live",
+          "url": "http://arxiv.org/abs/physics/0307136v1"
+        },
+        {
+          "label": "Wikimedia: Life Sciences — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Life_sciences"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 13,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "creative-ai-tools",
+      "momentum": 43,
+      "confidence": 95,
+      "previousMomentum": 32,
+      "previousConfidence": 95,
+      "change": {
+        "type": "rising",
+        "summary": "Live activity accelerating in Arts & Creative Fields (Wikimedia Pageviews +14%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: ART for Diffusion Sampling: Continuous-Time Control and Actor-Critic Learning",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.02137v2"
+        },
+        {
+          "label": "arXiv: Exploring the Value of Diverse LLM Explanations in Introductory Programming",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.28882v1"
+        },
+        {
+          "label": "arXiv: IVIE: A Neuro-symbolic Approach to Incremental and Validated Generation of Interactive Fiction Worlds",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2606.13348v1"
+        },
+        {
+          "label": "Wikimedia: Arts — Wikipedia pageviews",
+          "type": "live",
+          "url": "https://en.wikipedia.org/wiki/Digital_art"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 14,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 100,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 40,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 75,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    },
+    {
+      "signalId": "commerce-analytics-demand",
+      "momentum": 35,
+      "confidence": 95,
+      "previousMomentum": 30,
+      "previousConfidence": 95,
+      "change": {
+        "type": "rising",
+        "summary": "Live activity accelerating in Commerce & Business Studies (arXiv -100%)."
+      },
+      "sources": [
+        {
+          "label": "arXiv: Semantic Pareto-DQN: A Multi-Objective Reinforcement Learning Framework for Financial Anomaly Detection",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.09641v1"
+        },
+        {
+          "label": "arXiv: SynthAVE: Scalable Synthetic Labeling for E-Commerce with LLM-Arena Validation",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.07469v1"
+        },
+        {
+          "label": "arXiv: Ad Headline Generation using Self-Critical Masked Language Model",
+          "type": "live",
+          "url": "http://arxiv.org/abs/2607.06818v1"
+        },
+        {
+          "label": "Product Hunt: PairWith",
+          "type": "live",
+          "url": "https://www.producthunt.com/products/pairwith?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "momentumDrivers": [
+        {
+          "label": "arXiv",
+          "value": 100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 21,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": 90,
+          "unit": "%"
+        }
+      ],
+      "confidenceFactors": [
+        {
+          "label": "Live source coverage",
+          "value": 60,
+          "unit": "score"
+        },
+        {
+          "label": "Cross-source agreement",
+          "value": 50,
+          "unit": "score"
+        },
+        {
+          "label": "Pipeline confidence",
+          "value": 98,
+          "unit": "score"
+        }
+      ]
+    }
+  ]
+}

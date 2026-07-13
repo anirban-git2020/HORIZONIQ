@@ -107,6 +107,19 @@ export function buildPersonalizedTiles(profile: PulseProfile): PersonalizedPulse
   };
 }
 
+/**
+ * The single most relevant signal for this profile — powers the hero's Featured
+ * Opportunity card. Personalized: a chosen-interest match when the user has a
+ * profile, otherwise the highest-momentum signal overall. Never forces AI.
+ */
+export function getFeaturedSignal(profile: PulseProfile): Signal | undefined {
+  const all = getSignalRepository().getAll();
+  const wanted = new Set<InterestId>(profile.interests);
+  const pool =
+    profile.interests.length > 0 ? all.filter((s) => isDirect(s, wanted)) : all;
+  return sortForRegion(pool, profile.region)[0];
+}
+
 /** Brief for an opened Signal — domain-sourced, identical for every user. */
 export function getPersonalizedBrief(
   id: string,

@@ -46,7 +46,11 @@ function viewFor(signal: Signal) {
     metrics: [
       { label: "Confidence", value: CONFIDENCE_LABEL[signal.evidence.confidence] },
       { label: "Velocity", value: VELOCITY_ARROWS[signal.momentum.trajectory] },
-      { label: "Forecast", value: FORECAST_LABEL[signal.forecast.forecastConfidence] },
+      {
+        label: "Forecast",
+        value:
+          FORECAST_LABEL[signal.forecast.forecastConfidence ?? signal.evidence.confidence],
+      },
       {
         label: "Evidence",
         value: `${signal.evidence.evidenceCount.toLocaleString()} Signals`,

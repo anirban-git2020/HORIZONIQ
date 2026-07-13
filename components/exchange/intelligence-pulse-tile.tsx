@@ -14,14 +14,10 @@ type IntelligencePulseTileProps = {
   staggerIndex?: number;
 };
 
-function formatEvidence(tile: IntelligencePulseTile) {
-  const { signals, newJobs, researchPapers, fundingEvents } = tile.evidence;
-  return [
-    `${signals.toLocaleString()} Signals`,
-    `${newJobs} New Jobs`,
-    `${researchPapers} Research Papers`,
-    `${fundingEvents} Funding Events`,
-  ].join(" · ");
+function formatEvidence(tile: IntelligencePulseTile): string {
+  return tile.evidence
+    .map((source) => (source.delta ? `${source.label} ${source.delta}` : source.label))
+    .join(" · ");
 }
 
 function IntelligencePulseTileCardInner({
@@ -50,9 +46,9 @@ function IntelligencePulseTileCardInner({
       style={staggerIndex !== undefined ? motionStaggerDelay(staggerIndex) : undefined}
       className={cn(
         "pulse-editorial-tile group relative flex flex-col",
-        "rounded-2xl bg-card/20 backdrop-blur-sm",
+        "rounded-2xl border border-border/50 bg-card/80 backdrop-blur-md",
         MOTION_CLASS.signal,
-        "hover:bg-card/30 motion-reduce:hover:translate-y-0",
+        "hover:bg-card/90 motion-reduce:hover:translate-y-0",
         staggerIndex !== undefined && MOTION_CLASS.signalEnter,
         isHero && "min-h-[380px]",
         isFeatured && "min-h-[300px]",
@@ -137,20 +133,45 @@ export function PulseTileSummary({
         {tile.supporting}
       </p>
 
-      <div className={cn("flex flex-wrap items-baseline gap-x-3 gap-y-1", compact ? "mt-3" : "mt-6")}>
+      <div className={cn("flex flex-col gap-1", compact ? "mt-3" : "mt-6")}>
+        <span
+          className="label-caps w-fit cursor-help text-muted-foreground/80"
+          title="Momentum (0–100): how strongly this field is accelerating right now, synthesized from research, code, hiring and funding signals. The arrow shows the change since the last reading."
+        >
+          Momentum
+        </span>
         <p
           className={cn(
             "pulse-momentum font-heading font-bold tabular-nums tracking-tight text-foreground",
             interactive && MOTION_CLASS.signalMomentum,
             compact ? "text-2xl" : isHero ? "text-4xl md:text-5xl" : "text-3xl"
           )}
-          aria-label={`Momentum ${tile.momentum}, up ${tile.momentumChange}`}
+          aria-label={`Momentum ${tile.momentum}, ${
+            tile.momentumChange > 0
+              ? `up ${tile.momentumChange}`
+              : tile.momentumChange < 0
+                ? `down ${Math.abs(tile.momentumChange)}`
+                : "no change since last reading"
+          }`}
         >
           {tile.momentum}
-          <span className="ml-2 text-success">▲</span>
-          <span className="ml-1 text-base font-semibold text-success md:text-lg">
-            +{tile.momentumChange}
-          </span>
+          {(() => {
+            const c = tile.momentumChange;
+            const tone =
+              c > 0 ? "text-success" : c < 0 ? "text-warning" : "text-muted-foreground";
+            const glyph = c > 0 ? "▲" : c < 0 ? "▼" : "—";
+            const text = c > 0 ? `+${c}` : c < 0 ? `${c}` : "0";
+            return (
+              <>
+                <span className={cn("ml-2", tone)} aria-hidden="true">
+                  {glyph}
+                </span>
+                <span className={cn("ml-1 text-base font-semibold md:text-lg", tone)}>
+                  {text}
+                </span>
+              </>
+            );
+          })()}
         </p>
       </div>
 
@@ -158,14 +179,16 @@ export function PulseTileSummary({
         {tile.forecastNarrative}
       </p>
 
-      <p
-        className={cn(
-          "text-xs leading-relaxed text-muted-foreground md:text-sm",
-          compact ? "mt-2" : "mt-3"
-        )}
-      >
-        {formatEvidence(tile)}
-      </p>
+      {tile.evidence.length > 0 && (
+        <p
+          className={cn(
+            "text-xs leading-relaxed text-muted-foreground md:text-sm",
+            compact ? "mt-2" : "mt-3"
+          )}
+        >
+          {formatEvidence(tile)}
+        </p>
+      )}
 
       {!compact && (
         <div className="mt-auto flex flex-wrap items-center justify-between gap-4 pt-8">

@@ -3,7 +3,7 @@
 import { useCallback, useState } from "react";
 
 import { FocusOverlay } from "@/components/focus/FocusOverlay";
-import { LivingIntelligenceField } from "@/components/background/living-intelligence-field";
+import { SignalGalaxyField } from "@/components/background/signal-galaxy-field";
 import { ExchangeHeader } from "@/components/exchange/exchange-header";
 import { IntelligenceAudience } from "@/components/exchange/intelligence-audience";
 import { IntelligenceHero } from "@/components/exchange/intelligence-hero";
@@ -30,7 +30,7 @@ export function IntelligenceExchangeShell() {
 
   return (
     <div className="relative min-h-dvh bg-background">
-      <LivingIntelligenceField />
+      <SignalGalaxyField />
 
       <div
         className={cn(
@@ -44,7 +44,9 @@ export function IntelligenceExchangeShell() {
         <main className="relative z-10">
           <IntelligenceHero />
           <IntelligenceAudience />
-          <WorldIntelligencePulse onSignalSelected={handleSignalSelected} />
+          <div id="signals" className="scroll-mt-24">
+            <WorldIntelligencePulse onSignalSelected={handleSignalSelected} />
+          </div>
         </main>
 
         <SiteFooter />

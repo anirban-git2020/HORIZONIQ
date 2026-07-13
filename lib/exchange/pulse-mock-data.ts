@@ -26,12 +26,8 @@ export type IntelligencePulseTile = {
   momentum: number;
   momentumChange: number;
   forecastNarrative: string;
-  evidence: {
-    signals: number;
-    newJobs: number;
-    researchPapers: number;
-    fundingEvents: number;
-  };
+  /** Real observed evidence: the sources tracking this signal + their deltas. */
+  evidence: readonly { label: string; delta?: string }[];
   updated: string;
   tier: PulseTileTier;
   cta: PulseCta;
@@ -59,21 +55,20 @@ function ctaFor(trajectory: Trajectory): PulseCta {
 export function toPulseTile(signal: Signal, index: number): IntelligencePulseTile {
   const tier: PulseTileTier =
     index === 0 ? "hero" : index < 4 ? "featured" : "compact";
-  const m = Math.max(1, Math.round(signal.momentum.momentumScore));
+  const spark = signal.presentation.sparkline ?? [];
+  // Change is the last step of the momentum series, so the number, the arrow and
+  // the sparkline always tell the same story (flat series → +0 → flat line).
+  const momentumChange =
+    spark.length >= 2 ? Math.round(spark[spark.length - 1] - spark[spark.length - 2]) : 0;
   return {
     id: signal.identity.id,
     technology: signal.identity.title,
     headline: signal.identity.headline,
     supporting: signal.identity.summary,
     momentum: Math.round(signal.momentum.momentumScore),
-    momentumChange: Math.max(0, Math.round(signal.momentum.velocity ?? 0)),
+    momentumChange,
     forecastNarrative: signal.presentation.narrative ?? "",
-    evidence: {
-      signals: signal.evidence.evidenceCount,
-      newJobs: Math.round(m * 2.1),
-      researchPapers: Math.round(m * 0.4) + 3,
-      fundingEvents: Math.round(m * 0.18) + 1,
-    },
+    evidence: signal.evidence.sources.map((s) => ({ label: s.label, delta: s.delta })),
     updated: "Signal detected",
     tier,
     cta: ctaFor(signal.momentum.trajectory),

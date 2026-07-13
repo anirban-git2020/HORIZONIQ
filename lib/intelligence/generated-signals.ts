@@ -86,17 +86,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": true,
       "narrative": "Rapid Adoption",
       "sparkline": [
-        42,
-        48,
-        45,
-        55,
-        58,
-        62,
-        68,
-        74,
-        82,
-        91,
-        97
+        47,
+        36,
+        46,
+        32,
+        50
       ]
     },
     "reading": {
@@ -193,17 +187,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": true,
       "narrative": "Infrastructure Expansion",
       "sparkline": [
-        58,
-        62,
-        60,
-        68,
-        72,
-        75,
-        80,
-        84,
-        88,
-        92,
-        95
+        41,
+        21,
+        37,
+        30,
+        45
       ]
     },
     "reading": {
@@ -300,17 +288,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": true,
       "narrative": "Infrastructure Expansion",
       "sparkline": [
-        52,
-        55,
-        58,
-        62,
-        65,
-        70,
-        74,
-        78,
-        82,
-        85,
-        88
+        41,
+        27,
+        36,
+        32,
+        42
       ]
     },
     "reading": {
@@ -407,17 +389,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": true,
       "narrative": "Enterprise Growth",
       "sparkline": [
-        48,
-        52,
-        54,
+        51,
+        49,
         58,
-        62,
-        66,
-        72,
-        76,
-        79,
-        82,
-        84
+        42,
+        59
       ]
     },
     "reading": {
@@ -514,17 +490,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Research Breakthrough",
       "sparkline": [
-        44,
-        48,
-        52,
-        55,
-        60,
-        64,
-        68,
-        72,
-        76,
-        79,
-        82
+        63,
+        20,
+        53,
+        29,
+        39
       ]
     },
     "reading": {
@@ -621,17 +591,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Enterprise Growth",
       "sparkline": [
-        50,
-        52,
-        55,
+        51,
+        49,
         58,
-        62,
-        65,
-        68,
-        72,
-        74,
-        77,
-        79
+        42,
+        59
       ]
     },
     "reading": {
@@ -728,17 +692,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Enterprise Growth",
       "sparkline": [
-        46,
-        50,
-        52,
-        56,
+        51,
+        49,
         58,
-        62,
-        65,
-        68,
-        71,
-        74,
-        76
+        42,
+        59
       ]
     },
     "reading": {
@@ -836,17 +794,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Rapid Adoption",
       "sparkline": [
-        58,
-        60,
         62,
-        64,
-        66,
-        68,
-        69,
-        71,
-        72,
-        73,
-        74
+        42,
+        48,
+        41,
+        57
       ]
     },
     "reading": {
@@ -943,17 +895,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Infrastructure Expansion",
       "sparkline": [
-        54,
-        56,
-        58,
-        60,
-        62,
-        64,
-        66,
-        68,
-        69,
-        71,
-        72
+        41,
+        21,
+        37,
+        30,
+        45
       ]
     },
     "reading": {
@@ -1050,17 +996,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Research Breakthrough",
       "sparkline": [
-        48,
-        50,
-        52,
-        54,
-        56,
-        58,
-        60,
-        62,
-        64,
-        66,
-        68
+        40,
+        26,
+        32,
+        33,
+        39
       ]
     },
     "reading": {
@@ -1156,17 +1096,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Consumer Acceleration",
       "sparkline": [
-        52,
-        53,
-        54,
-        55,
-        56,
-        57,
-        58,
-        59,
-        59,
-        60,
-        61
+        47,
+        36,
+        46,
+        32,
+        50
       ]
     },
     "reading": {
@@ -1262,17 +1196,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Research Breakthrough",
       "sparkline": [
-        46,
-        48,
-        49,
-        50,
-        52,
-        53,
-        54,
-        55,
-        56,
-        57,
-        58
+        27,
+        21,
+        39,
+        33,
+        44
       ]
     },
     "reading": {
@@ -1382,17 +1310,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Enterprise Growth",
       "sparkline": [
+        48,
+        22,
         50,
-        52,
-        55,
-        57,
-        60,
-        62,
-        65,
-        67,
-        68,
-        70,
-        71
+        33,
+        45
       ]
     },
     "reading": {
@@ -1499,17 +1421,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Rapid Adoption",
       "sparkline": [
-        55,
-        57,
-        59,
-        61,
-        63,
-        65,
-        67,
-        69,
-        70,
-        72,
-        73
+        58,
+        36,
+        42,
+        40,
+        50
       ]
     },
     "reading": {
@@ -1616,17 +1532,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Rapid Adoption",
       "sparkline": [
-        54,
-        56,
-        58,
-        60,
-        62,
-        63,
-        65,
-        67,
-        68,
-        69,
-        70
+        41,
+        41,
+        47,
+        41,
+        47
       ]
     },
     "reading": {
@@ -1733,17 +1643,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Market Shift",
       "sparkline": [
-        52,
-        54,
-        56,
-        58,
-        60,
-        62,
-        64,
-        66,
-        67,
-        68,
-        69
+        51,
+        36,
+        38,
+        42,
+        46
       ]
     },
     "reading": {
@@ -1852,17 +1756,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Research Breakthrough",
       "sparkline": [
-        50,
-        52,
-        54,
-        56,
-        58,
-        60,
-        61,
-        63,
-        64,
-        65,
-        66
+        32,
+        28,
+        51,
+        32,
+        40
       ]
     },
     "reading": {
@@ -1970,17 +1868,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Research Breakthrough",
       "sparkline": [
-        48,
         50,
-        52,
-        54,
-        56,
-        57,
-        59,
-        60,
-        62,
-        63,
-        64
+        35,
+        47,
+        39,
+        44
       ]
     },
     "reading": {
@@ -2088,17 +1980,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Consumer Acceleration",
       "sparkline": [
-        54,
-        56,
-        57,
-        59,
-        60,
-        62,
-        63,
-        64,
-        65,
-        66,
-        67
+        35,
+        22,
+        37,
+        32,
+        41
       ]
     },
     "reading": {
@@ -2209,17 +2095,11 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
       "featured": false,
       "narrative": "Rapid Adoption",
       "sparkline": [
-        55,
-        57,
-        58,
-        60,
-        61,
-        63,
-        64,
-        65,
         66,
-        67,
-        68
+        27,
+        40,
+        30,
+        42
       ]
     },
     "reading": {
@@ -2234,4 +2114,4 @@ export const GENERATED_SIGNALS: readonly Signal[] = [
     }
   }
 ] as const;
-export const GENERATED_AT = "2026-07-12T18:13:45.335Z";
+export const GENERATED_AT = "2026-07-13T18:57:59.444Z";

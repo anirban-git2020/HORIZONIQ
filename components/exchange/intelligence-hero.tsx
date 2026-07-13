@@ -1,5 +1,7 @@
 "use client";
 
+import { ArrowRight } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { FeaturedOpportunityCard } from "@/components/exchange/featured-opportunity-card";
 import { MOTION_CLASS } from "@/lib/motion-language";
@@ -7,6 +9,12 @@ import { cn } from "@/lib/utils";
 
 const BODY_COPY =
   "HorizonIQ continuously analyzes global public intelligence signals to surface emerging technologies, career opportunities, research breakthroughs and market shifts before they become mainstream.";
+
+/** Smooth-scroll to an in-page section (targets carry `scroll-mt` for the sticky header). */
+function scrollToSection(id: string) {
+  if (typeof document === "undefined") return;
+  document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
+}
 
 /**
  * Intelligence Exchange — Phase 1 Hero Experience.
@@ -37,16 +45,19 @@ export function IntelligenceHero({ className }: { className?: string }) {
             The world is changing faster than ever.
           </h1>
 
-          <div className="mt-8 flex flex-wrap gap-3 sm:gap-4">
-            <Button type="button" variant="primary" size="lg">
+          <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+            <Button
+              type="button"
+              variant="primary"
+              size="lg"
+              onClick={() => scrollToSection("signals")}
+            >
               Explore Signals
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Button>
-            <Button type="button" variant="secondary" size="lg">
-              Weekly Briefing
-            </Button>
-            <Button type="button" variant="outline" size="lg">
-              Forecasts
-            </Button>
+            <span className="text-sm text-muted-foreground/80">
+              Synthesized live from research, code, hiring and funding signals.
+            </span>
           </div>
 
           <p className="mt-8 max-w-[650px] text-lg leading-[1.75] text-muted-foreground md:text-xl md:leading-[1.7]">

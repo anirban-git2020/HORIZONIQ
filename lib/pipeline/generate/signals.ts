@@ -7,6 +7,7 @@ import type { SourceRef, SourceType } from "@/lib/domain/source";
 import {
   readLatestObservations,
   readLatestScores,
+  readScoreHistory,
 } from "@/lib/pipeline/store/observations";
 import type {
   InterestObservation,
@@ -103,13 +104,24 @@ function hasTrend(interest: InterestId, obs: ObservationBundle): boolean {
 function overlay(
   base: Signal,
   score: InterestScore,
-  obs: ObservationBundle
+  obs: ObservationBundle,
+  history: readonly number[] | undefined
 ): Signal {
   const trend = hasTrend(base.classification.interest, obs);
   const velocity = velocityFor(base.classification.interest, obs);
   const sources = liveSources(base.classification.interest, obs);
+  const displayedMomentum = trend
+    ? Math.round(score.momentum)
+    : base.momentum.momentumScore;
+  // Real momentum history (last ~12 runs) once change is measurable; otherwise a
+  // flat line at the shown momentum, so a "+0" signal never fakes an upward trend.
+  const sparkline =
+    trend && history && history.length >= 2
+      ? history.slice(-12)
+      : Array.from({ length: 11 }, () => displayedMomentum);
   return {
     ...base,
+    presentation: { ...base.presentation, sparkline },
     evidence: {
       ...base.evidence,
       sources: sources.length > 0 ? sources : base.evidence.sources,
@@ -141,20 +153,31 @@ export async function generateCanonicalSignals(): Promise<{
   liveCount: number;
   generatedAt: string;
 }> {
-  const [obs, scores] = await Promise.all([
+  const [obs, scores, scoreHistory] = await Promise.all([
     readLatestObservations(),
     readLatestScores(),
+    readScoreHistory(),
   ]);
 
   const byInterest = new Map<InterestId, InterestScore>();
   if (scores) for (const s of scores.interests) byInterest.set(s.interestId, s);
+
+  // Real momentum series per interest, chronological across dated score bundles.
+  const historyByInterest = new Map<InterestId, number[]>();
+  for (const bundle of scoreHistory) {
+    for (const s of bundle.interests) {
+      const series = historyByInterest.get(s.interestId) ?? [];
+      series.push(Math.round(s.momentum));
+      historyByInterest.set(s.interestId, series);
+    }
+  }
 
   let liveCount = 0;
   const signals = MOCK_SIGNALS.map((base) => {
     const score = byInterest.get(base.classification.interest);
     if (!obs || !score) return base; // no live data for this interest → curated
     liveCount += 1;
-    return overlay(base, score, obs);
+    return overlay(base, score, obs, historyByInterest.get(base.classification.interest));
   });
 
   return { signals, liveCount, generatedAt: new Date().toISOString() };

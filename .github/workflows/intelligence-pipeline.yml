@@ -6,7 +6,8 @@ name: Intelligence Pipeline
 
 on:
   schedule:
-    - cron: "0 6 * * *" # daily at 06:00 UTC
+    # Every 2 days at 06:00 UTC (odd calendar days — cron's standard "every other day").
+    - cron: "0 6 */2 * *"
   workflow_dispatch: {} # allow manual runs from the Actions tab
 
 permissions:
@@ -23,7 +24,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          ref: feature/intelligence-exchange-ui
+          # Operate on whichever branch triggered the run (the default branch for
+          # the schedule). Works after the merge to main without further edits.
+          ref: ${{ github.ref_name }}
           fetch-depth: 0
 
       - name: Setup Node
@@ -55,6 +58,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else
-            git commit -m "chore(pipeline): daily intelligence refresh [skip ci]"
-            git push origin feature/intelligence-exchange-ui
+            git commit -m "chore(pipeline): scheduled intelligence refresh [skip ci]"
+            git push origin ${{ github.ref_name }}
           fi

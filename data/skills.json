@@ -4,8 +4,8 @@
       "id": "agent-orchestration",
       "name": "Agent Orchestration",
       "demand": "Growing",
-      "demandChange": "falling",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes AnySearch.",
+      "demandChange": "stable",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Osaurus.",
       "summary": "Design, deploy, and manage multi-step AI agents in production workflows.",
       "interests": [
         "artificial-intelligence"
@@ -21,8 +21,8 @@
       "id": "llm-engineering",
       "name": "LLM Engineering",
       "demand": "Growing",
-      "demandChange": "falling",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes AnySearch.",
+      "demandChange": "stable",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Osaurus.",
       "summary": "Fine-tune, prompt, and integrate large language models into products.",
       "interests": [
         "artificial-intelligence",
@@ -74,7 +74,7 @@
       "name": "FinOps & Cloud Cost Management",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Finent.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes UnitPay.",
       "summary": "Optimize cloud spend and govern AI infrastructure costs.",
       "interests": [
         "cloud-computing",
@@ -91,7 +91,7 @@
       "name": "Health Informatics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes AI Skin Coach.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Shaynee.",
       "summary": "Bridge clinical workflows with AI diagnostic and data systems.",
       "interests": [
         "healthcare",
@@ -108,7 +108,7 @@
       "name": "Fintech Engineering",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Finent.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes UnitPay.",
       "summary": "Build payments, lending, and compliance into software platforms.",
       "interests": [
         "finance",
@@ -125,7 +125,7 @@
       "name": "Energy Systems Engineering",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — arXiv -100% this week in Energy.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Bonsai.",
       "summary": "Design and optimize grid-scale energy storage and renewable systems.",
       "interests": [
         "energy"
@@ -142,7 +142,7 @@
       "name": "AI Product Building",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Typeahead 2.0.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes AgentKey.",
       "summary": "Ship AI-native products from concept to market with lean teams.",
       "interests": [
         "startups",
@@ -160,7 +160,7 @@
       "name": "Venture & Market Analysis",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Sleeve | Research Investment Managers.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes VCWorld.",
       "summary": "Evaluate markets, map competitive landscapes, and assess investment theses.",
       "interests": [
         "venture-capital",
@@ -177,7 +177,7 @@
       "name": "Supply Chain Analytics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Inkterface.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -4% this week in Manufacturing.",
       "summary": "Model supplier risk, optimize logistics, and build visibility dashboards.",
       "interests": [
         "supply-chain",
@@ -209,7 +209,7 @@
       "name": "Molecular Biology",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt -100% this week in Life Sciences.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -13% this week in Life Sciences.",
       "summary": "Foundations in genetics, cell biology, and lab techniques for biotech careers.",
       "interests": [
         "biotechnology",
@@ -226,7 +226,7 @@
       "name": "Bioinformatics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes AI Skin Coach.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes Shaynee.",
       "summary": "Analyze biological data with computational tools and programming.",
       "interests": [
         "biotechnology",
@@ -243,7 +243,7 @@
       "name": "Lab Data Analysis",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt -100% this week in Life Sciences.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -13% this week in Life Sciences.",
       "summary": "Process, visualize, and interpret experimental data from modern lab systems.",
       "interests": [
         "biochemistry",
@@ -259,7 +259,7 @@
       "name": "Scientific Computing",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt -100% this week in Life Sciences.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews -13% this week in Life Sciences.",
       "summary": "Use Python, simulation, and modeling tools for research and industry science.",
       "interests": [
         "life-sciences",
@@ -274,8 +274,8 @@
       "id": "creative-ai-tools",
       "name": "Creative AI Tool Fluency",
       "demand": "Growing",
-      "demandChange": "falling",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Astryx.",
+      "demandChange": "stable",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews +14% this week in Arts & Creative Fields.",
       "summary": "Use AI tools for design, writing, video, and UX while maintaining creative direction.",
       "interests": [
         "arts"
@@ -290,7 +290,7 @@
       "name": "UX & Design Fundamentals",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Typeahead 2.0.",
+      "changeSummary": "Skills demand shifted — Wikimedia Pageviews +14% this week in Arts & Creative Fields.",
       "summary": "User research, visual design, and product thinking for creative careers.",
       "interests": [
         "arts",
@@ -307,7 +307,7 @@
       "name": "Financial Analytics",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Finent.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes UnitPay.",
       "summary": "Model, analyze, and visualize financial and business data for decision making.",
       "interests": [
         "commerce",
@@ -323,7 +323,7 @@
       "name": "Business Data Literacy",
       "demand": "Growing",
       "demandChange": "stable",
-      "changeSummary": "Skills demand shifted — Product Hunt activity includes Quickfront.",
+      "changeSummary": "Skills demand shifted — Product Hunt activity includes PairWith.",
       "summary": "Excel, SQL, and dashboard skills for accounting, finance, and management paths.",
       "interests": [
         "commerce"

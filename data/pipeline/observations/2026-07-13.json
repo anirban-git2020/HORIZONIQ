@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "ingestedAt": "2026-07-13T08:59:30.568Z",
+  "ingestedAt": "2026-07-13T19:17:47.302Z",
   "period": "2026-W29",
   "periodLabel": "Week of July 13, 2026 – July 19, 2026",
   "sources": {
     "hacker-news": {
       "source": "hacker-news",
       "status": "ok",
-      "fetchedAt": "2026-07-13T08:59:30.588Z",
+      "fetchedAt": "2026-07-13T19:17:47.316Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -19,14 +19,14 @@
           },
           "samples": [
             {
-              "title": "Interrail: 6,379Km and 13 Countries over 7 weeks",
-              "url": "https://shkspr.mobi/blog/2026/07/another-ridiculous-interrail-holiday-6379km-and-13-countries-over-7-weeks/",
-              "score": 11
+              "title": "Apple's new SpeechAnalyzer API, benchmarked against Whisper and its predecessor",
+              "url": "https://get-inscribe.com/blog/apple-speech-api-benchmark.html",
+              "score": 247
             },
             {
-              "title": "Ask HN: Add flag for AI-generated articles",
-              "url": "https://news.ycombinator.com/item?id=48886741",
-              "score": 621
+              "title": "Show HN: BillAI Bass, an AI-Powered Big Mouth Billy Bass Using Strands Agents",
+              "url": "https://github.com/morganwilliscloud/billai-bass",
+              "score": 12
             }
           ]
         },
@@ -62,12 +62,7 @@
             {
               "title": "Cyberpunk Comics, Manga and Graphic Novels",
               "url": "https://shellzine.net/cyberpunk-comics/",
-              "score": 181
-            },
-            {
-              "title": "The State of MCP Security [pdf]",
-              "url": "https://www.canopii.dev/State%20of%20MCP%20Security%202026.pdf",
-              "score": 29
+              "score": 286
             }
           ]
         },
@@ -99,7 +94,13 @@
             "delta": 0,
             "deltaPercent": null
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "Building and Shipping Mac and iOS Apps Without Ever Opening Xcode",
+              "url": "https://scottwillsey.com/building-and-shipping-mac-and-ios-apps-without-ever-opening-xcode/",
+              "score": 28
+            }
+          ]
         },
         "healthcare": {
           "interestId": "healthcare",
@@ -164,12 +165,23 @@
         "arts": {
           "interestId": "arts",
           "metrics": {
-            "current": 0,
+            "current": 2,
             "previous": 0,
-            "delta": 0,
+            "delta": 2,
             "deltaPercent": null
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "Show HN: OSS Web Based AI Video Studio (Vivijure)",
+              "url": "https://news.ycombinator.com/item?id=48891809",
+              "score": 2
+            },
+            {
+              "title": "Show HN: Harpist – convert any website into a refined and documented API",
+              "url": "https://harpist.site",
+              "score": 2
+            }
+          ]
         },
         "commerce": {
           "interestId": "commerce",
@@ -184,36 +196,36 @@
         "entrepreneurship": {
           "interestId": "entrepreneurship",
           "metrics": {
-            "current": 27,
-            "previous": 992,
-            "delta": -965,
-            "deltaPercent": -97
+            "current": 131,
+            "previous": 1003,
+            "delta": -872,
+            "deltaPercent": -87
           },
           "samples": [
             {
-              "title": "Show HN: Use After Effects with Claude Code, Cursor and Antigravity",
-              "url": "https://github.com/Arman-Luthra/aftr",
-              "score": 6
+              "title": "Show HN: Super Dario",
+              "url": "https://superdario.pawb.de",
+              "score": 149
             },
             {
-              "title": "Show HN: Let your coding agent iterate by seeing the browser",
-              "url": "https://github.com/puffinsoft/peek-cli",
-              "score": 6
+              "title": "Show HN: Clawk – Give coding agents a disposable Linux VM, not your laptop",
+              "url": "https://github.com/clawkwork/clawk",
+              "score": 139
             },
             {
-              "title": "Show HN: Self-hosted voice AI agent for Asterisk/FreePBX",
-              "url": "https://github.com/hkjarral/AVA-AI-Voice-Agent-for-Asterisk",
-              "score": 4
+              "title": "Show HN: DOM-docx – HTML to native, editable Word docs (MIT)",
+              "url": "https://github.com/floodtide/dom-docx",
+              "score": 109
             },
             {
-              "title": "Show HN: Mindwalk – Replay coding-agent sessions on a 3D map of your codebase",
-              "url": "https://github.com/cosmtrek/mindwalk",
-              "score": 152
+              "title": "Show HN: Super Dario",
+              "url": "https://superdario.pawb.de",
+              "score": 149
             },
             {
-              "title": "Show HN: Codebase Posters – turn any Git repo into generative poster art",
-              "url": "https://github.com/unable12/codebase-posters",
-              "score": 18
+              "title": "Show HN: BillAI Bass, an AI-Powered Big Mouth Billy Bass Using Strands Agents",
+              "url": "https://github.com/morganwilliscloud/billai-bass",
+              "score": 12
             }
           ]
         },
@@ -229,17 +241,12 @@
             {
               "title": "Show HN: Monitor any website, discuss outages, and post verified owner updates",
               "url": "https://anysite.live/site/news.ycombinator.com",
-              "score": 1
+              "score": 2
             },
             {
               "title": "LARP – Revenue infrastructure for serious founders",
               "url": "https://www.larp.website/",
-              "score": 235
-            },
-            {
-              "title": "The Seed Beneath the Snow",
-              "url": "https://eli.li/the-seed-beneath-the-snow",
-              "score": 18
+              "score": 312
             }
           ]
         },
@@ -268,7 +275,7 @@
     "arxiv": {
       "source": "arxiv",
       "status": "ok",
-      "fetchedAt": "2026-07-13T08:59:30.636Z",
+      "fetchedAt": "2026-07-13T19:17:47.368Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -699,7 +706,7 @@
     "wikimedia": {
       "source": "wikimedia",
       "status": "ok",
-      "fetchedAt": "2026-07-13T08:59:30.637Z",
+      "fetchedAt": "2026-07-13T19:17:47.368Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -1010,7 +1017,7 @@
     "github": {
       "source": "github",
       "status": "ok",
-      "fetchedAt": "2026-07-13T08:59:30.641Z",
+      "fetchedAt": "2026-07-13T19:17:47.371Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -1181,26 +1188,26 @@
         "startups": {
           "interestId": "startups",
           "metrics": {
-            "current": 3,
-            "previous": 14,
-            "delta": -11,
-            "deltaPercent": -79
+            "current": 7,
+            "previous": 13,
+            "delta": -6,
+            "deltaPercent": -46
           },
           "samples": [
             {
-              "title": "bahmutov/start-server-and-test",
-              "url": "https://github.com/bahmutov/start-server-and-test",
-              "score": 1578
-            },
-            {
-              "title": "carta/plugins",
-              "url": "https://github.com/carta/plugins",
-              "score": 11
-            },
-            {
               "title": "macro-inc/macro",
               "url": "https://github.com/macro-inc/macro",
-              "score": 571
+              "score": 576
+            },
+            {
+              "title": "theshubh77/awesome-saas-directories",
+              "url": "https://github.com/theshubh77/awesome-saas-directories",
+              "score": 50
+            },
+            {
+              "title": "HenrikBengtsson/dotfiles-for-R",
+              "url": "https://github.com/HenrikBengtsson/dotfiles-for-R",
+              "score": 29
             }
           ]
         },
@@ -1229,41 +1236,41 @@
     "product-hunt": {
       "source": "product-hunt",
       "status": "ok",
-      "fetchedAt": "2026-07-13T08:59:30.641Z",
+      "fetchedAt": "2026-07-13T19:17:47.371Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
           "metrics": {
             "current": 187,
-            "previous": 1513,
-            "delta": -1326,
+            "previous": 1512,
+            "delta": -1325,
             "deltaPercent": -88
           },
           "samples": [
             {
+              "title": "AgentKey",
+              "url": "https://www.producthunt.com/products/agentkey?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 424
+            },
+            {
               "title": "Osaurus",
               "url": "https://www.producthunt.com/products/osaurus?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 398
             },
             {
               "title": "Loomal",
               "url": "https://www.producthunt.com/products/loomal?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "AgentKey",
-              "url": "https://www.producthunt.com/products/agentkey?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 245
             },
             {
               "title": "Playground",
               "url": "https://www.producthunt.com/products/nyx-4?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 208
             },
             {
               "title": "Simba Voice Agents",
               "url": "https://www.producthunt.com/products/speechify?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 141
             }
           ]
         },
@@ -1307,29 +1314,29 @@
           },
           "samples": [
             {
-              "title": "UnitPay",
-              "url": "https://www.producthunt.com/products/unitpay?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
               "title": "Loomal",
               "url": "https://www.producthunt.com/products/loomal?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 245
+            },
+            {
+              "title": "Marked QL",
+              "url": "https://www.producthunt.com/products/marked-ql?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 181
             },
             {
               "title": "Simba Voice Agents",
               "url": "https://www.producthunt.com/products/speechify?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 141
             },
             {
-              "title": "TailMux",
-              "url": "https://www.producthunt.com/products/tailmux?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "title": "UnitPay",
+              "url": "https://www.producthunt.com/products/unitpay?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 139
             },
             {
               "title": "NoMac.app",
               "url": "https://www.producthunt.com/products/nomac?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 124
             }
           ]
         },
@@ -1355,27 +1362,27 @@
             {
               "title": "AgentKey",
               "url": "https://www.producthunt.com/products/agentkey?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 424
             },
             {
               "title": "Marked QL",
               "url": "https://www.producthunt.com/products/marked-ql?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "Knowly",
-              "url": "https://www.producthunt.com/products/knowly-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "RTLAuto",
-              "url": "https://www.producthunt.com/products/rtlauto?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 181
             },
             {
               "title": "Willow",
               "url": "https://www.producthunt.com/products/willow-7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 25
+            },
+            {
+              "title": "SandyWP",
+              "url": "https://www.producthunt.com/products/sandywp?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 23
+            },
+            {
+              "title": "Knowly",
+              "url": "https://www.producthunt.com/products/knowly-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 19
             }
           ]
         },
@@ -1389,29 +1396,29 @@
           },
           "samples": [
             {
+              "title": "Clino",
+              "url": "https://www.producthunt.com/products/clino-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 8
+            },
+            {
+              "title": "EyeZenith",
+              "url": "https://www.producthunt.com/products/eyezenith?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 8
+            },
+            {
+              "title": "Soap Notes",
+              "url": "https://www.producthunt.com/products/soap-notes?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 6
+            },
+            {
+              "title": "Setlist",
+              "url": "https://www.producthunt.com/products/setlist-4?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 6
+            },
+            {
               "title": "Shaynee",
               "url": "https://www.producthunt.com/products/shaynee-your-ai-skincare-coach?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "Keep Up! Habit Tracker",
-              "url": "https://www.producthunt.com/products/keep-up-habit-tracker?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "MealVantage",
-              "url": "https://www.producthunt.com/products/mealvantage?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "Cadose",
-              "url": "https://www.producthunt.com/products/cadose?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "Expressive",
-              "url": "https://www.producthunt.com/products/expressive?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 6
             }
           ]
         },
@@ -1427,27 +1434,27 @@
             {
               "title": "UnitPay",
               "url": "https://www.producthunt.com/products/unitpay?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "Yano",
-              "url": "https://www.producthunt.com/products/yano-ticketing-for-indian-organizers?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 139
             },
             {
               "title": "Blunex",
               "url": "https://www.producthunt.com/products/blunex?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 14
             },
             {
               "title": "Fynov",
               "url": "https://www.producthunt.com/products/fynov?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 11
             },
             {
               "title": "Invoscope",
               "url": "https://www.producthunt.com/products/invoscope?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 9
+            },
+            {
+              "title": "Yano",
+              "url": "https://www.producthunt.com/products/yano-ticketing-for-indian-organizers?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 8
             }
           ]
         },
@@ -1463,7 +1470,7 @@
             {
               "title": "Bonsai",
               "url": "https://www.producthunt.com/products/bonsai-10?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 4
             }
           ]
         },
@@ -1479,7 +1486,7 @@
             {
               "title": "Expressive",
               "url": "https://www.producthunt.com/products/expressive?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 4
             }
           ]
         },
@@ -1525,27 +1532,27 @@
             {
               "title": "PairWith",
               "url": "https://www.producthunt.com/products/pairwith?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 14
             },
             {
-              "title": "Wisad",
-              "url": "https://www.producthunt.com/products/wisad?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "Size Up! by Sons of Selvedge",
-              "url": "https://www.producthunt.com/products/size-up-by-sons-of-selvedge?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "title": "ScamCheck — Is this message a scam?",
+              "url": "https://www.producthunt.com/products/scamcheck-is-this-message-a-scam?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 6
             },
             {
               "title": "Lanzaidea",
               "url": "https://www.producthunt.com/products/lanzaidea?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 6
             },
             {
               "title": "SmithShop Ecommerce Platform",
               "url": "https://www.producthunt.com/products/smithshop-ecommerce-platform?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 6
+            },
+            {
+              "title": "LaunchLoop",
+              "url": "https://www.producthunt.com/products/chainalert-autonomous-rug-pull-detection?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 5
             }
           ]
         },
@@ -1581,12 +1588,12 @@
             {
               "title": "VCWorld",
               "url": "https://www.producthunt.com/products/vcworld?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 9
             },
             {
               "title": "synthfeedback",
               "url": "https://www.producthunt.com/products/synthfeedback?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 4
             }
           ]
         },
@@ -1602,29 +1609,156 @@
             {
               "title": "AgentKey",
               "url": "https://www.producthunt.com/products/agentkey?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 424
             },
             {
               "title": "Marked QL",
               "url": "https://www.producthunt.com/products/marked-ql?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "Knowly",
-              "url": "https://www.producthunt.com/products/knowly-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
-            },
-            {
-              "title": "RTLAuto",
-              "url": "https://www.producthunt.com/products/rtlauto?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 181
             },
             {
               "title": "Willow",
               "url": "https://www.producthunt.com/products/willow-7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 25
+            },
+            {
+              "title": "SandyWP",
+              "url": "https://www.producthunt.com/products/sandywp?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 23
+            },
+            {
+              "title": "Knowly",
+              "url": "https://www.producthunt.com/products/knowly-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 19
             }
           ]
+        }
+      }
+    },
+    "pubmed": {
+      "source": "pubmed",
+      "status": "ok",
+      "fetchedAt": "2026-07-13T19:17:47.371Z",
+      "interests": {
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 619,
+            "previous": 705,
+            "delta": -86,
+            "deltaPercent": -12
+          },
+          "samples": [
+            {
+              "title": "Assessment of body composition in severe obesity: agreement between multifrequency bioelectrical impedance analysis and DXA and contribution of raw impedance data.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437547/"
+            },
+            {
+              "title": "Phenotypic and Polysomnographic Features of Children With Very Severe and Extreme OSA.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437447/"
+            },
+            {
+              "title": "Associations between urinary non-essential metal mixture and abdominal obesity in Chinese older adults: the roles of insulin resistance and vitamin D.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437414/"
+            }
+          ]
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 346,
+            "previous": 396,
+            "delta": -50,
+            "deltaPercent": -13
+          },
+          "samples": [
+            {
+              "title": "Enhancing the Secretion Systems: Genetic Engineering of Super Bioagents for Effective Plant Disease Control.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437521/"
+            },
+            {
+              "title": "Advances in ex vivo mRNA-based gene transfer for cell-based cancer immunotherapy.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437306/"
+            },
+            {
+              "title": "Phase I/II Study of NGGT001 Gene Therapy for Bietti Crystalline Dystrophy.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437119/"
+            }
+          ]
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 44,
+            "previous": 48,
+            "delta": -4,
+            "deltaPercent": -8
+          },
+          "samples": [
+            {
+              "title": "Critical Review on Microbial Inulinase Production: Emerging Strategies, AI-Driven Optimization, and Applications.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437513/"
+            },
+            {
+              "title": "Biocatalytic strategies for steroid synthesis: from side-chain remodeling to precision scaffold functionalization.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437391/"
+            },
+            {
+              "title": "Synthesis of Six Natural Products Enabled by Selective Hydroxylation of Orcinaldehyde-Like Substrates With an Enzyme Library.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42435382/"
+            }
+          ]
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 496,
+            "previous": 530,
+            "delta": -34,
+            "deltaPercent": -6
+          },
+          "samples": [
+            {
+              "title": "Deep learning models for cell cycle phase prediction from single-cell RNA sequencing data.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437449/"
+            },
+            {
+              "title": "Integrated bulk and single-cell transcriptomic analysis reveals the impact of lactate-related genes on prognosis and immune characteristics in HNSCC.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437428/"
+            },
+            {
+              "title": "Decoding preeclampsia: A fusion of multi-view machine learning and multi-omics to identify putative inflammation-related mechanisms.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42437307/"
+            }
+          ]
+        }
+      }
+    },
+    "gdelt": {
+      "source": "gdelt",
+      "status": "failed",
+      "fetchedAt": "2026-07-13T19:17:47.371Z",
+      "error": "fetch failed",
+      "interests": {
+        "finance": {
+          "interestId": "finance",
+          "metrics": {
+            "current": 948,
+            "previous": 5708,
+            "delta": -4760,
+            "deltaPercent": -83
+          },
+          "samples": []
+        },
+        "energy": {
+          "interestId": "energy",
+          "metrics": {
+            "current": 599,
+            "previous": 4337,
+            "delta": -3738,
+            "deltaPercent": -86
+          },
+          "samples": []
         }
       }
     }

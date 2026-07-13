@@ -54,7 +54,9 @@ jobs:
         run: |
           git config user.name "horizoniq-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add data/pipeline lib/intelligence/generated-signals.ts
+          # Commit only the source data. generated-signals.ts is a build artifact
+          # (gitignored) — every deploy regenerates it, so it's never committed.
+          git add data/pipeline
           if git diff --cached --quiet; then
             echo "No changes to commit."
           else

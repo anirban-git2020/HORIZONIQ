@@ -1,4 +1,4 @@
-import { mkdir, readFile, writeFile } from "node:fs/promises";
+import { mkdir, readdir, readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
 
 import type { ObservationBundle, ScoreBundle } from "@/lib/pipeline/types";
@@ -53,6 +53,31 @@ export async function readLatestScores(): Promise<ScoreBundle | null> {
     return JSON.parse(raw) as ScoreBundle;
   } catch {
     return null;
+  }
+}
+
+/**
+ * All dated score bundles, oldest → newest. Powers real momentum-history
+ * sparklines. Dated filenames are `YYYY-MM-DD.json`, so a lexical sort is
+ * chronological. Missing/corrupt files are skipped, never fatal.
+ */
+export async function readScoreHistory(): Promise<ScoreBundle[]> {
+  try {
+    const files = (await readdir(SCORES_DIR))
+      .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+      .sort();
+    const bundles: ScoreBundle[] = [];
+    for (const file of files) {
+      try {
+        const raw = await readFile(path.join(SCORES_DIR, file), "utf8");
+        bundles.push(JSON.parse(raw) as ScoreBundle);
+      } catch {
+        // skip a corrupt dated file
+      }
+    }
+    return bundles;
+  } catch {
+    return [];
   }
 }
 

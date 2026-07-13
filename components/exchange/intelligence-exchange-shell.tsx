@@ -1,0 +1,60 @@
+"use client";
+
+import { useCallback, useState } from "react";
+
+import { FocusOverlay } from "@/components/focus/FocusOverlay";
+import { SignalGalaxyField } from "@/components/background/signal-galaxy-field";
+import { ExchangeHeader } from "@/components/exchange/exchange-header";
+import { IntelligenceAudience } from "@/components/exchange/intelligence-audience";
+import { IntelligenceHero } from "@/components/exchange/intelligence-hero";
+import { WorldIntelligencePulse } from "@/components/exchange/world-intelligence-pulse";
+import { SiteFooter } from "@/components/layout/site-footer";
+import type { IntelligencePulseTile } from "@/lib/exchange/pulse-mock-data";
+import { cn } from "@/lib/utils";
+
+/**
+ * Intelligence Exchange shell — dashboard stays static; focus is an overlay layer.
+ */
+export function IntelligenceExchangeShell() {
+  const [selectedSignal, setSelectedSignal] = useState<IntelligencePulseTile | null>(null);
+
+  const handleSignalSelected = useCallback((signal: IntelligencePulseTile) => {
+    setSelectedSignal(signal);
+  }, []);
+
+  const handleCloseFocus = useCallback(() => {
+    setSelectedSignal(null);
+  }, []);
+
+  const isFocusOpen = selectedSignal !== null;
+
+  return (
+    <div className="relative min-h-dvh bg-background">
+      <SignalGalaxyField />
+
+      <div
+        className={cn(
+          "transition-opacity [transition-duration:220ms] ease-out motion-reduce:transition-none",
+          isFocusOpen && "pointer-events-none opacity-[0.35]"
+        )}
+        aria-hidden={isFocusOpen ? true : undefined}
+      >
+        <ExchangeHeader />
+
+        <main className="relative z-10">
+          <IntelligenceHero />
+          <IntelligenceAudience />
+          <div id="signals" className="scroll-mt-24">
+            <WorldIntelligencePulse onSignalSelected={handleSignalSelected} />
+          </div>
+        </main>
+
+        <SiteFooter />
+      </div>
+
+      {selectedSignal && (
+        <FocusOverlay signal={selectedSignal} onClose={handleCloseFocus} />
+      )}
+    </div>
+  );
+}

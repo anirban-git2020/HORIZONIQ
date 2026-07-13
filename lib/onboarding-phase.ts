@@ -58,7 +58,7 @@ export function getAllowedPathPrefixes(phase: OnboardingPhase): string[] {
         "/onboarding/tour",
       ];
     case "complete":
-      return ["/", "/dashboard", "/signals", "/onboarding/interests"];
+      return ["/", "/dashboard", "/onboarding/interests"];
   }
 }
 

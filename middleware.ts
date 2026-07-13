@@ -1,35 +1,19 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-import {
-  getPathForPhase,
-  isPathAllowedForPhase,
-  ONBOARDING_COOKIE_NAME,
-  parsePhaseCookie,
-} from "@/lib/onboarding-phase";
-
-export function middleware(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-
-  if (
-    pathname.startsWith("/_next") ||
-    pathname.startsWith("/api") ||
-    pathname === "/favicon.ico" ||
-    pathname.includes(".")
-  ) {
-    return NextResponse.next();
-  }
-
-  const phase = parsePhaseCookie(
-    request.cookies.get(ONBOARDING_COOKIE_NAME)?.value
-  );
-
-  if (isPathAllowedForPhase(pathname, phase)) {
-    return NextResponse.next();
-  }
-
-  const target = getPathForPhase(phase);
-  return NextResponse.redirect(new URL(target, request.url));
+/**
+ * Onboarding phase-routing retired (Sprint: Landing Experience Restoration).
+ *
+ * The Landing Experience now owns the onboarding flow client-side via
+ * sessionStorage (see hooks/use-landing-journey.ts), so server-side cookie
+ * redirects are no longer used. Middleware is a pass-through.
+ *
+ * The legacy /onboarding/* pages and lib/onboarding-phase remain in the repo
+ * but are no longer reachable through routing; a dedicated cleanup sprint will
+ * remove them.
+ */
+export function middleware(_request: NextRequest) {
+  return NextResponse.next();
 }
 
 export const config = {

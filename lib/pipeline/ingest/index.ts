@@ -1,7 +1,9 @@
 import { ingestArxiv } from "@/lib/pipeline/ingest/arxiv";
+import { ingestGdelt } from "@/lib/pipeline/ingest/gdelt";
 import { ingestGitHub } from "@/lib/pipeline/ingest/github";
 import { ingestHackerNews } from "@/lib/pipeline/ingest/hacker-news";
 import { ingestProductHunt } from "@/lib/pipeline/ingest/product-hunt";
+import { ingestPubMed } from "@/lib/pipeline/ingest/pubmed";
 import { ingestWikimedia } from "@/lib/pipeline/ingest/wikimedia";
 import type { ObservationBundle, SourceObservation } from "@/lib/pipeline/types";
 import {
@@ -21,13 +23,16 @@ export async function runPipelineIngest(
   const period = formatBriefingPeriod();
   const periodLabel = formatBriefingLabel();
 
-  const [hackerNews, arxiv, wikimedia, github, productHunt] = await Promise.all([
-    ingestHackerNews(),
-    ingestArxiv(),
-    ingestWikimedia(),
-    ingestGitHub(),
-    ingestProductHunt(),
-  ]);
+  const [hackerNews, arxiv, wikimedia, github, productHunt, pubmed, gdelt] =
+    await Promise.all([
+      ingestHackerNews(),
+      ingestArxiv(),
+      ingestWikimedia(),
+      ingestGitHub(),
+      ingestProductHunt(),
+      ingestPubMed(),
+      ingestGdelt(),
+    ]);
 
   const sources = {
     "hacker-news": applyFallback(
@@ -41,6 +46,8 @@ export async function runPipelineIngest(
       productHunt,
       options.previousBundle?.sources["product-hunt"]
     ),
+    pubmed: applyFallback(pubmed, options.previousBundle?.sources.pubmed),
+    gdelt: applyFallback(gdelt, options.previousBundle?.sources.gdelt),
   };
 
   return {

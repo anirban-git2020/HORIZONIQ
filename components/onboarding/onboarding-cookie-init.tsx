@@ -169,7 +169,7 @@ export const ONBOARDING_COOKIE_INIT_SCRIPT = `
         "/onboarding/interests",
         "/onboarding/tour"
       ],
-      complete: ["/", "/dashboard", "/signals", "/onboarding/interests"]
+      complete: ["/", "/dashboard", "/onboarding/interests"]
     };
 
     function pathForPhase(phase) {

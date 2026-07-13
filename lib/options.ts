@@ -165,19 +165,20 @@ export const ROLE_INTEREST_IDS: Record<RoleId, InterestId[]> = {
     "manufacturing",
   ],
   entrepreneur: [
+    "startups",
     "artificial-intelligence",
-    "healthcare",
     "finance",
-    "energy",
+    "commerce",
+    "healthcare",
     "manufacturing",
   ],
   investor: [
-    "artificial-intelligence",
-    "healthcare",
     "finance",
+    "venture-capital",
+    "startups",
+    "artificial-intelligence",
     "energy",
-    "quantum-computing",
-    "cybersecurity",
+    "healthcare",
   ],
 };
 

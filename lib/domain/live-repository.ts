@@ -20,3 +20,13 @@ export function getSignalRepository(): SignalRepository {
 export function isLiveIntelligence(): boolean {
   return GENERATED_SIGNALS.length > 0;
 }
+
+/** ISO timestamp of the most recent observation across signals, or null. */
+export function getIntelligenceUpdatedAt(): string | null {
+  let latest: string | null = null;
+  for (const s of getSignalRepository().getAll()) {
+    const t = s.evidence.lastObserved;
+    if (t && (!latest || t > latest)) latest = t;
+  }
+  return latest;
+}

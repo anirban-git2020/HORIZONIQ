@@ -5,9 +5,25 @@ import { memo, useCallback } from "react";
 import { IntelligencePulseTileCard } from "@/components/exchange/intelligence-pulse-tile";
 import { useMotionReveal } from "@/hooks/use-motion-reveal";
 import { usePersonalizedPulse } from "@/hooks/use-personalized-pulse";
+import { getIntelligenceUpdatedAt } from "@/lib/domain/live-repository";
 import type { IntelligencePulseTile } from "@/lib/exchange/pulse-mock-data";
 import { MOTION_CLASS } from "@/lib/motion-language";
 import { cn } from "@/lib/utils";
+
+/** Deterministic UTC date+time — same on server and client (no hydration drift). */
+function formatUpdated(iso: string): string {
+  const d = new Date(iso);
+  if (Number.isNaN(d.getTime())) return "";
+  return new Intl.DateTimeFormat("en-US", {
+    month: "short",
+    day: "numeric",
+    year: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "UTC",
+    timeZoneName: "short",
+  }).format(d);
+}
 
 type WorldIntelligencePulseProps = {
   className?: string;
@@ -25,6 +41,8 @@ function WorldIntelligencePulseInner({
 }: WorldIntelligencePulseProps) {
   const { hero, featured, compact, related } = usePersonalizedPulse();
   const { ref: signalsRef, revealed: signalsRevealed } = useMotionReveal();
+  const updatedAt = getIntelligenceUpdatedAt();
+  const updatedLabel = updatedAt ? formatUpdated(updatedAt) : "";
 
   const orderedTiles: IntelligencePulseTile[] = [
     ...(hero ? [hero] : []),
@@ -69,6 +87,12 @@ function WorldIntelligencePulseInner({
         <p className="mt-4 max-w-xl text-lg text-muted-foreground md:text-xl">
           The Signals matching your focus, in order of momentum.
         </p>
+        {updatedLabel && (
+          <p className="mt-4 inline-flex items-center gap-2 text-xs text-muted-foreground/80">
+            <span className="inline-block h-1.5 w-1.5 rounded-full bg-success" aria-hidden="true" />
+            Data updated {updatedLabel}
+          </p>
+        )}
       </header>
 
       {isEmpty ? (

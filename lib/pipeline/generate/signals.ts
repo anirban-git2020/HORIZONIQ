@@ -9,6 +9,8 @@ import {
   readLatestScores,
   readScoreHistory,
 } from "@/lib/pipeline/store/observations";
+import { readLatestNarratives } from "@/lib/pipeline/store/narratives";
+import type { SynthesisResult } from "@/lib/pipeline/synthesis/orchestrate";
 import type {
   InterestObservation,
   InterestScore,
@@ -148,16 +150,34 @@ function overlay(
   };
 }
 
+/**
+ * Overlay a verified, auto-synthesized narrative onto a curated signal. The
+ * stable title is kept; the evidence-grounded headline/summary/brief/forecast
+ * replace the curated prose, and provenance is flagged for the UI badge.
+ */
+function applyNarrative(signal: Signal, result: SynthesisResult): Signal {
+  const n = result.narrative;
+  return {
+    ...signal,
+    identity: { ...signal.identity, headline: n.headline, summary: n.summary },
+    forecast: { ...signal.forecast, forecast: n.forecast },
+    reading: { ...signal.reading, brief: n.brief },
+    presentation: { ...signal.presentation, provenance: "synthesized" },
+  };
+}
+
 export async function generateCanonicalSignals(): Promise<{
   signals: Signal[];
   liveCount: number;
   generatedAt: string;
 }> {
-  const [obs, scores, scoreHistory] = await Promise.all([
+  const [obs, scores, scoreHistory, narrativeBundle] = await Promise.all([
     readLatestObservations(),
     readLatestScores(),
     readScoreHistory(),
+    readLatestNarratives(),
   ]);
+  const narratives = narrativeBundle?.narratives ?? {};
 
   const byInterest = new Map<InterestId, InterestScore>();
   if (scores) for (const s of scores.interests) byInterest.set(s.interestId, s);
@@ -177,7 +197,10 @@ export async function generateCanonicalSignals(): Promise<{
     const score = byInterest.get(base.classification.interest);
     if (!obs || !score) return base; // no live data for this interest → curated
     liveCount += 1;
-    return overlay(base, score, obs, historyByInterest.get(base.classification.interest));
+    const live = overlay(base, score, obs, historyByInterest.get(base.classification.interest));
+    // A verified synthesized narrative (if any) replaces the curated prose.
+    const narrative = narratives[base.classification.interest];
+    return narrative ? applyNarrative(live, narrative) : live;
   });
 
   return { signals, liveCount, generatedAt: new Date().toISOString() };

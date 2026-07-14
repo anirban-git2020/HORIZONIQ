@@ -98,7 +98,18 @@ export function PulseTileSummary({
   return (
     <>
       <div className="flex items-start justify-between gap-4">
-        <p className="label-caps text-primary/80">{tile.technology}</p>
+        <div className="flex flex-col gap-1.5">
+          <p className="label-caps text-primary/80">{tile.technology}</p>
+          {tile.provenance === "synthesized" && (
+            <span
+              className="inline-flex w-fit items-center gap-1 rounded-full border border-border/60 bg-secondary/40 px-2 py-0.5 text-[9px] font-semibold uppercase tracking-[0.12em] text-muted-foreground"
+              title="Auto-synthesized from live source evidence and machine-verified — not hand-written."
+            >
+              <span className="h-1 w-1 rounded-full bg-primary/70" aria-hidden="true" />
+              Auto-synthesized
+            </span>
+          )}
+        </div>
         <PulseSparkline
           points={tile.sparkline}
           width={compact ? 72 : isHero ? 96 : 80}

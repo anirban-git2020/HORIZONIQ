@@ -119,6 +119,8 @@ if (GENERATED_SIGNALS.length > 0) {
   for (const src of MOCK_SIGNALS) {
     const gen = genById.get(src.identity.id);
     if (!gen) continue;
+    // Auto-synthesized signals legitimately differ from the curated source.
+    if (gen.presentation.provenance === "synthesized") continue;
     const drift =
       gen.identity.title !== src.identity.title ||
       gen.identity.headline !== src.identity.headline ||
@@ -131,6 +133,20 @@ if (GENERATED_SIGNALS.length > 0) {
       kind: "stale-snapshot",
       where: "generated-signals.ts",
       detail: `${stale} signal(s) differ from the editorial source — run "npm run pipeline:signals" so edits actually ship`,
+    });
+  }
+}
+
+// ── Check E: auto-synthesized text must be subject-pure too (defense-in-depth) ─
+for (const s of GENERATED_SIGNALS) {
+  if (s.presentation.provenance !== "synthesized") continue;
+  if (AI_NATIVE.has(s.classification.interest)) continue;
+  const hits = scanText(signalText(s));
+  if (hits.length > 0) {
+    errors.push({
+      kind: "synthesized-leak",
+      where: `${s.identity.id} (${s.classification.interest})`,
+      detail: `AI framing in an auto-synthesized non-AI subject: ${hits.join(", ")}`,
     });
   }
 }

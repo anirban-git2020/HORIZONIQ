@@ -97,6 +97,8 @@ export type SignalPresentation = {
   readonly narrative?: string;
   /** Display sparkline series. */
   readonly sparkline?: readonly number[];
+  /** How the editorial text was produced. Absent/"curated" = hand-authored. */
+  readonly provenance?: "synthesized";
 };
 
 export type SignalReading = {

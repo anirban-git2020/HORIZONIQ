@@ -12,6 +12,7 @@
     "start": "next start",
     "lint": "next lint",
     "pipeline:ingest": "tsx scripts/pipeline-ingest.ts",
+    "pipeline:synthesize": "tsx scripts/pipeline-synthesize.ts",
     "pipeline:signals": "tsx scripts/pipeline-signals.ts"
   },
   "dependencies": {

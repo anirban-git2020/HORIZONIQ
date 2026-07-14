@@ -52,3 +52,18 @@ export function requireProductHuntToken(): string {
   }
   return token;
 }
+
+/**
+ * LLM key for editorial synthesis (Phase 1). Optional: when absent, synthesis
+ * is skipped entirely and signals keep their curated editorial (fail-closed).
+ * Provider is chosen by which key is present — Groq (default) or Gemini.
+ */
+export function getGroqApiKey(): string | undefined {
+  loadPipelineEnv();
+  return process.env.GROQ_API_KEY;
+}
+
+export function getGeminiApiKey(): string | undefined {
+  loadPipelineEnv();
+  return process.env.GEMINI_API_KEY ?? process.env.GOOGLE_API_KEY;
+}

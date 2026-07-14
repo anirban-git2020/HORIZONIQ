@@ -32,6 +32,8 @@ export type IntelligencePulseTile = {
   tier: PulseTileTier;
   cta: PulseCta;
   sparkline: readonly number[];
+  /** "synthesized" when the prose was auto-generated from evidence, else undefined. */
+  provenance?: "synthesized";
 };
 
 function ctaFor(trajectory: Trajectory): PulseCta {
@@ -74,6 +76,7 @@ export function toPulseTile(signal: Signal, index: number): IntelligencePulseTil
     tier,
     cta: ctaFor(signal.momentum.trajectory),
     sparkline: signal.presentation.sparkline ?? [],
+    provenance: signal.presentation.provenance,
   };
 }
 

@@ -56,10 +56,11 @@ export function toPulseTile(signal: Signal, index: number): IntelligencePulseTil
   const tier: PulseTileTier =
     index === 0 ? "hero" : index < 4 ? "featured" : "compact";
   const spark = signal.presentation.sparkline ?? [];
-  // Change is the last step of the momentum series, so the number, the arrow and
-  // the sparkline always tell the same story (flat series → +0 → flat line).
+  // Net change across the whole tracked window (newest − oldest). The sparkline
+  // colours itself the same way, so the arrow, its colour and the chart line
+  // always agree (flat series → +0 → flat, neutral line).
   const momentumChange =
-    spark.length >= 2 ? Math.round(spark[spark.length - 1] - spark[spark.length - 2]) : 0;
+    spark.length >= 2 ? Math.round(spark[spark.length - 1] - spark[0]) : 0;
   return {
     id: signal.identity.id,
     technology: signal.identity.title,

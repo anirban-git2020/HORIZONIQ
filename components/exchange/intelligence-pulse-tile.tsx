@@ -136,7 +136,7 @@ export function PulseTileSummary({
       <div className={cn("flex flex-col gap-1", compact ? "mt-3" : "mt-6")}>
         <span
           className="label-caps w-fit cursor-help text-muted-foreground/80"
-          title="Momentum (0–100): how strongly this field is accelerating right now, synthesized from research, code, hiring and funding signals. The arrow shows the change since the last reading."
+          title="Momentum (0–100): how strongly this field is accelerating, synthesized from research, code, hiring and funding signals. The arrow and the sparkline colour show the overall trend across the tracked window — green up, amber down."
         >
           Momentum
         </span>
@@ -151,7 +151,7 @@ export function PulseTileSummary({
               ? `up ${tile.momentumChange}`
               : tile.momentumChange < 0
                 ? `down ${Math.abs(tile.momentumChange)}`
-                : "no change since last reading"
+                : "no change across the tracked window"
           }`}
         >
           {tile.momentum}

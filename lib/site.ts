@@ -57,14 +57,6 @@ export const SITE_KEYWORDS = [
   "Personal Intelligence",
 ] as const;
 
-export const TECH_STACK = [
-  "Next.js",
-  "React",
-  "TypeScript",
-  "Tailwind CSS",
-  "Vercel",
-] as const;
-
 export const TRUST_BADGES = [
   "Anonymous Analytics",
   "Privacy First",

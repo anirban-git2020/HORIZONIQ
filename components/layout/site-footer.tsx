@@ -8,7 +8,6 @@ import {
   FOOTER_QUICK_LINKS,
   FOUNDER,
   SITE_VERSION,
-  TECH_STACK,
   TRUST_BADGES,
 } from "@/lib/site";
 import { cn } from "@/lib/utils";
@@ -107,21 +106,8 @@ export function SiteFooter({ className, supplementary }: SiteFooterProps) {
             </ul>
           </div>
 
-          {/* Technology + Version */}
+          {/* Version */}
           <div className="space-y-6 sm:col-span-2 lg:col-span-1">
-            <div className="space-y-3">
-              <h2 className="label-caps text-muted-foreground">Technology</h2>
-              <ul className="flex flex-wrap gap-x-3 gap-y-1">
-                {TECH_STACK.map((tech) => (
-                  <li
-                    key={tech}
-                    className="text-sm text-muted-foreground"
-                  >
-                    {tech}
-                  </li>
-                ))}
-              </ul>
-            </div>
             <div className="space-y-3">
               <h2 className="label-caps text-muted-foreground">Version</h2>
               <p className="text-sm text-muted-foreground">{SITE_VERSION}</p>
@@ -130,23 +116,15 @@ export function SiteFooter({ className, supplementary }: SiteFooterProps) {
         </div>
 
         {/* Trust strip */}
-        <div className="mt-10 flex flex-col gap-4 border-t border-border/40 pt-8 md:flex-row md:items-center md:justify-between">
-          <div className="space-y-2">
-            <p className="label-caps text-muted-foreground">Built with</p>
-            <p className="text-sm text-muted-foreground">
-              {TECH_STACK.join(" · ")}
-            </p>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {TRUST_BADGES.map((badge) => (
-              <span
-                key={badge}
-                className="label-caps rounded-md border border-border/60 bg-muted/30 px-2.5 py-1 text-[9px] text-muted-foreground"
-              >
-                {badge}
-              </span>
-            ))}
-          </div>
+        <div className="mt-10 flex flex-wrap gap-2 border-t border-border/40 pt-8">
+          {TRUST_BADGES.map((badge) => (
+            <span
+              key={badge}
+              className="label-caps rounded-md border border-border/60 bg-muted/30 px-2.5 py-1 text-[9px] text-muted-foreground"
+            >
+              {badge}
+            </span>
+          ))}
         </div>
 
         {/* Copyright extended */}

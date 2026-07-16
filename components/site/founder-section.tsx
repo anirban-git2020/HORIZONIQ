@@ -24,6 +24,12 @@ export function FounderSection({ className }: { className?: string }) {
         Creator of <BrandName />
       </p>
 
+      {FOUNDER.bio && (
+        <p className="mt-4 max-w-2xl text-sm leading-relaxed text-muted-foreground md:text-base">
+          {FOUNDER.bio}
+        </p>
+      )}
+
       <ul className="mt-6 space-y-3">
         <li>
           <FooterLink

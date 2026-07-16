@@ -28,6 +28,9 @@ jobs:
           # the schedule). Works after the merge to main without further edits.
           ref: ${{ github.ref_name }}
           fetch-depth: 0
+          # PAT so the data-refresh commit pushes as the repo admin, who is on the
+          # ruleset bypass list. Falls back to the default token if unset.
+          token: ${{ secrets.PIPELINE_PAT || github.token }}
 
       - name: Setup Node
         uses: actions/setup-node@v4

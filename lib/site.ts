@@ -21,6 +21,8 @@ export const FOUNDER = {
   role: "Creator of HorizonIQ",
   email: "anirban.chatterjee@hotmail.com",
   linkedIn: "https://www.linkedin.com/in/anirban-chatterjee-45abb728/",
+  /** Short founder bio, shown on the About/Contact founder card. */
+  bio: "Anirban Chatterjee is a Principal Engineer and Site Lead at Dell Technologies, where over twelve years he has advanced through four roles spanning quality engineering, supply-chain operations, and global product ownership. He has taken complex, ambiguous programs from concept to global execution — delivering over $860K in cost savings and pioneering generative AI, computer vision, and augmented reality across enterprise programs. A General Management graduate of IIM Kozhikode and a recipient of more than twenty industry and innovation awards, he builds systems that turn scattered signals into decisions. HorizonIQ is the expression of that instinct — an intelligence layer that helps professionals see what is changing, why it matters, and what to do next, before it becomes mainstream.",
 } as const;
 
 export const COPYRIGHT_YEAR = 2026;
@@ -75,7 +77,6 @@ export const FOOTER_QUICK_LINKS: FooterLinkItem[] = [
   { label: "Terms of Use", href: "/terms" },
   { label: "Contact", href: "/contact" },
   { label: "Roadmap", href: "/roadmap" },
-  { label: "GitHub", placeholder: true },
   { label: "Release Notes", href: "/changelog" },
 ];
 

@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-17T08:23:30.896Z",
+  "narratives": {
+    "biotechnology": {
+      "interestId": "biotechnology",
+      "narrative": {
+        "title": "Gene Therapy",
+        "headline": "Gene therapy advances",
+        "summary": "Recent studies focus on genetic engineering and gene transfer techniques",
+        "brief": "Researchers explore new methods for gene therapy, including ex vivo mRNA-based gene transfer and genetic engineering of bioagents. These advancements aim to improve disease control and cancer immunotherapy",
+        "forecast": "Watch for further developments in gene therapy clinical trials"
+      },
+      "sources": [
+        {
+          "label": "arXiv: Memory-Driven Self-Propulsion and Flocking of Chemically Active Droplets",
+          "url": "http://arxiv.org/abs/2607.14451v1"
+        },
+        {
+          "label": "arXiv: Fundamental Relation between Conductance of Biomolecules and the Fukui Function",
+          "url": "http://arxiv.org/abs/2607.13309v1"
+        },
+        {
+          "label": "arXiv: Learning Mechanistic Reasoning for Chemical Reactions with Large Language Models",
+          "url": "http://arxiv.org/abs/2607.12771v2"
+        },
+        {
+          "label": "Wikipedia: Biotechnology — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Biotechnology"
+        },
+        {
+          "label": "Product Hunt: Expressive",
+          "url": "https://www.producthunt.com/products/expressive?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "model": "llama-3.3-70b-versatile",
+      "provider": "groq",
+      "generatedAt": "2026-07-17T08:23:17.404Z"
+    },
+    "energy": {
+      "interestId": "energy",
+      "narrative": {
+        "title": "Energy Shift",
+        "headline": "Grid modeling improves",
+        "summary": "Open-source web UI for power grid modeling is developed",
+        "brief": "A new open-source web UI called BambooGrid is introduced for power grid modeling and power flow, and research focuses on improving wind and solar power prediction through feature selection. Distributed schemes for economic dispatch of grid-connected battery energy storage systems are also being explored",
+        "forecast": "Watch for advancements in energy storage contracting and grid management technologies"
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Show HN: BambooGrid – Open-source web UI for power grid modeling and power flow",
+          "url": "https://bamboo.kickstage.com"
+        },
+        {
+          "label": "arXiv: A Distributed PI+Reset Scheme for Discrete-Time Economic Dispatch of A Grid-connected BESS Network",
+          "url": "http://arxiv.org/abs/2607.14508v1"
+        },
+        {
+          "label": "arXiv: Improving Wind and Solar Power Prediction with Efficient Wrapper-based Feature Selection: An Empirical Study",
+          "url": "http://arxiv.org/abs/2607.14024v1"
+        },
+        {
+          "label": "arXiv: Contracting for Long-Duration Energy Storage in Incomplete Risk Markets",
+          "url": "http://arxiv.org/abs/2607.13744v1"
+        },
+        {
+          "label": "Wikipedia: Energy — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Renewable_energy"
+        }
+      ],
+      "model": "llama-3.3-70b-versatile",
+      "provider": "groq",
+      "generatedAt": "2026-07-17T08:23:22.164Z"
+    },
+    "biochemistry": {
+      "interestId": "biochemistry",
+      "narrative": {
+        "title": "Biochemistry Trends",
+        "headline": "Enzyme libraries enhance synthesis",
+        "summary": "Recent studies focus on biocatalytic strategies and enzyme libraries for natural product synthesis",
+        "brief": "Researchers are exploring biocatalytic approaches for steroid synthesis and natural product synthesis using enzyme libraries, while also investigating post-transcriptional regulation in gene expression models. Additionally, scientists are developing new methods for microbial inulinase production and optimization",
+        "forecast": "Watch for further advancements in biocatalytic strategies and enzyme library development for complex molecule synthesis"
+      },
+      "sources": [
+        {
+          "label": "arXiv: Multimodal Semantic-Aware Contrastive Learning For False Negative Mitigation in 3D Medical Imaging",
+          "url": "http://arxiv.org/abs/2607.14995v1"
+        },
+        {
+          "label": "arXiv: Memory-Driven Self-Propulsion and Flocking of Chemically Active Droplets",
+          "url": "http://arxiv.org/abs/2607.14451v1"
+        },
+        {
+          "label": "arXiv: Analyzing Post-transcriptional Regulation in Stochastic Gene Expression Models Using Partitioned Poisson Arrivals",
+          "url": "http://arxiv.org/abs/2607.14404v1"
+        },
+        {
+          "label": "Wikipedia: Biochemistry — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Biochemistry"
+        },
+        {
+          "label": "Product Hunt: G-Doc  Universe",
+          "url": "https://www.producthunt.com/products/g-doc-universe?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "model": "llama-3.3-70b-versatile",
+      "provider": "groq",
+      "generatedAt": "2026-07-17T08:23:26.896Z"
+    }
+  }
+}

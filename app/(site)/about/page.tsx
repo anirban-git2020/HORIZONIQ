@@ -1,21 +1,15 @@
 import type { Metadata } from "next";
 
-import { BetaBadge } from "@/components/brand/beta-badge";
 import { BrandName, HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
-import { TaglineLockup } from "@/components/brand/tagline-lockup";
-import {
-  ContentList,
-  ContentPage,
-  ContentSection,
-} from "@/components/layout/content-page";
+import { ContentPage, ContentSection } from "@/components/layout/content-page";
 import { FounderSection } from "@/components/site/founder-section";
 import { pageMetadata } from "@/lib/seo";
-import { SITE_TAGLINE, SITE_VERSION } from "@/lib/site";
+import { SITE_TAGLINE } from "@/lib/site";
 
 export const metadata: Metadata = pageMetadata({
   title: "About",
   description:
-    "Learn about HorizonIQ — the Personal Intelligence Operating System that helps you understand what is changing, why it matters, and what to do next.",
+    "HorizonIQ helps you understand what is changing, why it matters, and what to do next — before it becomes mainstream.",
   path: "/about",
 });
 
@@ -27,43 +21,15 @@ export default function AboutPage() {
           About <HorizonIQWordmark size="inherit" className="inline text-[1em]" />
         </>
       }
-      description="A personalized intelligence platform built for people who want to understand change before it becomes mainstream."
+      description="A personalized intelligence platform for people who want to understand change before it becomes mainstream."
     >
-      <div className="space-y-3">
-        <TaglineLockup size="sm" />
-        <BetaBadge />
-      </div>
+      <FounderSection />
 
       <ContentSection title="Mission">
         <p>
-          <BrandName /> helps people understand what is changing, why it matters,
-          and what to do next — before everyone else. We turn fragmented signals
-          into clear, personalized intelligence you can act on.
-        </p>
-      </ContentSection>
-
-      <ContentSection title="Vision">
-        <p>
-          The world&apos;s first personalized intelligence platform — not a
-          dashboard, not a trend tracker, and not an AI chatbot.{" "}
-          <BrandName /> should feel like having a personal future analyst who tells
-          you what changed.
-        </p>
-      </ContentSection>
-
-      <ContentSection
-        title={
-          <>
-            What <BrandName /> Is
-          </>
-        }
-      >
-        <p>
-          <BrandName /> is a{" "}
-          <strong className="text-foreground">signal change platform</strong>.
-          Users return because something changed for them — not because a static
-          feed exists. Every briefing answers four questions: what happened, why
-          it is happening, why you should care, and what to do next.
+          <BrandName /> turns fragmented signals into clear, personalized
+          intelligence you can act on — helping you understand what is changing,
+          why it matters, and what to do next, before everyone else.
         </p>
       </ContentSection>
 
@@ -73,55 +39,23 @@ export default function AboutPage() {
           shifting across technology, skills, markets, and industries.
         </p>
         <p>
-          <strong className="text-foreground">Predict.</strong> Understand
+          <strong className="text-foreground">Predict.</strong> Understand the
           directional outlook with calibrated confidence — clearly labeled as
           projection, not fact.
         </p>
         <p>
-          <strong className="text-foreground">Lead.</strong> Take one clear
-          recommended action tailored to your role, region, and Intelligence
-          Focus Areas.
+          <strong className="text-foreground">Lead.</strong> Take one clear,
+          recommended action tailored to your focus.
         </p>
       </ContentSection>
 
-      <ContentSection title="Personal Intelligence Operating System">
+      <ContentSection title="Where we're headed">
         <p>
-          <BrandName /> is designed as a Personal Intelligence Operating System —
-          an environment where intelligence feels alive, trustworthy, and
-          actionable. The Living Intelligence Core visual reflects momentum and
-          confidence from your briefing; the dashboard tells one story: what
-          changed, why it matters, what to do.
-        </p>
-      </ContentSection>
-
-      <FounderSection />
-
-      <ContentSection title="Current Status">
-        <p>
-          <BrandName /> is in{" "}
-          <strong className="text-foreground">{SITE_VERSION}</strong> public beta.
-          Features, data sources, and intelligence presentation continue to evolve
-          weekly as we validate retention and trust with real users.
-        </p>
-      </ContentSection>
-
-      <ContentSection title="Roadmap Summary">
-        <p>Our current focus areas include:</p>
-        <ContentList
-          items={[
-            "Validating Week 2 return with change-first intelligence",
-            "Measuring product analytics and onboarding completion",
-            "Expanding signal coverage across Intelligence Focus Areas",
-            "Hardening immersive performance and guided tour polish",
-            "Preparing retention mechanics for post-MVP (email digest, accounts)",
-          ]}
-        />
-        <p>
-          See the full{" "}
+          See the{" "}
           <a href="/roadmap" className="text-primary underline-offset-4 hover:underline">
-            product roadmap
+            roadmap
           </a>{" "}
-          for milestones and future vision.
+          for where <BrandName /> is going next.
         </p>
       </ContentSection>
     </ContentPage>

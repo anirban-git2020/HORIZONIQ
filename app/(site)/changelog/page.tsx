@@ -70,18 +70,6 @@ export default function ChangelogPage() {
               </div>
             )}
 
-            {entry.upcoming && entry.upcoming.length > 0 && (
-              <div className="space-y-2">
-                <h3 className="text-sm font-medium text-foreground">
-                  Upcoming
-                </h3>
-                <ul className="list-disc space-y-1.5 pl-5 text-sm text-muted-foreground">
-                  {entry.upcoming.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
           </article>
         ))}
       </div>

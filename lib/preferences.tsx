@@ -102,6 +102,12 @@ interface PreferencesContextValue {
   setRegion: (region: RegionId) => void;
   toggleInterest: (interest: InterestId) => void;
   setInterests: (interests: InterestId[]) => void;
+  /**
+   * Replace all preferences at once from an external source (the signed-in
+   * user's profile). Runs the same migration/validation as local storage, so a
+   * stale or malformed row can never poison state.
+   */
+  hydrate: (next: Partial<Preferences>) => void;
   reset: () => void;
   isComplete: boolean;
 }
@@ -167,6 +173,10 @@ export function PreferencesProvider({
     setPreferences((prev) => ({ ...prev, interests }));
   }, []);
 
+  const hydrate = useCallback((next: Partial<Preferences>) => {
+    setPreferences(migratePreferences(next));
+  }, []);
+
   const reset = useCallback(() => setPreferences(EMPTY), []);
 
   const value = useMemo<PreferencesContextValue>(
@@ -177,13 +187,23 @@ export function PreferencesProvider({
       setRegion,
       toggleInterest,
       setInterests,
+      hydrate,
       reset,
       isComplete:
         preferences.role !== null &&
         preferences.region !== null &&
         preferences.interests.length > 0,
     }),
-    [preferences, hydrated, setRole, setRegion, toggleInterest, setInterests, reset]
+    [
+      preferences,
+      hydrated,
+      setRole,
+      setRegion,
+      toggleInterest,
+      setInterests,
+      hydrate,
+      reset,
+    ]
   );
 
   return (

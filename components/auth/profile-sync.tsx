@@ -10,12 +10,34 @@ import {
   type ProfileRecord,
 } from "@/lib/auth/profiles";
 import {
+  applyExternalDisplayName,
+  useLandingJourney,
+} from "@/hooks/use-landing-journey";
+import {
   readOnboardingRecord,
   readPreferencesFromStorage,
+  writeOnboardingRecord,
 } from "@/lib/onboarding-state";
 import { usePreferences } from "@/lib/preferences";
 
 const SAVE_DEBOUNCE_MS = 800;
+
+/** The name this device knows: the live journey first, then the durable record. */
+function resolveLocalName(journeyName: string): string | null {
+  const fromJourney = journeyName.trim();
+  if (fromJourney) return fromJourney;
+  return readOnboardingRecord().displayName;
+}
+
+/** Push a name from the profile into both local stores. */
+function applyRemoteName(name: string | null): void {
+  if (!name) return;
+  applyExternalDisplayName(name);
+  const record = readOnboardingRecord();
+  if (record.displayName !== name) {
+    writeOnboardingRecord({ ...record, displayName: name });
+  }
+}
 
 /** Stable comparison key so we never write an unchanged record. */
 function serialize(record: ProfileRecord): string {
@@ -41,8 +63,11 @@ function serialize(record: ProfileRecord): string {
 export function ProfileSync() {
   const { supabase, user, loading } = useAuth();
   const { preferences, hydrated, hydrate } = usePreferences();
+  const { journey } = useLandingJourney();
   const [synced, setSynced] = useState(false);
   const lastSaved = useRef<string | null>(null);
+
+  const localName = resolveLocalName(journey.displayName);
 
   // Sign-in: reconcile the profile with local state, once per session.
   useEffect(() => {
@@ -54,6 +79,9 @@ export function ProfileSync() {
       const remote = await fetchProfile(supabase, user.id);
       if (!active) return;
 
+      // A saved name always comes across, even if the profile has no prefs yet.
+      if (remote?.displayName) applyRemoteName(remote.displayName);
+
       if (remote && hasPreferences(remote)) {
         // Profile wins — this device adopts the user's saved preferences.
         hydrate(remote);
@@ -62,9 +90,9 @@ export function ProfileSync() {
         // First sign-in: lift whatever this device already knows into the profile.
         const local: ProfileRecord = {
           ...readPreferencesFromStorage(),
-          displayName: readOnboardingRecord().displayName,
+          displayName: localName,
         };
-        if (hasPreferences(local)) {
+        if (hasPreferences(local) || local.displayName) {
           await saveProfile(supabase, user.id, local);
           if (!active) return;
           lastSaved.current = serialize(local);
@@ -77,7 +105,7 @@ export function ProfileSync() {
     return () => {
       active = false;
     };
-  }, [supabase, user, loading, hydrated, synced, hydrate]);
+  }, [supabase, user, loading, hydrated, synced, hydrate, localName]);
 
   // Write through on change, debounced, skipping no-op writes.
   useEffect(() => {
@@ -85,7 +113,7 @@ export function ProfileSync() {
 
     const record: ProfileRecord = {
       ...preferences,
-      displayName: readOnboardingRecord().displayName,
+      displayName: localName,
     };
     const next = serialize(record);
     if (next === lastSaved.current) return;
@@ -97,7 +125,7 @@ export function ProfileSync() {
     }, SAVE_DEBOUNCE_MS);
 
     return () => clearTimeout(timer);
-  }, [preferences, synced, supabase, user]);
+  }, [preferences, localName, synced, supabase, user]);
 
   // Signing out resets the handshake so the next sign-in re-syncs cleanly.
   useEffect(() => {

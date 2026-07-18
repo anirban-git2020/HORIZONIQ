@@ -5,6 +5,7 @@ import { memo, useCallback } from "react";
 import { IntelligencePulseTileCard } from "@/components/exchange/intelligence-pulse-tile";
 import { useMotionReveal } from "@/hooks/use-motion-reveal";
 import { usePersonalizedPulse } from "@/hooks/use-personalized-pulse";
+import { useUnchangedSignals } from "@/hooks/use-visit-changes";
 import { getIntelligenceUpdatedAt } from "@/lib/domain/live-repository";
 import type { IntelligencePulseTile } from "@/lib/exchange/pulse-mock-data";
 import { MOTION_CLASS } from "@/lib/motion-language";
@@ -55,6 +56,11 @@ function WorldIntelligencePulseInner({
     orderedTiles.map((tile, index) => [tile.id, index] as const)
   );
 
+  // Signals unchanged since the user's last visit within this data period.
+  // The period key is the observation date, so it resets when fresh data lands.
+  const briefingPeriod = updatedAt ? updatedAt.slice(0, 10) : null;
+  const unchangedSignals = useUnchangedSignals(orderedTiles, briefingPeriod);
+
   const handleSelect = useCallback(
     (tile: IntelligencePulseTile) => onSignalSelected(tile),
     [onSignalSelected]
@@ -66,6 +72,7 @@ function WorldIntelligencePulseInner({
       tile={tile}
       onSelect={handleSelect}
       staggerIndex={staggerById.get(tile.id)}
+      unchangedSinceLastVisit={unchangedSignals.has(tile.id)}
     />
   );
 

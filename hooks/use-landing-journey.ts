@@ -70,6 +70,24 @@ export function clearLandingJourney(): void {
   }
 }
 
+/** Notifies mounted useLandingJourney() consumers that storage changed. */
+const SYNC_EVENT = "horizoniq:landing-journey-sync";
+
+/**
+ * Apply a display name from an external source (the signed-in profile), then
+ * notify mounted consumers so the UI updates without a reload. Storage access
+ * still lives only in this module.
+ */
+export function applyExternalDisplayName(displayName: string): void {
+  if (typeof window === "undefined") return;
+  const name = displayName.trim();
+  if (!name) return;
+  const current = read();
+  if (current.displayName === name) return;
+  write({ ...current, displayName: name });
+  window.dispatchEvent(new Event(SYNC_EVENT));
+}
+
 export function useLandingJourney() {
   const [hydrated, setHydrated] = useState(false);
   const [journey, setJourney] = useState<LandingJourney>(EMPTY);
@@ -77,6 +95,13 @@ export function useLandingJourney() {
   useEffect(() => {
     setJourney(read());
     setHydrated(true);
+  }, []);
+
+  // Re-read when an external source (profile sync) updates storage.
+  useEffect(() => {
+    const onSync = () => setJourney(read());
+    window.addEventListener(SYNC_EVENT, onSync);
+    return () => window.removeEventListener(SYNC_EVENT, onSync);
   }, []);
 
   const commit = useCallback((next: LandingJourney) => {

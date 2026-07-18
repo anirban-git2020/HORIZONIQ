@@ -9,6 +9,8 @@ import { ThemeProvider } from "@/components/theme/theme-provider";
 import { OnboardingBootstrap } from "@/components/onboarding/onboarding-bootstrap";
 import { ONBOARDING_COOKIE_INIT_SCRIPT } from "@/components/onboarding/onboarding-cookie-init";
 import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
+import { AuthProvider } from "@/components/auth/auth-provider";
+import { ProfileSync } from "@/components/auth/profile-sync";
 import { FeedbackWidget } from "@/components/feedback/feedback-widget";
 import { ScrollToTop } from "@/components/navigation/scroll-to-top";
 import { defaultMetadata } from "@/lib/seo";
@@ -52,13 +54,16 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         <ThemeProvider>
-          <PreferencesProvider>
-            <OnboardingBootstrap>
-              <ScrollToTop />
-              {children}
-              <FeedbackWidget />
-            </OnboardingBootstrap>
-          </PreferencesProvider>
+          <AuthProvider>
+            <PreferencesProvider>
+              <ProfileSync />
+              <OnboardingBootstrap>
+                <ScrollToTop />
+                {children}
+                <FeedbackWidget />
+              </OnboardingBootstrap>
+            </PreferencesProvider>
+          </AuthProvider>
           <AnalyticsProvider />
           <Analytics />
           <SpeedInsights />

@@ -97,6 +97,11 @@ export type SignalPresentation = {
   readonly narrative?: string;
   /** Display sparkline series. */
   readonly sparkline?: readonly number[];
+  /**
+   * Dated momentum history for the trend chart — one point per pipeline run,
+   * chronological. Real observations only; absent until change is measurable.
+   */
+  readonly momentumHistory?: readonly { readonly date: string; readonly value: number }[];
   /** How the editorial text was produced. Absent/"curated" = hand-authored. */
   readonly provenance?: "synthesized";
 };

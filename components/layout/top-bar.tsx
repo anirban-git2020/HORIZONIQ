@@ -1,3 +1,4 @@
+import { AccountMenu } from "@/components/auth/account-menu";
 import { Logo } from "@/components/brand/logo";
 import { SiteNav } from "@/components/layout/site-nav";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -30,6 +31,7 @@ export function TopBar({
         )}
         <div className="flex items-center gap-1 sm:gap-2">
           {right}
+          <AccountMenu />
           <ThemeToggle />
         </div>
       </div>

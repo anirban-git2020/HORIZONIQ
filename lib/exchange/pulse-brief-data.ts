@@ -15,12 +15,19 @@ export type BriefEvidenceStat = {
   change: string;
 };
 
+export type BriefMomentumPoint = {
+  date: string;
+  value: number;
+};
+
 export type IntelligencePulseBrief = {
   whyItMatters: string;
   evidence: BriefEvidenceStat[];
   drivers: string[];
   relatedSignals: string[];
   forecast: string;
+  /** Dated momentum history; empty until real change has accumulated. */
+  momentumHistory: BriefMomentumPoint[];
 };
 
 function toBrief(signal: Signal): IntelligencePulseBrief {
@@ -35,6 +42,10 @@ function toBrief(signal: Signal): IntelligencePulseBrief {
     drivers: [...signal.relationships.relatedCompanies].slice(0, 4),
     relatedSignals: signal.relationships.relatedSignals.map(titleOf).slice(0, 4),
     forecast: signal.forecast.forecast ?? "",
+    momentumHistory: (signal.presentation.momentumHistory ?? []).map((point) => ({
+      date: point.date,
+      value: point.value,
+    })),
   };
 }
 

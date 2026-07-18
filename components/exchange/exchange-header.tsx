@@ -1,7 +1,9 @@
 "use client";
 
+import Link from "next/link";
 import { RotateCcw } from "lucide-react";
 
+import { useAuth } from "@/components/auth/auth-provider";
 import { Logo } from "@/components/brand/logo";
 import {
   clearLandingJourney,
@@ -15,7 +17,9 @@ import { cn } from "@/lib/utils";
  */
 export function ExchangeHeader({ className }: { className?: string }) {
   const { journey } = useLandingJourney();
+  const { user, loading } = useAuth();
   const initial = journey.displayName.trim().charAt(0).toUpperCase() || "U";
+  const signedOut = !loading && !user;
 
   return (
     <header
@@ -44,13 +48,23 @@ export function ExchangeHeader({ className }: { className?: string }) {
             <span className="font-medium">Start over</span>
           </button>
 
-          <span
-            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-secondary text-xs font-semibold text-secondary-foreground"
-            aria-label="Your profile"
-            title="Your profile"
+          {signedOut && (
+            <Link
+              href="/account"
+              className="inline-flex items-center rounded-lg px-3 py-2 text-sm font-medium text-muted-foreground transition-colors hover:bg-accent/70 hover:text-foreground"
+            >
+              Sign in
+            </Link>
+          )}
+
+          <Link
+            href="/account"
+            aria-label={user ? "Your account" : "Set up cross-device sync"}
+            className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border/80 bg-secondary text-xs font-semibold text-secondary-foreground transition-colors hover:border-border hover:bg-secondary/80"
+            title="Account & sync"
           >
             {initial}
-          </span>
+          </Link>
         </div>
       </div>
     </header>

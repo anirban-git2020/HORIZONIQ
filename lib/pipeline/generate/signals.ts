@@ -107,7 +107,7 @@ function overlay(
   base: Signal,
   score: InterestScore,
   obs: ObservationBundle,
-  history: readonly number[] | undefined
+  history: readonly { date: string; value: number }[] | undefined
 ): Signal {
   const trend = hasTrend(base.classification.interest, obs);
   const velocity = velocityFor(base.classification.interest, obs);
@@ -115,15 +115,17 @@ function overlay(
   const displayedMomentum = trend
     ? Math.round(score.momentum)
     : base.momentum.momentumScore;
+  const hasHistory = trend && history != null && history.length >= 2;
   // Real momentum history (last ~12 runs) once change is measurable; otherwise a
   // flat line at the shown momentum, so a "+0" signal never fakes an upward trend.
-  const sparkline =
-    trend && history && history.length >= 2
-      ? history.slice(-12)
-      : Array.from({ length: 11 }, () => displayedMomentum);
+  const sparkline = hasHistory
+    ? history!.slice(-12).map((point) => point.value)
+    : Array.from({ length: 11 }, () => displayedMomentum);
+  // Dated series for the richer trend chart — real points only, never fabricated.
+  const momentumHistory = hasHistory ? history!.slice(-30) : undefined;
   return {
     ...base,
-    presentation: { ...base.presentation, sparkline },
+    presentation: { ...base.presentation, sparkline, momentumHistory },
     evidence: {
       ...base.evidence,
       sources: sources.length > 0 ? sources : base.evidence.sources,
@@ -183,11 +185,14 @@ export async function generateCanonicalSignals(): Promise<{
   if (scores) for (const s of scores.interests) byInterest.set(s.interestId, s);
 
   // Real momentum series per interest, chronological across dated score bundles.
-  const historyByInterest = new Map<InterestId, number[]>();
+  // Each point carries its observation date, so the trend chart can show *when*
+  // momentum moved — not just the shape of the curve.
+  const historyByInterest = new Map<InterestId, { date: string; value: number }[]>();
   for (const bundle of scoreHistory) {
+    const date = bundle.scoredAt.slice(0, 10);
     for (const s of bundle.interests) {
       const series = historyByInterest.get(s.interestId) ?? [];
-      series.push(Math.round(s.momentum));
+      series.push({ date, value: Math.round(s.momentum) });
       historyByInterest.set(s.interestId, series);
     }
   }

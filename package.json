@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@react-three/fiber": "^9.5.0",
+    "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.110.0",
     "@types/three": "^0.185.0",
     "@vercel/analytics": "^2.0.1",

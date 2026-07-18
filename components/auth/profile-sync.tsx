@@ -11,6 +11,7 @@ import {
 } from "@/lib/auth/profiles";
 import {
   applyExternalDisplayName,
+  applyExternalJourney,
   useLandingJourney,
 } from "@/hooks/use-landing-journey";
 import {
@@ -85,6 +86,16 @@ export function ProfileSync() {
       if (remote && hasPreferences(remote)) {
         // Profile wins — this device adopts the user's saved preferences.
         hydrate(remote);
+        // Mirror the selections into the onboarding journey so a returning user
+        // isn't walked through setup again. Only a complete profile skips it.
+        applyExternalJourney({
+          role: remote.role,
+          region: remote.region,
+          interests: [...remote.interests],
+          complete: Boolean(
+            remote.role && remote.region && remote.interests.length > 0
+          ),
+        });
         lastSaved.current = serialize(remote);
       } else {
         // First sign-in: lift whatever this device already knows into the profile.

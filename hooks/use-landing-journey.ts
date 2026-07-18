@@ -73,6 +73,62 @@ export function clearLandingJourney(): void {
 /** Notifies mounted useLandingJourney() consumers that storage changed. */
 const SYNC_EVENT = "horizoniq:landing-journey-sync";
 
+/** One-shot marker: a sign-in just restored this journey from a profile. */
+const RESTORED_KEY = "horizoniq.landing.restored.v1";
+
+export type ExternalJourney = {
+  role: RoleId | null;
+  region: RegionId | null;
+  interests: InterestId[];
+  /** True when the profile is complete enough to skip onboarding entirely. */
+  complete: boolean;
+};
+
+/**
+ * Apply a signed-in user's saved selections to this device's journey. Marks the
+ * journey complete only when the profile actually is, so a partial profile
+ * resumes onboarding instead of dropping the user into an unconfigured
+ * dashboard. Sets a one-shot flag the Landing Experience consumes to show the
+ * "welcome back" beat.
+ */
+export function applyExternalJourney(next: ExternalJourney): void {
+  if (typeof window === "undefined") return;
+  const current = read();
+  const merged: LandingJourney = {
+    ...current,
+    selectedRole: next.role ?? current.selectedRole,
+    selectedRegion: next.region ?? current.selectedRegion,
+    selectedInterests: next.interests.length
+      ? next.interests
+      : current.selectedInterests,
+    tourCompleted: next.complete ? true : current.tourCompleted,
+  };
+
+  if (JSON.stringify(merged) === JSON.stringify(current)) return;
+
+  write(merged);
+  if (next.complete) {
+    try {
+      window.sessionStorage.setItem(RESTORED_KEY, "1");
+    } catch {
+      // ignore — the beat is a nicety, never a blocker
+    }
+  }
+  window.dispatchEvent(new Event(SYNC_EVENT));
+}
+
+/** Reads and clears the restore marker. True at most once per restore. */
+export function consumeRestoredFlag(): boolean {
+  if (typeof window === "undefined") return false;
+  try {
+    const value = window.sessionStorage.getItem(RESTORED_KEY);
+    if (value) window.sessionStorage.removeItem(RESTORED_KEY);
+    return value === "1";
+  } catch {
+    return false;
+  }
+}
+
 /**
  * Apply a display name from an external source (the signed-in profile), then
  * notify mounted consumers so the UI updates without a reload. Storage access

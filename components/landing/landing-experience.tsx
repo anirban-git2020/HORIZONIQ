@@ -6,13 +6,18 @@ import { AnimatePresence, motion } from "framer-motion";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 
 import { IntelligenceNetwork } from "@/components/landing/intelligence-network";
+import { useAuth } from "@/components/auth/auth-provider";
+import { SignInPanel } from "@/components/auth/sign-in-panel";
 import { BetaBadge } from "@/components/brand/beta-badge";
 import { HorizonIQWordmark } from "@/components/brand/horizoniq-wordmark";
 import { GuidedTourScenes } from "@/components/landing/guided-tour-scenes";
 import { LandingScene } from "@/components/landing/landing-scene";
 import { OptionCard } from "@/components/onboarding/option-card";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { useLandingJourney } from "@/hooks/use-landing-journey";
+import {
+  consumeRestoredFlag,
+  useLandingJourney,
+} from "@/hooks/use-landing-journey";
 import { useReducedMotion } from "@/hooks/use-reduced-motion";
 import {
   REGIONS,
@@ -22,7 +27,15 @@ import {
 } from "@/lib/options";
 import { cn } from "@/lib/utils";
 
-type Scene = "welcome" | "name" | "role" | "region" | "interests" | "tour";
+type Scene =
+  | "welcome"
+  | "signin"
+  | "name"
+  | "role"
+  | "region"
+  | "interests"
+  | "save"
+  | "tour";
 
 /**
  * Landing Experience (State 1) — a single cinematic surface that sequences
@@ -42,10 +55,15 @@ export function LandingExperience() {
     completeTour,
   } = useLandingJourney();
 
+  const { user, loading: authLoading } = useAuth();
   const [scene, setScene] = useState<Scene>("welcome");
   const [nameDraft, setNameDraft] = useState("");
+  const [showRestored, setShowRestored] = useState(false);
   const redirectingRef = useRef(false);
   const reducedMotion = useReducedMotion();
+
+  /** Auth prompts only make sense for someone without a session. */
+  const signedOut = !authLoading && !user;
 
   // Cinematic welcome entrance — composed, sequential reveal. Calm, not theatrical.
   const stagger = {
@@ -74,16 +92,40 @@ export function LandingExperience() {
     router.replace("/dashboard");
   }, [router]);
 
-  // Returning users within the same session skip straight to Intelligence.
+  // Returning users skip straight to Intelligence — unless a sign-in just
+  // restored this journey, in which case we show the welcome-back beat first.
+  // Both checks live in one effect so the flag is consumed before any redirect
+  // can fire (a second effect would race the state update and navigate away).
   useEffect(() => {
-    if (hydrated && journey.tourCompleted) {
-      goToDashboard();
+    if (!hydrated || !journey.tourCompleted || showRestored) return;
+    if (consumeRestoredFlag()) {
+      setShowRestored(true);
+      return;
     }
-  }, [hydrated, journey.tourCompleted, goToDashboard]);
+    goToDashboard();
+  }, [hydrated, journey.tourCompleted, showRestored, goToDashboard]);
 
   useEffect(() => {
     if (hydrated && journey.displayName) setNameDraft(journey.displayName);
   }, [hydrated, journey.displayName]);
+
+  // Coming back from an auth redirect mid-onboarding (e.g. the "save" prompt)
+  // would otherwise restart at welcome and lose the user's place. Runs once, at
+  // hydration only, so selecting interests later never skips a scene.
+  const resumedRef = useRef(false);
+  useEffect(() => {
+    if (!hydrated || resumedRef.current) return;
+    resumedRef.current = true;
+    if (journey.tourCompleted) return;
+    if (
+      journey.selectedRole &&
+      journey.selectedRegion &&
+      journey.selectedInterests.length > 0
+    ) {
+      setScene("tour");
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [hydrated]);
 
   const allowedInterestCount = useMemo(() => {
     if (!journey.selectedRole) return 0;
@@ -92,6 +134,26 @@ export function LandingExperience() {
     );
     return journey.selectedInterests.filter((id) => allowed.has(id)).length;
   }, [journey.selectedRole, journey.selectedInterests]);
+
+  // "Professional · Europe · Cloud Computing" — what the restore brought back.
+  const focusSummary = useMemo(() => {
+    const parts: string[] = [];
+    const role = ROLES.find((r) => r.id === journey.selectedRole);
+    if (role) parts.push(role.label);
+    const region = REGIONS.find((r) => r.id === journey.selectedRegion);
+    if (region) parts.push(region.label);
+    if (journey.selectedRole) {
+      const chosen = getInterestsForRole(journey.selectedRole).filter((i) =>
+        journey.selectedInterests.includes(i.id)
+      );
+      for (const interest of chosen) {
+        parts.push(
+          getInterestDisplayForRole(journey.selectedRole, interest).label
+        );
+      }
+    }
+    return parts.join(" · ");
+  }, [journey.selectedRole, journey.selectedRegion, journey.selectedInterests]);
 
   const showScenes = hydrated && !journey.tourCompleted;
 
@@ -110,7 +172,32 @@ export function LandingExperience() {
   return (
     <div className="relative min-h-dvh bg-background">
       <IntelligenceNetwork />
-      {showScenes && (
+
+      {showRestored && (
+        <LandingScene sceneKey="restored">
+          <div className="flex flex-1 flex-col items-center justify-center px-6 text-center">
+            <p className="label-caps text-primary">Signed in</p>
+            <h1 className="display-title mt-4 text-balance text-4xl md:text-5xl">
+              Welcome back{journey.displayName ? `, ${journey.displayName}` : ""}.
+            </h1>
+            {focusSummary && (
+              <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+                Your focus is restored — {focusSummary}.
+              </p>
+            )}
+            <Button
+              size="lg"
+              className="mt-10 min-w-[220px] font-bold"
+              onClick={goToDashboard}
+            >
+              Continue
+              <ArrowRight />
+            </Button>
+          </div>
+        </LandingScene>
+      )}
+
+      {!showRestored && showScenes && (
         <AnimatePresence mode="wait">
       {scene === "welcome" && (
         <LandingScene sceneKey="welcome">
@@ -187,7 +274,38 @@ export function LandingExperience() {
                 <ArrowRight />
               </Button>
             </motion.div>
+            {signedOut && (
+              <motion.p
+                variants={rise}
+                className="mt-6 text-sm text-muted-foreground"
+              >
+                Already set up?{" "}
+                <button
+                  type="button"
+                  onClick={() => setScene("signin")}
+                  className="rounded underline underline-offset-4 transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                >
+                  Sign in
+                </button>{" "}
+                to restore your focus.
+              </motion.p>
+            )}
           </motion.div>
+        </LandingScene>
+      )}
+
+      {scene === "signin" && (
+        <LandingScene sceneKey="signin">
+          <Stage footer={<BackButton onClick={() => setScene("welcome")} />}>
+            <div className="mx-auto w-full max-w-md space-y-8">
+              <SceneHeading
+                eyebrow="Welcome back"
+                title="Sign in to restore your focus"
+                subtitle="Use the email or Google account you set up with. Your role, region, and interests come back with you."
+              />
+              <SignInPanel nextPath="/" />
+            </div>
+          </Stage>
         </LandingScene>
       )}
 
@@ -320,7 +438,7 @@ export function LandingExperience() {
                     {allowedInterestCount} selected
                   </span>
                   <Button
-                    onClick={() => setScene("tour")}
+                    onClick={() => setScene(signedOut ? "save" : "tour")}
                     disabled={allowedInterestCount === 0}
                   >
                     Continue
@@ -352,6 +470,34 @@ export function LandingExperience() {
                   />
                 );
               })}
+            </div>
+          </Stage>
+        </LandingScene>
+      )}
+
+      {scene === "save" && (
+        <LandingScene sceneKey="save">
+          <Stage
+            footer={
+              <>
+                <BackButton onClick={() => setScene("interests")} />
+                <button
+                  type="button"
+                  className={cn(buttonVariants({ variant: "ghost", size: "md" }))}
+                  onClick={() => setScene("tour")}
+                >
+                  Not now
+                </button>
+              </>
+            }
+          >
+            <div className="mx-auto w-full max-w-md space-y-8">
+              <SceneHeading
+                eyebrow="Optional"
+                title="Keep this across your devices"
+                subtitle="Sign in and your focus follows you — open HorizonIQ anywhere and pick up exactly here. You can always do this later."
+              />
+              <SignInPanel nextPath="/" />
             </div>
           </Stage>
         </LandingScene>

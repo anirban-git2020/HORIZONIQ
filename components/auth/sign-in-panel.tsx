@@ -14,7 +14,13 @@ type Status = "idle" | "sending" | "sent" | "error";
  * Passwordless sign-in: email magic link + Google. Signing in is optional — it
  * turns on cross-device sync. Redirects route back through /auth/callback.
  */
-export function SignInPanel({ className }: { className?: string }) {
+type SignInPanelProps = {
+  className?: string;
+  /** Where to land after auth. Defaults to /account; the landing passes "/". */
+  nextPath?: string;
+};
+
+export function SignInPanel({ className, nextPath }: SignInPanelProps) {
   const { supabase } = useAuth();
   const emailId = useId();
   const [email, setEmail] = useState("");
@@ -23,7 +29,9 @@ export function SignInPanel({ className }: { className?: string }) {
 
   const redirectTo =
     typeof window !== "undefined"
-      ? `${window.location.origin}/auth/callback`
+      ? `${window.location.origin}/auth/callback${
+          nextPath ? `?next=${encodeURIComponent(nextPath)}` : ""
+        }`
       : undefined;
 
   const configured = isAuthConfigured();

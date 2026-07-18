@@ -1,3 +1,4 @@
+import { MomentumHistoryChart } from "@/components/exchange/momentum-history-chart";
 import type { IntelligencePulseBrief } from "@/lib/exchange/pulse-brief-data";
 import { cn } from "@/lib/utils";
 
@@ -25,6 +26,18 @@ export function IntelligencePulseBriefPanel({
           {brief.whyItMatters}
         </p>
       </section>
+
+      {brief.momentumHistory.length >= 2 && (
+        <section aria-labelledby="brief-momentum-heading">
+          <h4 id="brief-momentum-heading" className="label-caps text-primary">
+            How Momentum Has Moved
+          </h4>
+          <MomentumHistoryChart
+            points={brief.momentumHistory}
+            className={cn("max-w-2xl", compact ? "mt-3" : "mt-5")}
+          />
+        </section>
+      )}
 
       <section aria-labelledby="brief-evidence-heading">
         <h4 id="brief-evidence-heading" className="label-caps text-primary">

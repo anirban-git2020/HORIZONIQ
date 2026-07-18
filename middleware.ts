@@ -1,21 +1,24 @@
-import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
+import { updateSession } from "@/lib/auth/middleware-session";
+
 /**
- * Onboarding phase-routing retired (Sprint: Landing Experience Restoration).
+ * Refreshes the Supabase auth session (rotating cookies) on each request.
  *
- * The Landing Experience now owns the onboarding flow client-side via
- * sessionStorage (see hooks/use-landing-journey.ts), so server-side cookie
- * redirects are no longer used. Middleware is a pass-through.
- *
- * The legacy /onboarding/* pages and lib/onboarding-phase remain in the repo
- * but are no longer reachable through routing; a dedicated cleanup sprint will
- * remove them.
+ * Onboarding phase-routing was retired (Landing Experience owns it client-side);
+ * middleware now exists solely to keep the auth session fresh. No-op when auth
+ * env vars are absent.
  */
-export function middleware(_request: NextRequest) {
-  return NextResponse.next();
+export async function middleware(request: NextRequest) {
+  return updateSession(request);
 }
 
 export const config = {
-  matcher: ["/((?!_next/static|_next/image).*)"],
+  matcher: [
+    /*
+     * All paths except static assets and image optimization files. Auth cookies
+     * must ride along with page/data requests, so the matcher stays broad.
+     */
+    "/((?!_next/static|_next/image|favicon.ico).*)",
+  ],
 };

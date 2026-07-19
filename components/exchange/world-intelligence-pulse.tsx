@@ -3,7 +3,9 @@
 import { memo, useCallback, useMemo } from "react";
 
 import { DigestPanel } from "@/components/exchange/digest-panel";
+import { FocusPrompt } from "@/components/exchange/focus-prompt";
 import { IntelligencePulseTileCard } from "@/components/exchange/intelligence-pulse-tile";
+import { useLandingJourney } from "@/hooks/use-landing-journey";
 import { useMotionReveal } from "@/hooks/use-motion-reveal";
 import { usePersonalizedPulse } from "@/hooks/use-personalized-pulse";
 import { useVisitChanges } from "@/hooks/use-visit-changes";
@@ -42,6 +44,10 @@ function WorldIntelligencePulseInner({
   onSignalSelected,
 }: WorldIntelligencePulseProps) {
   const { hero, featured, compact, related } = usePersonalizedPulse();
+  const { hydrated: journeyHydrated, journey } = useLandingJourney();
+  // No focus chosen → the grid is the generic full front page, not "theirs".
+  const noFocus =
+    journeyHydrated && journey.selectedInterests.length === 0;
   const { ref: signalsRef, revealed: signalsRevealed } = useMotionReveal();
   const updatedAt = getIntelligenceUpdatedAt();
   const updatedLabel = updatedAt ? formatUpdated(updatedAt) : "";
@@ -114,7 +120,11 @@ function WorldIntelligencePulseInner({
         )}
       </header>
 
-      <DigestPanel changes={visit} className="mb-12 md:mb-16" />
+      {noFocus ? (
+        <FocusPrompt className="mb-12 md:mb-16" />
+      ) : (
+        <DigestPanel changes={visit} className="mb-12 md:mb-16" />
+      )}
 
       {isEmpty ? (
         <div className="hq-motion-hero-enter rounded-2xl border border-border/40 bg-card/20 p-10 text-center md:p-14">

@@ -22,6 +22,8 @@ export type DigestItem = {
   bucket: DigestBucket;
   delta: number;
   line: string;
+  /** Recent momentum points for the email sparkline (oldest → newest). */
+  history: number[];
 };
 
 /** interestId → momentum at the time of the last digest. */
@@ -55,7 +57,8 @@ export function composeDigest(
   interests: readonly string[],
   scores: readonly InterestScore[],
   prior: DigestSnapshot | null,
-  narratives: NarrativeBundle | null
+  narratives: NarrativeBundle | null,
+  historyByInterest?: ReadonlyMap<string, number[]>
 ): ComposedDigest {
   const scoreById = new Map<string, number>(
     scores.map((s) => [s.interestId, Math.round(s.momentum)])
@@ -71,6 +74,7 @@ export function composeDigest(
     snapshot[id] = current;
 
     const title = LABEL.get(id) ?? id;
+    const history = (historyByInterest?.get(id) ?? [current]).slice(-8);
     const line = (bucket: DigestBucket, delta: number) =>
       narrativeSummary(narratives, id) ?? templateLine(bucket, delta);
 
@@ -79,15 +83,15 @@ export function composeDigest(
     // new to the user's tracked set since the last digest.
     if (!prior) continue;
     if (prior[id] == null) {
-      items.push({ interestId: id, title, bucket: "new", delta: current, line: line("new", current) });
+      items.push({ interestId: id, title, bucket: "new", delta: current, line: line("new", current), history });
       continue;
     }
 
     const delta = current - prior[id];
     if (delta >= THRESHOLD) {
-      items.push({ interestId: id, title, bucket: "rising", delta, line: line("rising", delta) });
+      items.push({ interestId: id, title, bucket: "rising", delta, line: line("rising", delta), history });
     } else if (delta <= -THRESHOLD) {
-      items.push({ interestId: id, title, bucket: "falling", delta, line: line("falling", delta) });
+      items.push({ interestId: id, title, bucket: "falling", delta, line: line("falling", delta), history });
     } else {
       steadyCount += 1;
     }

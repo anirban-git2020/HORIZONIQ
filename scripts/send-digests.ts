@@ -5,7 +5,7 @@ import { renderDigestEmail } from "@/lib/digest/email-template";
 import { sendEmail } from "@/lib/digest/send";
 import { getSupabaseAdmin } from "@/lib/feedback/supabase-server";
 import { readLatestNarratives } from "@/lib/pipeline/store/narratives";
-import { readLatestScores } from "@/lib/pipeline/store/observations";
+import { readLatestScores, readScoreHistory } from "@/lib/pipeline/store/observations";
 
 /**
  * Weekly digest sender (CI / manual). For each opted-in user it diffs their
@@ -32,14 +32,25 @@ const SITE_URL =
 
 async function main() {
   const supabase = getSupabaseAdmin();
-  const [scores, narratives] = await Promise.all([
+  const [scores, narratives, history] = await Promise.all([
     readLatestScores(),
     readLatestNarratives(),
+    readScoreHistory(),
   ]);
 
   if (!scores) {
     console.error("No score bundle found — aborting.");
     process.exit(1);
+  }
+
+  // Per-interest momentum series (oldest → newest) for the email sparklines.
+  const historyByInterest = new Map<string, number[]>();
+  for (const bundle of history) {
+    for (const s of bundle.interests) {
+      const series = historyByInterest.get(s.interestId) ?? [];
+      series.push(Math.round(s.momentum));
+      historyByInterest.set(s.interestId, series);
+    }
   }
 
   const { data, error } = await supabase
@@ -64,7 +75,13 @@ async function main() {
     const interests = Array.isArray(row.interests) ? (row.interests as string[]) : [];
     if (interests.length === 0) continue;
 
-    const composed = composeDigest(interests, scores.interests, row.digest_snapshot, narratives);
+    const composed = composeDigest(
+      interests,
+      scores.interests,
+      row.digest_snapshot,
+      narratives,
+      historyByInterest
+    );
 
     // First run — record the baseline, send nothing.
     if (!row.digest_snapshot) {
@@ -82,12 +99,13 @@ async function main() {
       continue;
     }
 
+    const unsubscribeUrl = `${SITE_URL}/api/digest/unsubscribe?token=${row.unsubscribe_token}`;
     const email = renderDigestEmail({
       firstName: row.display_name,
       items: composed.items,
       steadyCount: composed.steadyCount,
       dashboardUrl: `${SITE_URL}/dashboard`,
-      unsubscribeUrl: `${SITE_URL}/api/digest/unsubscribe?token=${row.unsubscribe_token}`,
+      unsubscribeUrl,
       issueDate: new Date(),
     });
 
@@ -96,6 +114,7 @@ async function main() {
       subject: email.subject,
       html: email.html,
       text: email.text,
+      unsubscribeUrl,
     });
 
     if (!result.ok) {

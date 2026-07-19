@@ -13,7 +13,8 @@
     "lint": "next lint",
     "pipeline:ingest": "tsx scripts/pipeline-ingest.ts",
     "pipeline:synthesize": "tsx scripts/pipeline-synthesize.ts",
-    "pipeline:signals": "tsx scripts/pipeline-signals.ts"
+    "pipeline:signals": "tsx scripts/pipeline-signals.ts",
+    "digest:send": "tsx scripts/send-digests.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^9.5.0",

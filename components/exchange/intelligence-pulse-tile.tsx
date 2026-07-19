@@ -12,6 +12,7 @@ type IntelligencePulseTileProps = {
   tile: IntelligencePulseTile;
   onSelect: (tile: IntelligencePulseTile) => void;
   staggerIndex?: number;
+  unchangedSinceLastVisit?: boolean;
 };
 
 function formatEvidence(tile: IntelligencePulseTile): string {
@@ -24,6 +25,7 @@ function IntelligencePulseTileCardInner({
   tile,
   onSelect,
   staggerIndex,
+  unchangedSinceLastVisit = false,
 }: IntelligencePulseTileProps) {
   const isHero = tile.tier === "hero";
   const isFeatured = tile.tier === "featured";
@@ -72,6 +74,7 @@ function IntelligencePulseTileCardInner({
           isFeatured={isFeatured}
           headingId={headingId}
           interactive
+          unchangedSinceLastVisit={unchangedSinceLastVisit}
         />
       </button>
     </article>
@@ -85,6 +88,7 @@ export type PulseTileSummaryProps = {
   headingId: string;
   interactive: boolean;
   compact?: boolean;
+  unchangedSinceLastVisit?: boolean;
 };
 
 export function PulseTileSummary({
@@ -94,6 +98,7 @@ export function PulseTileSummary({
   headingId,
   interactive,
   compact = false,
+  unchangedSinceLastVisit = false,
 }: PulseTileSummaryProps) {
   return (
     <>
@@ -185,6 +190,21 @@ export function PulseTileSummary({
           })()}
         </p>
       </div>
+
+      {unchangedSinceLastVisit && (
+        <p
+          className={cn(
+            "inline-flex w-fit items-center gap-1.5 text-xs text-muted-foreground/70",
+            compact ? "mt-2" : "mt-3"
+          )}
+        >
+          <span
+            className="inline-block h-1 w-1 rounded-full bg-muted-foreground/40"
+            aria-hidden="true"
+          />
+          No change since your last visit
+        </p>
+      )}
 
       <p className={cn("text-sm italic text-muted-foreground/90", compact ? "mt-2" : "mt-4")}>
         {tile.forecastNarrative}

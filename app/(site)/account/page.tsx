@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 
+import { DigestSettings } from "@/components/account/digest-settings";
 import { useAuth } from "@/components/auth/auth-provider";
 import { SignInPanel } from "@/components/auth/sign-in-panel";
 import { Button } from "@/components/ui/button";
@@ -32,6 +33,9 @@ export default function AccountPage() {
               in on.
             </p>
           </div>
+
+          <DigestSettings />
+
           <Button type="button" variant="secondary" onClick={() => signOut()}>
             Sign out
           </Button>

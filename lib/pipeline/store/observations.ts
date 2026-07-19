@@ -16,16 +16,36 @@ function datedFilename(isoDate: string): string {
   return isoDate.slice(0, 10);
 }
 
-export async function readLatestObservations(): Promise<ObservationBundle | null> {
+/**
+ * Read `latest.json`, falling back to the newest dated bundle when it's absent.
+ *
+ * `latest.json` is a derived pointer — an exact copy of the newest dated file —
+ * that every pipeline run rewrites, so it conflicts on every merge. It is now
+ * gitignored; the dated `YYYY-MM-DD.json` files are the tracked source of truth.
+ * This fallback keeps builds working (e.g. on Vercel, where only the dated files
+ * are checked out) with zero behavioural change.
+ */
+async function readLatestOrNewestDated<T>(dir: string): Promise<T | null> {
   try {
-    const raw = await readFile(
-      path.join(OBSERVATIONS_DIR, "latest.json"),
-      "utf8"
-    );
-    return JSON.parse(raw) as ObservationBundle;
+    const raw = await readFile(path.join(dir, "latest.json"), "utf8");
+    return JSON.parse(raw) as T;
+  } catch {
+    // latest.json missing — reconstruct from the newest dated bundle.
+  }
+  try {
+    const newest = (await readdir(dir))
+      .filter((f) => /^\d{4}-\d{2}-\d{2}\.json$/.test(f))
+      .sort()
+      .pop();
+    if (!newest) return null;
+    return JSON.parse(await readFile(path.join(dir, newest), "utf8")) as T;
   } catch {
     return null;
   }
+}
+
+export async function readLatestObservations(): Promise<ObservationBundle | null> {
+  return readLatestOrNewestDated<ObservationBundle>(OBSERVATIONS_DIR);
 }
 
 export async function writeObservations(
@@ -48,12 +68,7 @@ export async function writeObservations(
 }
 
 export async function readLatestScores(): Promise<ScoreBundle | null> {
-  try {
-    const raw = await readFile(path.join(SCORES_DIR, "latest.json"), "utf8");
-    return JSON.parse(raw) as ScoreBundle;
-  } catch {
-    return null;
-  }
+  return readLatestOrNewestDated<ScoreBundle>(SCORES_DIR);
 }
 
 /**

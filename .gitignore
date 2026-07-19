@@ -9,6 +9,13 @@ next-env.d.ts
 # Machine-generated build artifact — regenerated on install/dev/build, never committed.
 # (Committing it caused a merge conflict on every branch. See package.json postinstall/prebuild.)
 /lib/intelligence/generated-signals.ts
+
+# Derived pointers — exact copies of the newest dated bundle, rewritten every
+# pipeline run, so they conflicted on every merge. Readers fall back to the
+# newest dated file (lib/pipeline/store/observations.ts); the dated
+# YYYY-MM-DD.json files remain the tracked source of truth.
+/data/pipeline/observations/latest.json
+/data/pipeline/scores/latest.json
 .DS_Store
 npm-debug.log*
 yarn-debug.log*

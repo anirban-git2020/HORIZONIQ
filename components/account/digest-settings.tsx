@@ -100,9 +100,9 @@ export function DigestSettings({ className }: { className?: string }) {
         </p>
       ) : optIn ? (
         <p className="mt-3 border-t border-border/40 pt-3 text-xs leading-relaxed text-muted-foreground">
-          You&apos;re subscribed. Digests go out{" "}
-          <span className="text-foreground">Monday mornings</span> — your first
-          one lands the next Monday your fields have moved. Quiet weeks stay quiet.
+          You&apos;re subscribed. A short brief arrives on the{" "}
+          <span className="text-foreground">Mondays your fields have moved</span>{" "}
+          — and nothing on the weeks they don&apos;t.
         </p>
       ) : null}
     </div>

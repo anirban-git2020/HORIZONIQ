@@ -1,0 +1,40 @@
+name: Weekly Digest
+
+# Sends the "Since your last digest" email to opted-in users. Reads the latest
+# committed score bundle + narratives — it does NOT run the pipeline, so it's
+# fast and independent of the intelligence refresh.
+
+on:
+  schedule:
+    # Mondays at 08:00 UTC.
+    - cron: "0 8 * * 1"
+  workflow_dispatch: {} # manual "Run workflow" for testing
+
+concurrency:
+  group: weekly-digest
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Send digests
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+          DIGEST_FROM: ${{ secrets.DIGEST_FROM }}
+          DIGEST_SITE_URL: ${{ secrets.DIGEST_SITE_URL }}
+        run: npm run digest:send

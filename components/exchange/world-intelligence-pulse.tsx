@@ -1,11 +1,12 @@
 "use client";
 
-import { memo, useCallback } from "react";
+import { memo, useCallback, useMemo } from "react";
 
+import { DigestPanel } from "@/components/exchange/digest-panel";
 import { IntelligencePulseTileCard } from "@/components/exchange/intelligence-pulse-tile";
 import { useMotionReveal } from "@/hooks/use-motion-reveal";
 import { usePersonalizedPulse } from "@/hooks/use-personalized-pulse";
-import { useUnchangedSignals } from "@/hooks/use-visit-changes";
+import { useVisitChanges } from "@/hooks/use-visit-changes";
 import { getIntelligenceUpdatedAt } from "@/lib/domain/live-repository";
 import type { IntelligencePulseTile } from "@/lib/exchange/pulse-mock-data";
 import { MOTION_CLASS } from "@/lib/motion-language";
@@ -56,10 +57,21 @@ function WorldIntelligencePulseInner({
     orderedTiles.map((tile, index) => [tile.id, index] as const)
   );
 
-  // Signals unchanged since the user's last visit within this data period.
-  // The period key is the observation date, so it resets when fresh data lands.
+  // What changed since the user's last visit — drives both the digest panel and
+  // the per-tile "no change" message. The period key is stored for later use.
   const briefingPeriod = updatedAt ? updatedAt.slice(0, 10) : null;
-  const unchangedSignals = useUnchangedSignals(orderedTiles, briefingPeriod);
+  const visitInputs = useMemo(
+    () =>
+      orderedTiles.map((tile) => ({
+        id: tile.id,
+        title: tile.technology,
+        momentum: tile.momentum,
+        momentumChange: tile.momentumChange,
+      })),
+    [orderedTiles]
+  );
+  const visit = useVisitChanges(visitInputs, briefingPeriod);
+  const unchangedSignals = visit.unchanged;
 
   const handleSelect = useCallback(
     (tile: IntelligencePulseTile) => onSignalSelected(tile),
@@ -101,6 +113,8 @@ function WorldIntelligencePulseInner({
           </p>
         )}
       </header>
+
+      <DigestPanel changes={visit} className="mb-12 md:mb-16" />
 
       {isEmpty ? (
         <div className="hq-motion-hero-enter rounded-2xl border border-border/40 bg-card/20 p-10 text-center md:p-14">

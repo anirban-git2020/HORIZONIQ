@@ -11,6 +11,8 @@ export type SendEmailInput = {
   subject: string;
   html: string;
   text: string;
+  /** One-click unsubscribe target — becomes a List-Unsubscribe header. */
+  unsubscribeUrl?: string;
 };
 
 export async function sendEmail(input: SendEmailInput): Promise<SendResult> {
@@ -20,6 +22,15 @@ export async function sendEmail(input: SendEmailInput): Promise<SendResult> {
   // `||` (not `??`) so an unset secret — which arrives as "" from GitHub
   // Actions, not undefined — still falls back to Resend's test sender.
   const from = process.env.DIGEST_FROM || "HorizonIQ <onboarding@resend.dev>";
+
+  // List-Unsubscribe (+ One-Click) is a strong deliverability signal and gives
+  // Gmail/Outlook a native unsubscribe control.
+  const headers: Record<string, string> = input.unsubscribeUrl
+    ? {
+        "List-Unsubscribe": `<${input.unsubscribeUrl}>`,
+        "List-Unsubscribe-Post": "List-Unsubscribe=One-Click",
+      }
+    : {};
 
   try {
     const res = await fetch("https://api.resend.com/emails", {
@@ -34,6 +45,7 @@ export async function sendEmail(input: SendEmailInput): Promise<SendResult> {
         subject: input.subject,
         html: input.html,
         text: input.text,
+        headers,
       }),
     });
 

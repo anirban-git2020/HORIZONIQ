@@ -17,7 +17,9 @@ export async function sendEmail(input: SendEmailInput): Promise<SendResult> {
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) return { ok: false, error: "RESEND_API_KEY is not set" };
 
-  const from = process.env.DIGEST_FROM ?? "HorizonIQ <onboarding@resend.dev>";
+  // `||` (not `??`) so an unset secret — which arrives as "" from GitHub
+  // Actions, not undefined — still falls back to Resend's test sender.
+  const from = process.env.DIGEST_FROM || "HorizonIQ <onboarding@resend.dev>";
 
   try {
     const res = await fetch("https://api.resend.com/emails", {

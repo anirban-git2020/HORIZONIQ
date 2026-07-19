@@ -26,8 +26,9 @@ type ProfileRow = {
   unsubscribe_token: string;
 };
 
+// `||` so an unset GitHub secret ("") falls back rather than passing empty.
 const SITE_URL =
-  process.env.DIGEST_SITE_URL ?? "https://horizoniq-beta.vercel.app";
+  process.env.DIGEST_SITE_URL || "https://horizoniq-beta.vercel.app";
 
 async function main() {
   const supabase = getSupabaseAdmin();

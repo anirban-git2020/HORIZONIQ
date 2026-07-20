@@ -5,6 +5,8 @@ import { useCallback, useState } from "react";
 import { FocusOverlay } from "@/components/focus/FocusOverlay";
 import { SignalGalaxyField } from "@/components/background/signal-galaxy-field";
 import { ExchangeHeader } from "@/components/exchange/exchange-header";
+import { FollowingPanel } from "@/components/exchange/following-panel";
+import { FollowedSignalsProvider } from "@/components/exchange/followed-signals-provider";
 import { IntelligenceAudience } from "@/components/exchange/intelligence-audience";
 import { IntelligenceHero } from "@/components/exchange/intelligence-hero";
 import { WorldIntelligencePulse } from "@/components/exchange/world-intelligence-pulse";
@@ -29,6 +31,7 @@ export function IntelligenceExchangeShell() {
   const isFocusOpen = selectedSignal !== null;
 
   return (
+    <FollowedSignalsProvider>
     <div className="relative min-h-dvh bg-background">
       <SignalGalaxyField />
 
@@ -44,6 +47,7 @@ export function IntelligenceExchangeShell() {
         <main className="relative z-10">
           <IntelligenceHero />
           <IntelligenceAudience />
+          <FollowingPanel />
           <div id="signals" className="scroll-mt-24">
             <WorldIntelligencePulse onSignalSelected={handleSignalSelected} />
           </div>
@@ -56,5 +60,6 @@ export function IntelligenceExchangeShell() {
         <FocusOverlay signal={selectedSignal} onClose={handleCloseFocus} />
       )}
     </div>
+    </FollowedSignalsProvider>
   );
 }

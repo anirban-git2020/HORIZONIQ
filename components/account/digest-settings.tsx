@@ -8,6 +8,13 @@ import { fetchDigestSettings, saveDigestOptIn } from "@/lib/auth/profiles";
 import { cn } from "@/lib/utils";
 
 /**
+ * Flip to `true` once a sending domain is verified in Resend (and DIGEST_FROM is
+ * set). Until then the email sender can only reach the account owner, so we show
+ * "coming soon" rather than let users opt into an email that will never arrive.
+ */
+const EMAIL_DIGEST_LIVE: boolean = false;
+
+/**
  * Weekly digest opt-in. A signed-in user turns the "Since your last visit" email
  * on or off. Optimistic toggle with rollback on failure; no cadence control
  * while weekly is the only option.
@@ -51,6 +58,30 @@ export function DigestSettings({ className }: { className?: string }) {
   };
 
   if (!user) return null;
+
+  // No verified sending domain yet — email can't reach real users, so don't
+  // offer an opt-in that won't deliver. The in-app digest covers this meanwhile.
+  if (!EMAIL_DIGEST_LIVE) {
+    return (
+      <div
+        className={cn(
+          "rounded-xl border border-border/70 bg-secondary/20 p-5",
+          className
+        )}
+      >
+        <div className="flex items-center gap-2">
+          <p className="label-caps text-muted-foreground">Weekly digest</p>
+          <span className="rounded-full border border-border/60 bg-secondary/40 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            Coming soon
+          </span>
+        </div>
+        <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
+          Email delivery is on the way. Meanwhile, your &ldquo;Since your last
+          visit&rdquo; summary is always waiting for you on the dashboard.
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -100,9 +131,9 @@ export function DigestSettings({ className }: { className?: string }) {
         </p>
       ) : optIn ? (
         <p className="mt-3 border-t border-border/40 pt-3 text-xs leading-relaxed text-muted-foreground">
-          You&apos;re subscribed. Digests go out{" "}
-          <span className="text-foreground">Monday mornings</span> — your first
-          one lands the next Monday your fields have moved. Quiet weeks stay quiet.
+          You&apos;re subscribed. A short brief arrives on the{" "}
+          <span className="text-foreground">Mondays your fields have moved</span>{" "}
+          — and nothing on the weeks they don&apos;t.
         </p>
       ) : null}
     </div>

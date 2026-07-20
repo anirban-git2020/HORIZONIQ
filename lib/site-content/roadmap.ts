@@ -7,8 +7,8 @@ export type RoadmapMilestone = {
   items: string[];
 };
 
-// Deliberately high-level. No internal sprint names, tools, data sources,
-// architecture, or monetization — this page is public.
+// Deliberately high-level and brief. No internal sprint names, tools, data
+// sources, architecture, or monetization — this page is public.
 export const ROADMAP_PHASES: RoadmapMilestone[] = [
   {
     id: "now",
@@ -16,8 +16,8 @@ export const ROADMAP_PHASES: RoadmapMilestone[] = [
     status: "current",
     items: [
       "Personalized, change-first intelligence — what shifted in your fields since your last visit",
-      "Clear reasoning behind every signal: what happened, why it matters, and what to do next",
-      "An immersive, focused reading experience built for clarity, not noise",
+      "Clear reasoning behind every signal, with a trend you can watch over time",
+      "A weekly email digest, synced across your devices",
     ],
   },
   {
@@ -25,9 +25,8 @@ export const ROADMAP_PHASES: RoadmapMilestone[] = [
     title: "Next",
     status: "upcoming",
     items: [
-      "Intelligence that comes to you — a concise periodic digest",
-      "Follow-through on the actions you took from earlier briefings",
-      "Richer history so you can see how a trend has moved over time",
+      "Follow-through on the actions you take from a briefing",
+      "Broader, deeper coverage across more fields and regions",
     ],
   },
   {
@@ -35,8 +34,7 @@ export const ROADMAP_PHASES: RoadmapMilestone[] = [
     title: "Later",
     status: "future",
     items: [
-      "Broader and deeper coverage across more fields and regions",
-      "A more connected view of how signals relate to one another",
+      "A connected view of how signals relate to one another",
       "More ways to make HorizonIQ your own",
     ],
   },

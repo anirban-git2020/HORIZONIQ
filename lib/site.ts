@@ -41,7 +41,6 @@ export const PUBLIC_SITE_PATH_PREFIXES = [
   "/contact",
   "/privacy",
   "/terms",
-  "/changelog",
   "/roadmap",
 ] as const;
 
@@ -80,7 +79,6 @@ export const FOOTER_QUICK_LINKS: FooterLinkItem[] = [
   { label: "Terms of Use", href: "/terms" },
   { label: "Contact", href: "/contact" },
   { label: "Roadmap", href: "/roadmap" },
-  { label: "Release Notes", href: "/changelog" },
 ];
 
 export const SITE_NAV_LINKS = [
@@ -89,5 +87,4 @@ export const SITE_NAV_LINKS = [
   { label: "Contact", href: "/contact" },
   { label: "Privacy", href: "/privacy" },
   { label: "Terms", href: "/terms" },
-  { label: "Changelog", href: "/changelog" },
 ] as const;

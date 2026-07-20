@@ -17,7 +17,6 @@ const PAGE_LABELS: Record<string, string> = {
   "/contact": "Contact",
   "/privacy": "Privacy",
   "/terms": "Terms",
-  "/changelog": "Changelog",
   "/roadmap": "Roadmap",
 };
 

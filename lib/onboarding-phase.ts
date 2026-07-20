@@ -26,40 +26,16 @@ export function isOnboardingPhase(value: string): value is OnboardingPhase {
   return (ONBOARDING_PHASES as string[]).includes(value);
 }
 
+// The Landing Experience at "/" now owns every pre-completion onboarding scene
+// (welcome → name → role → region → interests → tour) client-side. The legacy
+// /onboarding/* routes are retired, so all incomplete phases resolve to "/" and
+// a completed user goes to the dashboard.
 export function getPathForPhase(phase: OnboardingPhase): string {
-  switch (phase) {
-    case "welcome":
-      return "/onboarding/welcome";
-    case "name":
-      return "/onboarding/name";
-    case "landing":
-      return "/";
-    case "profile":
-      return "/onboarding/role";
-    case "complete":
-      return "/dashboard";
-  }
+  return phase === "complete" ? "/dashboard" : "/";
 }
 
 export function getAllowedPathPrefixes(phase: OnboardingPhase): string[] {
-  switch (phase) {
-    case "welcome":
-      return ["/onboarding/welcome"];
-    case "name":
-      return ["/onboarding/name"];
-    case "landing":
-      return ["/"];
-    case "profile":
-      return [
-        "/onboarding/greeting",
-        "/onboarding/role",
-        "/onboarding/region",
-        "/onboarding/interests",
-        "/onboarding/tour",
-      ];
-    case "complete":
-      return ["/", "/dashboard", "/onboarding/interests"];
-  }
+  return phase === "complete" ? ["/", "/dashboard"] : ["/"];
 }
 
 export function isPathAllowedForPhase(

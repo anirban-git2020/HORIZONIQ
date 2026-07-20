@@ -210,10 +210,10 @@ export const ONBOARDING_COOKIE_INIT_SCRIPT = `
     }
     localStorage.setItem(SCHEMA, String(SCHEMA_VER));
 
-    var pathname = window.location.pathname;
-    if (!pathAllowed(pathname, canonical)) {
-      window.location.replace(pathForPhase(canonical));
-    }
+    // NOTE: no redirect here. The Landing Experience at "/" owns onboarding, so
+    // every incomplete phase already resolves to "/". A pre-React redirect can
+    // only cause loops (it fought the edge redirect for /onboarding/*), so this
+    // script now ONLY reconciles storage. React handles any real navigation.
   } catch (e) {}
 })();
 `;

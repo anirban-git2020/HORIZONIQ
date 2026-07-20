@@ -6,8 +6,8 @@ name: Intelligence Pipeline
 
 on:
   schedule:
-    # Every 2 days at 06:00 UTC (odd calendar days — cron's standard "every other day").
-    - cron: "0 6 */2 * *"
+    # Daily at 06:00 UTC.
+    - cron: "0 6 * * *"
   workflow_dispatch: {} # allow manual runs from the Actions tab
 
 permissions:

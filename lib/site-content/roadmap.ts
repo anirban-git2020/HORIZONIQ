@@ -17,7 +17,7 @@ export const ROADMAP_PHASES: RoadmapMilestone[] = [
     items: [
       "Personalized, change-first intelligence — what shifted in your fields since your last visit",
       "Clear reasoning behind every signal, with a trend you can watch over time",
-      "A weekly email digest, synced across your devices",
+      "Your focus, synced across every device you sign in on",
     ],
   },
   {
@@ -25,8 +25,8 @@ export const ROADMAP_PHASES: RoadmapMilestone[] = [
     title: "Next",
     status: "upcoming",
     items: [
+      "A weekly email digest that comes to you",
       "Follow-through on the actions you take from a briefing",
-      "Broader, deeper coverage across more fields and regions",
     ],
   },
   {

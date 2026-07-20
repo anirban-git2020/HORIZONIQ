@@ -3,6 +3,7 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { X } from "lucide-react";
 
+import { FollowButton } from "@/components/exchange/follow-button";
 import { IntelligencePulseBriefPanel } from "@/components/exchange/intelligence-pulse-brief";
 import { PulseTileSummary } from "@/components/exchange/intelligence-pulse-tile";
 import { useFocusTrap } from "@/hooks/use-focus-trap";
@@ -136,6 +137,10 @@ export function FocusOverlay({ signal, onClose }: FocusOverlayProps) {
           interactive={false}
           compact
         />
+
+        <div className="mt-6">
+          <FollowButton signalId={signal.id} momentum={signal.momentum} />
+        </div>
 
         {brief && (
           <div id={briefPanelId}>

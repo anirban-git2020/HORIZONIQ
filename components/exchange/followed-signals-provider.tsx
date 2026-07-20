@@ -22,8 +22,9 @@ type FollowedContextValue = {
   /** signalId → follow record, for O(1) lookups and the panel. */
   followed: ReadonlyMap<string, FollowRecord>;
   isFollowing: (signalId: string) => boolean;
-  follow: (signalId: string, momentum: number) => Promise<void>;
-  unfollow: (signalId: string) => Promise<void>;
+  /** Resolves true when saved, false when it failed (state is rolled back). */
+  follow: (signalId: string, momentum: number) => Promise<boolean>;
+  unfollow: (signalId: string) => Promise<boolean>;
   loading: boolean;
   signedIn: boolean;
 };
@@ -73,8 +74,8 @@ export function FollowedSignalsProvider({
   }, [supabase, user, authLoading]);
 
   const follow = useCallback(
-    async (signalId: string, momentum: number) => {
-      if (!supabase || !user) return;
+    async (signalId: string, momentum: number): Promise<boolean> => {
+      if (!supabase || !user) return false;
       const record: FollowRecord = {
         signalId,
         followedAt: new Date().toISOString(),
@@ -89,13 +90,14 @@ export function FollowedSignalsProvider({
           return next;
         });
       }
+      return ok;
     },
     [supabase, user]
   );
 
   const unfollow = useCallback(
-    async (signalId: string) => {
-      if (!supabase || !user) return;
+    async (signalId: string): Promise<boolean> => {
+      if (!supabase || !user) return false;
       const previous = followed.get(signalId);
       setFollowed((prev) => {
         const next = new Map(prev);
@@ -106,6 +108,7 @@ export function FollowedSignalsProvider({
       if (!ok && previous) {
         setFollowed((prev) => new Map(prev).set(signalId, previous)); // rollback
       }
+      return ok;
     },
     [supabase, user, followed]
   );

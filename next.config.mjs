@@ -7,6 +7,19 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const nextConfig = {
   reactStrictMode: true,
   transpilePackages: ["three", "@react-three/fiber"],
+  // The Landing Experience at "/" owns all onboarding now. The legacy
+  // /onboarding/* pages are retired — redirect any request to them (old
+  // bookmarks, stale links, cached URLs) to "/" at the edge, before the page or
+  // any client code runs. Deterministic, unlike the client-side reconcile.
+  async redirects() {
+    return [
+      {
+        source: "/onboarding/:path*",
+        destination: "/",
+        permanent: false,
+      },
+    ];
+  },
   webpack: (config, { isServer, dev }) => {
     if (!isServer) {
       config.resolve.alias = {

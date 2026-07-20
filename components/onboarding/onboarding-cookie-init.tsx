@@ -158,26 +158,19 @@ export const ONBOARDING_COOKIE_INIT_SCRIPT = `
       return { phase: "welcome", record: repaired, wipePrefs: false };
     }
 
-  var pathPrefixes = {
-      welcome: ["/onboarding/welcome"],
-      name: ["/onboarding/name"],
+    // MUST mirror lib/onboarding-phase.ts. The Landing Experience at "/" owns all
+    // pre-completion onboarding; legacy /onboarding/* is retired. Every incomplete
+    // phase resolves to "/", so this pre-React script never bounces "/" away.
+    var pathPrefixes = {
+      welcome: ["/"],
+      name: ["/"],
       landing: ["/"],
-      profile: [
-        "/onboarding/greeting",
-        "/onboarding/role",
-        "/onboarding/region",
-        "/onboarding/interests",
-        "/onboarding/tour"
-      ],
-      complete: ["/", "/dashboard", "/onboarding/interests"]
+      profile: ["/"],
+      complete: ["/", "/dashboard"]
     };
 
     function pathForPhase(phase) {
-      if (phase === "welcome") return "/onboarding/welcome";
-      if (phase === "name") return "/onboarding/name";
-      if (phase === "landing") return "/";
-      if (phase === "profile") return "/onboarding/role";
-      return "/dashboard";
+      return phase === "complete" ? "/dashboard" : "/";
     }
 
     var publicPaths = ${JSON.stringify([...PUBLIC_SITE_PATH_PREFIXES])};

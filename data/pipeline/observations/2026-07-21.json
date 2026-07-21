@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "ingestedAt": "2026-07-21T08:08:31.327Z",
+  "ingestedAt": "2026-07-21T08:26:17.686Z",
   "period": "2026-W30",
   "periodLabel": "Week of July 20, 2026 – July 26, 2026",
   "sources": {
     "hacker-news": {
       "source": "hacker-news",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.386Z",
+      "fetchedAt": "2026-07-21T08:26:17.700Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -21,12 +21,12 @@
             {
               "title": "Who's afraid of Chinese models?",
               "url": "https://stratechery.com/2026/whos-afraid-of-chinese-models/",
-              "score": 586
+              "score": 593
             },
             {
               "title": "Five US tech giants' hidden debts soar to $1.65T on opaque AI funding",
               "url": "https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding",
-              "score": 242
+              "score": 251
             }
           ]
         },
@@ -42,7 +42,7 @@
             {
               "title": "Xiaomi-Robotics-1",
               "url": "https://robotics.xiaomi.com/xiaomi-robotics-1.html",
-              "score": 476
+              "score": 477
             }
           ]
         },
@@ -50,9 +50,9 @@
           "interestId": "quantum-computing",
           "metrics": {
             "current": 1,
-            "previous": 2,
-            "delta": -1,
-            "deltaPercent": -50
+            "previous": 0,
+            "delta": 1,
+            "deltaPercent": null
           },
           "samples": [
             {
@@ -165,18 +165,12 @@
         "arts": {
           "interestId": "arts",
           "metrics": {
-            "current": 1,
-            "previous": 1,
+            "current": 0,
+            "previous": 0,
             "delta": 0,
-            "deltaPercent": 0
+            "deltaPercent": null
           },
-          "samples": [
-            {
-              "title": "Coding Skills Development Report",
-              "url": "https://news.ycombinator.com/item?id=48974093",
-              "score": 1
-            }
-          ]
+          "samples": []
         },
         "commerce": {
           "interestId": "commerce",
@@ -191,21 +185,16 @@
         "entrepreneurship": {
           "interestId": "entrepreneurship",
           "metrics": {
-            "current": 172,
-            "previous": 947,
-            "delta": -775,
-            "deltaPercent": -82
+            "current": 152,
+            "previous": 909,
+            "delta": -757,
+            "deltaPercent": -83
           },
           "samples": [
             {
               "title": "Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco",
               "url": "https://vincentwoo.com/3d/grace_cathedral/",
-              "score": 154
-            },
-            {
-              "title": "Show HN: A canvas-based note taking and organizer app",
-              "url": "https://www.passinote.app/",
-              "score": 60
+              "score": 155
             },
             {
               "title": "Show HN: Wheesper – Start an anonymous discussion with a link",
@@ -215,12 +204,17 @@
             {
               "title": "Show HN: Ex Situ – Open-source spatial index of displaced cultural artifacts",
               "url": "https://exsitu.app/map",
-              "score": 26
+              "score": 27
+            },
+            {
+              "title": "Show HN: Ex Situ – Open-source spatial index of displaced cultural artifacts",
+              "url": "https://exsitu.app/map",
+              "score": 27
             },
             {
               "title": "Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco",
               "url": "https://vincentwoo.com/3d/grace_cathedral/",
-              "score": 154
+              "score": 155
             }
           ]
         },
@@ -228,8 +222,8 @@
           "interestId": "startups",
           "metrics": {
             "current": 0,
-            "previous": 2,
-            "delta": -2,
+            "previous": 1,
+            "delta": -1,
             "deltaPercent": -100
           },
           "samples": [
@@ -257,7 +251,7 @@
             {
               "title": "Five US tech giants' hidden debts soar to $1.65T on opaque AI funding",
               "url": "https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding",
-              "score": 242
+              "score": 251
             }
           ]
         },
@@ -276,7 +270,7 @@
     "arxiv": {
       "source": "arxiv",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.437Z",
+      "fetchedAt": "2026-07-21T08:26:17.751Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -327,10 +321,10 @@
         "quantum-computing": {
           "interestId": "quantum-computing",
           "metrics": {
-            "current": 43,
-            "previous": 157,
-            "delta": -114,
-            "deltaPercent": -73
+            "current": 40,
+            "previous": 160,
+            "delta": -120,
+            "deltaPercent": -75
           },
           "samples": [
             {
@@ -475,10 +469,10 @@
         "energy": {
           "interestId": "energy",
           "metrics": {
-            "current": 1,
+            "current": 0,
             "previous": 16,
-            "delta": -15,
-            "deltaPercent": -94
+            "delta": -16,
+            "deltaPercent": -100
           },
           "samples": [
             {
@@ -499,9 +493,9 @@
           "interestId": "biotechnology",
           "metrics": {
             "current": 1,
-            "previous": 8,
-            "delta": -7,
-            "deltaPercent": -87
+            "previous": 7,
+            "delta": -6,
+            "deltaPercent": -86
           },
           "samples": [
             {
@@ -522,9 +516,9 @@
           "interestId": "biochemistry",
           "metrics": {
             "current": 3,
-            "previous": 21,
-            "delta": -18,
-            "deltaPercent": -86
+            "previous": 19,
+            "delta": -16,
+            "deltaPercent": -84
           },
           "samples": [
             {
@@ -707,7 +701,7 @@
     "wikimedia": {
       "source": "wikimedia",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.437Z",
+      "fetchedAt": "2026-07-21T08:26:17.752Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -754,6 +748,38 @@
               "title": "Quantum Computing — Wikipedia pageviews",
               "url": "https://en.wikipedia.org/wiki/Quantum_computing",
               "score": 11883
+            }
+          ]
+        },
+        "cybersecurity": {
+          "interestId": "cybersecurity",
+          "metrics": {
+            "current": 724,
+            "previous": 526,
+            "delta": 198,
+            "deltaPercent": 38
+          },
+          "samples": [
+            {
+              "title": "Cybersecurity — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Cybersecurity",
+              "score": 724
+            }
+          ]
+        },
+        "cloud-computing": {
+          "interestId": "cloud-computing",
+          "metrics": {
+            "current": 7132,
+            "previous": 7577,
+            "delta": -445,
+            "deltaPercent": -6
+          },
+          "samples": [
+            {
+              "title": "Cloud Computing — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Cloud_computing",
+              "score": 7132
             }
           ]
         },
@@ -917,6 +943,22 @@
             }
           ]
         },
+        "entrepreneurship": {
+          "interestId": "entrepreneurship",
+          "metrics": {
+            "current": 3641,
+            "previous": 3325,
+            "delta": 316,
+            "deltaPercent": 10
+          },
+          "samples": [
+            {
+              "title": "Entrepreneurship — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Entrepreneurship",
+              "score": 3641
+            }
+          ]
+        },
         "startups": {
           "interestId": "startups",
           "metrics": {
@@ -970,7 +1012,7 @@
     "github": {
       "source": "github",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.439Z",
+      "fetchedAt": "2026-07-21T08:26:17.754Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -1126,8 +1168,8 @@
           "interestId": "entrepreneurship",
           "metrics": {
             "current": 0,
-            "previous": 2,
-            "delta": -2,
+            "previous": 1,
+            "delta": -1,
             "deltaPercent": -100
           },
           "samples": []
@@ -1135,10 +1177,10 @@
         "startups": {
           "interestId": "startups",
           "metrics": {
-            "current": 9,
-            "previous": 13,
+            "current": 7,
+            "previous": 11,
             "delta": -4,
-            "deltaPercent": -31
+            "deltaPercent": -36
           },
           "samples": [
             {
@@ -1183,7 +1225,7 @@
     "product-hunt": {
       "source": "product-hunt",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.441Z",
+      "fetchedAt": "2026-07-21T08:26:17.755Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -1197,7 +1239,7 @@
             {
               "title": "Fuzzy AI",
               "url": "https://www.producthunt.com/products/fuzzy-ai-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 648
+              "score": 647
             },
             {
               "title": "Nautis",
@@ -1207,12 +1249,12 @@
             {
               "title": "Loova Ads Studio",
               "url": "https://www.producthunt.com/products/loova-agents?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 483
+              "score": 480
             },
             {
               "title": "Replay QA",
               "url": "https://www.producthunt.com/products/replayio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 402
+              "score": 403
             },
             {
               "title": "Skippr AI",
@@ -1254,21 +1296,21 @@
         "cloud-computing": {
           "interestId": "cloud-computing",
           "metrics": {
-            "current": 300,
+            "current": 299,
             "previous": 777,
-            "delta": -477,
-            "deltaPercent": -61
+            "delta": -478,
+            "deltaPercent": -62
           },
           "samples": [
             {
               "title": "Replay QA",
               "url": "https://www.producthunt.com/products/replayio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 402
+              "score": 403
             },
             {
               "title": "Kogvio",
               "url": "https://www.producthunt.com/products/kogvio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 132
+              "score": 133
             },
             {
               "title": "CartAI",
@@ -1302,13 +1344,13 @@
               "score": 0
             },
             {
-              "title": "CirqTap",
-              "url": "https://www.producthunt.com/products/cirqtap?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "FF FlashFish T2000",
+              "url": "https://www.producthunt.com/products/ff-flashfish-t2000?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 9
             },
             {
-              "title": "FF FlashFish T2000",
-              "url": "https://www.producthunt.com/products/ff-flashfish-t2000?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "CirqTap",
+              "url": "https://www.producthunt.com/products/cirqtap?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 9
             },
             {
@@ -1345,7 +1387,7 @@
             {
               "title": "Backdrop",
               "url": "https://www.producthunt.com/products/backdrop?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 154
+              "score": 155
             },
             {
               "title": "Lunen.ai",
@@ -1389,8 +1431,8 @@
               "score": 14
             },
             {
-              "title": "Santoka Alarm",
-              "url": "https://www.producthunt.com/products/santoka-alarm?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "Unbothered - Daily Quotes",
+              "url": "https://www.producthunt.com/products/unbothered-daily-quotes?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 12
             }
           ]
@@ -1519,9 +1561,9 @@
         "commerce": {
           "interestId": "commerce",
           "metrics": {
-            "current": 60,
+            "current": 59,
             "previous": 181,
-            "delta": -121,
+            "delta": -122,
             "deltaPercent": -67
           },
           "samples": [
@@ -1536,8 +1578,8 @@
               "score": 13
             },
             {
-              "title": "RELEASE STOCK",
-              "url": "https://www.producthunt.com/products/release-stock?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "attyrenow",
+              "url": "https://www.producthunt.com/products/attyrenow?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 12
             },
             {
@@ -1546,8 +1588,8 @@
               "score": 12
             },
             {
-              "title": "Gift card",
-              "url": "https://www.producthunt.com/products/gift-card-2139?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "RELEASE STOCK",
+              "url": "https://www.producthunt.com/products/release-stock?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 12
             }
           ]
@@ -1610,7 +1652,7 @@
             {
               "title": "Backdrop",
               "url": "https://www.producthunt.com/products/backdrop?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 154
+              "score": 155
             },
             {
               "title": "Lunen.ai",
@@ -1629,15 +1671,15 @@
     "pubmed": {
       "source": "pubmed",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.441Z",
+      "fetchedAt": "2026-07-21T08:26:17.755Z",
       "interests": {
         "healthcare": {
           "interestId": "healthcare",
           "metrics": {
-            "current": 738,
-            "previous": 655,
-            "delta": 83,
-            "deltaPercent": 13
+            "current": 680,
+            "previous": 623,
+            "delta": 57,
+            "deltaPercent": 9
           },
           "samples": [
             {
@@ -1657,10 +1699,10 @@
         "biotechnology": {
           "interestId": "biotechnology",
           "metrics": {
-            "current": 440,
-            "previous": 372,
-            "delta": 68,
-            "deltaPercent": 18
+            "current": 405,
+            "previous": 347,
+            "delta": 58,
+            "deltaPercent": 17
           },
           "samples": [
             {
@@ -1680,10 +1722,10 @@
         "biochemistry": {
           "interestId": "biochemistry",
           "metrics": {
-            "current": 59,
-            "previous": 52,
-            "delta": 7,
-            "deltaPercent": 13
+            "current": 56,
+            "previous": 44,
+            "delta": 12,
+            "deltaPercent": 27
           },
           "samples": [
             {
@@ -1703,10 +1745,10 @@
         "life-sciences": {
           "interestId": "life-sciences",
           "metrics": {
-            "current": 579,
-            "previous": 514,
-            "delta": 65,
-            "deltaPercent": 13
+            "current": 538,
+            "previous": 497,
+            "delta": 41,
+            "deltaPercent": 8
           },
           "samples": [
             {
@@ -1728,8 +1770,8 @@
     "gdelt": {
       "source": "gdelt",
       "status": "failed",
-      "fetchedAt": "2026-07-21T08:08:31.441Z",
-      "error": "fetch failed",
+      "fetchedAt": "2026-07-21T08:26:17.755Z",
+      "error": "HTTP 429 for https://api.gdeltproject.org/api/v2/doc/doc?query=(%22renewable%20energy%22%20OR%20%22grid%20storage%22%20OR%20%22energy%20transition%22)&mode=timelinevolraw&format=json&startdatetime=20260713000000&enddatetime=20260726235959",
       "interests": {
         "arts": {
           "interestId": "arts",
@@ -1754,13 +1796,13 @@
             }
           ]
         },
-        "energy": {
-          "interestId": "energy",
+        "supply-chain": {
+          "interestId": "supply-chain",
           "metrics": {
-            "current": 800,
-            "previous": 4925,
-            "delta": -4125,
-            "deltaPercent": -84
+            "current": 1881,
+            "previous": 8604,
+            "delta": -6723,
+            "deltaPercent": -78
           },
           "samples": []
         }
@@ -1769,38 +1811,38 @@
     "openalex": {
       "source": "openalex",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.441Z",
+      "fetchedAt": "2026-07-21T08:26:17.755Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
           "metrics": {
-            "current": 356,
-            "previous": 11500,
-            "delta": -11144,
-            "deltaPercent": -97
+            "current": 20,
+            "previous": 10808,
+            "delta": -10788,
+            "deltaPercent": -100
           },
           "samples": [
             {
-              "title": "Ethics and Responsibility in the Governance of Artificial Intelligence",
-              "url": "https://openalex.org/W7169723328"
+              "title": "Integrasi Artificial Intelligence dalam Pembelajaran STEM: Praktik Pedagogis, Hasil Belajar, dan Tantangan",
+              "url": "https://openalex.org/W7169723060"
             },
             {
-              "title": "ROLE OF ARTIFICIAL INTELLIGENCE (AI) IN THE LIBRARY AUTOMATION",
-              "url": "https://openalex.org/W7169717106"
+              "title": "Artificial intelligence in the English classroom: EFL teachers’ opportunities, challenges, and readiness for AI integration",
+              "url": "https://openalex.org/W7169729528"
             },
             {
-              "title": "ROLE OF ARTIFICIAL INTELLIGENCE (AI) IN THE LIBRARY AUTOMATION",
-              "url": "https://openalex.org/W7169724573"
+              "title": "ANALISIS PEMANFAATAN ARTIFICIAL INTELLIGENCE (AI) DALAM EFISIENSI PEMBUATAN KONTEN DIGITAL PADA APLIKASI TIKTOK",
+              "url": "https://openalex.org/W7169728190"
             }
           ]
         },
         "robotics": {
           "interestId": "robotics",
           "metrics": {
-            "current": 94,
-            "previous": 3082,
-            "delta": -2988,
-            "deltaPercent": -97
+            "current": 9,
+            "previous": 2881,
+            "delta": -2872,
+            "deltaPercent": -100
           },
           "samples": [
             {
@@ -1808,114 +1850,80 @@
               "url": "https://openalex.org/W7167861761"
             },
             {
-              "title": "Evolution, Ethics and the Future of Military Robotics",
-              "url": "https://openalex.org/W7169733371"
+              "title": "Improving Indoor Cellular Coverage Mapping using a Mobile Robot",
+              "url": "https://openalex.org/W7167304599"
             },
             {
-              "title": "Evolution, Ethics and the Future of Military Robotics",
-              "url": "https://openalex.org/W7169728908"
+              "title": "Compressive capacity of concrete dry joints across shotcrete, extrusion, and particle-bed additive manufacturing with robotic subtractive finishing",
+              "url": "https://openalex.org/W7169721170"
             }
           ]
         },
         "quantum-computing": {
           "interestId": "quantum-computing",
           "metrics": {
-            "current": 58,
-            "previous": 2161,
-            "delta": -2103,
-            "deltaPercent": -97
+            "current": 3,
+            "previous": 2005,
+            "delta": -2002,
+            "deltaPercent": -100
           },
           "samples": [
             {
-              "title": "\"Effects of Quantum Computing\"",
-              "url": "https://openalex.org/W7169720051"
+              "title": "Angular Momentum Structure of Higher‑Winding Vortex Zero Modes and Fermion Localisation in Randall–Sundrum Geometry",
+              "url": "https://openalex.org/W7169716018"
             },
             {
-              "title": "Channel-Based Provenance Signals for 87 HPC and Quantum-Computing Open-Source Projects",
-              "url": "https://openalex.org/W7169719679"
+              "title": "Angular Momentum Structure of Higher‑Winding Vortex Zero Modes and Fermion Localisation in Randall–Sundrum Geometry",
+              "url": "https://openalex.org/W7169711941"
             },
             {
-              "title": "provenance-audit: channel-based provenance assessment for HPC and quantum-computing open-source software",
-              "url": "https://openalex.org/W7169734355"
+              "title": "Thermodynamics not Information and Computation defeats Maxwell's Demon",
+              "url": "https://openalex.org/W7168445559"
             }
           ]
         },
         "cybersecurity": {
           "interestId": "cybersecurity",
           "metrics": {
-            "current": 36,
-            "previous": 1072,
-            "delta": -1036,
-            "deltaPercent": -97
+            "current": 1,
+            "previous": 998,
+            "delta": -997,
+            "deltaPercent": -100
           },
           "samples": [
             {
               "title": "Toward a behavioral ontology for cybersecurity: Introducing SebDB",
               "url": "https://openalex.org/W7130489205"
-            },
-            {
-              "title": "Digital Risks, Economic Security, and Cybersecurity of Credit Institutions : monograph",
-              "url": "https://openalex.org/W7169723771"
-            },
-            {
-              "title": "Inclusive Cybersecurity Literacy in Cybercrime Prevention Among MSME Operators in Lhokseumawe",
-              "url": "https://openalex.org/W7169725082"
             }
           ]
         },
         "cloud-computing": {
           "interestId": "cloud-computing",
           "metrics": {
-            "current": 48,
-            "previous": 1980,
-            "delta": -1932,
-            "deltaPercent": -98
+            "current": 0,
+            "previous": 1850,
+            "delta": -1850,
+            "deltaPercent": -100
           },
-          "samples": [
-            {
-              "title": "spore.host: ephemeral AWS compute for researchers",
-              "url": "https://openalex.org/W7169722093"
-            },
-            {
-              "title": "spore.host: ephemeral AWS compute for researchers",
-              "url": "https://openalex.org/W7169724624"
-            },
-            {
-              "title": "AgriGuard AI: A Cloud-Agnostic Multi-Agent System for Precision Agriculture",
-              "url": "https://openalex.org/W7169720573"
-            }
-          ]
+          "samples": []
         },
         "manufacturing": {
           "interestId": "manufacturing",
           "metrics": {
-            "current": 26,
-            "previous": 1916,
-            "delta": -1890,
-            "deltaPercent": -99
+            "current": 0,
+            "previous": 1797,
+            "delta": -1797,
+            "deltaPercent": -100
           },
-          "samples": [
-            {
-              "title": "&lt;b&gt;Special Remarks &lt;/b&gt;&lt;i&gt;Cyber Power and Global Competition: How Small and Middle Powers Can Leverage Digital Economic Transformation&lt;/i&gt;",
-              "url": "https://openalex.org/W7169728777"
-            },
-            {
-              "title": "صناعة الصواريخ الهجومية الذكية",
-              "url": "https://openalex.org/W7169724442"
-            },
-            {
-              "title": "صناعة الصواريخ الهجومية الذكية",
-              "url": "https://openalex.org/W7169724950"
-            }
-          ]
+          "samples": []
         },
         "supply-chain": {
           "interestId": "supply-chain",
           "metrics": {
-            "current": 79,
-            "previous": 3474,
-            "delta": -3395,
-            "deltaPercent": -98
+            "current": 7,
+            "previous": 3270,
+            "delta": -3263,
+            "deltaPercent": -100
           },
           "samples": [
             {
@@ -1923,97 +1931,85 @@
               "url": "https://openalex.org/W7166811126"
             },
             {
-              "title": "Optimizing Micro Supply Chains Nigerian construction industry",
-              "url": "https://openalex.org/W7169718464"
-            },
-            {
               "title": "Machine Learning Applications in Supply Chain and Operations Management",
               "url": "https://openalex.org/W7166868607"
+            },
+            {
+              "title": "Environmental Impacts, Sustainable Supply Chain Management, LCA, and Energy Efficiency",
+              "url": "https://openalex.org/W7123285624"
             }
           ]
         },
         "healthcare": {
           "interestId": "healthcare",
           "metrics": {
-            "current": 217,
-            "previous": 7845,
-            "delta": -7628,
-            "deltaPercent": -97
+            "current": 14,
+            "previous": 7405,
+            "delta": -7391,
+            "deltaPercent": -100
           },
           "samples": [
             {
-              "title": "Healthcare Financing and Health Outcomes in Selected African Countries",
-              "url": "https://openalex.org/W7169725549"
+              "title": "Trustworthy Evidence Communication in AI Healthcare: A Nurse Educator Perspective",
+              "url": "https://openalex.org/W7169716719"
             },
             {
-              "title": "Healthcare Financing and Health Outcomes in Selected African Countries",
-              "url": "https://openalex.org/W7169733168"
+              "title": "SAFE-CARE Bench: A Benchmark Specification and Evaluation Protocol for Safety, Guardrails, and User Experience in Multi-Turn Healthcare AI Agent Conversations",
+              "url": "https://openalex.org/W7169729950"
             },
             {
-              "title": "Healthcare professionals’ experiences involving Aboriginal families in the paediatric ESCALATION system",
-              "url": "https://openalex.org/W7169732544"
+              "title": "SAFE-CARE Bench: A Benchmark Specification and Evaluation Protocol for Safety, Guardrails, and User Experience in Multi-Turn Healthcare AI Agent Conversations",
+              "url": "https://openalex.org/W7169731954"
             }
           ]
         },
         "finance": {
           "interestId": "finance",
           "metrics": {
-            "current": 54,
-            "previous": 6320,
-            "delta": -6266,
-            "deltaPercent": -99
+            "current": 1,
+            "previous": 6042,
+            "delta": -6041,
+            "deltaPercent": -100
           },
           "samples": [
             {
-              "title": "A Corporate Financial Analysis Framework Based on RFECV-PRF Feature Selection and GA-LightGBM",
-              "url": "https://openalex.org/W7169726491"
-            },
-            {
-              "title": "Facilitators and barriers to adopting technology in neuropsychology: the American Academy of Clinical Neuropsychology (AACN) disruptive technology initiative survey",
-              "url": "https://openalex.org/W7169732370"
-            },
-            {
-              "title": "Challenges in Medical Technology Transfer in Southeastern Mexico: A Multi-Actor Analysis within the Innovation Ecosystem",
-              "url": "https://openalex.org/W7169728446"
+              "title": "Flame propagation limit and consumption speed of hydrogen-air flame in narrow channels",
+              "url": "https://openalex.org/W7128664110"
             }
           ]
         },
         "energy": {
           "interestId": "energy",
           "metrics": {
-            "current": 49,
-            "previous": 2022,
-            "delta": -1973,
-            "deltaPercent": -98
+            "current": 3,
+            "previous": 1902,
+            "delta": -1899,
+            "deltaPercent": -100
           },
           "samples": [
-            {
-              "title": "GREEN PATENTS AND THE ENERGY TRANSITION: THE ROLE OF INDUSTRIAL INTELLECTUAL PROPERTY IN PROMOTING INNOVATION IN RENEWABLE ENERGY.",
-              "url": "https://openalex.org/W7169681147"
-            },
             {
               "title": "Toward climate-resilient European economies: leveraging renewable energy, technological innovation, and nuclear energy for sustainable development",
               "url": "https://openalex.org/W7169725681"
             },
             {
-              "title": "The Global Solar and Green Belt: Earth's Rotation as a Natural Battery for Transcontinental Renewable Energy Transmission",
-              "url": "https://openalex.org/W7169719761"
+              "title": "Environmental Impacts, Sustainable Supply Chain Management, LCA, and Energy Efficiency",
+              "url": "https://openalex.org/W7123285624"
+            },
+            {
+              "title": "Environmental Impacts, Sustainable Supply Chain Management, LCA, and Energy Efficiency",
+              "url": "https://openalex.org/W7123267115"
             }
           ]
         },
         "biotechnology": {
           "interestId": "biotechnology",
           "metrics": {
-            "current": 28,
-            "previous": 1873,
-            "delta": -1845,
+            "current": 14,
+            "previous": 1786,
+            "delta": -1772,
             "deltaPercent": -99
           },
           "samples": [
-            {
-              "title": "Artificial Intelligence-Assisted Learning Videos for Biotechnology Instruction: Effects on Senior High School Students' Learning Outcomes",
-              "url": "https://openalex.org/W7169719389"
-            },
             {
               "title": "Innovative biotechnological approaches for enhancing the aromatic profile and longevity of Catarratto wine under sustainable winemaking strategies",
               "url": "https://openalex.org/W7167996551"
@@ -2021,52 +2017,43 @@
             {
               "title": "Development of biotechnological systems based on the application of oenological bio activators to enhance the cellular vitality and fermentative capacity of yeasts in the presence of stress factors",
               "url": "https://openalex.org/W7167994369"
+            },
+            {
+              "title": "Factors influencing fermentation efficiency and product quality: A comprehensive review",
+              "url": "https://openalex.org/W7116040632"
             }
           ]
         },
         "biochemistry": {
           "interestId": "biochemistry",
           "metrics": {
-            "current": 7,
-            "previous": 1107,
-            "delta": -1100,
-            "deltaPercent": -99
+            "current": 0,
+            "previous": 1063,
+            "delta": -1063,
+            "deltaPercent": -100
           },
-          "samples": [
-            {
-              "title": "Biochemistry A New Paradigm According to Quantum Mechanics",
-              "url": "https://openalex.org/W7169730356"
-            },
-            {
-              "title": "Biochemistry A New Paradigm According to Quantum Mechanics",
-              "url": "https://openalex.org/W7169715595"
-            },
-            {
-              "title": "A Self-Assembling Peptide Platform for Intratumoral Doxorubicin Delivery and Preliminary Immune-Related Modulation in B16-F10 Melanoma",
-              "url": "https://openalex.org/W7169723518"
-            }
-          ]
+          "samples": []
         },
         "life-sciences": {
           "interestId": "life-sciences",
           "metrics": {
-            "current": 77,
-            "previous": 9506,
-            "delta": -9429,
-            "deltaPercent": -99
+            "current": 7,
+            "previous": 9046,
+            "delta": -9039,
+            "deltaPercent": -100
           },
           "samples": [
             {
-              "title": "Action Plan for the Development of Citizen Science Report in the frame of Project Conservation of Natural Heritage for Life in Ukraine, acronym ConNaturLIFE Ukraine, (101148569 -LIFE23-PRE-CZ-ConNaturLIFE Ukraine)",
-              "url": "https://openalex.org/W7169728254"
+              "title": "Sensory evaluation methods in food science: Principles, applications, and recent advances",
+              "url": "https://openalex.org/W7116918476"
             },
             {
-              "title": "Correction: Inoculation of wheat with Azospirillum sp. bacteria and study of their germinated portions effects on common carp performance and health aspects",
-              "url": "https://openalex.org/W7166567133"
+              "title": "Sensory evaluation methods in food science: Principles, applications, and recent advances",
+              "url": "https://openalex.org/W7116923889"
             },
             {
-              "title": "Life-Space Mobility in Older Stroke Survivors: A Scoping Review",
-              "url": "https://openalex.org/W7169729092"
+              "title": "Potential microbial strains for organic fermented foods: Safety, functionality, and product quality",
+              "url": "https://openalex.org/W7116978556"
             }
           ]
         }
@@ -2075,7 +2062,7 @@
     "edgar": {
       "source": "edgar",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.441Z",
+      "fetchedAt": "2026-07-21T08:26:17.755Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -2358,7 +2345,7 @@
     "clinical-trials": {
       "source": "clinical-trials",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:08:31.441Z",
+      "fetchedAt": "2026-07-21T08:26:17.756Z",
       "interests": {
         "healthcare": {
           "interestId": "healthcare",

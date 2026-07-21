@@ -1,76 +1,146 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-19T08:31:09.238Z",
+  "generatedAt": "2026-07-21T08:30:33.655Z",
   "narratives": {
-    "biotechnology": {
-      "interestId": "biotechnology",
+    "energy": {
+      "interestId": "energy",
       "narrative": {
-        "title": "Gene Therapy",
-        "headline": "Gene therapy advances",
-        "summary": "Recent studies focus on genetic engineering and gene transfer techniques",
-        "brief": "Researchers explore new methods for gene therapy, including ex vivo mRNA-based gene transfer and genetic engineering of bioagents. These developments aim to improve disease control and cancer immunotherapy",
-        "forecast": "Watch for further advancements in gene therapy trials and their potential applications"
+        "title": "Energy Shift",
+        "headline": "Grids adopt onsite energy architectures",
+        "summary": "Researchers are developing frameworks for islanded operation of sustainable data centers with onsite grid-following and grid-forming energy architectures",
+        "brief": "Studies focus on optimal excitation storage and superradiant release in waveguide QED systems, and deep reinforcement learning-based energy management for hydrogen-enabled community microgrids. Companies like Green Rain Energy Holdings and POWERBANK Corp file reports with the SEC, indicating activity in the energy sector",
+        "forecast": "Watch for advancements in climate-resilient energy technologies and sustainable supply chain management"
       },
       "sources": [
         {
-          "label": "arXiv: Memory-Driven Self-Propulsion and Flocking of Chemically Active Droplets",
-          "url": "http://arxiv.org/abs/2607.14451v1"
+          "label": "arXiv: A Phased Development Framework Enabling Islanded Operation of Sustainable AI Data Centers With Onsite Grid-Following and Grid-Forming Energy Architectures",
+          "url": "http://arxiv.org/abs/2607.17391v1"
         },
         {
-          "label": "arXiv: Fundamental Relation between Conductance of Biomolecules and the Fukui Function",
-          "url": "http://arxiv.org/abs/2607.13309v1"
+          "label": "arXiv: Scaling law for optimal excitation storage and superradiant release in waveguide QED systems",
+          "url": "http://arxiv.org/abs/2607.17320v1"
         },
         {
-          "label": "arXiv: Learning Mechanistic Reasoning for Chemical Reactions with Large Language Models",
-          "url": "http://arxiv.org/abs/2607.12771v2"
+          "label": "arXiv: Deep Reinforcement Learning-Based Energy Management for Hydrogen-Enabled Community Microgrids Under Uncertainty",
+          "url": "http://arxiv.org/abs/2607.17248v1"
         },
         {
-          "label": "Wikipedia: Biotechnology — Wikipedia pageviews",
-          "url": "https://en.wikipedia.org/wiki/Biotechnology"
+          "label": "Wikipedia: Energy — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Renewable_energy"
         },
         {
-          "label": "Product Hunt: ProDentim",
-          "url": "https://www.producthunt.com/products/prodentim-8?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+          "label": "Product Hunt: EcoDiligence — Smart Compliance for SMEs",
+          "url": "https://www.producthunt.com/products/ecodiligence-smart-compliance-for-smes?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-19T08:31:00.184Z"
+      "generatedAt": "2026-07-21T08:30:09.902Z"
     },
-    "biochemistry": {
-      "interestId": "biochemistry",
+    "manufacturing": {
+      "interestId": "manufacturing",
       "narrative": {
-        "title": "Biochemistry Decline",
-        "headline": "Enzyme library enables selective hydroxylation",
-        "summary": "Recent studies focus on biocatalytic strategies and enzyme libraries for steroid synthesis and natural product development",
-        "brief": "Researchers are exploring biocatalytic approaches for steroid synthesis and natural product development, while also investigating post-transcriptional regulation in stochastic gene expression models. The use of enzyme libraries is being applied to enable selective hydroxylation of complex substrates",
-        "forecast": "Watch for further developments in biocatalytic strategies and enzyme library applications in biochemistry"
+        "title": "Manufacturing Decline",
+        "headline": "Manufacturing output falls",
+        "summary": "Recent developments in smart manufacturing and wireless localization have not halted the decline of manufacturing output",
+        "brief": "The Internet of Things and 5G technologies are being applied to improve manufacturing efficiency, while new products like ProtoFlow and FF FlashFish T2000 are being introduced. Despite these advancements, manufacturing output is still falling, as evidenced by updates from companies like FLEX LTD and LCI INDUSTRIES",
+        "forecast": "Watch for further updates from companies like Laser Photonics Corp to gauge the trajectory of manufacturing output"
       },
       "sources": [
         {
-          "label": "arXiv: Multimodal Semantic-Aware Contrastive Learning For False Negative Mitigation in 3D Medical Imaging",
-          "url": "http://arxiv.org/abs/2607.14995v1"
+          "label": "arXiv: The Internet of Things for Smart Manufacturing: A Review",
+          "url": "http://arxiv.org/abs/2607.16172v1"
         },
         {
-          "label": "arXiv: Memory-Driven Self-Propulsion and Flocking of Chemically Active Droplets",
-          "url": "http://arxiv.org/abs/2607.14451v1"
+          "label": "arXiv: Converging Safety and Security: IO-Link Wireless and OPC UA over 5G under prEN 50742",
+          "url": "http://arxiv.org/abs/2607.15840v1"
         },
         {
-          "label": "arXiv: Analyzing Post-transcriptional Regulation in Stochastic Gene Expression Models Using Partitioned Poisson Arrivals",
-          "url": "http://arxiv.org/abs/2607.14404v1"
+          "label": "arXiv: Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization",
+          "url": "http://arxiv.org/abs/2607.15713v1"
         },
         {
-          "label": "Wikipedia: Biochemistry — Wikipedia pageviews",
-          "url": "https://en.wikipedia.org/wiki/Biochemistry"
+          "label": "Wikipedia: Manufacturing — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Manufacturing"
         },
         {
-          "label": "Product Hunt: PatentSocial",
-          "url": "https://www.producthunt.com/products/patentsocial?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+          "label": "Product Hunt: ProtoFlow",
+          "url": "https://www.producthunt.com/products/protoflow-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-19T08:31:05.238Z"
+      "generatedAt": "2026-07-21T08:30:14.986Z"
+    },
+    "healthcare": {
+      "interestId": "healthcare",
+      "narrative": {
+        "title": "Healthcare Decline",
+        "headline": "Tumor spheroids growth modeled",
+        "summary": "A growth model for multicellular tumor spheroids has been developed, providing insights into cancer research",
+        "brief": "Researchers have made progress in understanding tumor growth and cardiac health, with studies on multicellular tumor spheroids and post-pacing cardiomyopathy published, while new healthcare products have been launched on Product Hunt. The efficacy and safety of a new oral small-molecule GLP-1 receptor agonist have been tested in a phase 2 trial for patients with diabetic kidney disease",
+        "forecast": "Watch for further developments in metabolic bariatric surgery trends and outcomes"
+      },
+      "sources": [
+        {
+          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
+          "url": "http://arxiv.org/abs/physics/0307155v1"
+        },
+        {
+          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
+          "url": "http://arxiv.org/abs/cond-mat/0307747v1"
+        },
+        {
+          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
+          "url": "http://arxiv.org/abs/physics/0307136v1"
+        },
+        {
+          "label": "Wikipedia: Healthcare — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Health_care"
+        },
+        {
+          "label": "Product Hunt: Wyser",
+          "url": "https://www.producthunt.com/products/wyser?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "model": "llama-3.3-70b-versatile",
+      "provider": "groq",
+      "generatedAt": "2026-07-21T08:30:19.881Z"
+    },
+    "commerce": {
+      "interestId": "commerce",
+      "narrative": {
+        "title": "E Commerce",
+        "headline": "E-commerce systems refine",
+        "summary": "Recent developments in e-commerce focus on refining recommendation strategies and search functions",
+        "brief": "Researchers introduce frameworks like SR-Agent for post-ranking strategies refinement, and Pailitao-MMSearch for multimodal search, while companies like Linkage Global Inc and Baosheng Media Group Holdings Ltd file reports with the SEC. New products such as KORB and attyrenow emerge on Product Hunt",
+        "forecast": "Watch for further innovations in e-commerce search and recommendation technologies"
+      },
+      "sources": [
+        {
+          "label": "arXiv: MEVION: Low-Cost Open-Source Data Collection System for Powerful and High-Speed Dual-Arm Manipulation",
+          "url": "http://arxiv.org/abs/2607.17970v1"
+        },
+        {
+          "label": "arXiv: SR-Agent: An Experience-Driven Agentic Framework for Post-Ranking Strategies Refinement in E-Commerce Recommendation",
+          "url": "http://arxiv.org/abs/2607.17719v1"
+        },
+        {
+          "label": "arXiv: Pailitao-MMSearch: Building Native E-Commerce Multimodal Search Foundation",
+          "url": "http://arxiv.org/abs/2607.17499v1"
+        },
+        {
+          "label": "Wikipedia: Commerce — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/E-commerce"
+        },
+        {
+          "label": "Product Hunt: KORB — Universal Smart Cart",
+          "url": "https://www.producthunt.com/products/korb-universal-smart-cart?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        }
+      ],
+      "model": "llama-3.3-70b-versatile",
+      "provider": "groq",
+      "generatedAt": "2026-07-21T08:30:29.655Z"
     }
   }
 }

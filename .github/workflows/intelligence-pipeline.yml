@@ -48,6 +48,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           PRODUCT_HUNT_TOKEN: ${{ secrets.PRODUCT_HUNT_TOKEN }}
           NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          # Optional — free key from patentsview.org/api. Unset → patents skipped.
+          PATENTSVIEW_API_KEY: ${{ secrets.PATENTSVIEW_API_KEY }}
         run: npm run pipeline:ingest
 
       - name: Synthesize editorial (optional; skipped if no LLM key)

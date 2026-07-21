@@ -1,7 +1,13 @@
 import { ingestArxiv } from "@/lib/pipeline/ingest/arxiv";
+import { ingestClinicalTrials } from "@/lib/pipeline/ingest/clinical-trials";
+import { ingestEdgar } from "@/lib/pipeline/ingest/edgar";
 import { ingestGdelt } from "@/lib/pipeline/ingest/gdelt";
 import { ingestGitHub } from "@/lib/pipeline/ingest/github";
 import { ingestHackerNews } from "@/lib/pipeline/ingest/hacker-news";
+import { ingestOpenAlex } from "@/lib/pipeline/ingest/openalex";
+// Patents collector is parked: PatentsView (search.patentsview.org) was retired
+// and folded into the USPTO Open Data Portal (api.uspto.gov). Re-wire once the
+// collector is rebuilt against the ODP Patent File Wrapper Search API.
 import { ingestProductHunt } from "@/lib/pipeline/ingest/product-hunt";
 import { ingestPubMed } from "@/lib/pipeline/ingest/pubmed";
 import { ingestWikimedia } from "@/lib/pipeline/ingest/wikimedia";
@@ -23,16 +29,29 @@ export async function runPipelineIngest(
   const period = formatBriefingPeriod();
   const periodLabel = formatBriefingLabel();
 
-  const [hackerNews, arxiv, wikimedia, github, productHunt, pubmed, gdelt] =
-    await Promise.all([
-      ingestHackerNews(),
-      ingestArxiv(),
-      ingestWikimedia(),
-      ingestGitHub(),
-      ingestProductHunt(),
-      ingestPubMed(),
-      ingestGdelt(),
-    ]);
+  const [
+    hackerNews,
+    arxiv,
+    wikimedia,
+    github,
+    productHunt,
+    pubmed,
+    gdelt,
+    openalex,
+    edgar,
+    clinicalTrials,
+  ] = await Promise.all([
+    ingestHackerNews(),
+    ingestArxiv(),
+    ingestWikimedia(),
+    ingestGitHub(),
+    ingestProductHunt(),
+    ingestPubMed(),
+    ingestGdelt(),
+    ingestOpenAlex(),
+    ingestEdgar(),
+    ingestClinicalTrials(),
+  ]);
 
   const sources = {
     "hacker-news": applyFallback(
@@ -48,6 +67,12 @@ export async function runPipelineIngest(
     ),
     pubmed: applyFallback(pubmed, options.previousBundle?.sources.pubmed),
     gdelt: applyFallback(gdelt, options.previousBundle?.sources.gdelt),
+    openalex: applyFallback(openalex, options.previousBundle?.sources.openalex),
+    edgar: applyFallback(edgar, options.previousBundle?.sources.edgar),
+    "clinical-trials": applyFallback(
+      clinicalTrials,
+      options.previousBundle?.sources["clinical-trials"]
+    ),
   };
 
   return {

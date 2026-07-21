@@ -1,5 +1,9 @@
 import type { InterestId } from "@/lib/types";
 
+// Re-exported so pipeline collectors can pull interest + source types from one
+// module.
+export type { InterestId } from "@/lib/types";
+
 export type PipelineSourceId =
   | "hacker-news"
   | "arxiv"
@@ -7,7 +11,11 @@ export type PipelineSourceId =
   | "github"
   | "product-hunt"
   | "pubmed"
-  | "gdelt";
+  | "gdelt"
+  | "openalex"
+  | "patents"
+  | "edgar"
+  | "clinical-trials";
 
 export type SourceHealth = "ok" | "stale" | "failed";
 

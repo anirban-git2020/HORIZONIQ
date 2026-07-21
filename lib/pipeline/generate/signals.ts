@@ -51,6 +51,10 @@ const SOURCE_TYPE: Record<PipelineSourceId, SourceType> = {
   "product-hunt": "product-hunt",
   pubmed: "research-paper",
   gdelt: "news",
+  openalex: "research-paper",
+  patents: "patent",
+  edgar: "news",
+  "clinical-trials": "research-paper",
 };
 
 const SOURCE_LABEL: Record<PipelineSourceId, string> = {
@@ -61,6 +65,10 @@ const SOURCE_LABEL: Record<PipelineSourceId, string> = {
   "product-hunt": "Product Launches",
   pubmed: "Medical Research",
   gdelt: "Global News",
+  openalex: "Academic Research",
+  patents: "Patent Filings",
+  edgar: "Corporate Filings",
+  "clinical-trials": "Clinical Trials",
 };
 
 /** Real evidence for an interest, from each healthy source's observation. */

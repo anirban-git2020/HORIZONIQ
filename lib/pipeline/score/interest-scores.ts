@@ -14,6 +14,10 @@ const SOURCE_LABELS: Record<PipelineSourceId, string> = {
   "product-hunt": "Product Hunt",
   pubmed: "PubMed",
   gdelt: "Global News (GDELT)",
+  openalex: "OpenAlex",
+  patents: "USPTO Patents",
+  edgar: "SEC Filings",
+  "clinical-trials": "ClinicalTrials.gov",
 };
 
 const SOURCE_WEIGHTS: Record<PipelineSourceId, number> = {
@@ -27,6 +31,12 @@ const SOURCE_WEIGHTS: Record<PipelineSourceId, number> = {
   // news attention rather than developer activity.
   pubmed: 0.3,
   gdelt: 0.2,
+  // Authority sources — government + academic. Weighted highly for the interests
+  // they cover, since they're harder-to-game than discussion or launch volume.
+  openalex: 0.28,
+  patents: 0.3,
+  edgar: 0.25,
+  "clinical-trials": 0.28,
 };
 
 type Direction = "rising" | "falling" | "stable";
@@ -66,6 +76,10 @@ function scoreInterest(
     "product-hunt",
     "pubmed",
     "gdelt",
+    "openalex",
+    "patents",
+    "edgar",
+    "clinical-trials",
   ];
 
   for (const sourceId of sources) {

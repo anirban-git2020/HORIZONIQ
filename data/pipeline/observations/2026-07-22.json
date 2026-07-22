@@ -1,13 +1,13 @@
 {
   "version": 1,
-  "ingestedAt": "2026-07-21T08:26:17.686Z",
+  "ingestedAt": "2026-07-22T08:27:01.642Z",
   "period": "2026-W30",
   "periodLabel": "Week of July 20, 2026 – July 26, 2026",
   "sources": {
     "hacker-news": {
       "source": "hacker-news",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.700Z",
+      "fetchedAt": "2026-07-22T08:27:01.657Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -19,14 +19,14 @@
           },
           "samples": [
             {
-              "title": "Who's afraid of Chinese models?",
-              "url": "https://stratechery.com/2026/whos-afraid-of-chinese-models/",
-              "score": 593
+              "title": "OpenAI and Hugging Face address security incident during model evaluation",
+              "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+              "score": 1082
             },
             {
-              "title": "Five US tech giants' hidden debts soar to $1.65T on opaque AI funding",
-              "url": "https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding",
-              "score": 251
+              "title": "Advertise in ChatGPT",
+              "url": "https://ads.openai.com/",
+              "score": 701
             }
           ]
         },
@@ -42,19 +42,24 @@
             {
               "title": "Xiaomi-Robotics-1",
               "url": "https://robotics.xiaomi.com/xiaomi-robotics-1.html",
-              "score": 477
+              "score": 512
             }
           ]
         },
         "quantum-computing": {
           "interestId": "quantum-computing",
           "metrics": {
-            "current": 1,
+            "current": 2,
             "previous": 0,
-            "delta": 1,
+            "delta": 2,
             "deltaPercent": null
           },
           "samples": [
+            {
+              "title": "Oratomic's $300M Bet on Low-Qubit Quantum Computing",
+              "url": "https://www.hpcwire.com/2026/07/21/oratomics-300m-bet-on-low-qubit-quantum-computing/",
+              "score": 2
+            },
             {
               "title": "Secure Quantum Computing / CE 395 / Spring 2026 / Northwestern University",
               "url": "https://www.youtube.com/playlist?list=PLWOUVwVosA-7aCa6SBXoM_m66WV-K_N0o",
@@ -70,7 +75,18 @@
             "delta": 0,
             "deltaPercent": null
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "OpenAI and Hugging Face address security incident during model evaluation",
+              "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+              "score": 1082
+            },
+            {
+              "title": "Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/",
+              "score": 679
+            }
+          ]
         },
         "cloud-computing": {
           "interestId": "cloud-computing",
@@ -80,7 +96,18 @@
             "delta": 0,
             "deltaPercent": null
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "Apple defeats liability for not scanning iCloud for CSAM",
+              "url": "https://blog.ericgoldman.org/archives/2026/07/apple-defeats-liability-for-not-scanning-icloud-for-csam-but-the-judge-was-not-pleased-amy-v-apple.htm",
+              "score": 406
+            },
+            {
+              "title": "Apple Private Cloud Compute SoC 3 audit reports",
+              "url": "https://support.apple.com/guide/certifications/apple-private-cloud-compute-soc-3-audit-apc95a31b9d8/web",
+              "score": 127
+            }
+          ]
         },
         "manufacturing": {
           "interestId": "manufacturing",
@@ -100,7 +127,13 @@
             "delta": 0,
             "deltaPercent": null
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "Intel Starts Shipping High-NA EUV Silicon",
+              "url": "https://morethanmoore.substack.com/p/intel-starts-shipping-high-na-euv",
+              "score": 48
+            }
+          ]
         },
         "healthcare": {
           "interestId": "healthcare",
@@ -166,9 +199,9 @@
           "interestId": "arts",
           "metrics": {
             "current": 0,
-            "previous": 0,
-            "delta": 0,
-            "deltaPercent": null
+            "previous": 1,
+            "delta": -1,
+            "deltaPercent": -100
           },
           "samples": []
         },
@@ -185,36 +218,36 @@
         "entrepreneurship": {
           "interestId": "entrepreneurship",
           "metrics": {
-            "current": 152,
-            "previous": 909,
-            "delta": -757,
-            "deltaPercent": -83
+            "current": 387,
+            "previous": 913,
+            "delta": -526,
+            "deltaPercent": -58
           },
           "samples": [
             {
               "title": "Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco",
               "url": "https://vincentwoo.com/3d/grace_cathedral/",
-              "score": 155
+              "score": 258
             },
             {
-              "title": "Show HN: Wheesper – Start an anonymous discussion with a link",
-              "url": "https://wheesper.com/",
-              "score": 34
+              "title": "Show HN: A self-running space economy SIM in Rust and Bevy",
+              "url": "https://github.com/Kalcode/spaceprojectsim",
+              "score": 101
             },
             {
-              "title": "Show HN: Ex Situ – Open-source spatial index of displaced cultural artifacts",
-              "url": "https://exsitu.app/map",
-              "score": 27
+              "title": "Show HN: Imagin Raw – A 9MB Open-Source Alternative to Adobe Bridge for Mac",
+              "url": "https://github.com/cristibaluta/Imagin-Raw",
+              "score": 61
             },
             {
-              "title": "Show HN: Ex Situ – Open-source spatial index of displaced cultural artifacts",
-              "url": "https://exsitu.app/map",
-              "score": 27
+              "title": "Show HN: ReadKinetic – a free, local-first speed reader for your own books",
+              "url": "https://www.readkinetic.com/app/",
+              "score": 49
             },
             {
-              "title": "Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco",
-              "url": "https://vincentwoo.com/3d/grace_cathedral/",
-              "score": 155
+              "title": "Show HN: A new kind of FPS aim trainer",
+              "url": "https://openaim.pramit.gg/",
+              "score": 30
             }
           ]
         },
@@ -230,12 +263,12 @@
             {
               "title": "Launch HN: Bloomy (YC S26) – AI-powered mastery learning for K-12",
               "url": "https://news.ycombinator.com/item?id=48981136",
-              "score": 85
+              "score": 97
             },
             {
               "title": "The Psychology of Software Teams",
               "url": "https://www.routledge.com/The-Psychology-of-Software-Teams/Hicks/p/book/9781032963389",
-              "score": 85
+              "score": 173
             }
           ]
         },
@@ -247,13 +280,7 @@
             "delta": 0,
             "deltaPercent": null
           },
-          "samples": [
-            {
-              "title": "Five US tech giants' hidden debts soar to $1.65T on opaque AI funding",
-              "url": "https://asia.nikkei.com/business/technology/five-us-tech-giants-hidden-debts-soar-to-1.65tn-on-opaque-ai-funding",
-              "score": 251
-            }
-          ]
+          "samples": []
         },
         "product-management": {
           "interestId": "product-management",
@@ -270,7 +297,7 @@
     "arxiv": {
       "source": "arxiv",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.751Z",
+      "fetchedAt": "2026-07-22T08:27:01.709Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -282,108 +309,108 @@
           },
           "samples": [
             {
-              "title": "The Many Senses of Visual Similarity: A Text-Prompted Image Perceptual Metric",
-              "url": "http://arxiv.org/abs/2607.18237v1"
+              "title": "Copy Less, Ground More: Overcoming Repetitive Copying in Long-Context Reasoning via Evidence-Aware Reinforcement Learning",
+              "url": "http://arxiv.org/abs/2607.19345v1"
             },
             {
-              "title": "Patch Policy: Efficient Embodied Control via Dense Visual Representations",
-              "url": "http://arxiv.org/abs/2607.18236v1"
+              "title": "Appearance Pointers -- Multimodal Region Control of Diffusion Transformers",
+              "url": "http://arxiv.org/abs/2607.19344v1"
             },
             {
-              "title": "Automated Discovery Has No Universally Superior Harness",
-              "url": "http://arxiv.org/abs/2607.18235v1"
+              "title": "CodeRescue: Budget-Calibrated Recovery Routing for Coding Agents",
+              "url": "http://arxiv.org/abs/2607.19338v1"
             }
           ]
         },
         "robotics": {
           "interestId": "robotics",
           "metrics": {
-            "current": 45,
-            "previous": 155,
-            "delta": -110,
-            "deltaPercent": -71
+            "current": 83,
+            "previous": 117,
+            "delta": -34,
+            "deltaPercent": -29
           },
           "samples": [
             {
-              "title": "Patch Policy: Efficient Embodied Control via Dense Visual Representations",
-              "url": "http://arxiv.org/abs/2607.18236v1"
+              "title": "Masked Visual Actions for Unified World Modeling",
+              "url": "http://arxiv.org/abs/2607.19343v1"
             },
             {
-              "title": "FM-VLA: Force-based Memory for Vision-Language-Action Models in Contact-Rich Manipulation",
-              "url": "http://arxiv.org/abs/2607.18231v1"
+              "title": "From Distances to Trajectories: Real-Time Signed Distance Function Mapping and Distance-Accelerated Motion Planning for UAVs",
+              "url": "http://arxiv.org/abs/2607.19306v1"
             },
             {
-              "title": "Optimization of sim-to-real transfer in the humanoid robot NICO",
-              "url": "http://arxiv.org/abs/2607.18210v1"
+              "title": "No Training, Better Flights: Test-Time Scaled VLMs for UAV Navigation",
+              "url": "http://arxiv.org/abs/2607.19288v1"
             }
           ]
         },
         "quantum-computing": {
           "interestId": "quantum-computing",
           "metrics": {
-            "current": 40,
-            "previous": 160,
-            "delta": -120,
-            "deltaPercent": -75
+            "current": 105,
+            "previous": 95,
+            "delta": 10,
+            "deltaPercent": 11
           },
           "samples": [
             {
-              "title": "Non-Abelian Gauge Field Mechanics",
-              "url": "http://arxiv.org/abs/2607.18215v1"
+              "title": "Quantum Synchronization",
+              "url": "http://arxiv.org/abs/2607.19328v1"
             },
             {
-              "title": "QuantiSpect: A Structure-Aware Lightweight 3D CNN Pre-Decoder for Scalable Surface Code Quantum Error Correction",
-              "url": "http://arxiv.org/abs/2607.18204v1"
+              "title": "Dark matter searches with a 13 meV threshold superconducting sensor array",
+              "url": "http://arxiv.org/abs/2607.19319v1"
             },
             {
-              "title": "Hardware Robustness of Sample-Based Quantum Diagonalization",
-              "url": "http://arxiv.org/abs/2607.18196v1"
+              "title": "SoK: Adversarial Robustness of the Variational Quantum Eigensolver via Red-Teaming",
+              "url": "http://arxiv.org/abs/2607.19318v1"
             }
           ]
         },
         "cybersecurity": {
           "interestId": "cybersecurity",
           "metrics": {
-            "current": 20,
-            "previous": 180,
-            "delta": -160,
-            "deltaPercent": -89
+            "current": 52,
+            "previous": 148,
+            "delta": -96,
+            "deltaPercent": -65
           },
           "samples": [
             {
-              "title": "Hardware Robustness of Sample-Based Quantum Diagonalization",
-              "url": "http://arxiv.org/abs/2607.18196v1"
+              "title": "ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&amp;D",
+              "url": "http://arxiv.org/abs/2607.19321v1"
             },
             {
-              "title": "RRAM-DP: Device-Calibrated Differential Privacy for In-Memory Edge Learning",
-              "url": "http://arxiv.org/abs/2607.18169v1"
+              "title": "SoK: Adversarial Robustness of the Variational Quantum Eigensolver via Red-Teaming",
+              "url": "http://arxiv.org/abs/2607.19318v1"
             },
             {
-              "title": "CutBackdoor: A Circuit Cut Triggered Backdoor Attack on Variational Quantum Algorithms",
-              "url": "http://arxiv.org/abs/2607.18126v1"
+              "title": "They'll Verify. They Just Won't Act. How Authority Framing and Laundered Code Turn a Trusted Agentic CI/CD Pipeline Into an Attack Surface",
+              "url": "http://arxiv.org/abs/2607.19267v1"
             }
           ]
         },
         "cloud-computing": {
           "interestId": "cloud-computing",
           "metrics": {
-            "current": 9,
+            "current": 22,
             "previous": 71,
-            "delta": -62,
-            "deltaPercent": -87
+            "delta": -49,
+            "deltaPercent": -69
           },
           "samples": [
             {
-              "title": "uSTM: A Lightweight and Efficient STM Supporting General Types and Deferred Aborts",
-              "url": "http://arxiv.org/abs/2607.18178v1"
+              "title": "Keeping the Cache Warm Pays: Keepalive Economics for Agentic Workloads",
+              "url": "http://arxiv.org/abs/2607.19214v1"
             },
             {
-              "title": "HyMCache: A KV Cache Framework for Multi-Turn LLM Serving with CXL-Hybrid Memory",
-              "url": "http://arxiv.org/abs/2607.18141v1"
+              "title": "ARBITER: Guarded Agentic Control for SLO-Oriented Kubernetes Remediation",
+              "url": "http://arxiv.org/abs/2607.19182v1"
             },
             {
-              "title": "ExpertPlex: A High-Goodput Disaggregated Serving System for MoE LLMs with Adaptive Persistent Kernels",
-              "url": "http://arxiv.org/abs/2607.18002v1"
+              "title": "Coherence in Control: Bridging Many-Core Mapping and Routing through Cost Unification",
+              "url": "http://arxiv.org/abs/2607.19158v1"
             }
           ]
         },
@@ -413,23 +440,23 @@
         "supply-chain": {
           "interestId": "supply-chain",
           "metrics": {
-            "current": 5,
+            "current": 9,
             "previous": 16,
-            "delta": -11,
-            "deltaPercent": -69
+            "delta": -7,
+            "deltaPercent": -44
           },
           "samples": [
             {
-              "title": "An approach to systemic risks of AI through the lens of emergence, collective action problems, and externalities",
-              "url": "http://arxiv.org/abs/2607.18170v1"
+              "title": "Computing on the Fly: Navigating a Vision for the Future of Drone Computing",
+              "url": "http://arxiv.org/abs/2607.19213v1"
             },
             {
-              "title": "CutBackdoor: A Circuit Cut Triggered Backdoor Attack on Variational Quantum Algorithms",
-              "url": "http://arxiv.org/abs/2607.18126v1"
+              "title": "Delineate Anything v2: A Global Foundation Model for Field Delineation",
+              "url": "http://arxiv.org/abs/2607.19069v1"
             },
             {
-              "title": "Modeling rare-earth and energy materials supply chains under theoretical China-outer-Mongolia political reunification scenarios",
-              "url": "http://arxiv.org/abs/2607.18019v1"
+              "title": "When Does Machine Learning Beat Value Sorting? A Three-Dataset Diagnostic of Exposure-Weighted Shipment Prioritization",
+              "url": "http://arxiv.org/abs/2607.18573v1"
             }
           ]
         },
@@ -469,69 +496,69 @@
         "energy": {
           "interestId": "energy",
           "metrics": {
-            "current": 0,
+            "current": 4,
             "previous": 16,
-            "delta": -16,
-            "deltaPercent": -100
+            "delta": -12,
+            "deltaPercent": -75
           },
           "samples": [
             {
-              "title": "A Phased Development Framework Enabling Islanded Operation of Sustainable AI Data Centers With Onsite Grid-Following and Grid-Forming Energy Architectures",
-              "url": "http://arxiv.org/abs/2607.17391v1"
+              "title": "Free-form diamond refractive optics enable efficient high-energy X-ray nano-imaging",
+              "url": "http://arxiv.org/abs/2607.19019v1"
             },
             {
-              "title": "Scaling law for optimal excitation storage and superradiant release in waveguide QED systems",
-              "url": "http://arxiv.org/abs/2607.17320v1"
+              "title": "Forecast-Assisted Deep Reinforcement Learning for Energy Management of Hydrogen-Enabled Community Microgrids",
+              "url": "http://arxiv.org/abs/2607.18903v1"
             },
             {
-              "title": "Deep Reinforcement Learning-Based Energy Management for Hydrogen-Enabled Community Microgrids Under Uncertainty",
-              "url": "http://arxiv.org/abs/2607.17248v1"
+              "title": "Regime-Aware Physics-Guided Early Warning of Lithium-Ion Battery Thermal Runaway Using Thermo-Mechanical Signals",
+              "url": "http://arxiv.org/abs/2607.18860v1"
             }
           ]
         },
         "biotechnology": {
           "interestId": "biotechnology",
           "metrics": {
-            "current": 1,
+            "current": 3,
             "previous": 7,
-            "delta": -6,
-            "deltaPercent": -86
+            "delta": -4,
+            "deltaPercent": -57
           },
           "samples": [
             {
+              "title": "GEqTrain: A Configuration-Driven Framework for Retargeting Equivariant Graph Neural Networks Across 3D Scientific Tasks",
+              "url": "http://arxiv.org/abs/2607.19083v1"
+            },
+            {
+              "title": "Engineering T7 RNA Polymerase for High-Purity In Vitro Transcription",
+              "url": "http://arxiv.org/abs/2607.18468v1"
+            },
+            {
               "title": "The energy landscape of DNA-binding proteins along the genome",
               "url": "http://arxiv.org/abs/2607.17753v1"
-            },
-            {
-              "title": "Network Characteristics of Individual Pigments in Cyanobacterial Photosystem II Core Complexes",
-              "url": "http://arxiv.org/abs/2607.17096v1"
-            },
-            {
-              "title": "Neural spectroscopy of AlphaFold2 reveals encoded protein conformational landscapes",
-              "url": "http://arxiv.org/abs/2607.16087v1"
             }
           ]
         },
         "biochemistry": {
           "interestId": "biochemistry",
           "metrics": {
-            "current": 3,
+            "current": 8,
             "previous": 19,
-            "delta": -16,
-            "deltaPercent": -84
+            "delta": -11,
+            "deltaPercent": -58
           },
           "samples": [
             {
-              "title": "The energy landscape of DNA-binding proteins along the genome",
-              "url": "http://arxiv.org/abs/2607.17753v1"
+              "title": "An unsupervised clustering analysis of breast cancer data derived from electronic health records enhanced through UMAP dimensionality reduction",
+              "url": "http://arxiv.org/abs/2607.19089v1"
             },
             {
-              "title": "Graph-Induced Tensor Liftings for Networked SEIR Models: Dimensional Reduction and Residual Analysis",
-              "url": "http://arxiv.org/abs/2607.17664v1"
+              "title": "GEqTrain: A Configuration-Driven Framework for Retargeting Equivariant Graph Neural Networks Across 3D Scientific Tasks",
+              "url": "http://arxiv.org/abs/2607.19083v1"
             },
             {
-              "title": "Direct Clinical Joint Angle Extraction from Parametric Body Model Rotation Matrices",
-              "url": "http://arxiv.org/abs/2607.17639v1"
+              "title": "Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval",
+              "url": "http://arxiv.org/abs/2607.19020v1"
             }
           ]
         },
@@ -584,23 +611,23 @@
         "commerce": {
           "interestId": "commerce",
           "metrics": {
-            "current": 3,
+            "current": 5,
             "previous": 13,
-            "delta": -10,
-            "deltaPercent": -77
+            "delta": -8,
+            "deltaPercent": -62
           },
           "samples": [
             {
+              "title": "TSGR: Taobao Search Generative Retrieval",
+              "url": "http://arxiv.org/abs/2607.18796v1"
+            },
+            {
+              "title": "When Does Machine Learning Beat Value Sorting? A Three-Dataset Diagnostic of Exposure-Weighted Shipment Prioritization",
+              "url": "http://arxiv.org/abs/2607.18573v1"
+            },
+            {
               "title": "MEVION: Low-Cost Open-Source Data Collection System for Powerful and High-Speed Dual-Arm Manipulation",
               "url": "http://arxiv.org/abs/2607.17970v1"
-            },
-            {
-              "title": "SR-Agent: An Experience-Driven Agentic Framework for Post-Ranking Strategies Refinement in E-Commerce Recommendation",
-              "url": "http://arxiv.org/abs/2607.17719v1"
-            },
-            {
-              "title": "Pailitao-MMSearch: Building Native E-Commerce Multimodal Search Foundation",
-              "url": "http://arxiv.org/abs/2607.17499v1"
             }
           ]
         },
@@ -701,7 +728,7 @@
     "wikimedia": {
       "source": "wikimedia",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.752Z",
+      "fetchedAt": "2026-07-22T08:27:01.709Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -1012,7 +1039,7 @@
     "github": {
       "source": "github",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.754Z",
+      "fetchedAt": "2026-07-22T08:27:01.712Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
@@ -1167,36 +1194,42 @@
         "entrepreneurship": {
           "interestId": "entrepreneurship",
           "metrics": {
-            "current": 0,
+            "current": 1,
             "previous": 1,
-            "delta": -1,
-            "deltaPercent": -100
+            "delta": 0,
+            "deltaPercent": 0
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "evalops/orbit-agent",
+              "url": "https://github.com/evalops/orbit-agent",
+              "score": 23
+            }
+          ]
         },
         "startups": {
           "interestId": "startups",
           "metrics": {
-            "current": 7,
-            "previous": 11,
-            "delta": -4,
-            "deltaPercent": -36
+            "current": 10,
+            "previous": 8,
+            "delta": 2,
+            "deltaPercent": 25
           },
           "samples": [
             {
+              "title": "bahmutov/start-server-and-test",
+              "url": "https://github.com/bahmutov/start-server-and-test",
+              "score": 1579
+            },
+            {
               "title": "macro-inc/macro",
               "url": "https://github.com/macro-inc/macro",
-              "score": 564
+              "score": 576
             },
             {
               "title": "carta/plugins",
               "url": "https://github.com/carta/plugins",
               "score": 11
-            },
-            {
-              "title": "jplock/awesome-fintech",
-              "url": "https://github.com/jplock/awesome-fintech",
-              "score": 107
             }
           ]
         },
@@ -1225,41 +1258,41 @@
     "product-hunt": {
       "source": "product-hunt",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.755Z",
+      "fetchedAt": "2026-07-22T08:27:01.712Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
           "metrics": {
-            "current": 526,
+            "current": 797,
             "previous": 1461,
-            "delta": -935,
-            "deltaPercent": -64
+            "delta": -664,
+            "deltaPercent": -45
           },
           "samples": [
             {
               "title": "Fuzzy AI",
               "url": "https://www.producthunt.com/products/fuzzy-ai-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 647
+              "score": 623
+            },
+            {
+              "title": "Lev8",
+              "url": "https://www.producthunt.com/products/lev8?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 547
             },
             {
               "title": "Nautis",
               "url": "https://www.producthunt.com/products/nautis?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 508
+              "score": 493
             },
             {
               "title": "Loova Ads Studio",
               "url": "https://www.producthunt.com/products/loova-agents?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 480
+              "score": 488
             },
             {
-              "title": "Replay QA",
-              "url": "https://www.producthunt.com/products/replayio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 403
-            },
-            {
-              "title": "Skippr AI",
-              "url": "https://www.producthunt.com/products/skippr-3?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 339
+              "title": "CartAI",
+              "url": "https://www.producthunt.com/products/cartai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 438
             }
           ]
         },
@@ -1296,57 +1329,57 @@
         "cloud-computing": {
           "interestId": "cloud-computing",
           "metrics": {
-            "current": 299,
+            "current": 456,
             "previous": 777,
-            "delta": -478,
-            "deltaPercent": -62
+            "delta": -321,
+            "deltaPercent": -41
           },
           "samples": [
             {
-              "title": "Replay QA",
-              "url": "https://www.producthunt.com/products/replayio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 403
-            },
-            {
-              "title": "Kogvio",
-              "url": "https://www.producthunt.com/products/kogvio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 133
-            },
-            {
               "title": "CartAI",
               "url": "https://www.producthunt.com/products/cartai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 438
             },
             {
-              "title": "CaptureKit",
-              "url": "https://www.producthunt.com/products/capturekit-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 117
+              "title": "Replay QA",
+              "url": "https://www.producthunt.com/products/replayio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 424
             },
             {
-              "title": "Free AI Tools",
-              "url": "https://www.producthunt.com/products/free-ai-tools-4?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 111
+              "title": "ditto.site",
+              "url": "https://www.producthunt.com/products/ditto-site?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 418
+            },
+            {
+              "title": "Phantomstory",
+              "url": "https://www.producthunt.com/products/phantomstory?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 245
+            },
+            {
+              "title": "CreateOS Sandbox",
+              "url": "https://www.producthunt.com/products/createos-sandbox?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 178
             }
           ]
         },
         "manufacturing": {
           "interestId": "manufacturing",
           "metrics": {
-            "current": 5,
+            "current": 11,
             "previous": 21,
-            "delta": -16,
-            "deltaPercent": -76
+            "delta": -10,
+            "deltaPercent": -48
           },
           "samples": [
             {
               "title": "ProtoFlow",
               "url": "https://www.producthunt.com/products/protoflow-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 119
             },
             {
-              "title": "FF FlashFish T2000",
-              "url": "https://www.producthunt.com/products/ff-flashfish-t2000?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 9
+              "title": "Light Flip ",
+              "url": "https://www.producthunt.com/products/light-phone?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
             },
             {
               "title": "CirqTap",
@@ -1354,107 +1387,102 @@
               "score": 9
             },
             {
-              "title": "RGB Critter BT",
-              "url": "https://www.producthunt.com/products/rgb-critter-bt?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "title": "FF FlashFish T2000",
+              "url": "https://www.producthunt.com/products/ff-flashfish-t2000?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 9
             },
             {
-              "title": "PickTheRobot",
-              "url": "https://www.producthunt.com/products/picktherobot?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "title": "RGB Critter BT",
+              "url": "https://www.producthunt.com/products/rgb-critter-bt?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 6
             }
           ]
         },
         "supply-chain": {
           "interestId": "supply-chain",
           "metrics": {
-            "current": 532,
+            "current": 789,
             "previous": 1483,
-            "delta": -951,
-            "deltaPercent": -64
+            "delta": -694,
+            "deltaPercent": -47
           },
           "samples": [
             {
               "title": "Nautis",
               "url": "https://www.producthunt.com/products/nautis?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 508
+              "score": 493
+            },
+            {
+              "title": "Routine AI",
+              "url": "https://www.producthunt.com/products/routine?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 238
+            },
+            {
+              "title": "Jockey by TwelveLabs ",
+              "url": "https://www.producthunt.com/products/twelvelabs?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 206
             },
             {
               "title": "Creed",
               "url": "https://www.producthunt.com/products/creed-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 162
+              "score": 164
             },
             {
               "title": "Backdrop",
               "url": "https://www.producthunt.com/products/backdrop?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 155
-            },
-            {
-              "title": "Lunen.ai",
-              "url": "https://www.producthunt.com/products/lunen-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 122
-            },
-            {
-              "title": "CaptureKit",
-              "url": "https://www.producthunt.com/products/capturekit-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 117
+              "score": 158
             }
           ]
         },
         "healthcare": {
           "interestId": "healthcare",
           "metrics": {
-            "current": 94,
+            "current": 147,
             "previous": 264,
-            "delta": -170,
-            "deltaPercent": -64
+            "delta": -117,
+            "deltaPercent": -44
           },
           "samples": [
             {
+              "title": "Garmin CIRQA™ Smart Band",
+              "url": "https://www.producthunt.com/products/garmin-cirqa-smart-band?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
+            },
+            {
+              "title": "UltraPod",
+              "url": "https://www.producthunt.com/products/ultrapod?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
+            },
+            {
               "title": "Wyser",
               "url": "https://www.producthunt.com/products/wyser?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 28
+              "score": 30
+            },
+            {
+              "title": "Nervana",
+              "url": "https://www.producthunt.com/products/nervana-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 20
             },
             {
               "title": "Pawzy",
               "url": "https://www.producthunt.com/products/pawzy-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 18
-            },
-            {
-              "title": "Tiro",
-              "url": "https://www.producthunt.com/products/tiro-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 16
-            },
-            {
-              "title": "Good Day Recipe",
-              "url": "https://www.producthunt.com/products/good-day-recipe?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 14
-            },
-            {
-              "title": "Unbothered - Daily Quotes",
-              "url": "https://www.producthunt.com/products/unbothered-daily-quotes?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 12
+              "score": 19
             }
           ]
         },
         "finance": {
           "interestId": "finance",
           "metrics": {
-            "current": 62,
+            "current": 110,
             "previous": 209,
-            "delta": -147,
-            "deltaPercent": -70
+            "delta": -99,
+            "deltaPercent": -47
           },
           "samples": [
             {
               "title": "Rex",
               "url": "https://www.producthunt.com/products/rex-7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 106
-            },
-            {
-              "title": "KORB — Universal Smart Cart",
-              "url": "https://www.producthunt.com/products/korb-universal-smart-cart?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 16
+              "score": 108
             },
             {
               "title": "paycalceu",
@@ -1462,14 +1490,19 @@
               "score": 15
             },
             {
+              "title": "Claimwise — find unclaimed money",
+              "url": "https://www.producthunt.com/products/claimwise-find-unclaimed-money?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 14
+            },
+            {
               "title": "CoinMind",
               "url": "https://www.producthunt.com/products/coinmind?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 14
             },
             {
-              "title": "Claimwise — find unclaimed money",
-              "url": "https://www.producthunt.com/products/claimwise-find-unclaimed-money?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 14
+              "title": "Igdrasil",
+              "url": "https://www.producthunt.com/products/igdrasil?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 13
             }
           ]
         },
@@ -1490,7 +1523,7 @@
             {
               "title": "Verified Lab Testing Marketplace",
               "url": "https://www.producthunt.com/products/verified-lab-testing-marketplace?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 3
             }
           ]
         },
@@ -1506,7 +1539,7 @@
             {
               "title": "SelfAssay",
               "url": "https://www.producthunt.com/products/selfassay?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 9
             }
           ]
         },
@@ -1522,7 +1555,7 @@
             {
               "title": "SciSuite",
               "url": "https://www.producthunt.com/products/scisuite-science-should-be-sweet?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 10
             }
           ]
         },
@@ -1538,7 +1571,7 @@
             {
               "title": "SciSuite",
               "url": "https://www.producthunt.com/products/scisuite-science-should-be-sweet?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 10
             }
           ]
         },
@@ -1554,23 +1587,23 @@
             {
               "title": "GitHub",
               "url": "https://www.producthunt.com/products/github-446?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 4
             }
           ]
         },
         "commerce": {
           "interestId": "commerce",
           "metrics": {
-            "current": 59,
+            "current": 97,
             "previous": 181,
-            "delta": -122,
-            "deltaPercent": -67
+            "delta": -84,
+            "deltaPercent": -46
           },
           "samples": [
             {
-              "title": "KORB — Universal Smart Cart",
-              "url": "https://www.producthunt.com/products/korb-universal-smart-cart?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 16
+              "title": "Votive · Free E-commerce Template",
+              "url": "https://www.producthunt.com/products/framer?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 37
             },
             {
               "title": "AI Product Page Optimization",
@@ -1583,13 +1616,13 @@
               "score": 12
             },
             {
-              "title": "SellPilot AI",
-              "url": "https://www.producthunt.com/products/sellpilot-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "RELEASE STOCK",
+              "url": "https://www.producthunt.com/products/release-stock?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 12
             },
             {
-              "title": "RELEASE STOCK",
-              "url": "https://www.producthunt.com/products/release-stock?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "title": "SellPilot AI",
+              "url": "https://www.producthunt.com/products/sellpilot-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
               "score": 12
             }
           ]
@@ -1626,43 +1659,43 @@
             {
               "title": "Boundeal VDR",
               "url": "https://www.producthunt.com/products/boundeal-vdr?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 0
+              "score": 10
             }
           ]
         },
         "product-management": {
           "interestId": "product-management",
           "metrics": {
-            "current": 532,
+            "current": 789,
             "previous": 1483,
-            "delta": -951,
-            "deltaPercent": -64
+            "delta": -694,
+            "deltaPercent": -47
           },
           "samples": [
             {
               "title": "Nautis",
               "url": "https://www.producthunt.com/products/nautis?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 508
+              "score": 493
+            },
+            {
+              "title": "Routine AI",
+              "url": "https://www.producthunt.com/products/routine?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 238
+            },
+            {
+              "title": "Jockey by TwelveLabs ",
+              "url": "https://www.producthunt.com/products/twelvelabs?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 206
             },
             {
               "title": "Creed",
               "url": "https://www.producthunt.com/products/creed-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 162
+              "score": 164
             },
             {
               "title": "Backdrop",
               "url": "https://www.producthunt.com/products/backdrop?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 155
-            },
-            {
-              "title": "Lunen.ai",
-              "url": "https://www.producthunt.com/products/lunen-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 122
-            },
-            {
-              "title": "CaptureKit",
-              "url": "https://www.producthunt.com/products/capturekit-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
-              "score": 117
+              "score": 158
             }
           ]
         }
@@ -1671,7 +1704,7 @@
     "pubmed": {
       "source": "pubmed",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.755Z",
+      "fetchedAt": "2026-07-22T08:27:01.712Z",
       "interests": {
         "healthcare": {
           "interestId": "healthcare",
@@ -1769,40 +1802,50 @@
     },
     "gdelt": {
       "source": "gdelt",
-      "status": "failed",
-      "fetchedAt": "2026-07-21T08:26:17.755Z",
-      "error": "HTTP 429 for https://api.gdeltproject.org/api/v2/doc/doc?query=(%22renewable%20energy%22%20OR%20%22grid%20storage%22%20OR%20%22energy%20transition%22)&mode=timelinevolraw&format=json&startdatetime=20260713000000&enddatetime=20260726235959",
+      "status": "stale",
+      "fetchedAt": "2026-07-22T08:27:01.712Z",
+      "error": "fetch failed",
       "interests": {
         "arts": {
           "interestId": "arts",
           "metrics": {
-            "current": 28,
+            "current": 53,
             "previous": 238,
-            "delta": -210,
-            "deltaPercent": -88
+            "delta": -185,
+            "deltaPercent": -78
           },
           "samples": [
             {
-              "title": "Leandro Trossard ýn dn gecesinde baþka bir damat normal mi ? - Alen Markaryan",
-              "url": "https://www.aksam.com.tr/yazarlar/alen-markaryan/leandro-trossardin-dugun-gecesinde-baska-bir-damat-normal-mi/haber-1684257"
+              "title": "Buttaface Meaning : The Evolution Of Internet Slang And The Rise Of Faceless Digital Trends",
+              "url": "https://www.unitaid.eu/slang-rise-faceless-digital-trends-esy7.html"
             },
             {
-              "title": "New exhibition at Coreset in Newark opened by Lord Lieutenant Veronica Pickering and united kingdom first black MP Dianne Abbott",
-              "url": "https://www.newarkadvertiser.co.uk/news/inspiring-women-formally-open-art-exhibition-celebrating-cul-9474908/"
+              "title": "Oz Comic - Con brings Brisbane - born Miranda Otto home , with the voices behind Genshin Impact , Demon Slayer and an Australian - made YouTube hit",
+              "url": "https://itwire.com/your-it-news/entertainment/oz-comic-con-brings-brisbane-born-miranda-otto-home-with-the-voices-behind-genshin-impact-demon-slayer-and-an-australian-made-youtube-hit"
             },
             {
-              "title": "Voting begins for Indiana Ultimate Farmers Market Challenge – Inside INdiana Business",
-              "url": "https://www.insideindianabusiness.com/articles/voting-begins-for-indianas-ultimate-farmers-market-challenge"
+              "title": "مقالة : مهرجان جرش بالأردن ينبض بالتراث الثقافي الصيني",
+              "url": "http://arabic.people.com.cn/n3/2026/0722/c31660-20480426.html"
             }
           ]
         },
-        "supply-chain": {
-          "interestId": "supply-chain",
+        "commerce": {
+          "interestId": "commerce",
           "metrics": {
-            "current": 1881,
-            "previous": 8604,
-            "delta": -6723,
-            "deltaPercent": -78
+            "current": 52,
+            "previous": 190,
+            "delta": -138,
+            "deltaPercent": -73
+          },
+          "samples": []
+        },
+        "venture-capital": {
+          "interestId": "venture-capital",
+          "metrics": {
+            "current": 408,
+            "previous": 886,
+            "delta": -478,
+            "deltaPercent": -54
           },
           "samples": []
         }
@@ -1811,249 +1854,304 @@
     "openalex": {
       "source": "openalex",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.755Z",
+      "fetchedAt": "2026-07-22T08:27:01.713Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
           "metrics": {
-            "current": 20,
-            "previous": 10808,
-            "delta": -10788,
-            "deltaPercent": -100
+            "current": 1020,
+            "previous": 11219,
+            "delta": -10199,
+            "deltaPercent": -91
           },
           "samples": [
             {
-              "title": "Integrasi Artificial Intelligence dalam Pembelajaran STEM: Praktik Pedagogis, Hasil Belajar, dan Tantangan",
-              "url": "https://openalex.org/W7169723060"
+              "title": "Legal analytics and artificial intelligence",
+              "url": "https://openalex.org/W7169782131"
             },
             {
-              "title": "Artificial intelligence in the English classroom: EFL teachers’ opportunities, challenges, and readiness for AI integration",
-              "url": "https://openalex.org/W7169729528"
+              "title": "WHY ARTIFICIAL INTELLIGENCE? BECAUSE ARTIFICIAL!",
+              "url": "https://openalex.org/W7169776670"
             },
             {
-              "title": "ANALISIS PEMANFAATAN ARTIFICIAL INTELLIGENCE (AI) DALAM EFISIENSI PEMBUATAN KONTEN DIGITAL PADA APLIKASI TIKTOK",
-              "url": "https://openalex.org/W7169728190"
+              "title": "WHY ARTIFICIAL INTELLIGENCE? BECAUSE ARTIFICIAL!",
+              "url": "https://openalex.org/W7169797256"
             }
           ]
         },
         "robotics": {
           "interestId": "robotics",
           "metrics": {
-            "current": 9,
-            "previous": 2881,
-            "delta": -2872,
-            "deltaPercent": -100
+            "current": 288,
+            "previous": 3032,
+            "delta": -2744,
+            "deltaPercent": -91
           },
           "samples": [
             {
+              "title": "Anthropomorphic Dummy Robot for the Wearable Robot Performance Evaluation",
+              "url": "https://openalex.org/W7169811139"
+            },
+            {
+              "title": "Do Robots Really Need Anthropomorphic Hands? A Comparison of Human and Robotic Hands",
+              "url": "https://openalex.org/W7169795018"
+            },
+            {
               "title": "Tactile sensors for robot bodies",
               "url": "https://openalex.org/W7167861761"
-            },
-            {
-              "title": "Improving Indoor Cellular Coverage Mapping using a Mobile Robot",
-              "url": "https://openalex.org/W7167304599"
-            },
-            {
-              "title": "Compressive capacity of concrete dry joints across shotcrete, extrusion, and particle-bed additive manufacturing with robotic subtractive finishing",
-              "url": "https://openalex.org/W7169721170"
             }
           ]
         },
         "quantum-computing": {
           "interestId": "quantum-computing",
           "metrics": {
-            "current": 3,
-            "previous": 2005,
-            "delta": -2002,
-            "deltaPercent": -100
+            "current": 90,
+            "previous": 2061,
+            "delta": -1971,
+            "deltaPercent": -96
           },
           "samples": [
             {
-              "title": "Angular Momentum Structure of Higher‑Winding Vortex Zero Modes and Fermion Localisation in Randall–Sundrum Geometry",
-              "url": "https://openalex.org/W7169716018"
+              "title": "The Five-Year Horizon: Quantum Computing and the Philosophy of Technical Becoming",
+              "url": "https://openalex.org/W7169797388"
             },
             {
-              "title": "Angular Momentum Structure of Higher‑Winding Vortex Zero Modes and Fermion Localisation in Randall–Sundrum Geometry",
-              "url": "https://openalex.org/W7169711941"
+              "title": "Non-Abelian Anyon Fusion Mirrors Braid Groups for Fault-Tolerant Quantum Computing — E8 Intelligence Research",
+              "url": "https://openalex.org/W7169752323"
             },
             {
-              "title": "Thermodynamics not Information and Computation defeats Maxwell's Demon",
-              "url": "https://openalex.org/W7168445559"
+              "title": "Non-Abelian Anyon Fusion Mirrors Braid Groups for Fault-Tolerant Quantum Computing — E8 Intelligence Research",
+              "url": "https://openalex.org/W7169753813"
             }
           ]
         },
         "cybersecurity": {
           "interestId": "cybersecurity",
           "metrics": {
-            "current": 1,
-            "previous": 998,
-            "delta": -997,
-            "deltaPercent": -100
+            "current": 83,
+            "previous": 1041,
+            "delta": -958,
+            "deltaPercent": -92
           },
           "samples": [
             {
+              "title": "The Cybersecurity Compass Framework",
+              "url": "https://openalex.org/W7169755052"
+            },
+            {
               "title": "Toward a behavioral ontology for cybersecurity: Introducing SebDB",
               "url": "https://openalex.org/W7130489205"
+            },
+            {
+              "title": "A Scenario-Based Experimental Design for Cybersecurity Curriculum Implementation",
+              "url": "https://openalex.org/W7169809523"
             }
           ]
         },
         "cloud-computing": {
           "interestId": "cloud-computing",
           "metrics": {
-            "current": 0,
-            "previous": 1850,
-            "delta": -1850,
-            "deltaPercent": -100
+            "current": 107,
+            "previous": 1950,
+            "delta": -1843,
+            "deltaPercent": -95
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "Cloud Computing and Artificial Intelligence in Modern IT Infrastructure: A Review of Opportunities, Operational Applications, and Challenges",
+              "url": "https://openalex.org/W7169792865"
+            },
+            {
+              "title": "Cloud Computing and Artificial Intelligence in Modern IT Infrastructure: A Review of Opportunities, Operational Applications, and Challenges",
+              "url": "https://openalex.org/W7169755329"
+            },
+            {
+              "title": "Strategies for Multidisciplinary Workflow Scheduling and Resource Management in Cloud Computing",
+              "url": "https://openalex.org/W7169800761"
+            }
+          ]
         },
         "manufacturing": {
           "interestId": "manufacturing",
           "metrics": {
-            "current": 0,
-            "previous": 1797,
-            "delta": -1797,
-            "deltaPercent": -100
+            "current": 70,
+            "previous": 1911,
+            "delta": -1841,
+            "deltaPercent": -96
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "Ceramic and Glass Material Coatings: Advances in Raw Materials, Processing, Functional Performance, and Sustainability",
+              "url": "https://openalex.org/W7169811371"
+            },
+            {
+              "title": "Polyhydroxybutyrate (PHB): Production, Properties, Modification Strategies, Additive Manufacturing, Biodegradation, and Applications",
+              "url": "https://openalex.org/W7169765530"
+            },
+            {
+              "title": "Machine learning-driven characterization of anisotropic microstructures in powder-based additive manufactured metal parts",
+              "url": "https://openalex.org/W7169769503"
+            }
+          ]
         },
         "supply-chain": {
           "interestId": "supply-chain",
           "metrics": {
-            "current": 7,
-            "previous": 3270,
-            "delta": -3263,
-            "deltaPercent": -100
+            "current": 225,
+            "previous": 3418,
+            "delta": -3193,
+            "deltaPercent": -93
           },
           "samples": [
             {
-              "title": "Machine Learning Applications in Supply Chain and Operations Management",
-              "url": "https://openalex.org/W7166811126"
+              "title": "International Journal of Information Systems and Supply Chain Management",
+              "url": "https://openalex.org/W4206811748"
             },
             {
-              "title": "Machine Learning Applications in Supply Chain and Operations Management",
-              "url": "https://openalex.org/W7166868607"
+              "title": "The Role of Supply Chain Integration in Mediating the Effect of IT Ambidexterity on Supply Chain Resilience in Logistics Service Providers in Indonesia",
+              "url": "https://openalex.org/W7169752312"
             },
             {
-              "title": "Environmental Impacts, Sustainable Supply Chain Management, LCA, and Energy Efficiency",
-              "url": "https://openalex.org/W7123285624"
+              "title": "Palm Oil Supply Chain",
+              "url": "https://openalex.org/W7169815489"
             }
           ]
         },
         "healthcare": {
           "interestId": "healthcare",
           "metrics": {
-            "current": 14,
-            "previous": 7405,
-            "delta": -7391,
-            "deltaPercent": -100
+            "current": 590,
+            "previous": 7814,
+            "delta": -7224,
+            "deltaPercent": -92
           },
           "samples": [
             {
-              "title": "Trustworthy Evidence Communication in AI Healthcare: A Nurse Educator Perspective",
-              "url": "https://openalex.org/W7169716719"
+              "title": "Grand challenges in healthcare simulation",
+              "url": "https://openalex.org/W7169791514"
             },
             {
-              "title": "SAFE-CARE Bench: A Benchmark Specification and Evaluation Protocol for Safety, Guardrails, and User Experience in Multi-Turn Healthcare AI Agent Conversations",
-              "url": "https://openalex.org/W7169729950"
+              "title": "Smart healthcare engineering: transnational understanding of atmospheric corrosion processes in healthcare facilities",
+              "url": "https://openalex.org/W7169782248"
             },
             {
-              "title": "SAFE-CARE Bench: A Benchmark Specification and Evaluation Protocol for Safety, Guardrails, and User Experience in Multi-Turn Healthcare AI Agent Conversations",
-              "url": "https://openalex.org/W7169731954"
+              "title": "Role of Internet of Things in Female Healthcare",
+              "url": "https://openalex.org/W7169806740"
             }
           ]
         },
         "finance": {
           "interestId": "finance",
           "metrics": {
-            "current": 1,
-            "previous": 6042,
-            "delta": -6041,
-            "deltaPercent": -100
+            "current": 373,
+            "previous": 6387,
+            "delta": -6014,
+            "deltaPercent": -94
           },
           "samples": [
             {
-              "title": "Flame propagation limit and consumption speed of hydrogen-air flame in narrow channels",
-              "url": "https://openalex.org/W7128664110"
+              "title": "Integration of Psychological Factors and Financial Technology in Student Financial Management Models",
+              "url": "https://openalex.org/W7169777230"
+            },
+            {
+              "title": "The impact of FinTech adoption on financial risk control capability: The mediating role of accounting system integration and data quality",
+              "url": "https://openalex.org/W7169761394"
+            },
+            {
+              "title": "The Impact of Customized Financial Products on the Growth of the Global Electric Vehicle Market",
+              "url": "https://openalex.org/W7169787840"
             }
           ]
         },
         "energy": {
           "interestId": "energy",
           "metrics": {
-            "current": 3,
-            "previous": 1902,
-            "delta": -1899,
-            "deltaPercent": -100
+            "current": 170,
+            "previous": 2032,
+            "delta": -1862,
+            "deltaPercent": -92
           },
           "samples": [
             {
-              "title": "Toward climate-resilient European economies: leveraging renewable energy, technological innovation, and nuclear energy for sustainable development",
-              "url": "https://openalex.org/W7169725681"
+              "title": "Renewable Energy Consumption and Energy Accessibility in Kenya",
+              "url": "https://openalex.org/W7169762636"
             },
             {
-              "title": "Environmental Impacts, Sustainable Supply Chain Management, LCA, and Energy Efficiency",
-              "url": "https://openalex.org/W7123285624"
+              "title": "Renewable Energy Consumption and Energy Accessibility in Kenya",
+              "url": "https://openalex.org/W7169790071"
             },
             {
-              "title": "Environmental Impacts, Sustainable Supply Chain Management, LCA, and Energy Efficiency",
-              "url": "https://openalex.org/W7123267115"
+              "title": "Editorial: Environmental policy and renewable energy",
+              "url": "https://openalex.org/W7169815256"
             }
           ]
         },
         "biotechnology": {
           "interestId": "biotechnology",
           "metrics": {
-            "current": 14,
-            "previous": 1786,
-            "delta": -1772,
-            "deltaPercent": -99
+            "current": 110,
+            "previous": 1909,
+            "delta": -1799,
+            "deltaPercent": -94
           },
           "samples": [
             {
-              "title": "Innovative biotechnological approaches for enhancing the aromatic profile and longevity of Catarratto wine under sustainable winemaking strategies",
-              "url": "https://openalex.org/W7167996551"
+              "title": "Advances in Bioprocess Engineering for Sustainable Biotechnology: A Critical Review",
+              "url": "https://openalex.org/W7169767461"
             },
             {
-              "title": "Development of biotechnological systems based on the application of oenological bio activators to enhance the cellular vitality and fermentative capacity of yeasts in the presence of stress factors",
-              "url": "https://openalex.org/W7167994369"
+              "title": "Book of Abstracts of The 8th Meeting on Medicinal Biotechnology: book of abstracts",
+              "url": "https://openalex.org/W7169804796"
             },
             {
-              "title": "Factors influencing fermentation efficiency and product quality: A comprehensive review",
-              "url": "https://openalex.org/W7116040632"
+              "title": "Managing complexity in research data management for heterogeneous biotechnological data: a perspective on interacting as data steward",
+              "url": "https://openalex.org/W7169816627"
             }
           ]
         },
         "biochemistry": {
           "interestId": "biochemistry",
           "metrics": {
-            "current": 0,
-            "previous": 1063,
-            "delta": -1063,
-            "deltaPercent": -100
+            "current": 52,
+            "previous": 1141,
+            "delta": -1089,
+            "deltaPercent": -95
           },
-          "samples": []
+          "samples": [
+            {
+              "title": "Frequency, Causes and Economic Impact of Repeat Testing in a Clinical Biochemistry Laboratory of a University Hospital in Nepal",
+              "url": "https://openalex.org/W7169812563"
+            },
+            {
+              "title": "Analysis of Influenza A viruses using the resonant recognition model",
+              "url": "https://openalex.org/W7169786127"
+            },
+            {
+              "title": "Relationship Between Academic Performance and NBME CBSE Scores: A Retrospective Cohort Study and Predictive Modeling for Early Identification of At-Risk Students in a Latin American Medical School",
+              "url": "https://openalex.org/W7169728825"
+            }
+          ]
         },
         "life-sciences": {
           "interestId": "life-sciences",
           "metrics": {
-            "current": 7,
-            "previous": 9046,
-            "delta": -9039,
-            "deltaPercent": -100
+            "current": 465,
+            "previous": 9570,
+            "delta": -9105,
+            "deltaPercent": -95
           },
           "samples": [
             {
-              "title": "Sensory evaluation methods in food science: Principles, applications, and recent advances",
-              "url": "https://openalex.org/W7116918476"
+              "title": "International Journal of Oncology",
+              "url": "https://openalex.org/W4200531859"
             },
             {
-              "title": "Sensory evaluation methods in food science: Principles, applications, and recent advances",
-              "url": "https://openalex.org/W7116923889"
+              "title": "Integrating Divine Solutions with Life Sciences: A Research for Framework Sustainable Living through Metaphysical Approaches",
+              "url": "https://openalex.org/W7169808161"
             },
             {
-              "title": "Potential microbial strains for organic fermented foods: Safety, functionality, and product quality",
-              "url": "https://openalex.org/W7116978556"
+              "title": "Integrating Divine Solutions with Life Sciences: A Research for Framework Sustainable Living through Metaphysical Approaches",
+              "url": "https://openalex.org/W7169770847"
             }
           ]
         }
@@ -2062,15 +2160,15 @@
     "edgar": {
       "source": "edgar",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.755Z",
+      "fetchedAt": "2026-07-22T08:27:01.713Z",
       "interests": {
         "artificial-intelligence": {
           "interestId": "artificial-intelligence",
           "metrics": {
-            "current": 118,
+            "current": 251,
             "previous": 548,
-            "delta": -430,
-            "deltaPercent": -78
+            "delta": -297,
+            "deltaPercent": -54
           },
           "samples": [
             {
@@ -2082,110 +2180,110 @@
               "url": "https://www.sec.gov/Archives/edgar/data/1498148/000106299326003712/form8k.htm"
             },
             {
-              "title": "Big Digital Energy, Inc. (BGDE) (CIK 0001218683)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1218683/000121390026079426/ea029849301ex99-1.htm"
+              "title": "Wellgistics Health, Inc. (WGRX) (CIK 0002030763)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2030763/000149315226034086/ex99-1.htm"
             }
           ]
         },
         "robotics": {
           "interestId": "robotics",
           "metrics": {
-            "current": 34,
+            "current": 62,
             "previous": 147,
-            "delta": -113,
-            "deltaPercent": -77
+            "delta": -85,
+            "deltaPercent": -58
           },
           "samples": [
             {
+              "title": "Microbot Medical Inc. (MBOT) (CIK 0000883975)",
+              "url": "https://www.sec.gov/Archives/edgar/data/883975/000149315226034014/ex99-1.htm"
+            },
+            {
+              "title": "Charging Robotics Inc. (CHEV) (CIK 0001459188)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1459188/000121390026080044/ea0298679-8k_charging.htm"
+            },
+            {
               "title": "Xtend AI Robotics, Inc. (XTND) (CIK 0002111860)",
               "url": "https://www.sec.gov/Archives/edgar/data/2111860/000149315226033875/form425.htm"
-            },
-            {
-              "title": "Miso Robotics, Inc. (CIK 0001710670)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1710670/000110465926085085/tm2620901d1_253g2.htm"
-            },
-            {
-              "title": "FARADAY FUTURE INTELLIGENT ELECTRIC INC. (FFAI, FFAIW) (CIK 0001805521)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1805521/000121390026079568/ea0298586-424b3_faraday.htm"
             }
           ]
         },
         "quantum-computing": {
           "interestId": "quantum-computing",
           "metrics": {
-            "current": 26,
+            "current": 39,
             "previous": 74,
-            "delta": -48,
-            "deltaPercent": -65
+            "delta": -35,
+            "deltaPercent": -47
           },
           "samples": [
             {
+              "title": "Axiom Intelligence Acquisition Corp 1 (AXIN, AXINR, AXINU) (CIK 0002057030)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2057030/000121390026079739/ea0298517-425_axiom1.htm"
+            },
+            {
+              "title": "QTREX Quantum Ltd. (QTEX, QTEXW) (CIK 0001837493)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1837493/000118518526003070/qtrexf1072126.htm"
+            },
+            {
               "title": "BTQ Technologies Corp. (BTQ) (CIK 0001821866)",
               "url": "https://www.sec.gov/Archives/edgar/data/1821866/000127956926000681/ex991.htm"
-            },
-            {
-              "title": "FORTEM FINANCIAL GROUP, LLC (CIK 0001766509)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1766509/000110465926084976/infotable.xml"
-            },
-            {
-              "title": "ZIONS BANCORPORATION, NATIONAL ASSOCIATION /UT/ (ZION, ZIONP) (CIK 0000109380)",
-              "url": "https://www.sec.gov/Archives/edgar/data/109380/000010938026000103/earningspresentation-202.htm"
             }
           ]
         },
         "cybersecurity": {
           "interestId": "cybersecurity",
           "metrics": {
-            "current": 126,
+            "current": 269,
             "previous": 618,
-            "delta": -492,
-            "deltaPercent": -80
+            "delta": -349,
+            "deltaPercent": -56
           },
           "samples": [
             {
-              "title": "VSEE HEALTH, INC. (VSEE, VSEEW) (CIK 0001864531)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1864531/000118518526003024/vseedef14a071626.htm"
+              "title": "EQUIFAX INC (EFX) (CIK 0000033185)",
+              "url": "https://www.sec.gov/Archives/edgar/data/33185/000003318526000024/exhibit99120260630.htm"
             },
             {
-              "title": "Jingbo Technology, Inc. (SVMB) (CIK 0001647822)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1647822/000149315226033861/form10-k.htm"
+              "title": "Aether Holdings, Inc. (ATHR) (CIK 0002026353)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2026353/000149315226034007/ex10-1.htm"
             },
             {
               "title": "ECOPETROL S.A. (EC) (CIK 0001444406)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1444406/000129281426003810/ex99-1.htm"
+              "url": "https://www.sec.gov/Archives/edgar/data/1444406/000129281426003818/ex99-1.htm"
             }
           ]
         },
         "cloud-computing": {
           "interestId": "cloud-computing",
           "metrics": {
-            "current": 19,
+            "current": 40,
             "previous": 92,
-            "delta": -73,
-            "deltaPercent": -79
+            "delta": -52,
+            "deltaPercent": -57
           },
           "samples": [
             {
+              "title": "Global X Funds (CIK 0001432353)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1432353/000143235326000623/cptl_amdxbbhtl.htm"
+            },
+            {
+              "title": "Global X Funds (CIK 0001432353)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1432353/000143235326000623/cptl_amdxbbhca.htm"
+            },
+            {
               "title": "High Point Wealth Management, LLC (CIK 0002106882)",
               "url": "https://www.sec.gov/Archives/edgar/data/2106882/000210688226000003/HPW13FAssets2Q2026XML.xml"
-            },
-            {
-              "title": "Sage Capital Management, LLC (CIK 0002030667)",
-              "url": "https://www.sec.gov/Archives/edgar/data/2030667/000117266126002702/infotable.xml"
-            },
-            {
-              "title": "MEITAV INVESTMENT HOUSE LTD (CIK 0001398346)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1398346/000117891326003532/infotable.xml"
             }
           ]
         },
         "manufacturing": {
           "interestId": "manufacturing",
           "metrics": {
-            "current": 5,
+            "current": 8,
             "previous": 24,
-            "delta": -19,
-            "deltaPercent": -79
+            "delta": -16,
+            "deltaPercent": -67
           },
           "samples": [
             {
@@ -2205,10 +2303,10 @@
         "supply-chain": {
           "interestId": "supply-chain",
           "metrics": {
-            "current": 84,
+            "current": 172,
             "previous": 483,
-            "delta": -399,
-            "deltaPercent": -83
+            "delta": -311,
+            "deltaPercent": -64
           },
           "samples": [
             {
@@ -2220,64 +2318,64 @@
               "url": "https://www.sec.gov/Archives/edgar/data/1286681/000128668126000034/dpz-ex99_1.htm"
             },
             {
-              "title": "FEDEX CORP (FDX) (CIK 0001048911)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1048911/000104891126000105/fdx-exx21fy2026q4.htm"
+              "title": "ASP Isotopes Inc. (ASPI) (CIK 0001921865)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1921865/000119312526309573/aspi-ex99_1.htm"
             }
           ]
         },
         "finance": {
           "interestId": "finance",
           "metrics": {
-            "current": 9,
+            "current": 17,
             "previous": 67,
-            "delta": -58,
-            "deltaPercent": -87
+            "delta": -50,
+            "deltaPercent": -75
           },
           "samples": [
+            {
+              "title": "Long Table Growth Corp. (LTGR, LTGRU) (CIK 0002104177)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2104177/000121390026080103/ea029870501ex99-1.htm"
+            },
             {
               "title": "COLLECTIVE ACQUISITION CORP. (CCAQ, CCAQU, CCAQW) (CIK 0002041047)",
               "url": "https://www.sec.gov/Archives/edgar/data/2041047/000121390026079700/ea0298481-8k_collective.htm"
             },
             {
-              "title": "ZIONS BANCORPORATION, NATIONAL ASSOCIATION /UT/ (ZION, ZIONP) (CIK 0000109380)",
-              "url": "https://www.sec.gov/Archives/edgar/data/109380/000010938026000103/earningspresentation-202.htm"
-            },
-            {
-              "title": "ZIONS BANCORPORATION, NATIONAL ASSOCIATION /UT/ (ZION, ZIONP) (CIK 0000109380)",
-              "url": "https://www.sec.gov/Archives/edgar/data/109380/000010938026000103/exh991earningsrelease20260.htm"
+              "title": "National Bank Holdings Corp (NBHC) (CIK 0001475841)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1475841/000110465926085408/nbhc-20260721xex99d1.htm"
             }
           ]
         },
         "energy": {
           "interestId": "energy",
           "metrics": {
-            "current": 44,
+            "current": 80,
             "previous": 134,
-            "delta": -90,
-            "deltaPercent": -67
+            "delta": -54,
+            "deltaPercent": -40
           },
           "samples": [
             {
-              "title": "Green Rain Energy Holdings Inc. (GREH) (CIK 0001084937)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1084937/000168316826005632/greenrain_1apos11.htm"
+              "title": "PRF Technologies Ltd. (PRFX) (CIK 0001801834)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1801834/000117891326003546/exhibit_99-1.htm"
             },
             {
-              "title": "POWERBANK Corp (PBK) (CIK 0002011053)",
-              "url": "https://www.sec.gov/Archives/edgar/data/2011053/000149315226033848/ex99-1.htm"
+              "title": "Eco Wave Power Global AB (publ) (WAVE) (CIK 0001846715)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1846715/000121390026079823/ea029861901ex99-1.htm"
             },
             {
-              "title": "Reformation Inc. (REF) (CIK 0001787117)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1787117/000110465926084856/tm2513004d11_ex10-28.htm"
+              "title": "Energea Portfolio 4 USA LP (CIK 0001853011)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1853011/000185301126000015/port4_part2.htm"
             }
           ]
         },
         "biotechnology": {
           "interestId": "biotechnology",
           "metrics": {
-            "current": 83,
+            "current": 183,
             "previous": 357,
-            "delta": -274,
-            "deltaPercent": -77
+            "delta": -174,
+            "deltaPercent": -49
           },
           "samples": [
             {
@@ -2286,21 +2384,21 @@
             },
             {
               "title": "Research Alliance Corp IV (RACD) (CIK 0002137777)",
-              "url": "https://www.sec.gov/Archives/edgar/data/2137777/000092189526001836/ex991to13g07422racd_072026.htm"
+              "url": "https://www.sec.gov/Archives/edgar/data/2137777/000149315226034085/primary_doc.xml"
             },
             {
-              "title": "Damora Therapeutics, Inc. (DMRA) (CIK 0001800315)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1800315/000119312526308899/dmra-ex99_1.htm"
+              "title": "Ballentine Partners, LLC (CIK 0001374889)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1374889/000117266126002721/proxytable.xml"
             }
           ]
         },
         "commerce": {
           "interestId": "commerce",
           "metrics": {
-            "current": 24,
+            "current": 54,
             "previous": 125,
-            "delta": -101,
-            "deltaPercent": -81
+            "delta": -71,
+            "deltaPercent": -57
           },
           "samples": [
             {
@@ -2320,23 +2418,23 @@
         "healthcare": {
           "interestId": "healthcare",
           "metrics": {
-            "current": 213,
+            "current": 414,
             "previous": 797,
-            "delta": -584,
-            "deltaPercent": -73
+            "delta": -383,
+            "deltaPercent": -48
           },
           "samples": [
             {
-              "title": "Healthcare Innovations Venture Fund, LLC (CIK 0002141595)",
-              "url": "https://www.sec.gov/Archives/edgar/data/2141595/000214159526000001/primary_doc.xml"
+              "title": "CROSS COUNTRY HEALTHCARE INC (CCRN) (CIK 0001141103)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1141103/000095010326010882/dp250362_s8pos-33374862.htm"
             },
             {
-              "title": "Fairmount Healthcare Fund II L.P. (CIK 0001769651)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1769651/000110465926085113/tm2620801-1_4seq1.xml"
+              "title": "CROSS COUNTRY HEALTHCARE INC (CCRN) (CIK 0001141103)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1141103/000095010326010895/dp250367_s8pos-333238719.htm"
             },
             {
-              "title": "Jasper Therapeutics, Inc. (JSPR, JSPRW) (CIK 0001788028)",
-              "url": "https://www.sec.gov/Archives/edgar/data/1788028/000092189526001834/primary_doc.xml"
+              "title": "CROSS COUNTRY HEALTHCARE INC (CCRN) (CIK 0001141103)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1141103/000095010326010892/dp250365_s8pos-333196639.htm"
             }
           ]
         }
@@ -2345,28 +2443,28 @@
     "clinical-trials": {
       "source": "clinical-trials",
       "status": "ok",
-      "fetchedAt": "2026-07-21T08:26:17.756Z",
+      "fetchedAt": "2026-07-22T08:27:01.713Z",
       "interests": {
         "healthcare": {
           "interestId": "healthcare",
           "metrics": {
-            "current": 169,
-            "previous": 666,
-            "delta": -497,
-            "deltaPercent": -75
+            "current": 291,
+            "previous": 654,
+            "delta": -363,
+            "deltaPercent": -56
           },
           "samples": [
             {
-              "title": "Transition Care for FEP",
-              "url": "https://clinicaltrials.gov/study/NCT07713849"
+              "title": "A Study to Assess the Efficacy and Safety of Verekitug in Participants With COPD",
+              "url": "https://clinicaltrials.gov/study/NCT06981078"
             },
             {
-              "title": "Long Term Observational Study to Collect in a Real-world populatIon Data on the Treatment Pattern of Secukinumab in Adult Patients With Moderate to Severe HS Within the Italian Population",
-              "url": "https://clinicaltrials.gov/study/NCT07543419"
+              "title": "Swaddling and Facilitated Tucking During Nasal CPAP Application",
+              "url": "https://clinicaltrials.gov/study/NCT07077148"
             },
             {
-              "title": "Study of Inclisiran to Prevent Cardiovascular (CV) Events in Participants With Established Cardiovascular Disease",
-              "url": "https://clinicaltrials.gov/study/NCT05030428"
+              "title": "Prenatal Blood Typing With Next Generation Sequencing (NGS) - an Implementation Study in HDFN (PREFAB)",
+              "url": "https://clinicaltrials.gov/study/NCT07715214"
             }
           ]
         },
@@ -2384,58 +2482,58 @@
               "url": "https://clinicaltrials.gov/study/NCT07205315"
             },
             {
-              "title": "Universal STAR-T Cell Injection in Generalized Myasthenia Gravis",
-              "url": "https://clinicaltrials.gov/study/NCT07714798"
-            },
-            {
               "title": "Short-Chain Fatty Acids in Lypopolysaccharide-Induced Inflammation and Executive Function",
               "url": "https://clinicaltrials.gov/study/NCT07713641"
+            },
+            {
+              "title": "Universal STAR-T Cell Injection in Generalized Myasthenia Gravis",
+              "url": "https://clinicaltrials.gov/study/NCT07714798"
             }
           ]
         },
         "biochemistry": {
           "interestId": "biochemistry",
           "metrics": {
-            "current": 4,
-            "previous": 21,
-            "delta": -17,
-            "deltaPercent": -81
+            "current": 7,
+            "previous": 20,
+            "delta": -13,
+            "deltaPercent": -65
           },
           "samples": [
             {
-              "title": "A Study to Assess the Safety and Efficacy of Different Doses of ELV001 to Treat Active Rheumatoid Arthritis in Patients With an Inadequate Response to Methotrexate and Tumor Necrosis Factor Inhibition (START SYNERGY)",
-              "url": "https://clinicaltrials.gov/study/NCT07409103"
-            },
-            {
-              "title": "Immune Reponses to RSV B Challenge in Older Adults (A Controlled Human Infection Study With RSV in Older People-02)",
-              "url": "https://clinicaltrials.gov/study/NCT07713628"
+              "title": "Exercise and Health Counseling in Pediatric Hematopoietic Stem Cell Transplantation",
+              "url": "https://clinicaltrials.gov/study/NCT06300515"
             },
             {
               "title": "Nutrition Counselling for Cardiometabolic Multimorbidity",
               "url": "https://clinicaltrials.gov/study/NCT07712900"
+            },
+            {
+              "title": "Natural History, Physiology, Microbiome and Biochemistry Studies of Propionic Acidemia",
+              "url": "https://clinicaltrials.gov/study/NCT02890342"
             }
           ]
         },
         "life-sciences": {
           "interestId": "life-sciences",
           "metrics": {
-            "current": 55,
-            "previous": 219,
-            "delta": -164,
-            "deltaPercent": -75
+            "current": 90,
+            "previous": 218,
+            "delta": -128,
+            "deltaPercent": -59
           },
           "samples": [
             {
-              "title": "Study of Inclisiran to Prevent Cardiovascular (CV) Events in Participants With Established Cardiovascular Disease",
-              "url": "https://clinicaltrials.gov/study/NCT05030428"
+              "title": "Tamoxifen Citrate, Letrozole, Anastrozole, or Exemestane With or Without Chemotherapy in Treating Patients With Invasive RxPONDER Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01272037"
             },
             {
-              "title": "Dinutuximab With Chemotherapy, Surgery and Stem Cell Transplantation for the Treatment of Children With Newly Diagnosed High Risk Neuroblastoma",
-              "url": "https://clinicaltrials.gov/study/NCT06172296"
+              "title": "CAPACITY (Cardiac Amyloidosis and Physical ACtivITY) Study",
+              "url": "https://clinicaltrials.gov/study/NCT06096675"
             },
             {
-              "title": "Efficacy and Mechanistic Evaluation of Hewei Anchang Formula for Overlapping Gastrointestinal Symptoms in Patients With Coexisting Functional Dyspepsia and Diarrhea-Predominant Irritable Bowel Syndrome",
-              "url": "https://clinicaltrials.gov/study/NCT07715760"
+              "title": "Therapeutic Exercise and Education for Low Back Pain",
+              "url": "https://clinicaltrials.gov/study/NCT07713082"
             }
           ]
         }

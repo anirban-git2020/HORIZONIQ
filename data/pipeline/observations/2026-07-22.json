@@ -1,0 +1,2543 @@
+{
+  "version": 1,
+  "ingestedAt": "2026-07-22T08:27:01.642Z",
+  "period": "2026-W30",
+  "periodLabel": "Week of July 20, 2026 – July 26, 2026",
+  "sources": {
+    "hacker-news": {
+      "source": "hacker-news",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.657Z",
+      "interests": {
+        "artificial-intelligence": {
+          "interestId": "artificial-intelligence",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "OpenAI and Hugging Face address security incident during model evaluation",
+              "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+              "score": 1082
+            },
+            {
+              "title": "Advertise in ChatGPT",
+              "url": "https://ads.openai.com/",
+              "score": 701
+            }
+          ]
+        },
+        "robotics": {
+          "interestId": "robotics",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "Xiaomi-Robotics-1",
+              "url": "https://robotics.xiaomi.com/xiaomi-robotics-1.html",
+              "score": 512
+            }
+          ]
+        },
+        "quantum-computing": {
+          "interestId": "quantum-computing",
+          "metrics": {
+            "current": 2,
+            "previous": 0,
+            "delta": 2,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "Oratomic's $300M Bet on Low-Qubit Quantum Computing",
+              "url": "https://www.hpcwire.com/2026/07/21/oratomics-300m-bet-on-low-qubit-quantum-computing/",
+              "score": 2
+            },
+            {
+              "title": "Secure Quantum Computing / CE 395 / Spring 2026 / Northwestern University",
+              "url": "https://www.youtube.com/playlist?list=PLWOUVwVosA-7aCa6SBXoM_m66WV-K_N0o",
+              "score": 2
+            }
+          ]
+        },
+        "cybersecurity": {
+          "interestId": "cybersecurity",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "OpenAI and Hugging Face address security incident during model evaluation",
+              "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/",
+              "score": 1082
+            },
+            {
+              "title": "Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber",
+              "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/",
+              "score": 679
+            }
+          ]
+        },
+        "cloud-computing": {
+          "interestId": "cloud-computing",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "Apple defeats liability for not scanning iCloud for CSAM",
+              "url": "https://blog.ericgoldman.org/archives/2026/07/apple-defeats-liability-for-not-scanning-icloud-for-csam-but-the-judge-was-not-pleased-amy-v-apple.htm",
+              "score": 406
+            },
+            {
+              "title": "Apple Private Cloud Compute SoC 3 audit reports",
+              "url": "https://support.apple.com/guide/certifications/apple-private-cloud-compute-soc-3-audit-apc95a31b9d8/web",
+              "score": 127
+            }
+          ]
+        },
+        "manufacturing": {
+          "interestId": "manufacturing",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "supply-chain": {
+          "interestId": "supply-chain",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "Intel Starts Shipping High-NA EUV Silicon",
+              "url": "https://morethanmoore.substack.com/p/intel-starts-shipping-high-na-euv",
+              "score": 48
+            }
+          ]
+        },
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "finance": {
+          "interestId": "finance",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "energy": {
+          "interestId": "energy",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "arts": {
+          "interestId": "arts",
+          "metrics": {
+            "current": 0,
+            "previous": 1,
+            "delta": -1,
+            "deltaPercent": -100
+          },
+          "samples": []
+        },
+        "commerce": {
+          "interestId": "commerce",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "entrepreneurship": {
+          "interestId": "entrepreneurship",
+          "metrics": {
+            "current": 387,
+            "previous": 913,
+            "delta": -526,
+            "deltaPercent": -58
+          },
+          "samples": [
+            {
+              "title": "Show HN: Immersive Gaussian Splat tour of grace cathedral, San Francisco",
+              "url": "https://vincentwoo.com/3d/grace_cathedral/",
+              "score": 258
+            },
+            {
+              "title": "Show HN: A self-running space economy SIM in Rust and Bevy",
+              "url": "https://github.com/Kalcode/spaceprojectsim",
+              "score": 101
+            },
+            {
+              "title": "Show HN: Imagin Raw – A 9MB Open-Source Alternative to Adobe Bridge for Mac",
+              "url": "https://github.com/cristibaluta/Imagin-Raw",
+              "score": 61
+            },
+            {
+              "title": "Show HN: ReadKinetic – a free, local-first speed reader for your own books",
+              "url": "https://www.readkinetic.com/app/",
+              "score": 49
+            },
+            {
+              "title": "Show HN: A new kind of FPS aim trainer",
+              "url": "https://openaim.pramit.gg/",
+              "score": 30
+            }
+          ]
+        },
+        "startups": {
+          "interestId": "startups",
+          "metrics": {
+            "current": 0,
+            "previous": 1,
+            "delta": -1,
+            "deltaPercent": -100
+          },
+          "samples": [
+            {
+              "title": "Launch HN: Bloomy (YC S26) – AI-powered mastery learning for K-12",
+              "url": "https://news.ycombinator.com/item?id=48981136",
+              "score": 97
+            },
+            {
+              "title": "The Psychology of Software Teams",
+              "url": "https://www.routledge.com/The-Psychology-of-Software-Teams/Hicks/p/book/9781032963389",
+              "score": 173
+            }
+          ]
+        },
+        "venture-capital": {
+          "interestId": "venture-capital",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "product-management": {
+          "interestId": "product-management",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        }
+      }
+    },
+    "arxiv": {
+      "source": "arxiv",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.709Z",
+      "interests": {
+        "artificial-intelligence": {
+          "interestId": "artificial-intelligence",
+          "metrics": {
+            "current": 200,
+            "previous": 0,
+            "delta": 200,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "Copy Less, Ground More: Overcoming Repetitive Copying in Long-Context Reasoning via Evidence-Aware Reinforcement Learning",
+              "url": "http://arxiv.org/abs/2607.19345v1"
+            },
+            {
+              "title": "Appearance Pointers -- Multimodal Region Control of Diffusion Transformers",
+              "url": "http://arxiv.org/abs/2607.19344v1"
+            },
+            {
+              "title": "CodeRescue: Budget-Calibrated Recovery Routing for Coding Agents",
+              "url": "http://arxiv.org/abs/2607.19338v1"
+            }
+          ]
+        },
+        "robotics": {
+          "interestId": "robotics",
+          "metrics": {
+            "current": 83,
+            "previous": 117,
+            "delta": -34,
+            "deltaPercent": -29
+          },
+          "samples": [
+            {
+              "title": "Masked Visual Actions for Unified World Modeling",
+              "url": "http://arxiv.org/abs/2607.19343v1"
+            },
+            {
+              "title": "From Distances to Trajectories: Real-Time Signed Distance Function Mapping and Distance-Accelerated Motion Planning for UAVs",
+              "url": "http://arxiv.org/abs/2607.19306v1"
+            },
+            {
+              "title": "No Training, Better Flights: Test-Time Scaled VLMs for UAV Navigation",
+              "url": "http://arxiv.org/abs/2607.19288v1"
+            }
+          ]
+        },
+        "quantum-computing": {
+          "interestId": "quantum-computing",
+          "metrics": {
+            "current": 105,
+            "previous": 95,
+            "delta": 10,
+            "deltaPercent": 11
+          },
+          "samples": [
+            {
+              "title": "Quantum Synchronization",
+              "url": "http://arxiv.org/abs/2607.19328v1"
+            },
+            {
+              "title": "Dark matter searches with a 13 meV threshold superconducting sensor array",
+              "url": "http://arxiv.org/abs/2607.19319v1"
+            },
+            {
+              "title": "SoK: Adversarial Robustness of the Variational Quantum Eigensolver via Red-Teaming",
+              "url": "http://arxiv.org/abs/2607.19318v1"
+            }
+          ]
+        },
+        "cybersecurity": {
+          "interestId": "cybersecurity",
+          "metrics": {
+            "current": 52,
+            "previous": 148,
+            "delta": -96,
+            "deltaPercent": -65
+          },
+          "samples": [
+            {
+              "title": "ResearchArena: Evaluating Sabotage and Monitoring in Automated AI R&amp;D",
+              "url": "http://arxiv.org/abs/2607.19321v1"
+            },
+            {
+              "title": "SoK: Adversarial Robustness of the Variational Quantum Eigensolver via Red-Teaming",
+              "url": "http://arxiv.org/abs/2607.19318v1"
+            },
+            {
+              "title": "They'll Verify. They Just Won't Act. How Authority Framing and Laundered Code Turn a Trusted Agentic CI/CD Pipeline Into an Attack Surface",
+              "url": "http://arxiv.org/abs/2607.19267v1"
+            }
+          ]
+        },
+        "cloud-computing": {
+          "interestId": "cloud-computing",
+          "metrics": {
+            "current": 22,
+            "previous": 71,
+            "delta": -49,
+            "deltaPercent": -69
+          },
+          "samples": [
+            {
+              "title": "Keeping the Cache Warm Pays: Keepalive Economics for Agentic Workloads",
+              "url": "http://arxiv.org/abs/2607.19214v1"
+            },
+            {
+              "title": "ARBITER: Guarded Agentic Control for SLO-Oriented Kubernetes Remediation",
+              "url": "http://arxiv.org/abs/2607.19182v1"
+            },
+            {
+              "title": "Coherence in Control: Bridging Many-Core Mapping and Routing through Cost Unification",
+              "url": "http://arxiv.org/abs/2607.19158v1"
+            }
+          ]
+        },
+        "manufacturing": {
+          "interestId": "manufacturing",
+          "metrics": {
+            "current": 0,
+            "previous": 4,
+            "delta": -4,
+            "deltaPercent": -100
+          },
+          "samples": [
+            {
+              "title": "The Internet of Things for Smart Manufacturing: A Review",
+              "url": "http://arxiv.org/abs/2607.16172v1"
+            },
+            {
+              "title": "Converging Safety and Security: IO-Link Wireless and OPC UA over 5G under prEN 50742",
+              "url": "http://arxiv.org/abs/2607.15840v1"
+            },
+            {
+              "title": "Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization",
+              "url": "http://arxiv.org/abs/2607.15713v1"
+            }
+          ]
+        },
+        "supply-chain": {
+          "interestId": "supply-chain",
+          "metrics": {
+            "current": 9,
+            "previous": 16,
+            "delta": -7,
+            "deltaPercent": -44
+          },
+          "samples": [
+            {
+              "title": "Computing on the Fly: Navigating a Vision for the Future of Drone Computing",
+              "url": "http://arxiv.org/abs/2607.19213v1"
+            },
+            {
+              "title": "Delineate Anything v2: A Global Foundation Model for Field Delineation",
+              "url": "http://arxiv.org/abs/2607.19069v1"
+            },
+            {
+              "title": "When Does Machine Learning Beat Value Sorting? A Three-Dataset Diagnostic of Exposure-Weighted Shipment Prioritization",
+              "url": "http://arxiv.org/abs/2607.18573v1"
+            }
+          ]
+        },
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "Synchronization of active mechanical oscillators by an inertial load",
+              "url": "http://arxiv.org/abs/physics/0307155v1"
+            },
+            {
+              "title": "Towards the Understanding of Stability Puzzles in Phage lambda",
+              "url": "http://arxiv.org/abs/cond-mat/0307747v1"
+            },
+            {
+              "title": "A Growth Model for Multicellular Tumor Spheroids",
+              "url": "http://arxiv.org/abs/physics/0307136v1"
+            }
+          ]
+        },
+        "finance": {
+          "interestId": "finance",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "energy": {
+          "interestId": "energy",
+          "metrics": {
+            "current": 4,
+            "previous": 16,
+            "delta": -12,
+            "deltaPercent": -75
+          },
+          "samples": [
+            {
+              "title": "Free-form diamond refractive optics enable efficient high-energy X-ray nano-imaging",
+              "url": "http://arxiv.org/abs/2607.19019v1"
+            },
+            {
+              "title": "Forecast-Assisted Deep Reinforcement Learning for Energy Management of Hydrogen-Enabled Community Microgrids",
+              "url": "http://arxiv.org/abs/2607.18903v1"
+            },
+            {
+              "title": "Regime-Aware Physics-Guided Early Warning of Lithium-Ion Battery Thermal Runaway Using Thermo-Mechanical Signals",
+              "url": "http://arxiv.org/abs/2607.18860v1"
+            }
+          ]
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 3,
+            "previous": 7,
+            "delta": -4,
+            "deltaPercent": -57
+          },
+          "samples": [
+            {
+              "title": "GEqTrain: A Configuration-Driven Framework for Retargeting Equivariant Graph Neural Networks Across 3D Scientific Tasks",
+              "url": "http://arxiv.org/abs/2607.19083v1"
+            },
+            {
+              "title": "Engineering T7 RNA Polymerase for High-Purity In Vitro Transcription",
+              "url": "http://arxiv.org/abs/2607.18468v1"
+            },
+            {
+              "title": "The energy landscape of DNA-binding proteins along the genome",
+              "url": "http://arxiv.org/abs/2607.17753v1"
+            }
+          ]
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 8,
+            "previous": 19,
+            "delta": -11,
+            "deltaPercent": -58
+          },
+          "samples": [
+            {
+              "title": "An unsupervised clustering analysis of breast cancer data derived from electronic health records enhanced through UMAP dimensionality reduction",
+              "url": "http://arxiv.org/abs/2607.19089v1"
+            },
+            {
+              "title": "GEqTrain: A Configuration-Driven Framework for Retargeting Equivariant Graph Neural Networks Across 3D Scientific Tasks",
+              "url": "http://arxiv.org/abs/2607.19083v1"
+            },
+            {
+              "title": "Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval",
+              "url": "http://arxiv.org/abs/2607.19020v1"
+            }
+          ]
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "Synchronization of active mechanical oscillators by an inertial load",
+              "url": "http://arxiv.org/abs/physics/0307155v1"
+            },
+            {
+              "title": "Towards the Understanding of Stability Puzzles in Phage lambda",
+              "url": "http://arxiv.org/abs/cond-mat/0307747v1"
+            },
+            {
+              "title": "A Growth Model for Multicellular Tumor Spheroids",
+              "url": "http://arxiv.org/abs/physics/0307136v1"
+            }
+          ]
+        },
+        "arts": {
+          "interestId": "arts",
+          "metrics": {
+            "current": 1,
+            "previous": 0,
+            "delta": 1,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "The Aura in the Machine: Genealogy and the Status of the Work of Art in the Generative Era",
+              "url": "http://arxiv.org/abs/2607.17940v1"
+            },
+            {
+              "title": "ART for Diffusion Sampling: Continuous-Time Control and Actor-Critic Learning",
+              "url": "http://arxiv.org/abs/2607.02137v2"
+            },
+            {
+              "title": "Exploring the Value of Diverse LLM Explanations in Introductory Programming",
+              "url": "http://arxiv.org/abs/2606.28882v1"
+            }
+          ]
+        },
+        "commerce": {
+          "interestId": "commerce",
+          "metrics": {
+            "current": 5,
+            "previous": 13,
+            "delta": -8,
+            "deltaPercent": -62
+          },
+          "samples": [
+            {
+              "title": "TSGR: Taobao Search Generative Retrieval",
+              "url": "http://arxiv.org/abs/2607.18796v1"
+            },
+            {
+              "title": "When Does Machine Learning Beat Value Sorting? A Three-Dataset Diagnostic of Exposure-Weighted Shipment Prioritization",
+              "url": "http://arxiv.org/abs/2607.18573v1"
+            },
+            {
+              "title": "MEVION: Low-Cost Open-Source Data Collection System for Powerful and High-Speed Dual-Arm Manipulation",
+              "url": "http://arxiv.org/abs/2607.17970v1"
+            }
+          ]
+        },
+        "entrepreneurship": {
+          "interestId": "entrepreneurship",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "Finfluencers on TikTok: A Longitudinal Analysis of Content, Engagement, and Disclaimer Practices",
+              "url": "http://arxiv.org/abs/2607.05203v1"
+            },
+            {
+              "title": "Delusions of Grandeur and Their Benefits (and Hazards)",
+              "url": "http://arxiv.org/abs/2606.02306v1"
+            },
+            {
+              "title": "Generative AI Fuels Solo Entrepreneurship, but Teams Still Lead at the Top",
+              "url": "http://arxiv.org/abs/2605.10291v1"
+            }
+          ]
+        },
+        "startups": {
+          "interestId": "startups",
+          "metrics": {
+            "current": 0,
+            "previous": 3,
+            "delta": -3,
+            "deltaPercent": -100
+          },
+          "samples": [
+            {
+              "title": "Cold-Start Model Delivery in Kubernetes Inference Serving: An Empirical Study of OCI-Based Distribution and Its Integrity",
+              "url": "http://arxiv.org/abs/2607.16596v1"
+            },
+            {
+              "title": "SoftBoard: A Multi-Agent Tool for the Creation and Evaluation of Low-Fidelity Prototypes",
+              "url": "http://arxiv.org/abs/2607.13179v1"
+            },
+            {
+              "title": "A Behavioral State Vocabulary in Sony ERS-111 R-CODE",
+              "url": "http://arxiv.org/abs/2607.12115v2"
+            }
+          ]
+        },
+        "venture-capital": {
+          "interestId": "venture-capital",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": [
+            {
+              "title": "FinInvest-GTCN: Explainable Graph-Temporal-Causal Modeling for Risk-Aware Investment Decision Optimization",
+              "url": "http://arxiv.org/abs/2606.28933v1"
+            },
+            {
+              "title": "A Multi-Agent Orchestration Framework for Venture Capital Due Diligence",
+              "url": "http://arxiv.org/abs/2605.13110v1"
+            },
+            {
+              "title": "Engineering Economy: A New Paradigm for Escaping the Middle-Income Trap",
+              "url": "http://arxiv.org/abs/2605.09145v1"
+            }
+          ]
+        },
+        "product-management": {
+          "interestId": "product-management",
+          "metrics": {
+            "current": 0,
+            "previous": 1,
+            "delta": -1,
+            "deltaPercent": -100
+          },
+          "samples": [
+            {
+              "title": "Salesforce Messaging Architecture: Platform Events, Async Sends, and Multi-Tenancy at Scale",
+              "url": "http://arxiv.org/abs/2607.12943v1"
+            },
+            {
+              "title": "Rethinking the UI of GenUI: A Tale of Two Designs",
+              "url": "http://arxiv.org/abs/2606.13843v2"
+            },
+            {
+              "title": "A Case-Driven Multi-Agent Framework for E-Commerce Search Relevance",
+              "url": "http://arxiv.org/abs/2605.05991v1"
+            }
+          ]
+        }
+      }
+    },
+    "wikimedia": {
+      "source": "wikimedia",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.709Z",
+      "interests": {
+        "artificial-intelligence": {
+          "interestId": "artificial-intelligence",
+          "metrics": {
+            "current": 70163,
+            "previous": 67345,
+            "delta": 2818,
+            "deltaPercent": 4
+          },
+          "samples": [
+            {
+              "title": "Artificial Intelligence — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Artificial_intelligence",
+              "score": 70163
+            }
+          ]
+        },
+        "robotics": {
+          "interestId": "robotics",
+          "metrics": {
+            "current": 3172,
+            "previous": 3851,
+            "delta": -679,
+            "deltaPercent": -18
+          },
+          "samples": [
+            {
+              "title": "Robotics — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Robotics",
+              "score": 3172
+            }
+          ]
+        },
+        "quantum-computing": {
+          "interestId": "quantum-computing",
+          "metrics": {
+            "current": 11883,
+            "previous": 11939,
+            "delta": -56,
+            "deltaPercent": 0
+          },
+          "samples": [
+            {
+              "title": "Quantum Computing — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Quantum_computing",
+              "score": 11883
+            }
+          ]
+        },
+        "cybersecurity": {
+          "interestId": "cybersecurity",
+          "metrics": {
+            "current": 724,
+            "previous": 526,
+            "delta": 198,
+            "deltaPercent": 38
+          },
+          "samples": [
+            {
+              "title": "Cybersecurity — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Cybersecurity",
+              "score": 724
+            }
+          ]
+        },
+        "cloud-computing": {
+          "interestId": "cloud-computing",
+          "metrics": {
+            "current": 7132,
+            "previous": 7577,
+            "delta": -445,
+            "deltaPercent": -6
+          },
+          "samples": [
+            {
+              "title": "Cloud Computing — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Cloud_computing",
+              "score": 7132
+            }
+          ]
+        },
+        "manufacturing": {
+          "interestId": "manufacturing",
+          "metrics": {
+            "current": 3468,
+            "previous": 3389,
+            "delta": 79,
+            "deltaPercent": 2
+          },
+          "samples": [
+            {
+              "title": "Manufacturing — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Manufacturing",
+              "score": 3468
+            }
+          ]
+        },
+        "supply-chain": {
+          "interestId": "supply-chain",
+          "metrics": {
+            "current": 2083,
+            "previous": 1966,
+            "delta": 117,
+            "deltaPercent": 6
+          },
+          "samples": [
+            {
+              "title": "Supply Chain — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Supply_chain",
+              "score": 2083
+            }
+          ]
+        },
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 2635,
+            "previous": 2849,
+            "delta": -214,
+            "deltaPercent": -8
+          },
+          "samples": [
+            {
+              "title": "Healthcare — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Health_care",
+              "score": 2635
+            }
+          ]
+        },
+        "finance": {
+          "interestId": "finance",
+          "metrics": {
+            "current": 2145,
+            "previous": 2007,
+            "delta": 138,
+            "deltaPercent": 7
+          },
+          "samples": [
+            {
+              "title": "Finance — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Financial_technology",
+              "score": 2145
+            }
+          ]
+        },
+        "energy": {
+          "interestId": "energy",
+          "metrics": {
+            "current": 3945,
+            "previous": 4523,
+            "delta": -578,
+            "deltaPercent": -13
+          },
+          "samples": [
+            {
+              "title": "Energy — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Renewable_energy",
+              "score": 3945
+            }
+          ]
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 3784,
+            "previous": 4205,
+            "delta": -421,
+            "deltaPercent": -10
+          },
+          "samples": [
+            {
+              "title": "Biotechnology — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Biotechnology",
+              "score": 3784
+            }
+          ]
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 2337,
+            "previous": 2381,
+            "delta": -44,
+            "deltaPercent": -2
+          },
+          "samples": [
+            {
+              "title": "Biochemistry — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Biochemistry",
+              "score": 2337
+            }
+          ]
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 206,
+            "previous": 182,
+            "delta": 24,
+            "deltaPercent": 13
+          },
+          "samples": [
+            {
+              "title": "Life Sciences — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Life_sciences",
+              "score": 206
+            }
+          ]
+        },
+        "arts": {
+          "interestId": "arts",
+          "metrics": {
+            "current": 904,
+            "previous": 950,
+            "delta": -46,
+            "deltaPercent": -5
+          },
+          "samples": [
+            {
+              "title": "Arts — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Digital_art",
+              "score": 904
+            }
+          ]
+        },
+        "commerce": {
+          "interestId": "commerce",
+          "metrics": {
+            "current": 5517,
+            "previous": 6075,
+            "delta": -558,
+            "deltaPercent": -9
+          },
+          "samples": [
+            {
+              "title": "Commerce — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/E-commerce",
+              "score": 5517
+            }
+          ]
+        },
+        "entrepreneurship": {
+          "interestId": "entrepreneurship",
+          "metrics": {
+            "current": 3641,
+            "previous": 3325,
+            "delta": 316,
+            "deltaPercent": 10
+          },
+          "samples": [
+            {
+              "title": "Entrepreneurship — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Entrepreneurship",
+              "score": 3641
+            }
+          ]
+        },
+        "startups": {
+          "interestId": "startups",
+          "metrics": {
+            "current": 2167,
+            "previous": 2065,
+            "delta": 102,
+            "deltaPercent": 5
+          },
+          "samples": [
+            {
+              "title": "Startups — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Startup_company",
+              "score": 2167
+            }
+          ]
+        },
+        "venture-capital": {
+          "interestId": "venture-capital",
+          "metrics": {
+            "current": 6014,
+            "previous": 7941,
+            "delta": -1927,
+            "deltaPercent": -24
+          },
+          "samples": [
+            {
+              "title": "Venture Capital — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Venture_capital",
+              "score": 6014
+            }
+          ]
+        },
+        "product-management": {
+          "interestId": "product-management",
+          "metrics": {
+            "current": 439,
+            "previous": 543,
+            "delta": -104,
+            "deltaPercent": -19
+          },
+          "samples": [
+            {
+              "title": "Product Management — Wikipedia pageviews",
+              "url": "https://en.wikipedia.org/wiki/Product_management",
+              "score": 439
+            }
+          ]
+        }
+      }
+    },
+    "github": {
+      "source": "github",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.712Z",
+      "interests": {
+        "artificial-intelligence": {
+          "interestId": "artificial-intelligence",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "robotics": {
+          "interestId": "robotics",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "quantum-computing": {
+          "interestId": "quantum-computing",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "cybersecurity": {
+          "interestId": "cybersecurity",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "cloud-computing": {
+          "interestId": "cloud-computing",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "manufacturing": {
+          "interestId": "manufacturing",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "supply-chain": {
+          "interestId": "supply-chain",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "finance": {
+          "interestId": "finance",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "energy": {
+          "interestId": "energy",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "arts": {
+          "interestId": "arts",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "commerce": {
+          "interestId": "commerce",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "entrepreneurship": {
+          "interestId": "entrepreneurship",
+          "metrics": {
+            "current": 1,
+            "previous": 1,
+            "delta": 0,
+            "deltaPercent": 0
+          },
+          "samples": [
+            {
+              "title": "evalops/orbit-agent",
+              "url": "https://github.com/evalops/orbit-agent",
+              "score": 23
+            }
+          ]
+        },
+        "startups": {
+          "interestId": "startups",
+          "metrics": {
+            "current": 10,
+            "previous": 8,
+            "delta": 2,
+            "deltaPercent": 25
+          },
+          "samples": [
+            {
+              "title": "bahmutov/start-server-and-test",
+              "url": "https://github.com/bahmutov/start-server-and-test",
+              "score": 1579
+            },
+            {
+              "title": "macro-inc/macro",
+              "url": "https://github.com/macro-inc/macro",
+              "score": 576
+            },
+            {
+              "title": "carta/plugins",
+              "url": "https://github.com/carta/plugins",
+              "score": 11
+            }
+          ]
+        },
+        "venture-capital": {
+          "interestId": "venture-capital",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "product-management": {
+          "interestId": "product-management",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        }
+      }
+    },
+    "product-hunt": {
+      "source": "product-hunt",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.712Z",
+      "interests": {
+        "artificial-intelligence": {
+          "interestId": "artificial-intelligence",
+          "metrics": {
+            "current": 797,
+            "previous": 1461,
+            "delta": -664,
+            "deltaPercent": -45
+          },
+          "samples": [
+            {
+              "title": "Fuzzy AI",
+              "url": "https://www.producthunt.com/products/fuzzy-ai-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 623
+            },
+            {
+              "title": "Lev8",
+              "url": "https://www.producthunt.com/products/lev8?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 547
+            },
+            {
+              "title": "Nautis",
+              "url": "https://www.producthunt.com/products/nautis?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 493
+            },
+            {
+              "title": "Loova Ads Studio",
+              "url": "https://www.producthunt.com/products/loova-agents?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 488
+            },
+            {
+              "title": "CartAI",
+              "url": "https://www.producthunt.com/products/cartai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 438
+            }
+          ]
+        },
+        "robotics": {
+          "interestId": "robotics",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "quantum-computing": {
+          "interestId": "quantum-computing",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "cybersecurity": {
+          "interestId": "cybersecurity",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "cloud-computing": {
+          "interestId": "cloud-computing",
+          "metrics": {
+            "current": 456,
+            "previous": 777,
+            "delta": -321,
+            "deltaPercent": -41
+          },
+          "samples": [
+            {
+              "title": "CartAI",
+              "url": "https://www.producthunt.com/products/cartai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 438
+            },
+            {
+              "title": "Replay QA",
+              "url": "https://www.producthunt.com/products/replayio?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 424
+            },
+            {
+              "title": "ditto.site",
+              "url": "https://www.producthunt.com/products/ditto-site?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 418
+            },
+            {
+              "title": "Phantomstory",
+              "url": "https://www.producthunt.com/products/phantomstory?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 245
+            },
+            {
+              "title": "CreateOS Sandbox",
+              "url": "https://www.producthunt.com/products/createos-sandbox?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 178
+            }
+          ]
+        },
+        "manufacturing": {
+          "interestId": "manufacturing",
+          "metrics": {
+            "current": 11,
+            "previous": 21,
+            "delta": -10,
+            "deltaPercent": -48
+          },
+          "samples": [
+            {
+              "title": "ProtoFlow",
+              "url": "https://www.producthunt.com/products/protoflow-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 119
+            },
+            {
+              "title": "Light Flip ",
+              "url": "https://www.producthunt.com/products/light-phone?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
+            },
+            {
+              "title": "CirqTap",
+              "url": "https://www.producthunt.com/products/cirqtap?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 9
+            },
+            {
+              "title": "FF FlashFish T2000",
+              "url": "https://www.producthunt.com/products/ff-flashfish-t2000?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 9
+            },
+            {
+              "title": "RGB Critter BT",
+              "url": "https://www.producthunt.com/products/rgb-critter-bt?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 6
+            }
+          ]
+        },
+        "supply-chain": {
+          "interestId": "supply-chain",
+          "metrics": {
+            "current": 789,
+            "previous": 1483,
+            "delta": -694,
+            "deltaPercent": -47
+          },
+          "samples": [
+            {
+              "title": "Nautis",
+              "url": "https://www.producthunt.com/products/nautis?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 493
+            },
+            {
+              "title": "Routine AI",
+              "url": "https://www.producthunt.com/products/routine?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 238
+            },
+            {
+              "title": "Jockey by TwelveLabs ",
+              "url": "https://www.producthunt.com/products/twelvelabs?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 206
+            },
+            {
+              "title": "Creed",
+              "url": "https://www.producthunt.com/products/creed-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 164
+            },
+            {
+              "title": "Backdrop",
+              "url": "https://www.producthunt.com/products/backdrop?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 158
+            }
+          ]
+        },
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 147,
+            "previous": 264,
+            "delta": -117,
+            "deltaPercent": -44
+          },
+          "samples": [
+            {
+              "title": "Garmin CIRQA™ Smart Band",
+              "url": "https://www.producthunt.com/products/garmin-cirqa-smart-band?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
+            },
+            {
+              "title": "UltraPod",
+              "url": "https://www.producthunt.com/products/ultrapod?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 0
+            },
+            {
+              "title": "Wyser",
+              "url": "https://www.producthunt.com/products/wyser?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 30
+            },
+            {
+              "title": "Nervana",
+              "url": "https://www.producthunt.com/products/nervana-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 20
+            },
+            {
+              "title": "Pawzy",
+              "url": "https://www.producthunt.com/products/pawzy-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 19
+            }
+          ]
+        },
+        "finance": {
+          "interestId": "finance",
+          "metrics": {
+            "current": 110,
+            "previous": 209,
+            "delta": -99,
+            "deltaPercent": -47
+          },
+          "samples": [
+            {
+              "title": "Rex",
+              "url": "https://www.producthunt.com/products/rex-7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 108
+            },
+            {
+              "title": "paycalceu",
+              "url": "https://www.producthunt.com/products/paycalceu?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 15
+            },
+            {
+              "title": "Claimwise — find unclaimed money",
+              "url": "https://www.producthunt.com/products/claimwise-find-unclaimed-money?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 14
+            },
+            {
+              "title": "CoinMind",
+              "url": "https://www.producthunt.com/products/coinmind?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 14
+            },
+            {
+              "title": "Igdrasil",
+              "url": "https://www.producthunt.com/products/igdrasil?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 13
+            }
+          ]
+        },
+        "energy": {
+          "interestId": "energy",
+          "metrics": {
+            "current": 2,
+            "previous": 9,
+            "delta": -7,
+            "deltaPercent": -78
+          },
+          "samples": [
+            {
+              "title": "EcoDiligence — Smart Compliance for SMEs",
+              "url": "https://www.producthunt.com/products/ecodiligence-smart-compliance-for-smes?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 11
+            },
+            {
+              "title": "Verified Lab Testing Marketplace",
+              "url": "https://www.producthunt.com/products/verified-lab-testing-marketplace?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 3
+            }
+          ]
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 1,
+            "previous": 2,
+            "delta": -1,
+            "deltaPercent": -50
+          },
+          "samples": [
+            {
+              "title": "SelfAssay",
+              "url": "https://www.producthunt.com/products/selfassay?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 9
+            }
+          ]
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 1,
+            "previous": 3,
+            "delta": -2,
+            "deltaPercent": -67
+          },
+          "samples": [
+            {
+              "title": "SciSuite",
+              "url": "https://www.producthunt.com/products/scisuite-science-should-be-sweet?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 10
+            }
+          ]
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 1,
+            "previous": 3,
+            "delta": -2,
+            "deltaPercent": -67
+          },
+          "samples": [
+            {
+              "title": "SciSuite",
+              "url": "https://www.producthunt.com/products/scisuite-science-should-be-sweet?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 10
+            }
+          ]
+        },
+        "arts": {
+          "interestId": "arts",
+          "metrics": {
+            "current": 1,
+            "previous": 14,
+            "delta": -13,
+            "deltaPercent": -93
+          },
+          "samples": [
+            {
+              "title": "GitHub",
+              "url": "https://www.producthunt.com/products/github-446?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 4
+            }
+          ]
+        },
+        "commerce": {
+          "interestId": "commerce",
+          "metrics": {
+            "current": 97,
+            "previous": 181,
+            "delta": -84,
+            "deltaPercent": -46
+          },
+          "samples": [
+            {
+              "title": "Votive · Free E-commerce Template",
+              "url": "https://www.producthunt.com/products/framer?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 37
+            },
+            {
+              "title": "AI Product Page Optimization",
+              "url": "https://www.producthunt.com/products/ai-product-page-optimization?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 13
+            },
+            {
+              "title": "attyrenow",
+              "url": "https://www.producthunt.com/products/attyrenow?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 12
+            },
+            {
+              "title": "RELEASE STOCK",
+              "url": "https://www.producthunt.com/products/release-stock?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 12
+            },
+            {
+              "title": "SellPilot AI",
+              "url": "https://www.producthunt.com/products/sellpilot-ai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 12
+            }
+          ]
+        },
+        "entrepreneurship": {
+          "interestId": "entrepreneurship",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "startups": {
+          "interestId": "startups",
+          "metrics": {
+            "current": 0,
+            "previous": 0,
+            "delta": 0,
+            "deltaPercent": null
+          },
+          "samples": []
+        },
+        "venture-capital": {
+          "interestId": "venture-capital",
+          "metrics": {
+            "current": 1,
+            "previous": 14,
+            "delta": -13,
+            "deltaPercent": -93
+          },
+          "samples": [
+            {
+              "title": "Boundeal VDR",
+              "url": "https://www.producthunt.com/products/boundeal-vdr?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 10
+            }
+          ]
+        },
+        "product-management": {
+          "interestId": "product-management",
+          "metrics": {
+            "current": 789,
+            "previous": 1483,
+            "delta": -694,
+            "deltaPercent": -47
+          },
+          "samples": [
+            {
+              "title": "Nautis",
+              "url": "https://www.producthunt.com/products/nautis?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 493
+            },
+            {
+              "title": "Routine AI",
+              "url": "https://www.producthunt.com/products/routine?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 238
+            },
+            {
+              "title": "Jockey by TwelveLabs ",
+              "url": "https://www.producthunt.com/products/twelvelabs?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 206
+            },
+            {
+              "title": "Creed",
+              "url": "https://www.producthunt.com/products/creed-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 164
+            },
+            {
+              "title": "Backdrop",
+              "url": "https://www.producthunt.com/products/backdrop?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29",
+              "score": 158
+            }
+          ]
+        }
+      }
+    },
+    "pubmed": {
+      "source": "pubmed",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.712Z",
+      "interests": {
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 680,
+            "previous": 623,
+            "delta": 57,
+            "deltaPercent": 9
+          },
+          "samples": [
+            {
+              "title": "Baseline Echocardiographic Parameters Associated With Post-Pacing Cardiomyopathy in Patients With Normal Left Ventricular Ejection Fraction Undergoing Pacemaker Implantation for Atrioventricular Block.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472354/"
+            },
+            {
+              "title": "Efficacy and safety of HRS-7535, an oral small-molecule GLP-1 receptor agonist, in patients with diabetic kidney disease (SOLID-DKD): a randomised, double-blind, placebo-controlled, phase 2 trial.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472282/"
+            },
+            {
+              "title": "Trends and evolution of metabolic bariatric surgery over a decade: analysis of IFSO global registry reports' data collection, clinical trends, and a FAIR-informed appraisal of report-level transparency.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472280/"
+            }
+          ]
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 405,
+            "previous": 347,
+            "delta": 58,
+            "deltaPercent": 17
+          },
+          "samples": [
+            {
+              "title": "Regulatory effects of Pl1 on anthocyanin biosynthesis in maize basal leaf sheaths and the underlying molecular mechanism.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472504/"
+            },
+            {
+              "title": "Incorporation of low-oxidation graphene oxide into electrospun poly(ε-caprolactone) /gelatin scaffolds for human embryonic stem cell-derived retinal pigment epithelium cell transplantation.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472489/"
+            },
+            {
+              "title": "The MPK6-WRKY49 module links MAPK signaling to ABA biosynthesis and drought tolerance in Arabidopsis.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472482/"
+            }
+          ]
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 56,
+            "previous": 44,
+            "delta": 12,
+            "deltaPercent": 27
+          },
+          "samples": [
+            {
+              "title": "Comparative modelling and MD-derived energetic fingerprints identify engineering hotspots in Purpureocillium lilacinum subtilisin-like S8 proteases.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472456/"
+            },
+            {
+              "title": "Bridging the Vaccine Gap: Scientific and Technological Advances for Diseases Lacking Effective Vaccines.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42471045/"
+            },
+            {
+              "title": "Plasmid- and Inducer-Free Biosynthesis of Difucosyllactose through Rational Fusion Enzyme Engineering and Systematic Pathway Optimization.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42470388/"
+            }
+          ]
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 538,
+            "previous": 497,
+            "delta": 41,
+            "deltaPercent": 8
+          },
+          "samples": [
+            {
+              "title": "Integrated multi-omics and SHAP analysis reveal the core mechanisms of metabolic reprogramming in lung adenocarcinoma.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472421/"
+            },
+            {
+              "title": "The CRABP2-MDK Signaling Axis Promotes Lung Adenocarcinoma (LUAD) Progression and Highlights Prognostic Biomarkers.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472388/"
+            },
+            {
+              "title": "Single-Cell Transcriptomic Profiling Reveals Cellular Heterogeneity and Identifies Novel Therapeutic Targets in Osteosarcoma.",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/42472256/"
+            }
+          ]
+        }
+      }
+    },
+    "gdelt": {
+      "source": "gdelt",
+      "status": "stale",
+      "fetchedAt": "2026-07-22T08:27:01.712Z",
+      "error": "fetch failed",
+      "interests": {
+        "arts": {
+          "interestId": "arts",
+          "metrics": {
+            "current": 53,
+            "previous": 238,
+            "delta": -185,
+            "deltaPercent": -78
+          },
+          "samples": [
+            {
+              "title": "Buttaface Meaning : The Evolution Of Internet Slang And The Rise Of Faceless Digital Trends",
+              "url": "https://www.unitaid.eu/slang-rise-faceless-digital-trends-esy7.html"
+            },
+            {
+              "title": "Oz Comic - Con brings Brisbane - born Miranda Otto home , with the voices behind Genshin Impact , Demon Slayer and an Australian - made YouTube hit",
+              "url": "https://itwire.com/your-it-news/entertainment/oz-comic-con-brings-brisbane-born-miranda-otto-home-with-the-voices-behind-genshin-impact-demon-slayer-and-an-australian-made-youtube-hit"
+            },
+            {
+              "title": "مقالة : مهرجان جرش بالأردن ينبض بالتراث الثقافي الصيني",
+              "url": "http://arabic.people.com.cn/n3/2026/0722/c31660-20480426.html"
+            }
+          ]
+        },
+        "commerce": {
+          "interestId": "commerce",
+          "metrics": {
+            "current": 52,
+            "previous": 190,
+            "delta": -138,
+            "deltaPercent": -73
+          },
+          "samples": []
+        },
+        "venture-capital": {
+          "interestId": "venture-capital",
+          "metrics": {
+            "current": 408,
+            "previous": 886,
+            "delta": -478,
+            "deltaPercent": -54
+          },
+          "samples": []
+        }
+      }
+    },
+    "openalex": {
+      "source": "openalex",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.713Z",
+      "interests": {
+        "artificial-intelligence": {
+          "interestId": "artificial-intelligence",
+          "metrics": {
+            "current": 1020,
+            "previous": 11219,
+            "delta": -10199,
+            "deltaPercent": -91
+          },
+          "samples": [
+            {
+              "title": "Legal analytics and artificial intelligence",
+              "url": "https://openalex.org/W7169782131"
+            },
+            {
+              "title": "WHY ARTIFICIAL INTELLIGENCE? BECAUSE ARTIFICIAL!",
+              "url": "https://openalex.org/W7169776670"
+            },
+            {
+              "title": "WHY ARTIFICIAL INTELLIGENCE? BECAUSE ARTIFICIAL!",
+              "url": "https://openalex.org/W7169797256"
+            }
+          ]
+        },
+        "robotics": {
+          "interestId": "robotics",
+          "metrics": {
+            "current": 288,
+            "previous": 3032,
+            "delta": -2744,
+            "deltaPercent": -91
+          },
+          "samples": [
+            {
+              "title": "Anthropomorphic Dummy Robot for the Wearable Robot Performance Evaluation",
+              "url": "https://openalex.org/W7169811139"
+            },
+            {
+              "title": "Do Robots Really Need Anthropomorphic Hands? A Comparison of Human and Robotic Hands",
+              "url": "https://openalex.org/W7169795018"
+            },
+            {
+              "title": "Tactile sensors for robot bodies",
+              "url": "https://openalex.org/W7167861761"
+            }
+          ]
+        },
+        "quantum-computing": {
+          "interestId": "quantum-computing",
+          "metrics": {
+            "current": 90,
+            "previous": 2061,
+            "delta": -1971,
+            "deltaPercent": -96
+          },
+          "samples": [
+            {
+              "title": "The Five-Year Horizon: Quantum Computing and the Philosophy of Technical Becoming",
+              "url": "https://openalex.org/W7169797388"
+            },
+            {
+              "title": "Non-Abelian Anyon Fusion Mirrors Braid Groups for Fault-Tolerant Quantum Computing — E8 Intelligence Research",
+              "url": "https://openalex.org/W7169752323"
+            },
+            {
+              "title": "Non-Abelian Anyon Fusion Mirrors Braid Groups for Fault-Tolerant Quantum Computing — E8 Intelligence Research",
+              "url": "https://openalex.org/W7169753813"
+            }
+          ]
+        },
+        "cybersecurity": {
+          "interestId": "cybersecurity",
+          "metrics": {
+            "current": 83,
+            "previous": 1041,
+            "delta": -958,
+            "deltaPercent": -92
+          },
+          "samples": [
+            {
+              "title": "The Cybersecurity Compass Framework",
+              "url": "https://openalex.org/W7169755052"
+            },
+            {
+              "title": "Toward a behavioral ontology for cybersecurity: Introducing SebDB",
+              "url": "https://openalex.org/W7130489205"
+            },
+            {
+              "title": "A Scenario-Based Experimental Design for Cybersecurity Curriculum Implementation",
+              "url": "https://openalex.org/W7169809523"
+            }
+          ]
+        },
+        "cloud-computing": {
+          "interestId": "cloud-computing",
+          "metrics": {
+            "current": 107,
+            "previous": 1950,
+            "delta": -1843,
+            "deltaPercent": -95
+          },
+          "samples": [
+            {
+              "title": "Cloud Computing and Artificial Intelligence in Modern IT Infrastructure: A Review of Opportunities, Operational Applications, and Challenges",
+              "url": "https://openalex.org/W7169792865"
+            },
+            {
+              "title": "Cloud Computing and Artificial Intelligence in Modern IT Infrastructure: A Review of Opportunities, Operational Applications, and Challenges",
+              "url": "https://openalex.org/W7169755329"
+            },
+            {
+              "title": "Strategies for Multidisciplinary Workflow Scheduling and Resource Management in Cloud Computing",
+              "url": "https://openalex.org/W7169800761"
+            }
+          ]
+        },
+        "manufacturing": {
+          "interestId": "manufacturing",
+          "metrics": {
+            "current": 70,
+            "previous": 1911,
+            "delta": -1841,
+            "deltaPercent": -96
+          },
+          "samples": [
+            {
+              "title": "Ceramic and Glass Material Coatings: Advances in Raw Materials, Processing, Functional Performance, and Sustainability",
+              "url": "https://openalex.org/W7169811371"
+            },
+            {
+              "title": "Polyhydroxybutyrate (PHB): Production, Properties, Modification Strategies, Additive Manufacturing, Biodegradation, and Applications",
+              "url": "https://openalex.org/W7169765530"
+            },
+            {
+              "title": "Machine learning-driven characterization of anisotropic microstructures in powder-based additive manufactured metal parts",
+              "url": "https://openalex.org/W7169769503"
+            }
+          ]
+        },
+        "supply-chain": {
+          "interestId": "supply-chain",
+          "metrics": {
+            "current": 225,
+            "previous": 3418,
+            "delta": -3193,
+            "deltaPercent": -93
+          },
+          "samples": [
+            {
+              "title": "International Journal of Information Systems and Supply Chain Management",
+              "url": "https://openalex.org/W4206811748"
+            },
+            {
+              "title": "The Role of Supply Chain Integration in Mediating the Effect of IT Ambidexterity on Supply Chain Resilience in Logistics Service Providers in Indonesia",
+              "url": "https://openalex.org/W7169752312"
+            },
+            {
+              "title": "Palm Oil Supply Chain",
+              "url": "https://openalex.org/W7169815489"
+            }
+          ]
+        },
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 590,
+            "previous": 7814,
+            "delta": -7224,
+            "deltaPercent": -92
+          },
+          "samples": [
+            {
+              "title": "Grand challenges in healthcare simulation",
+              "url": "https://openalex.org/W7169791514"
+            },
+            {
+              "title": "Smart healthcare engineering: transnational understanding of atmospheric corrosion processes in healthcare facilities",
+              "url": "https://openalex.org/W7169782248"
+            },
+            {
+              "title": "Role of Internet of Things in Female Healthcare",
+              "url": "https://openalex.org/W7169806740"
+            }
+          ]
+        },
+        "finance": {
+          "interestId": "finance",
+          "metrics": {
+            "current": 373,
+            "previous": 6387,
+            "delta": -6014,
+            "deltaPercent": -94
+          },
+          "samples": [
+            {
+              "title": "Integration of Psychological Factors and Financial Technology in Student Financial Management Models",
+              "url": "https://openalex.org/W7169777230"
+            },
+            {
+              "title": "The impact of FinTech adoption on financial risk control capability: The mediating role of accounting system integration and data quality",
+              "url": "https://openalex.org/W7169761394"
+            },
+            {
+              "title": "The Impact of Customized Financial Products on the Growth of the Global Electric Vehicle Market",
+              "url": "https://openalex.org/W7169787840"
+            }
+          ]
+        },
+        "energy": {
+          "interestId": "energy",
+          "metrics": {
+            "current": 170,
+            "previous": 2032,
+            "delta": -1862,
+            "deltaPercent": -92
+          },
+          "samples": [
+            {
+              "title": "Renewable Energy Consumption and Energy Accessibility in Kenya",
+              "url": "https://openalex.org/W7169762636"
+            },
+            {
+              "title": "Renewable Energy Consumption and Energy Accessibility in Kenya",
+              "url": "https://openalex.org/W7169790071"
+            },
+            {
+              "title": "Editorial: Environmental policy and renewable energy",
+              "url": "https://openalex.org/W7169815256"
+            }
+          ]
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 110,
+            "previous": 1909,
+            "delta": -1799,
+            "deltaPercent": -94
+          },
+          "samples": [
+            {
+              "title": "Advances in Bioprocess Engineering for Sustainable Biotechnology: A Critical Review",
+              "url": "https://openalex.org/W7169767461"
+            },
+            {
+              "title": "Book of Abstracts of The 8th Meeting on Medicinal Biotechnology: book of abstracts",
+              "url": "https://openalex.org/W7169804796"
+            },
+            {
+              "title": "Managing complexity in research data management for heterogeneous biotechnological data: a perspective on interacting as data steward",
+              "url": "https://openalex.org/W7169816627"
+            }
+          ]
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 52,
+            "previous": 1141,
+            "delta": -1089,
+            "deltaPercent": -95
+          },
+          "samples": [
+            {
+              "title": "Frequency, Causes and Economic Impact of Repeat Testing in a Clinical Biochemistry Laboratory of a University Hospital in Nepal",
+              "url": "https://openalex.org/W7169812563"
+            },
+            {
+              "title": "Analysis of Influenza A viruses using the resonant recognition model",
+              "url": "https://openalex.org/W7169786127"
+            },
+            {
+              "title": "Relationship Between Academic Performance and NBME CBSE Scores: A Retrospective Cohort Study and Predictive Modeling for Early Identification of At-Risk Students in a Latin American Medical School",
+              "url": "https://openalex.org/W7169728825"
+            }
+          ]
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 465,
+            "previous": 9570,
+            "delta": -9105,
+            "deltaPercent": -95
+          },
+          "samples": [
+            {
+              "title": "International Journal of Oncology",
+              "url": "https://openalex.org/W4200531859"
+            },
+            {
+              "title": "Integrating Divine Solutions with Life Sciences: A Research for Framework Sustainable Living through Metaphysical Approaches",
+              "url": "https://openalex.org/W7169808161"
+            },
+            {
+              "title": "Integrating Divine Solutions with Life Sciences: A Research for Framework Sustainable Living through Metaphysical Approaches",
+              "url": "https://openalex.org/W7169770847"
+            }
+          ]
+        }
+      }
+    },
+    "edgar": {
+      "source": "edgar",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.713Z",
+      "interests": {
+        "artificial-intelligence": {
+          "interestId": "artificial-intelligence",
+          "metrics": {
+            "current": 251,
+            "previous": 548,
+            "delta": -297,
+            "deltaPercent": -54
+          },
+          "samples": [
+            {
+              "title": "Artificial Intelligence Technology Solutions Inc. (AITX) (CIK 0001498148)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1498148/000106299326003712/exhibit99-1.htm"
+            },
+            {
+              "title": "Artificial Intelligence Technology Solutions Inc. (AITX) (CIK 0001498148)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1498148/000106299326003712/form8k.htm"
+            },
+            {
+              "title": "Wellgistics Health, Inc. (WGRX) (CIK 0002030763)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2030763/000149315226034086/ex99-1.htm"
+            }
+          ]
+        },
+        "robotics": {
+          "interestId": "robotics",
+          "metrics": {
+            "current": 62,
+            "previous": 147,
+            "delta": -85,
+            "deltaPercent": -58
+          },
+          "samples": [
+            {
+              "title": "Microbot Medical Inc. (MBOT) (CIK 0000883975)",
+              "url": "https://www.sec.gov/Archives/edgar/data/883975/000149315226034014/ex99-1.htm"
+            },
+            {
+              "title": "Charging Robotics Inc. (CHEV) (CIK 0001459188)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1459188/000121390026080044/ea0298679-8k_charging.htm"
+            },
+            {
+              "title": "Xtend AI Robotics, Inc. (XTND) (CIK 0002111860)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2111860/000149315226033875/form425.htm"
+            }
+          ]
+        },
+        "quantum-computing": {
+          "interestId": "quantum-computing",
+          "metrics": {
+            "current": 39,
+            "previous": 74,
+            "delta": -35,
+            "deltaPercent": -47
+          },
+          "samples": [
+            {
+              "title": "Axiom Intelligence Acquisition Corp 1 (AXIN, AXINR, AXINU) (CIK 0002057030)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2057030/000121390026079739/ea0298517-425_axiom1.htm"
+            },
+            {
+              "title": "QTREX Quantum Ltd. (QTEX, QTEXW) (CIK 0001837493)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1837493/000118518526003070/qtrexf1072126.htm"
+            },
+            {
+              "title": "BTQ Technologies Corp. (BTQ) (CIK 0001821866)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1821866/000127956926000681/ex991.htm"
+            }
+          ]
+        },
+        "cybersecurity": {
+          "interestId": "cybersecurity",
+          "metrics": {
+            "current": 269,
+            "previous": 618,
+            "delta": -349,
+            "deltaPercent": -56
+          },
+          "samples": [
+            {
+              "title": "EQUIFAX INC (EFX) (CIK 0000033185)",
+              "url": "https://www.sec.gov/Archives/edgar/data/33185/000003318526000024/exhibit99120260630.htm"
+            },
+            {
+              "title": "Aether Holdings, Inc. (ATHR) (CIK 0002026353)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2026353/000149315226034007/ex10-1.htm"
+            },
+            {
+              "title": "ECOPETROL S.A. (EC) (CIK 0001444406)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1444406/000129281426003818/ex99-1.htm"
+            }
+          ]
+        },
+        "cloud-computing": {
+          "interestId": "cloud-computing",
+          "metrics": {
+            "current": 40,
+            "previous": 92,
+            "delta": -52,
+            "deltaPercent": -57
+          },
+          "samples": [
+            {
+              "title": "Global X Funds (CIK 0001432353)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1432353/000143235326000623/cptl_amdxbbhtl.htm"
+            },
+            {
+              "title": "Global X Funds (CIK 0001432353)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1432353/000143235326000623/cptl_amdxbbhca.htm"
+            },
+            {
+              "title": "High Point Wealth Management, LLC (CIK 0002106882)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2106882/000210688226000003/HPW13FAssets2Q2026XML.xml"
+            }
+          ]
+        },
+        "manufacturing": {
+          "interestId": "manufacturing",
+          "metrics": {
+            "current": 8,
+            "previous": 24,
+            "delta": -16,
+            "deltaPercent": -67
+          },
+          "samples": [
+            {
+              "title": "FLEX LTD. (FLEX) (CIK 0000866374)",
+              "url": "https://www.sec.gov/Archives/edgar/data/866374/000119312526308088/d81863ddefa14a.htm"
+            },
+            {
+              "title": "LCI INDUSTRIES (LCII) (CIK 0000763744)",
+              "url": "https://www.sec.gov/Archives/edgar/data/763744/000076374426000061/ex991hureau20260720.htm"
+            },
+            {
+              "title": "Laser Photonics Corp (LASE) (CIK 0001807887)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1807887/000149315226033889/ex99-1.htm"
+            }
+          ]
+        },
+        "supply-chain": {
+          "interestId": "supply-chain",
+          "metrics": {
+            "current": 172,
+            "previous": 483,
+            "delta": -311,
+            "deltaPercent": -64
+          },
+          "samples": [
+            {
+              "title": "DOMINOS PIZZA INC (DPZ) (CIK 0001286681)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1286681/000128668126000035/dpz-20260614.htm"
+            },
+            {
+              "title": "DOMINOS PIZZA INC (DPZ) (CIK 0001286681)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1286681/000128668126000034/dpz-ex99_1.htm"
+            },
+            {
+              "title": "ASP Isotopes Inc. (ASPI) (CIK 0001921865)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1921865/000119312526309573/aspi-ex99_1.htm"
+            }
+          ]
+        },
+        "finance": {
+          "interestId": "finance",
+          "metrics": {
+            "current": 17,
+            "previous": 67,
+            "delta": -50,
+            "deltaPercent": -75
+          },
+          "samples": [
+            {
+              "title": "Long Table Growth Corp. (LTGR, LTGRU) (CIK 0002104177)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2104177/000121390026080103/ea029870501ex99-1.htm"
+            },
+            {
+              "title": "COLLECTIVE ACQUISITION CORP. (CCAQ, CCAQU, CCAQW) (CIK 0002041047)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2041047/000121390026079700/ea0298481-8k_collective.htm"
+            },
+            {
+              "title": "National Bank Holdings Corp (NBHC) (CIK 0001475841)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1475841/000110465926085408/nbhc-20260721xex99d1.htm"
+            }
+          ]
+        },
+        "energy": {
+          "interestId": "energy",
+          "metrics": {
+            "current": 80,
+            "previous": 134,
+            "delta": -54,
+            "deltaPercent": -40
+          },
+          "samples": [
+            {
+              "title": "PRF Technologies Ltd. (PRFX) (CIK 0001801834)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1801834/000117891326003546/exhibit_99-1.htm"
+            },
+            {
+              "title": "Eco Wave Power Global AB (publ) (WAVE) (CIK 0001846715)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1846715/000121390026079823/ea029861901ex99-1.htm"
+            },
+            {
+              "title": "Energea Portfolio 4 USA LP (CIK 0001853011)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1853011/000185301126000015/port4_part2.htm"
+            }
+          ]
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 183,
+            "previous": 357,
+            "delta": -174,
+            "deltaPercent": -49
+          },
+          "samples": [
+            {
+              "title": "Research Alliance Corp IV (RACD) (CIK 0002137777)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2137777/000092189526001836/primary_doc.xml"
+            },
+            {
+              "title": "Research Alliance Corp IV (RACD) (CIK 0002137777)",
+              "url": "https://www.sec.gov/Archives/edgar/data/2137777/000149315226034085/primary_doc.xml"
+            },
+            {
+              "title": "Ballentine Partners, LLC (CIK 0001374889)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1374889/000117266126002721/proxytable.xml"
+            }
+          ]
+        },
+        "commerce": {
+          "interestId": "commerce",
+          "metrics": {
+            "current": 54,
+            "previous": 125,
+            "delta": -71,
+            "deltaPercent": -57
+          },
+          "samples": [
+            {
+              "title": "Linkage Global Inc (UZX) (CIK 0001969401)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1969401/000121390026079619/ea0297855-424b5_linkage.htm"
+            },
+            {
+              "title": "Baosheng Media Group Holdings Ltd (BAOS) (CIK 0001811216)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1811216/000110465926084927/tm2620758d1_ex99-1.htm"
+            },
+            {
+              "title": "Reformation Inc. (REF) (CIK 0001787117)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1787117/000110465926084856/tm2513004-10_s1.htm"
+            }
+          ]
+        },
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 414,
+            "previous": 797,
+            "delta": -383,
+            "deltaPercent": -48
+          },
+          "samples": [
+            {
+              "title": "CROSS COUNTRY HEALTHCARE INC (CCRN) (CIK 0001141103)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1141103/000095010326010882/dp250362_s8pos-33374862.htm"
+            },
+            {
+              "title": "CROSS COUNTRY HEALTHCARE INC (CCRN) (CIK 0001141103)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1141103/000095010326010895/dp250367_s8pos-333238719.htm"
+            },
+            {
+              "title": "CROSS COUNTRY HEALTHCARE INC (CCRN) (CIK 0001141103)",
+              "url": "https://www.sec.gov/Archives/edgar/data/1141103/000095010326010892/dp250365_s8pos-333196639.htm"
+            }
+          ]
+        }
+      }
+    },
+    "clinical-trials": {
+      "source": "clinical-trials",
+      "status": "ok",
+      "fetchedAt": "2026-07-22T08:27:01.713Z",
+      "interests": {
+        "healthcare": {
+          "interestId": "healthcare",
+          "metrics": {
+            "current": 291,
+            "previous": 654,
+            "delta": -363,
+            "deltaPercent": -56
+          },
+          "samples": [
+            {
+              "title": "A Study to Assess the Efficacy and Safety of Verekitug in Participants With COPD",
+              "url": "https://clinicaltrials.gov/study/NCT06981078"
+            },
+            {
+              "title": "Swaddling and Facilitated Tucking During Nasal CPAP Application",
+              "url": "https://clinicaltrials.gov/study/NCT07077148"
+            },
+            {
+              "title": "Prenatal Blood Typing With Next Generation Sequencing (NGS) - an Implementation Study in HDFN (PREFAB)",
+              "url": "https://clinicaltrials.gov/study/NCT07715214"
+            }
+          ]
+        },
+        "biotechnology": {
+          "interestId": "biotechnology",
+          "metrics": {
+            "current": 3,
+            "previous": 9,
+            "delta": -6,
+            "deltaPercent": -67
+          },
+          "samples": [
+            {
+              "title": "A Clinical Study Evaluating the Safety and Efficacy of GT801 Injection in Adult Patients With Relapsed/Refractory CD19-positive B-cell Hematologic Malignancies and Autoimmune Hemolytic Anemia",
+              "url": "https://clinicaltrials.gov/study/NCT07205315"
+            },
+            {
+              "title": "Short-Chain Fatty Acids in Lypopolysaccharide-Induced Inflammation and Executive Function",
+              "url": "https://clinicaltrials.gov/study/NCT07713641"
+            },
+            {
+              "title": "Universal STAR-T Cell Injection in Generalized Myasthenia Gravis",
+              "url": "https://clinicaltrials.gov/study/NCT07714798"
+            }
+          ]
+        },
+        "biochemistry": {
+          "interestId": "biochemistry",
+          "metrics": {
+            "current": 7,
+            "previous": 20,
+            "delta": -13,
+            "deltaPercent": -65
+          },
+          "samples": [
+            {
+              "title": "Exercise and Health Counseling in Pediatric Hematopoietic Stem Cell Transplantation",
+              "url": "https://clinicaltrials.gov/study/NCT06300515"
+            },
+            {
+              "title": "Nutrition Counselling for Cardiometabolic Multimorbidity",
+              "url": "https://clinicaltrials.gov/study/NCT07712900"
+            },
+            {
+              "title": "Natural History, Physiology, Microbiome and Biochemistry Studies of Propionic Acidemia",
+              "url": "https://clinicaltrials.gov/study/NCT02890342"
+            }
+          ]
+        },
+        "life-sciences": {
+          "interestId": "life-sciences",
+          "metrics": {
+            "current": 90,
+            "previous": 218,
+            "delta": -128,
+            "deltaPercent": -59
+          },
+          "samples": [
+            {
+              "title": "Tamoxifen Citrate, Letrozole, Anastrozole, or Exemestane With or Without Chemotherapy in Treating Patients With Invasive RxPONDER Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01272037"
+            },
+            {
+              "title": "CAPACITY (Cardiac Amyloidosis and Physical ACtivITY) Study",
+              "url": "https://clinicaltrials.gov/study/NCT06096675"
+            },
+            {
+              "title": "Therapeutic Exercise and Education for Low Back Pain",
+              "url": "https://clinicaltrials.gov/study/NCT07713082"
+            }
+          ]
+        }
+      }
+    }
+  }
+}

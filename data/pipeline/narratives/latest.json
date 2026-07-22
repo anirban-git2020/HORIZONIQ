@@ -1,28 +1,28 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-21T08:30:33.655Z",
+  "generatedAt": "2026-07-22T08:32:32.209Z",
   "narratives": {
     "energy": {
       "interestId": "energy",
       "narrative": {
-        "title": "Energy Shift",
-        "headline": "Grids adopt onsite energy architectures",
-        "summary": "Researchers are developing frameworks for islanded operation of sustainable data centers with onsite grid-following and grid-forming energy architectures",
-        "brief": "Studies focus on optimal excitation storage and superradiant release in waveguide QED systems, and deep reinforcement learning-based energy management for hydrogen-enabled community microgrids. Companies like Green Rain Energy Holdings and POWERBANK Corp file reports with the SEC, indicating activity in the energy sector",
-        "forecast": "Watch for advancements in climate-resilient energy technologies and sustainable supply chain management"
+        "title": "Energy Tech",
+        "headline": "Diamond optics enable X-ray nano-imaging",
+        "summary": "Researchers develop free-form diamond refractive optics for efficient high-energy X-ray nano-imaging",
+        "brief": "New optics technology enhances X-ray imaging capabilities, while other developments focus on energy management and battery safety. Renewable energy consumption and accessibility are also being studied in various regions",
+        "forecast": "Watch for advancements in energy management and storage technologies"
       },
       "sources": [
         {
-          "label": "arXiv: A Phased Development Framework Enabling Islanded Operation of Sustainable AI Data Centers With Onsite Grid-Following and Grid-Forming Energy Architectures",
-          "url": "http://arxiv.org/abs/2607.17391v1"
+          "label": "arXiv: Free-form diamond refractive optics enable efficient high-energy X-ray nano-imaging",
+          "url": "http://arxiv.org/abs/2607.19019v1"
         },
         {
-          "label": "arXiv: Scaling law for optimal excitation storage and superradiant release in waveguide QED systems",
-          "url": "http://arxiv.org/abs/2607.17320v1"
+          "label": "arXiv: Forecast-Assisted Deep Reinforcement Learning for Energy Management of Hydrogen-Enabled Community Microgrids",
+          "url": "http://arxiv.org/abs/2607.18903v1"
         },
         {
-          "label": "arXiv: Deep Reinforcement Learning-Based Energy Management for Hydrogen-Enabled Community Microgrids Under Uncertainty",
-          "url": "http://arxiv.org/abs/2607.17248v1"
+          "label": "arXiv: Regime-Aware Physics-Guided Early Warning of Lithium-Ion Battery Thermal Runaway Using Thermo-Mechanical Signals",
+          "url": "http://arxiv.org/abs/2607.18860v1"
         },
         {
           "label": "Wikipedia: Energy — Wikipedia pageviews",
@@ -35,16 +35,16 @@
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-21T08:30:09.902Z"
+      "generatedAt": "2026-07-22T08:32:07.945Z"
     },
     "manufacturing": {
       "interestId": "manufacturing",
       "narrative": {
         "title": "Manufacturing Decline",
         "headline": "Manufacturing output falls",
-        "summary": "Recent developments in smart manufacturing and wireless localization have not halted the decline of manufacturing output",
-        "brief": "The Internet of Things and 5G technologies are being applied to improve manufacturing efficiency, while new products like ProtoFlow and FF FlashFish T2000 are being introduced. Despite these advancements, manufacturing output is still falling, as evidenced by updates from companies like FLEX LTD and LCI INDUSTRIES",
-        "forecast": "Watch for further updates from companies like Laser Photonics Corp to gauge the trajectory of manufacturing output"
+        "summary": "Recent studies and product releases indicate a shift in manufacturing technologies, with a focus on smart manufacturing, wireless localization, and additive manufacturing",
+        "brief": "The Internet of Things and 5G networks are being integrated into manufacturing processes, while new products like ProtoFlow and FF FlashFish T2000 are being introduced. Advances in ceramic and glass material coatings, as well as polyhydroxybutyrate production, are also being explored",
+        "forecast": "Watch for further developments in additive manufacturing and wireless localization technologies"
       },
       "sources": [
         {
@@ -70,77 +70,42 @@
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-21T08:30:14.986Z"
+      "generatedAt": "2026-07-22T08:32:13.108Z"
     },
-    "healthcare": {
-      "interestId": "healthcare",
+    "biochemistry": {
+      "interestId": "biochemistry",
       "narrative": {
-        "title": "Healthcare Decline",
-        "headline": "Tumor spheroids growth modeled",
-        "summary": "A growth model for multicellular tumor spheroids has been developed, providing insights into cancer research",
-        "brief": "Researchers have made progress in understanding tumor growth and cardiac health, with studies on multicellular tumor spheroids and post-pacing cardiomyopathy published, while new healthcare products have been launched on Product Hunt. The efficacy and safety of a new oral small-molecule GLP-1 receptor agonist have been tested in a phase 2 trial for patients with diabetic kidney disease",
-        "forecast": "Watch for further developments in metabolic bariatric surgery trends and outcomes"
+        "title": "Biochemistry Decline",
+        "headline": "Biochemistry research falls",
+        "summary": "Recent studies in biochemistry have focused on specific applications such as breast cancer analysis and vaccine development, indicating a shift towards targeted research areas",
+        "brief": "Publications on biochemistry topics like enzyme engineering and clinical biochemistry laboratory testing have been released, while Wikipedia pageviews on biochemistry have decreased. SciSuite and other tools are being developed to support scientific research",
+        "forecast": "Watch for further developments in targeted biochemistry research areas like disease-specific vaccine development"
       },
       "sources": [
         {
-          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
-          "url": "http://arxiv.org/abs/physics/0307155v1"
+          "label": "arXiv: An unsupervised clustering analysis of breast cancer data derived from electronic health records enhanced through UMAP dimensionality reduction",
+          "url": "http://arxiv.org/abs/2607.19089v1"
         },
         {
-          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
-          "url": "http://arxiv.org/abs/cond-mat/0307747v1"
+          "label": "arXiv: GEqTrain: A Configuration-Driven Framework for Retargeting Equivariant Graph Neural Networks Across 3D Scientific Tasks",
+          "url": "http://arxiv.org/abs/2607.19083v1"
         },
         {
-          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
-          "url": "http://arxiv.org/abs/physics/0307136v1"
+          "label": "arXiv: Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval",
+          "url": "http://arxiv.org/abs/2607.19020v1"
         },
         {
-          "label": "Wikipedia: Healthcare — Wikipedia pageviews",
-          "url": "https://en.wikipedia.org/wiki/Health_care"
+          "label": "Wikipedia: Biochemistry — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Biochemistry"
         },
         {
-          "label": "Product Hunt: Wyser",
-          "url": "https://www.producthunt.com/products/wyser?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+          "label": "Product Hunt: SciSuite",
+          "url": "https://www.producthunt.com/products/scisuite-science-should-be-sweet?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-21T08:30:19.881Z"
-    },
-    "commerce": {
-      "interestId": "commerce",
-      "narrative": {
-        "title": "E Commerce",
-        "headline": "E-commerce systems refine",
-        "summary": "Recent developments in e-commerce focus on refining recommendation strategies and search functions",
-        "brief": "Researchers introduce frameworks like SR-Agent for post-ranking strategies refinement, and Pailitao-MMSearch for multimodal search, while companies like Linkage Global Inc and Baosheng Media Group Holdings Ltd file reports with the SEC. New products such as KORB and attyrenow emerge on Product Hunt",
-        "forecast": "Watch for further innovations in e-commerce search and recommendation technologies"
-      },
-      "sources": [
-        {
-          "label": "arXiv: MEVION: Low-Cost Open-Source Data Collection System for Powerful and High-Speed Dual-Arm Manipulation",
-          "url": "http://arxiv.org/abs/2607.17970v1"
-        },
-        {
-          "label": "arXiv: SR-Agent: An Experience-Driven Agentic Framework for Post-Ranking Strategies Refinement in E-Commerce Recommendation",
-          "url": "http://arxiv.org/abs/2607.17719v1"
-        },
-        {
-          "label": "arXiv: Pailitao-MMSearch: Building Native E-Commerce Multimodal Search Foundation",
-          "url": "http://arxiv.org/abs/2607.17499v1"
-        },
-        {
-          "label": "Wikipedia: Commerce — Wikipedia pageviews",
-          "url": "https://en.wikipedia.org/wiki/E-commerce"
-        },
-        {
-          "label": "Product Hunt: KORB — Universal Smart Cart",
-          "url": "https://www.producthunt.com/products/korb-universal-smart-cart?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        }
-      ],
-      "model": "llama-3.3-70b-versatile",
-      "provider": "groq",
-      "generatedAt": "2026-07-21T08:30:29.655Z"
+      "generatedAt": "2026-07-22T08:32:23.417Z"
     }
   }
 }

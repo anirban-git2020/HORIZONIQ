@@ -1,0 +1,609 @@
+{
+  "version": 1,
+  "scoredAt": "2026-07-22T08:31:57.229Z",
+  "period": "2026-W30",
+  "observationIngestedAt": "2026-07-22T08:27:01.642Z",
+  "interests": [
+    {
+      "interestId": "entrepreneurship",
+      "momentum": 41,
+      "confidence": 98,
+      "sourceAgreement": 3,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Hacker News",
+          "value": -58,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 10,
+          "unit": "%"
+        },
+        {
+          "label": "GitHub",
+          "value": 0,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "startups",
+      "momentum": 38,
+      "confidence": 98,
+      "sourceAgreement": 2,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Hacker News",
+          "value": -100,
+          "unit": "%"
+        },
+        {
+          "label": "arXiv",
+          "value": -100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 5,
+          "unit": "%"
+        },
+        {
+          "label": "GitHub",
+          "value": 25,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "quantum-computing",
+      "momentum": 37,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": 11,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 0,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -96,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -47,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "life-sciences",
+      "momentum": 33,
+      "confidence": 98,
+      "sourceAgreement": 3,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 13,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -67,
+          "unit": "%"
+        },
+        {
+          "label": "PubMed",
+          "value": 8,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -95,
+          "unit": "%"
+        },
+        {
+          "label": "ClinicalTrials.gov",
+          "value": -59,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "venture-capital",
+      "momentum": 33,
+      "confidence": 98,
+      "sourceAgreement": 3,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -24,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -93,
+          "unit": "%"
+        },
+        {
+          "label": "Global News (GDELT)",
+          "value": -54,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "cybersecurity",
+      "momentum": 32,
+      "confidence": 98,
+      "sourceAgreement": 3,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -65,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 38,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -92,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -56,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "product-management",
+      "momentum": 32,
+      "confidence": 98,
+      "sourceAgreement": 3,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -19,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -47,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "healthcare",
+      "momentum": 31,
+      "confidence": 98,
+      "sourceAgreement": 5,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -8,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -44,
+          "unit": "%"
+        },
+        {
+          "label": "PubMed",
+          "value": 9,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -92,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -48,
+          "unit": "%"
+        },
+        {
+          "label": "ClinicalTrials.gov",
+          "value": -56,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "biochemistry",
+      "momentum": 31,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -58,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -2,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -67,
+          "unit": "%"
+        },
+        {
+          "label": "PubMed",
+          "value": 27,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -95,
+          "unit": "%"
+        },
+        {
+          "label": "ClinicalTrials.gov",
+          "value": -65,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "artificial-intelligence",
+      "momentum": 30,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 4,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -45,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -91,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -54,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "robotics",
+      "momentum": 30,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -29,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -18,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -91,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -58,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "finance",
+      "momentum": 30,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 7,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -47,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -94,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -75,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "biotechnology",
+      "momentum": 27,
+      "confidence": 98,
+      "sourceAgreement": 6,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -57,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -10,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -50,
+          "unit": "%"
+        },
+        {
+          "label": "PubMed",
+          "value": 17,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -94,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -49,
+          "unit": "%"
+        },
+        {
+          "label": "ClinicalTrials.gov",
+          "value": -67,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "supply-chain",
+      "momentum": 26,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -44,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 6,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -47,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -93,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -64,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "arts",
+      "momentum": 26,
+      "confidence": 98,
+      "sourceAgreement": 3,
+      "direction": "stable",
+      "drivers": [
+        {
+          "label": "Hacker News",
+          "value": -100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -5,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -93,
+          "unit": "%"
+        },
+        {
+          "label": "Global News (GDELT)",
+          "value": -78,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "commerce",
+      "momentum": 25,
+      "confidence": 98,
+      "sourceAgreement": 5,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -62,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -9,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -46,
+          "unit": "%"
+        },
+        {
+          "label": "Global News (GDELT)",
+          "value": -73,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -57,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "cloud-computing",
+      "momentum": 24,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -69,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -6,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -41,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -95,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -57,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "manufacturing",
+      "momentum": 24,
+      "confidence": 98,
+      "sourceAgreement": 4,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -100,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": 2,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -48,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -96,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -67,
+          "unit": "%"
+        }
+      ]
+    },
+    {
+      "interestId": "energy",
+      "momentum": 24,
+      "confidence": 98,
+      "sourceAgreement": 5,
+      "direction": "falling",
+      "drivers": [
+        {
+          "label": "arXiv",
+          "value": -75,
+          "unit": "%"
+        },
+        {
+          "label": "Wikimedia Pageviews",
+          "value": -13,
+          "unit": "%"
+        },
+        {
+          "label": "Product Hunt",
+          "value": -78,
+          "unit": "%"
+        },
+        {
+          "label": "OpenAlex",
+          "value": -92,
+          "unit": "%"
+        },
+        {
+          "label": "SEC Filings",
+          "value": -40,
+          "unit": "%"
+        }
+      ]
+    }
+  ]
+}

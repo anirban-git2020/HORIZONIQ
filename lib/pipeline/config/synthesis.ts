@@ -42,10 +42,11 @@ export function resolveSynthesisConfig(): SynthesisConfig | null {
     provider,
     writerModel: provider === "groq" ? GROQ_WRITER : GEMINI_WRITER,
     verifierModel: provider === "groq" ? GROQ_VERIFIER : GEMINI_VERIFIER,
-    // Deliberately strict: auto-synthesis should be rare and only fire on a
-    // genuine, well-evidenced move. A flat week keeps the curated editorial.
-    minSamples: 5,
-    minConfidence: 68,
+    // Broad coverage: synthesize wherever there is enough real evidence to
+    // ground a headline. The floor stays high enough to prevent hallucination
+    // (no evidence → no synthesis → curated + deterministic direction guard).
+    minSamples: 3,
+    minConfidence: 45,
     temperature: 0.2,
     aiNativeInterests: new Set([
       "artificial-intelligence",

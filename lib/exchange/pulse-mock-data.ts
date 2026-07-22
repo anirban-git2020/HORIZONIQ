@@ -76,7 +76,10 @@ export function toPulseTile(signal: Signal, index: number): IntelligencePulseTil
     tier,
     cta: ctaFor(signal.momentum.trajectory),
     sparkline: signal.presentation.sparkline ?? [],
-    provenance: signal.presentation.provenance,
+    // Only the "synthesized" badge is surfaced; "reconciled" is an internal
+    // consistency correction, not an editorial provenance the reader needs.
+    provenance:
+      signal.presentation.provenance === "synthesized" ? "synthesized" : undefined,
   };
 }
 

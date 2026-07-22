@@ -119,8 +119,14 @@ if (GENERATED_SIGNALS.length > 0) {
   for (const src of MOCK_SIGNALS) {
     const gen = genById.get(src.identity.id);
     if (!gen) continue;
-    // Auto-synthesized signals legitimately differ from the curated source.
-    if (gen.presentation.provenance === "synthesized") continue;
+    // Auto-synthesized signals — and curated headlines whose direction verb was
+    // deterministically reconciled to the live trend — legitimately differ.
+    if (
+      gen.presentation.provenance === "synthesized" ||
+      gen.presentation.provenance === "reconciled"
+    ) {
+      continue;
+    }
     const drift =
       gen.identity.title !== src.identity.title ||
       gen.identity.headline !== src.identity.headline ||

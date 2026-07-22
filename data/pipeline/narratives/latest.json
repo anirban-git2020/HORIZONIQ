@@ -35,9 +35,10 @@
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-19T08:31:00.184Z"
+      "generatedAt": "2026-07-19T08:31:00.184Z",
+      "signalId": "biotechnology"
     },
-    "biochemistry": {
+    "computational-biochemistry": {
       "interestId": "biochemistry",
       "narrative": {
         "title": "Biochemistry Decline",
@@ -70,7 +71,8 @@
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-19T08:31:05.238Z"
+      "generatedAt": "2026-07-19T08:31:05.238Z",
+      "signalId": "computational-biochemistry"
     }
   }
 }

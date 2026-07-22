@@ -102,8 +102,12 @@ export type SignalPresentation = {
    * chronological. Real observations only; absent until change is measurable.
    */
   readonly momentumHistory?: readonly { readonly date: string; readonly value: number }[];
-  /** How the editorial text was produced. Absent/"curated" = hand-authored. */
-  readonly provenance?: "synthesized";
+  /**
+   * How the editorial text was produced. Absent/"curated" = hand-authored;
+   * "synthesized" = LLM-written from evidence; "reconciled" = curated text with a
+   * deterministic direction-verb correction so it can't contradict live momentum.
+   */
+  readonly provenance?: "synthesized" | "reconciled";
 };
 
 export type SignalReading = {

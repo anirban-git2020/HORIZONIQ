@@ -19,10 +19,14 @@ export type EvidenceSample = { source: string; title: string; url: string };
 
 export type EvidenceBundle = {
   interestId: string;
+  /** Signal that owns this narrative — narratives are keyed per signal, not per interest. */
+  signalId: string;
   label: string;
   domain: string;
   direction: string;
   confidence: number;
+  /** Signal-specific angle (tags) so shared-interest signals get distinct headlines. */
+  focus?: string;
   samples: EvidenceSample[];
 };
 
@@ -36,6 +40,7 @@ export type Narrative = {
 
 export type SynthesisResult = {
   interestId: string;
+  signalId: string;
   narrative: Narrative;
   sources: { label: string; url: string }[];
   model: string;
@@ -69,12 +74,22 @@ function narrativeText(n: Narrative): string {
   return [n.title, n.headline, n.summary, n.brief, n.forecast].join(" • ");
 }
 
+/** Plain-English movement phrase the writer/verifier reason about. */
+function directionPhrase(direction: string): string {
+  if (direction === "rising") return "RISING (momentum is up this period)";
+  if (direction === "falling") return "FALLING / COOLING (momentum is down this period)";
+  return "FLAT (no clear rise or fall this period)";
+}
+
 function evidenceForPrompt(ev: EvidenceBundle): string {
   const items = ev.samples
     .slice(0, 12)
     .map((s, i) => `${i + 1}. [${s.source}] ${s.title}`)
     .join("\n");
-  return `Subject: ${ev.label} (${ev.domain})\nTrend direction: ${ev.direction}\nRecent source items:\n${items}`;
+  const focus = ev.focus ? `\nAngle to emphasise: ${ev.focus}` : "";
+  return `Subject: ${ev.label} (${ev.domain})${focus}\nTrend direction: ${directionPhrase(
+    ev.direction
+  )}\nRecent source items:\n${items}`;
 }
 
 function isCompleteNarrative(n: unknown): n is Narrative {
@@ -100,10 +115,9 @@ export async function orchestrateSignal(
   if (ev.confidence < cfg.minConfidence) {
     return { status: "skipped", reason: `confidence ${ev.confidence} < ${cfg.minConfidence}` };
   }
-  // Only synthesize on genuine movement. A flat/"stable" week keeps curated text.
-  if (ev.direction !== "rising" && ev.direction !== "falling") {
-    return { status: "skipped", reason: `no clear movement (${ev.direction})` };
-  }
+  // Every direction — including flat — is synthesized so the text always matches
+  // the live momentum. A flat week gets steady-state framing (never a rise/fall
+  // claim), enforced by the direction-consistency rule in writer + verifier.
 
   const aiNative = cfg.aiNativeInterests.has(ev.interestId);
   const evidence = evidenceForPrompt(ev);
@@ -117,6 +131,10 @@ export async function orchestrateSignal(
     "'research continues', 'operates', 'steady', 'studies'. If you'd write those, be more specific about what the " +
     "sources actually say. Invent nothing (no facts, companies, quotes, or numbers); put no figures or percentages " +
     "in the prose (metrics are shown separately). " +
+    "DIRECTION LOCK — the evidence states a Trend direction. Your headline MUST agree with it: " +
+    "never call a subject accelerating, surging, soaring, booming, or rising when the trend is FALLING; " +
+    "never call it cooling, slowing, fading, or declining when the trend is RISING; if the trend is FLAT, " +
+    "state the specific development without implying any rise or fall. " +
     (aiNative
       ? ""
       : "This subject is NOT about artificial intelligence — write about the subject itself, never framing it as AI. ") +
@@ -161,7 +179,10 @@ export async function orchestrateSignal(
     "anything is invented or hyped; the draft is vague/generic/uninformative (e.g. 'remains stable', 'research " +
     "continues'); OR the development is not CENTRALLY about the stated Subject — reject stories that really " +
     "belong to a different field (for example, an energy story is NOT a commerce signal, even if a retailer is " +
-    'mentioned). Only ok=true for a specific, on-subject, fully supported signal. Return ONLY JSON: {"ok": boolean, "issues": ["..."]}.';
+    "mentioned); OR the headline's implied momentum direction CONTRADICTS the evidence's Trend direction " +
+    "(e.g. it reads as accelerating/surging/rising while the trend is FALLING, or cooling/declining while the " +
+    "trend is RISING, or claims a rise/fall while the trend is FLAT). " +
+    'Only ok=true for a specific, on-subject, fully supported, direction-consistent signal. Return ONLY JSON: {"ok": boolean, "issues": ["..."]}.';
   const verifierUser = `EVIDENCE:\n${evidence}\n\nDRAFT:\n${JSON.stringify(draft)}`;
 
   let verdictRaw: string;
@@ -184,6 +205,7 @@ export async function orchestrateSignal(
     status: "accepted",
     result: {
       interestId: ev.interestId,
+      signalId: ev.signalId,
       narrative: draft,
       sources,
       model: cfg.writerModel,

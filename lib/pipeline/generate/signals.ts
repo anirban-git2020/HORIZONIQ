@@ -160,6 +160,35 @@ function overlay(
   };
 }
 
+// Momentum-direction verbs. Used only to keep a *curated* fallback headline from
+// contradicting live momentum when no synthesized narrative covers the signal —
+// the AI path is already direction-consistent by construction.
+const RISING_VERBS = /\b(accelerating|surging|soaring|booming|climbing|rising|heating up)\b/i;
+const FALLING_VERBS = /\b(cooling|slowing|declining|falling|plunging|fading|sliding)\b/i;
+
+/**
+ * Deterministic direction guard. Keyed off the trajectory actually shown on the
+ * card, so the headline can never contradict its own trend line: a "cooling"
+ * card never keeps a "…is accelerating" headline, and vice versa. Neutral
+ * trajectories (steady/emerging) and direction-neutral headlines are untouched.
+ */
+function guardCuratedHeadline(signal: Signal): Signal {
+  const { trajectory } = signal.momentum;
+  const headline = signal.identity.headline;
+  let reconciled = headline;
+  if (trajectory === "cooling" && RISING_VERBS.test(headline)) {
+    reconciled = headline.replace(RISING_VERBS, "cooling");
+  } else if (trajectory === "accelerating" && FALLING_VERBS.test(headline)) {
+    reconciled = headline.replace(FALLING_VERBS, "accelerating");
+  }
+  if (reconciled === headline) return signal;
+  return {
+    ...signal,
+    identity: { ...signal.identity, headline: reconciled },
+    presentation: { ...signal.presentation, provenance: "reconciled" },
+  };
+}
+
 /**
  * Overlay a verified, auto-synthesized narrative onto a curated signal. The
  * stable title is kept; the evidence-grounded headline/summary/brief/forecast
@@ -211,9 +240,11 @@ export async function generateCanonicalSignals(): Promise<{
     if (!obs || !score) return base; // no live data for this interest → curated
     liveCount += 1;
     const live = overlay(base, score, obs, historyByInterest.get(base.classification.interest));
-    // A verified synthesized narrative (if any) replaces the curated prose.
-    const narrative = narratives[base.classification.interest];
-    return narrative ? applyNarrative(live, narrative) : live;
+    // A verified synthesized narrative (keyed per signal) replaces the curated
+    // prose; otherwise the deterministic guard keeps the curated headline from
+    // contradicting the live momentum direction.
+    const narrative = narratives[base.identity.id];
+    return narrative ? applyNarrative(live, narrative) : guardCuratedHeadline(live);
   });
 
   return { signals, liveCount, generatedAt: new Date().toISOString() };

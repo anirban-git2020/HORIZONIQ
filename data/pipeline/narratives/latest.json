@@ -1,111 +1,78 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-22T08:32:32.209Z",
+  "generatedAt": "2026-07-19T08:31:09.238Z",
   "narratives": {
-    "energy": {
-      "interestId": "energy",
+    "biotechnology": {
+      "interestId": "biotechnology",
       "narrative": {
-        "title": "Energy Tech",
-        "headline": "Diamond optics enable X-ray nano-imaging",
-        "summary": "Researchers develop free-form diamond refractive optics for efficient high-energy X-ray nano-imaging",
-        "brief": "New optics technology enhances X-ray imaging capabilities, while other developments focus on energy management and battery safety. Renewable energy consumption and accessibility are also being studied in various regions",
-        "forecast": "Watch for advancements in energy management and storage technologies"
+        "title": "Gene Therapy",
+        "headline": "Gene therapy advances",
+        "summary": "Recent studies focus on genetic engineering and gene transfer techniques",
+        "brief": "Researchers explore new methods for gene therapy, including ex vivo mRNA-based gene transfer and genetic engineering of bioagents. These developments aim to improve disease control and cancer immunotherapy",
+        "forecast": "Watch for further advancements in gene therapy trials and their potential applications"
       },
       "sources": [
         {
-          "label": "arXiv: Free-form diamond refractive optics enable efficient high-energy X-ray nano-imaging",
-          "url": "http://arxiv.org/abs/2607.19019v1"
+          "label": "arXiv: Memory-Driven Self-Propulsion and Flocking of Chemically Active Droplets",
+          "url": "http://arxiv.org/abs/2607.14451v1"
         },
         {
-          "label": "arXiv: Forecast-Assisted Deep Reinforcement Learning for Energy Management of Hydrogen-Enabled Community Microgrids",
-          "url": "http://arxiv.org/abs/2607.18903v1"
+          "label": "arXiv: Fundamental Relation between Conductance of Biomolecules and the Fukui Function",
+          "url": "http://arxiv.org/abs/2607.13309v1"
         },
         {
-          "label": "arXiv: Regime-Aware Physics-Guided Early Warning of Lithium-Ion Battery Thermal Runaway Using Thermo-Mechanical Signals",
-          "url": "http://arxiv.org/abs/2607.18860v1"
+          "label": "arXiv: Learning Mechanistic Reasoning for Chemical Reactions with Large Language Models",
+          "url": "http://arxiv.org/abs/2607.12771v2"
         },
         {
-          "label": "Wikipedia: Energy — Wikipedia pageviews",
-          "url": "https://en.wikipedia.org/wiki/Renewable_energy"
+          "label": "Wikipedia: Biotechnology — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Biotechnology"
         },
         {
-          "label": "Product Hunt: EcoDiligence — Smart Compliance for SMEs",
-          "url": "https://www.producthunt.com/products/ecodiligence-smart-compliance-for-smes?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+          "label": "Product Hunt: ProDentim",
+          "url": "https://www.producthunt.com/products/prodentim-8?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-22T08:32:07.945Z"
+      "generatedAt": "2026-07-19T08:31:00.184Z",
+      "signalId": "biotechnology"
     },
-    "manufacturing": {
-      "interestId": "manufacturing",
-      "narrative": {
-        "title": "Manufacturing Decline",
-        "headline": "Manufacturing output falls",
-        "summary": "Recent studies and product releases indicate a shift in manufacturing technologies, with a focus on smart manufacturing, wireless localization, and additive manufacturing",
-        "brief": "The Internet of Things and 5G networks are being integrated into manufacturing processes, while new products like ProtoFlow and FF FlashFish T2000 are being introduced. Advances in ceramic and glass material coatings, as well as polyhydroxybutyrate production, are also being explored",
-        "forecast": "Watch for further developments in additive manufacturing and wireless localization technologies"
-      },
-      "sources": [
-        {
-          "label": "arXiv: The Internet of Things for Smart Manufacturing: A Review",
-          "url": "http://arxiv.org/abs/2607.16172v1"
-        },
-        {
-          "label": "arXiv: Converging Safety and Security: IO-Link Wireless and OPC UA over 5G under prEN 50742",
-          "url": "http://arxiv.org/abs/2607.15840v1"
-        },
-        {
-          "label": "arXiv: Map as a Prompt: Learning Multi-Modal Spatial-Signal Foundation Models for Cross-scenario Wireless Localization",
-          "url": "http://arxiv.org/abs/2607.15713v1"
-        },
-        {
-          "label": "Wikipedia: Manufacturing — Wikipedia pageviews",
-          "url": "https://en.wikipedia.org/wiki/Manufacturing"
-        },
-        {
-          "label": "Product Hunt: ProtoFlow",
-          "url": "https://www.producthunt.com/products/protoflow-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        }
-      ],
-      "model": "llama-3.3-70b-versatile",
-      "provider": "groq",
-      "generatedAt": "2026-07-22T08:32:13.108Z"
-    },
-    "biochemistry": {
+    "computational-biochemistry": {
       "interestId": "biochemistry",
       "narrative": {
         "title": "Biochemistry Decline",
-        "headline": "Biochemistry research falls",
-        "summary": "Recent studies in biochemistry have focused on specific applications such as breast cancer analysis and vaccine development, indicating a shift towards targeted research areas",
-        "brief": "Publications on biochemistry topics like enzyme engineering and clinical biochemistry laboratory testing have been released, while Wikipedia pageviews on biochemistry have decreased. SciSuite and other tools are being developed to support scientific research",
-        "forecast": "Watch for further developments in targeted biochemistry research areas like disease-specific vaccine development"
+        "headline": "Enzyme library enables selective hydroxylation",
+        "summary": "Recent studies focus on biocatalytic strategies and enzyme libraries for steroid synthesis and natural product development",
+        "brief": "Researchers are exploring biocatalytic approaches for steroid synthesis and natural product development, while also investigating post-transcriptional regulation in stochastic gene expression models. The use of enzyme libraries is being applied to enable selective hydroxylation of complex substrates",
+        "forecast": "Watch for further developments in biocatalytic strategies and enzyme library applications in biochemistry"
       },
       "sources": [
         {
-          "label": "arXiv: An unsupervised clustering analysis of breast cancer data derived from electronic health records enhanced through UMAP dimensionality reduction",
-          "url": "http://arxiv.org/abs/2607.19089v1"
+          "label": "arXiv: Multimodal Semantic-Aware Contrastive Learning For False Negative Mitigation in 3D Medical Imaging",
+          "url": "http://arxiv.org/abs/2607.14995v1"
         },
         {
-          "label": "arXiv: GEqTrain: A Configuration-Driven Framework for Retargeting Equivariant Graph Neural Networks Across 3D Scientific Tasks",
-          "url": "http://arxiv.org/abs/2607.19083v1"
+          "label": "arXiv: Memory-Driven Self-Propulsion and Flocking of Chemically Active Droplets",
+          "url": "http://arxiv.org/abs/2607.14451v1"
         },
         {
-          "label": "arXiv: Biological Amnesia in ICU Time-Series Prediction: A Drift-Adaptive Two-Stream Architecture with Temporal Retrieval",
-          "url": "http://arxiv.org/abs/2607.19020v1"
+          "label": "arXiv: Analyzing Post-transcriptional Regulation in Stochastic Gene Expression Models Using Partitioned Poisson Arrivals",
+          "url": "http://arxiv.org/abs/2607.14404v1"
         },
         {
           "label": "Wikipedia: Biochemistry — Wikipedia pageviews",
           "url": "https://en.wikipedia.org/wiki/Biochemistry"
         },
         {
-          "label": "Product Hunt: SciSuite",
-          "url": "https://www.producthunt.com/products/scisuite-science-should-be-sweet?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+          "label": "Product Hunt: PatentSocial",
+          "url": "https://www.producthunt.com/products/patentsocial?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-22T08:32:23.417Z"
+      "generatedAt": "2026-07-19T08:31:05.238Z",
+      "signalId": "computational-biochemistry"
     }
   }
 }

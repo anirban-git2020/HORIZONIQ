@@ -6,7 +6,8 @@ import type { SynthesisResult } from "@/lib/pipeline/synthesis/orchestrate";
 /**
  * Store for auto-synthesized narratives. Written by `pipeline:synthesize` (CI)
  * and read by the signal generator at build time — so the LLM runs on a
- * schedule, never on every deploy. Keyed by interest id.
+ * schedule, never on every deploy. Keyed by signal id (identity.id) so signals
+ * that share an interest each get their own narrative.
  */
 const DIR = path.join(process.cwd(), "data", "pipeline", "narratives");
 

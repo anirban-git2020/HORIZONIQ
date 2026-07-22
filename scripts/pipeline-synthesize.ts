@@ -11,7 +11,6 @@
  */
 
 import { MOCK_SIGNALS } from "@/lib/domain/mock-intelligence";
-import { INTEREST_QUERY_BY_ID } from "@/lib/pipeline/config/interest-queries";
 import { resolveSynthesisConfig } from "@/lib/pipeline/config/synthesis";
 import {
   orchestrateSignal,
@@ -33,6 +32,9 @@ const SOURCE_LABEL: Record<string, string> = {
   "product-hunt": "Product Hunt",
   pubmed: "PubMed",
   gdelt: "Global News",
+  openalex: "OpenAlex",
+  edgar: "SEC Filings",
+  "clinical-trials": "ClinicalTrials.gov",
 };
 
 const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
@@ -57,17 +59,11 @@ async function main() {
 
   console.log(`pipeline:synthesize — provider=${cfg.provider} model=${cfg.writerModel}`);
   const scoreByInterest = new Map(scores.interests.map((s) => [s.interestId, s]));
-  const domainByInterest = new Map(
-    MOCK_SIGNALS.map((s) => [s.classification.interest, s.classification.domain])
-  );
-  // How many signals share each interest — interest-level evidence can't tell
-  // them apart, so we only synthesize interests owned by a single signal.
-  const interestCounts = new Map<string, number>();
-  for (const s of MOCK_SIGNALS) {
-    const i = s.classification.interest;
-    interestCounts.set(i, (interestCounts.get(i) ?? 0) + 1);
-  }
 
+  // Narratives are keyed per SIGNAL (identity.id), not per interest. Signals
+  // that share an interest are disambiguated by their own title + tags (the
+  // "angle"), and the dedup guard below stops two of them producing the same
+  // headline. A signal with too little evidence simply falls back to curated.
   const narratives: Record<string, SynthesisResult> = {};
   const acceptedWords: { interest: string; words: Set<string> }[] = [];
   let accepted = 0;
@@ -96,10 +92,6 @@ async function main() {
       skipped += 1;
       continue;
     }
-    if ((interestCounts.get(interestId) ?? 0) > 1) {
-      skipped += 1; // ambiguous: multiple signals share this interest
-      continue;
-    }
 
     const samples: EvidenceSample[] = [];
     const seen = new Set<string>();
@@ -117,10 +109,14 @@ async function main() {
 
     const ev: EvidenceBundle = {
       interestId,
-      label: INTEREST_QUERY_BY_ID.get(interestId)?.label ?? base.identity.title,
-      domain: domainByInterest.get(interestId) ?? base.classification.domain,
+      signalId: base.identity.id,
+      // The signal's own title is the subject, so shared-interest signals are
+      // written about their specific angle rather than the broad interest.
+      label: base.identity.title,
+      domain: base.classification.domain,
       direction: score.direction,
       confidence: score.confidence,
+      focus: base.classification.tags.slice(0, 4).join(", ") || undefined,
       samples,
     };
 
@@ -135,7 +131,7 @@ async function main() {
         continue;
       }
       acceptedWords.push({ interest: interestId, words });
-      narratives[interestId] = outcome.result;
+      narratives[base.identity.id] = outcome.result;
       accepted += 1;
       console.log(`  ✓ ${interestId}: "${outcome.result.narrative.headline}"`);
       await sleep(4000); // stay under free-tier rate limits

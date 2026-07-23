@@ -43,6 +43,21 @@ export default function ContactPage() {
           issues, include &quot;Security&quot; in your subject line.
         </p>
       </ContentSection>
+
+      <ContentSection title="Privacy and account requests">
+        <p>
+          To access, correct, or delete the data tied to your account, email us and
+          we will help. See the{" "}
+          <FooterLink
+            href="/privacy"
+            surface="contact"
+            className="text-primary underline-offset-4 hover:underline"
+          >
+            Privacy Policy
+          </FooterLink>{" "}
+          for what we store and the choices you have.
+        </p>
+      </ContentSection>
     </ContentPage>
   );
 }

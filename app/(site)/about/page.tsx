@@ -40,7 +40,7 @@ export default function AboutPage() {
         </p>
         <p>
           <strong className="text-foreground">Predict.</strong> Understand the
-          directional outlook with calibrated confidence — clearly labeled as
+          directional outlook with a clearly labeled confidence level — shown as a
           projection, not fact.
         </p>
         <p>

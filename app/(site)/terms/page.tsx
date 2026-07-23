@@ -12,7 +12,7 @@ import { FOUNDER } from "@/lib/site";
 export const metadata: Metadata = pageMetadata({
   title: "Terms of Use",
   description:
-    "HorizonIQ Beta Preview terms of use — beta software disclaimer, acceptable use, and limitation of liability.",
+    "HorizonIQ Beta Preview terms of use — beta software disclaimer, accounts, acceptable use, and limitation of liability.",
   path: "/terms",
 });
 
@@ -20,7 +20,7 @@ export default function TermsPage() {
   return (
     <ContentPage
       title="Terms of Use"
-      description="Last updated: July 6, 2026. By using HorizonIQ during the Beta Preview, you agree to these terms."
+      description="Last updated: July 23, 2026. By using HorizonIQ during the Beta Preview, you agree to these terms."
     >
       <ContentSection title="Beta software disclaimer">
         <p>
@@ -32,6 +32,21 @@ export default function TermsPage() {
         </p>
       </ContentSection>
 
+      <ContentSection title="Accounts">
+        <p>
+          You may use <BrandName /> without an account. If you create one — by email
+          magic link or Google — you are responsible for keeping access to your email
+          or Google account secure, and for activity that occurs under your account.
+          You must be at least 18, or the age of majority where you live, to create
+          an account. You can stop using <BrandName /> at any time and ask us to
+          delete your account, as described in our{" "}
+          <a href="/privacy" className="text-primary underline-offset-4 hover:underline">
+            Privacy Policy
+          </a>
+          .
+        </p>
+      </ContentSection>
+
       <ContentSection title="No warranty">
         <p>
           <BrandName /> is provided &quot;as is&quot; and &quot;as available&quot;
@@ -40,17 +55,18 @@ export default function TermsPage() {
           particular purpose, or non-infringement.
         </p>
         <p>
-          Intelligence outputs — including outlook projections, confidence tiers,
-          and recommended actions — are for informational purposes only. They do
-          not constitute professional, financial, legal, or career advice.
+          Intelligence outputs — including outlook projections, confidence levels,
+          and recommended actions — are for informational purposes only. They are
+          projections, not statements of fact, and do not constitute professional,
+          financial, legal, or career advice.
         </p>
       </ContentSection>
 
       <ContentSection title="Features may change">
         <p>
-          We may add, modify, or remove features during beta. Weekly briefing
-          data, signal coverage, and presentation may change as we improve the
-          product and pipeline.
+          We may add, modify, or remove features during beta. Briefing data, signal
+          coverage, and presentation may change as we improve the product and
+          pipeline. We may also suspend or discontinue the Beta Preview.
         </p>
       </ContentSection>
 
@@ -68,7 +84,11 @@ export default function TermsPage() {
           You retain ownership of information you submit (such as feedback emails
           or bug reports). By submitting information, you represent that you
           have the right to share it and that it does not violate third-party
-          rights.
+          rights. Our handling of your information is described in the{" "}
+          <a href="/privacy" className="text-primary underline-offset-4 hover:underline">
+            Privacy Policy
+          </a>
+          .
         </p>
       </ContentSection>
 
@@ -95,9 +115,13 @@ export default function TermsPage() {
           consequential, or punitive damages, or any loss of profits, data, or
           goodwill arising from your use of the Beta Preview.
         </p>
-        <p className="text-xs text-muted-foreground/80">
-          This section is placeholder language intended for legal review before
-          general availability. Consult qualified counsel for binding terms.
+      </ContentSection>
+
+      <ContentSection title="Changes to these terms">
+        <p>
+          We may update these terms as <BrandName /> evolves. When we make a material
+          change, we will revise the date above. Continued use after an update means
+          you accept the revised terms.
         </p>
       </ContentSection>
 

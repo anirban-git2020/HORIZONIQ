@@ -25,7 +25,7 @@ export const FOUNDER = {
   vision:
     "My vision is simple: give every professional their own analyst. After years spent turning scattered signals into decisions inside a global enterprise, I wanted that same clarity to be personal — a way to see what is genuinely changing in your field, understand why it matters, and act before it becomes obvious. That is HorizonIQ.",
   /** Short founder bio, shown on the About founder callout. */
-  bio: "Anirban Chatterjee is a Principal Engineer and Site Lead at a global technology enterprise, where over twelve years he has advanced through four roles spanning quality engineering, supply-chain operations, and global product ownership. He has taken complex, ambiguous programs from concept to global execution — pioneering generative AI, computer vision, and augmented reality across enterprise programs. A General Management graduate of IIM Kozhikode and a recipient of more than twenty industry and innovation awards, he builds systems that turn scattered signals into decisions.",
+  bio: "Anirban Chatterjee is a Principal Engineer and Site Lead at a global technology enterprise, where over twelve years he has advanced through four roles spanning quality engineering, supply-chain operations, and global product ownership. He has taken complex, ambiguous programs from concept to global execution — delivering generative AI, computer vision, and augmented reality across enterprise programs. A General Management graduate of IIM Kozhikode and a recipient of more than twenty industry and innovation awards, he builds systems that turn scattered signals into decisions.",
 } as const;
 
 export const COPYRIGHT_YEAR = 2026;

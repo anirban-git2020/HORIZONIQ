@@ -1,141 +1,105 @@
 {
   "version": 1,
-  "generatedAt": "2026-07-23T08:34:21.463Z",
+  "generatedAt": "2026-07-24T08:29:43.240Z",
   "narratives": {
-    "agentic-ai": {
-      "interestId": "artificial-intelligence",
-      "signalId": "agentic-ai",
-      "narrative": {
-        "title": "Agentic AI",
-        "headline": "Developers refine AI models",
-        "summary": "Recent developments in Agentic AI focus on refining language models and exploring new applications, with researchers discussing mathematical concepts and societal values alignment",
-        "brief": "Conversations around AI models, such as ChatGPT, highlight the need for quality non-fiction content, while new architectures like SoftReason and LKValues are being proposed. Various AI products, including Fuzzy AI and Humalike, are being introduced on platforms like Product Hunt",
-        "forecast": "Watch for further integration of AI in space weather prediction and potential breakthroughs in mathematical problem-solving using Agentic AI"
-      },
-      "sources": [
-        {
-          "label": "Hacker News: Terence Tao's ChatGPT conversation about the Jacobian Conjecture counterexample",
-          "url": "https://chatgpt.com/share/6a5fdc7a-d6f8-83e8-bbea-8deb42cfed56"
-        },
-        {
-          "label": "Hacker News: Quality non-fiction books are the antithesis of AI slop",
-          "url": "https://resobscura.substack.com/p/quality-non-fiction-books-are-the"
-        },
-        {
-          "label": "arXiv: Lipschitzian SLLNs for random functions",
-          "url": "http://arxiv.org/abs/2607.20411v1"
-        },
-        {
-          "label": "arXiv: LKValues: Aligning Large Language Models with Sri Lankan Societal Values",
-          "url": "http://arxiv.org/abs/2607.20410v1"
-        },
-        {
-          "label": "arXiv: SoftReason: A Fully Differentiable Neuro-Soft-Symbolic Deductive Reasoning Architecture over High-Dimensional Perceptual Data",
-          "url": "http://arxiv.org/abs/2607.20402v1"
-        }
-      ],
-      "model": "llama-3.3-70b-versatile",
-      "provider": "groq",
-      "generatedAt": "2026-07-23T08:32:40.913Z"
-    },
     "cuda": {
       "interestId": "cloud-computing",
       "signalId": "cuda",
       "narrative": {
-        "title": "CUDA Momentum",
-        "headline": "CUDA adoption slows",
-        "summary": "Recent developments in cloud and compute technologies indicate a decline in CUDA momentum, with a focus on alternative AI-accelerated solutions and cloud computing strategies",
-        "brief": "Research papers on arXiv explore AI-accelerated optimization and scientific computing using non-CUDA architectures, while Product Hunt features various AI-powered tools, and OpenAlex reviews cloud computing opportunities and challenges. SEC filings from Mitesco, Inc. do not indicate any significant CUDA-related activity",
-        "forecast": "Watch for further declines in CUDA adoption as alternative AI-accelerated solutions gain traction"
+        "title": "Cloud Compute",
+        "headline": "Researchers publish new algorithms",
+        "summary": "Recent publications focus on efficient data-parallel training and scalable implementations",
+        "brief": "New research papers on controlled periodic synchronization and recursive clustering algorithms have been released, while product launches include Humalike x Hermes and CartAI. The International Journal of Cloud Applications and Computing has also been referenced in OpenAlex",
+        "forecast": "Watch for further developments in cloud computing education and training datasets"
       },
       "sources": [
         {
-          "label": "arXiv: DQAOA-GPT: AI-Accelerated Distributed Quantum Optimization for Combinatorial Problems",
-          "url": "http://arxiv.org/abs/2607.20225v1"
+          "label": "arXiv: Controlled Periodic Synchronization for Efficient Data-Parallel Training",
+          "url": "http://arxiv.org/abs/2607.21224v1"
         },
         {
-          "label": "arXiv: Fully Dynamic Rooted Spanning Tree on GPU",
-          "url": "http://arxiv.org/abs/2607.20211v1"
+          "label": "arXiv: GLP: A Grassroots, Multiagent, Concurrent, Logic Programming Language for AI",
+          "url": "http://arxiv.org/abs/2607.21189v1"
         },
         {
-          "label": "arXiv: Ascend to Science: Exploration of AI Chips for Scientific Computing",
-          "url": "http://arxiv.org/abs/2607.20120v1"
+          "label": "arXiv: Solving Large Traveling Salesman Problems (TSPs) by a Recursive Clustering Algorithm and a Scalable FPGA-Based Implementation",
+          "url": "http://arxiv.org/abs/2607.21182v1"
+        },
+        {
+          "label": "Wikipedia: Cloud Computing — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Cloud_computing"
         },
         {
           "label": "Product Hunt: Humalike x Hermes",
           "url": "https://www.producthunt.com/products/humalike-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        },
-        {
-          "label": "Product Hunt: CartAI",
-          "url": "https://www.producthunt.com/products/cartai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:32:46.047Z"
+      "generatedAt": "2026-07-24T08:28:10.819Z"
     },
-    "quantum-computing": {
-      "interestId": "quantum-computing",
-      "signalId": "quantum-computing",
+    "semiconductor-supply-chain": {
+      "interestId": "supply-chain",
+      "signalId": "semiconductor-supply-chain",
       "narrative": {
-        "title": "Quantum Computing",
-        "headline": "Quantum research unfolds",
-        "summary": "Recent developments in quantum computing include new research papers and projects on quantum gravity, fermionic pairs, and choreographic programming, as well as updates from companies like BTQ Technologies Corp and Quantum Computing Inc",
-        "brief": "Oratomic's investment in low-qubit quantum computing and Northwestern University's course on secure quantum computing also made headlines, while Wikipedia pageviews and OpenAlex data provide insight into the field's activity. The field sees a mix of theoretical and practical advancements",
-        "forecast": "Watch for further innovations in quantum distributed systems and simulators"
+        "title": "Semiconductor Supply",
+        "headline": "Supply chain planning approaches emerge",
+        "summary": "New methods for supply chain planning are being developed, including simulation-based approaches",
+        "brief": "Researchers are proposing innovative techniques for managing supply chains, such as the SPORD approach, to improve planning and efficiency. Meanwhile, various tools and platforms are being introduced to support supply chain management",
+        "forecast": "Watch for further developments in supply chain planning and management techniques"
       },
       "sources": [
         {
-          "label": "Hacker News: Oratomic's $300M Bet on Low-Qubit Quantum Computing",
-          "url": "https://www.hpcwire.com/2026/07/21/oratomics-300m-bet-on-low-qubit-quantum-computing/"
+          "label": "arXiv: SPORD: A Simulation-Propose-then-OR-Dispose Approach for Supply Chain Planning",
+          "url": "http://arxiv.org/abs/2607.21354v1"
         },
         {
-          "label": "Hacker News: Secure Quantum Computing / CE 395 / Spring 2026 / Northwestern University",
-          "url": "https://www.youtube.com/playlist?list=PLWOUVwVosA-7aCa6SBXoM_m66WV-K_N0o"
+          "label": "arXiv: Regulating autonomous and agentic AI",
+          "url": "http://arxiv.org/abs/2607.21345v1"
         },
         {
-          "label": "Hacker News: New quantum gravity theory links entropy, dark energy, and life",
-          "url": "https://www.sciencedaily.com/releases/2026/07/260719035947.htm"
+          "label": "arXiv: Don't Trust the Label: License Laundering in AI Supply Chains",
+          "url": "http://arxiv.org/abs/2607.20300v1"
         },
         {
-          "label": "arXiv: Fermionic pairs, from the surface to the bulk",
-          "url": "http://arxiv.org/abs/2607.20412v1"
+          "label": "Wikipedia: Supply Chain — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Supply_chain"
         },
         {
-          "label": "arXiv: Efficiently Simulable Pauli Correlation Encoding",
-          "url": "http://arxiv.org/abs/2607.20409v1"
+          "label": "Product Hunt: Nautis",
+          "url": "https://www.producthunt.com/products/nautis?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:01.289Z"
+      "generatedAt": "2026-07-24T08:28:15.673Z"
     },
-    "autonomous-systems": {
+    "humanoid-robotics": {
       "interestId": "robotics",
-      "signalId": "autonomous-systems",
+      "signalId": "humanoid-robotics",
       "narrative": {
-        "title": "Autonomy Trends",
-        "headline": "Researchers enhance robotic systems",
-        "summary": "Recent developments in autonomy focus on improving robotic systems through advancements in areas like reinforcement learning and distributed motion planning",
-        "brief": "Researchers have made improvements to robotic systems, including a video reader that is up to 15× faster, and have explored the use of virtual reality and reinforcement learning for humanoid tele-loco-manipulation. Additionally, there have been developments in distributed acoustic localization and motion planning for self-reconfiguring robotic boats",
-        "forecast": "Watch for further advancements in explainable robotics and robotic performance evaluation"
+        "title": "Robotics Development",
+        "headline": "Robots inherit kill zones",
+        "summary": "Recent developments in robotics focus on scalable robot manipulation and compositional generalization, with research papers and filings from companies like Wetour Robotics and Mobileye Global, indicating a steady stream of advancements in the field without a clear rise or fall in overall activity",
+        "brief": "Research papers on arXiv and OpenAlex explore topics such as growable community-driven data engines and performant robotic manipulation, while SEC filings from companies like Microbot Medical and Wetour Robotics provide insight into the financial and operational aspects of the industry. The Wikipedia pageviews for robotics remain a steady source of interest, with various aspects of robotics being explored and developed",
+        "forecast": "Watch for further developments in robotic manipulation and industrial robotics as companies continue to file and research new technologies"
       },
       "sources": [
         {
-          "label": "Hacker News: How we made our LeRobot video reader up to 15× faster",
-          "url": "https://www.eventual.ai/blog/how-we-made-our-lerobot-video-reader-up-to-15x-faster"
+          "label": "Hacker News: Ground Robots Inherit the Kill Zone",
+          "url": "https://spectrum.ieee.org/ukraine-ground-drones"
         },
         {
-          "label": "arXiv: Towards Miniature Humanoid Tele-Loco-Manipulation Using Virtual Reality and Reinforcement Learning",
-          "url": "http://arxiv.org/abs/2607.20399v1"
+          "label": "arXiv: AXIS: A Growable Community-Driven Data Engine for Scalable Robot Manipulation",
+          "url": "http://arxiv.org/abs/2607.21588v1"
         },
         {
-          "label": "arXiv: Distributed Acoustic Localization Array Deployed Using a Soft Everting Vine Robot",
-          "url": "http://arxiv.org/abs/2607.20392v1"
+          "label": "arXiv: Scale Up Strategically: Learning Compositional Generalization via Bias-Aware Evaluation and Data Collection for Robotic Manipulation",
+          "url": "http://arxiv.org/abs/2607.21582v1"
         },
         {
-          "label": "arXiv: Distributed Motion Planning with Safety Guarantees for Self-Reconfiguring Robotic Boats",
-          "url": "http://arxiv.org/abs/2607.20352v1"
+          "label": "arXiv: Beyond Episodic Evaluation: Memory Architectural Bottlenecks in Sequential Embodied Question Answering",
+          "url": "http://arxiv.org/abs/2607.21571v1"
         },
         {
           "label": "Wikipedia: Robotics — Wikipedia pageviews",
@@ -144,7 +108,7 @@
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:11.303Z"
+      "generatedAt": "2026-07-24T08:28:20.913Z"
     },
     "cybersecurity": {
       "interestId": "cybersecurity",
@@ -152,9 +116,9 @@
       "narrative": {
         "title": "Cybersecurity Trends",
         "headline": "Incidents are being addressed",
-        "summary": "Recent developments in cybersecurity include addressing security incidents and releasing new frameworks, with no clear rise or fall in overall trends this period",
-        "brief": "OpenAI and Hugging Face have addressed a security incident during model evaluation, while new research papers on statistical query release and decoding of Gabidulin codes have been published. The Cybersecurity Compass Framework has also been introduced, providing a new tool for cybersecurity professionals",
-        "forecast": "Watch for further developments in cybersecurity frameworks and incident response"
+        "summary": "Recent developments in cybersecurity include addressing security incidents and proposing new encryption methods",
+        "brief": "OpenAI and Hugging Face have addressed a security incident during model evaluation, while researchers have proposed unconditional unclonable encryption and other methods to enhance security. Various frameworks and educational initiatives are also being explored to improve cybersecurity",
+        "forecast": "Watch for further developments in encryption and incident response strategies"
       },
       "sources": [
         {
@@ -162,61 +126,25 @@
           "url": "https://openai.com/index/hugging-face-model-evaluation-security-incident/"
         },
         {
-          "label": "Hacker News: Gemini 3.6 Flash, 3.5 Flash-Lite, and 3.5 Flash Cyber",
-          "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-6-flash-3-5-flash-lite-3-5-flash-cyber/"
+          "label": "arXiv: Where You Tap Matters: A Probe-and-Model Benchmark for Open-Set RF Fingerprinting",
+          "url": "http://arxiv.org/abs/2607.21564v1"
         },
         {
-          "label": "arXiv: Pure-DP Statistical Query Release at the Conjectured Square-Root Rate",
-          "url": "http://arxiv.org/abs/2607.20418v1"
+          "label": "arXiv: Unconditional Unclonable Encryption",
+          "url": "http://arxiv.org/abs/2607.21551v1"
         },
         {
-          "label": "arXiv: Constant-time decoding of Gabidulin codes and their generalizations with application to RQC",
-          "url": "http://arxiv.org/abs/2607.20305v1"
+          "label": "arXiv: Themis Consensus Extension v1: MEV Mitigation by Randomized Delayed Execution and Intent-Hiding Transactions in Application-Specific Blockchains",
+          "url": "http://arxiv.org/abs/2607.21406v1"
         },
         {
-          "label": "arXiv: Chained Attacks on Drone-Based Federated Learning: From Network Disruption to Device Impersonation",
-          "url": "http://arxiv.org/abs/2607.20280v1"
+          "label": "Wikipedia: Cybersecurity — Wikipedia pageviews",
+          "url": "https://en.wikipedia.org/wiki/Cybersecurity"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:16.305Z"
-    },
-    "cloud-infrastructure": {
-      "interestId": "cloud-computing",
-      "signalId": "cloud-infrastructure",
-      "narrative": {
-        "title": "Cloud Momentum",
-        "headline": "Cloud infrastructure demand is slowing",
-        "summary": "Recent developments in cloud infrastructure and artificial intelligence indicate a decline in momentum, with a focus on optimizing existing technologies rather than expanding capacity",
-        "brief": "Research papers on arXiv explore accelerated quantum optimization and dynamic rooted spanning tree on GPU, while Product Hunt features various AI-powered tools, but overall cloud infrastructure growth is cooling. SEC filings and OpenAlex reviews discuss challenges and strategies for cloud computing and artificial intelligence in modern IT infrastructure",
-        "forecast": "Watch for further optimization of cloud infrastructure and AI technologies as demand continues to slow"
-      },
-      "sources": [
-        {
-          "label": "arXiv: DQAOA-GPT: AI-Accelerated Distributed Quantum Optimization for Combinatorial Problems",
-          "url": "http://arxiv.org/abs/2607.20225v1"
-        },
-        {
-          "label": "arXiv: Fully Dynamic Rooted Spanning Tree on GPU",
-          "url": "http://arxiv.org/abs/2607.20211v1"
-        },
-        {
-          "label": "arXiv: Ascend to Science: Exploration of AI Chips for Scientific Computing",
-          "url": "http://arxiv.org/abs/2607.20120v1"
-        },
-        {
-          "label": "Product Hunt: Humalike x Hermes",
-          "url": "https://www.producthunt.com/products/humalike-2?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        },
-        {
-          "label": "Product Hunt: CartAI",
-          "url": "https://www.producthunt.com/products/cartai?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        }
-      ],
-      "model": "llama-3.3-70b-versatile",
-      "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:21.515Z"
+      "generatedAt": "2026-07-24T08:28:40.537Z"
     },
     "biotechnology": {
       "interestId": "biotechnology",
@@ -224,22 +152,22 @@
       "narrative": {
         "title": "Biotech Momentum",
         "headline": "Biotech research slows",
-        "summary": "Recent studies in biotechnology have focused on various aspects such as nanopore blockade experiments, antibody design, and plant biosynthesis, but overall momentum is down",
-        "brief": "Publications on biotechnology topics like Markov state models and graphene oxide incorporation into scaffolds have been released, while Wikipedia pageviews for biotechnology have also been tracked. Research Alliance Corp IV has filed with the SEC, but the overall trend in biotechnology is downward",
-        "forecast": "Watch for further declines in biotechnology research output and related activities"
+        "summary": "Recent studies in biotechnology have focused on various applications, including molecular ensemble modeling and nanopore blockade experiments, but overall momentum in the field is decreasing",
+        "brief": "Publications on biotechnology topics, such as peptide investigation and quantum selected configuration interaction, have been released, while Wikipedia pageviews on biotechnology have also been tracked. Research Alliance Corp IV has filed with the SEC, but the field as a whole is experiencing a downturn",
+        "forecast": "Watch for further declines in biotech innovation output"
       },
       "sources": [
+        {
+          "label": "arXiv: Graph Learning on Ensembles of Cyclic Peptides: An Investigation of Molecular Ensemble Modeling",
+          "url": "http://arxiv.org/abs/2607.21561v1"
+        },
         {
           "label": "arXiv: Multi-modal transformer for signal classification in nanopore blockade experiments",
           "url": "http://arxiv.org/abs/2607.20323v1"
         },
         {
-          "label": "arXiv: Antigen-specific Antibody Multi-modal Foundation Model for Functional Antibody Design",
-          "url": "http://arxiv.org/abs/2607.20057v1"
-        },
-        {
-          "label": "arXiv: Markov state models revisited: Principles and algorithms for unbiased observables",
-          "url": "http://arxiv.org/abs/2607.19452v1"
+          "label": "arXiv: Machine-Learned Compact Subspace Generation for Quantum Selected Configuration Interaction within Density Matrix Embedding Framework",
+          "url": "http://arxiv.org/abs/2607.20585v1"
         },
         {
           "label": "Wikipedia: Biotechnology — Wikipedia pageviews",
@@ -252,7 +180,43 @@
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:26.567Z"
+      "generatedAt": "2026-07-24T08:28:50.396Z"
+    },
+    "spatial-computing": {
+      "interestId": "artificial-intelligence",
+      "signalId": "spatial-computing",
+      "narrative": {
+        "title": "Spatial Computing",
+        "headline": "Developments emerge in AI",
+        "summary": "Recent advancements in spatial computing and artificial intelligence include the introduction of new tools and research papers on 3D-aware models and graph-controllable video generation",
+        "brief": "New startups and products such as Fuzzy AI and CartAI are being introduced, while research papers on 3D-Aware VLMs and GraphVid are being published. Wikipedia pageviews on artificial intelligence remain a topic of interest",
+        "forecast": "Further developments in AI applications such as space weather prediction are expected to be worth watching"
+      },
+      "sources": [
+        {
+          "label": "Hacker News: Writing by hand is good for your brain",
+          "url": "https://nealstephenson.substack.com/p/writing-by-hand-is-good-for-your"
+        },
+        {
+          "label": "Hacker News: Startup founders urge U.S. government not to shut off Chinese open weight AI",
+          "url": "https://www.politico.com/news/2026/07/22/startup-founders-urge-trump-not-to-shut-off-chinese-open-weight-ai-01008992"
+        },
+        {
+          "label": "arXiv: 3D-Aware VLMs with Implicit and Explicit Geometries",
+          "url": "http://arxiv.org/abs/2607.21595v1"
+        },
+        {
+          "label": "arXiv: Expanding Flow Maps",
+          "url": "http://arxiv.org/abs/2607.21585v1"
+        },
+        {
+          "label": "arXiv: GraphVid: Interactive Graph-Controllable Video Generation",
+          "url": "http://arxiv.org/abs/2607.21580v1"
+        }
+      ],
+      "model": "llama-3.3-70b-versatile",
+      "provider": "groq",
+      "generatedAt": "2026-07-24T08:28:55.287Z"
     },
     "fusion-energy": {
       "interestId": "energy",
@@ -260,14 +224,14 @@
       "narrative": {
         "title": "Fusion Energy",
         "headline": "Momentum is down",
-        "summary": "Recent developments in energy research have not led to significant advancements in fusion energy, indicating a cooling trend",
-        "brief": "New theories on quantum gravity and quantum resonance have emerged, but their application to fusion energy is still unclear. Meanwhile, focus has shifted to renewable energy consumption and accessibility in various regions",
-        "forecast": "Watch for potential breakthroughs in quantum technology that could revive fusion energy momentum"
+        "summary": "Recent developments in energy research have not led to significant advancements in fusion energy, indicating a downward trend in the field",
+        "brief": "The latest research papers and product releases have focused on other areas of energy, such as renewable energy consumption and smart compliance, rather than fusion energy, and Wikipedia pageviews on energy have not highlighted any major breakthroughs in fusion energy, suggesting a lack of progress in the field",
+        "forecast": "Watch for any potential shifts in research focus that could impact the trajectory of fusion energy development"
       },
       "sources": [
         {
-          "label": "Hacker News: New quantum gravity theory links entropy, dark energy, and life",
-          "url": "https://www.sciencedaily.com/releases/2026/07/260719035947.htm"
+          "label": "Hacker News: Show HN: Life Tile – Passive time tracker that shows your day as a Mondrian grid",
+          "url": "https://apps.apple.com/us/app/life-tile-auto-tracker/id6767332648"
         },
         {
           "label": "arXiv: Domain-Adapted Power Curve for Cross-Farm Applications",
@@ -288,19 +252,23 @@
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:37.116Z"
+      "generatedAt": "2026-07-24T08:29:00.457Z"
     },
     "ai-manufacturing": {
       "interestId": "manufacturing",
       "signalId": "ai-manufacturing",
       "narrative": {
-        "title": "Manufacturing Slows",
-        "headline": "Manufacturing momentum is falling",
-        "summary": "Recent developments in advanced manufacturing indicate a decline in momentum, with a focus on reviewing and optimizing existing technologies",
-        "brief": "The Internet of Things and wireless localization are being reviewed for smart manufacturing, while biopharmaceutical process modelling and immersion cooling fluids are being evaluated for compatibility. Editorial special issues and product releases are highlighting the need for advanced manufacturing technology and systems",
-        "forecast": "Watch for further optimization of existing technologies as manufacturing momentum continues to slow"
+        "title": "Manufacturing Tech",
+        "headline": "Manufacturing innovation stabilizes",
+        "summary": "Recent developments in advanced manufacturing technology include the release of various tools and research papers on smart manufacturing and wireless localization",
+        "brief": "The field has seen the emergence of new tools such as factory simulator games and platforms like ProtoFlow and NotifyBridge, as well as research on converging safety and security in smart manufacturing. Additionally, there have been reviews and special issues published on advanced manufacturing technology and systems",
+        "forecast": "Watch for further integration of technologies like IO-Link Wireless and OPC UA in manufacturing systems"
       },
       "sources": [
+        {
+          "label": "Hacker News: Show HN: A factory simulator game built on Spreadsheets",
+          "url": "https://www.logisheets.com/?craft=factory-simulator"
+        },
         {
           "label": "arXiv: The Internet of Things for Smart Manufacturing: A Review",
           "url": "http://arxiv.org/abs/2607.16172v1"
@@ -316,61 +284,21 @@
         {
           "label": "Wikipedia: Manufacturing — Wikipedia pageviews",
           "url": "https://en.wikipedia.org/wiki/Manufacturing"
-        },
-        {
-          "label": "Product Hunt: Light Flip ",
-          "url": "https://www.producthunt.com/products/light-phone?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:42.073Z"
-    },
-    "ai-financial-services": {
-      "interestId": "finance",
-      "signalId": "ai-financial-services",
-      "narrative": {
-        "title": "Financial Markets",
-        "headline": "Financial technology integrates psychology",
-        "summary": "Recent developments in financial markets show a focus on integrating psychological factors and financial technology in student financial management models",
-        "brief": "Financial technology products such as Rex, LedgerPort, and Finola have been introduced, while research explores the role of financial literacy and behavioral intention in gamified financial technology. SEC filings from companies like Long Table Growth Corp. and National Bank Holdings Corp. provide insight into market activities",
-        "forecast": "Watch for further integration of psychological factors in financial technology products"
-      },
-      "sources": [
-        {
-          "label": "Product Hunt: Rex",
-          "url": "https://www.producthunt.com/products/rex-7?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        },
-        {
-          "label": "Product Hunt: LedgerPort",
-          "url": "https://www.producthunt.com/products/ledgerport?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        },
-        {
-          "label": "Product Hunt: paycalceu",
-          "url": "https://www.producthunt.com/products/paycalceu?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        },
-        {
-          "label": "Product Hunt: Claimwise — find unclaimed money",
-          "url": "https://www.producthunt.com/products/claimwise-find-unclaimed-money?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        },
-        {
-          "label": "Product Hunt: Finola",
-          "url": "https://www.producthunt.com/products/finola?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        }
-      ],
-      "model": "llama-3.3-70b-versatile",
-      "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:47.165Z"
+      "generatedAt": "2026-07-24T08:29:05.586Z"
     },
     "venture-capital-flows": {
       "interestId": "venture-capital",
       "signalId": "venture-capital-flows",
       "narrative": {
         "title": "Venture Capital",
-        "headline": "Investment models are being optimized",
-        "summary": "New frameworks and tools are emerging to support venture capital investment decisions, including graph-temporal-causal modeling and multi-agent orchestration",
-        "brief": "Researchers are developing explainable models to enhance risk-aware investment decision optimization, while new platforms like Boundeal VDR are being introduced to facilitate due diligence. These developments aim to improve the efficiency and effectiveness of venture capital investments",
-        "forecast": "Watch for further innovations in venture capital technology to potentially impact investment strategies"
+        "headline": "Investment tools emerge",
+        "summary": "New platforms and models are being developed to support venture capital investment decisions",
+        "brief": "Recent releases include platforms for due diligence and virtual data rooms, as well as tools for investment optimization and portfolio management. These developments reflect ongoing efforts to improve the efficiency and effectiveness of venture capital investing",
+        "forecast": "Watch for further innovation in venture capital technology and its potential impact on investment strategies"
       },
       "sources": [
         {
@@ -386,13 +314,17 @@
           "url": "http://arxiv.org/abs/2605.09145v1"
         },
         {
+          "label": "Product Hunt: AngelList Link",
+          "url": "https://www.producthunt.com/products/angellist?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        },
+        {
           "label": "Product Hunt: Boundeal VDR",
           "url": "https://www.producthunt.com/products/boundeal-vdr?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:33:56.862Z"
+      "generatedAt": "2026-07-24T08:29:19.637Z"
     },
     "computational-biochemistry": {
       "interestId": "biochemistry",
@@ -400,94 +332,58 @@
       "narrative": {
         "title": "Protein Engineering",
         "headline": "Momentum in protein engineering slows",
-        "summary": "Recent studies in protein engineering have shown a decline in momentum, with a focus on specific applications such as nanopore blockade experiments and lipid transport, indicating a shift towards more targeted research",
-        "brief": "Publications on protein engineering have decreased, with recent studies focusing on niche areas like plasmid-free biosynthesis and rational fusion enzyme engineering. The decline in momentum is also reflected in the types of tools and software being developed, such as SciSuite and FormLab ELN, which cater to specific needs in the field",
-        "forecast": "Watch for further specialization in protein engineering research as scientists focus on addressing specific challenges and gaps in the field"
+        "summary": "Recent studies in protein engineering have focused on molecular modeling and enzyme engineering, but overall progress is decelerating",
+        "brief": "Investigations into cyclic peptides and stochastic burst networks have yielded new insights, while advances in veterinary biochemistry and vaccine development are being explored. However, the field as a whole is experiencing a downturn in momentum",
+        "forecast": "Watch for potential breakthroughs in rational fusion enzyme engineering to revitalize the field"
       },
       "sources": [
         {
-          "label": "arXiv: Multi-modal transformer for signal classification in nanopore blockade experiments",
-          "url": "http://arxiv.org/abs/2607.20323v1"
+          "label": "arXiv: Graph Learning on Ensembles of Cyclic Peptides: An Investigation of Molecular Ensemble Modeling",
+          "url": "http://arxiv.org/abs/2607.21561v1"
         },
         {
-          "label": "arXiv: Tensor analysis for lipid transport",
-          "url": "http://arxiv.org/abs/2607.20215v1"
+          "label": "arXiv: Fluctuation impossibility results for stochastic burst networks",
+          "url": "http://arxiv.org/abs/2607.20823v1"
         },
         {
-          "label": "arXiv: Plausibility-Driven Prioritization of Candidate Biomedical Annotations",
-          "url": "http://arxiv.org/abs/2607.20163v1"
-        },
-        {
-          "label": "Wikipedia: Biochemistry — Wikipedia pageviews",
-          "url": "https://en.wikipedia.org/wiki/Biochemistry"
+          "label": "arXiv: Importance-Sampling Estimation of Gaussian Molecular Shape Overlap: Exact Union Volumes and Confidence-Bounded Virtual Screening",
+          "url": "http://arxiv.org/abs/2607.20766v1"
         },
         {
           "label": "Product Hunt: SciSuite",
           "url": "https://www.producthunt.com/products/scisuite-science-should-be-sweet?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
+        },
+        {
+          "label": "Product Hunt: FormLab ELN",
+          "url": "https://www.producthunt.com/products/formlab-eln?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
         }
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:34:02.050Z"
-    },
-    "ai-life-sciences": {
-      "interestId": "life-sciences",
-      "signalId": "ai-life-sciences",
-      "narrative": {
-        "title": "Life Sciences",
-        "headline": "Research publishes new findings",
-        "summary": "Recent studies in life sciences focus on various topics including mechanical oscillators, phage lambda, and tumor spheroids, as well as advancements in omics analysis and cellular heterogeneity",
-        "brief": "Researchers are exploring new areas such as synchronization of active mechanical oscillators and growth models for multicellular tumor spheroids, while also making progress in understanding complex biological systems through integrated multi-omics analysis. Additionally, new tools and platforms like SciSuite and FormLab ELN are being introduced to support life sciences research",
-        "forecast": "Watch for further developments in single-cell transcriptomic profiling and its potential to identify novel therapeutic targets"
-      },
-      "sources": [
-        {
-          "label": "arXiv: Synchronization of active mechanical oscillators by an inertial load",
-          "url": "http://arxiv.org/abs/physics/0307155v1"
-        },
-        {
-          "label": "arXiv: Towards the Understanding of Stability Puzzles in Phage lambda",
-          "url": "http://arxiv.org/abs/cond-mat/0307747v1"
-        },
-        {
-          "label": "arXiv: A Growth Model for Multicellular Tumor Spheroids",
-          "url": "http://arxiv.org/abs/physics/0307136v1"
-        },
-        {
-          "label": "Wikipedia: Life Sciences — Wikipedia pageviews",
-          "url": "https://en.wikipedia.org/wiki/Life_sciences"
-        },
-        {
-          "label": "Product Hunt: SciSuite",
-          "url": "https://www.producthunt.com/products/scisuite-science-should-be-sweet?utm_campaign=producthunt-api&utm_medium=api-v2&utm_source=Application%3A+HorizonIQ+%28ID%3A+289138%29"
-        }
-      ],
-      "model": "llama-3.3-70b-versatile",
-      "provider": "groq",
-      "generatedAt": "2026-07-23T08:34:07.220Z"
+      "generatedAt": "2026-07-24T08:29:24.606Z"
     },
     "ai-commerce": {
       "interestId": "commerce",
       "signalId": "ai-commerce",
       "narrative": {
-        "title": "Ecommerce Slows",
-        "headline": "Retail sales are declining",
-        "summary": "Recent developments in ecommerce platforms and technologies have not halted the downward trend in retail sales",
-        "brief": "New ecommerce templates and tools have been released, but retail sales continue to decline, with companies such as Reformation Inc. and Baosheng Media Group Holdings Ltd. filing SEC reports, and Wikipedia pageviews for commerce decreasing. The release of research papers on ranking models and generative retrieval has also not reversed the trend",
-        "forecast": "Watch for further declines in retail sales as consumer behavior shifts"
+        "title": "Retail Trends",
+        "headline": "E-commerce templates emerge",
+        "summary": "New e-commerce templates and tools are being introduced to support retail operations",
+        "brief": "Recent developments include the release of free e-commerce templates and the proposal of new approaches for supply chain planning and search generative retrieval. These advancements aim to enhance the efficiency and effectiveness of retail operations",
+        "forecast": "Watch for further innovations in e-commerce tools and supply chain management to potentially impact retail trends"
       },
       "sources": [
         {
+          "label": "arXiv: SPORD: A Simulation-Propose-then-OR-Dispose Approach for Supply Chain Planning",
+          "url": "http://arxiv.org/abs/2607.21354v1"
+        },
+        {
           "label": "arXiv: UniRank: Benchmarking Ranking Models for Unified Sequential Modeling and Feature Interaction",
-          "url": "http://arxiv.org/abs/2607.19987v1"
+          "url": "http://arxiv.org/abs/2607.19987v2"
         },
         {
           "label": "arXiv: TSGR: Taobao Search Generative Retrieval",
           "url": "http://arxiv.org/abs/2607.18796v2"
-        },
-        {
-          "label": "arXiv: When Does Machine Learning Beat Value Sorting? A Three-Dataset Diagnostic of Exposure-Weighted Shipment Prioritization",
-          "url": "http://arxiv.org/abs/2607.18573v1"
         },
         {
           "label": "Wikipedia: Commerce — Wikipedia pageviews",
@@ -500,7 +396,7 @@
       ],
       "model": "llama-3.3-70b-versatile",
       "provider": "groq",
-      "generatedAt": "2026-07-23T08:34:17.462Z"
+      "generatedAt": "2026-07-24T08:29:39.240Z"
     }
   }
 }
